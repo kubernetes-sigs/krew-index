@@ -2,6 +2,9 @@
 
 This is the *Index Repository* for [krew](https://github.com/GoogleContainerTools/krew).
 
+To create a new plugin, go to to the
+[Developer Gudie](https://github.com/GoogleContainerTools/krew/blob/master/docs/DEVELOPER_GUIDE.md).
+
 # Additional Links
 
 - [Architecture](https://github.com/GoogleContainerTools/krew/blob/master/docs/KREW_ARCHITECTURE.md)

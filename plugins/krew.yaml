@@ -1,0 +1,44 @@
+apiVersion: plugin.krew.app/v1alpha1
+kind: Plugin
+metadata:
+  name: krew
+spec:
+  platforms:
+  - uri: https://storage.googleapis.com/krew-test/krew-304ebeb11ed5998ec759764c98c36acaab2d28ee0c307eac4f3d221231ff1f49.zip
+    sha256: 304ebeb11ed5998ec759764c98c36acaab2d28ee0c307eac4f3d221231ff1f49
+    files:
+    - from: "unix/plugin.yaml"
+      to: plugin.yaml
+    - from: "krew-darwin"
+      to: "krew"
+    - from: "unix/commands/*"
+      to: "commands"
+    selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin]}
+  - uri: https://storage.googleapis.com/krew-test/krew-304ebeb11ed5998ec759764c98c36acaab2d28ee0c307eac4f3d221231ff1f49.zip
+    sha256: 304ebeb11ed5998ec759764c98c36acaab2d28ee0c307eac4f3d221231ff1f49
+    files:
+    - from: "unix/plugin.yaml"
+      to: plugin.yaml
+    - from: "krew-linux"
+      to: "krew"
+    - from: "unix/commands/*"
+      to: "commands"
+    selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [linux]}
+  - uri: https://storage.googleapis.com/krew-test/krew-304ebeb11ed5998ec759764c98c36acaab2d28ee0c307eac4f3d221231ff1f49.zip
+    sha256: 304ebeb11ed5998ec759764c98c36acaab2d28ee0c307eac4f3d221231ff1f49
+    files:
+    - from: "windows/plugin.yaml"
+      to: plugin.yaml
+    - from: "krew-windows.exe"
+      to: "krew.exe"
+    - from: "windows/commands/*"
+      to: "commands"
+    selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [windows]}
+  version: "v0.0.1"
+  intro: Install plugins

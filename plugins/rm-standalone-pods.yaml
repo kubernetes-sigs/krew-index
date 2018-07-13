@@ -1,0 +1,18 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha1
+kind: Plugin
+metadata:
+  name: rm-standalone-pods
+spec:
+  platforms:
+  - head: https://github.com/ahmetb/kubectl-extras/archive/master.zip
+    files:
+    - from: "/rm-standalone-pods/*"
+      to: "."
+    selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+  version: "master"
+  shortDescription: Remove all pods without owner references
+  caveats: |
+    This plugin needs the following programs:
+    * jq

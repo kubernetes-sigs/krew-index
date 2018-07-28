@@ -7,11 +7,11 @@ spec:
   - uri: https://storage.googleapis.com/krew-test/krew-437272f4f52b6d114f87b366cc3d069f54ab7451dc530c9b6517139fc150f908.zip
     sha256: 437272f4f52b6d114f87b366cc3d069f54ab7451dc530c9b6517139fc150f908
     files:
-    - from: "unix/plugin.yaml"
-      to: plugin.yaml
-    - from: "krew-darwin"
+    - from: "build/unix/plugin.yaml"
+      to: "plugin.yaml"
+    - from: "build/krew-darwin"
       to: "krew"
-    - from: "unix/commands/*"
+    - from: "build/unix/commands/*"
       to: "commands"
     selector:
       matchExpressions:
@@ -19,11 +19,11 @@ spec:
   - uri: https://storage.googleapis.com/krew-test/krew-437272f4f52b6d114f87b366cc3d069f54ab7451dc530c9b6517139fc150f908.zip
     sha256: 437272f4f52b6d114f87b366cc3d069f54ab7451dc530c9b6517139fc150f908
     files:
-    - from: "unix/plugin.yaml"
-      to: plugin.yaml
-    - from: "krew-linux"
+    - from: "build/unix/plugin.yaml"
+      to: "plugin.yaml"
+    - from: "build/krew-linux"
       to: "krew"
-    - from: "unix/commands/*"
+    - from: "build/unix/commands/*"
       to: "commands"
     selector:
       matchExpressions:
@@ -31,11 +31,11 @@ spec:
   - uri: https://storage.googleapis.com/krew-test/krew-437272f4f52b6d114f87b366cc3d069f54ab7451dc530c9b6517139fc150f908.zip
     sha256: 437272f4f52b6d114f87b366cc3d069f54ab7451dc530c9b6517139fc150f908
     files:
-    - from: "windows/plugin.yaml"
-      to: plugin.yaml
-    - from: "krew-windows.exe"
+    - from: "build/windows/plugin.yaml"
+      to: "plugin.yaml"
+    - from: "build/krew-windows.exe"
       to: "krew.exe"
-    - from: "windows/commands/*"
+    - from: "build/windows/commands/*"
       to: "commands"
     selector:
       matchExpressions:

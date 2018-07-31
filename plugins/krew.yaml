@@ -4,41 +4,42 @@ metadata:
   name: krew
 spec:
   platforms:
-  - uri: https://storage.googleapis.com/krew-test/krew-437272f4f52b6d114f87b366cc3d069f54ab7451dc530c9b6517139fc150f908.zip
-    sha256: 437272f4f52b6d114f87b366cc3d069f54ab7451dc530c9b6517139fc150f908
+  - uri: https://github.com/GoogleContainerTools/krew/releases/download/v0.1.0-alpha.1/krew.zip
+    sha256: f0fb247906235aebf96e48bc470d8b868dabbe1bbc1e87eccfeff26b61e75b29
     files:
-    - from: "build/unix/plugin.yaml"
+    - from: "out/build/unix/plugin.yaml"
       to: "plugin.yaml"
-    - from: "build/krew-darwin"
+    - from: "out/build/krew-darwin"
       to: "krew"
-    - from: "build/unix/commands/*"
+    - from: "out/build/unix/commands/*"
       to: "commands"
     selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin]}
-  - uri: https://storage.googleapis.com/krew-test/krew-437272f4f52b6d114f87b366cc3d069f54ab7451dc530c9b6517139fc150f908.zip
-    sha256: 437272f4f52b6d114f87b366cc3d069f54ab7451dc530c9b6517139fc150f908
+  - uri: https://github.com/GoogleContainerTools/krew/releases/download/v0.1.0-alpha.1/krew.zip
+    sha256: f0fb247906235aebf96e48bc470d8b868dabbe1bbc1e87eccfeff26b61e75b29
     files:
-    - from: "build/unix/plugin.yaml"
+    - from: "out/build/unix/plugin.yaml"
       to: "plugin.yaml"
-    - from: "build/krew-linux"
+    - from: "out/build/krew-linux"
       to: "krew"
-    - from: "build/unix/commands/*"
+    - from: "out/build/unix/commands/*"
       to: "commands"
     selector:
       matchExpressions:
       - {key: os, operator: In, values: [linux]}
-  - uri: https://storage.googleapis.com/krew-test/krew-437272f4f52b6d114f87b366cc3d069f54ab7451dc530c9b6517139fc150f908.zip
-    sha256: 437272f4f52b6d114f87b366cc3d069f54ab7451dc530c9b6517139fc150f908
+  - uri: https://github.com/GoogleContainerTools/krew/releases/download/v0.1.0-alpha.1/krew.zip
+    sha256: f0fb247906235aebf96e48bc470d8b868dabbe1bbc1e87eccfeff26b61e75b29
     files:
-    - from: "build/windows/plugin.yaml"
+    - from: "out/build/windows/plugin.yaml"
       to: "plugin.yaml"
-    - from: "build/krew-windows.exe"
+    - from: "out/build/krew-windows.exe"
       to: "krew.exe"
-    - from: "build/windows/commands/*"
+    - from: "out/build/windows/commands/*"
       to: "commands"
     selector:
       matchExpressions:
       - {key: os, operator: In, values: [windows]}
-  version: "v0.0.1"
+  version: "v0.1.0-alpha.1"
   shortDescription: Install plugins
+  

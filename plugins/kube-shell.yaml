@@ -1,0 +1,20 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha1
+kind: Plugin
+metadata:
+  name: kube-shell
+spec:
+  platforms:
+  - head: https://github.com/danisla/kubefunc/archive/v1.0.1.zip
+    sha256: c548f94d8efd1fb8aa35a54b7e5cdb64ae012447122d9704f3cee4163bbbe9c3
+    uri: https://github.com/danisla/kubefunc/archive/v1.0.1.zip
+    files:
+    - from: "/*/kube-shell/*"
+      to: "."
+    selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+  version: "v1.0.1"
+  shortDescription: Create pod with interactive shell
+  caveats: |
+    This plugin needs the following programs:
+    * kubectl

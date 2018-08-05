@@ -1,0 +1,27 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha1
+kind: Plugin
+metadata:
+  name: open-svc
+spec:
+  platforms:
+  - uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v1.2.0/open-svc-darwin-amd64.zip
+    sha256: 92e21f890c8fed584fe16f4e7cfbb707c8fbc95de286422e06a66ac550040ac5
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+  - uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v1.2.0/open-svc-linux-amd64.zip
+    sha256: b4467fc8e0d3a1f23450282710fb82f360242c5fe405a016eb9c274b900c3b93
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+  version: v1.2.0
+  shortDescription: Open the Kubernetes URL(s) for the specified service in your browser.
+  description: |
+    Open the Kubernetes URL(s) for the specified service in your browser
+    through a local proxy server using kubectl proxy.

@@ -1,0 +1,27 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha1
+kind: Plugin
+metadata:
+  name: service
+spec:
+  platforms:
+  - uri: https://github.com/superbrothers/kubectl-service-plugin/releases/download/v1.1.0/service-darwin-amd64.zip
+    sha256: 8197bc5506c628381cf1ae73ec03cc44d0513f6ca102d8b7165ba7dff034208e
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+  - uri: https://github.com/superbrothers/kubectl-service-plugin/releases/download/v1.1.0/service-linux-amd64.zip
+    sha256: 2011f942718eaa9f9e0aaf379a2a2db00982b8a8c13b70d05c1be2bddc37a4b1
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+  version: v1.1.0
+  shortDescription: Open the Kubernetes URL(s) for the specified service in your browser.
+  description: |
+    Open the Kubernetes URL(s) for the specified service in your browser
+    through a local proxy server using kubectl proxy.

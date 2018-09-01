@@ -1,0 +1,21 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha1
+kind: Plugin
+metadata:
+  name: exec-all
+spec:
+  platforms:
+  - uri: "https://github.com/jpdasma/kubectl-exec-all/archive/v1.0.0.zip"
+    sha256: "93f4da0b9127833924ede21d1ac1452a189e23b54339d8eeac1623a89dbfbd17"
+    files:
+    - from: "/*/unix/*"
+      to: "."
+    selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+  version: "v1.0.0"
+  shortDescription: "Execute a command in all of the containers in a specified resource"
+  caveats: |
+    This plugin needs the following programs:
+    * jq
+    * xargs
+    * bash

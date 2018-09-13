@@ -4,8 +4,8 @@ metadata:
   name: krew
 spec:
   platforms:
-  - uri: https://github.com/GoogleContainerTools/krew/releases/download/v0.1.0-alpha.1/krew.zip
-    sha256: f0fb247906235aebf96e48bc470d8b868dabbe1bbc1e87eccfeff26b61e75b29
+  - uri: https://github.com/GoogleContainerTools/krew/releases/download/v0.1.1/krew.zip
+    sha256: 308989054b891cde0639d8405ea04a18c22e8461ed695b08163c52f1756b7d41
     files:
     - from: "out/build/unix/plugin.yaml"
       to: "plugin.yaml"
@@ -16,8 +16,8 @@ spec:
     selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin]}
-  - uri: https://github.com/GoogleContainerTools/krew/releases/download/v0.1.0-alpha.1/krew.zip
-    sha256: f0fb247906235aebf96e48bc470d8b868dabbe1bbc1e87eccfeff26b61e75b29
+  - uri: https://github.com/GoogleContainerTools/krew/releases/download/v0.1.1/krew.zip
+    sha256: 308989054b891cde0639d8405ea04a18c22e8461ed695b08163c52f1756b7d41
     files:
     - from: "out/build/unix/plugin.yaml"
       to: "plugin.yaml"
@@ -28,8 +28,8 @@ spec:
     selector:
       matchExpressions:
       - {key: os, operator: In, values: [linux]}
-  - uri: https://github.com/GoogleContainerTools/krew/releases/download/v0.1.0-alpha.1/krew.zip
-    sha256: f0fb247906235aebf96e48bc470d8b868dabbe1bbc1e87eccfeff26b61e75b29
+  - uri: https://github.com/GoogleContainerTools/krew/releases/download/v0.1.1/krew.zip
+    sha256: 308989054b891cde0639d8405ea04a18c22e8461ed695b08163c52f1756b7d41
     files:
     - from: "out/build/windows/plugin.yaml"
       to: "plugin.yaml"
@@ -40,6 +40,6 @@ spec:
     selector:
       matchExpressions:
       - {key: os, operator: In, values: [windows]}
-  version: "v0.1.0-alpha.1"
+  version: "v0.1.1"
   shortDescription: Install plugins
   

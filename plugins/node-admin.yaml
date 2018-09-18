@@ -1,17 +1,16 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha1
 kind: Plugin
 metadata:
-  name: kube-node-admin
+  name: node-admin
 spec:
   platforms:
-  - head: https://github.com/danisla/kubefunc/archive/v1.0.1.zip
-    sha256: c548f94d8efd1fb8aa35a54b7e5cdb64ae012447122d9704f3cee4163bbbe9c3
-    uri: https://github.com/danisla/kubefunc/archive/v1.0.1.zip
+  - uri: https://github.com/danisla/kubefunc/archive/v1.0.2.zip
+    sha256: 93c01f4b4f0862409dfbb10cb48995b70540f359e08742f0f10f7adf9d4326bd
     files:
-    - from: "/*/kube-node-admin/*"
+    - from: "/*/node-admin/*"
       to: "."
     selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-  version: "v1.0.1"
+  version: "v1.0.2"
   shortDescription: List nodes and run privileged pod with chroot

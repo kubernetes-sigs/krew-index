@@ -1,4 +1,4 @@
-apiVersion: krew.googlecontainertools.github.com/v1alpha1
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
   name: rm-standalone-pods
@@ -7,6 +7,7 @@ spec:
   - head: https://github.com/ahmetb/kubectl-extras/archive/master.zip
     sha256: 8be8ed348d02285abc46bbf7a4cc83da0ee9d54dc2c5bf86a7b64947811b843c
     uri: https://github.com/ahmetb/kubectl-extras/archive/c403c5714a4442b8314e5a86b0ff63f7a815f83f.zip
+    bin: rm-standalone-pods.bash
     files:
     - from: "/*/rm-standalone-pods/*"
       to: "."

@@ -1,4 +1,4 @@
-apiVersion: krew.googlecontainertools.github.com/v1alpha1
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
   name: rbac-lookup
@@ -6,6 +6,7 @@ spec:
   platforms:
   - uri: https://github.com/reactiveops/rbac-lookup/releases/download/v0.2.0/rbac-lookup_0.2.0_Darwin_x86_64.tar.gz
     sha256: ccf00b676d1cae3f11fe628c8b07bfc63878864a2e8e3c249b62e1984e15873b
+    bin: rbac-lookup
     files:
     - from: "*"
       to: "."
@@ -14,6 +15,7 @@ spec:
         os: darwin
   - uri: https://github.com/reactiveops/rbac-lookup/releases/download/v0.2.0/rbac-lookup_0.2.0_Linux_x86_64.tar.gz
     sha256: e21d4bd665c3fbe3d66054e6faa2ab8e819d83b6cb38c04423d7b395e630154c
+    bin: rbac-lookup
     files:
     - from: "*"
       to: "."

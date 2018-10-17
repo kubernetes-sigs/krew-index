@@ -13,6 +13,7 @@ spec:
     selector:
       matchLabels:
         os: darwin
+        arch: amd64
   - uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.0.0/kubectl-open_svc-linux-amd64.zip
     sha256: bf3317f81e44a4a453704fd7a2cfff7fa6a0c9ad4971bcfd7feb33107b7af0f3
     bin: kubectl-open_svc
@@ -22,6 +23,7 @@ spec:
     selector:
       matchLabels:
         os: linux
+        arch: amd64
   version: v2.0.0
   shortDescription: Open the Kubernetes URL(s) for the specified service in your browser.
   description: |

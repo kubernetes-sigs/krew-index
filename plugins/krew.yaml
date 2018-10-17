@@ -1,47 +1,76 @@
+# Copyright © 2018 Google Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
   name: krew
 spec:
+  version: "652e113"
+  shortDescription: Package manager for kubectl plugins.
+  caveats: |
+    krew is now installed! To start using kubectl plugins, you need to add
+    krew's installation directory to your PATH:
+
+      * macOS/Linux:
+        - Add the following to your ~/.bashrc or ~/.zshrc:
+            export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+        - Restart your shell.
+
+      * Windows: Add %USERPROFILE%\.krew\bin to your PATH environment variable
+
+    Run "kubectl krew" to list krew commands and get help.
+    You can find documentation at https://github.com/GoogleContainerTools/krew.
+
   platforms:
-  - uri: https://github.com/GoogleContainerTools/krew/releases/download/v0.1.1/krew.zip
-    sha256: 308989054b891cde0639d8405ea04a18c22e8461ed695b08163c52f1756b7d41
+  - uri: https://storage.googleapis.com/krew/652e113/krew.tar.gz
+    sha256: 8a685bc0b8b3790f661cd7e51e52b5ee6dad09f5a8b9adfb3e569c13e54648c0
     bin: krew
     files:
-    - from: "out/build/unix/plugin.yaml"
-      to: "plugin.yaml"
-    - from: "out/build/krew-darwin"
-      to: "krew"
-    - from: "out/build/unix/commands/*"
-      to: "commands"
+    - from: ./krew-darwin_amd64
+      to: krew
     selector:
-      matchExpressions:
-      - {key: os, operator: In, values: [darwin]}
-  - uri: https://github.com/GoogleContainerTools/krew/releases/download/v0.1.1/krew.zip
-    sha256: 308989054b891cde0639d8405ea04a18c22e8461ed695b08163c52f1756b7d41
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://storage.googleapis.com/krew/652e113/krew.tar.gz
+    sha256: 8a685bc0b8b3790f661cd7e51e52b5ee6dad09f5a8b9adfb3e569c13e54648c0
     bin: krew
     files:
-    - from: "out/build/unix/plugin.yaml"
-      to: "plugin.yaml"
-    - from: "out/build/krew-linux"
-      to: "krew"
-    - from: "out/build/unix/commands/*"
-      to: "commands"
+    - from: ./krew-linux_amd64
+      to: krew
     selector:
-      matchExpressions:
-      - {key: os, operator: In, values: [linux]}
-  - uri: https://github.com/GoogleContainerTools/krew/releases/download/v0.1.1/krew.zip
-    sha256: 308989054b891cde0639d8405ea04a18c22e8461ed695b08163c52f1756b7d41
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://storage.googleapis.com/krew/652e113/krew.tar.gz
+    sha256: 8a685bc0b8b3790f661cd7e51e52b5ee6dad09f5a8b9adfb3e569c13e54648c0
+    bin: krew
+    files:
+    - from: ./krew-linux_arm
+      to: krew
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm
+  - uri: https://storage.googleapis.com/krew/652e113/krew.zip
+    sha256: 25dab8ddc05e8eb382e7f7b319a03eefb3a048abc1c5fcd3a5866ad050dcd89e
     bin: krew.exe
     files:
-    - from: "out/build/windows/plugin.yaml"
-      to: "plugin.yaml"
-    - from: "out/build/krew-windows.exe"
-      to: "krew.exe"
-    - from: "out/build/windows/commands/*"
-      to: "commands"
+    - from: ./krew-windows_amd64.exe
+      to: krew.exe
     selector:
-      matchExpressions:
-      - {key: os, operator: In, values: [windows]}
-  version: "v0.1.1"
-  shortDescription: Package manager for kubectl plugins
+      matchLabels:
+        os: windows
+        arch: amd64

@@ -17,7 +17,7 @@ kind: Plugin
 metadata:
   name: krew
 spec:
-  version: "652e113"
+  version: "v0.2.1"
   shortDescription: Package manager for kubectl plugins.
   caveats: |
     krew is now installed! To start using kubectl plugins, you need to add
@@ -34,8 +34,8 @@ spec:
     You can find documentation at https://github.com/GoogleContainerTools/krew.
 
   platforms:
-  - uri: https://storage.googleapis.com/krew/652e113/krew.tar.gz
-    sha256: 8a685bc0b8b3790f661cd7e51e52b5ee6dad09f5a8b9adfb3e569c13e54648c0
+  - uri: https://storage.googleapis.com/krew/v0.2.1/krew.tar.gz
+    sha256: dc2f2e1ec8a0acb6f3e23580d4a8b38c44823e948c40342e13ff6e8e12edb15a
     bin: krew
     files:
     - from: ./krew-darwin_amd64
@@ -44,8 +44,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://storage.googleapis.com/krew/652e113/krew.tar.gz
-    sha256: 8a685bc0b8b3790f661cd7e51e52b5ee6dad09f5a8b9adfb3e569c13e54648c0
+  - uri: https://storage.googleapis.com/krew/v0.2.1/krew.tar.gz
+    sha256: dc2f2e1ec8a0acb6f3e23580d4a8b38c44823e948c40342e13ff6e8e12edb15a
     bin: krew
     files:
     - from: ./krew-linux_amd64
@@ -54,8 +54,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://storage.googleapis.com/krew/652e113/krew.tar.gz
-    sha256: 8a685bc0b8b3790f661cd7e51e52b5ee6dad09f5a8b9adfb3e569c13e54648c0
+  - uri: https://storage.googleapis.com/krew/v0.2.1/krew.tar.gz
+    sha256: dc2f2e1ec8a0acb6f3e23580d4a8b38c44823e948c40342e13ff6e8e12edb15a
     bin: krew
     files:
     - from: ./krew-linux_arm
@@ -64,8 +64,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm
-  - uri: https://storage.googleapis.com/krew/652e113/krew.zip
-    sha256: 25dab8ddc05e8eb382e7f7b319a03eefb3a048abc1c5fcd3a5866ad050dcd89e
+  - uri: https://storage.googleapis.com/krew/v0.2.1/krew.zip
+    sha256: 57788e8c7af1b5b000954455aa9ca2e4a18a50a020faf54d18a3ccf79ad04049
     bin: krew.exe
     files:
     - from: ./krew-windows_amd64.exe

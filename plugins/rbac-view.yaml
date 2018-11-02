@@ -1,0 +1,55 @@
+# Copyright © 2018 Google Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: rbac-view
+spec:
+  version: ""
+  shortDescription: A tool to visualize your RBAC permissions.
+  caveats: |
+    Run "kubectl rbac-view" to open a browser with an html view of your permissions.
+    You can find documentation at https://github.com/jasonrichardsmith/rbac-view.
+  platforms:
+  - uri: https://github.com/jasonrichardsmith/rbac-view/releases/download//rbac-view..darwin.tar.gz
+    sha256: 
+    bin: rbac-view
+    files:
+    - from: bin/darwin/rbac-view
+      to: rbac-view
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/jasonrichardsmith/rbac-view/releases/download//rbac-view..linux.tar.gz
+    sha256: 
+    bin: rbac-view
+    files:
+    - from: bin/linux/rbac-view
+      to: rbac-view
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/jasonrichardsmith/rbac-view/releases/download//rbac-view..windows.tar.gz
+    sha256: 
+    bin: rbac-view
+    files:
+    - from: bin/windows/rbac-view
+      to: rbac-view
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

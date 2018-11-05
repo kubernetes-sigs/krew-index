@@ -17,14 +17,14 @@ kind: Plugin
 metadata:
   name: rbac-view
 spec:
-  version: ""
+  version: "v0.2.1"
   shortDescription: A tool to visualize your RBAC permissions.
   caveats: |
     Run "kubectl rbac-view" to open a browser with an html view of your permissions.
     You can find documentation at https://github.com/jasonrichardsmith/rbac-view.
   platforms:
-  - uri: https://github.com/jasonrichardsmith/rbac-view/releases/download//rbac-view..darwin.tar.gz
-    sha256: 
+  - uri: https://github.com/jasonrichardsmith/rbac-view/releases/download/v0.2.1/rbac-view.v0.2.1.darwin.tar.gz
+    sha256: 7bb024a130415120f617d30145562481d7e5828e3c72bc7c5276befca31e9526
     bin: rbac-view
     files:
     - from: bin/darwin/rbac-view
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/jasonrichardsmith/rbac-view/releases/download//rbac-view..linux.tar.gz
-    sha256: 
+  - uri: https://github.com/jasonrichardsmith/rbac-view/releases/download/v0.2.1/rbac-view.v0.2.1.linux.tar.gz
+    sha256: 31fa6c9cd0f321eb2af7ff020382d0271f76fccc17cff7ce345359c0d4728dca
     bin: rbac-view
     files:
     - from: bin/linux/rbac-view
@@ -43,8 +43,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/jasonrichardsmith/rbac-view/releases/download//rbac-view..windows.tar.gz
-    sha256: 
+  - uri: https://github.com/jasonrichardsmith/rbac-view/releases/download/v0.2.1/rbac-view.v0.2.1.windows.tar.gz
+    sha256: 8821667441a2ddf4692b75b8b3ebf4e9c9151b87b281e89afc564f740064aeab
     bin: rbac-view
     files:
     - from: bin/windows/rbac-view

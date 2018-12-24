@@ -1,0 +1,44 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kubesec-scan
+spec:
+  version: v0.3.1
+  caveats: |
+    Read the documentation at https://github.com/stefanprodan/kubectl-kubesec.
+    You can call this plugin like "kubectl kubesec-scan".
+  shortDescription: Scan Kubernetes resources with kubesec.io.
+  description: |
+    This plugin uploads the specified Kubernetes resource’s API representation
+    to https://kubesec.io/ for security best practices scanning.
+  platforms:
+  - uri: https://github.com/stefanprodan/kubectl-kubesec/releases/download/0.3.1/kubectl-kubesec_0.3.1_darwin_amd64.tar.gz
+    sha256: 8910bdb378b495b772ce6c4c67e0e8c91c5db73605399d5b4745c459beaef3ac
+    bin: scan
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/stefanprodan/kubectl-kubesec/releases/download/0.3.1/kubectl-kubesec_0.3.1_linux_amd64.tar.gz
+    sha256: b4afcd752e027531f99007edf7a9d2fbaf957fbd3c9f42280412d1f43f4a8a8e
+    bin: scan
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/stefanprodan/kubectl-kubesec/releases/download/0.3.1/kubectl-kubesec_0.3.1_windows_amd64.tar.gz
+    sha256: bfb098aa1c81a814e9e3d00e1b7ef2d1f6041554fa5cb9e327bbbbb125e1b423
+    bin: scan.exe
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

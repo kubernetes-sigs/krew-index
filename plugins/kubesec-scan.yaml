@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: kubesec-scan
 spec:
-  version: v0.3.1
+  version: v1.0.0
   caveats: |
     Read the documentation at https://github.com/stefanprodan/kubectl-kubesec.
     You can call this plugin like "kubectl kubesec-scan".
@@ -12,8 +12,8 @@ spec:
     This plugin uploads the specified Kubernetes resource’s API representation
     to https://kubesec.io/ for security best practices scanning.
   platforms:
-  - uri: https://github.com/stefanprodan/kubectl-kubesec/releases/download/0.3.1/kubectl-kubesec_0.3.1_darwin_amd64.tar.gz
-    sha256: 8910bdb378b495b772ce6c4c67e0e8c91c5db73605399d5b4745c459beaef3ac
+  - uri: https://github.com/stefanprodan/kubectl-kubesec/releases/download/1.0.0/kubectl-kubesec_1.0.0_darwin_amd64.tar.gz
+    sha256: 6d28768742542ce02248e9c422a007b7e11d8a61904c1fa23ed450f654bf5933
     bin: scan
     files:
     - from: "*"
@@ -22,8 +22,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/stefanprodan/kubectl-kubesec/releases/download/0.3.1/kubectl-kubesec_0.3.1_linux_amd64.tar.gz
-    sha256: b4afcd752e027531f99007edf7a9d2fbaf957fbd3c9f42280412d1f43f4a8a8e
+  - uri: https://github.com/stefanprodan/kubectl-kubesec/releases/download/1.0.0/kubectl-kubesec_1.0.0_linux_amd64.tar.gz
+    sha256: e47c9e1296dcbbb064db18270086fe29f5d8094ec07fc4c180b15026e0bc1c83
     bin: scan
     files:
     - from: "*"
@@ -32,8 +32,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/stefanprodan/kubectl-kubesec/releases/download/0.3.1/kubectl-kubesec_0.3.1_windows_amd64.tar.gz
-    sha256: bfb098aa1c81a814e9e3d00e1b7ef2d1f6041554fa5cb9e327bbbbb125e1b423
+  - uri: https://github.com/stefanprodan/kubectl-kubesec/releases/download/1.0.0/kubectl-kubesec_1.0.0_windows_amd64.tar.gz
+    sha256: df38cc43a460fde0278f823d4d1eee473190817099ef3117dc671ee8b81b6bbc
     bin: scan.exe
     files:
     - from: "*"

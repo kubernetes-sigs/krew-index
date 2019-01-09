@@ -1,0 +1,20 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: prompt
+spec:
+  platforms:
+  - head: https://github.com/jordanwilson230/kubectl-plugins/archive/krew.zip
+    uri: https://github.com/jordanwilson230/kubectl-plugins/archive/v1.0.0-krew.zip
+    sha256: 21099ad3c3a6509a4ddb94aa0a88c055437e369c41c0e5c0cae49dc6db697241
+    bin: kubectl-prompt
+    files:
+    - from: "*/kubectl-prompt"
+      to: "."
+    selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+  version: "v1.0.0-krew"
+  caveats: When removing this plugin, delete the line beginning with `function kubectl()` in your ~/.bash_profile
+  shortDescription: Prompts for user confirmation when executing commands in critical namespaces or clusters, i.e., production.
+  description: Protect your production environments! When issuing certain commands inside a specified namespace/cluster, a warning prompt appears, telling the user they are in a flagged environment and asks to confirm the command. Ex., `kubectl prompt`, `kubectl add -n production`, kubectl add -c `prod-cluster`. `kubectl prompt list`.

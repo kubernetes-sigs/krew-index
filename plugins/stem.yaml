@@ -1,0 +1,38 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: stem
+spec:
+  version: v0.1.0
+  shortDescription: Tailing logs for multiple pods
+  platforms:
+  - uri: https://github.com/ynqa/stem/releases/download/v0.1.0/stem_0.1.0_darwin_amd64.tar.gz
+    sha256: 84be42645c16f5857316fdd3e7b0b0251aca8e4a61f22f410f39ba3b46d57a45
+    bin: kubectl-stem
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/ynqa/stem/releases/download/v0.1.0/stem_0.1.0_linux_amd64.tar.gz
+    sha256: eea0364aaaa4c3b9e0b4405836ae93d323c3de422dd4687dd79d4aae012640bc
+    bin: kubectl-stem
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/ynqa/stem/releases/download/v0.1.0/stem_0.1.0_windows_amd64.tar.gz
+    sha256: 048ec29b09a51aafccdb702c1338af830fbd8557d2f52ff66841132fe915b438
+    bin: kubectl-stem.exe
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

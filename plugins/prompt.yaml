@@ -17,4 +17,4 @@ spec:
   version: "v1.0.0-krew"
   caveats: When removing this plugin, delete the line beginning with `function kubectl()` in your ~/.bash_profile
   shortDescription: Prompts for user confirmation when executing commands in critical namespaces or clusters, i.e., production.
-  description: Protect your production environments! When issuing certain commands inside a specified namespace/cluster, a warning prompt appears, telling the user they are in a flagged environment and asks to confirm the command. Ex., `kubectl prompt`, `kubectl add -n production`, kubectl add -c `prod-cluster`. `kubectl prompt list`.
+  description: Protect your production environments! When issuing certain commands inside a specified namespace/cluster, a warning prompt appears, telling the user they are in a flagged environment and asks to confirm the command. Ex., `kubectl prompt`, `kubectl prompt add -n production`, kubectl prompt add -c `prod-cluster`. `kubectl prompt list`.

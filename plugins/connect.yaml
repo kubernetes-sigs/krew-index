@@ -1,0 +1,20 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: connect
+spec:
+  platforms:
+  - head: https://github.com/jordanwilson230/kubectl-plugins/archive/krew.zip
+    uri: https://github.com/jordanwilson230/kubectl-plugins/archive/v1.0.0-krew.zip
+    sha256: 21099ad3c3a6509a4ddb94aa0a88c055437e369c41c0e5c0cae49dc6db697241
+    bin: kubectl-connect
+    files:
+    - from: "**/kubectl-connect"
+      to: "."
+    selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+  version: "v1.0.0-krew"
+  caveats: The node which the pod is running on cannot have more than one taint.
+  shortDescription: Like kubectl exec, but offers a `user` flag to exec as root or any other user.
+  description: Run `kubectl connect` for usage. Example, `kubectl connect -u root -p zookeeper-0`.

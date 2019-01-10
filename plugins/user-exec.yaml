@@ -1,15 +1,15 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: pod-exec
+  name: user-exec
 spec:
   platforms:
   - head: https://github.com/jordanwilson230/kubectl-plugins/archive/krew.zip
     uri: https://github.com/jordanwilson230/kubectl-plugins/archive/v1.0.0-krew.zip
-    sha256: c020d4d283461ef9f103fd0baa218e9c72612395ff936fd337e165d054cee699
-    bin: kubectl-pod-exec
+    sha256: d12d3c0c9cf2559100adbd7bd032ecf1fc01e09cb8731726ead42a49d6104a4d
+    bin: kubectl-user-exec
     files:
-    - from: "**/kubectl-pod-exec"
+    - from: "**/kubectl-user-exec"
       to: "."
     selector:
       matchExpressions:
@@ -17,4 +17,4 @@ spec:
   version: "v1.0.0-krew"
   caveats: The node which the pod is running on cannot have more than one taint.
   shortDescription: Like kubectl exec, but offers a `user` flag to exec as root or any other user.
-  description: Run `kubectl pod-exec` for usage. Example, `kubectl pod-exec -u root -p zookeeper-0`.
+  description: Run `kubectl user-exec` for usage. Example, `kubectl user-exec -u root -p zookeeper-0`.

@@ -1,0 +1,20 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: exec-as
+spec:
+  platforms:
+  - head: https://github.com/jordanwilson230/kubectl-plugins/archive/krew.zip
+    uri: https://github.com/jordanwilson230/kubectl-plugins/archive/v1.0.0-krew.zip
+    sha256: efa1c2122ecaeb0a43ba1ed9e54c1ff1274d20de76934f7bb91dd154f2327aa1
+    bin: kubectl-exec-as
+    files:
+    - from: "**/kubectl-exec-as"
+      to: "."
+    selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+  version: "v1.0.0-krew"
+  caveats: The node which the pod is running on cannot have more than one taint.
+  shortDescription: Like kubectl exec, but offers a `user` flag to exec as root or any other user.
+  description: Run `kubectl exec-as` for usage. Example, `kubectl exec-as -u root -p zookeeper-0`.

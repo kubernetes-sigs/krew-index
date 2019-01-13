@@ -3,13 +3,13 @@ kind: Plugin
 metadata:
   name: utilization
 spec:
-  version: "v1.0.0"
+  version: "v1.0.2"
   platforms:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-    uri: https://github.com/etopeter/kubectl-utilization/releases/download/v1.0.1/kubectl-utilization-v1.0.1.tar.gz
-    sha256: "b8b9279cab3fc26a392de2ba3734e5f152377d24dda2650bd6550cc5aa8c85ce"
+    uri: https://github.com/etopeter/kubectl-utilization/releases/download/v1.0.2/kubectl-utilization-v1.0.2.tar.gz
+    sha256: "0270090065dff78321496389b8e159dc1929f75160561d9c3346879a3b43790c"
     bin: "kubectl-utilization"
     files:
     - from: "*"

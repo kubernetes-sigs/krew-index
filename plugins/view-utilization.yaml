@@ -3,13 +3,13 @@ kind: Plugin
 metadata:
   name: view-utilization
 spec:
-  version: "v0.1.1"
+  version: "v0.1.2"
   platforms:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-    uri: https://github.com/etopeter/kubectl-view-utilization/releases/download/v0.1.1/kubectl-view-utilization-v0.1.1.tar.gz
-    sha256: "40dd80d9d641a2138c841da3b22b08a15174380c142b0ca14e598cbc46ea4705"
+    uri: https://github.com/etopeter/kubectl-view-utilization/releases/download/v0.1.2/kubectl-view-utilization-v0.1.2.tar.gz
+    sha256: "21b356b9bde85b6283ba1ac9a6e0893470a47bc22116d0764e643c64c7eecc57"
     bin: "kubectl-view-utilization"
     files:
     - from: "*"
@@ -17,7 +17,7 @@ spec:
   shortDescription: Shows cluster cpu and memory utilization
   caveats: |
     This plugin needs the following programs:
-    * bc
+    * bash
     * awk
   description: |
     This plugin shows cluster resource utilization based on cpu and memory. It collects pod requests and node available resources to calculate metrics.

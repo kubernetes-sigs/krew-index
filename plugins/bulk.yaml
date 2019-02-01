@@ -1,24 +1,20 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: bulk               # plugin name must match your manifest file name (e.g. foo.yaml)
+  name: bulk
 spec:
-  version: "v1.1.0-beta"       # optional, only for documentation purposes
+  version: "v1.1.0-beta"
   platforms:
-  # specify installation script for linux and darwin (macOS)
-  - selector:             # a regular Kubernetes selector
+  - selector:
       matchLabels:
         os: linux
-    # url for downloading the package archive:
     uri: https://github.com/emreodabas/kubectl-plugins/archive/v1.1.0-beta.tar.gz
-    # sha256sum of the file downloaded above:
     sha256: "80f7b55d82673253eb0957d2c248163fcce3e4c3bc609410b1e9ee2d6d6a91a7"
-    files:                     # copy the used files out of the zip archive
-    - from: kubectl-plugins-1.1.0-beta/kubectl-bulk # path to the files extracted from archive
-      to: "."               # '.' refers to the root of plugin install directory
-    bin: ./kubectl-bulk  # path to the plugin executable after copying files above
+    files:
+    - from: kubectl-plugins-1.1.0-beta/kubectl-bulk
+      to: "."
+    bin: ./kubectl-bulk
   shortDescription: Prints the environment variables.
-  # (optional) use caveats field to show post-installation recommendations
   caveats: |
     This plugin needs the following programs:
     * grep

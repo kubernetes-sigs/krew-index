@@ -1,0 +1,27 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: bulk
+spec:
+  version: "v1.1.0-beta"
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+      uri: https://github.com/emreodabas/kubectl-plugins/archive/v1.1.0-beta.tar.gz
+      sha256: "80f7b55d82673253eb0957d2c248163fcce3e4c3bc609410b1e9ee2d6d6a91a7"
+      files:
+        - from: kubectl-plugins-1.1.0-beta/kubectl-bulk
+          to: "."
+      bin: ./kubectl-bulk
+  shortDescription: Prints the environment variables.
+  caveats: |
+    This plugin needs the following programs:
+    * grep
+    * sed
+  description: |
+    This plugin useful for Bulk operations.
+    You can easily do bulk operations on all resource types like deployments, services, pods etc.
+    Bulk plugin has two part, first you select resources with bulk command, then chose your command 
+    (get|list|create|update|delete|remove|rollout) with parameters.      
+          <!-- https://github.com/emreodabas/kubectl-plugins -->

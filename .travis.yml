@@ -1,0 +1,28 @@
+language: go
+go:
+- 1.10.x
+
+before_install:
+  # install kubectl
+  - sudo curl -fsSL -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.13.1/bin/linux/amd64/kubectl
+  - sudo chmod +x /usr/bin/kubectl
+
+  # install krew (temporarily hardcode version)
+  # TODO(ahmetb) pin this to a version via a variable
+  - (
+      cd "$(mktemp -d)" &&
+      curl -fsSLO "https://storage.googleapis.com/krew/v0.2.1/krew.{tar.gz,yaml}" &&
+      tar zxvf krew.tar.gz &&
+      ./krew-linux_amd64 install --manifest=krew.yaml --archive=krew.tar.gz
+    )
+
+  # TODO(ahmetb) pin this to a version via a variable
+  - env GOBIN=$HOME/bin go get github.com/GoogleContainerTools/krew/cmd/validate-krew-manifest
+
+install: true # skip go get ./...
+
+script:
+  - export PATH="$PATH:$HOME/.krew/bin";
+    git diff --name-only --diff-filter=AM $TRAVIS_BRANCH...HEAD |
+      grep -E '\.yaml$' |
+      xargs -I _ $HOME/bin/validate-krew-manifest -manifest _

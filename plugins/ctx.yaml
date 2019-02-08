@@ -1,0 +1,24 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ctx
+spec:
+  version: v0.0.2
+  platforms:
+  - selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+    bin: ctx
+    files:
+    - from: ctx
+      to: .
+    uri: https://github.com/weibeld/kubectl-ctx/releases/download/v0.0.2/kubectl-ctx_v0.0.2.zip
+    sha256: 5cca554ae19a1d05212d2d8ccbfdf54421d6fc6b5a51f0a55c011e3238edbfe1
+  shortDescription: Interactively change current kubeconfig context
+  caveats: |
+    This plugin needs the following programs:
+    * fzf (https://github.com/junegunn/fzf)
+  description: |
+    This plugin allows you to change the current context of your kubeconfig
+    configuration by interactively selecting it by a fuzzy search. You can
+    also list all available contexts.

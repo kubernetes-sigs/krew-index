@@ -1,0 +1,24 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ns
+spec:
+  version: v0.0.1
+  platforms:
+  - selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+    bin: ns
+    files:
+    - from: ns
+      to: .
+    uri: https://github.com/weibeld/kubectl-ns/releases/download/v0.0.1/kubectl-ns_v0.0.1.zip
+    sha256: 2daab27afd9f4a759beb8b91842b497e4002bc813aa70adbcf6ec167d7423bb2
+  shortDescription: Interactively change the current cluster namespace.
+  caveats: |
+    This plugin needs the following programs:
+    * fzf (https://github.com/junegunn/fzf)
+  description: |
+    This plugin allows you to easily change the cluster namespace of your current
+    kubeconfig context. This makes it easier to work with multiple namespaces in
+    the same cluster.

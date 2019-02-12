@@ -2,8 +2,11 @@
 
 This is the *Index Repository* for [krew](https://github.com/GoogleContainerTools/krew).
 
-To create a new plugin, go to to the
-[Developer Gudie](https://github.com/GoogleContainerTools/krew/blob/master/docs/DEVELOPER_GUIDE.md).
+You can find a list of kubectl plugins available on krew in the [`./plugins` directory](./plugins).
+
+To create a new plugin, read the
+[Developer Guide](https://github.com/GoogleContainerTools/krew/blob/master/docs/DEVELOPER_GUIDE.md)
+and make a pull request to this repository.
 
 # Additional Links
 

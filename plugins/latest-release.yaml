@@ -1,0 +1,30 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: latest-release
+spec:
+  version: "v0.0.4"
+  shortDescription: List the latest release of kubernetes projects.
+  description: |
+    A simple kubectl plugin to retrieve the latest release of your favourite projects around kubernetes.
+  platforms:
+  - uri: https://github.com/MQasimSarfraz/kubectl-release-plugin/releases/download/v0.0.4/kubectl-release-plugin_0.0.4_Linux_x86_64.tar.gz
+    sha256: 1439924a3a406c1c4fa8167085782558ecafd2d747caf87e0d93ea972e209115
+    bin: kubectl-latest_release
+    files:
+    - from: "kubectl-latest_release"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/MQasimSarfraz/kubectl-release-plugin/releases/download/v0.0.4/kubectl-release-plugin_0.0.4_Darwin_x86_64.tar.gz
+    sha256: 9a771fec54c5bcf56e2d1797d2fb407b684c04b9d685c3f96d02b5a013ded10c
+    bin: kubectl-latest_release
+    files:
+    - from: "kubectl-latest_release"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64

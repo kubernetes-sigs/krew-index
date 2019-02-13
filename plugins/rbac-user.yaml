@@ -1,0 +1,24 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: rbac-user
+spec:
+  platforms:
+    - head: https://github.com/saada/kubectl-rbac-user/archive/master.zip
+      sha256: 824054aca798e33f5a135ef5887d0968e6985dce08d75758cc88578094c3db75
+      uri: https://github.com/saada/kubectl-rbac-user/archive/c90e9e522046c9ef4a9b572dade4c06629cbe1f7.zip
+      bin: rbac-user.sh
+      files:
+        - from: 'kubectl-rbac-user*/*'
+          to: '.'
+      selector:
+        matchExpressions:
+          - { key: os, operator: In, values: [darwin, linux] }
+  version: 'master'
+  shortDescription: Manage ServiceAccounts and their role bindings for easily providing user access to a cluster.
+  caveats: |
+    This plugin needs the following programs:
+    * jq
+    * bash
+  description: |
+    Easily create and delete ServiceAccounts. This plugin allows you to bind them to existing ClusterRoles in your Kubernetes cluster. The plugin simplifies the management of user access by taking care of deleting associated RoleBindings and ClusterRoleBindings associated with a ServiceAccount on deletion. After creating a user, it's easy to share a kubeconfig with the `view-serviceaccount-kubeconfig` plugin. Although it's named `rbac-user`, you can use it to also manage service access in general since it's just ServiceAccounts.

@@ -36,12 +36,21 @@ spec:
           os: windows
           arch: amd64
   shortDescription: Like 'kubectl get all', but get _really_ all resources
-  caveats: This plugin needs cluster admin rights, because it retrieves everything
+  caveats: |
+      Usage:
+        kubectl get-all
+
+      Documentation:
+        https://github.com/corneliusweig/ketall/blob/master/doc/USAGE.md
+
+      This plugin needs requires unrestricted access to your cluster
   description: |+2
 
+      Like 'kubectl get all', but get _really_ all resources
+
       For a complete overview of all resources in a kubernetes cluster,
+       $ kubectl get all --all-namespaces
+      is not enough, because it simply does not show everything. This helper
+      lists _really_ all resources the cluster has to offer.
 
-      $ kubectl get all --all-namespaces
-
-      is not enough, because it only lists namespaced resources. This helper will list
-      all resources the cluster has to offer.
+      https://github.com/corneliusweig/ketall#ketall

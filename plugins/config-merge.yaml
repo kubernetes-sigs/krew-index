@@ -1,0 +1,45 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: config-merge
+spec:
+  version: v0.1.0
+  caveats: |
+    Usage:
+      kubectl config-merge KUBECONFIG1 KUBECONFIG2 ... [flags]
+    
+    Read the documentation at:
+      https://github.com/kairen/kubectl-config-merge
+  shortDescription: Merge two or more kubeconfig files.
+  description: This plugin helps you to merge multiple kubeconfig files. Run `kubectl config-merge` for usage.
+  platforms:
+  - uri: https://github.com/kairen/kubectl-config-merge/releases/download/v0.1.0/kubectl-config_merge-darwin-amd64.tar.gz
+    sha256: e765e5ec650b28808e7d9b35da8316574181bf7c8655ec67f660935335c2468d
+    bin: config-merge
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/kairen/kubectl-config-merge/releases/download/v0.1.0/kubectl-config_merge-linux-amd64.tar.gz
+    sha256: bb205341b4a2ea28e3eed9430033c8c99b64fbf438266cb78593ed65ec00c1df
+    bin: config-merge
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/kairen/kubectl-config-merge/releases/download/v0.1.0/kubectl-config_merge-windows-amd64.tar.gz
+    sha256: 8a32aa19317f6b2b5fa360d4762ee0f3cadada1072af7c7f4444f51cb377b05c
+    bin: config-merge.exe
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

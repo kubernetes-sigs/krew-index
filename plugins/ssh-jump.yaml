@@ -15,7 +15,11 @@ spec:
       to: "."
     bin: "./kubectl-ssh-jump"
   shortDescription: A kubectl plugin to SSH into Kubernetes nodes using a SSH jump host Pod
-  caveats: |
+  caveats: |    
+    This plugin needs the following programs:
+    * ssh(1)
+    * ssh-agent(1)
+    
     Please follow the documentation: https://github.com/yokawasa/kubectl-plugin-ssh-jump
   description: |
     A kubectl plugin to SSH into Kubernetes nodes using a SSH jump host Pod.

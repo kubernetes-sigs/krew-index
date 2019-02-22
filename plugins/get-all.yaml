@@ -3,10 +3,10 @@ kind: Plugin
 metadata:
   name: get-all
 spec:
-  version: "v0.0.3"
+  version: "v1.0.0"
   platforms:
-    - uri: https://github.com/corneliusweig/ketall/releases/download/v0.0.3/bundle.tar.gz
-      sha256: bd8564ff59a4090e4d135a23937a2024b5cd86b59a804a6da03a1a5f67718b5d
+    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.0.0/bundle.tar.gz
+      sha256: f3b648069855d9b9d38702c0abb97efdbaa446ebc19b1ef553d54cbd49b46483
       bin: kubectl-get-all
       files:
         - from: ./ketall-linux-amd64
@@ -15,8 +15,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/corneliusweig/ketall/releases/download/v0.0.3/bundle.tar.gz
-      sha256: bd8564ff59a4090e4d135a23937a2024b5cd86b59a804a6da03a1a5f67718b5d
+    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.0.0/bundle.tar.gz
+      sha256: f3b648069855d9b9d38702c0abb97efdbaa446ebc19b1ef553d54cbd49b46483
       bin: kubectl-get-all
       files:
         - from: ./ketall-darwin-amd64
@@ -25,8 +25,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/corneliusweig/ketall/releases/download/v0.0.3/bundle.tar.gz
-      sha256: bd8564ff59a4090e4d135a23937a2024b5cd86b59a804a6da03a1a5f67718b5d
+    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.0.0/bundle.tar.gz
+      sha256: f3b648069855d9b9d38702c0abb97efdbaa446ebc19b1ef553d54cbd49b46483
       bin: kubectl-get-all.exe
       files:
         - from: ./ketall-windows-amd64
@@ -41,9 +41,7 @@ spec:
         kubectl get-all
 
       Documentation:
-        https://github.com/corneliusweig/ketall/blob/v0.0.3/doc/USAGE.md#usage
-
-      This plugin requires unrestricted access to your cluster
+        https://github.com/corneliusweig/ketall/blob/v1.0.0/doc/USAGE.md#usage
   description: |+2
 
       Like 'kubectl get all', but get _really_ all resources

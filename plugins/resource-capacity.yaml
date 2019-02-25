@@ -4,8 +4,8 @@ metadata:
   name: resource-capacity
 spec:
   platforms:
-  - uri: https://github.com/robscott/kube-capacity/releases/download/0.1.3/kube-capacity_0.1.3_Darwin_x86_64.tar.gz
-    sha256: e11208451a9ac5fd16ba1bb911b5836b742dc20a04897fd95905f843efbb596d
+  - uri: https://github.com/robscott/kube-capacity/releases/download/0.2.0/kube-capacity_0.2.0_Darwin_x86_64.tar.gz
+    sha256: 19a6c18385a8a6c9b162bb7838f4ee2198ddb41788ab69a17ada73fd4230d8ce
     bin: kube-capacity
     files:
     - from: "*"
@@ -14,8 +14,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/robscott/kube-capacity/releases/download/0.1.3/kube-capacity_0.1.3_Linux_x86_64.tar.gz
-    sha256: ceb2d90843d9bc145b3137ad17355c7fef28acc2cee95953db6c917838769316
+  - uri: https://github.com/robscott/kube-capacity/releases/download/0.2.0/kube-capacity_0.2.0_Linux_x86_64.tar.gz
+    sha256: 0ed411af27884a54aa74c89d98ca327ce4a9c57bf759961f1db3af6c59c0f027
     bin: kube-capacity
     files:
     - from: "*"
@@ -24,7 +24,7 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  version: v0.1.3
+  version: v0.2.0
   shortDescription: Provides an overview of resource requests, limits, and utilization
   description: |
     A simple CLI that provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster.

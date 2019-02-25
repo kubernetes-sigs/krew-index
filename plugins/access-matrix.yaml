@@ -1,0 +1,54 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: access-matrix
+spec:
+  version: "v0.1.0"
+  platforms:
+    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.1.0/bundle.tar.gz
+      sha256: ce67b41ba92cb8bed2332916e5fc019edec634129f2a2d105a3c1f71e8580170
+      bin: rakkess-linux-amd64
+      files:
+        - from: ./rakkess-linux-amd64
+          to: "."
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.1.0/bundle.tar.gz
+      sha256: ce67b41ba92cb8bed2332916e5fc019edec634129f2a2d105a3c1f71e8580170
+      bin: rakkess-darwin-amd64
+      files:
+        - from: ./rakkess-darwin-amd64
+          to: "."
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.1.0/bundle.tar.gz
+      sha256: ce67b41ba92cb8bed2332916e5fc019edec634129f2a2d105a3c1f71e8580170
+      bin: rakkess-windows-amd64.exe
+      files:
+        - from: ./rakkess-windows-amd64
+          to: "."
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+  shortDescription: Show an access matrix for all resources
+  caveats: |
+      Usage:
+        kubectl access-matrix
+
+      Documentation:
+        https://github.com/corneliusweig/rakkess/blob/v0.1.0/doc/USAGE.md#usage
+  description: |+2
+
+      Show an access matrix for all server resources
+
+      This plugin retrieves the full list of server resources, checks access for
+      the current user with the given verbs, and prints the result as a matrix.
+      This complements the usual "kubectl auth can-i" command, which works for
+      a single resource and a single verb.
+
+      More on https://github.com/corneliusweig/rakkess/blob/v0.1.0/doc/USAGE.md#usage

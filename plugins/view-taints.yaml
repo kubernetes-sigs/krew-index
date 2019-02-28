@@ -1,0 +1,22 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: view-taints
+spec:
+  version: "v0.0.1"
+  platforms:
+  - selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+    uri: https://github.com/saniazara01/kubectl-view-taints/releases/download/0.0.1/view-taints.tar.gz
+    sha256: "508bc7622cc03d63040914cebf6ae98d72b3fa2a60508defc31cbc23c49433c1"
+    files:
+    - from: "/view-taints/*.sh"
+      to: "."
+    bin: "./view-taints.sh"
+  shortDescription: Prints the taints of nodes.
+  description: |
+    This plugin displays the list of all the nodes with their respective taints. Plugin also
+    supports displaying taints of specified nodes.
+  caveats: |
+    * bash

@@ -3,10 +3,10 @@ kind: Plugin
 metadata:
   name: get-all
 spec:
-  version: "v1.0.1"
+  version: "v1.0.2"
   platforms:
-    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.0.1/bundle.tar.gz
-      sha256: f810458919bfc9a952cd4fa49db54526410cb7db36967bb973f40bbcf3841fce
+    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.0.2/bundle.tar.gz
+      sha256: a716693abe62dd746d641b75cc1aba50ba9452f61076ac2090e810ddad29a818
       bin: ketall-linux-amd64
       files:
         - from: ./ketall-linux-amd64
@@ -15,8 +15,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.0.1/bundle.tar.gz
-      sha256: f810458919bfc9a952cd4fa49db54526410cb7db36967bb973f40bbcf3841fce
+    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.0.2/bundle.tar.gz
+      sha256: a716693abe62dd746d641b75cc1aba50ba9452f61076ac2090e810ddad29a818
       bin: ketall-darwin-amd64
       files:
         - from: ./ketall-darwin-amd64
@@ -25,8 +25,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.0.1/bundle.tar.gz
-      sha256: f810458919bfc9a952cd4fa49db54526410cb7db36967bb973f40bbcf3841fce
+    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.0.2/bundle.tar.gz
+      sha256: a716693abe62dd746d641b75cc1aba50ba9452f61076ac2090e810ddad29a818
       bin: ketall-windows-amd64.exe
       files:
         - from: ./ketall-windows-amd64
@@ -41,7 +41,7 @@ spec:
         kubectl get-all
 
       Documentation:
-        https://github.com/corneliusweig/ketall/blob/v1.0.1/doc/USAGE.md#usage
+        https://github.com/corneliusweig/ketall/blob/v1.0.2/doc/USAGE.md#usage
   description: |+2
 
       Like 'kubectl get all', but get _really_ all resources
@@ -51,4 +51,4 @@ spec:
       is not enough, because it simply does not show everything. This helper
       lists _really_ all resources the cluster has to offer.
 
-      More on https://github.com/corneliusweig/ketall/blob/v1.0.1/doc/USAGE.md#usage
+      More on https://github.com/corneliusweig/ketall/blob/v1.0.2/doc/USAGE.md#usage

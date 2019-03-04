@@ -1,0 +1,26 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: init-tiller
+spec:
+  version: "v1.0.0"       # optional, only for documentation purposes
+  platforms:
+    # url for downloading the package archive:
+  - uri: https://github.com/yogeek/kubectl-plugins/releases/download/1.0.0/kubectl-init-tiller-v1.0.0.tar.gz
+    sha256: "15e0b59882eab68265812b46c5d937a512130e37ca95fe84db02a15f74ba1423"
+    files:                     # copy the used files out of the archive
+    - from: "/init_tiller/*.sh" # path to the files extracted from archive
+      to: "."               # '.' refers to the root of plugin install directory
+    bin: "init_tiller.sh"  # path to the plugin executable after copying files above
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  shortDescription: Deploy and configure Tiller with RBAC in a given namespace.
+  # (optional) use caveats field to show post-installation recommendations
+  caveats: |
+    This plugin needs the following programs:
+    * kubens
+    * helm
+  description: |
+    This plugin deploys and configures Tiller with RBAC in a given namespace.

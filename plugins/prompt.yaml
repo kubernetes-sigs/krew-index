@@ -15,6 +15,7 @@ spec:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
   version: "v1.0.0-krew"
+  homepage: https://github.com/jordanwilson230/kubectl-plugins#kubectl-prompt
   caveats: |
     This plugin requires bash.
     When removing this plugin, delete the line beginning with `function kubectl()` and `KUBECTL_*_PROMPT` in your ~/.bash_profile.

@@ -6,7 +6,7 @@ spec:
   platforms:
   - head: https://github.com/jordanwilson230/kubectl-plugins/archive/krew.zip
     uri: https://github.com/jordanwilson230/kubectl-plugins/archive/v1.1.0-krew.zip
-    sha256: f25689e8eab7b643d3953b7f6040b94b6170abed3b2bee00c5f037307649a52b
+    sha256: 3077f13ca690d0dfe586ec4c0688fb1083a50c3fe4dd22d4842cf6da2a6ba191
     bin: kubectl-fimages
     files:
     - from: "**/kubectl-fimages"
@@ -16,5 +16,5 @@ spec:
       - {key: os, operator: In, values: [darwin, linux]}
   version: "v1.1.0-krew"
   shortDescription: Search docker images from your private GCR or the public Docker Hub.
-  homepage: https://github.com/jordanwilson230/kubectl-plugins/tree/krew/README.md#kubectl-fimage
   description: Run `kubectl fimages <image>`, or configure it to search your GCR by running `kubectl fimages -c``.
+  homepage: https://github.com/jordanwilson230/kubectl-plugins/tree/krew/README.md#kubectl-fimage

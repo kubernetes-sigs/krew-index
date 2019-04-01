@@ -4,8 +4,8 @@ metadata:
   name: open-svc
 spec:
   platforms:
-  - uri: "https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.1.0/kubectl-open_svc-darwin-amd64.zip"
-    sha256: "10274117f7db298f6be34675e7f0f2c5b54eabfb3c2f9417f40b20a773506e1f"
+  - uri: "https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.1.1/kubectl-open_svc-darwin-amd64.zip"
+    sha256: "fce02319b9343cab686321f91ed33b5f01726c53edab1fd7a8d937a181a83f58"
     bin: kubectl-open_svc
     files:
     - from: "kubectl-open_svc"
@@ -14,8 +14,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: "https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.1.0/kubectl-open_svc-linux-amd64.zip"
-    sha256: "d8c105826d6fd379304f19dc458ea8ff1fd6de17741681d726e17f1753f1525d"
+  - uri: "https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.1.1/kubectl-open_svc-linux-amd64.zip"
+    sha256: "12e88716ea096d51f58d3f299ed1bc88d0d71b381d1b456b2d930a773cd4be3c"
     bin: kubectl-open_svc
     files:
     - from: "kubectl-open_svc"
@@ -24,7 +24,7 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  version: "v2.1.0"
+  version: "v2.1.1"
   shortDescription: Open the Kubernetes URL(s) for the specified service in your browser.
   description: |
     Open the Kubernetes URL(s) for the specified service in your browser

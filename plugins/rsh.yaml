@@ -23,7 +23,7 @@ spec:
     - from: "/kubectl-rsh"
       to: "."
     bin: "./kubectl-rsh"
-  shortDescription: remote shell to a pod container
+  shortDescription: Interactive selection tool for `kubectl exec`
   homepage: https://github.com/gabeduke/kubectl-rsh
   description: |
     ._          _               _   _                _
@@ -32,8 +32,9 @@ spec:
     |   <| |_| | |_) |  __/ (__| |_| |_____| |  \__ \ | | |
     |_|\_\\__,_|_.__/ \___|\___|\__|_|     |_|  |___/_| |_|
 
+    (kubectl remote shell)
 
-    Kubectl-rsh facilitates executing shell commands in kubernetes pods.
+    Kubectl-rsh facilitates selecting a pod to perform `kubectl exec` commands
 
     Arg[1] will act as a filter, any pods that match will be returned in a list
     that the user can select from. Subsequent args make up the array of commands that

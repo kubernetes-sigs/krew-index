@@ -1,0 +1,40 @@
+---
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: config-cleanup
+spec:
+  version: "v0.2.0"
+  shortDescription: Automatically clean up your kubeconfig
+  homepage: https://github.com/b23llc/kubectl-config-cleanup
+  platforms:
+  - uri: https://github.com/b23llc/kubectl-config-cleanup/releases/download/v0.2.0/kubectl-config-cleanup_0.2.0_Linux_x86_64.tar.gz
+    sha256: 758281393d32e947a909c292c5ab6add73edbb47e0a2d22438dc19f7c52d36c4
+    bin: kubectl-config_cleanup
+    files:
+    - from: "./kubectl-config_cleanup"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/b23llc/kubectl-config-cleanup/releases/download/v0.2.0/kubectl-config-cleanup_0.2.0_Darwin_x86_64.tar.gz
+    sha256: d524de6a70200cace6843b48d9173f1bf7ba1775e8629f012f0efa03176cb046
+    bin: kubectl-config_cleanup
+    files:
+    - from: "./kubectl-config_cleanup"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/b23llc/kubectl-config-cleanup/releases/download/v0.2.0/kubectl-config-cleanup_0.2.0_Windows_x86_64.zip
+    sha256: d677a749aca472f7ca86a9a5882911fd17d435e0f720b238c39600a27152c21f
+    bin: kubectl-config_cleanup.exe
+    files:
+    - from: "./kubectl-config_cleanup.exe"
+      to: "."
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

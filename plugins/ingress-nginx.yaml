@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ingress-nginx
+spec:
+  shortDescription: Interact with ingress-nginx
+  description: |
+    The official kubectl plugin for ingress-nginx.
+  version: 0.24.0
+  platforms:
+  - uri: https://github.com/kubernetes/ingress-nginx/releases/download/nginx-0.24.0/kubectl-ingress_nginx-darwin-amd64.tar.gz
+    sha256: 34e999ddc4e1926bbd7f4bdbb5fc40d6c3a5b2ffd711131e4f62e2d24cb2a179
+    files:
+    - from: "*"
+      to: "."
+    bin: "./kubectl-ingress_nginx"
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/kubernetes/ingress-nginx/releases/download/nginx-0.24.0/kubectl-ingress_nginx-linux-amd64.tar.gz
+    sha256: 05d48fe58faa0ff577fe3b9c90f2e21233a140712a9f9ff0c9bd867e65f1b4e5
+    files:
+    - from: "*"
+      to: "."
+    bin: "./kubectl-ingress_nginx"
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/kubernetes/ingress-nginx/releases/download/nginx-0.24.0/kubectl-ingress_nginx-windows-amd64.tar.gz
+    sha256: 1850378a8f124633745f49f20ce8bd01ca0f0920646dc3be95332271ca0f8625
+    files:
+    - from: "*"
+      to: "."
+    bin: "./kubectl-ingress_nginx"
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

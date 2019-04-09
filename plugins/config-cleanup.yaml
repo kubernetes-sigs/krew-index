@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: config-cleanup
 spec:
-  version: "v0.2.0"
+  version: "v0.3.0"
   shortDescription: Automatically clean up your kubeconfig
   description: |
     This plugin will attempt to connect to each apiserver specified by a context entry in your kubeconfig.
@@ -11,8 +11,8 @@ spec:
     Otherwise, the entries are removed.
   homepage: https://github.com/b23llc/kubectl-config-cleanup
   platforms:
-  - uri: https://github.com/b23llc/kubectl-config-cleanup/releases/download/v0.2.0/kubectl-config-cleanup_0.2.0_Linux_x86_64.tar.gz
-    sha256: 758281393d32e947a909c292c5ab6add73edbb47e0a2d22438dc19f7c52d36c4
+  - uri: https://github.com/b23llc/kubectl-config-cleanup/releases/download/v0.3.0/kubectl-config-cleanup_0.3.0_Linux_x86_64.tar.gz
+    sha256: 8f934ecf33caaafbdaf1e949dac387241d326e35eddc5bedecb47ecf9bfc2f58
     bin: kubectl-config_cleanup
     files:
     - from: "./kubectl-config_cleanup"
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/b23llc/kubectl-config-cleanup/releases/download/v0.2.0/kubectl-config-cleanup_0.2.0_Darwin_x86_64.tar.gz
-    sha256: d524de6a70200cace6843b48d9173f1bf7ba1775e8629f012f0efa03176cb046
+  - uri: https://github.com/b23llc/kubectl-config-cleanup/releases/download/v0.3.0/kubectl-config-cleanup_0.3.0_Darwin_x86_64.tar.gz
+    sha256: 33cbf82f42b6a9d0ac85dd1bd91fe6aa389316c4fe587abbedcb7e25a4a3eff8
     bin: kubectl-config_cleanup
     files:
     - from: "./kubectl-config_cleanup"
@@ -31,8 +31,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/b23llc/kubectl-config-cleanup/releases/download/v0.2.0/kubectl-config-cleanup_0.2.0_Windows_x86_64.zip
-    sha256: d677a749aca472f7ca86a9a5882911fd17d435e0f720b238c39600a27152c21f
+  - uri: https://github.com/b23llc/kubectl-config-cleanup/releases/download/v0.3.0/kubectl-config-cleanup_0.3.0_Windows_x86_64.zip
+    sha256: c6d2e03bb5ffdf6c806a14fbf1a87e08b30f507ab04ada759f7f7e477c60b990
     bin: kubectl-config_cleanup.exe
     files:
     - from: "./kubectl-config_cleanup.exe"

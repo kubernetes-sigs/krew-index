@@ -1,0 +1,47 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: debug
+spec:
+  version: "v0.1.0"
+  homepage: https://github.com/aylei/kubectl-debug
+  shortDescription: Debug your pod by a new container with every troubleshooting tools pre-installed
+  description: |
+    This plugin helps you debug your pod by launching an debug container and join
+    the linux namespaces of the target container, so that you can use the tools
+    installed [in the debug container to operate the target container seamlessly.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/aylei/kubectl-debug/releases/download/v0.1.0/kubectl-debug_0.1.0_linux_amd64.tar.gz
+    sha256: "1b5c90bd4858c20f618ec0f6152f3d02649ae7d4b1f8b419d05fc5a1bdb15547"
+    files:
+    - from: kubectl-debug
+      to: "."
+    bin: ./kubectl-deubg
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/aylei/kubectl-debug/releases/download/v0.1.0/kubectl-debug_0.1.0_darwin_amd64.tar.gz
+    sha256: "65abc84154c53938a5637123c86cb3102ad16f4d09d582b838912224457cfff4"
+    files:
+    - from: kubectl-debug
+      to: "."
+    bin: ./kubectl-debug
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/aylei/kubectl-debug/releases/download/v0.1.0/kubectl-debug_0.1.0_windows_amd64.tar.gz
+    sha256: "6cf6822d96f9a6bc7be9d61c6ff133871168bb6c8b41cbc3cacde063ec4787c6"
+    files:
+    - from: kubectl-debug.exe
+      to: "."
+    bin: ./kubectl-debug.exe
+  caveats: |
+    Read the documentation: https://github.com/aylei/kubectl-debug
+
+    Currently, kubectl-debug only support docker as container runtime.

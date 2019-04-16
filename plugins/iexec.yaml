@@ -3,13 +3,13 @@ kind: Plugin
 metadata:
   name: iexec
 spec:
-  version: "0.1.9"
+  version: "v0.1.15"
   platforms:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [linux]}
-    uri: https://github.com/gabeduke/kubectl-iexec/releases/download/0.1.14/kubectl-iexec_0.1.14_Linux_x86_64.tar.gz
-    sha256: "8d69b66309d31a5422ea742398751d9b9eacc2f4bd55b8673cb3f9e6bbbb4af9"
+    uri: https://github.com/gabeduke/kubectl-iexec/releases/download/0.1.15/kubectl-iexec_0.1.15_Linux_x86_64.tar.gz
+    sha256: "2bd1125f7338c29d5ecf43a98710253e7083fff5fd2a182638b21e7957794706"
     files:
     - from: "/kubectl-iexec"
       to: "."
@@ -17,8 +17,8 @@ spec:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin]}
-    uri: https://github.com/gabeduke/kubectl-iexec/releases/download/0.1.14/kubectl-iexec_0.1.14_Darwin_x86_64.tar.gz
-    sha256: "e1c5524384fa5db09a84341ebd52bcfaa9d132fa341889c60ccb067335781d77"
+    uri: https://github.com/gabeduke/kubectl-iexec/releases/download/0.1.15/kubectl-iexec_0.1.15_Darwin_x86_64.tar.gz
+    sha256: "ff4438e042a7d83272a034d6e0c44e31a204ad54410c106924dc773a3014f1ac"
     files:
     - from: "/kubectl-iexec"
       to: "."
@@ -26,17 +26,21 @@ spec:
   shortDescription: Interactive selection tool for `kubectl exec`
   homepage: https://github.com/gabeduke/kubectl-iexec
   description: |
-    _          _               _   _        _
-    | |        | |             | | | |      (_)
-    | | ___   _| |__   ___  ___| |_| |______ _  _____  _____  ___
-    | |/ / | | | '_ \ / _ \/ __| __| |______| |/ _ \ \/ / _ \/ __|
-    |   <| |_| | |_) |  __/ (__| |_| |      | |  __/>  <  __/ (__
-    |_|\_\\__,_|_.__/ \___|\___|\__|_|      |_|\___/_/\_\___|\___|
-
-    (kubectl remote shell)
-
-    Kubectl-iexec interactively selects a pod to perform `kubectl exec` commands
-
+    Interactive pod and container selector for `kubectl exec`
+  caveats: |
     Arg[1] will act as a filter, any pods that match will be returned in a list
     that the user can select from. Subsequent args make up the array of commands that
     should be executed on the pod.
+
+    example:
+    kubectl iexec busybox cat /etc/hosts
+
+    Usage:
+      iexec [filter] [remote command(s)] [flags]
+
+    Flags:
+      -c, --container string   Container to exec into (defaults to container[0]
+      -h, --help               help for iexec
+      -l, --log-level string   log level (trace|debug|info|warn|error|fatal|panic)
+      -n, --namespace string   Namespace to search
+      -v, --vimMode            Vim Mode enabled

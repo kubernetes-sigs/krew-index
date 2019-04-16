@@ -3,12 +3,12 @@ kind: Plugin
 metadata:
   name: iexec
 spec:
-  version: "0.1.14"
+  version: "0.1.9"
   platforms:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [linux]}
-    uri: https://github.com/gabeduke/kubectl-iexec/releases/download/0.1.14/kubectl-iexec.1.14_Linux_x86_64.tar.gz
+    uri: https://github.com/gabeduke/kubectl-iexec/releases/download/0.1.14/kubectl-iexec_0.1.14_Linux_x86_64.tar.gz
     sha256: "8d69b66309d31a5422ea742398751d9b9eacc2f4bd55b8673cb3f9e6bbbb4af9"
     files:
     - from: "/kubectl-iexec"
@@ -17,7 +17,7 @@ spec:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin]}
-    uri: https://github.com/gabeduke/kubectl-iexec/releases/download/0.1.14/kubectl-iexec.1.14_Darwin_x86_64.tar.gz
+    uri: https://github.com/gabeduke/kubectl-iexec/releases/download/0.1.14/kubectl-iexec_0.1.14_Darwin_x86_64.tar.gz
     sha256: "e1c5524384fa5db09a84341ebd52bcfaa9d132fa341889c60ccb067335781d77"
     files:
     - from: "/kubectl-iexec"

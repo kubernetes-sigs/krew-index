@@ -2,7 +2,7 @@
 
 This is the Plugin Index Repository for [krew kubectl plugin manager][krew].
 
-[krew]: https://github.com/kuberntes-sigs/krew
+[krew]: https://github.com/kubernetes-sigs/krew
 
 You can find a list of kubectl plugins available on krew in the
 [`./plugins` directory](./plugins).
@@ -10,7 +10,7 @@ You can find a list of kubectl plugins available on krew in the
 ## Submitting new plugins
 
 To learn how to create a new plugin and submit it to krew-index, read the
-[Developer Guide](https://github.com/kuberntes-sigs/krew/blob/master/docs/DEVELOPER_GUIDE.md)
+[Developer Guide](https://github.com/kubernetes-sigs/krew/blob/master/docs/DEVELOPER_GUIDE.md)
 and make a pull request to this repository.
 
 The decision criteria for plugins accepted to the centralized repository are
@@ -19,8 +19,8 @@ the admission criteria for this repository.
 
 ## Documentation
 
-- [Architecture](https://github.com/kuberntes-sigs/krew/blob/master/docs/KREW_ARCHITECTURE.md)
-- [Docs](https://github.com/kuberntes-sigs/krew/blob/master/docs/)
+- [Architecture](https://github.com/kubernetes-sigs/krew/blob/master/docs/KREW_ARCHITECTURE.md)
+- [Docs](https://github.com/kubernetes-sigs/krew/blob/master/docs/)
 - [Contributing](./CONTRIBUTING.md)  
 
 ## Community

@@ -28,15 +28,9 @@ spec:
   description: |
     Interactive pod and container selector for `kubectl exec`
   caveats: |
-    Arg[1] will act as a filter, any pods that match will be returned in a list
-    that the user can select from. Subsequent args make up the array of commands that
-    should be executed on the pod.
+    Documentaion: https://github.com/gabeduke/kubectl-iexec
 
-    example:
-    kubectl iexec busybox cat /etc/hosts
-
-    Usage:
-      iexec [filter] [remote command(s)] [flags]
+    Usage: `kubectl iexec [pod]`
 
     Flags:
       -c, --container string   Container to exec into (defaults to container[0]
@@ -44,3 +38,18 @@ spec:
       -l, --log-level string   log level (trace|debug|info|warn|error|fatal|panic)
       -n, --namespace string   Namespace to search
       -v, --vimMode            Vim Mode enabled
+
+    ##############################################################
+    # example:                                                   #
+    #                                                            #
+    #   >> kubectl get pod                                       #
+    #   NAME         READY   STATUS        RESTARTS   AGE        #
+    #   hello-pod1   1/1     Running       0          37d        #
+    #   hello-pod2   1/1     Running       0          37d        #
+    #                                                            #
+    #   >> kubectl iexec hello                                   #
+    #   Use the arrow keys to navigate: ↓ ↑ → ←                  #
+    #   ? Select Pod:                                            #
+    #     Namespace: default | Pod: hello-pod1                   #
+    #     Namespace: default | Pod: hello-pod2                   #
+    ##############################################################

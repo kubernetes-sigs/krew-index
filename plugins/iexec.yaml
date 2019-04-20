@@ -28,28 +28,10 @@ spec:
   description: |
     Interactive pod and container selector for `kubectl exec`
   caveats: |
-    Documentaion: https://github.com/gabeduke/kubectl-iexec
+    Read documentaion at: https://github.com/gabeduke/kubectl-iexec
+    To get help run: kubectl iexec --help
 
-    Usage: `kubectl iexec [pod]`
+    Examples:
 
-    Flags:
-      -c, --container string   Container to exec into (defaults to container[0]
-      -h, --help               help for iexec
-      -l, --log-level string   log level (trace|debug|info|warn|error|fatal|panic)
-      -n, --namespace string   Namespace to search
-      -v, --vimMode            Vim Mode enabled
-
-    ##############################################################
-    # example:                                                   #
-    #                                                            #
-    #   >> kubectl get pod                                       #
-    #   NAME         READY   STATUS        RESTARTS   AGE        #
-    #   hello-pod1   1/1     Running       0          37d        #
-    #   hello-pod2   1/1     Running       0          37d        #
-    #                                                            #
-    #   >> kubectl iexec hello                                   #
-    #   Use the arrow keys to navigate: ↓ ↑ → ←                  #
-    #   ? Select Pod:                                            #
-    #     Namespace: default | Pod: hello-pod1                   #
-    #     Namespace: default | Pod: hello-pod2                   #
-    ##############################################################
+    Run command in container:
+      kubectl iexec [pod] [command]

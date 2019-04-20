@@ -1,0 +1,50 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: search
+spec:
+  platforms:
+  - uri: https://github.com/guessi/kubectl-search/releases/download/v1.0.4/kubectl-search-Darwin-x86_64.tar.gz
+    sha256: 0e0cc4443484a1835204cda8632803755c1760a9760e7661e445b101a1054606
+    bin: kubectl-search
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/guessi/kubectl-search/releases/download/v1.0.4/kubectl-search-Linux-x86_64.tar.gz
+    sha256: 9e774344edccfd70ee23f08d5f5a7a25b8fcb1c042f6635f806ae921f8f15211
+    bin: kubectl-search
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/guessi/kubectl-search/releases/download/v1.0.4/kubectl-search-Windows-x86_64.tar.gz
+    sha256: 39a3193c42d4f48c9c959d6a26bdce12c4a684a8eb4840cd35afabc31dda649f
+    bin: kubectl-search.exe
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  version: v1.0.4
+  homepage: https://github.com/guessi/kubectl-search
+  caveats: This plugin requires an existing KUBECONFIG file, with a `current-context` field set.
+  shortDescription: Search Kubernetes resources with keyword
+  description: |
+    Search Kubernetes resources with keyword
+
+    From ...
+    * kubectl get -n namespace [deployments|pods|...] | grep "keyword" # no Header output
+
+    To ...
+    * kubectl search -n namespace [deployments|pods|...] keyword
+
+    No more pipe, no more grep :-)

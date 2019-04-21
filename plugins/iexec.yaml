@@ -28,19 +28,10 @@ spec:
   description: |
     Interactive pod and container selector for `kubectl exec`
   caveats: |
-    Arg[1] will act as a filter, any pods that match will be returned in a list
-    that the user can select from. Subsequent args make up the array of commands that
-    should be executed on the pod.
+    Read documentaion at: https://github.com/gabeduke/kubectl-iexec
+    To get help run: kubectl iexec --help
 
-    example:
-    kubectl iexec busybox cat /etc/hosts
+    Examples:
 
-    Usage:
-      iexec [filter] [remote command(s)] [flags]
-
-    Flags:
-      -c, --container string   Container to exec into (defaults to container[0]
-      -h, --help               help for iexec
-      -l, --log-level string   log level (trace|debug|info|warn|error|fatal|panic)
-      -n, --namespace string   Namespace to search
-      -v, --vimMode            Vim Mode enabled
+    Run command in container:
+      kubectl iexec [pod] [command]

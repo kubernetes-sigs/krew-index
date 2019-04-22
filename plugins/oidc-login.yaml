@@ -1,0 +1,57 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: oidc-login
+spec:
+  shortDescription: Login for OpenID Connect authentication
+  description: |
+    This plugin gets a token from the OIDC provider and writes it to the kubeconfig.
+
+    Just run:
+      % kubectl oidc-login
+
+    It opens the browser and you can log in to the provider.
+    After authentication, it gets an ID token and refresh token and writes them to the kubeconfig.
+
+  caveats: |
+    You need to setup the following components:
+      * OIDC provider
+      * Kubernetes API server
+      * Role for your group or user
+      * kubectl authentication
+
+    See https://github.com/int128/kubelogin for more.
+
+  homepage: https://github.com/int128/kubelogin
+  version: v1.10.0
+  platforms:
+    - uri: https://github.com/int128/kubelogin/releases/download/v1.10.0/kubelogin_linux_amd64.zip
+      sha256: "6cd42c549a516043bca95a1def20ea37bc4fce11acda1a1c598e08d3c62e1482"
+      bin: kubelogin
+      files:
+        - from: "kubelogin"
+          to: "."
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - uri: https://github.com/int128/kubelogin/releases/download/v1.10.0/kubelogin_darwin_amd64.zip
+      sha256: "3ef8999504007b4bba93c69b548b83fa44f2151078ead8242be6a6fcdc7b916b"
+      bin: kubelogin
+      files:
+        - from: "kubelogin"
+          to: "."
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+    - uri: https://github.com/int128/kubelogin/releases/download/v1.10.0/kubelogin_windows_amd64.zip
+      sha256: "6f0c316f639625521ff3a6a134ceded583579699c00fc7f54ce04aad527a3134"
+      bin: kubelogin.exe
+      files:
+        - from: "kubelogin.exe"
+          to: "."
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64

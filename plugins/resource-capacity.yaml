@@ -4,8 +4,8 @@ metadata:
   name: resource-capacity
 spec:
   platforms:
-  - uri: https://github.com/robscott/kube-capacity/releases/download/0.2.0/kube-capacity_0.2.0_Darwin_x86_64.tar.gz
-    sha256: 19a6c18385a8a6c9b162bb7838f4ee2198ddb41788ab69a17ada73fd4230d8ce
+  - uri: https://github.com/robscott/kube-capacity/releases/download/0.3.0/kube-capacity_0.3.0_Darwin_x86_64.tar.gz
+    sha256: 685c964d0416c23f70b75fdd73fdda5a32f4331125892a9415977f8dd3553050
     bin: kube-capacity
     files:
     - from: "*"
@@ -14,8 +14,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/robscott/kube-capacity/releases/download/0.2.0/kube-capacity_0.2.0_Linux_x86_64.tar.gz
-    sha256: 0ed411af27884a54aa74c89d98ca327ce4a9c57bf759961f1db3af6c59c0f027
+  - uri: https://github.com/robscott/kube-capacity/releases/download/0.3.0/kube-capacity_0.3.0_Linux_x86_64.tar.gz
+    sha256: f0c155620793b3d7fb4fb985d5654c50402717deda51490d16925b7a561db193
     bin: kube-capacity
     files:
     - from: "*"
@@ -24,7 +24,7 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  version: v0.2.0
+  version: v0.3.0
   homepage: https://github.com/robscott/kube-capacity
   shortDescription: Provides an overview of resource requests, limits, and utilization
   description: |

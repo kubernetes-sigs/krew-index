@@ -1,24 +1,48 @@
 # krew-index
 
-This is the *Index Repository* for [krew](https://github.com/GoogleContainerTools/krew).
+This is the Plugin Index Repository for [krew kubectl plugin manager][krew].
 
-You can find a list of kubectl plugins available on krew in the [`./plugins` directory](./plugins).
+[krew]: https://github.com/kubernetes-sigs/krew
 
-To create a new plugin, read the
-[Developer Guide](https://github.com/GoogleContainerTools/krew/blob/master/docs/DEVELOPER_GUIDE.md)
+You can find a list of kubectl plugins available on krew in the
+[`./plugins` directory](./plugins).
+
+## Submitting new plugins
+
+To learn how to create a new plugin and submit it to krew-index, read the
+[Developer Guide](https://github.com/kubernetes-sigs/krew/blob/master/docs/DEVELOPER_GUIDE.md)
 and make a pull request to this repository.
 
-# Additional Links
+The decision criteria for plugins accepted to the centralized repository are
+evaluated on a case-by-case basis as the community arrives to a decision on
+the admission criteria for this repository.
 
-- [Architecture](https://github.com/GoogleContainerTools/krew/blob/master/docs/KREW_ARCHITECTURE.md)
-- [Docs](https://github.com/GoogleContainerTools/krew/blob/master/docs/)
+## Documentation
+
+- [Architecture](https://github.com/kubernetes-sigs/krew/blob/master/docs/KREW_ARCHITECTURE.md)
+- [Docs](https://github.com/kubernetes-sigs/krew/blob/master/docs/)
 - [Contributing](./CONTRIBUTING.md)  
 
-# LICENSE
+## Community
 
-The code is submitted under the Apache 2.0 License described in the
-[LICENSE](./LICENSE) file.
+### Bug reports
 
-----
+* If you're having a problem with a particular plugin's installation or
+  upgrades, file an issue in this repository.
+* If you have a problem with the Krew itself, please file an
+  issue in the [krew] repository.
+* If you're having an issue with an installed plugin, file an issue for the
+  repository the plugin's source code is hosted at.
 
-This is not an official Google project.
+### Communication channels
+
+* [Slack](https://kubernetes.slack.com/messages/sig-cli) #sig-cli
+* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cli)
+* [Kubernetes Community site](http://kubernetes.io/community/)
+
+### Code of Conduct
+
+Participation in the Kubernetes community is governed by the [Kubernetes Code
+of Conduct](https://github.com/kubernetes-sigs/kustomize/blob/master/code-of-conduct.md).
+
+[index]:https://github.com/kubernetes-sigs/krew-index

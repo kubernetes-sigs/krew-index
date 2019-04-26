@@ -3,10 +3,10 @@ kind: Plugin
 metadata:
   name: access-matrix
 spec:
-  version: "v0.3.0"
+  version: "v0.4.0"
   platforms:
-    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.3.0/bundle.tar.gz
-      sha256: 29aec12b0970ed9b2e4e5e5e9bd0a47d285a19d885e1a356e6dec4e5ceb5d55b
+    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.0/bundle.tar.gz
+      sha256: 7a16c61dfc4e2924fdedc894d59db7820bc4643a58d9a853c4eb83eadd4deee8
       bin: rakkess-linux-amd64
       files:
         - from: ./rakkess-linux-amd64
@@ -15,8 +15,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.3.0/bundle.tar.gz
-      sha256: 29aec12b0970ed9b2e4e5e5e9bd0a47d285a19d885e1a356e6dec4e5ceb5d55b
+    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.0/bundle.tar.gz
+      sha256: 7a16c61dfc4e2924fdedc894d59db7820bc4643a58d9a853c4eb83eadd4deee8
       bin: rakkess-darwin-amd64
       files:
         - from: ./rakkess-darwin-amd64
@@ -25,8 +25,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.3.0/bundle.tar.gz
-      sha256: 29aec12b0970ed9b2e4e5e5e9bd0a47d285a19d885e1a356e6dec4e5ceb5d55b
+    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.0/bundle.tar.gz
+      sha256: 7a16c61dfc4e2924fdedc894d59db7820bc4643a58d9a853c4eb83eadd4deee8
       bin: rakkess-windows-amd64.exe
       files:
         - from: ./rakkess-windows-amd64
@@ -42,7 +42,7 @@ spec:
         kubectl access-matrix
 
       Documentation:
-        https://github.com/corneliusweig/rakkess/blob/v0.3.0/doc/USAGE.md#usage
+        https://github.com/corneliusweig/rakkess/blob/v0.4.0/doc/USAGE.md#usage
   description: |+2
 
       Show an access matrix for server resources
@@ -50,9 +50,11 @@ spec:
       This plugin retrieves the full list of server resources, checks access for
       the current user with the given verbs, and prints the result as a matrix.
       This complements the usual "kubectl auth can-i" command, which works for
-      a single resource and a single verb.
+      a single resource and a single verb. For example:
+       $ kubectl access-matrix
 
-      It also supports a mode that prints all subjects with access to a given
-      resource (needs read access to Roles and ClusterRoles).
+      It also supports a mode which prints all subjects with access to a given
+      resource (needs read access to Roles and ClusterRoles). For example:
+       $ kubectl access-matrix for configmap
 
-      More on https://github.com/corneliusweig/rakkess/blob/v0.3.0/doc/USAGE.md#usage
+      More on https://github.com/corneliusweig/rakkess/blob/v0.4.0/doc/USAGE.md#usage

@@ -17,7 +17,7 @@ before_install:
     )
 
   # TODO(ahmetb) pin this to a version via a variable
-  - env GOBIN=$HOME/bin go get github.com/GoogleContainerTools/krew/cmd/validate-krew-manifest
+  - env GOBIN=$HOME/bin go get github.com/kubernetes-sigs/krew/cmd/validate-krew-manifest
 
 install: true # skip go get ./...
 

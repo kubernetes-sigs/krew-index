@@ -3,10 +3,10 @@ kind: Plugin
 metadata:
   name: konfig
 spec:
-  version: "v0.2.0"
+  version: "v0.2.1"
   platforms:
-    - uri: https://github.com/corneliusweig/konfig/releases/download/v0.2.0/bundle.tar.gz
-      sha256: 3ea1be03bc204aa4b50ce8547d82a5fe36f94b529b06977780c8ccab9d411977
+    - uri: https://github.com/corneliusweig/konfig/releases/download/v0.2.1/bundle.tar.gz
+      sha256: c86a33e9ba2c8f739d96aa19c94d14f10b15e1c6424f693ec2e475aed3161b0a
       bin: konfig-krew
       files:
         - from: ./konfig-krew
@@ -14,8 +14,8 @@ spec:
       selector:
         matchLabels:
           os: linux
-    - uri: https://github.com/corneliusweig/konfig/releases/download/v0.2.0/bundle.tar.gz
-      sha256: 3ea1be03bc204aa4b50ce8547d82a5fe36f94b529b06977780c8ccab9d411977
+    - uri: https://github.com/corneliusweig/konfig/releases/download/v0.2.1/bundle.tar.gz
+      sha256: c86a33e9ba2c8f739d96aa19c94d14f10b15e1c6424f693ec2e475aed3161b0a
       bin: konfig-krew
       files:
         - from: ./konfig-krew
@@ -23,8 +23,8 @@ spec:
       selector:
         matchLabels:
           os: darwin
-    - uri: https://github.com/corneliusweig/konfig/releases/download/v0.2.0/bundle.tar.gz
-      sha256: 3ea1be03bc204aa4b50ce8547d82a5fe36f94b529b06977780c8ccab9d411977
+    - uri: https://github.com/corneliusweig/konfig/releases/download/v0.2.1/bundle.tar.gz
+      sha256: c86a33e9ba2c8f739d96aa19c94d14f10b15e1c6424f693ec2e475aed3161b0a
       bin: konfig-krew.exe
       files:
         - from: ./konfig-krew
@@ -36,16 +36,17 @@ spec:
   homepage: https://github.com/corneliusweig/konfig
   caveats: |
       Usage:
-        kubectl konfig merge kubeconfig1 kubeconfig2 > merged
-        kubectl konfig import new-cfg > ~/.kube/config
-        kubectl konfig export ctx1 ctx2 -k k8s.yaml,k3s.yaml > extracted
+        $ kubectl konfig import --save new-cfg
+        $ kubectl konfig merge kubeconfig1 kubeconfig2 > merged
+        $ kubectl konfig export ctx1 ctx2 -k k8s.yaml,k3s.yaml > extracted
 
       Documentation:
-        https://github.com/corneliusweig/konfig/blob/v0.2.0/doc/USAGE.md#usage
+        $ kubectl konfig help
+        or https://github.com/corneliusweig/konfig/blob/v0.2.1/doc/USAGE.md#usage
   description: |+2
 
       konfig helps to merge, split or import kubeconfig files
 
       This is a convenience wrapper around the `kubectl config view` command.
 
-      More on https://github.com/corneliusweig/konfig/blob/v0.2.0/doc/USAGE.md#usage
+      More on https://github.com/corneliusweig/konfig/blob/v0.2.1/doc/USAGE.md#usage

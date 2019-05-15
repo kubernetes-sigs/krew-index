@@ -1,0 +1,39 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: aks
+spec:
+  version: v1.0.0
+  homepage: https://github.com/C123R/kubectl-aks
+  caveats: |
+    In order to access AKS clusters from kubectl, you need azure service principal. 
+    You can find more information and documentation at https://github.com/C123R/kubectl-aks.
+  shortDescription: Manage AKS clusters from kubectl
+  description: |
+    Kubectl aks manages AKS clusters. `kubectl-aks` support following operation:
+    - List AKS cluster from the current Azure Subscrption.
+    - Get the upgrade versions available for a managed Kubernetes cluster.
+    - Get available upgardes for the cluster.
+    - Upgrade a managed Kubernetes cluster to a newer version.
+    - Upgrade a managed Kubernetes cluster to a newer version.
+  platforms:
+  - uri: https://github.com/C123R/kubectl-aks/releases/download/v0.1.0/kubectl-aks_darwin_x86_64_v0.1.0.zip
+    sha256: 230f8dbbb9af2c269cf3b13e5bddc425c7a62b360c401763eacf9835c3b5e205
+    bin: kubectl-aks
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/C123R/kubectl-aks/releases/download/v0.1.0/kubectl-aks_linux_x86_64_v0.1.0.zip
+    sha256: 93bf83430df7977bce0ba7c1d9fc66a7da1d0e5f533a8500856b8434fc052bf6
+    bin: kubectl-aks
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64

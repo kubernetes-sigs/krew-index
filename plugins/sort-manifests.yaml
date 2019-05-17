@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: sort-manifests
 spec:
-  version: v0.1.0
+  version: v0.2.0
   shortDescription: Sort manfest files in a proper order by Kind
   description: |
     When installing manifests, they should be sorted in a proper order by Kind.
@@ -14,8 +14,8 @@ spec:
     using tiller.SortByKind() in Kubernetes Helm.
   homepage: https://github.com/superbrothers/ksort
   platforms:
-  - uri: https://github.com/superbrothers/ksort/releases/download/v0.1.0/ksort-darwin-amd64.zip
-    sha256: 4d7ab60c6e2aadcdc968e7bf9d383015cd8ff6ff6eca727b2475f5b0b336628d
+  - uri: https://github.com/superbrothers/ksort/releases/download/v0.2.0/ksort-darwin-amd64.zip
+    sha256: e8539b23aaf9b1486a2924f059c825771f66aefc739713af9b68d5ca772c84f9
     bin: ksort
     files:
     - from: ksort
@@ -24,8 +24,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/superbrothers/ksort/releases/download/v0.1.0/ksort-linux-amd64.zip
-    sha256: 52413ad1f8e1a92871afe376c888b8aa3ec534651fc4d6c90efb3c2fbeec03a7
+  - uri: https://github.com/superbrothers/ksort/releases/download/v0.2.0/ksort-linux-amd64.zip
+    sha256: 631ea7e2e88cfc148376d06d8e1e849b66501e9ec9900c231db38b6ea4817dc1
     bin: ksort
     files:
     - from: ksort

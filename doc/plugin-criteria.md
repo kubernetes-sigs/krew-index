@@ -21,25 +21,90 @@ Purpose
 
 This task should be classified in one of the categories:
 
-| #  | Classification                                                                                                                                                                                                                 | Recommendation                                                                                                                                                                                            |
-|----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1. |  The task is already solved by kubectl.                                                                                                                                                                                        |  Mere command wrappers are not acceptable, as those are better covered by shell aliases.  However, convenience and productivity improvements are welcome (examples: `konfig`, `change-ns`, `view-secret`) |
-| 2. | The task provides a different solution to a problem which is also solved by kubectl. However, the task would be impossible or very hard to reproduce with kubectl alone. Examples: `access-matrix`, `get-all`, `mtail`, `tail` |  In general welcome unless it overlaps significantly with other plugins or has a bad usability.                                                                                                           |
-| 3. | The task addresses a completely different problem than any of the kubectl subcommands, but is clearly focused on k8s.                                                                                                          |  Gray area. If the task fits well into `kubectl`, it may be accepted (for example `kubectl debug-pod`).                                                                                                       |
-| 4. | The task is very dissimilar to common kubectl tasks and is not primarily focused on k8s. However, it can be useful in the k8s ecosystem.                                                                                       | Not acceptable.                                                                                                                                                                                           |
-| 5. | The task is very dissimilar to common kubectl tasks and is not focused on k8s. Its general usefulness in the k8s ecosystem is questionable.                                                                                    | Not acceptable.                                                                                                                                                                                           |
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Classification</th>
+        <th>Recommendation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1.</td>
+        <td>The task is already solved by kubectl.</td>
+        <td>
+          Mere command wrappers are not acceptable, as those are better coveredby shell aliases.
+          However, convenience and productivity improvements are welcome (examples: `konfig`, `change-ns`, `view-secret`)
+        </td>
+    </tr>
+    <tr>
+        <td>2.</td>
+        <td>
+          The task provides a different solution to a problem which is also solved by kubectl.
+          However, the task would be impossible or very hard to reproduce with kubectl alone.
+          Examples: `access-matrix`, `get-all`, `mtail`, `tail`
+        </td>
+        <td>In general welcome unless it overlaps significantly with other plugins or has a bad usability.</td>
+    </tr>
+    <tr>
+        <td>3.</td>
+        <td>The task addresses a completely different problem than any of the kubectl subcommands, but is clearly focused on k8s.</td>
+        <td>Gray area. If the task fits well into `kubectl`, it may be accepted (for example `kubectl debug-pod`).</td>
+    </tr>
+    <tr>
+        <td>4.</td>
+        <td>
+          The task is very dissimilar to common kubectl tasks and is not primarily focused on k8s.
+          However, it can be useful in the k8s ecosystem.
+        </td>
+        <td>Not acceptable.</td>
+    </tr>
+    <tr>
+        <td>5.</td>
+        <td>
+          The task is very dissimilar to common kubectl tasks and is not focused on k8s.
+          Its general usefulness in the k8s ecosystem is questionable.
+        </td>
+        <td>Not acceptable.</td>
+    </tr>
+    </tbody>
+</table>
 
 Category
 ---
 
 In order of decreasing usage frequency:
 
-
-| #  | Classification                                                                                                            | Recommendation                             |
-|----|---------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|
-| 1. | Recurring task on the same cluster. For example: `mtail`                                                                  | Favors acceptance as plugin.               |
-| 2. | Recurring task on different cluster instances, but one-time task on the same cluster instance. For example: `init-tiller` | Gray area. Usually this is not acceptable. |
-| 3. | One-time task per machine.                                                                                                | In general not acceptable as plugin.       |
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Classification</th>
+        <th>Recommendation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1.</td>
+        <td>Recurring task on the same cluster. For example: `mtail`</td>
+        <td>Favors acceptance as plugin.</td>
+    </tr>
+    <tr>
+        <td>2.</td>
+        <td>
+          Recurring task on different cluster instances, but one-time task on the same cluster instance.
+          For example: `init-tiller`
+        </td>
+        <td>Gray area. Usually this is not acceptable.</td>
+    </tr>
+    <tr>
+        <td>3.</td>
+        <td>One-time task per machine.</td>
+        <td>In general not acceptable as plugin.</td>
+    </tr>
+    </tbody>
+</table>
 
 Usability
 ---

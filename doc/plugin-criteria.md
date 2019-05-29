@@ -35,7 +35,12 @@ This task should be classified in one of the categories:
         <td>The task is already solved by kubectl.</td>
         <td>
           Mere command wrappers are not acceptable, as those are better coveredby shell aliases.
-          However, convenience and productivity improvements are welcome (examples: `konfig`, `change-ns`, `view-secret`)
+          However, convenience and productivity improvements are welcome. Examples:
+           <ul>
+             <li>`konfig` is a convencience script to aid with merging of kubeconfig files, similar to `kubectl config view`.</li>
+             <li>`change-ns` is a utility easily switch between namespaces, similar to `kubectl config set-context --curent -n`</li>
+             <li>`view-secret` retrieves and decodes secrets, similar to `kubectl get secret -o jsonpath=... | base64 -d`</li>
+           </ul>
         </td>
     </tr>
     <tr>
@@ -43,9 +48,17 @@ This task should be classified in one of the categories:
         <td>
           The task provides a different solution to a problem which is also solved by kubectl.
           However, the task would be impossible or very hard to reproduce with kubectl alone.
-          Examples: `access-matrix`, `get-all`, `mtail`, `tail`
         </td>
-        <td>In general welcome unless it overlaps significantly with other plugins or has a bad usability.</td>
+        <td>
+          In general welcome unless it overlaps significantly with other plugins or has a bad usability.
+          Examples:
+          <ul>
+            <li>`get-all` plugin is a replacement for `kubectl get all` command which actually fetches only a subset of API resource types.</li>
+            <li>`access-matrix` gives an overview of authorities, whereas `kubectl auth can-i` only applies to single resource/verb pairs</li>
+            <li>`tail` plugin allows tailing logs from pods from a label selector, a namespace or all namespaces at once, whereas `kubectl logs` command has more limited functionality.</li>
+            <li>`mtail` plugin allows tailing logs from pods from a label selector, similar to `kubectl logs -l` but labels log lines.</li>
+          </ul>
+        </td>
     </tr>
     <tr>
         <td>3.</td>

@@ -1,0 +1,47 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: virt
+spec:
+  version: "v0.17.2"
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: "https://github.com/dhiller/kubectl-virt-plugin/releases/download/v0.17.2/virtctl-v0.17.2-linux-amd64.tar.gz"
+      sha256: "bbf3b4f15b64ffe4c9196b53d045a92bc8113d24cfde471dded3c8c505aef663"
+      files:
+        - from: "/virtctl/virtctl-v0.17.2-linux-amd64"
+          to: "."
+      bin: "./virtctl-v0.17.2-linux-amd64"
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: "https://github.com/dhiller/kubectl-virt-plugin/releases/download/v0.17.2/virtctl-v0.17.2-windows-amd64.exe.tar.gz"
+      sha256: "828876ae8abc50c7965f7b9eaa1ff3f6d3d9b0dad25c79e6a7d49dd6a1543087"
+      files:
+        - from: "/virtctl/virtctl-v0.17.2-windows-amd64.exe"
+          to: "."
+      bin: "./virtctl-v0.17.2-windows-amd64.exe"
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: "https://github.com/dhiller/kubectl-virt-plugin/releases/download/v0.17.2/virtctl-v0.17.2-darwin-amd64.tar.gz"
+      sha256: "ffdc599d4581a98e230ffab30cde39a20db3a695d300d726f72bbdebd9a57361"
+      files:
+        - from: "/virtctl/virtctl-v0.17.2-darwin-amd64"
+          to: "."
+      bin: "./virtctl-v0.17.2-darwin-amd64"
+  shortDescription: controls virtual machine related operations.
+  homepage: https://kubevirt.io
+  caveats: |
+    Usage:
+      kubectl virt
+
+    Documentation:
+      https://kubevirt.io/user-guide/docs/latest/administration/intro.html#client-side-virtctl-deployment
+  description: |
+    virt plugin controls virtual machine related operations on your kubernetes cluster.

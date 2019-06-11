@@ -35,11 +35,11 @@ spec:
         - from: "/virtctl/virtctl-v0.17.2-darwin-amd64"
           to: "virtctl"
       bin: "virtctl"
-  shortDescription: controls virtual machine related operations.
+  shortDescription: Control KubeVirt virtual machines using virtctl
   homepage: https://kubevirt.io
   caveats: |
-    virt plugin is a wrapper for virtctl originating from the kubevirt.io project. In order to use virtctl you will
-    need to have kubevirt installed on your kubernetes cluster to use it. See https://kubevirt.io/ for details
+    virt plugin is a wrapper for virtctl originating from the KubeVirt project. In order to use virtctl you will
+    need to have KubeVirt installed on your Kubernetes cluster to use it. See https://kubevirt.io/ for details
 
     Run
 
@@ -53,9 +53,9 @@ spec:
 
     for a usage example
   description: |
-    virt plugin is a wrapper for virtctl originating from the kubevirt project. KubeVirt is a virtualization add-on to
-    Kubernetes, i.e. it enables to run existing virtual machines on kubernetes clusters. virtctl controls virtual
-    machine related operations on your kubernetes cluster.
+    virt plugin is a wrapper for virtctl originating from the KubeVirt project. KubeVirt is a virtualization add-on to
+    Kubernetes, i.e. it enables to run existing virtual machines on Kubernetes clusters. virtctl controls virtual
+    machine related operations on your kubernetes cluster like connecting to the serial and VNC consoles.
 
     Kubevirt documentation:
       Overview:

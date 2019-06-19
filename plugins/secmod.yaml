@@ -1,0 +1,27 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: secmod
+spec:
+  platforms:
+  - uri: https://github.com/ljakimczuk/kubectl-secmod/archive/v1.0.0.tar.gz
+    sha256: "a61322cc66c7387239d0c0d3e875ead356ea54f5aedbd1537b3e68d250b6fafc"
+    bin: kubectl-secmod
+    files:
+    - from: "kubectl-secmod-1.0.0/bin/kubectl-secmod"
+      to: "."
+    selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [linux]}
+    version: "v1.0.0"
+  homepage: https://github.com/ljakimczuk/kubectl-secmod
+  caveats: |
+    This plugin needs:
+    * vim
+    * bash >= v4.0.0
+    * libncurses5-dev (tput utility)
+  shortDescription: The plugin allows an interactive editing of Kubernetes Secrets.
+  description: |
+    This plugin gets the given Secret's data, base64-decode the selected one 
+    for a user to modify then and then upon completion patch the Secret with
+    new data.

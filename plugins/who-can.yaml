@@ -1,0 +1,46 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: who-can
+spec:
+  version: "v0.1.0-alpha.1"
+  homepage: https://github.com/aquasecurity/kubectl-who-can
+  shortDescription: |
+    Shows which users, groups and service accounts can perform a given action
+  description: |
+    Shows who has permissions to VERB [TYPE | TYPE/NAME | NONRESOURCEURL] 
+    
+    VERB is a logical Kubernetes API verb like 'get', 'list', 'watch', 'delete', etc.
+    TYPE is a Kubernetes resource. Shortcuts, such as 'pod' or 'po' will be resolved. NAME is the name of a particular Kubernetes resource.
+    NONRESOURCEURL is a partial URL that starts with "/".
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.0-alpha.1/kubectl-who-can_darwin_x86_64.tar.gz
+      sha256: "dcbe0048165e274b10ef0e8f77a9627d22a922465bf95b27bba7d1a37fc8963d"
+      files:
+        - from: kubectl-who-can
+          to: .
+      bin: kubectl-who-can
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.0-alpha.1/kubectl-who-can_linux_x86_64.tar.gz
+      sha256: "85e6ec3e9df9ed2a50ce4998b9e3b7e1133f13d916ecf1cd7d4d751f6b093b96"
+      files:
+        - from: kubectl-who-can
+          to: .
+      bin: kubectl-who-can
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.0-alpha.1/kubectl-who-can_windows_x86_64.zip
+      sha256: "e0733b5291da29aebf24de4fbfb42fd9ed19e267380328adfcdf881bcd623ee9"
+      files:
+        - from: kubectl-who-can.exe
+          to: .
+      bin: kubectl-who-can.exe

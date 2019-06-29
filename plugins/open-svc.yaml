@@ -4,8 +4,8 @@ metadata:
   name: open-svc
 spec:
   platforms:
-  - uri: "https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.1.1/kubectl-open_svc-darwin-amd64.zip"
-    sha256: "fce02319b9343cab686321f91ed33b5f01726c53edab1fd7a8d937a181a83f58"
+  - uri: "https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.1.2/kubectl-open_svc-darwin-amd64.zip"
+    sha256: "5cd60c43ee892c34193d20aba0d2d563b797214eebbcc54a48d66d66ac34bf45"
     bin: kubectl-open_svc
     files:
     - from: "kubectl-open_svc"
@@ -14,8 +14,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: "https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.1.1/kubectl-open_svc-linux-amd64.zip"
-    sha256: "12e88716ea096d51f58d3f299ed1bc88d0d71b381d1b456b2d930a773cd4be3c"
+  - uri: "https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.1.2/kubectl-open_svc-linux-amd64.zip"
+    sha256: "c7b8300d645f34daefba330a6d9bf885af0ade62e7ecbbf9e375fdafe1731c0b"
     bin: kubectl-open_svc
     files:
     - from: "kubectl-open_svc"
@@ -24,9 +24,10 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  version: "v2.1.1"
+  version: "v2.1.2"
   shortDescription: Open the Kubernetes URL(s) for the specified service in your browser.
   description: |
-    Open the Kubernetes URL(s) for the specified service in your browser
-    through a local proxy server using kubectl proxy.
+    Open the Kubernetes URL(s) for the specified service in your browser.
+    Unlike the `kubectl port-forward` command, this plugin makes services
+    accessible via their ClusterIP.
   homepage: https://github.com/superbrothers/kubectl-open-svc-plugin

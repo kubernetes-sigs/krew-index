@@ -3,10 +3,10 @@ kind: Plugin
 metadata:
   name: access-matrix
 spec:
-  version: "v0.4.0"
+  version: "v0.4.1"
   platforms:
-    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.0/bundle.tar.gz
-      sha256: 7a16c61dfc4e2924fdedc894d59db7820bc4643a58d9a853c4eb83eadd4deee8
+    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.1/bundle.tar.gz
+      sha256: 50c6321db984dcc4ddadf0d62385145431562450bbac75b67ad3db959dd327de
       bin: rakkess-linux-amd64
       files:
         - from: ./rakkess-linux-amd64
@@ -15,8 +15,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.0/bundle.tar.gz
-      sha256: 7a16c61dfc4e2924fdedc894d59db7820bc4643a58d9a853c4eb83eadd4deee8
+    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.1/bundle.tar.gz
+      sha256: 50c6321db984dcc4ddadf0d62385145431562450bbac75b67ad3db959dd327de
       bin: rakkess-darwin-amd64
       files:
         - from: ./rakkess-darwin-amd64
@@ -25,8 +25,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.0/bundle.tar.gz
-      sha256: 7a16c61dfc4e2924fdedc894d59db7820bc4643a58d9a853c4eb83eadd4deee8
+    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.1/bundle.tar.gz
+      sha256: 50c6321db984dcc4ddadf0d62385145431562450bbac75b67ad3db959dd327de
       bin: rakkess-windows-amd64.exe
       files:
         - from: ./rakkess-windows-amd64
@@ -42,7 +42,7 @@ spec:
         kubectl access-matrix
 
       Documentation:
-        https://github.com/corneliusweig/rakkess/blob/v0.4.0/doc/USAGE.md#usage
+        https://github.com/corneliusweig/rakkess/blob/v0.4.1/doc/USAGE.md#usage
   description: |+2
 
       Show an access matrix for server resources
@@ -57,4 +57,4 @@ spec:
       resource (needs read access to Roles and ClusterRoles). For example:
        $ kubectl access-matrix for configmap
 
-      More on https://github.com/corneliusweig/rakkess/blob/v0.4.0/doc/USAGE.md#usage
+      More on https://github.com/corneliusweig/rakkess/blob/v0.4.1/doc/USAGE.md#usage

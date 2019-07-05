@@ -15,20 +15,16 @@ spec:
     NAME is the name of a particular Kubernetes resource.
     NONRESOURCEURL is a partial URL that starts with "/".
 
-    For example, if you want to find all the subjects who have permission to,
-    say, delete pods in a particular namespace, or to delete nodes in the
-    cluster (dangerous!) you could run the following commands:
+    For example, if you want to find all subjects who have permission to
+    delete pods in a particular namespace, or to delete nodes in the cluster
+    (dangerous!) you could run the following commands:
 
     $ kubectl who-can delete pods --namespace foo
     $ kubectl who-can delete nodes
-
-    Without the who-can plugin you'd have to run a series of commands, and
-    stitch the results together by had to get the answers to these questions.
   caveats: |
     The plugin requires the rights to list (Cluster)Role and (Cluster)RoleBindings.
 
-    For the usage information and the list of available options with examples
-    run the following command:
+    For usage or examples, run:
 
     $ kubect who-can -h
   platforms:

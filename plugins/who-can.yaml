@@ -3,23 +3,41 @@ kind: Plugin
 metadata:
   name: who-can
 spec:
-  version: "v0.1.0-alpha.1"
+  version: "v0.1.0-alpha.2"
   homepage: https://github.com/aquasecurity/kubectl-who-can
   shortDescription: |
-    Shows which users, groups and service accounts can perform a given action
-  description: |
-    Shows who has permissions to VERB [TYPE | TYPE/NAME | NONRESOURCEURL] 
+    Shows who has RBAC permissions to access Kubernetes resources
+  description: |+2
+    Shows which subject has RBAC permissions to VERB [TYPE | TYPE/NAME | NONRESOURCEURL] 
     
     VERB is a logical Kubernetes API verb like 'get', 'list', 'watch', 'delete', etc.
-    TYPE is a Kubernetes resource. Shortcuts, such as 'pod' or 'po' will be resolved. NAME is the name of a particular Kubernetes resource.
+    TYPE is a Kubernetes resource. Shortcuts, such as 'pod' or 'po' will be resolved.
+    NAME is the name of a particular Kubernetes resource.
     NONRESOURCEURL is a partial URL that starts with "/".
+
+    For example, if you want to find all the subjects who have permission to,
+    say, delete pods in a particular namespace, or to delete nodes in the
+    cluster (dangerous!) you could run the following commands:
+
+    $ kubectl who-can delete pods --namespace foo
+    $ kubectl who-can delete nodes
+
+    Without the who-can plugin you'd have to run a series of commands, and
+    stitch the results together by had to get the answers to these questions.
+  caveats: |
+    The plugin requires the rights to list (Cluster)Role and (Cluster)RoleBindings.
+
+    For the usage information and the list of available options with examples
+    run the following command:
+
+    $ kubect who-can -h
   platforms:
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.0-alpha.1/kubectl-who-can_darwin_x86_64.tar.gz
-      sha256: "dcbe0048165e274b10ef0e8f77a9627d22a922465bf95b27bba7d1a37fc8963d"
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.0-alpha.2/kubectl-who-can_darwin_x86_64.tar.gz
+      sha256: "9c48b5a041baacd063c6849f5623ee3b98d94945ad955439031675b55d6f86d0"
       files:
         - from: kubectl-who-can
           to: .
@@ -28,8 +46,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.0-alpha.1/kubectl-who-can_linux_x86_64.tar.gz
-      sha256: "85e6ec3e9df9ed2a50ce4998b9e3b7e1133f13d916ecf1cd7d4d751f6b093b96"
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.0-alpha.2/kubectl-who-can_linux_x86_64.tar.gz
+      sha256: "d3581312d6d2ade25d2d789a8d187a8c0d0b6d3694b4f617e20ec5281184d910"
       files:
         - from: kubectl-who-can
           to: .
@@ -38,8 +56,8 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.0-alpha.1/kubectl-who-can_windows_x86_64.zip
-      sha256: "e0733b5291da29aebf24de4fbfb42fd9ed19e267380328adfcdf881bcd623ee9"
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.0-alpha.2/kubectl-who-can_windows_x86_64.zip
+      sha256: "256a56350156190489de40dd0c389a061f430ef17a1220fccf5c2ab79ce9461b"
       files:
         - from: kubectl-who-can.exe
           to: .

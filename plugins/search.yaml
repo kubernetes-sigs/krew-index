@@ -4,8 +4,8 @@ metadata:
   name: search
 spec:
   platforms:
-  - uri: https://github.com/guessi/kubectl-search/releases/download/v1.0.4/kubectl-search-Darwin-x86_64.tar.gz
-    sha256: 0e0cc4443484a1835204cda8632803755c1760a9760e7661e445b101a1054606
+  - uri: https://github.com/guessi/kubectl-search/releases/download/v1.0.5/kubectl-search-Darwin-x86_64.tar.gz
+    sha256: feeb95a51cb2696757977f14da24d3d8a3a28a60b15ae5e15b87bba31a2c0fa1
     bin: kubectl-search
     files:
     - from: "*"
@@ -14,8 +14,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/guessi/kubectl-search/releases/download/v1.0.4/kubectl-search-Linux-x86_64.tar.gz
-    sha256: 9e774344edccfd70ee23f08d5f5a7a25b8fcb1c042f6635f806ae921f8f15211
+  - uri: https://github.com/guessi/kubectl-search/releases/download/v1.0.5/kubectl-search-Linux-x86_64.tar.gz
+    sha256: ebdfd270a60e161c047ffcf1acfa4b341c7118af9849f9795f4ec80b6b7f289f
     bin: kubectl-search
     files:
     - from: "*"
@@ -24,8 +24,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/guessi/kubectl-search/releases/download/v1.0.4/kubectl-search-Windows-x86_64.tar.gz
-    sha256: 39a3193c42d4f48c9c959d6a26bdce12c4a684a8eb4840cd35afabc31dda649f
+  - uri: https://github.com/guessi/kubectl-search/releases/download/v1.0.5/kubectl-search-Windows-x86_64.tar.gz
+    sha256: af2396749a96678500431b317a6166ad2a91f1e202e85ae0ffcd0ba6d55bdeac
     bin: kubectl-search.exe
     files:
     - from: "*"
@@ -34,7 +34,7 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-  version: v1.0.4
+  version: v1.0.5
   homepage: https://github.com/guessi/kubectl-search
   caveats: This plugin requires an existing KUBECONFIG file, with a `current-context` field set.
   shortDescription: Search Kubernetes resources with keyword

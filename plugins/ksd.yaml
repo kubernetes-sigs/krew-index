@@ -1,0 +1,37 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ksd
+spec:
+  version: v3.0.0
+  platforms:
+  - sha256: 599e16041aa84f8a57812a860a6cc87d144eaa5126af953269e28577ed716e1b
+    uri: https://github.com/ashleyschuett/kubernetes-secret-decode/releases/download/v3.0.0/kubernetes-secret-decode_3.0.0_Linux_x86_64.tar.gz
+    bin: kubectl-ksd
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - sha256: f0259dc015fae29294e8969e52ada3a44e71052e0584d379917c5b4f9434c2be
+    uri: https://github.com/ashleyschuett/kubernetes-secret-decode/releases/download/v3.0.0/kubernetes-secret-decode_3.0.0_Darwin_x86_64.tar.gz
+    bin: kubectl-ksd
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  homepage: https://github.com/ashleyschuett/kubernetes-secret-decode
+  shortDescription: Shows kubernetes secret with values base64 decoded
+  caveats: |
+    This plugin expects arguments similar to `get secret -o yaml`.
+    E.g. `kubectl ksd get secret <secretname> -o yaml`
+  description: |
+    Be able to easily see the values of a secret.
+    YAML and JSON are both supported and detection of the input type is performed automatically.
+    Usage: kubectl ksd get secret my-secret -o yaml
+

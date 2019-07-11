@@ -1,26 +1,27 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: prune-configmaps
+  name: prune-unused
 spec:
-  version: v0.2.0
+  version: v0.3.0
   platforms:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-    uri: https://github.com/thecloudnatives/kubectl-plugins/archive/v0.2.0.zip
-    sha256: f435a7015fddba7c70516d14790ffcdd939e6d7ed28c115bad13aad076080163
+    uri: https://github.com/thecloudnatives/kubectl-plugins/archive/v0.3.0.zip
+    sha256: d002eac93dd6396eb84996cae88d6569d2451212dca4a098d26e1a123754cbd1
     files:
-    - from: kubectl-plugins-*/prune/kubectl-prune-configmaps.sh
+    - from: kubectl-plugins-*/prune-unused/*
       to: "."
-    bin: ./kubectl-prune-configmaps.sh
-  shortDescription: Prune configmap resources
+    bin: kubectl-prune_unused.sh
+  shortDescription: Prune unused resources
   description: |
-    Delete configmaps that are not being used from a given namespace.
-    It checks mounted volumes, env and envFrom from all resources.
+    Prune unused configmaps/secret resources from a given namespace. It
+    checks against all resources from mounted volumes, env and envFrom and
+    imagePullSecrets.
   caveats: |
     Usage:
-        kubectl prune-configmaps [options]
+        kubectl prune-unused <configmaps|secrets> [options]
 
     Options:
         -n, --namespace='': If present, the namespace scope for this CLI request

@@ -3,28 +3,21 @@ kind: Plugin
 metadata:
   name: konfig
 spec:
-  version: "v0.2.1"
+  version: "v0.2.2"
   platforms:
-    - uri: https://github.com/corneliusweig/konfig/releases/download/v0.2.1/bundle.tar.gz
-      sha256: c86a33e9ba2c8f739d96aa19c94d14f10b15e1c6424f693ec2e475aed3161b0a
+    - uri: https://github.com/corneliusweig/konfig/releases/download/v0.2.2/bundle.tar.gz
+      sha256: 69ee54d2fa509417e26a393c7f13fa7b7127d5370a975acc585455af0576677f
       bin: konfig-krew
       files:
         - from: ./konfig-krew
           to: "."
       selector:
-        matchLabels:
-          os: linux
-    - uri: https://github.com/corneliusweig/konfig/releases/download/v0.2.1/bundle.tar.gz
-      sha256: c86a33e9ba2c8f739d96aa19c94d14f10b15e1c6424f693ec2e475aed3161b0a
-      bin: konfig-krew
-      files:
-        - from: ./konfig-krew
-          to: "."
-      selector:
-        matchLabels:
-          os: darwin
-    - uri: https://github.com/corneliusweig/konfig/releases/download/v0.2.1/bundle.tar.gz
-      sha256: c86a33e9ba2c8f739d96aa19c94d14f10b15e1c6424f693ec2e475aed3161b0a
+        matchExpressions:
+          - key: os
+            operator: In
+            values: ["darwin", "linux"]
+    - uri: https://github.com/corneliusweig/konfig/releases/download/v0.2.2/bundle.tar.gz
+      sha256: 69ee54d2fa509417e26a393c7f13fa7b7127d5370a975acc585455af0576677f
       bin: konfig-krew.exe
       files:
         - from: ./konfig-krew
@@ -42,11 +35,11 @@ spec:
 
       Documentation:
         $ kubectl konfig help
-        or https://github.com/corneliusweig/konfig/blob/v0.2.1/doc/USAGE.md#usage
+        or https://github.com/corneliusweig/konfig/blob/v0.2.2/doc/USAGE.md#usage
   description: |+2
 
       konfig helps to merge, split or import kubeconfig files
 
       This is a convenience wrapper around the `kubectl config view` command.
 
-      More on https://github.com/corneliusweig/konfig/blob/v0.2.1/doc/USAGE.md#usage
+      More on https://github.com/corneliusweig/konfig/blob/v0.2.2/doc/USAGE.md#usage

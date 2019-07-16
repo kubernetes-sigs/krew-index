@@ -3,21 +3,21 @@ kind: Plugin
 metadata:
   name: exec-cronjob
 spec:
-  version: v0.4.0
+  version: v0.4.1
   platforms:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-    uri: https://github.com/thecloudnatives/kubectl-plugins/archive/v0.4.0.zip
-    sha256: 688bceed5fdd54414fc70080dacb776025c9ab31fb7bda3fca166bba05976a38
+    uri: https://github.com/thecloudnatives/kubectl-plugins/archive/v0.4.1.zip
+    sha256: fc5410ebe09295a75ea9a67dd10ba83b3c6e5043ea9f0cf98897e362c665003a
     files:
     - from: kubectl-plugins-*/exec-cronjob/*
       to: "."
     bin: kubectl-exec_cronjob.sh
   shortDescription: Execute a cron job
   description: |
-    Execute a CronJob, by extracting the Job spec and apply it in the given
-    namespace
+    Run a cron job immediately by extracting the Job spec and creating a Job
+    instance thereof.
   caveats: |
     Usage:
         kubectl exec-cronjob <name> [options]
@@ -28,5 +28,5 @@ spec:
         -h, --help: Display this help
 
     Read the documentation at:
-      https://github.com/thecloudnatives/kubectl-plugins
-  homepage: https://github.com/thecloudnatives/kubectl-plugins
+      https://github.com/thecloudnatives/kubectl-plugins#exec-cronjob
+  homepage: https://github.com/thecloudnatives/kubectl-plugins#exec-cronjob

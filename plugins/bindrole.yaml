@@ -1,0 +1,42 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: bindrole
+spec:
+  shortDescription: Finding Kubernetes Roles bound to a specified ServiceAccount, Group or User
+  description: |
+    This plugin is a tool designed to find Kubernetes roles bound to a specified ServiceAccount, Group or User
+
+  homepage: https://github.com/Ladicle/kubectl-bindrole
+  version: v1.1.0
+  platforms:
+    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.1.0/kubectl-bindrole_linux-amd64.tar.gz
+      sha256: ""
+      bin: kubectl-bindrole
+      files:
+        - from: ./kubectl-bindrole_linux-amd64/kubectl-bindrole
+          to: "."
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.1.0/kubectl-bindrole_darwin-amd64.tar.gz
+      sha256: ""
+      bin: kubectl-bindrole
+      files:
+        - from: ./kubectl-bindrole_darwin-amd64/kubectl-bindrole
+          to: "."
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.1.0/kubectl-bindrole_windows-amd64.tar.gz
+      sha256: ""
+      bin: kubectl-bindrole
+      files:
+        - from: ./kubectl-bindrole_windows-amd64/kubectl-bindrole
+          to: "."
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64

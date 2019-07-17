@@ -1,6 +1,8 @@
------
+<!--
 
-**Checklist for plugin developers:**
+PLUGIN DEVELOPERS: If you are submitting a new plugin
 
-- [ ] Read the [Plugin Naming Guide](https://sigs.k8s.io/krew/docs/NAMING_GUIDE.md) (for new plugins)
-- [ ] Verify the installation from URL or a local archive works (`kubectl krew install --manifest=[...] --archive=[...]`)
+- Make sure you read the Plugin Naming Guide: https://sigs.k8s.io/krew/docs/NAMING_GUIDE.md
+- Verify you can install your plugin locally: kubectl krew install --manifest=[...] --archive=[...]
+
+-->

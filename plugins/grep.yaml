@@ -1,12 +1,12 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: search
+  name: grep
 spec:
   platforms:
-  - uri: https://github.com/guessi/kubectl-search/releases/download/v1.0.5/kubectl-search-Darwin-x86_64.tar.gz
-    sha256: feeb95a51cb2696757977f14da24d3d8a3a28a60b15ae5e15b87bba31a2c0fa1
-    bin: kubectl-search
+  - uri: https://github.com/guessi/kubectl-search/releases/download/v1.1.0/kubectl-grep-Darwin-x86_64.tar.gz
+    sha256: 2348dd6484903bfc394cfd9714e5bb66aa101c81e1f48227d819f726f89fbf96
+    bin: kubectl-grep
     files:
     - from: "*"
       to: "."
@@ -14,9 +14,9 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/guessi/kubectl-search/releases/download/v1.0.5/kubectl-search-Linux-x86_64.tar.gz
-    sha256: ebdfd270a60e161c047ffcf1acfa4b341c7118af9849f9795f4ec80b6b7f289f
-    bin: kubectl-search
+  - uri: https://github.com/guessi/kubectl-search/releases/download/v1.1.0/kubectl-grep-Linux-x86_64.tar.gz
+    sha256: 1362e8a77bed882b5973ab7418c8e82d3aa46fdd1eced36d9c684a055f4cea02
+    bin: kubectl-grep
     files:
     - from: "*"
       to: "."
@@ -24,9 +24,9 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/guessi/kubectl-search/releases/download/v1.0.5/kubectl-search-Windows-x86_64.tar.gz
-    sha256: af2396749a96678500431b317a6166ad2a91f1e202e85ae0ffcd0ba6d55bdeac
-    bin: kubectl-search.exe
+  - uri: https://github.com/guessi/kubectl-search/releases/download/v1.1.0/kubectl-grep-Windows-x86_64.tar.gz
+    sha256: d45edf88d0840057d38349ef3b8d6ea1246cc31ec94a6656cbbb758eb1c3d597
+    bin: kubectl-grep.exe
     files:
     - from: "*"
       to: "."
@@ -34,7 +34,7 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-  version: v1.0.5
+  version: v1.1.0
   homepage: https://github.com/guessi/kubectl-search
   caveats: This plugin requires an existing KUBECONFIG file, with a `current-context` field set.
   shortDescription: Search Kubernetes resources with keyword
@@ -45,6 +45,6 @@ spec:
     * kubectl get -n namespace [deployments|pods|...] | grep "keyword" # no Header output
 
     To ...
-    * kubectl search -n namespace [deployments|pods|...] keyword
+    * kubectl grep -n namespace [deployments|pods|...] keyword
 
-    No more pipe, no more grep :-)
+    No more pipe, built-in grep :-)

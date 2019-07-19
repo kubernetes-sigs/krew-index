@@ -49,13 +49,9 @@ spec:
 
     More Info:
     - https://github.com/guessi/kubectl-grep
-    Bug report:
-    - https://github.com/guessi/kubectl-grep/issues
-    Changelog:
-    - https://github.com/guessi/kubectl-grep/blob/master/CHANGELOG.md
-  shortDescription: Search Kubernetes resources with keyword
+  shortDescription: Filter Kubernetes resources by matching their names
   description: |
-    Search Kubernetes resources with keyword, and namespace supported
+    Filter Kubernetes resources by matching their names
 
     From ...
     $ kubectl get -n namespace [resourceType] | grep 'keyword'
@@ -70,23 +66,14 @@ spec:
     - node
     - pod
 
-    For example, to list all pods in all namespaces,
+    Examples:
+
+    List all pods in all namespaces
 
     $ kubectl grep pods --all-namespaces
 
-    NAMESPACE     NAME                           READY   STATUS     RESTART   AGE
-    star-lab      the-flash-1563321660-bm225     1/1     Running    0         2d13h
-    marvel        spider-man-564d97dc9c-65mvw    1/1     Running    0         7d22h
-    dc            super-man-bb58c6784-26bmr      1/1     Running    0         1d3h
-
-    Or list all pods with specific keyword, under specific namespace,
+    Shows all pods in namespace "star-lab" which contain the keyword "flash"
 
     $ kubectl grep pods -n star-lab flash
-
-    NAMESPACE     NAME                           READY   STATUS     RESTART   AGE
-    star-lab      the-flash-1563321660-bm225     1/1     Running    0         2d13h
-
-    To support more type of resources, it is always welcome to open a pull-request
-    - https://github.com/guessi/kubectl-grep/pulls
 
     No more pipe, built-in grep :-)

@@ -36,15 +36,57 @@ spec:
         arch: amd64
   version: v1.1.0
   homepage: https://github.com/guessi/kubectl-grep
-  caveats: This plugin requires an existing KUBECONFIG file, with a `current-context` field set.
+  caveats: |
+    This plugin requires an existing KUBECONFIG file, with a `current-context` field set.
+
+    Usage:
+
+      $ kubectl grep # output help messages
+      $ kubectl grep pods keyword
+      $ kubectl grep deployments keyword
+      $ kubectl grep pods keyword -n namespace
+      $ kubectl grep pods keyword --all-namespaces
+
+    More Info:
+    - https://github.com/guessi/kubectl-grep
+    Bug report:
+    - https://github.com/guessi/kubectl-grep/issues
+    Changelog:
+    - https://github.com/guessi/kubectl-grep/blob/master/CHANGELOG.md
   shortDescription: Search Kubernetes resources with keyword
   description: |
-    Search Kubernetes resources with keyword
+    Search Kubernetes resources with keyword, and namespace supported
 
     From ...
-    * kubectl get -n namespace [deployments|pods|...] | grep "keyword" # no Header output
+    $ kubectl get -n namespace [resourceType] | grep 'keyword'
 
     To ...
-    * kubectl grep -n namespace [deployments|pods|...] keyword
+    $ kubectl grep [resourceType] [keyword]
+
+    Supported Resource Types:
+    - daemonset
+    - deployment
+    - hpa
+    - node
+    - pod
+
+    For example, to list all pods in all namespaces,
+
+    $ kubectl grep pods --all-namespaces
+
+    NAMESPACE     NAME                           READY   STATUS     RESTART   AGE
+    star-lab      the-flash-1563321660-bm225     1/1     Running    0         2d13h
+    marvel        spider-man-564d97dc9c-65mvw    1/1     Running    0         7d22h
+    dc            super-man-bb58c6784-26bmr      1/1     Running    0         1d3h
+
+    Or list all pods with specific keyword, under specific namespace,
+
+    $ kubectl grep pods -n star-lab flash
+
+    NAMESPACE     NAME                           READY   STATUS     RESTART   AGE
+    star-lab      the-flash-1563321660-bm225     1/1     Running    0         2d13h
+
+    To support more type of resources, it is always welcome to open a pull-request
+    - https://github.com/guessi/kubectl-grep/pulls
 
     No more pipe, built-in grep :-)

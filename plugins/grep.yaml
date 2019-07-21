@@ -1,0 +1,77 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: grep
+spec:
+  platforms:
+  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.1.0/kubectl-grep-Darwin-x86_64.tar.gz
+    sha256: 2348dd6484903bfc394cfd9714e5bb66aa101c81e1f48227d819f726f89fbf96
+    bin: kubectl-grep
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.1.0/kubectl-grep-Linux-x86_64.tar.gz
+    sha256: 1362e8a77bed882b5973ab7418c8e82d3aa46fdd1eced36d9c684a055f4cea02
+    bin: kubectl-grep
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.1.0/kubectl-grep-Windows-x86_64.tar.gz
+    sha256: d45edf88d0840057d38349ef3b8d6ea1246cc31ec94a6656cbbb758eb1c3d597
+    bin: kubectl-grep.exe
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  version: v1.1.0
+  homepage: https://github.com/guessi/kubectl-grep
+  caveats: |
+    This plugin requires an existing KUBECONFIG file, with a `current-context` field set.
+
+    Usage:
+
+      $ kubectl grep # output help messages
+      $ kubectl grep pods keyword
+      $ kubectl grep deployments keyword
+      $ kubectl grep pods keyword -n namespace
+      $ kubectl grep pods keyword --all-namespaces
+
+    More Info:
+    - https://github.com/guessi/kubectl-grep
+  shortDescription: Filter Kubernetes resources by matching their names
+  description: |
+    Filter Kubernetes resources by matching their names
+
+    From ...
+    $ kubectl get -n namespace [resourceType] | grep 'keyword'
+
+    To ...
+    $ kubectl grep [resourceType] [keyword]
+
+    Supported Resource Types:
+    - daemonset
+    - deployment
+    - hpa
+    - node
+    - pod
+
+    Examples:
+
+    List all pods in all namespaces
+    $ kubectl grep pods --all-namespaces
+
+    List all pods in namespace "star-lab" which contain the keyword "flash"
+    $ kubectl grep pods -n star-lab flash
+
+    No more pipe, built-in grep :-)

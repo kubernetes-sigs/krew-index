@@ -69,11 +69,9 @@ spec:
     Examples:
 
     List all pods in all namespaces
-
     $ kubectl grep pods --all-namespaces
 
-    Shows all pods in namespace "star-lab" which contain the keyword "flash"
-
+    List all pods in namespace "star-lab" which contain the keyword "flash"
     $ kubectl grep pods -n star-lab flash
 
     No more pipe, built-in grep :-)

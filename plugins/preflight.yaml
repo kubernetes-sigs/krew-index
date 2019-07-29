@@ -13,8 +13,8 @@ spec:
     sha256: "75f82c2b720b578cefe05afb50d2559a9f7eb2ed1860cb5c5cb30254878e161c"
     files:
     - from: "./preflight"
-      to: "kubectl-preflight"
-    bin: "kubectl-preflight"
+      to: "."
+    bin: "preflight"
   - selector:
       matchLabels:
         os: darwin
@@ -23,8 +23,8 @@ spec:
     sha256: "cc8ca71f31ec40796738a745794136b08fa3c224220040c8d413c76d70bc7bc5"
     files:
     - from: "./preflight"
-      to: "kubectl-preflight"
-    bin: "kubectl-preflight"
+      to: "."
+    bin: "preflight"
   - selector:
       matchLabels:
         os: windows
@@ -33,7 +33,31 @@ spec:
     sha256: "5d96a7b9abb3699fc495b8739519e7b608c1d42f8b22b1e6581b889de7376872"
     files:
     - from: "/preflight.exe"
-      to: "kubectl-preflight.exe"
-    bin: "kubectl-preflight.exe"
-  shortDescription: Executes preflight tests and application conformance verifications on a cluster before installing an application
+      to: "."
+    bin: "preflight.exe"
+  shortDescription: Executes application preflight tests in a cluster
   homepage: https://github.com/replicaetdhq/troubleshoot
+  caveats: |
+    Usage:
+      $ kubectl preflight <URL>
+
+    Flags:
+      -h, --help                          help for preflight
+          --interactive                   interactive preflights (default true)
+          --kubecontext string            the kubecontext to use when connecting (default "~/.kube/config")
+          --serviceaccount string         name of the service account to use. if not provided, one will be created
+          --format string                 output format, one of human, json, yaml. only used when interactive is set to false (default "human")
+
+    Documentation:
+      https://help.replicated.com/docs/troubleshoot/kubernetes/preflight/overview/
+
+  description: |
+    This plugin executes application-specific preflight checks and conformance tests against a cluster, prior to installation of an application.
+
+    Application developers can create and host a Preflight manifest that defines the minimum and desired Kubernetes environment
+    for an application. Before installing the application, a cluster admin can use this plugin to execute the application preflight checks
+    to identify any missing components, configuration or incompatibilities between the cluster and the desired environment.
+
+    When executing Preflight tests, the test results will be displayed in a terminal-based UI on the workstation that executed the command.
+
+    For information on creating a Preflight manifest, view the documentation at https://help.replicated.com/docs/troubleshoot/kubernetes/analysis/

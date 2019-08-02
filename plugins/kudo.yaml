@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: kudo
 spec:
-  version: "v0.4.0"
+  version: "v0.5.0"
 
   shortDescription: Declaratively build, install, and run operators using KUDO.
   homepage: https://kudo.dev/
@@ -18,13 +18,11 @@ spec:
       kubectl create -f https://raw.githubusercontent.com/kudobuilder/kudo/v0.4.0/docs/deployment/00-prereqs.yaml
       kubectl create -f https://raw.githubusercontent.com/kudobuilder/kudo/v0.4.0/docs/deployment/10-crds.yaml
       kubectl create -f https://raw.githubusercontent.com/kudobuilder/kudo/v0.4.0/docs/deployment/20-deployment.yaml
-
     Example usage:
       Install kafka:
         kubectl kudo install kafka
       List installed operator instances:
         kubectl kudo get instances
-
     See the documentation for more information: https://kudo.dev/docs/
 
   platforms:
@@ -32,8 +30,8 @@ spec:
       matchLabels:
         os: "linux"
         arch: "amd64"
-    uri: https://github.com/kudobuilder/kudo/releases/download/v0.4.0/kudo_0.4.0_linux_x86_64.tar.gz
-    sha256: "c638b3d047d8d93d524bd641731cab3c11f21f4d951907b5635f72301f871e88"
+    uri: https://github.com/kudobuilder/kudo/releases/download/v0.5.0/kudo_0.5.0_linux_x86_64.tar.gz
+    sha256: "d3f058b382ace43b07b7125c0916a974ef92ec5bc3eda07aede2ffd1cc60ee5e"
     bin: "./kubectl-kudo"
     files:
     - from: "*"
@@ -42,8 +40,8 @@ spec:
       matchLabels:
         os: "linux"
         arch: "386"
-    uri: https://github.com/kudobuilder/kudo/releases/download/v0.4.0/kudo_0.4.0_linux_i386.tar.gz
-    sha256: "6114dc3995046e12b8499cc015a81250d93a2dc82c81648137f743f846f9e7c7"
+    uri: https://github.com/kudobuilder/kudo/releases/download/v0.5.0/kudo_0.5.0_linux_i386.tar.gz
+    sha256: "34fab5f7d1218e6d555904dbb77dd50adc639f97fd5777bf507a915d9d8c9bf9"
     bin: "./kubectl-kudo"
     files:
     - from: "*"
@@ -52,8 +50,8 @@ spec:
       matchLabels:
         os: "darwin"
         arch: "amd64"
-    uri: https://github.com/kudobuilder/kudo/releases/download/v0.4.0/kudo_0.4.0_darwin_x86_64.tar.gz
-    sha256: "9acd925cedddd7661c929b28b30d50ca27b6e9bbbc3c80fe6b8dd72caefdd005"
+    uri: https://github.com/kudobuilder/kudo/releases/download/v0.5.0/kudo_0.5.0_darwin_x86_64.tar.gz
+    sha256: "5a28fd7fa8a7c4fbe04eea74182c6040e00417918c6b211fd48fe0bda54a1e12"
     bin: "./kubectl-kudo"
     files:
     - from: "*"
@@ -62,8 +60,8 @@ spec:
       matchLabels:
         os: "darwin"
         arch: "386"
-    uri: https://github.com/kudobuilder/kudo/releases/download/v0.4.0/kudo_0.4.0_darwin_i386.tar.gz
-    sha256: "346d0bbe1172b3d776bb0e3628f3346fa7feaede646e9bbed2d2f2f63c6d730a"
+    uri: https://github.com/kudobuilder/kudo/releases/download/v0.5.0/kudo_0.5.0_darwin_i386.tar.gz
+    sha256: "eff7d18e3eb187d2478098ddcb73a1640b4fe82f51fa95111df81dc0b4725fb4"
     bin: "./kubectl-kudo"
     files:
     - from: "*"
@@ -72,8 +70,8 @@ spec:
       matchLabels:
         os: "windows"
         arch: "amd64"
-    uri: https://github.com/kudobuilder/kudo/releases/download/v0.4.0/kudo_0.4.0_windows_x86_64.tar.gz
-    sha256: "78af4743af09850056620cfb2dd563304f3d2aec5ab822a8c4ff7cf4d53be7c8"
+    uri: https://github.com/kudobuilder/kudo/releases/download/v0.5.0/kudo_0.5.0_windows_x86_64.tar.gz
+    sha256: "0c153c80cb81557769405452d23b300e41151f16d540cc8b24d6d800245c33cd"
     bin: "./kubectl-kudo.exe"
     files:
     - from: "*"
@@ -82,8 +80,8 @@ spec:
       matchLabels:
         os: "windows"
         arch: "386"
-    uri: https://github.com/kudobuilder/kudo/releases/download/v0.4.0/kudo_0.4.0_windows_i386.tar.gz
-    sha256: "aca09b8aba80ab50b3738dcb4a2cf194f96eb38b1f93fa147dce15ca81085743"
+    uri: https://github.com/kudobuilder/kudo/releases/download/v0.5.0/kudo_0.5.0_windows_i386.tar.gz
+    sha256: "66e14cdd9a2f7d5e6de8551aec102f1a12aefb9090133cb7deba533b3f263633"
     bin: "./kubectl-kudo.exe"
     files:
     - from: "*"

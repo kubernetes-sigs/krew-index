@@ -7,14 +7,18 @@ spec:
   shortDescription: Log in to the OpenID Connect provider
   description: |
     This is a kubectl plugin for Kubernetes OpenID Connect (OIDC) authentication.
-    (Credential Plugin Mode)
-      kubectl executes oidc-login before calling the Kubernetes APIs.
-      oidc-login automatically opens the browser and you can log in to the provider.
-      After authentication, kubectl gets the token from oidc-login and you can access the cluster.
-    (Standalone Mode)
-      Run `kubectl oidc-login`.
-      It automatically opens the browser and you can log in to the provider.
-      After authentication, it writes the token to the kubeconfig and you can access the cluster.
+
+    ## Credential plugin mode
+    kubectl executes oidc-login before calling the Kubernetes APIs.
+    oidc-login automatically opens the browser and you can log in to the provider.
+    After authentication, kubectl gets the token from oidc-login and you can access the cluster.
+    See https://github.com/int128/kubelogin#credential-plugin-mode for more.
+
+    ## Standalone mode
+    Run `kubectl oidc-login`.
+    It automatically opens the browser and you can log in to the provider.
+    After authentication, it writes the token to the kubeconfig and you can access the cluster.
+    See https://github.com/int128/kubelogin#standalone-mode for more.
 
   caveats: |
     You need to setup the OIDC provider, Kubernetes API server, role binding and kubeconfig.

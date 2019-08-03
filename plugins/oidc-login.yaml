@@ -10,11 +10,11 @@ spec:
     (Credential Plugin Mode)
       kubectl executes oidc-login before calling the Kubernetes APIs.
       oidc-login automatically opens the browser and you can log in to the provider.
-      After authentication, kubectl gets the token from oidc-login and you can access to the cluster.
+      After authentication, kubectl gets the token from oidc-login and you can access the cluster.
     (Standalone Mode)
       Run `kubectl oidc-login`.
       It automatically opens the browser and you can log in to the provider.
-      After authentication, it writes the token to the kubeconfig and you can access to the cluster.
+      After authentication, it writes the token to the kubeconfig and you can access the cluster.
 
   caveats: |
     You need to setup the OIDC provider, Kubernetes API server, role binding and kubeconfig.

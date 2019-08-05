@@ -63,7 +63,11 @@ This task should be classified in one of the categories:
     <tr>
         <td>3.</td>
         <td>The task addresses a completely different problem than any of the kubectl subcommands, but is clearly focused on k8s.</td>
-        <td>Gray area. If the task fits well into <code>kubectl</code>, it may be accepted (for example <code>kubectl debug-pod</code>).</td>
+        <td>
+          Gray area. If most users would use tool as a <code>kubectl</code> plugin, it may be accepted.
+          For example, <code>kubectl debug-pod</code> would be acceptable.
+          On the other hand, <code>helm</code> as <code>kubectl helm</code> would not be acceptable, because it is independent.
+        </td>
     </tr>
     <tr>
         <td>4.</td>
@@ -71,7 +75,7 @@ This task should be classified in one of the categories:
           The task is very dissimilar to common kubectl tasks and is not primarily focused on k8s.
           However, it can be useful in the k8s ecosystem.
         </td>
-        <td>Not acceptable.</td>
+        <td>Not acceptable. Consider distributing as a separate tool instead of making it a kubectl plugin.</td>
     </tr>
     <tr>
         <td>5.</td>
@@ -125,5 +129,5 @@ Further required acceptance criteria:
 
 1. Standard look & feel: Adheres to standard kubectl best practices and in particular uses consistent (abbreviated) flag names. For example: bad `--ns`, good `--namespace` + `-n`.
 2. A plugin needs to be documented in such a way, that a proficient `kubectl` user immediately understands its purpose and how to use it.
-3. Plugins may not depend on additional non-standard third-party tools which are not part of the plugin installation. Acceptable: jq, standard unix CLI tools (awk, sed, grep).
-<!-- 4. Ready to use: Unless absolutely required, a plugin should not need extra configuration. -->
+3. If the plugin has dependencies, try to limit those to fundamental UNIX tools (like bash, sed, grep, awk) or popular tools (like jq, yq) as this makes it easier to get started.
+4. Make sure the plugin fails with a user-friendly error when a required dependency is missing.

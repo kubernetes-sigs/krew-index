@@ -125,9 +125,10 @@ In order of decreasing usage frequency:
 
 Usability
 ---
-Further required acceptance criteria:
+Plugins should be as user-friendly as possible.
+Please follow the following guidelines:
 
-1. Standard look & feel: Adheres to standard kubectl best practices and in particular uses consistent (abbreviated) flag names. For example: bad `--ns`, good `--namespace` + `-n`.
-2. A plugin needs to be documented in such a way, that a proficient `kubectl` user immediately understands its purpose and how to use it.
+1. Standard look & feel: The plugin should adhere to standard kubectl best practices and have consistent (abbreviated) flag names. For example: bad `--ns`, good `--namespace` + `-n`.
+2. A plugin should be documented in such a way, that a proficient `kubectl` user immediately understands its purpose and how to use it.
 3. If the plugin has dependencies, try to limit those to fundamental UNIX tools (like bash, sed, grep, awk) or popular tools (like jq, yq) as this makes it easier to get started.
 4. Make sure the plugin fails with a user-friendly error when a required dependency is missing.

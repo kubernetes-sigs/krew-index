@@ -4,9 +4,8 @@ metadata:
   name: neat
 spec:
   caveats: |
-    This plugin depends on the following binaries which are bundled into the plugin -
-    `jq`, `yq` and `sponge`, as well as the `kube-defaulter` included utility.
-    glibc runtime is currently assumed for dynamic linking.
+    This plugin depends on the following binaries -
+    `jq`, `yq` and `sponge` (from `moreutils`), which should be installed by the user
   description: |
     If you try to `kubectl get` resources you have just created,
     they be unreadably verbose. `kubectl-neat` cleans up that redundant information.
@@ -23,8 +22,8 @@ spec:
       matchLabels:
         arch: amd64
         os: darwin
-    sha256: f8e17b2dce4604b08056d3a4162376081b6d740ec4a2d7ffb0a3c2841e7b32b1
-    uri: https://github.com/itaysk/kubectl-neat/releases/download/v0.1.0/kubectl-neat_darwin.tar.gz
+    sha256: 84ddfc9de3301b0359566d5d909aa2c8302aefd48cc8dd107f720be3e3edc24d
+    uri: https://github.com/itaysk/kubectl-neat/releases/download/v0.1.1/kubectl-neat_darwin.tar.gz
   - bin: ./kubectl-neat
     files:
     - from: /dist/linux/*
@@ -33,7 +32,7 @@ spec:
       matchLabels:
         arch: amd64
         os: linux
-    sha256: d1c2efb1f4f538de20a701b6ae054678a1d4020eb7eb7397d8fef7f87c1bff89
-    uri: https://github.com/itaysk/kubectl-neat/releases/download/v0.1.0/kubectl-neat_linux.tar.gz
+    sha256: 18066653dc535646f940e8ed09f1d68eccdd63e6640eba5d8160544eec6a4f4f
+    uri: https://github.com/itaysk/kubectl-neat/releases/download/v0.1.1/kubectl-neat_linux.tar.gz
   shortDescription: Clean up Kubernetes yaml and json output to make it readable.
-  version: v0.1.0
+  version: v0.1.1

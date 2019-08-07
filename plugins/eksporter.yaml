@@ -14,11 +14,19 @@ spec:
     - from: "/eksporter.rb"
       to: "."
     bin: "./eksporter.rb"
-  shortDescription: Eksport resources without generated fields
+  shortDescription: Export resources and removes a pre-defined set of fields for later import
   homepage: https://github.com/Kyrremann/kubeflow-eksporter
   caveats: |
     This plugin needs the following programs:
     * ruby
   description: |
-    This plugin helps you export resources, and trims away the fields
-    not necessary for applying the resource back into the cluster.
+    This plugin helps you export a resource, and removes a pre-defined set of
+    fields. This is useful for when you have resource you want to migrate from
+    one namespace or cluster, to another one, but need to edit/add some fields
+    before applying.
+
+    If you just need to move one resource, it's probably easier to just:
+      kubectl get -oyaml | kubectl create -f -
+
+    Run the tool with:
+      kubectl exporter <resource> <resource_name>

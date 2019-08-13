@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: outdated
 spec:
-  version: "v0.2.1"
+  version: "v0.2.2"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/replicatedhq/outdated/releases/download/v0.2.1/outdated_0.2.1_linux_amd64-0.2.1.tar.gz
-    sha256: "7db25869cfc57dda938add04c088c070097fc83ecd7a27a12157da0e0d728864"
+    uri: https://github.com/replicatedhq/outdated/releases/download/v0.2.2/outdated_0.2.2_linux_amd64-0.2.2.tar.gz
+    sha256: "ceebe623a058fd010df64793761c327cfc1c817c730d769c19b98e00f0ba9f4f"
     files:
     - from: "./outdated"
       to: "."
@@ -19,8 +19,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/replicatedhq/outdated/releases/download/v0.2.1/outdated_0.2.1_darwin_amd64-0.2.1.tar.gz
-    sha256: "6563b39093eb4e86647b451c55e8739cfe9165c5da846a29a4e7bd9ee44337dd"
+    uri: https://github.com/replicatedhq/outdated/releases/download/v0.2.2/outdated_0.2.2_darwin_amd64-0.2.2.tar.gz
+    sha256: "7e7b39367c5d135179edc58d22c72be58a272816d62348ccbb06d3680c9c68e1"
     files:
     - from: "./outdated"
       to: "."
@@ -29,8 +29,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/replicatedhq/outdated/releases/download/v0.2.1/outdated_0.2.1_windows_amd64-0.2.1.zip
-    sha256: "662c1c51da8cb04148964ca83b16568204496cedde250cae0b943ef5890dd570"
+    uri: https://github.com/replicatedhq/outdated/releases/download/v0.2.2/outdated_0.2.2_windows_amd64-0.2.2.zip
+    sha256: "05052f0f97ce1986f69f69e1d442022b7bed1089f70ad9b25645dc1292a66023"
     files:
     - from: "/outdated.exe"
       to: "."
@@ -42,7 +42,7 @@ spec:
       $ kubectl outdated
     For additional options:
       $ kubectl outdated --help
-      or https://github.com/replicatedhq/outdated/blob/v0.2.0/doc/USAGE.md
+      or https://github.com/replicatedhq/outdated/blob/v0.2.2/doc/USAGE.md
   description: |
     The plugin will scan for all pods in all namespaces that you have at least
     read access to. It will then connect to the registry that hosts the image,

@@ -1,0 +1,41 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: neat
+spec:
+  caveats: |
+    This plugin depends on the following utilities which should be installed manually:
+    - `jq`
+    - `yq`
+    - `sponge` (from `moreutils`)
+  description: |
+    If you try to `kubectl get` resources you have just created,
+    they be unreadably verbose. `kubectl-neat` cleans up that redundant information.
+    Can be used as a `kubectl get` wrapper, or by piping into it.
+    Examples:
+    $ `kubectl neat pod mypod -o yaml`
+    $ `kubectl get pod mypod -o yaml | kubectl neat`
+  homepage: https://github.com/itaysk/kubectl-neat
+  platforms:
+  - bin: ./kubectl-neat
+    files:
+    - from: /dist/darwin/*
+      to: .
+    selector:
+      matchLabels:
+        arch: amd64
+        os: darwin
+    sha256: 90519b69fef6d1ef3ab84b1d92f463929567b80fd17a1fb8148b94d52a6133a4
+    uri: https://github.com/itaysk/kubectl-neat/releases/download/v0.1.1/kubectl-neat_darwin.tar.gz
+  - bin: ./kubectl-neat
+    files:
+    - from: /dist/linux/*
+      to: .
+    selector:
+      matchLabels:
+        arch: amd64
+        os: linux
+    sha256: aa54b60d6a55cbb41daf827a294fbabc022f4c0e3d41ab0eb5511957f031b2e7
+    uri: https://github.com/itaysk/kubectl-neat/releases/download/v0.1.1/kubectl-neat_linux.tar.gz
+  shortDescription: Remove clutter from Kubernetes manifests to make them more readable.
+  version: v0.1.1

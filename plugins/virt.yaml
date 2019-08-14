@@ -3,36 +3,36 @@ kind: Plugin
 metadata:
   name: virt
 spec:
-  version: "v0.19.0"
+  version: "v0.20.1"
   platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: "https://github.com/dhiller/kubectl-virt-plugin/releases/download/v0.20.1/virtctl-v0.20.1-darwin-amd64.tar.gz"
+      sha256: "7069f879c1f9e7f6dd58f6b361fd10a2f4b1adc16e7f4b2a8eb77d0bb51d9f55"
+      files:
+        - from: "/virtctl/virtctl-v0.20.1-darwin-amd64"
+          to: "virtctl"
+      bin: "virtctl"
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: "https://github.com/dhiller/kubectl-virt-plugin/releases/download/v0.19.0/virtctl-v0.19.0-windows-amd64.exe.tar.gz"
-      sha256: "9b90c32d958bb24bc27314e01920640a004a592e7916490c34af0328f734766f"
+      uri: "https://github.com/dhiller/kubectl-virt-plugin/releases/download/v0.20.1/virtctl-v0.20.1-windows-amd64.exe.tar.gz"
+      sha256: "c33d584f82614634ffd2edb03369faa9a886eb4da44f2cc0b373b935604ce4b4"
       files:
-        - from: "/virtctl/virtctl-v0.19.0-windows-amd64.exe"
+        - from: "/virtctl/virtctl-v0.20.1-windows-amd64.exe"
           to: "virtctl.exe"
       bin: "virtctl.exe"
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: "https://github.com/dhiller/kubectl-virt-plugin/releases/download/v0.19.0/virtctl-v0.19.0-linux-amd64.tar.gz"
-      sha256: "bb5a3bfb9f0a45c6c455e1612f7f250ae9c7eb191d71a182409c46dffb9b7f1d"
+      uri: "https://github.com/dhiller/kubectl-virt-plugin/releases/download/v0.20.1/virtctl-v0.20.1-linux-amd64.tar.gz"
+      sha256: "0fe121e51251a0766e80e0bcabe3e0482d5de93d887cb2a5a2a2a744aaa5ea87"
       files:
-        - from: "/virtctl/virtctl-v0.19.0-linux-amd64"
-          to: "virtctl"
-      bin: "virtctl"
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: amd64
-      uri: "https://github.com/dhiller/kubectl-virt-plugin/releases/download/v0.19.0/virtctl-v0.19.0-darwin-amd64.tar.gz"
-      sha256: "afffd6e33481d89f222afdab046548c6288e2da17fd8623f3a11d2e4112dad8c"
-      files:
-        - from: "/virtctl/virtctl-v0.19.0-darwin-amd64"
+        - from: "/virtctl/virtctl-v0.20.1-linux-amd64"
           to: "virtctl"
       bin: "virtctl"
   shortDescription: Control KubeVirt virtual machines using virtctl

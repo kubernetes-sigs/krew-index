@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: eksporter
 spec:
-  version: "v1.0.0"
+  version: "v1.1.0"
   platforms:
   - selector:
       matchExpressions:
@@ -13,8 +13,8 @@ spec:
         - darwin
         - linux
         - windows
-    uri: https://github.com/Kyrremann/kubeflow-eksporter/releases/download/v1.0.0/eksporter.tar.gz
-    sha256: "1c13fac59c1c306db8498f394ee4cf1ba98eaa44c6f404fc2fad505533f00835"
+    uri: https://github.com/Kyrremann/kubeflow-eksporter/releases/download/v1.1.0/eksporter.tar.gz
+    sha256: "65124766f929c5bcaab1f89b0b052b8e2f64c9dd9cb4daf062123c8c632668d5"
     files:
     - from: "/eksporter.rb"
       to: "."

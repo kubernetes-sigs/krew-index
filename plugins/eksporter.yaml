@@ -35,3 +35,5 @@ spec:
 
     Run the tool with:
       kubectl eksporter <resource> <resource_name>
+    Or with piping:
+      kubectl get pods -o yaml <resource_name> | kubectl eksporter

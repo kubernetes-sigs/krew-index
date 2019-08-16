@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: outdated
 spec:
-  version: "v0.2.2"
+  version: "v0.3.0"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/replicatedhq/outdated/releases/download/v0.2.2/outdated_0.2.2_linux_amd64-0.2.2.tar.gz
-    sha256: "ceebe623a058fd010df64793761c327cfc1c817c730d769c19b98e00f0ba9f4f"
+    uri: https://github.com/replicatedhq/outdated/releases/download/v0.3.0/outdated_0.3.0_linux_amd64-0.3.0.tar.gz
+    sha256: "6d11b1dca5982279700dbdb0b77f797e34292c0fd6d6eadd9cc393753cff175d"
     files:
     - from: "./outdated"
       to: "."
@@ -19,8 +19,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/replicatedhq/outdated/releases/download/v0.2.2/outdated_0.2.2_darwin_amd64-0.2.2.tar.gz
-    sha256: "7e7b39367c5d135179edc58d22c72be58a272816d62348ccbb06d3680c9c68e1"
+    uri: https://github.com/replicatedhq/outdated/releases/download/v0.3.0/outdated_0.3.0_darwin_amd64-0.3.0.tar.gz
+    sha256: "65d5936d7de80a99b2cc0eddbbbe8bb1d48bd938ac0d3e6d50bcb6508c506374"
     files:
     - from: "./outdated"
       to: "."
@@ -29,8 +29,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/replicatedhq/outdated/releases/download/v0.2.2/outdated_0.2.2_windows_amd64-0.2.2.zip
-    sha256: "05052f0f97ce1986f69f69e1d442022b7bed1089f70ad9b25645dc1292a66023"
+    uri: https://github.com/replicatedhq/outdated/releases/download/v0.3.0/outdated_0.3.0_windows_amd64-0.3.0.zip
+    sha256: "1dd2a7342839a472552a33c9992793d21fc21aae1f59a3ef0382a642981f7624"
     files:
     - from: "/outdated.exe"
       to: "."
@@ -40,13 +40,16 @@ spec:
   caveats: |
     Usage:
       $ kubectl outdated
+
     For additional options:
       $ kubectl outdated --help
-      or https://github.com/replicatedhq/outdated/blob/v0.2.2/doc/USAGE.md
+      or https://github.com/replicatedhq/outdated/blob/v0.3.0/doc/USAGE.md
+
   description: |
     The plugin will scan for all pods in all namespaces that you have at least
     read access to. It will then connect to the registry that hosts the image,
     and (if there's permission), it will analyze your tag to the list of
     current tags.
+
     The output is a list of all images, with the most out-of-date images in red,
     slightly outdated in yellow, and up-to-date in green.

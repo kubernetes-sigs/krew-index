@@ -3,13 +3,13 @@ kind: Plugin
 metadata:
   name: gopass
 spec:
-  version: "v0.0.2"
+  version: "v0.0.3"
   platforms:
     - selector:
         matchExpressions:
           - {key: os, operator: In, values: [darwin, linux]}
-      uri: https://github.com/gopasspw/kubectl-gopass/archive/v0.0.2.zip
-      sha256: "794bcbf82428e321f3301c443437259cd79ee13d31dbff3dc4ad226421a2a7a7"
+      uri: https://github.com/gopasspw/kubectl-gopass/archive/v0.0.3.zip
+      sha256: "ae4d2aa8ec061aa6916b2120fa3caf48d1cee328bab7cd263a03f8b1aeec22f8"
       files:
         - from: "/kubectl-gopass-*/kubectl-gopass"
           to: "."

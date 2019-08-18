@@ -1,0 +1,22 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: gopass
+spec:
+  version: "v0.0.2"
+  platforms:
+    - selector:
+        matchExpressions:
+          - {key: os, operator: In, values: [darwin, linux]}
+      uri: https://github.com/gopasspw/kubectl-gopass/archive/v0.0.2.zip
+      sha256: "794bcbf82428e321f3301c443437259cd79ee13d31dbff3dc4ad226421a2a7a7"
+      files:
+        - from: "/kubectl-gopass-*/kubectl-gopass"
+          to: "."
+      bin: "./kubectl-gopass"
+  shortDescription: Imports secrets from gopass
+  homepage: https://github.com/gopasspw/kubectl-gopass
+  caveats: |
+    This plugin requires bash and gopass to be set up correctly
+  description: |
+    This plugin allows applying and diffing secrets from gopass to k8s

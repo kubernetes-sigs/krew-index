@@ -129,6 +129,7 @@ Plugins should be as user-friendly as possible.
 Please follow the following guidelines:
 
 1. Standard look & feel: The plugin should adhere to standard kubectl best practices and have consistent (abbreviated) flag names. For example: bad `--ns`, good `--namespace` + `-n`.
+    - when writing a plugin in go, consider using the official `k8s.io/cli-runtime/pkg/genericclioptions`
 2. A plugin should be documented in such a way, that a proficient `kubectl` user immediately understands its purpose and how to use it.
 3. If the plugin has dependencies, try to limit those to fundamental UNIX tools (like bash, sed, grep, awk) or popular tools (like jq, yq) as this makes it easier to get started.
 4. Make sure the plugin fails with a user-friendly error when a required dependency is missing.

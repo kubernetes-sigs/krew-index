@@ -3,20 +3,30 @@ kind: Plugin
 metadata:
   name: gopass
 spec:
-  version: "v0.0.3"
+  version: "v0.0.4"
   platforms:
     - selector:
         matchExpressions:
           - {key: os, operator: In, values: [darwin, linux]}
-      uri: https://github.com/gopasspw/kubectl-gopass/archive/v0.0.3.zip
-      sha256: "ae4d2aa8ec061aa6916b2120fa3caf48d1cee328bab7cd263a03f8b1aeec22f8"
+      uri: https://github.com/gopasspw/kubectl-gopass/archive/v0.0.4.zip
+      sha256: "8bae04664693153555af921fb19b896aaccf39f7dec200e430816ff3fa47e1eb"
       files:
         - from: "/kubectl-gopass-*/kubectl-gopass"
           to: "."
       bin: "./kubectl-gopass"
+    - selector:
+        matchLabels:
+          os: windows
+      uri: https://github.com/gopasspw/kubectl-gopass/archive/v0.0.4.zip
+      sha256: "8bae04664693153555af921fb19b896aaccf39f7dec200e430816ff3fa47e1eb"
+      files:
+        - from: "/kubectl-gopass-*/kubectl-gopass"
+          to: "."
+      bin: "./kubectl-gopass.exe"
   shortDescription: Imports secrets from gopass
   homepage: https://github.com/gopasspw/kubectl-gopass
   caveats: |
-    This plugin requires bash and gopass to be set up correctly
+    This plugin requires bash and gopass
   description: |
-    This plugin allows applying and diffing secrets from gopass to k8s
+    This plugin allows applying and diffing secrets from gopass to kubernetes
+    and creating kubernetes secrets in gopass.

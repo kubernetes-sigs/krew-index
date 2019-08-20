@@ -1,12 +1,15 @@
 ## Available kubectl plugins
 
-The following kubectl plugins are currently available
-on [Krew plugin index](https://sigs.k8s.io/krew-index).
-
 To install these kubectl plugins:
 
 1. [Install Krew](https://github.com/kubernetes-sigs/krew#installation)
 2. Run `kubectl krew install PLUGIN_NAME` to install a plugin via Krew.
+
+The following kubectl plugins are currently available on
+[Krew plugin index](https://sigs.k8s.io/krew-index). Note that this table may be
+outdated. For the most up-to-date list of plugins, visit the
+[krew-index](https://github.com/kubernetes-sigs/krew-index/tree/master/plugins)
+repository or run <code>kubectl krew search</code>.
 
 Name | Description | Stars
 ---- | ----------- | -----
@@ -17,7 +20,7 @@ Name | Description | Stars
 [config-cleanup](https://github.com/b23llc/kubectl-config-cleanup) | Automatically clean up your kubeconfig | ![GitHub stars](https://img.shields.io/github/stars/b23llc/kubectl-config-cleanup.svg?label=stars&logo=github)
 [cssh](https://github.com/containership/kubectl-cssh) | SSH into Kubernetes nodes | ![GitHub stars](https://img.shields.io/github/stars/containership/kubectl-cssh.svg?label=stars&logo=github)
 [debug-shell](https://github.com/danisla/kubefunc) | Create pod with interactive kube-shell. | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
-[eksporter](https://github.com/Kyrremann/kubeflow-eksporter) | Export resources and removes a pre-defined set of fields for later import | ![GitHub stars](https://img.shields.io/github/stars/Kyrremann/kubeflow-eksporter.svg?label=stars&logo=github)
+[eksporter](https://github.com/Kyrremann/kubectl-eksporter) | Export resources and removes a pre-defined set of fields for later import | ![GitHub stars](https://img.shields.io/github/stars/Kyrremann/kubectl-eksporter.svg?label=stars&logo=github)
 [exec-as](https://github.com/jordanwilson230/kubectl-plugins/tree/krew#kubectl-exec-as) | Like kubectl exec, but offers a `user` flag to exec as root or any other user. | ![GitHub stars](https://img.shields.io/github/stars/jordanwilson230/kubectl-plugins.svg?label=stars&logo=github)
 [exec-cronjob](https://github.com/thecloudnatives/kubectl-plugins#exec-cronjob) | Run a CronJob immediately as Job | ![GitHub stars](https://img.shields.io/github/stars/thecloudnatives/kubectl-plugins.svg?label=stars&logo=github)
 [get-all](https://github.com/corneliusweig/ketall) | Like 'kubectl get all', but _really_ everything | ![GitHub stars](https://img.shields.io/github/stars/corneliusweig/ketall.svg?label=stars&logo=github)
@@ -46,8 +49,8 @@ Name | Description | Stars
 [resource-capacity](https://github.com/robscott/kube-capacity) | Provides an overview of resource requests, limits, and utilization | ![GitHub stars](https://img.shields.io/github/stars/robscott/kube-capacity.svg?label=stars&logo=github)
 [restart](https://github.com/achanda/kubectl-restart) | Restarts a pod with the given name | ![GitHub stars](https://img.shields.io/github/stars/achanda/kubectl-restart.svg?label=stars&logo=github)
 [rm-standalone-pods](https://github.com/ahmetb/kubectl-extras) | Remove all pods without owner references | ![GitHub stars](https://img.shields.io/github/stars/ahmetb/kubectl-extras.svg?label=stars&logo=github)
-[sniff](https://github.com/eldadru/ksniff) | easly start a remote packet capture on kubernetes pods using tcpdump and wireshark | ![GitHub stars](https://img.shields.io/github/stars/eldadru/ksniff.svg?label=stars&logo=github)
-[sort-manifests](https://github.com/superbrothers/ksort) | Sort manfest files in a proper order by Kind | ![GitHub stars](https://img.shields.io/github/stars/superbrothers/ksort.svg?label=stars&logo=github)
+[sniff](https://github.com/eldadru/ksniff) | Start a remote packet capture on pods using tcpdump and wireshark | ![GitHub stars](https://img.shields.io/github/stars/eldadru/ksniff.svg?label=stars&logo=github)
+[sort-manifests](https://github.com/superbrothers/ksort) | Sort manifest files in a proper order by Kind | ![GitHub stars](https://img.shields.io/github/stars/superbrothers/ksort.svg?label=stars&logo=github)
 [ssh-jump](https://github.com/yokawasa/kubectl-plugin-ssh-jump) | A kubectl plugin to SSH into Kubernetes nodes using a SSH jump host Pod | ![GitHub stars](https://img.shields.io/github/stars/yokawasa/kubectl-plugin-ssh-jump.svg?label=stars&logo=github)
 [sudo](https://github.com/postfinance/kubectl-sudo) | Run Kubernetes commands impersonated as group system:masters | ![GitHub stars](https://img.shields.io/github/stars/postfinance/kubectl-sudo.svg?label=stars&logo=github)
 [support-bundle](https://github.com/replicatedhq/troubleshoot) | Creates support bundles for off-cluster analysis | ![GitHub stars](https://img.shields.io/github/stars/replicatedhq/troubleshoot.svg?label=stars&logo=github)

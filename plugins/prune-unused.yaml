@@ -3,13 +3,13 @@ kind: Plugin
 metadata:
   name: prune-unused
 spec:
-  version: v0.3.0
+  version: v0.5.0
   platforms:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-    uri: https://github.com/thecloudnatives/kubectl-plugins/archive/v0.3.0.zip
-    sha256: d002eac93dd6396eb84996cae88d6569d2451212dca4a098d26e1a123754cbd1
+    uri: https://github.com/thecloudnatives/kubectl-plugins/archive/v0.5.0.zip
+    sha256: 4f515bb1d07c20c156c257456fc4a90f0e0deab8bad8c416441b6a23618d7e16
     files:
     - from: kubectl-plugins-*/prune-unused/*
       to: "."
@@ -25,6 +25,7 @@ spec:
 
     Options:
         -n, --namespace='': If present, the namespace scope for this CLI request
+        --dry-run: If true, only print the object that would be pruned, without deleting it.
         -h, --help='': Display this help
 
     Read the documentation at:

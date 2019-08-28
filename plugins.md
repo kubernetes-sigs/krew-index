@@ -14,17 +14,20 @@ repository or run <code>kubectl krew search</code>.
 Name | Description | Stars
 ---- | ----------- | -----
 [access-matrix](https://github.com/corneliusweig/rakkess) | Show an RBAC access matrix for server resources | ![GitHub stars](https://img.shields.io/github/stars/corneliusweig/rakkess.svg?label=stars&logo=github)
+[auth-proxy](https://github.com/int128/kauthproxy) | Authentication proxy to a pod or service | ![GitHub stars](https://img.shields.io/github/stars/int128/kauthproxy.svg?label=stars&logo=github)
 [bulk-action](https://github.com/emreodabas/kubectl-plugins#kubectl-bulk) | Do bulk actions on Kubernetes resources. | ![GitHub stars](https://img.shields.io/github/stars/emreodabas/kubectl-plugins.svg?label=stars&logo=github)
 [ca-cert](https://github.com/ahmetb/kubectl-extras) | Print the PEM CA certificate of the current cluster | ![GitHub stars](https://img.shields.io/github/stars/ahmetb/kubectl-extras.svg?label=stars&logo=github)
 [change-ns](https://github.com/juanvallejo/kubectl-ns) | View or change the current namespace via kubectl. | ![GitHub stars](https://img.shields.io/github/stars/juanvallejo/kubectl-ns.svg?label=stars&logo=github)
 [config-cleanup](https://github.com/b23llc/kubectl-config-cleanup) | Automatically clean up your kubeconfig | ![GitHub stars](https://img.shields.io/github/stars/b23llc/kubectl-config-cleanup.svg?label=stars&logo=github)
 [cssh](https://github.com/containership/kubectl-cssh) | SSH into Kubernetes nodes | ![GitHub stars](https://img.shields.io/github/stars/containership/kubectl-cssh.svg?label=stars&logo=github)
+[custom-cols](https://github.com/webofmars/kubectl-custom-cols) | A "kubectl get" replacement with customizable column presets | ![GitHub stars](https://img.shields.io/github/stars/webofmars/kubectl-custom-cols.svg?label=stars&logo=github)
 [debug-shell](https://github.com/danisla/kubefunc) | Create pod with interactive kube-shell. | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
 [eksporter](https://github.com/Kyrremann/kubectl-eksporter) | Export resources and removes a pre-defined set of fields for later import | ![GitHub stars](https://img.shields.io/github/stars/Kyrremann/kubectl-eksporter.svg?label=stars&logo=github)
 [exec-as](https://github.com/jordanwilson230/kubectl-plugins/tree/krew#kubectl-exec-as) | Like kubectl exec, but offers a `user` flag to exec as root or any other user. | ![GitHub stars](https://img.shields.io/github/stars/jordanwilson230/kubectl-plugins.svg?label=stars&logo=github)
 [exec-cronjob](https://github.com/thecloudnatives/kubectl-plugins#exec-cronjob) | Run a CronJob immediately as Job | ![GitHub stars](https://img.shields.io/github/stars/thecloudnatives/kubectl-plugins.svg?label=stars&logo=github)
 [get-all](https://github.com/corneliusweig/ketall) | Like 'kubectl get all', but _really_ everything | ![GitHub stars](https://img.shields.io/github/stars/corneliusweig/ketall.svg?label=stars&logo=github)
 [gke-credentials](https://github.com/danisla/kubefunc) | Fetch credentials for GKE clusters | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
+[gopass](https://github.com/gopasspw/kubectl-gopass) | Imports secrets from gopass | ![GitHub stars](https://img.shields.io/github/stars/gopasspw/kubectl-gopass.svg?label=stars&logo=github)
 [grep](https://github.com/guessi/kubectl-grep) | Filter Kubernetes resources by matching their names | ![GitHub stars](https://img.shields.io/github/stars/guessi/kubectl-grep.svg?label=stars&logo=github)
 [iexec](https://github.com/gabeduke/kubectl-iexec) | Interactive selection tool for `kubectl exec` | ![GitHub stars](https://img.shields.io/github/stars/gabeduke/kubectl-iexec.svg?label=stars&logo=github)
 [ingress-nginx](https://kubernetes.github.io/ingress-nginx/kubectl-plugin/) | Interact with ingress-nginx | ![GitHub stars](https://img.shields.io/github/stars/kubernetes/ingress-nginx.svg?label=stars&logo=github)
@@ -33,7 +36,7 @@ Name | Description | Stars
 [kubesec-scan](https://github.com/stefanprodan/kubectl-kubesec) | Scan Kubernetes resources with kubesec.io. | ![GitHub stars](https://img.shields.io/github/stars/stefanprodan/kubectl-kubesec.svg?label=stars&logo=github)
 [kudo](https://kudo.dev/) | Declaratively build, install, and run operators using KUDO. | 
 [match-name](https://github.com/gerald1248/kubectl-match-name) | Match names of pods and other API objects | ![GitHub stars](https://img.shields.io/github/stars/gerald1248/kubectl-match-name.svg?label=stars&logo=github)
-[mtail](https://github.com/ahmetb/kubectl-extras) | Tail logs from multiple pods matching label selector | ![GitHub stars](https://img.shields.io/github/stars/ahmetb/kubectl-extras.svg?label=stars&logo=github)
+[mtail](https://gitlab.com/grzesuav/kubectl-mtail) | Tail logs from multiple pods matching label selector | 
 [neat](https://github.com/itaysk/kubectl-neat) | Remove clutter from Kubernetes manifests to make them more readable. | ![GitHub stars](https://img.shields.io/github/stars/itaysk/kubectl-neat.svg?label=stars&logo=github)
 [node-admin](https://github.com/danisla/kubefunc) | List nodes and run privileged pod with chroot | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
 [oidc-login](https://github.com/int128/kubelogin) | Log in to the OpenID Connect provider | ![GitHub stars](https://img.shields.io/github/stars/int128/kubelogin.svg?label=stars&logo=github)

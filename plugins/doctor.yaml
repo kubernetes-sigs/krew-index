@@ -56,3 +56,7 @@ spec:
     Please check the repository for an example report:
 
     * https://github.com/emirozer/kubectl-doctor
+  caveats: |
+    This plugin needs higher privileges on core API group.
+    Potentially a ClusterRole that can get cluster-scoped resources.
+    Such as nodes / all namespaces etc.

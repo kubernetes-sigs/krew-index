@@ -45,12 +45,14 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-  shortDescription: kubectl cluster triage plugin - (brew doctor equivalent)
+  shortDescription: kubectl cluster triage plugin - scans your cluster and reports anomalies.
   homepage: https://github.com/emirozer/kubectl-doctor
   description: |
     This plugin is inspired by brew doctor.
-     It will scan the active kube-context for anomalies or
+    It will scan the active kube-context for anomalies or
     useful action points that it can report back to you.
-    This plugin does not change any state or configuration,
-    it merely just scans and gathers information than reports back anomalies in yaml format.
-    Please check the repository for an example report.
+    This plugin does not change any state or configuration.
+
+    Please check the repository for an example report:
+
+    * https://github.com/emirozer/kubectl-doctor

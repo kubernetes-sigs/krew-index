@@ -1,0 +1,62 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: doctor
+spec:
+  version: "v0.2.1"
+  platforms:
+  - uri: https://github.com/emirozer/kubectl-doctor/releases/download/0.2.1/kubectl-doctor_darwin_amd64.zip
+    sha256: 99b804b16549ec3cd59223f4e69f6ee8eb17d96727839c57d212343af9b3f978
+    bin: kubectl-doctor
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/emirozer/kubectl-doctor/releases/download/0.2.1/kubectl-doctor_linux_amd64.zip
+    sha256: 541391851273fea92a82dbaac4bf6d67748b244499e4b5f110cf701b077f9f22
+    bin: kubectl-doctor
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/emirozer/kubectl-doctor/releases/download/0.2.1/kubectl-doctor_linux_arm.zip
+    sha256: 444ce31309c5ccd3597f23a86da824060e92d1a7dff3182d485daa8455883e83
+    bin: kubectl-doctor
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm
+  - uri: https://github.com/emirozer/kubectl-doctor/releases/download/0.2.1/kubectl-doctor_windows_amd64.zip
+    sha256: 1b86784a9dc0673462df5b75bbf7e23772bfb11665feacb91bc8f7d2474711a1
+    bin: kubectl-doctor.exe
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  shortDescription: Scans your cluster and reports anomalies.
+  homepage: https://github.com/emirozer/kubectl-doctor
+  description: |
+    This plugin is inspired by brew doctor.
+    It will scan the active kube-context for anomalies or
+    useful action points that it can report back to you.
+    This plugin does not change any state or configuration.
+
+    Please check the repository for an example report:
+
+    * https://github.com/emirozer/kubectl-doctor
+  caveats: |
+    This plugin needs higher privileges on core API group.
+    Potentially a ClusterRole that can get cluster-scoped resources.
+    Such as nodes / all namespaces etc.

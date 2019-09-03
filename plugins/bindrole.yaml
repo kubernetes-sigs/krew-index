@@ -3,15 +3,12 @@ kind: Plugin
 metadata:
   name: bindrole
 spec:
-  shortDescription: Finding Kubernetes Roles bound to a specified ServiceAccount, Group or User
-  description: |
-    This plugin is a tool designed to find Kubernetes roles bound to a specified ServiceAccount, Group or User
-
+  shortDescription: Show a summary of rbac roles tied to a given ServiceAccount, Group, or User
   homepage: https://github.com/Ladicle/kubectl-bindrole
-  version: v1.1.0
+  version: v1.2.0
   platforms:
-    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.1.0/kubectl-bindrole_linux-amd64.tar.gz
-      sha256: "e9ca1368302c4e9348235022c288fec5974dcacf41f2745a0c235572ec84482b"
+    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.2.0/kubectl-bindrole_linux-amd64.tar.gz
+      sha256: "87c30f327cface2e901ee9383b05fb40024c6d5bdb31cebc03b81104ad45428a"
       bin: kubectl-bindrole
       files:
         - from: ./kubectl-bindrole_linux-amd64/kubectl-bindrole
@@ -20,8 +17,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.1.0/kubectl-bindrole_darwin-amd64.tar.gz
-      sha256: "7e0da62a72041f482a99ed18dc908e57426e2cfc57a99200cf3e760be7501031"
+    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.2.0/kubectl-bindrole_darwin-amd64.tar.gz
+      sha256: "7aece945c58693dc648950d4fafebe2bb9f042e4a04cb74b6a3eb8e257a84f69"
       bin: kubectl-bindrole
       files:
         - from: ./kubectl-bindrole_darwin-amd64/kubectl-bindrole
@@ -30,8 +27,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.1.0/kubectl-bindrole_windows-amd64.tar.gz
-      sha256: "218cd8488a7d7516cc251c79983a7ae9d82f3903969efbdf283405297fdd8a27"
+    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.2.0/kubectl-bindrole_windows-amd64.tar.gz
+      sha256: "40a90d694d6c11af054b4b6be3a0a130535bb530a5c78aa20930a0ea8ed6561c"
       bin: kubectl-bindrole
       files:
         - from: ./kubectl-bindrole_windows-amd64/kubectl-bindrole

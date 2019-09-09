@@ -5,7 +5,7 @@ metadata:
 spec:
   platforms:
   - head: https://gitlab.com/grzesuav/kubectl-mtail/-/archive/master/kubectl-mtail-master.zip
-    sha256: 592dca7f2fac476438fea5a5861f7f57c5329e82f76179061e1d689e105150d1
+    sha256: 592dca7f2fac476438fea5a5861f7f57c5329e82f76179061e1d689e105150d2
     uri: https://gitlab.com/grzesuav/kubectl-mtail/uploads/e7e0277d55b21d3004e078b3f67133d0/mtail.tar.gz
     bin: mtail.sh
     files:
@@ -14,7 +14,7 @@ spec:
     selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-  version: "v1.1.0"
+  version: "v1.1.1"
   homepage: https://gitlab.com/grzesuav/kubectl-mtail
   shortDescription: Tail logs from multiple pods matching label selector
   caveats: |

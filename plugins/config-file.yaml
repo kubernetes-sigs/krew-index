@@ -1,28 +1,21 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: config-file               
+  name: config-file
 spec:
-  version: "v0.1.0"      
+  version: "v0.1.0"       
   platforms:
   - selector:             
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
     uri: https://github.com/Modulus/kubectl-cfg/archive/0.0.6.zip
-    sha256: "41952b7105e2a9f5f1b3fec306bc59c8e972578f9b5d543defeb970c5b5876d5"
+    sha256: "325aa06035e07d6da42ee5c0e44b29b92990b3584589447dcf80b093114b0a43"
     files:
-    - from: "/kubectl-config-file*/*.sh" 
+    - from: "/kubectl-config-file*/*.sh"
       to: "."              
     bin: "./kubectl-config-file.sh"  
-  shortDescription: List config files, and links chosen config file to ~/.kube/config without messing up your files.
-  homepage: https://github.com/Modulus/kubectl-cfg 
-  caveats: |
-    This plugin needs the following programs:
-    * ls(1)
-    * ln(2)
-    * find(3)
-    * grep(4)
-    * cut(5)
-    * echo(6)
+  shortDescription: List available kubeconfigs and link them to ~/.kube/config.
+  homepage: https://github.com/Modulus/kubectl-config-file
   description: |
-    This plugin list all files in ~/.kube folder. Can also link chosen file as ~/.kube/config. So you can work with multiple cluster configs without messing with environment variables.
+    List available kubeconfigs and link them to ~/.kube/config. So you can work
+    with multiple cluster configs without messing with environment variables.

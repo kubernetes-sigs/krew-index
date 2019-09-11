@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: krew
 spec:
-  version: "v0.2.1"
+  version: "v0.3.0"
   homepage: https://sigs.k8s.io/krew
   shortDescription: Package manager for kubectl plugins.
   caveats: |
@@ -25,8 +25,8 @@ spec:
     You can find documentation at https://sigs.k8s.io/krew.
 
   platforms:
-  - uri: https://storage.googleapis.com/krew/v0.2.1/krew.tar.gz
-    sha256: dc2f2e1ec8a0acb6f3e23580d4a8b38c44823e948c40342e13ff6e8e12edb15a
+  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.3.0/krew.tar.gz
+    sha256: 9d672f876af91a23e7fd2448422a05686a2bf2a3435f2ba6b64801b298ec0ea9
     bin: krew
     files:
     - from: ./krew-darwin_amd64
@@ -35,8 +35,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://storage.googleapis.com/krew/v0.2.1/krew.tar.gz
-    sha256: dc2f2e1ec8a0acb6f3e23580d4a8b38c44823e948c40342e13ff6e8e12edb15a
+  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.3.0/krew.tar.gz
+    sha256: 9d672f876af91a23e7fd2448422a05686a2bf2a3435f2ba6b64801b298ec0ea9
     bin: krew
     files:
     - from: ./krew-linux_amd64
@@ -45,8 +45,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://storage.googleapis.com/krew/v0.2.1/krew.tar.gz
-    sha256: dc2f2e1ec8a0acb6f3e23580d4a8b38c44823e948c40342e13ff6e8e12edb15a
+  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.3.0/krew.tar.gz
+    sha256: 9d672f876af91a23e7fd2448422a05686a2bf2a3435f2ba6b64801b298ec0ea9
     bin: krew
     files:
     - from: ./krew-linux_arm
@@ -55,8 +55,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm
-  - uri: https://storage.googleapis.com/krew/v0.2.1/krew.zip
-    sha256: 57788e8c7af1b5b000954455aa9ca2e4a18a50a020faf54d18a3ccf79ad04049
+  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.3.0/krew.tar.gz
+    sha256: 9d672f876af91a23e7fd2448422a05686a2bf2a3435f2ba6b64801b298ec0ea9
     bin: krew.exe
     files:
     - from: ./krew-windows_amd64.exe

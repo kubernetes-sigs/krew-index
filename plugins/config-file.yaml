@@ -3,13 +3,13 @@ kind: Plugin
 metadata:
   name: config-file
 spec:
-  version: "v0.1.1"       
+  version: "v0.1.2"       
   platforms:
   - selector:             
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-    uri: https://github.com/Modulus/kubectl-config-file/archive/v0.1.1.zip
-    sha256: "644ddfb07c89b567a47ae4786e151351cc46f5c86fad6f7537e83a9c3a347987"
+    uri: https://github.com/Modulus/kubectl-config-file/archive/v0.1.2.zip
+    sha256: "9ee9aa2ac6510157d3531017aa6245e015bdd09f22da9a328109024cb62f76bc"
     files:
     - from: "/kubectl-config-file*/*.sh"
       to: "."              

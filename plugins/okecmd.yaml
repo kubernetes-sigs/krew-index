@@ -1,0 +1,25 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: okecmd
+spec:
+  version: "v1.0.1"
+  platforms:
+  - selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+    uri: https://github.com/javiermugueta/okecmd/releases/download/v1.0.0/okecmd-1.0.0.zip
+    sha256: "6f8315746febfb97f61ce63822fcdb2cd430917753367e2a865cd29620e49477"
+    # copy the used files out of the zip archive, defaults to `[{from: "*", to: "."}]`
+    files:
+    - from: "./kubectl-okecmd" # path to the files extracted from archive
+      to: "."
+    bin: "./kubectl-okecmd"
+  shortDescription: Starts/stops compute nodes in OKE cluster.
+  homepage: https://github.com/javiermugueta/okecmd 
+  caveats: |
+    This plugin needs the following programs:
+    * homebrew
+    * jq
+  description: |
+    This plugin starts or stops all the compute nodes of a k8s cluster in Oracle Kubernetes Engine (OKE).

@@ -1,6 +1,6 @@
 language: go
 go:
-- 1.10.x
+- 1.13.x
 
 before_install:
   # install kubectl
@@ -11,7 +11,7 @@ before_install:
   # TODO(ahmetb) pin this to a version via a variable
   - (
       cd "$(mktemp -d)" &&
-      curl -fsSLO "https://storage.googleapis.com/krew/v0.2.1/krew.{tar.gz,yaml}" &&
+      curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/v0.3.1/krew.{tar.gz,yaml}" &&
       tar zxvf krew.tar.gz &&
       ./krew-linux_amd64 install --manifest=krew.yaml --archive=krew.tar.gz
     )

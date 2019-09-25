@@ -1,0 +1,39 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+￼kind: Plugin
+￼metadata:
+￼  name: validate-manifests
+￼spec:
+￼  version: "0.14.0"
+￼  shortDescription: Validate your Kubernetes configuration files, supports multiple Kubernetes versions
+￼  homepage: https://github.com/instrumenta/kubeval
+￼  platforms:
+￼    - uri: https://github.com/instrumenta/kubeval/releases/download/0.14.0/kubeval-linux-amd64.tar.gz
+￼      sha256: "8b1b8c63df9ee3206113a3352e07474ea071610cfacf40a64db74c56e163f1e2"
+￼      bin: kubeval
+￼      files:
+￼      - from: "./kubeval"
+￼        to: "."
+￼      selector:
+￼        matchLabels:
+￼          os: linux
+￼          arch: amd64
+￼    - uri: https://github.com/instrumenta/kubeval/releases/download/0.14.0/kubeval-darwin-amd64.tar.gz
+￼      sha256: "05b9993e59a32b95bc5496dd98598e4a425643151efd108c0449405dd4a2a4c7"
+￼      bin: kubectl-kubeval.sh
+￼      files:
+￼        - from: "./kubeval"
+￼          to: "."
+￼      selector:
+￼        matchLabels:
+￼          os: darwin
+￼          arch: amd64
+    - uri: https://github.com/instrumenta/kubeval/releases/download/0.14.0/kubeval-windows-amd64.zip
+      sha256: "2a844518981848a7d77cced9b51a05174ba9c17fc007a1c48cd2af0d3fb021d7"
+￼      bin: kubectl-kubeval.sh
+￼      files:
+￼        - from: "./kubeval"
+￼          to: "."
+￼      selector:
+￼        matchLabels:
+￼          os: windows
+￼          arch: amd64

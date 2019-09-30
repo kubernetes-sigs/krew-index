@@ -1,0 +1,78 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: fields
+spec:
+  platforms:
+  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.0.0/kubectl-fields-Darwin-x86_64.tar.gz
+    sha256: 2e163e28075a69d4d1dca2b338ec889d967b38fb3e0ed2de1c89993b99ae2889
+    bin: kubectl-fields
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.0.0/kubectl-fields-Linux-x86_64.tar.gz
+    sha256: 951739ca1c73dac0729ec46828e677effa80b607efbbf4e79829f7a243126af7
+    bin: kubectl-fields
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.0.0/kubectl-fields-Windows-x86_64.tar.gz
+    sha256: 2785c6ccb4b1895c37423192f988dca4f3d4f8222cdce9fa0fdf60810e7c4eda
+    bin: kubectl-fields.exe
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  version: v1.0.0
+  homepage: https://github.com/rewanth1997/kubectl-fields
+  caveats: |
+    Usage:
+      $ kubectl fields [options] <RESOURCE> <PATTERN>
+
+    Options:
+      -h, --help          help for kubectl-fields
+      -i, --ignore-case   Ignore case distinction
+      --stdin         Expects input via pipes
+
+    Read the documentation:
+      https://github.com/rewanth1997/kubectl-fields/blob/master/README.md
+  shortDescription: Kubectl resources hierarchy parser
+  description: |
+    Kubectl resources hierarchy parser.
+
+    More on https://github.com/rewanth1997/kubectl-fields
+
+    Examples:
+
+    $ kubectl fields po.spec capa
+    containers.securityContext.capabilities
+    initContainers.securityContext.capabilities
+
+    $ kubectl fields -i svc ip
+    spec.clusterIP
+    spec.externalIPs
+    spec.loadBalancerIP
+    spec.sessionAffinityConfig.clientIP
+    status.loadBalancer.ingress.ip
+
+    Additional kubectl-fields example (the hard way not recommended). Developed to run tests on pipeline
+
+    $ kubectl explain --recursive po.spec | ./kubectl-fields --stdin ver
+    dnsConfig.nameservers
+    volumes.csi.driver
+    volumes.flexVolume.driver
+    volumes.iscsi.chapAuthDiscovery
+    volumes.nfs.server`
+
+    No more greps, pipes and scrolling up and down to find hierarchial order for resources :-)

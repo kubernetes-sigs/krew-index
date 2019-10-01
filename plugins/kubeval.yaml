@@ -1,11 +1,15 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 ￼kind: Plugin
 ￼metadata:
-￼  name: validate-manifests
+￼  name: validate-config
 ￼spec:
 ￼  version: "0.14.0"
-￼  shortDescription: Validate your Kubernetes configuration files, supports multiple Kubernetes versions
-￼  homepage: https://github.com/instrumenta/kubeval
+￼  shortDescription: Validate your Kubernetes configuration files
+  description: |
+    The plugin validate a Kubernetes YAML or JSON configuration file.
+    It does so using schemas generated from the Kubernetes OpenAPI specification,
+    and therefore can validate schemas for multiple versions of Kubernetes
+  homepage: https://github.com/instrumenta/kubeval
 ￼  platforms:
 ￼    - uri: https://github.com/instrumenta/kubeval/releases/download/0.14.0/kubeval-linux-amd64.tar.gz
 ￼      sha256: "8b1b8c63df9ee3206113a3352e07474ea071610cfacf40a64db74c56e163f1e2"

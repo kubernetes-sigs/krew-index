@@ -19,7 +19,7 @@ apiVersion: krew.googlecontainertools.github.com/v1alpha2
 ￼          arch: amd64
 ￼    - uri: https://github.com/instrumenta/kubeval/releases/download/0.14.0/kubeval-darwin-amd64.tar.gz
 ￼      sha256: "05b9993e59a32b95bc5496dd98598e4a425643151efd108c0449405dd4a2a4c7"
-￼      bin: kubectl-kubeval.sh
+￼      bin: kubeval
 ￼      files:
 ￼        - from: "./kubeval"
 ￼          to: "."
@@ -29,9 +29,9 @@ apiVersion: krew.googlecontainertools.github.com/v1alpha2
 ￼          arch: amd64
     - uri: https://github.com/instrumenta/kubeval/releases/download/0.14.0/kubeval-windows-amd64.zip
       sha256: "2a844518981848a7d77cced9b51a05174ba9c17fc007a1c48cd2af0d3fb021d7"
-￼      bin: kubectl-kubeval.sh
+￼      bin: kubeval.exe
 ￼      files:
-￼        - from: "./kubeval"
+￼        - from: "./kubeval.exe"
 ￼          to: "."
 ￼      selector:
 ￼        matchLabels:

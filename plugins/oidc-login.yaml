@@ -24,10 +24,10 @@ spec:
     You need to setup the OIDC provider, Kubernetes API server, role binding and kubeconfig.
     See https://github.com/int128/kubelogin for more.
 
-  version: v1.14.3
+  version: v1.14.4
   platforms:
-    - uri: https://github.com/int128/kubelogin/releases/download/v1.14.3/kubelogin_linux_amd64.zip
-      sha256: "06f427e05ef35286d43f19a30ba41df0db8380d0eeb4c178c6906704faee1e80"
+    - uri: https://github.com/int128/kubelogin/releases/download/v1.14.4/kubelogin_linux_amd64.zip
+      sha256: "c3dcb5015042a9fae07a97905f46ccfa77201968f5107ac2f18d4bd7e1559345"
       bin: kubelogin
       files:
         - from: "kubelogin"
@@ -36,8 +36,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/int128/kubelogin/releases/download/v1.14.3/kubelogin_darwin_amd64.zip
-      sha256: "6672bcb9e1138b8eb72e13f6f6ee4f2cbcea1d8f6b94c4767e8272e4565839cf"
+    - uri: https://github.com/int128/kubelogin/releases/download/v1.14.4/kubelogin_darwin_amd64.zip
+      sha256: "3b8795f70e8e20d07e4821e490fead2446d22cd27e9705b3a3a442af92ba0241"
       bin: kubelogin
       files:
         - from: "kubelogin"
@@ -46,8 +46,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/int128/kubelogin/releases/download/v1.14.3/kubelogin_windows_amd64.zip
-      sha256: "bb961cff99b921060a070d2549b419b87697c1f0ecdefe043af54b2ee51a1b81"
+    - uri: https://github.com/int128/kubelogin/releases/download/v1.14.4/kubelogin_windows_amd64.zip
+      sha256: "0edea84854a6027f3e01ae23f88fedd13d2212b1b91f0dd5a0f188626e539766"
       bin: kubelogin.exe
       files:
         - from: "kubelogin.exe"

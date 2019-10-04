@@ -3,13 +3,13 @@ kind: Plugin
 metadata:
   name: gopass
 spec:
-  version: "v0.0.4"
+  version: "v0.1.0"
   platforms:
     - selector:
         matchExpressions:
           - {key: os, operator: In, values: [darwin, linux]}
-      uri: https://github.com/gopasspw/kubectl-gopass/archive/v0.0.4.zip
-      sha256: "8bae04664693153555af921fb19b896aaccf39f7dec200e430816ff3fa47e1eb"
+      uri: https://github.com/gopasspw/kubectl-gopass/archive/v0.1.0.zip
+      sha256: "ea16d0b59e3a849d2df297ce0798e5e2611d30389dcb83a51c05677693626213"
       files:
         - from: "/kubectl-gopass-*/kubectl-gopass"
           to: "."
@@ -17,8 +17,8 @@ spec:
     - selector:
         matchLabels:
           os: windows
-      uri: https://github.com/gopasspw/kubectl-gopass/archive/v0.0.4.zip
-      sha256: "8bae04664693153555af921fb19b896aaccf39f7dec200e430816ff3fa47e1eb"
+      uri: https://github.com/gopasspw/kubectl-gopass/archive/v0.1.0.zip
+      sha256: "ea16d0b59e3a849d2df297ce0798e5e2611d30389dcb83a51c05677693626213"
       files:
         - from: "/kubectl-gopass-*/kubectl-gopass"
           to: "kubectl-gopass.exe"

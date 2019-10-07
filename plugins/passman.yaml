@@ -1,0 +1,277 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: passman
+spec:
+  version: "v0.0.1"
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-darwin-amd64.zip
+      sha256: "1bb5e6b37303229ce4cb157fd4348757b9f9eed0f7db99ad7e054bb76630d29c"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-darwin-amd64
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: 386
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-darwin-386.zip
+      sha256: "340286ac7bda27b3d58c4fdd17ff921633ca6fc09dcb77585b88e44370d7b45c"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-darwin-386
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: freebsd
+          arch: 386
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-freebsd-386.zip
+      sha256: "09484063fc7dc69b291d8a318c73fb85c66eea741cc489cfbf85b93544594f7e"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-freebsd-386
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: freebsd
+          arch: amd64
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-freebsd-amd64.zip
+      sha256: "09484063fc7dc69b291d8a318c73fb85c66eea741cc489cfbf85b93544594f7e"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-freebsd-amd64
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: freebsd
+          arch: arm
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-freebsd-arm.zip
+      sha256: "d17ccd18410c18cb9c1c9c6b90ab906b8838b44e79497265bd741a69e39ac5f9"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-freebsd-arm
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-linux-arm.zip
+      sha256: "9a62fc10358f008b6cb4c4ce2326eb84a22aeeb61001e782e9676e68cf1fa1ee"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-linux-arm
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: 386
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-linux-386.zip
+      sha256: "f70ebb5bcd260ce748a2516ae8f158de2645342ac49a3708fbe1243ccfb54029"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-linux-386
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-linux-amd64.zip
+      sha256: "3eb598093c422ca97f47cac412c390376858954fed7a63ee4e63b26533c7a177"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-linux-amd64
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-linux-arm64.zip
+      sha256: "ccc3148ad70ec0a1df68faa778eb543f1b3789e9ac3ae9b982c67a3805674998"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-linux-arm64
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: netbsd
+          arch: arm64
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-netbsd-arm64.zip
+      sha256: "d2811233fd30272621fb822091e39f28f6c8fdccab5e7ec02099d74d5bea2850"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-netbsd-arm64
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: netbsd
+          arch: arm
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-netbsd-arm.zip
+      sha256: "a28f9b3273c66cd6fa0d56bde0682d6df3b520f7f50a02f1099a83037a8e56b7"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-netbsd-arm
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: netbsd
+          arch: 386
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-netbsd-386.zip
+      sha256: "d901be03d760e495ce0f16919cbf1125061f828be647d0f426eaf49395c69843"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-netbsd-386
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: netbsd
+          arch: amd64
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-netbsd-amd64.zip
+      sha256: "8febb05b84fa0ac973554fa53e6b2804d175b7c132044cca879d1542a6b66ebe"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-netbsd-amd64
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: openbsd
+          arch: amd64
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-openbsd-amd64.zip
+      sha256: "52c379b132ef407090e6d5503da8fd9c8864ef93cbf9d8c478ac4cd9b4ecc334"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-openbsd-amd64
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: openbsd
+          arch: arm
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-openbsd-arm.zip
+      sha256: "e4decc5467cd89cf373911dbc488738fbea54cf786fcfc311ad28e25c21e7e0c"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-openbsd-arm
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: openbsd
+          arch: arm64
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-openbsd-arm64.zip
+      sha256: "2617ddc77a71ce5c87c548fc32d68728fda8ef612cba2150dce3559e6e75dcf7"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-openbsd-arm64
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: openbsd
+          arch: 386
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-openbsd-386.zip
+      sha256: "14d4cafbeb41e1350d1f57842f84755985f23145caf11f7420e61b8f953d550b"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-openbsd-386
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: plan9
+          arch: 386
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-plan9-386.zip
+      sha256: "3eb522c2c1d1accc959bae3ba601f07ef0cbdba71a5297ab3a25650939517d1d"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-plan9-386
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: plan9
+          arch: amd64
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-plan9-amd64.zip
+      sha256: "91984eef20e1268388a3b0f95ce5c1337b6c29c5e6e09a00805c615ba691536c"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-plan9-amd64
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: plan9
+          arch: arm
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-plan9-arm.zip
+      sha256: "40b8bd4bca7d4333fb541dcf83e643745b867b6f44bd532ffee66a5d0f6546e5"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-plan9-arm
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: solaris
+          arch: amd64
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-solaris-amd64.zip
+      sha256: "48cfddafaef8f73bb56cc31a5c8cb3809f3d8e855218492dc7b357a7c69b5c17"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-solaris-amd64
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-windows-amd64.zip
+      sha256: "d1d6ec247acb56bc2fcecec368907b23c98cd32acabc54bf86792330a9b1c323"
+      bin: "./kubectl-passman.exe"
+      files:
+        - from: kubectl-passman-windows-amd64.exe
+          to: kubectl-passman.exe
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: 386
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-windows-386.zip
+      sha256: "ebe8ac0614fe6414d02e2a1cb0bc4f0026ef564eb78c8356e11b7134988cfd49"
+      bin: "./kubectl-passman.exe"
+      files:
+        - from: kubectl-passman-windows-386.exe
+          to: kubectl-passman.exe
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-windows-arm.zip
+      sha256: "e0bf5fe8c4ab6a5063fae2cb3a0af5cfddd5248fe548930cdcf94f17eda6001e"
+      bin: "./kubectl-passman.exe"
+      files:
+        - from: kubectl-passman-windows-arm.exe
+          to: kubectl-passman.exe
+
+  shortDescription: kubectl plugin that aspires to provide the missing link/glue between common password managers and kubectl
+  homepage: https://github.com/chrisns/kubectl-passman
+  caveats: |
+    This plugin needs a usable keychain or password manager, see the docs https://github.com/chrisns/kubectl-passman
+  description: |
+    An easy way to store your kubernetes credentials in 1password or Mac OS Keychain (more password managers coming soon)

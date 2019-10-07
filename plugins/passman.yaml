@@ -1,0 +1,92 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: passman
+spec:
+  version: "v0.0.1"
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-darwin-amd64.zip
+      sha256: "ffe6be7421c61edb276ae7614de78af63d72ce94d42a77a0d94f8b8964f711ff"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-darwin-amd64
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: 386
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-darwin-386.zip
+      sha256: "2fc8a0b9b2194b481058f03c95ccb4bf24b5723876fd53f2060cb689762c4a2b"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-darwin-386
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-linux-arm.zip
+      sha256: "0a585b190cd5b5d912cd25ac9cf43f3d7e418eef86678c0d22de8ce9c66dacf2"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-linux-arm
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: 386
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-linux-386.zip
+      sha256: "09b4a95f8374935b2d21196b990b836b052ce86d11ae34e8f15233b1e871f050"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-linux-386
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-linux-amd64.zip
+      sha256: "110ddc8cf4d9d962c6990ab42af4ffd7e93567bd95388f988576c50d29c702e2"
+      bin: "./kubectl-passman"
+      files:
+        - from: kubectl-passman-linux-amd64
+          to: kubectl-passman
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-windows-amd64.zip
+      sha256: "31c9603fdc5905017a7deb8308d906d26842db01b4c3442f3c675b905cdd5703"
+      bin: "./kubectl-passman.exe"
+      files:
+        - from: kubectl-passman-windows-amd64.exe
+          to: kubectl-passman.exe
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: 386
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v0.0.1/kubectl-passman-windows-386.zip
+      sha256: "5adaa33ab1ed6fbaa063bb56e937c7ec0d3e7c93e8a5a42985cc4c84bb912320"
+      bin: "./kubectl-passman.exe"
+      files:
+        - from: kubectl-passman-windows-386.exe
+          to: kubectl-passman.exe
+
+  shortDescription: Store kubeconfig credentials in keychains or password managers
+  homepage: https://github.com/chrisns/kubectl-passman
+  caveats: |
+    This plugin needs a usable keychain or password manager
+    See usage docs https://github.com/chrisns/kubectl-passman
+  description: |
+    An easy way to store your kubernetes credentials in 1password or Mac OS Keychain
+    (more password managers coming soon)

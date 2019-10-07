@@ -82,9 +82,11 @@ spec:
         - from: kubectl-passman-windows-386.exe
           to: kubectl-passman.exe
 
-  shortDescription: kubectl plugin that aspires to provide the missing link/glue between common password managers and kubectl
+  shortDescription: Store kubeconfig credentials in keychains or password managers
   homepage: https://github.com/chrisns/kubectl-passman
   caveats: |
-    This plugin needs a usable keychain or password manager, see the docs https://github.com/chrisns/kubectl-passman
+    This plugin needs a usable keychain or password manager
+    See usage docs https://github.com/chrisns/kubectl-passman
   description: |
-    An easy way to store your kubernetes credentials in 1password or Mac OS Keychain (more password managers coming soon)
+    An easy way to store your kubernetes credentials in 1password or Mac OS Keychain
+    (more password managers coming soon)

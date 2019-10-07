@@ -4,8 +4,8 @@ metadata:
   name: fields
 spec:
   platforms:
-  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.0.0/kubectl-fields-Darwin-x86_64.tar.gz
-    sha256: 2e163e28075a69d4d1dca2b338ec889d967b38fb3e0ed2de1c89993b99ae2889
+  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.0.1/kubectl-fields-Darwin-x86_64.tar.gz
+    sha256: 9fe7b746fa74ba3deedabf77ecb35e7e24b7fc0410dd96219dff4ece02543fdf
     bin: kubectl-fields
     files:
     - from: "*"
@@ -14,8 +14,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.0.0/kubectl-fields-Linux-x86_64.tar.gz
-    sha256: 951739ca1c73dac0729ec46828e677effa80b607efbbf4e79829f7a243126af7
+  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.0.1/kubectl-fields-Linux-x86_64.tar.gz
+    sha256: 21ee6334120bae36ab4a4b23fed731423d81b21058a6df33e92b38110e0fbb2b
     bin: kubectl-fields
     files:
     - from: "*"
@@ -24,8 +24,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.0.0/kubectl-fields-Windows-x86_64.tar.gz
-    sha256: 2785c6ccb4b1895c37423192f988dca4f3d4f8222cdce9fa0fdf60810e7c4eda
+  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.0.1/kubectl-fields-Windows-x86_64.zip
+    sha256: 1eea1afb8b623934a240d9cc31923e9ab036524ae3d8a8349b50daced7e99cd7
     bin: kubectl-fields.exe
     files:
     - from: "*"
@@ -34,11 +34,11 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-  version: v1.0.0
+  version: v1.0.1
   homepage: https://github.com/rewanth1997/kubectl-fields
   caveats: |
     Usage:
-      $ kubectl fields [options] <RESOURCE> <PATTERN>
+      $ kubectl fields <RESOURCE> [options] <PATTERN> [<PATTERN 2> ...]
 
     Options:
       -h, --help          help for kubectl-fields
@@ -59,7 +59,7 @@ spec:
     containers.securityContext.capabilities
     initContainers.securityContext.capabilities
 
-    $ kubectl fields -i svc ip
+    $ kubectl fields svc -i ip
     spec.clusterIP
     spec.externalIPs
     spec.loadBalancerIP

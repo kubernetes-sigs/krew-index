@@ -42,6 +42,7 @@ Name | Description | Stars
 [oidc-login](https://github.com/int128/kubelogin) | Log in to the OpenID Connect provider | ![GitHub stars](https://img.shields.io/github/stars/int128/kubelogin.svg?label=stars&logo=github)
 [open-svc](https://github.com/superbrothers/kubectl-open-svc-plugin) | Open the Kubernetes URL(s) for the specified service in your browser. | ![GitHub stars](https://img.shields.io/github/stars/superbrothers/kubectl-open-svc-plugin.svg?label=stars&logo=github)
 [outdated](https://github.com/replicatedhq/outdated) | Finds outdated container images running in a cluster | ![GitHub stars](https://img.shields.io/github/stars/replicatedhq/outdated.svg?label=stars&logo=github)
+[passman](https://github.com/chrisns/kubectl-passman) | Provides glue between common password managers and kubectl for user credentials | ![GitHub stars](https://img.shields.io/github/stars/chrisns/kubectl-passman.svg?label=stars&logo=github)
 [pod-logs](https://github.com/danisla/kubefunc) | Display a list of pods to get logs from | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
 [pod-shell](https://github.com/danisla/kubefunc) | Display a list of pods to execute a shell in | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
 [preflight](https://github.com/replicatedhq/troubleshoot) | Executes application preflight tests in a cluster | ![GitHub stars](https://img.shields.io/github/stars/replicatedhq/troubleshoot.svg?label=stars&logo=github)

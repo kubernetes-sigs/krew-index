@@ -6,11 +6,11 @@ spec:
   shortDescription: Interact with ingress-nginx
   description: |
     The official kubectl plugin for ingress-nginx.
-  version: v0.24.0
+  version: v0.25.0
   homepage: https://kubernetes.github.io/ingress-nginx/kubectl-plugin/
   platforms:
-  - uri: https://github.com/kubernetes/ingress-nginx/releases/download/nginx-0.24.0/kubectl-ingress_nginx-darwin-amd64.tar.gz
-    sha256: 34e999ddc4e1926bbd7f4bdbb5fc40d6c3a5b2ffd711131e4f62e2d24cb2a179
+  - uri: https://github.com/kubernetes/ingress-nginx/releases/download/nginx-0.25.0/kubectl-ingress_nginx-darwin-amd64.tar.gz
+    sha256: 36c13b09dcd5778232514179b9ee00a8d4e31038c3323ba8b0e2f40b1dc61604 
     files:
     - from: "*"
       to: "."
@@ -19,8 +19,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/kubernetes/ingress-nginx/releases/download/nginx-0.24.0/kubectl-ingress_nginx-linux-amd64.tar.gz
-    sha256: 05d48fe58faa0ff577fe3b9c90f2e21233a140712a9f9ff0c9bd867e65f1b4e5
+  - uri: https://github.com/kubernetes/ingress-nginx/releases/download/nginx-0.25.0/kubectl-ingress_nginx-linux-amd64.tar.gz
+    sha256: 00c6d727a9a13405d7cb4ec73ac33a6f1621b01b6ad785a493299e159824d1e0
     files:
     - from: "*"
       to: "."

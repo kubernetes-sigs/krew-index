@@ -4,8 +4,8 @@ metadata:
   name: fields
 spec:
   platforms:
-  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.1.1-beta/kubectl-fields-Darwin-x86_64.tar.gz
-    sha256: ac82ee062e8bf1a9c6f6fab2e718e6d560c4ca1855616c2a67b0411792b575bc
+  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.2.0-beta/kubectl-fields-Darwin-x86_64.tar.gz
+    sha256: 35072754f24a0bf239c6bb90a53c528b7b88f99435e2a142907599b18169fade
     bin: kubectl-fields
     files:
     - from: "*"
@@ -14,8 +14,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.1.1-beta/kubectl-fields-Linux-x86_64.tar.gz
-    sha256: 051140e9df85e7c3b982fc7b4199084441bbfc6328624f9a0dff07193058f135
+  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.2.0-beta/kubectl-fields-Linux-x86_64.tar.gz
+    sha256: 730602c8400ad7b712a2eab26d3e1a5feb6593f442f369a3ea246fbb37f6fd3d
     bin: kubectl-fields
     files:
     - from: "*"
@@ -24,8 +24,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.1.1-beta/kubectl-fields-Windows-x86_64.zip
-    sha256: d188b7d2d1c567d7b074a3d8eb6c075aa8713e483074b839ff0da0300a8c710a
+  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.2.0-beta/kubectl-fields-Windows-x86_64.zip
+    sha256: 2ea706370ea3260e9e68943947bbaff295bc4fa1b97cf1492912b01d04d303a2
     bin: kubectl-fields.exe
     files:
     - from: "*"
@@ -34,22 +34,24 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-  version: v1.1.1-beta
+  version: v1.2.0-beta
   homepage: https://github.com/rewanth1997/kubectl-fields
   caveats: |
     Usage:
       $ kubectl fields <RESOURCE> [options] <PATTERN>
 
     Options:
-      -h, --help          help for kubectl-fields
-      -i, --ignore-case   Ignore case distinction
-      --stdin         Expects input via pipes
+      -I, --case-sensitive   Case sensitive pattern match
+      -h, --help             help for kubectl-fields
+          --no-color         Do not print colored output
+          --stdin            Expects input via pipes
 
     Read the documentation:
-      https://github.com/rewanth1997/kubectl-fields/tree/v1.0.1
+      https://github.com/rewanth1997/kubectl-fields/tree/v1.2.0-beta
   shortDescription: Grep resources hierarchy by field name
   description: |
-    Kubectl-fields is a cli tool to parse kubectl explain --recursive output and grep matching pattern in one-liner hierarchy format.
+    kubectl-fields parses specified kubectl resources to match given pattern(s).
+    It prints matched fields parental hierarchy in one-liner format.
 
     More on https://github.com/rewanth1997/kubectl-fields
 

@@ -1,0 +1,62 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: fields
+spec:
+  platforms:
+  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.2.0-beta/kubectl-fields-Darwin-x86_64.tar.gz
+    sha256: 35072754f24a0bf239c6bb90a53c528b7b88f99435e2a142907599b18169fade
+    bin: kubectl-fields
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.2.0-beta/kubectl-fields-Linux-x86_64.tar.gz
+    sha256: 730602c8400ad7b712a2eab26d3e1a5feb6593f442f369a3ea246fbb37f6fd3d
+    bin: kubectl-fields
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.2.0-beta/kubectl-fields-Windows-x86_64.zip
+    sha256: 2ea706370ea3260e9e68943947bbaff295bc4fa1b97cf1492912b01d04d303a2
+    bin: kubectl-fields.exe
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  version: v1.2.0-beta
+  homepage: https://github.com/rewanth1997/kubectl-fields
+  caveats: |
+    Usage:
+      kubectl fields <RESOURCE> [options] <PATTERN>
+
+    Documentation:
+      https://github.com/rewanth1997/kubectl-fields/tree/v1.2.0-beta
+  shortDescription: Grep resources hierarchy by field name
+  description: |
+    kubectl-fields parses specified kubectl resources to match given pattern(s).
+    It prints parental hierarchy of matched fields in one-liner format.
+
+    More on https://github.com/rewanth1997/kubectl-fields
+
+    Examples:
+
+    Find resource field names:
+    $ kubectl fields po.spec capa
+    containers.securityContext.capabilities
+    initContainers.securityContext.capabilities
+
+    Find resource field names case-insensitively:
+    $ kubectl fields svc -i affinity
+    spec.sessionAffinity
+    spec.sessionAffinityConfig`

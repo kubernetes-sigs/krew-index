@@ -45,7 +45,7 @@ spec:
   shortDescription: Grep resources hierarchy by field name
   description: |
     kubectl-fields parses specified kubectl resources to match given pattern(s).
-    It prints matched fields parental hierarchy in one-liner format.
+    It prints parental hierarchy of matched fields in one-liner format.
 
     More on https://github.com/rewanth1997/kubectl-fields
 
@@ -60,5 +60,3 @@ spec:
     $ kubectl fields svc -i affinity
     spec.sessionAffinity
     spec.sessionAffinityConfig`
-
-    No more greps, pipes and scrolling up and down to find hierarchial order for resources :-)

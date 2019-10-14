@@ -3,18 +3,13 @@ kind: Plugin
 metadata:
   name: neat
 spec:
-  caveats: |
-    This plugin depends on the following utilities which should be installed manually:
-    - `jq`
-    - `yq`
-    - `sponge` (from `moreutils`)
   description: |
     If you try to `kubectl get` resources you have just created,
-    they be unreadably verbose. `kubectl-neat` cleans up that redundant information.
-    Can be used as a `kubectl get` wrapper, or by piping into it.
+    they be unreadably verbose. `kubectl-neat` cleans that up by
+    removing default values, runtime information, and other internal fields.
     Examples:
-    $ `kubectl neat pod mypod -o yaml`
-    $ `kubectl get pod mypod -o yaml | kubectl neat`
+    `$ kubectl get pod mypod -o yaml | kubectl neat`
+    `$ kubectl neat pod mypod -o yaml`
   homepage: https://github.com/itaysk/kubectl-neat
   platforms:
   - bin: ./kubectl-neat
@@ -25,8 +20,8 @@ spec:
       matchLabels:
         arch: amd64
         os: darwin
-    sha256: 90519b69fef6d1ef3ab84b1d92f463929567b80fd17a1fb8148b94d52a6133a4
-    uri: https://github.com/itaysk/kubectl-neat/releases/download/v0.1.1/kubectl-neat_darwin.tar.gz
+    sha256: 0d8e3761c44edd826034a8e7c7bce36f63db725de21f469661cf9c36182c4ec0
+    uri: https://github.com/itaysk/kubectl-neat/releases/download/v1.0.0/kubectl-neat_darwin.tar.gz
   - bin: ./kubectl-neat
     files:
     - from: /dist/linux/*
@@ -35,7 +30,7 @@ spec:
       matchLabels:
         arch: amd64
         os: linux
-    sha256: aa54b60d6a55cbb41daf827a294fbabc022f4c0e3d41ab0eb5511957f031b2e7
-    uri: https://github.com/itaysk/kubectl-neat/releases/download/v0.1.1/kubectl-neat_linux.tar.gz
+    sha256: 612fd5830c3aff621fc75aa717f0e8fb80312b7ae51078eead00bb6d75327871
+    uri: https://github.com/itaysk/kubectl-neat/releases/download/v1.0.0/kubectl-neat_linux.tar.gz
   shortDescription: Remove clutter from Kubernetes manifests to make them more readable.
-  version: v0.1.1
+  version: v1.0.0

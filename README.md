@@ -1,11 +1,20 @@
 # krew-index
 
-This is the Plugin Index Repository for [krew kubectl plugin manager][krew].
+This is the centralized plugin index for [krew kubectl plugin manager][krew].
+
+* As a kubectl user: Through [krew][krew], you can discover available kubectl
+  plugins hosted in this repository.
+* As a kubectl plugin developer:  You can publish your plugins in this
+  repository and make it available to others.
 
 [krew]: https://github.com/kubernetes-sigs/krew
 
-You can find a list of kubectl plugins available on krew [here](./plugins.md)
-or in the [`./plugins` directory](./plugins).
+## Available kubectl plugins
+
+[See this list](./plugins.md) or the [`./plugins` directory](./plugins)
+directory. You can also install [krew][krew] and list available plugins with:
+
+    kubectl krew search
 
 ## Submitting new plugins
 

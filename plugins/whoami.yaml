@@ -1,0 +1,41 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: whoami
+spec:
+  version: "v0.0.2"
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.2/darwin-amd64-v0.0.2.tar.gz
+    sha256: 5eb338fd2c97b4cd54a1f1feddc66ef6696e49f11b811e3e8229622a474cc4e6
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-whoami
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.2/linux-amd64-v0.0.2.tar.gz
+    sha256: a83afa5def7762062fcb301de3d31a8e6542330217159583f7dabf7acea417a7
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-whoami
+  shortDescription: find subject of effective kubeconfig context
+  caveats: |
+    Usage:
+      kubectl whoami
+    
+    Read the documentation at:
+      https://github.com/rajatjindal/kubectl-whoami
+  description: |
+    Usage:
+      kubectl whoami
+
+      This plugin fetches the subject of the effective kubeconfig context
+  homepage: https://github.com/rajatjindal/kubectl-whoami
+

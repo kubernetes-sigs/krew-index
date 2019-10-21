@@ -3,7 +3,8 @@ kind: Plugin
 metadata:
   name: whoami
 spec:
-  version: "v0.0.2"
+  version: v0.0.2
+  homepage: https://github.com/rajatjindal/kubectl-whoami
   platforms:
   - selector:
       matchLabels:
@@ -25,17 +26,15 @@ spec:
     - from: "*"
       to: "."
     bin: kubectl-whoami
-  shortDescription: find subject of effective kubeconfig context
+  shortDescription: Show the subject that's currently authenticated as.
   caveats: |
-    Usage:
-      kubectl whoami
+    This plugin has only been tested with RBAC token, ServiceAccount token, and BasicAuth. 
+    
+    It will be great if we can get volunteers to test it with other Auth providers.
     
     Read the documentation at:
       https://github.com/rajatjindal/kubectl-whoami
   description: |
-    Usage:
-      kubectl whoami
+    This plugin show the subject that's currently authenticated as.
 
-      This plugin fetches the subject of the effective kubeconfig context
-  homepage: https://github.com/rajatjindal/kubectl-whoami
 

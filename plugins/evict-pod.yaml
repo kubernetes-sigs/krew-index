@@ -1,0 +1,37 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: evict-pod
+spec:
+  version: v0.0.1
+  homepage: https://github.com/rajatjindal/kubectl-evict-pod
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-evict-pod/releases/download/v0.0.1/darwin-amd64-v0.0.1.tar.gz
+    sha256: 0bdcaca618c0304745c2813969111d87e3a476151d701ee06e55a88a28a4fc4a
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-evict-pod
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-evict-pod/releases/download/v0.0.1/linux-amd64-v0.0.1.tar.gz
+    sha256: 53f4cf2161921fce47e29b2db660088f075d2337dbbb790ec19be93fc475b025
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-evict-pod
+  shortDescription: Evicts the given pod.
+  description: |
+    Usage:
+      kubectl evict-pod
+
+      This plugin evicts the given pod. useful for testing pod disruption budget rules.
+
+      Read more documentation at: https://github.com/rajatjindal/kubectl-evict-pod
+

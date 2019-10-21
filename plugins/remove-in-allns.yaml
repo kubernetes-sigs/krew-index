@@ -1,0 +1,55 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: remove-in-allns
+spec:
+  version: v0.0.2
+  homepage: https://github.com/rajatjindal/kubectl-remove-in-allns
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-remove-in-allns/releases/download/v0.0.2/darwin-amd64-v0.0.2.tar.gz
+    sha256: faf99884619da7d6455f500eb2993790e75c7af84aa6e08a138846db45a6fa23
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-remove-in-allns
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-remove-in-allns/releases/download/v0.0.2/linux-amd64-v0.0.2.tar.gz
+    sha256: 630be54a643fbceb7acfb6caf8794679f1f2a04e3146d440bcde0c21ec37b1b7
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-remove-in-allns
+  shortDescription: Remove the requested resource from all the namespaces.
+  caveats: |
+    This is potentially disruptive operation. Not recommended for use in Production and use at your own risk.
+
+    supports following resources right now (PR welcome for supporting other resource types):
+
+    - configmaps
+    - secrets
+    - ingress
+    - deployments
+    
+    Read the documentation at:
+      https://github.com/rajatjindal/kubectl-remove-in-allns
+  description: |
+    Usage:
+      kubectl remove-allns [resource-type] [resource-name] [flags]
+
+      e.g. 
+
+      $) kubectl remove-allns configmap my-test-config
+      
+      INFO[0000] configmap "my-test-config" deleted from namespace "default" 
+      INFO[0000] configmap "my-test-config" not found in namespace "kube-node-lease" 
+      INFO[0000] configmap "my-test-config" deleted from namespace "kube-public" 
+      INFO[0000] configmap "my-test-config" deleted from namespace "kube-system"
+
+      This plugin removes the requested resource from all the namespaces.

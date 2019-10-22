@@ -22,6 +22,7 @@ Name | Description | Stars
 [cssh](https://github.com/containership/kubectl-cssh) | SSH into Kubernetes nodes | ![GitHub stars](https://img.shields.io/github/stars/containership/kubectl-cssh.svg?label=stars&logo=github)
 [custom-cols](https://github.com/webofmars/kubectl-custom-cols) | A "kubectl get" replacement with customizable column presets | ![GitHub stars](https://img.shields.io/github/stars/webofmars/kubectl-custom-cols.svg?label=stars&logo=github)
 [debug-shell](https://github.com/danisla/kubefunc) | Create pod with interactive kube-shell. | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
+[debug](https://github.com/verb/kubectl-debug) | Attach ephemeral debug container to running pod | ![GitHub stars](https://img.shields.io/github/stars/verb/kubectl-debug.svg?label=stars&logo=github)
 [doctor](https://github.com/emirozer/kubectl-doctor) | Scans your cluster and reports anomalies. | ![GitHub stars](https://img.shields.io/github/stars/emirozer/kubectl-doctor.svg?label=stars&logo=github)
 [eksporter](https://github.com/Kyrremann/kubectl-eksporter) | Export resources and removes a pre-defined set of fields for later import | ![GitHub stars](https://img.shields.io/github/stars/Kyrremann/kubectl-eksporter.svg?label=stars&logo=github)
 [exec-as](https://github.com/jordanwilson230/kubectl-plugins/tree/krew#kubectl-exec-as) | Like kubectl exec, but offers a `user` flag to exec as root or any other user. | ![GitHub stars](https://img.shields.io/github/stars/jordanwilson230/kubectl-plugins.svg?label=stars&logo=github)
@@ -68,6 +69,7 @@ Name | Description | Stars
 [virt](https://kubevirt.io) | Control KubeVirt virtual machines using virtctl | 
 [warp](https://github.com/ernoaapa/kubectl-warp) | Sync and execute local files in Pod | ![GitHub stars](https://img.shields.io/github/stars/ernoaapa/kubectl-warp.svg?label=stars&logo=github)
 [who-can](https://github.com/aquasecurity/kubectl-who-can) | Shows who has RBAC permissions to access Kubernetes resources | ![GitHub stars](https://img.shields.io/github/stars/aquasecurity/kubectl-who-can.svg?label=stars&logo=github)
+[whoami](https://github.com/rajatjindal/kubectl-whoami) | Show the subject that's currently authenticated as. | ![GitHub stars](https://img.shields.io/github/stars/rajatjindal/kubectl-whoami.svg?label=stars&logo=github)
 
 
 ---

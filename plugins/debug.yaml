@@ -3,28 +3,28 @@ kind: Plugin
 metadata:
   name: debug
 spec:
-  version: v0.1.1
+  version: v0.1.2
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/verb/kubectl-debug/releases/download/v0.1.1/kubectl-debug_darwin_amd64.tar.gz
-    sha256: "6319e06af56ca9510d08638b976103bd67aa246ca055179f71808a0795ac759f"
+    uri: https://github.com/verb/kubectl-debug/releases/download/v0.1.2/kubectl-debug_darwin_amd64.tar.gz
+    sha256: "e8c6ce28b0eaec9aff17dc3b4c569ef3e731cad00673423d82524bd4d5c829ab"
     bin: ./kubectl-debug
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/verb/kubectl-debug/releases/download/v0.1.1/kubectl-debug_linux_amd64.tar.gz
-    sha256: "10769e18cc53fcdc0344374c05fbcfffa158a0bd108c6380c5fa4f3b65449008"
+    uri: https://github.com/verb/kubectl-debug/releases/download/v0.1.2/kubectl-debug_linux_amd64.tar.gz
+    sha256: "99e1bc8b7a5170a42369858d197de83e6864afb6a4ceec8e74241e6d4c92d8c5"
     bin: ./kubectl-debug
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/verb/kubectl-debug/releases/download/v0.1.1/kubectl-debug_windows_amd64.zip
-    sha256: "a4b79d7615f53b775e05e849260c7dbdb153e15676ca8c93aad1353ea9985b42"
+    uri: https://github.com/verb/kubectl-debug/releases/download/v0.1.2/kubectl-debug_windows_amd64.zip
+    sha256: "31fb5bc8e3a0f6ec72f3dac693c5cb2177027e7d614ef083b4f0a3586426c98f"
     bin: ./kubectl-debug.exe
   shortDescription: Attach ephemeral debug container to running pod
   homepage: https://github.com/verb/kubectl-debug

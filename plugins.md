@@ -63,7 +63,7 @@ Name | Description | Stars
 [sudo](https://github.com/postfinance/kubectl-sudo) | Run Kubernetes commands impersonated as group system:masters | ![GitHub stars](https://img.shields.io/github/stars/postfinance/kubectl-sudo.svg?label=stars&logo=github)
 [support-bundle](https://github.com/replicatedhq/troubleshoot) | Creates support bundles for off-cluster analysis | ![GitHub stars](https://img.shields.io/github/stars/replicatedhq/troubleshoot.svg?label=stars&logo=github)
 [tail](https://github.com/boz/kail) | Stream logs from multiple pods and containers using simple, dynamic source selection. | ![GitHub stars](https://img.shields.io/github/stars/boz/kail.svg?label=stars&logo=github)
-[view-secret](https://github.com/ahmetb/kubectl-extras) | Decode secrets | ![GitHub stars](https://img.shields.io/github/stars/ahmetb/kubectl-extras.svg?label=stars&logo=github)
+[view-secret](https://github.com/elsesiy/kubectl-view-secret) | Decode Kubernetes secrets | ![GitHub stars](https://img.shields.io/github/stars/elsesiy/kubectl-view-secret.svg?label=stars&logo=github)
 [view-serviceaccount-kubeconfig](https://github.com/superbrothers/kubectl-view-serviceaccount-kubeconfig-plugin) | Show a kubeconfig setting to access the apiserver with a specified serviceaccount. | ![GitHub stars](https://img.shields.io/github/stars/superbrothers/kubectl-view-serviceaccount-kubeconfig-plugin.svg?label=stars&logo=github)
 [view-utilization](https://github.com/etopeter/kubectl-view-utilization) | Shows cluster cpu and memory utilization | ![GitHub stars](https://img.shields.io/github/stars/etopeter/kubectl-view-utilization.svg?label=stars&logo=github)
 [virt](https://kubevirt.io) | Control KubeVirt virtual machines using virtctl | 

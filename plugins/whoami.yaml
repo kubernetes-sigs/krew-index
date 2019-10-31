@@ -3,15 +3,15 @@ kind: Plugin
 metadata:
   name: whoami
 spec:
-  version: v0.0.2
+  version: v0.0.3
   homepage: https://github.com/rajatjindal/kubectl-whoami
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.2/darwin-amd64-v0.0.2.tar.gz
-    sha256: 5eb338fd2c97b4cd54a1f1feddc66ef6696e49f11b811e3e8229622a474cc4e6
+    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.3/darwin-amd64-v0.0.3.tar.gz
+    sha256: 121b0f750bfc3c917cccde49999f5fa09dc405f6a4896be0f8d8d3099c5d3ded
     files:
     - from: "*"
       to: "."
@@ -20,8 +20,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.2/linux-amd64-v0.0.2.tar.gz
-    sha256: a83afa5def7762062fcb301de3d31a8e6542330217159583f7dabf7acea417a7
+    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.3/linux-amd64-v0.0.3.tar.gz
+    sha256: f64182c0613944a51a690d3db9cadc85c20dec277ce932f7074f217ff1cfa2b2
     files:
     - from: "*"
       to: "."
@@ -36,5 +36,4 @@ spec:
       https://github.com/rajatjindal/kubectl-whoami
   description: |
     This plugin show the subject that's currently authenticated as.
-
 

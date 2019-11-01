@@ -37,7 +37,7 @@ Name | Description | Stars
 [konfig](https://github.com/corneliusweig/konfig) | Merge, split or import kubeconfig files | ![GitHub stars](https://img.shields.io/github/stars/corneliusweig/konfig.svg?label=stars&logo=github)
 [krew](https://sigs.k8s.io/krew) | Package manager for kubectl plugins. | ![GitHub stars](https://img.shields.io/github/stars/kubernetes-sigs/krew.svg?label=stars&logo=github)
 [kubesec-scan](https://github.com/stefanprodan/kubectl-kubesec) | Scan Kubernetes resources with kubesec.io. | ![GitHub stars](https://img.shields.io/github/stars/stefanprodan/kubectl-kubesec.svg?label=stars&logo=github)
-[kudo](https://kudo.dev/) | Declaratively build, install, and run operators using KUDO. | 
+[kudo](https://kudo.dev/) | Declaratively build, install, and run operators using KUDO. | ![GitHub stars](https://img.shields.io/github/stars/kudobuilder/kudo.svg?label=stars&logo=github)
 [match-name](https://github.com/gerald1248/kubectl-match-name) | Match names of pods and other API objects | ![GitHub stars](https://img.shields.io/github/stars/gerald1248/kubectl-match-name.svg?label=stars&logo=github)
 [modify-secret](https://github.com/rajatjindal/kubectl-modify-secret) | modify secret with implicit base64 translations | ![GitHub stars](https://img.shields.io/github/stars/rajatjindal/kubectl-modify-secret.svg?label=stars&logo=github)
 [mtail](https://gitlab.com/grzesuav/kubectl-mtail) | Tail logs from multiple pods matching label selector | 

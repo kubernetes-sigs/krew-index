@@ -1,10 +1,9 @@
-#see https://github.com/kubernetes-sigs/krew/blob/master/docs/DEVELOPER_GUIDE.md
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
   name: view-allocations
 spec:
-  version: "v0.4.0" # required, must be in semver format, prefixed with "v"
+  version: "v0.4.0"
   platforms:
     - selector:
         matchLabels:
@@ -12,18 +11,16 @@ spec:
           arch: amd64
       uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.4.0/kubectl-view-allocations_0.4.0-x86_64-apple-darwin.tar.gz
       sha256: "b37c19d2b372b4a120582d33c1299d827f0c6324fce6548cbff35cffec1f2da3"
-      files: [{ from: "*", to: "." }]
-      bin: "./kubectl-view-allocations" # path to the plugin executable after copying files above
-    - selector: # a regular Kubernetes selector
+      bin: "./kubectl-view-allocations"
+    - selector:
         matchLabels:
           os: linux
           arch: amd64
       uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.4.0/kubectl-view-allocations_0.4.0-x86_64-unknown-linux-gnu.tar.gz
       sha256: "97466fc77bc985bffe72f9c09b5aa9d0f2af4b184d1a20f46cd7bdfae2048a9d"
-      files: [{ from: "*", to: "." }]
-      bin: "./kubectl-view-allocations" # path to the plugin executable after copying files above
-  shortDescription: Prints the environment variables.
-  homepage: https://github.com/davidB/kubectl-view-allocations # optional, url for the project homepage
+      bin: "./kubectl-view-allocations"
+  shortDescription: List allocations per resources, nodes, pods.
+  homepage: https://github.com/davidB/kubectl-view-allocations
   description: |
-    This plugin lists allocations (cpu, memory, gpu,... X requested, limit, allocatable,...).
+    This plugin lists resources (cpu, memory, gpu,...) allocations (requested, limit, allocatable) as defined into the manifest of nodes and running pods.
     try `kubectl view-allocations -h`, `kubectl view-allocations`

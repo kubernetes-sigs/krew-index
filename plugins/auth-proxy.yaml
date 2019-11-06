@@ -16,10 +16,10 @@ spec:
     You need to configure authentication in the kubeconfig.
     See https://github.com/int128/kauthproxy for more.
 
-  version: v0.4.0
+  version: v0.5.0
   platforms:
-    - uri: https://github.com/int128/kauthproxy/releases/download/v0.4.0/kauthproxy_linux_amd64.zip
-      sha256: "f6f2509fc58607030659b90424fabf96a25981652a162fccbd195158bdf3dca0"
+    - uri: https://github.com/int128/kauthproxy/releases/download/v0.5.0/kauthproxy_linux_amd64.zip
+      sha256: "328934ff5eb3506605a5b716bc1fca49dbd51617a8ff79fcd14e18a555062bda"
       bin: kauthproxy
       files:
         - from: "kauthproxy"
@@ -28,8 +28,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/int128/kauthproxy/releases/download/v0.4.0/kauthproxy_darwin_amd64.zip
-      sha256: "11453d8afb19758f2bad1379bc748aa4563c7d6cd7438b127fc55f1c456b5697"
+    - uri: https://github.com/int128/kauthproxy/releases/download/v0.5.0/kauthproxy_darwin_amd64.zip
+      sha256: "c1943b4b9e144a548d5a091d2e20b63909b458bea2e83d0c8c61b18ba8223b4d"
       bin: kauthproxy
       files:
         - from: "kauthproxy"
@@ -38,8 +38,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/int128/kauthproxy/releases/download/v0.4.0/kauthproxy_windows_amd64.zip
-      sha256: "e1030a645e6377ca0e66fb14439364f2667aa1a07312729da6abe19420d991a9"
+    - uri: https://github.com/int128/kauthproxy/releases/download/v0.5.0/kauthproxy_windows_amd64.zip
+      sha256: "22da0dcc964ab743f69242ff4e51e3333087d78b1f51638592ce227d823f57c2"
       bin: kauthproxy.exe
       files:
         - from: "kauthproxy.exe"

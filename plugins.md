@@ -20,6 +20,7 @@ Name | Description | Stars
 [change-ns](https://github.com/juanvallejo/kubectl-ns) | View or change the current namespace via kubectl. | ![GitHub stars](https://img.shields.io/github/stars/juanvallejo/kubectl-ns.svg?label=stars&logo=github)
 [config-cleanup](https://github.com/b23llc/kubectl-config-cleanup) | Automatically clean up your kubeconfig | ![GitHub stars](https://img.shields.io/github/stars/b23llc/kubectl-config-cleanup.svg?label=stars&logo=github)
 [cssh](https://github.com/containership/kubectl-cssh) | SSH into Kubernetes nodes | ![GitHub stars](https://img.shields.io/github/stars/containership/kubectl-cssh.svg?label=stars&logo=github)
+[ctx](https://github.com/ahmetb/kubectx) | Switch between contexts in your kubeconfig | ![GitHub stars](https://img.shields.io/github/stars/ahmetb/kubectx.svg?label=stars&logo=github)
 [custom-cols](https://github.com/webofmars/kubectl-custom-cols) | A "kubectl get" replacement with customizable column presets | ![GitHub stars](https://img.shields.io/github/stars/webofmars/kubectl-custom-cols.svg?label=stars&logo=github)
 [debug-shell](https://github.com/danisla/kubefunc) | Create pod with interactive kube-shell. | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
 [debug](https://github.com/verb/kubectl-debug) | Attach ephemeral debug container to running pod | ![GitHub stars](https://img.shields.io/github/stars/verb/kubectl-debug.svg?label=stars&logo=github)
@@ -44,6 +45,7 @@ Name | Description | Stars
 [mtail](https://gitlab.com/grzesuav/kubectl-mtail) | Tail logs from multiple pods matching label selector | 
 [neat](https://github.com/itaysk/kubectl-neat) | Remove clutter from Kubernetes manifests to make them more readable. | ![GitHub stars](https://img.shields.io/github/stars/itaysk/kubectl-neat.svg?label=stars&logo=github)
 [node-admin](https://github.com/danisla/kubefunc) | List nodes and run privileged pod with chroot | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
+[ns](https://github.com/ahmetb/kubectx) | Switch between Kubernetes namespaces | ![GitHub stars](https://img.shields.io/github/stars/ahmetb/kubectx.svg?label=stars&logo=github)
 [oidc-login](https://github.com/int128/kubelogin) | Log in to the OpenID Connect provider | ![GitHub stars](https://img.shields.io/github/stars/int128/kubelogin.svg?label=stars&logo=github)
 [open-svc](https://github.com/superbrothers/kubectl-open-svc-plugin) | Open the Kubernetes URL(s) for the specified service in your browser. | ![GitHub stars](https://img.shields.io/github/stars/superbrothers/kubectl-open-svc-plugin.svg?label=stars&logo=github)
 [outdated](https://github.com/replicatedhq/outdated) | Finds outdated container images running in a cluster | ![GitHub stars](https://img.shields.io/github/stars/replicatedhq/outdated.svg?label=stars&logo=github)

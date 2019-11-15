@@ -9,10 +9,12 @@ spec:
     sha256: 207cf5c1cf947183851b51f6a3afdb7ed9e98e52d49e49b76c74d3f5845e452b
     bin: kubectl-cssh
     files:
-    - from: "/*/parse-args.sh"
-      to: "."
-    - from: "/*/kubectl-cssh"
-      to: "."
+    - from: "./*/parse-args.sh"
+      to: .
+    - from: "./*/kubectl-cssh"
+      to: .
+    - from: "./*/LICENSE"
+      to: .
     selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}

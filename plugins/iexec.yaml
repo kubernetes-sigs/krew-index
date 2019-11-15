@@ -11,18 +11,22 @@ spec:
     uri: https://github.com/gabeduke/kubectl-iexec/releases/download/1.2.0/kubectl-iexec_1.2.0_Linux_x86_64.tar.gz
     sha256: "3ad160c166993d2fd5b2a779a9be1c0323937f99fb0c63dd17a6ac3b92e36dc1"
     files:
-    - from: "/kubectl-iexec"
-      to: "."
-    bin: "./kubectl-iexec"
+    - from: kubectl-iexec
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-iexec
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin]}
     uri: https://github.com/gabeduke/kubectl-iexec/releases/download/1.2.0/kubectl-iexec_1.2.0_Darwin_x86_64.tar.gz
     sha256: "042b069c573a5d696367c4ba73db131dff74edc9e238c2e17170ceb824151641"
     files:
-    - from: "/kubectl-iexec"
-      to: "."
-    bin: "./kubectl-iexec"
+    - from: kubectl-iexec
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-iexec
   shortDescription: Interactive selection tool for `kubectl exec`
   homepage: https://github.com/gabeduke/kubectl-iexec
   description: |

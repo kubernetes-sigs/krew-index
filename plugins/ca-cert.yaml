@@ -10,6 +10,8 @@ spec:
     files:
     - from: "/*/ca-cert/*"
       to: "."
+    - from: "/*/LICENSE"
+      to: "."
     selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}

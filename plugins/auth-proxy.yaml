@@ -16,34 +16,40 @@ spec:
     You need to configure authentication in the kubeconfig.
     See https://github.com/int128/kauthproxy for more.
 
-  version: v0.5.0
+  version: v0.7.0
   platforms:
-    - uri: https://github.com/int128/kauthproxy/releases/download/v0.5.0/kauthproxy_linux_amd64.zip
-      sha256: "328934ff5eb3506605a5b716bc1fca49dbd51617a8ff79fcd14e18a555062bda"
+    - uri: https://github.com/int128/kauthproxy/releases/download/v0.7.0/kauthproxy_linux_amd64.zip
+      sha256: "083acb022edb5fd03cb8afef1a129c31e490f450f8035077012450da41777a37"
       bin: kauthproxy
       files:
-        - from: "kauthproxy"
-          to: "."
+        - from: kauthproxy
+          to: .
+        - from: LICENSE
+          to: .
       selector:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/int128/kauthproxy/releases/download/v0.5.0/kauthproxy_darwin_amd64.zip
-      sha256: "c1943b4b9e144a548d5a091d2e20b63909b458bea2e83d0c8c61b18ba8223b4d"
+    - uri: https://github.com/int128/kauthproxy/releases/download/v0.7.0/kauthproxy_darwin_amd64.zip
+      sha256: "422718dde139fd50fcbda45a51670c656396ff96b5006f1e206c2a4cda61c980"
       bin: kauthproxy
       files:
-        - from: "kauthproxy"
-          to: "."
+        - from: kauthproxy
+          to: .
+        - from: LICENSE
+          to: .
       selector:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/int128/kauthproxy/releases/download/v0.5.0/kauthproxy_windows_amd64.zip
-      sha256: "22da0dcc964ab743f69242ff4e51e3333087d78b1f51638592ce227d823f57c2"
+    - uri: https://github.com/int128/kauthproxy/releases/download/v0.7.0/kauthproxy_windows_amd64.zip
+      sha256: "ca0ca345e7961e43333aa9e682d949813ef119812944b68a9782db42a9cc7630"
       bin: kauthproxy.exe
       files:
-        - from: "kauthproxy.exe"
-          to: "."
+        - from: kauthproxy.exe
+          to: .
+        - from: LICENSE
+          to: .
       selector:
         matchLabels:
           os: windows

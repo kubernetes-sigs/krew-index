@@ -12,9 +12,11 @@ spec:
     uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.13/support-bundle_0.9.13_linux_amd64-0.9.13.tar.gz
     sha256: "bbf7fee332011bb4421d157f24f549160ac0070b26441191a4d5e00f0265b859"
     files:
-    - from: "/support-bundle"
-      to: "."
-    bin: "support-bundle"
+    - from: support-bundle
+      to: .
+    - from: LICENSE
+      to: .
+    bin: support-bundle
   - selector:
       matchLabels:
         os: darwin
@@ -22,9 +24,11 @@ spec:
     uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.13/support-bundle_0.9.13_darwin_amd64-0.9.13.tar.gz
     sha256: "53752df751178d239d0d7e40edccf1296dc77d749c868f823fa7fcd5cac2e236"
     files:
-    - from: "/support-bundle"
-      to: "."
-    bin: "support-bundle"
+    - from: support-bundle
+      to: .
+    - from: LICENSE
+      to: .
+    bin: support-bundle
   - selector:
       matchLabels:
         os: windows
@@ -32,9 +36,11 @@ spec:
     uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.13/support-bundle_0.9.13_windows_amd64-0.9.13.zip
     sha256: "b5538b8d32d683ddd55b5ac4c107eaba835ced2446e3a1e04c86d56e665dbf52"
     files:
-    - from: "/support-bundle.exe"
-      to: "."
-    bin: "support-bundle.exe"
+    - from: support-bundle.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: support-bundle.exe
   shortDescription: Creates support bundles for off-cluster analysis
   homepage: https://github.com/replicatedhq/troubleshoot
   caveats: |

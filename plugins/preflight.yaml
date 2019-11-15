@@ -12,9 +12,11 @@ spec:
     uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.13/preflight_0.9.13_linux_amd64-0.9.13.tar.gz
     sha256: "91f4eaf089e73f27f4415be3ea1259eeeb56f9eebdb8c0a949f752f4d1977c74"
     files:
-    - from: "./preflight"
-      to: "."
-    bin: "preflight"
+    - from: preflight
+      to: .
+    - from: LICENSE
+      to: .
+    bin: preflight
   - selector:
       matchLabels:
         os: darwin
@@ -22,9 +24,11 @@ spec:
     uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.13/preflight_0.9.13_darwin_amd64-0.9.13.tar.gz
     sha256: "fe731f9e96985219f15430979372f9873cfab6e3dff6bfb4e1b8c08f47ce8235"
     files:
-    - from: "./preflight"
-      to: "."
-    bin: "preflight"
+    - from: preflight
+      to: .
+    - from: LICENSE
+      to: .
+    bin: preflight
   - selector:
       matchLabels:
         os: windows
@@ -32,9 +36,11 @@ spec:
     uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.13/preflight_0.9.13_windows_amd64-0.9.13.zip
     sha256: "22374cd225c65b6808e0c76ad8d6ce9689f2a1cd27fe646e79b648fa6cea9a77"
     files:
-    - from: "/preflight.exe"
-      to: "."
-    bin: "preflight.exe"
+    - from: preflight.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: preflight.exe
   shortDescription: Executes application preflight tests in a cluster
   homepage: https://github.com/replicatedhq/troubleshoot
   caveats: |

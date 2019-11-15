@@ -12,8 +12,10 @@ spec:
     uri: https://github.com/yokawasa/kubectl-plugin-ssh-jump/archive/0.2.0.zip
     sha256: "b47746c01f3871c114dea619994a036f289c2cfa56bb35cbcecb15dd2783110c"
     files:
-    - from: "/*/kubectl-ssh-jump"
-      to: "."
+    - from: "./*/kubectl-ssh-jump"
+      to: .
+    - from: "./*/LICENSE"
+      to: .
     bin: "./kubectl-ssh-jump"
   shortDescription: A kubectl plugin to SSH into Kubernetes nodes using a SSH jump host Pod
   caveats: |
@@ -24,5 +26,5 @@ spec:
     Please follow the documentation: https://github.com/yokawasa/kubectl-plugin-ssh-jump
   description: |
     A kubectl plugin to SSH into Kubernetes nodes using a SSH jump host Pod.
-    A jump host Pod is an intermediary Pod or an SSH gateway to Kubernetes 
+    A jump host Pod is an intermediary Pod or an SSH gateway to Kubernetes
     node machines, through which a connection can be made to the node machines.

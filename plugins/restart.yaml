@@ -8,7 +8,9 @@ spec:
     sha256: d7079b79bf4e10e55ded435a2e862efe310e019b6c306a8ff04191238ef4b2b4
     bin: restart.sh
     files:
-    - from: "/kubectl-restart-*/*"
+    - from: "/kubectl-restart-*/restart.sh"
+      to: "."
+    - from: "/kubectl-restart-*/LICENSE"
       to: "."
     selector:
       matchExpressions:

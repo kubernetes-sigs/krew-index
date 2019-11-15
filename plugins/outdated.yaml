@@ -12,9 +12,11 @@ spec:
     uri: https://github.com/replicatedhq/outdated/releases/download/v0.3.2/outdated_0.3.2_linux_amd64-0.3.2.tar.gz
     sha256: "4489859d4be491f210bad20f09889a9a33654b91576401742c29b4f32b68ec5a"
     files:
-    - from: "./outdated"
-      to: "."
-    bin: "outdated"
+    - from: outdated
+      to: .
+    - from: LICENSE
+      to: .
+    bin: outdated
   - selector:
       matchLabels:
         os: darwin
@@ -22,9 +24,11 @@ spec:
     uri: https://github.com/replicatedhq/outdated/releases/download/v0.3.2/outdated_0.3.2_darwin_amd64-0.3.2.tar.gz
     sha256: "d887b9acdbd2fdd3e06f0b3103436c7c9257ce252758cd456233df3c9033d4f0"
     files:
-    - from: "./outdated"
-      to: "."
-    bin: "outdated"
+    - from: outdated
+      to: .
+    - from: LICENSE
+      to: .
+    bin: outdated
   - selector:
       matchLabels:
         os: windows
@@ -32,9 +36,11 @@ spec:
     uri: https://github.com/replicatedhq/outdated/releases/download/v0.3.2/outdated_0.3.2_windows_amd64-0.3.2.zip
     sha256: "278b8e2d45f4e9a9df20e6bd863eb867668ad7432b248e088f74b9ab41493823"
     files:
-    - from: "/outdated.exe"
-      to: "."
-    bin: "outdated.exe"
+    - from: outdated.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: outdated.exe
   shortDescription: Finds outdated container images running in a cluster
   homepage: https://github.com/replicatedhq/outdated
   caveats: |

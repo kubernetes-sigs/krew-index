@@ -12,7 +12,9 @@ spec:
     sha256: "f83832f5ee0a3e3b44984f29e9ea7ef5b380e23d53da6d52b4a7d62d925ad9f6"
     files:
     - from: "./kubectl-custom-cols-*/kubectl-custom-cols"
-      to: "."
+      to: .
+    - from: "./kubectl-custom-cols-*/LICENSE"
+      to: .
     - from: "./kubectl-custom-cols-*/templates/*.tpl"
       to: "templates"
     bin: "./kubectl-custom-cols"

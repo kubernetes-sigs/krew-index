@@ -3,38 +3,44 @@ kind: Plugin
 metadata:
   name: support-bundle
 spec:
-  version: "v0.9.9"
+  version: "v0.9.13"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.9/support-bundle_0.9.9_linux_amd64-0.9.9.tar.gz
-    sha256: "fb79d596c7d2ed459fbc128062337ddf0a8d3b47a19ad08d0df76b2fb05b88a9"
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.13/support-bundle_0.9.13_linux_amd64-0.9.13.tar.gz
+    sha256: "bbf7fee332011bb4421d157f24f549160ac0070b26441191a4d5e00f0265b859"
     files:
-    - from: "/support-bundle"
-      to: "."
-    bin: "support-bundle"
+    - from: support-bundle
+      to: .
+    - from: LICENSE
+      to: .
+    bin: support-bundle
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.9/support-bundle_0.9.9_darwin_amd64-0.9.9.tar.gz
-    sha256: "b60da8409e677a58b17b230676bafa8cd8e2af25a57de2be2d27bc40ce35570a"
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.13/support-bundle_0.9.13_darwin_amd64-0.9.13.tar.gz
+    sha256: "53752df751178d239d0d7e40edccf1296dc77d749c868f823fa7fcd5cac2e236"
     files:
-    - from: "/support-bundle"
-      to: "."
-    bin: "support-bundle"
+    - from: support-bundle
+      to: .
+    - from: LICENSE
+      to: .
+    bin: support-bundle
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.9/support-bundle_0.9.9_windows_amd64-0.9.9.zip
-    sha256: "6df177f8241e65063b0b5cc285881a7db554f8df88def07b5d52cb28052024b1"
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.13/support-bundle_0.9.13_windows_amd64-0.9.13.zip
+    sha256: "b5538b8d32d683ddd55b5ac4c107eaba835ced2446e3a1e04c86d56e665dbf52"
     files:
-    - from: "/support-bundle.exe"
-      to: "."
-    bin: "support-bundle.exe"
+    - from: support-bundle.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: support-bundle.exe
   shortDescription: Creates support bundles for off-cluster analysis
   homepage: https://github.com/replicatedhq/troubleshoot
   caveats: |

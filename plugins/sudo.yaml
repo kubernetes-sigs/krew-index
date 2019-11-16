@@ -12,9 +12,11 @@ spec:
     uri: https://github.com/postfinance/kubectl-sudo/archive/v1.0.1.tar.gz
     sha256: "65d8e7ba2e8357c09905b7c02d72041aa5ac3f3209abfdd00bdb34b7fb9ef2fa"
     files:
-    - from: "/*/bash/*"
-      to: "."
-    bin: "./kubectl-sudo"
+    - from: "./*/bash/*"
+      to: .
+    - from: "./*/LICENSE.md"
+      to: .
+    bin: kubectl-sudo
   shortDescription: Run Kubernetes commands impersonated as group system:masters
   caveats: |
     Follow https://github.com/postfinance/kubectl-sudo/blob/master/README.md

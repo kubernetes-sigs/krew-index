@@ -15,12 +15,14 @@ spec:
       files:
         - from: kubectl-plugins-*/kubectl-bulk
           to: .
+        - from: kubectl-plugins-*/LICENSE
+          to: .
       bin: ./kubectl-bulk
   shortDescription: Do bulk actions on Kubernetes resources.
   caveats: |
     Usage:
       kubectl bulk-action <get resourceTypes> (get|list|create|update|delete|remove|rollout) <command parameters>
-    
+
     Read the documentation at:
       https://github.com/emreodabas/kubectl-plugins
     This plugin needs the following programs:

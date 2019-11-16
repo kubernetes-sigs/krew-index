@@ -3,38 +3,44 @@ kind: Plugin
 metadata:
   name: preflight
 spec:
-  version: "v0.9.9"
+  version: "v0.9.13"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.9/preflight_0.9.9_linux_amd64-0.9.9.tar.gz
-    sha256: "368c667b46e3b448956249d7acf0ed69336a4bcbbbd6fae41a4cb5d9383c7be9"
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.13/preflight_0.9.13_linux_amd64-0.9.13.tar.gz
+    sha256: "91f4eaf089e73f27f4415be3ea1259eeeb56f9eebdb8c0a949f752f4d1977c74"
     files:
-    - from: "./preflight"
-      to: "."
-    bin: "preflight"
+    - from: preflight
+      to: .
+    - from: LICENSE
+      to: .
+    bin: preflight
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.9/preflight_0.9.9_darwin_amd64-0.9.9.tar.gz
-    sha256: "57148fbafdc657291430e00acc20c5a916d4501f557e70bfd1c68b4bcc83d677"
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.13/preflight_0.9.13_darwin_amd64-0.9.13.tar.gz
+    sha256: "fe731f9e96985219f15430979372f9873cfab6e3dff6bfb4e1b8c08f47ce8235"
     files:
-    - from: "./preflight"
-      to: "."
-    bin: "preflight"
+    - from: preflight
+      to: .
+    - from: LICENSE
+      to: .
+    bin: preflight
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.9/preflight_0.9.9_windows_amd64-0.9.9.zip
-    sha256: "fcf42b827240ea61fcc5b1efe5ae9b0187a73c7a3de11a6e44a95ddcbdd028e1"
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.13/preflight_0.9.13_windows_amd64-0.9.13.zip
+    sha256: "22374cd225c65b6808e0c76ad8d6ce9689f2a1cd27fe646e79b648fa6cea9a77"
     files:
-    - from: "/preflight.exe"
-      to: "."
-    bin: "preflight.exe"
+    - from: preflight.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: preflight.exe
   shortDescription: Executes application preflight tests in a cluster
   homepage: https://github.com/replicatedhq/troubleshoot
   caveats: |

@@ -17,6 +17,8 @@ spec:
     files:
     - from: "./kubectl-config_cleanup"
       to: "."
+    - from: LICENSE
+      to: .
     selector:
       matchLabels:
         os: linux
@@ -27,6 +29,8 @@ spec:
     files:
     - from: "./kubectl-config_cleanup"
       to: "."
+    - from: LICENSE
+      to: .
     selector:
       matchLabels:
         os: darwin
@@ -37,6 +41,8 @@ spec:
     files:
     - from: "./kubectl-config_cleanup.exe"
       to: "."
+    - from: LICENSE
+      to: .
     selector:
       matchLabels:
         os: windows

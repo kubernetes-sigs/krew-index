@@ -24,34 +24,40 @@ spec:
     You need to setup the OIDC provider, Kubernetes API server, role binding and kubeconfig.
     See https://github.com/int128/kubelogin for more.
 
-  version: v1.14.5
+  version: v1.15.1
   platforms:
-    - uri: https://github.com/int128/kubelogin/releases/download/v1.14.5/kubelogin_linux_amd64.zip
-      sha256: "995f0072f69bec57562faedfa591e01c2f4fcc0cfc096c6ed42cc91d50b8bf6a"
+    - uri: https://github.com/int128/kubelogin/releases/download/v1.15.1/kubelogin_linux_amd64.zip
+      sha256: "5948c32fa87db469889c48305e235be66e916de607927a1fa9890be23f0c593f"
       bin: kubelogin
       files:
-        - from: "kubelogin"
-          to: "."
+        - from: kubelogin
+          to: .
+        - from: LICENSE
+          to: .
       selector:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/int128/kubelogin/releases/download/v1.14.5/kubelogin_darwin_amd64.zip
-      sha256: "cf48e691c3d7ba5fe74b15d6f04b8e0e7efdd157f67ae65512614f0e224c2e21"
+    - uri: https://github.com/int128/kubelogin/releases/download/v1.15.1/kubelogin_darwin_amd64.zip
+      sha256: "94c1d030a3e26bd14d50e2cfd4e47c49ec654a85b9632be88326eafcfc49c4eb"
       bin: kubelogin
       files:
-        - from: "kubelogin"
-          to: "."
+        - from: kubelogin
+          to: .
+        - from: LICENSE
+          to: .
       selector:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/int128/kubelogin/releases/download/v1.14.5/kubelogin_windows_amd64.zip
-      sha256: "cd6b73d9f2a284e206ce71670955521888e1e046d66c19dae529063c13d4b3fe"
+    - uri: https://github.com/int128/kubelogin/releases/download/v1.15.1/kubelogin_windows_amd64.zip
+      sha256: "1f3b450e0f66fe46d7aecb6b4515cb9edf611d572c8357db996b3fc712d55918"
       bin: kubelogin.exe
       files:
-        - from: "kubelogin.exe"
-          to: "."
+        - from: kubelogin.exe
+          to: .
+        - from: LICENSE
+          to: .
       selector:
         matchLabels:
           os: windows

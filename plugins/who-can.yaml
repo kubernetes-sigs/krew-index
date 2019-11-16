@@ -37,6 +37,8 @@ spec:
       files:
         - from: kubectl-who-can
           to: .
+        - from: LICENSE
+          to: .
       bin: kubectl-who-can
     - selector:
         matchLabels:
@@ -47,6 +49,8 @@ spec:
       files:
         - from: kubectl-who-can
           to: .
+        - from: LICENSE
+          to: .
       bin: kubectl-who-can
     - selector:
         matchLabels:
@@ -56,5 +60,7 @@ spec:
       sha256: "2889c7978a9a760d09d7c0c5b6386b2e946fb67fff9aabccefd807b5c9cb24c3"
       files:
         - from: kubectl-who-can.exe
+          to: .
+        - from: LICENSE
           to: .
       bin: kubectl-who-can.exe

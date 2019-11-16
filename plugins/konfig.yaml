@@ -10,7 +10,9 @@ spec:
       bin: konfig-krew
       files:
         - from: ./konfig-krew
-          to: "."
+          to: .
+        - from: LICENSE
+          to: .
       selector:
         matchExpressions:
           - key: os
@@ -22,6 +24,8 @@ spec:
       files:
         - from: ./konfig-krew
           to: konfig-krew.exe
+        - from: LICENSE
+          to: .
       selector:
         matchLabels:
           os: windows

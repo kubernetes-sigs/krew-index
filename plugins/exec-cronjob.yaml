@@ -12,7 +12,9 @@ spec:
     sha256: 4737ec20e3eac922cf8cfdc3c384a3124d3d98786277ea9152dcc085846dabbc
     files:
     - from: kubectl-plugins-*/exec-cronjob/*
-      to: "."
+      to: .
+    - from: kubectl-plugins-*/LICENSE
+      to: .
     bin: kubectl-exec_cronjob.sh
   shortDescription: Run a CronJob immediately as Job
   description: |

@@ -3,84 +3,98 @@ kind: Plugin
 metadata:
   name: passman
 spec:
-  version: "v1.0.0"
+  version: "v1.1.1"
   platforms:
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/chrisns/kubectl-passman/releases/download/v1.0.0/kubectl-passman-darwin-amd64.zip
-      sha256: "f300037cc624028b70e99ef9527ff212bfda670684ee86b125d34b7e9472c9b8"
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v1.1.1/kubectl-passman-darwin-amd64.zip
+      sha256: "33b03266e6ac08b83223d023d85ed2d33cd1ec1bc2984429b30eebf56825b76c"
       bin: "./kubectl-passman"
       files:
         - from: kubectl-passman-darwin-amd64
           to: kubectl-passman
+        - from: LICENSE
+          to: .
 
     - selector:
         matchLabels:
           os: darwin
           arch: 386
-      uri: https://github.com/chrisns/kubectl-passman/releases/download/v1.0.0/kubectl-passman-darwin-386.zip
-      sha256: "c1c66bcb09f168b7f569839bcca06c0d9e3e674bd7586f45d08638d7a8fd3485"
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v1.1.1/kubectl-passman-darwin-386.zip
+      sha256: "a4f78454c5b6bef2b7ae760b7db34f79e925fc00d45ab95ab6600cf6d4164430"
       bin: "./kubectl-passman"
       files:
         - from: kubectl-passman-darwin-386
           to: kubectl-passman
+        - from: LICENSE
+          to: .
 
     - selector:
         matchLabels:
           os: linux
           arch: arm
-      uri: https://github.com/chrisns/kubectl-passman/releases/download/v1.0.0/kubectl-passman-linux-arm.zip
-      sha256: "a8f1b5d20c1d371575564113b131591f574759c800e21d96de1d35b16d1b4f07"
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v1.1.1/kubectl-passman-linux-arm.zip
+      sha256: "d7007c6e7c85b3202393f67b59d0a3de6319720b4bad3339e2397644b99c89b2"
       bin: "./kubectl-passman"
       files:
         - from: kubectl-passman-linux-arm
           to: kubectl-passman
+        - from: LICENSE
+          to: .
 
     - selector:
         matchLabels:
           os: linux
           arch: 386
-      uri: https://github.com/chrisns/kubectl-passman/releases/download/v1.0.0/kubectl-passman-linux-386.zip
-      sha256: "8f96c0f38d820fecc302faddb023103b06c268186cdda6733ba6f3c7e4e411fd"
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v1.1.1/kubectl-passman-linux-386.zip
+      sha256: "b1698cf58c35e76a96bce64dd85f0838e422b180fbc7c8da86ee0a39c26c0554"
       bin: "./kubectl-passman"
       files:
         - from: kubectl-passman-linux-386
           to: kubectl-passman
+        - from: LICENSE
+          to: .
 
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/chrisns/kubectl-passman/releases/download/v1.0.0/kubectl-passman-linux-amd64.zip
-      sha256: "11f320ea8cfe700d0afe1f28b5422a988b0eb9ec7cdd1204641ecdefab61f41a"
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v1.1.1/kubectl-passman-linux-amd64.zip
+      sha256: "272a9203d6b2f366e418a4ea6039e6979ad323fbeab258f876a399121bed2f25"
       bin: "./kubectl-passman"
       files:
         - from: kubectl-passman-linux-amd64
           to: kubectl-passman
+        - from: LICENSE
+          to: .
 
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/chrisns/kubectl-passman/releases/download/v1.0.0/kubectl-passman-windows-amd64.zip
-      sha256: "9d261b796f639c8863083be9882d1b41c4128cf99c2db08c4b54a62148b0932b"
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v1.1.1/kubectl-passman-windows-amd64.zip
+      sha256: "eaa540238f2d70f6afc2e0d1840937563fdc3b350361f1bdaba097b365e3c24d"
       bin: "./kubectl-passman.exe"
       files:
         - from: kubectl-passman-windows-amd64.exe
           to: kubectl-passman.exe
+        - from: LICENSE
+          to: .
 
     - selector:
         matchLabels:
           os: windows
           arch: 386
-      uri: https://github.com/chrisns/kubectl-passman/releases/download/v1.0.0/kubectl-passman-windows-386.zip
-      sha256: "449d4119055ea076d9f7d452685973bc373ad079916bc43ee93fa5e76b0cbf61"
+      uri: https://github.com/chrisns/kubectl-passman/releases/download/v1.1.1/kubectl-passman-windows-386.zip
+      sha256: "bd9b758d1ebbd22cf92f4e2b500bfa68401f93f13bda061f61cb9b3de672a06b"
       bin: "./kubectl-passman.exe"
       files:
         - from: kubectl-passman-windows-386.exe
           to: kubectl-passman.exe
+        - from: LICENSE
+          to: .
 
   shortDescription: Store kubeconfig credentials in keychains or password managers
   homepage: https://github.com/chrisns/kubectl-passman

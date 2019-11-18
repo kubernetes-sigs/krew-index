@@ -1,0 +1,27 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: view-allocations
+spec:
+  version: "v0.5.1"
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.5.1/kubectl-view-allocations_0.5.1-x86_64-apple-darwin.tar.gz
+      sha256: "5c304f3c32d9275d300dbbd4d3920dab3993d6a9a3f2bbfaaa4444180f9b6787"
+      bin: "./kubectl-view-allocations"
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.5.1/kubectl-view-allocations_0.5.1-x86_64-unknown-linux-gnu.tar.gz
+      sha256: "679d88be15abf24e2d0cf46443977871c9dacc399d2271be32ae35db0e095b84"
+      bin: "./kubectl-view-allocations"
+  shortDescription: List allocations per resources, nodes, pods.
+  homepage: https://github.com/davidB/kubectl-view-allocations
+  description: |
+    This plugin lists resources (cpu, memory, gpu,...) allocations (requested,
+    limit, allocatable) as defined into the manifest of nodes and running pods.
+    try `kubectl view-allocations -h`, `kubectl view-allocations`

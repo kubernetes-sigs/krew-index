@@ -4,16 +4,18 @@ metadata:
   name: prompt
 spec:
   platforms:
-  - uri: https://github.com/jordanwilson230/kubectl-plugins/archive/v1.0.0-krew.zip
-    sha256: efa1c2122ecaeb0a43ba1ed9e54c1ff1274d20de76934f7bb91dd154f2327aa1
+  - uri: https://github.com/jordanwilson230/kubectl-plugins/archive/v1.0.3-krew.zip
+    sha256: e0bae378c0cf049526cc8d45d3389d78f7054bc5cfc5de24bd41b184ce9e806c
     bin: kubectl-prompt
     files:
     - from: "*/kubectl-prompt"
       to: "."
+    - from: "**/LICENSE"
+      to: "."
     selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-  version: "v1.0.0-krew"
+  version: "v1.0.3-krew"
   homepage: https://github.com/jordanwilson230/kubectl-plugins/tree/krew#kubectl-prompt
   caveats: |
     This plugin requires bash.

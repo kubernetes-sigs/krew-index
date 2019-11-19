@@ -1,0 +1,39 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: use
+spec:
+  version: "v1.0.0"
+  homepage: https://github.com/kvaps/kubectl-use
+  shortDescription: Simple switch between contexts and namespaces
+  description: |
+    Tiny plugin for easy switch between Kubernetes contexts and namespaces
+  caveats: |
+        Switch context:
+
+          $ kubectl use prod
+
+        Switch namespace:   
+
+          $ kubectl use kube-system
+
+        Switch both:
+
+          $ kubectl use stage default
+
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/kvaps/kubectl-use/archive/v1.0.0.tar.gz
+    sha256: "a5a03447b40a8516bdbf6b365ed00c861f82e583a6ef39b3eaaaef23e5b6e117"
+    files:
+    - from: kubectl-use-*/kubectl-use
+      to: .
+    - from: kubectl-use-*/LICENSE
+      to: .
+    bin: "kubectl-use"

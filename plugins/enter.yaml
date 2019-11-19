@@ -1,0 +1,31 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: enter
+spec:
+  version: "v1.0.0"
+  homepage: https://github.com/kvaps/kubectl-enter
+  shortDescription: Exec into node via kubectl 
+  description: |
+    Tiny plugin for getting shell into the node.
+  caveats: |
+        Usage:
+
+          $ kubectl enter <node>
+
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/kvaps/kubectl-enter/archive/v1.0.0.tar.gz
+    sha256: "86d21040f0b3d60bf391ccb938e136747ff35c9751c1248501184bc9a11c64f3"
+    files:
+    - from: kubectl-enter-*/kubectl-enter
+      to: .
+    - from: kubectl-enter-*/LICENSE
+      to: .
+    bin: "kubectl-enter"

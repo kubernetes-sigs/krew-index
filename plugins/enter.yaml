@@ -7,11 +7,15 @@ spec:
   homepage: https://github.com/kvaps/kubectl-enter
   shortDescription: Spawn a root shell on a node via kubectl 
   description: |
-    Tiny plugin for getting shell into the node.
+    Start a root shell in the node's host OS running. You need to be able to start privileged containers for that.
   caveats: |
         Usage:
 
           $ kubectl enter <node>
+
+        Note:
+
+          You need to be allowed to start privileged pods in the cluster
 
   platforms:
   - selector:

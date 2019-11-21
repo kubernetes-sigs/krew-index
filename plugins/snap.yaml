@@ -1,0 +1,27 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: snap
+spec:
+  version: "v1.0.1"
+  homepage: https://github.com/honk-ci/kubectl-snap
+  platforms:
+  - selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+    uri: https://github.com/honk-ci/kubectl-snap/archive/v1.0.1.tar.gz
+    sha256: "8df10f76e82f71b34c737d128b7b369e0daf641118577822872537e787a6755d"
+    files:
+    - from: "*"
+      to: .
+    bin: kubectl-snap
+  shortDescription: A chaos test that restores balance to your cluster at the speed of a snap.
+  caveats: |
+    Documentation:
+
+      See https://github.com/honk-ci/kubectl-snap or
+
+      $ kubectl tail --help
+
+  description: |
+    This plugin will delete half of the pods in a namespace or the whole cluster. 

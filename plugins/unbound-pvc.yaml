@@ -14,9 +14,9 @@ spec:
     sha256: "36231dcd6fbacd90c4929d75bff119d8ef1a2dbcec2b0baca639edfd489ecf4a"
     # copy the used files out of the zip archive, defaults to `[{from: "*", to: "."}]`
     files:
-    - from: "./kubectl-unbound_pvc" # path to the files extracted from archive
+    - from: "./kubectl-unbound-pvc-0.0.1/kubectl-unbound_pvc" # path to the files extracted from archive
       to:  "."                 # '.' refers to the root of plugin install directory
-    - from: "./LICENSE"   # always install your LICENSE file
+    - from: "./kubectl-unbound-pvc-0.0.1/LICENSE"   # always install your LICENSE file
       to: "."
     bin: "kubectl-unbound_pvc"  # path to the plugin executable after copying files above
   shortDescription: >-    # short description gets truncated at ~50 chars

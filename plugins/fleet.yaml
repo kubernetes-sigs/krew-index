@@ -14,6 +14,8 @@ spec:
     files:
     - from: "./fleet"
       to: "."
+    - from: "./LICENSE"
+      to: "."
     bin: "fleet"
   - selector:
       matchLabels:
@@ -23,6 +25,8 @@ spec:
     sha256: "6b1c2404a0a5a734f6313e765930b92877109ee396d290291d66d2139a74a18b"
     files:
     - from: "./fleet"
+      to: "."
+    - from: "./LICENSE"
       to: "."
     bin: "fleet"
   - selector:
@@ -34,8 +38,10 @@ spec:
     files:
     - from: "/fleet.exe"
       to: "."
+    - from: "./LICENSE"
+      to: "."
     bin: "fleet.exe"
-  shortDescription: A cluster fleet info plugin
+  shortDescription: Shows what is going on in a fleet of clusters (config & resources)
   homepage: https://github.com/mhausenblas/kcf
   caveats: |
     Usage:
@@ -47,3 +53,7 @@ spec:
 
   description: |
     Allows to get an overview and details on a fleet of Kubernetes clusters.
+    The top-level command lists all active clusters found in the kubeconfig provided.
+    For each cluster, configuration info such as the control plane version or 
+    API server endpoint are displayed, as well as select stats, for example, 
+    the number of worker nodes or namespaces found in the cluster.

@@ -1,9 +1,23 @@
+# Copyright 2019 The Kubernetes Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
   name: krew
 spec:
-  version: "v0.3.2"
+  version: "v0.3.3"
   homepage: https://sigs.k8s.io/krew
   shortDescription: Package manager for kubectl plugins.
   caveats: |
@@ -25,42 +39,50 @@ spec:
     You can find documentation at https://sigs.k8s.io/krew.
 
   platforms:
-  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.3.2/krew.tar.gz
-    sha256: 643d2936d00766e198a3748d2ea3f002177a3747f9fe476923c7e0002ab662f1
+  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.3.3/krew.tar.gz
+    sha256: 2491801fc5b7823ab97fe5e9b23a6b79cdc65cae36953127e0410d827c1b883d
     bin: krew
     files:
     - from: ./krew-darwin_amd64
       to: krew
+    - from: ./LICENSE
+      to: .
     selector:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.3.2/krew.tar.gz
-    sha256: 643d2936d00766e198a3748d2ea3f002177a3747f9fe476923c7e0002ab662f1
+  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.3.3/krew.tar.gz
+    sha256: 2491801fc5b7823ab97fe5e9b23a6b79cdc65cae36953127e0410d827c1b883d
     bin: krew
     files:
     - from: ./krew-linux_amd64
       to: krew
+    - from: ./LICENSE
+      to: .
     selector:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.3.2/krew.tar.gz
-    sha256: 643d2936d00766e198a3748d2ea3f002177a3747f9fe476923c7e0002ab662f1
+  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.3.3/krew.tar.gz
+    sha256: 2491801fc5b7823ab97fe5e9b23a6b79cdc65cae36953127e0410d827c1b883d
     bin: krew
     files:
     - from: ./krew-linux_arm
       to: krew
+    - from: ./LICENSE
+      to: .
     selector:
       matchLabels:
         os: linux
         arch: arm
-  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.3.2/krew.tar.gz
-    sha256: 643d2936d00766e198a3748d2ea3f002177a3747f9fe476923c7e0002ab662f1
+  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.3.3/krew.tar.gz
+    sha256: 2491801fc5b7823ab97fe5e9b23a6b79cdc65cae36953127e0410d827c1b883d
     bin: krew.exe
     files:
     - from: ./krew-windows_amd64.exe
       to: krew.exe
+    - from: ./LICENSE
+      to: .
     selector:
       matchLabels:
         os: windows

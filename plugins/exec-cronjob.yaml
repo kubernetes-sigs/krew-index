@@ -3,13 +3,13 @@ kind: Plugin
 metadata:
   name: exec-cronjob
 spec:
-  version: v0.4.2
+  version: v0.5.1
   platforms:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-    uri: https://github.com/thecloudnatives/kubectl-plugins/archive/v0.4.2.zip
-    sha256: 4737ec20e3eac922cf8cfdc3c384a3124d3d98786277ea9152dcc085846dabbc
+    uri: https://github.com/thecloudnatives/kubectl-plugins/archive/v0.5.1.zip
+    sha256: d382659a4d47cdfc4eb1a7dde9e45ba33cabce87157d309d904909709e939c84
     files:
     - from: kubectl-plugins-*/exec-cronjob/*
       to: .

@@ -3,13 +3,13 @@ kind: Plugin
 metadata:
   name: prune-unused
 spec:
-  version: v0.5.0
+  version: v0.5.1
   platforms:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-    uri: https://github.com/thecloudnatives/kubectl-plugins/archive/v0.5.0.zip
-    sha256: 4f515bb1d07c20c156c257456fc4a90f0e0deab8bad8c416441b6a23618d7e16
+    uri: https://github.com/thecloudnatives/kubectl-plugins/archive/v0.5.1.zip
+    sha256: d382659a4d47cdfc4eb1a7dde9e45ba33cabce87157d309d904909709e939c84
     files:
     - from: kubectl-plugins-*/prune-unused/*
       to: .

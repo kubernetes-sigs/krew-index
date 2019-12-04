@@ -24,12 +24,14 @@ Name | Description | Stars
 [custom-cols](https://github.com/webofmars/kubectl-custom-cols) | A "kubectl get" replacement with customizable column presets | ![GitHub stars](https://img.shields.io/github/stars/webofmars/kubectl-custom-cols.svg?label=stars&logo=github)
 [debug-shell](https://github.com/danisla/kubefunc) | Create pod with interactive kube-shell. | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
 [debug](https://github.com/verb/kubectl-debug) | Attach ephemeral debug container to running pod | ![GitHub stars](https://img.shields.io/github/stars/verb/kubectl-debug.svg?label=stars&logo=github)
+[df-pv](https://github.com/yashbhutwala/kubectl-df-pv) | Show disk usage (like unix df) for persistent volumes | ![GitHub stars](https://img.shields.io/github/stars/yashbhutwala/kubectl-df-pv.svg?label=stars&logo=github)
 [doctor](https://github.com/emirozer/kubectl-doctor) | Scans your cluster and reports anomalies. | ![GitHub stars](https://img.shields.io/github/stars/emirozer/kubectl-doctor.svg?label=stars&logo=github)
 [eksporter](https://github.com/Kyrremann/kubectl-eksporter) | Export resources and removes a pre-defined set of fields for later import | ![GitHub stars](https://img.shields.io/github/stars/Kyrremann/kubectl-eksporter.svg?label=stars&logo=github)
 [evict-pod](https://github.com/rajatjindal/kubectl-evict-pod) | Evicts the given pod | ![GitHub stars](https://img.shields.io/github/stars/rajatjindal/kubectl-evict-pod.svg?label=stars&logo=github)
 [exec-as](https://github.com/jordanwilson230/kubectl-plugins/tree/krew#kubectl-exec-as) | Like kubectl exec, but offers a `user` flag to exec as root or any other user. | ![GitHub stars](https://img.shields.io/github/stars/jordanwilson230/kubectl-plugins.svg?label=stars&logo=github)
 [exec-cronjob](https://github.com/thecloudnatives/kubectl-plugins#exec-cronjob) | Run a CronJob immediately as Job | ![GitHub stars](https://img.shields.io/github/stars/thecloudnatives/kubectl-plugins.svg?label=stars&logo=github)
 [fields](https://github.com/rewanth1997/kubectl-fields) | Grep resources hierarchy by field name | ![GitHub stars](https://img.shields.io/github/stars/rewanth1997/kubectl-fields.svg?label=stars&logo=github)
+[fleet](https://github.com/mhausenblas/kcf) | Shows config and resources of a fleet of clusters | ![GitHub stars](https://img.shields.io/github/stars/mhausenblas/kcf.svg?label=stars&logo=github)
 [get-all](https://github.com/corneliusweig/ketall) | Like `kubectl get all`, but _really_ everything | ![GitHub stars](https://img.shields.io/github/stars/corneliusweig/ketall.svg?label=stars&logo=github)
 [gke-credentials](https://github.com/danisla/kubefunc) | Fetch credentials for GKE clusters | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
 [gopass](https://github.com/gopasspw/kubectl-gopass) | Imports secrets from gopass | ![GitHub stars](https://img.shields.io/github/stars/gopasspw/kubectl-gopass.svg?label=stars&logo=github)
@@ -39,7 +41,7 @@ Name | Description | Stars
 [konfig](https://github.com/corneliusweig/konfig) | Merge, split or import kubeconfig files | ![GitHub stars](https://img.shields.io/github/stars/corneliusweig/konfig.svg?label=stars&logo=github)
 [krew](https://sigs.k8s.io/krew) | Package manager for kubectl plugins. | ![GitHub stars](https://img.shields.io/github/stars/kubernetes-sigs/krew.svg?label=stars&logo=github)
 [kubesec-scan](https://github.com/stefanprodan/kubectl-kubesec) | Scan Kubernetes resources with kubesec.io. | ![GitHub stars](https://img.shields.io/github/stars/stefanprodan/kubectl-kubesec.svg?label=stars&logo=github)
-[kudo](https://kudo.dev/) | Declaratively build, install, and run operators using KUDO. | 
+[kudo](https://kudo.dev/) | Declaratively build, install, and run operators using KUDO. | ![GitHub stars](https://img.shields.io/github/stars/kudobuilder/kudo.svg?label=stars&logo=github)
 [match-name](https://github.com/gerald1248/kubectl-match-name) | Match names of pods and other API objects | ![GitHub stars](https://img.shields.io/github/stars/gerald1248/kubectl-match-name.svg?label=stars&logo=github)
 [modify-secret](https://github.com/rajatjindal/kubectl-modify-secret) | modify secret with implicit base64 translations | ![GitHub stars](https://img.shields.io/github/stars/rajatjindal/kubectl-modify-secret.svg?label=stars&logo=github)
 [mtail](https://gitlab.com/grzesuav/kubectl-mtail) | Tail logs from multiple pods matching label selector | 

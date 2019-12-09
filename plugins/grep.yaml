@@ -4,37 +4,43 @@ metadata:
   name: grep
 spec:
   platforms:
-  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.2.1/kubectl-grep-Darwin-x86_64.tar.gz
-    sha256: ea8d0c796824180571a99e688afa364d2d83b60515869b3a636e0f282abf787a
+  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.2.2/kubectl-grep-Darwin-x86_64.tar.gz
+    sha256: cef6f2642ba8f284e2a675314cfb352f53ce2b9ea0202348e4a9015a5f8f66be
     bin: kubectl-grep
     files:
-    - from: "*"
-      to: "."
+    - from: kubectl-grep
+      to: .
+    - from: LICENSE
+      to: .
     selector:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.2.1/kubectl-grep-Linux-x86_64.tar.gz
-    sha256: 2781447e3406ca8f90d49e1871f579c412836c9abe03ade8ae5f7c1d8cedd474
+  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.2.2/kubectl-grep-Linux-x86_64.tar.gz
+    sha256: cdf8fd13e9fcd502199b0abccfdc539ef39895648670c9f281c023e7b7986228
     bin: kubectl-grep
     files:
-    - from: "*"
-      to: "."
+    - from: kubectl-grep
+      to: .
+    - from: LICENSE
+      to: .
     selector:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.2.1/kubectl-grep-Windows-x86_64.tar.gz
-    sha256: 9c5b687dd2f8c7f3ebe804a0d6b015b779801f212aa2749ad3d4833befbe47e3
+  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.2.2/kubectl-grep-Windows-x86_64.tar.gz
+    sha256: 72ab7c4d337a8c0d2d6404342e107c17705a6ec435a2b0a0242da531017a9f0a
     bin: kubectl-grep.exe
     files:
-    - from: "*"
-      to: "."
+    - from: kubectl-grep.exe
+      to: .
+    - from: LICENSE.txt
+      to: .
     selector:
       matchLabels:
         os: windows
         arch: amd64
-  version: v1.2.1
+  version: v1.2.2
   homepage: https://github.com/guessi/kubectl-grep
   caveats: |
     This plugin requires an existing KUBECONFIG file, with a `current-context` field set.

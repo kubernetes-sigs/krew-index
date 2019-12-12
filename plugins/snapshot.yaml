@@ -1,0 +1,84 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: snapshot
+spec:
+  version: "v0.1.5"
+  platforms:
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/fbrubbo/kubectl-plugins/archive/v0.1.5.tar.gz
+    sha256: "c0a25fad1cd433ccd68513757087b1bd199d86f745d97f13a3c315996c8abcb8"
+    files:
+    - from: "kubectl-plugins-*/bin/kubectl-snapshot-linux-amd64"
+      to:  "."
+    bin: "./kubectl-snapshot-linux-amd64"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: 386
+    uri: https://github.com/fbrubbo/kubectl-plugins/archive/v0.1.5.tar.gz
+    sha256: "c0a25fad1cd433ccd68513757087b1bd199d86f745d97f13a3c315996c8abcb8"
+    files:
+    - from: "kubectl-plugins-*/bin/kubectl-snapshot-linux-386"
+      to:  "."
+    bin: "./kubectl-snapshot-linux-386"
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/fbrubbo/kubectl-plugins/archive/v0.1.5.tar.gz
+    sha256: "c0a25fad1cd433ccd68513757087b1bd199d86f745d97f13a3c315996c8abcb8"
+    files:
+    - from: "kubectl-plugins-*/bin/kubectl-snapshot-darwin-amd64"
+      to:  "."
+    bin: "./kubectl-snapshot-darwin-amd64"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: 386
+    uri: https://github.com/fbrubbo/kubectl-plugins/archive/v0.1.5.tar.gz
+    sha256: "c0a25fad1cd433ccd68513757087b1bd199d86f745d97f13a3c315996c8abcb8"
+    files:
+    - from: "kubectl-plugins-*/bin/kubectl-snapshot-darwin-386"
+      to:  "."
+    bin: "./kubectl-snapshot-darwin-386"
+    
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/fbrubbo/kubectl-plugins/archive/v0.1.5.tar.gz
+    sha256: "c0a25fad1cd433ccd68513757087b1bd199d86f745d97f13a3c315996c8abcb8"
+    files:
+    - from: "kubectl-plugins-*/bin/kubectl-snapshot-windows-amd64.exe"
+      to:  "."
+    bin: "./kubectl-snapshot-windows-amd64.exe"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: 386
+    uri: https://github.com/fbrubbo/kubectl-plugins/archive/v0.1.5.tar.gz
+    sha256: "c0a25fad1cd433ccd68513757087b1bd199d86f745d97f13a3c315996c8abcb8"
+    files:
+    - from: "kubectl-plugins-*/bin/kubectl-snapshot-windows-386.exe"
+      to:  "."
+    bin: "./kubectl-snapshot-windows-386.exe"    
+
+  shortDescription: >-    
+    Takes a snapshot of your cluster in either the standard output or csv files
+  homepage: https://github.com/fbrubbo/kubectl-plugins#kubectl-snapshot
+  caveats: |
+    This plugin a snapshot of pods, hpas, deployments without hpas and 
+    nodes. 
+
+    Usage:
+      kubectl snapshot
+      kubectl snapshot -csv-output <NAME>
+
+    Other fine tunning are allowed, to understand more type:
+      kubectl snapshot -h

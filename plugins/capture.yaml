@@ -15,32 +15,38 @@ spec:
     Triggers a Sysdig capture to troubleshoot the running pod
   homepage: https://github.com/sysdiglabs/kubectl-capture
   caveats: |
-    To analyze the capture file you will need to use Sysdig Inspect. You can use it as docker image directly:
+    In order to get the plugin running you will need the following prerequisites:
 
-    ```bash
-    docker run -d -v /local/path/to/captures:/captures -p8080:3000 sysdig/sysdig-inspect:latest
-    ```
+    * The user must be allowed to create privileged pods.
+    * Sysdig uses kernel mechanisms to source the system calls, it tries to
+      download a kernel module to get the system calls and if it can't be
+      downloaded it will try to compile its own, so you will need to have
+      the kernel headers installed and available.
+    * Alternatively, eBPF is supported as well. You will need a kernel greater
+      than 4.14 to use eBPF probe. In particular you will need CONFIG_BPF=y,
+      CONFIG_BPF_JIT=y and CONFIG_BPF_SYSCALL=y.
 
-    Usage:
 
-    ```bash
-    $ kubectl capture pod-name -M 45
-    ```
+    And on the analysis side, to analyze the capture file you will need to use
+    Sysdig Inspect. You can use it as docker image directly:
 
-    You can set the duration in seconds of the capture with the `-M` flag, and
-    also specify the namespace using the `-ns` or `--namespace` or use eBPF to
-    trace syscalls instead the kernel module instrumentation with `--ebpf` flag.
+    $ docker run -d -v /local/path/to/captures:/captures -p8080:3000 sysdig/sysdig-inspect:latest
   description: |
     Sysdig is a powerful open source tool for container troubleshooting,
     performance tunning and security investigation.
 
     This plugin triggers a capture in the underlying host which is running a
-    pod. A capture file is created for a duration of time and is download
-    locally in order to use it with Sysdig Inspect.
+    pod. A capture file is created for a duration of time and is downloaded
+    locally in order to use it with Sysdig Inspect. You can download Sysdig
+    Inspect in the following link: https://github.com/draios/sysdig-inspect
+
+    Finally, you can set the duration in seconds of the capture with the `-M`
+    flag, and also specify the namespace using the `-n` or `--namespace` or use
+    eBPF to trace syscalls instead the kernel module instrumentation with
+    `--ebpf` flag.
 
     Example:
 
-    ```bash
     $ kubectl capture nginx-78f5d695bd-bcbd8
     Sysdig is starting to capture system calls:
 
@@ -51,4 +57,3 @@ spec:
 
     The capture has been downloaded to your hard disk at:
     ~/captures/capture-nginx-78f5d695bd-bcbd8-1550246926.scap.gz
-    ```

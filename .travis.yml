@@ -27,5 +27,5 @@ install: true # skip go get ./...
 script:
   - export PATH="$PATH:$HOME/.krew/bin";
     git diff --name-only --diff-filter=AM $TRAVIS_BRANCH...HEAD |
-      grep -E 'plugins/.*' |
+      grep -E 'plugins/.*' | tee /dev/stderr |
       xargs -I _ $HOME/bin/validate-krew-manifest -manifest _

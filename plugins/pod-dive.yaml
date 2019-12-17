@@ -1,0 +1,61 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pod-dive
+spec:
+  version: "v0.1.3"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/caiobegotti/pod-dive/releases/download/v0.1.3/pod-dive-amd64-linux.tar.gz
+    sha256: "c3840fb646a1d44d18253ae327442716a6860a7403dc285053073fcf735cc33f"
+    files:
+    - from: "./LICENSE"
+      to: "."
+    - from: "./pod-dive-amd64-linux"
+      to: "."
+    bin: "pod-dive-amd64-linux"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/caiobegotti/pod-dive/releases/download/v0.1.3/pod-dive-amd64-darwin.tar.gz
+    sha256: "09ea32512080d7a1ad54314b19f6135893ace638434f71b5fc0113da011dfb46"
+    files:
+    - from: "./LICENSE"
+      to: "."
+    - from: "./pod-dive-amd64-darwin"
+      to: "."
+    bin: "pod-dive-amd64-darwin"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/caiobegotti/pod-dive/releases/download/v0.1.3/pod-dive-amd64-windows.exe.zip
+    sha256: "cd20a105c60482fdd0fd369c2af7506f00ec60bdcacebdddf8ad6c5a5f3d904e"
+    files:
+    - from: "./LICENSE"
+      to: "."
+    - from: "./pod-dive-amd64-windows.exe"
+      to: "."
+    bin: "pod-dive-amd64-windows.exe"
+  shortDescription: Shows a pod's workload tree and info inside a node
+  homepage: https://github.com/caiobegotti/pod-dive
+  description: |
+    Dives into a node after the desired pod and returns data associated
+    with the pod no matter where it is running, such as its origin workload,
+    namespace, the node where it is running and its node pod siblings, as
+    well basic health status of it all.
+
+    The purpose is to have meaningful pod info at a glance without needing to
+    run multiple kubectl commands to see what else is running next to your
+    pod in a given node inside a huge cluster, because sometimes all
+    you've got from an alert is the pod name. 
+
+    Usage
+      $ kubectl pod-dive [pod name]
+
+    For additional options
+      $ kubectl pod-dive --help

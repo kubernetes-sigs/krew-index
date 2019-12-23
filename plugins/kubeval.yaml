@@ -1,12 +1,12 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 ￼kind: Plugin
 ￼metadata:
-￼  name: validate-config
+￼  name: kubeval
 ￼spec:
 ￼  version: "0.14.0"
-￼  shortDescription: Validate your Kubernetes configuration files
+￼  shortDescription: Validate schema of resource files
   description: |
-    The plugin validate a Kubernetes YAML or JSON configuration file.
+    The plugin validates a Kubernetes YAML or JSON configuration file.
     It does so using schemas generated from the Kubernetes OpenAPI specification,
     and therefore can validate schemas for multiple versions of Kubernetes
   homepage: https://github.com/instrumenta/kubeval
@@ -17,6 +17,8 @@ apiVersion: krew.googlecontainertools.github.com/v1alpha2
 ￼      files:
 ￼      - from: "./kubeval"
 ￼        to: "."
+      - from: LICENSE
+        to: .
 ￼      selector:
 ￼        matchLabels:
 ￼          os: linux
@@ -25,8 +27,10 @@ apiVersion: krew.googlecontainertools.github.com/v1alpha2
 ￼      sha256: "05b9993e59a32b95bc5496dd98598e4a425643151efd108c0449405dd4a2a4c7"
 ￼      bin: kubeval
 ￼      files:
-￼        - from: "./kubeval"
-￼          to: "."
+￼      - from: "./kubeval"
+￼        to: "."
+￼      - from: LICENSE
+        to: .
 ￼      selector:
 ￼        matchLabels:
 ￼          os: darwin
@@ -35,8 +39,10 @@ apiVersion: krew.googlecontainertools.github.com/v1alpha2
       sha256: "2a844518981848a7d77cced9b51a05174ba9c17fc007a1c48cd2af0d3fb021d7"
 ￼      bin: kubeval.exe
 ￼      files:
-￼        - from: "./kubeval.exe"
-￼          to: "."
+￼      - from: "./kubeval.exe"
+￼        to: "."
+￼      - from: LICENSE
+        to: .
 ￼      selector:
 ￼        matchLabels:
 ￼          os: windows

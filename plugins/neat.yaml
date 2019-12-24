@@ -14,23 +14,23 @@ spec:
   platforms:
   - bin: ./kubectl-neat
     files:
-    - from: /dist/darwin/*
+    - from: /*
       to: .
     selector:
       matchLabels:
         arch: amd64
         os: darwin
-    sha256: 0d8e3761c44edd826034a8e7c7bce36f63db725de21f469661cf9c36182c4ec0
-    uri: https://github.com/itaysk/kubectl-neat/releases/download/v1.0.0/kubectl-neat_darwin.tar.gz
+    sha256: f5698ad7ed649ac0a715fe72af70b166463704d12624a1f2b90d71cd080b4d7a
+    uri: https://github.com/itaysk/kubectl-neat/releases/download/v1.1.0/kubectl-neat_darwin.tar.gz
   - bin: ./kubectl-neat
     files:
-    - from: /dist/linux/*
+    - from: /*
       to: .
     selector:
       matchLabels:
         arch: amd64
         os: linux
-    sha256: 612fd5830c3aff621fc75aa717f0e8fb80312b7ae51078eead00bb6d75327871
-    uri: https://github.com/itaysk/kubectl-neat/releases/download/v1.0.0/kubectl-neat_linux.tar.gz
+    sha256: cddbc2f332bc4186e5997e1331d0209553da8d56bd7ca880a35102022eb5eef2
+    uri: https://github.com/itaysk/kubectl-neat/releases/download/v1.1.0/kubectl-neat_linux.tar.gz
   shortDescription: Remove clutter from Kubernetes manifests to make them more readable.
-  version: v1.0.0
+  version: v1.1.0

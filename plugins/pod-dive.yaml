@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: pod-dive
 spec:
-  version: "v0.1.3"
+  version: "v0.1.4"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/caiobegotti/pod-dive/releases/download/v0.1.3/pod-dive-amd64-linux.tar.gz
-    sha256: "c3840fb646a1d44d18253ae327442716a6860a7403dc285053073fcf735cc33f"
+    uri: https://github.com/caiobegotti/pod-dive/releases/download/v0.1.4/pod-dive-amd64-linux.tar.gz
+    sha256: "663d7f981b3c01dc13bfc2119b0abd0b5b20c85b4b755f6fec9e8cb8be34f343"
     files:
     - from: "./LICENSE"
       to: "."
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/caiobegotti/pod-dive/releases/download/v0.1.3/pod-dive-amd64-darwin.tar.gz
-    sha256: "09ea32512080d7a1ad54314b19f6135893ace638434f71b5fc0113da011dfb46"
+    uri: https://github.com/caiobegotti/pod-dive/releases/download/v0.1.4/pod-dive-amd64-darwin.tar.gz
+    sha256: "d314e57e5807afc4669c5a25852a733f1bc3140441bbd397b5666b22b5090617"
     files:
     - from: "./LICENSE"
       to: "."
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/caiobegotti/pod-dive/releases/download/v0.1.3/pod-dive-amd64-windows.exe.zip
-    sha256: "cd20a105c60482fdd0fd369c2af7506f00ec60bdcacebdddf8ad6c5a5f3d904e"
+    uri: https://github.com/caiobegotti/pod-dive/releases/download/v0.1.4/pod-dive-amd64-windows.exe.zip
+    sha256: "199481b1a5caffe419cf7d2972f19043655ace20ca79394784636e98693b1540"
     files:
     - from: "./LICENSE"
       to: "."

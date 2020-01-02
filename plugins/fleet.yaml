@@ -19,30 +19,6 @@ spec:
     bin: "fleet"
   - selector:
       matchLabels:
-        os: linux
-        arch: arm64
-    uri: https://github.com/mhausenblas/kcf/releases/download/v0.1.4/fleet_linux_arm64.tar.gz
-    sha256: "a041edf6caee7b20fa25c6a0a366620a5178484173aa01d8281bef608a82653a"
-    files:
-    - from: "./fleet"
-      to: "."
-    - from: "./LICENSE"
-      to: "."
-    bin: "fleet"
-  - selector:
-      matchLabels:
-        os: linux
-        arch: arm
-    uri: https://github.com/mhausenblas/kcf/releases/download/v0.1.4/fleet_linux_arm.tar.gz
-    sha256: "b77ddaeaf27435b1cf41e909d33dbe5574640572219e4aec5ccbc769c4f83d2b"
-    files:
-    - from: "./fleet"
-      to: "."
-    - from: "./LICENSE"
-      to: "."
-    bin: "fleet"
-  - selector:
-      matchLabels:
         os: darwin
         arch: amd64
     uri: https://github.com/mhausenblas/kcf/releases/download/v0.1.4/fleet_darwin_amd64.tar.gz

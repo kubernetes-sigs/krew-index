@@ -3,15 +3,15 @@ kind: Plugin
 metadata:
   name: whoami
 spec:
-  version: v0.0.6
+  version: v0.0.21
   homepage: https://github.com/rajatjindal/kubectl-whoami
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.6/darwin-amd64-v0.0.6.tar.gz
-    sha256: f31e2237fdfd18467d8b5a391cb31f9fab70e9ef104e8618916025daa50489d5
+    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.21/kubectl-whoami_v0.0.21_darwin_amd64.tar.gz
+    sha256: 733cac318e8ce994d6b0605cff5c718e65d96291abd44239b01d8698d022555a
     files:
     - from: "*"
       to: "."
@@ -20,8 +20,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.6/linux-amd64-v0.0.6.tar.gz
-    sha256: a6ffa097b132c8434379adc9620a6b728ad8434dbdaf38699650e19948265bdf
+    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.21/kubectl-whoami_v0.0.21_linux_amd64.tar.gz
+    sha256: de231cf50ab3fcc159018c425753b5994bbabd9c3f370fcaa5fc3f8bba1546c0
     files:
     - from: "*"
       to: "."

@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: tree
 spec:
-  version: v0.2.0
+  version: v0.3.0
   homepage: https://github.com/ahmetb/kubectl-tree
   shortDescription: Show a tree of object hierarchies through ownerReferences
   description: |
@@ -19,8 +19,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: "https://github.com/ahmetb/kubectl-tree/releases/download/v0.2.0/kubectl-tree_v0.2.0_darwin_amd64.tar.gz"
-    sha256: 4851882a75a2b2701ef9df2e056eea4add785e7ecd53e9e967a0876673e5310d
+    uri: "https://github.com/ahmetb/kubectl-tree/releases/download/v0.2.0/kubectl-tree_v0.3.0_darwin_amd64.tar.gz"
+    sha256: 881d763605ee80d257f6275f70944ccd5c6491aef83c921cb5141315eeae8724
     files:
     - from: "*"
       to: "."
@@ -29,9 +29,19 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: "https://github.com/ahmetb/kubectl-tree/releases/download/v0.2.0/kubectl-tree_v0.2.0_linux_amd64.tar.gz"
-    sha256: fa5fa1279ea6ba08999bb048594e7e40c255dbaff1af029869a3cccbe368f872
+    uri: "https://github.com/ahmetb/kubectl-tree/releases/download/v0.3.0/kubectl-tree_v0.3.0_linux_amd64.tar.gz"
+    sha256: c2a11311d4ae2c8bb2ca8074b7da7d50f94b6d0bee512bb1a6e62ca9efb66c80
     files:
     - from: "*"
       to: "."
     bin: kubectl-tree
+    selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: "https://github.com/ahmetb/kubectl-tree/releases/download/v0.3.0/kubectl-tree_v0.3.0_windows_amd64.tar.gz"
+      sha256: 51bbf14ab80257ade1e94bb4197b7b496da02b17ed4f4170651cc7088a9ba92c
+      files:
+        - from: "*"
+          to: "."
+      bin: kubectl-tree.exe

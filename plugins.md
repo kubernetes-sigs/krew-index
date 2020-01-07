@@ -58,6 +58,7 @@ Name | Description | Stars
 [pod-logs](https://github.com/danisla/kubefunc) | Display a list of pods to get logs from | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
 [pod-shell](https://github.com/danisla/kubefunc) | Display a list of pods to execute a shell in | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
 [preflight](https://github.com/replicatedhq/troubleshoot) | Executes application preflight tests in a cluster | ![GitHub stars](https://img.shields.io/github/stars/replicatedhq/troubleshoot.svg?label=stars&logo=github)
+[profefe](https://github.com/profefe/kube-profefe) | Gather and manage pprof profiles from running pods. | ![GitHub stars](https://img.shields.io/github/stars/profefe/kube-profefe.svg?label=stars&logo=github)
 [prompt](https://github.com/jordanwilson230/kubectl-plugins/tree/krew#kubectl-prompt) | Prompts for user confirmation when executing commands in critical namespaces or clusters, i.e., production. | ![GitHub stars](https://img.shields.io/github/stars/jordanwilson230/kubectl-plugins.svg?label=stars&logo=github)
 [prune-unused](https://github.com/thecloudnatives/kubectl-plugins) | Prune unused resources | ![GitHub stars](https://img.shields.io/github/stars/thecloudnatives/kubectl-plugins.svg?label=stars&logo=github)
 [rbac-lookup](https://github.com/reactiveops/rbac-lookup) | Reverse lookup for RBAC | ![GitHub stars](https://img.shields.io/github/stars/reactiveops/rbac-lookup.svg?label=stars&logo=github)

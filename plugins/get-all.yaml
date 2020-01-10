@@ -3,10 +3,10 @@ kind: Plugin
 metadata:
   name: get-all
 spec:
-  version: v1.2.1
+  version: v1.3.0
   platforms:
-    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.2.1/get-all-amd64-linux.tar.gz
-      sha256: f9af80ca1ea3fba408480cda5c7269e1a0adcee3f676b7c8ad90491752aad303
+    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.0/get-all-amd64-linux.tar.gz
+      sha256: a6d6d30cb250786f641914b7faf113922add6001e538eb3192aff6860b84caec
       bin: get-all-amd64-linux
       files:
         - from: get-all-amd64-linux
@@ -17,8 +17,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.2.1/get-all-amd64-darwin.tar.gz
-      sha256: 3eee2b15a3f55361823a94169e3f9903a5c185073618a97ee3d07e5f03d5bd41
+    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.0/get-all-amd64-darwin.tar.gz
+      sha256: b387a6054cd4540f563b1f0c019150860dfe926b2699b44dcc2f55bfd98d14b8
       bin: get-all-amd64-darwin
       files:
         - from: get-all-amd64-darwin
@@ -29,8 +29,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.2.1/get-all-amd64-windows.zip
-      sha256: adb12a708954db315f744b99fd616e3b6e4b9c1561f1dfc1e3ef726d13917ffc
+    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.0/get-all-amd64-windows.zip
+      sha256: d978efd94002b3bf4936095d50e0a0a915e0745b344889703708f30b7abecd27
       bin: get-all-amd64-windows.exe
       files:
         - from: get-all-amd64-windows.exe
@@ -41,14 +41,8 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-  shortDescription: Like `kubectl get all`, but _really_ everything
+  shortDescription: Like `kubectl get all` but _really_ everything
   homepage: https://github.com/corneliusweig/ketall
-  caveats: |
-      Usage:
-        kubectl get-all
-
-      Documentation:
-        https://github.com/corneliusweig/ketall/blob/v1.2.1/doc/USAGE.md#usage
   description: |+2
 
       Like 'kubectl get all', but get _really_ all resources
@@ -56,6 +50,6 @@ spec:
       For a complete overview of all resources in a kubernetes cluster,
        $ kubectl get all --all-namespaces
       is not enough, because it simply does not show everything. This helper
-      lists _really_ all resources the cluster has to offer.
+      lists _really_ all resources on the cluster.
 
       More on https://github.com/corneliusweig/ketall/blob/master/doc/USAGE.md

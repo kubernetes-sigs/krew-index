@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: preflight
 spec:
-  version: "v0.9.16"
+  version: "v0.9.17"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.16/preflight_linux_amd64.tar.gz
-    sha256: "8957eb6175f86856ba12283cc693c1d03c607499998739cb0d4068c5bd2541bd"
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.17/preflight_linux_amd64.tar.gz
+    sha256: "0b5806a21dd518bbbe0f4220b43afe1f4e66dc8974580b5579624e91031a1ca4"
     files:
     - from: preflight
       to: .
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.16/preflight_darwin_amd64.tar.gz
-    sha256: "4e1dc8f000a1c8b900cbe97ea9879be5586c4e5c7351b22850267ddebf80aa26"
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.17/preflight_darwin_amd64.tar.gz
+    sha256: "c33d988d0c7691d067d5125d0728c9bf4542c2848c6370f143253322ad43cfe2"
     files:
     - from: preflight
       to: .
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.16/preflight_windows_amd64.zip
-    sha256: "11186602f7685b1e9b99653a37eb81843a944e82cb1dbe9cffc7d95dea6d318b"
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.17/preflight_windows_amd64.zip
+    sha256: "fda16e198cde4edb92a38d78469482a62856d18620a22609d3ffc98d13392286"
     files:
     - from: preflight.exe
       to: .

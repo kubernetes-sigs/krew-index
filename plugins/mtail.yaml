@@ -4,16 +4,18 @@ metadata:
   name: mtail
 spec:
   platforms:
-  - sha256: 592dca7f2fac476438fea5a5861f7f57c5329e82f76179061e1d689e105150d1
-    uri: https://gitlab.com/grzesuav/kubectl-mtail/uploads/e7e0277d55b21d3004e078b3f67133d0/mtail.tar.gz
+  - sha256: d4c57d99e8bb255bb0c1c6cfc5eb12dba5d03f35ec5552112288a22b304fd31c
+    uri: https://gitlab.com/grzesuav/kubectl-mtail/uploads/4f872d0e01711d5a874c0bc9de1b611e/mtail.tar.gz
     bin: mtail.sh
     files:
     - from: "mtail/*"
       to: "."
+    - from: "LICENSE"
+      to: "."
     selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-  version: "v1.1.0"
+  version: "v1.2.0"
   homepage: https://gitlab.com/grzesuav/kubectl-mtail
   shortDescription: Tail logs from multiple pods matching label selector
   caveats: |

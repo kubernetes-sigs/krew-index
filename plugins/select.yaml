@@ -1,0 +1,35 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: select
+spec:
+  version: v0.0.3
+  homepage: https://github.com/n3wscott/kubectl-select
+  shortDescription: Select the active Kubernetes context using a menu.
+  description: |
+    This plugin allows you see all configured Kubernetes contexts as a human
+    friendly list and use your arrow keys to select the active context.
+  caveats: |
+    * Contexts must already be setup in the local context file.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/n3wscott/kubectl-select/releases/download/v0.0.3/kubectl-select_v0.0.3_darwin_amd64.tar.gz
+    sha256: acbd4dc29c4228e7cd392a305eb3d7155bc22c7d550172cc2a49779cdaa0f715
+    bin: kubectl-select
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/n3wscott/kubectl-select/releases/download/v0.0.3/kubectl-select_v0.0.3_linux_amd64.tar.gz
+    sha256: daf831ca43a424752bb78186b66c8fbb06360937fa59d214fef81e657da827bb
+    bin: kubectl-select
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/n3wscott/kubectl-select/releases/download/v0.0.3/kubectl-select_v0.0.3_windows_amd64.tar.gz
+    sha256: 0da4d93a21404403fd22cd04f8f6ae5545d92e1f1ffddfebe81cee2122d44c04
+    bin: kubectl-select.exe

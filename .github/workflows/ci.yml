@@ -1,4 +1,4 @@
-name: CI
+name: krew-index CI
 
 on: [push]
 
@@ -22,19 +22,19 @@ jobs:
     - name: Check out code into the Go module directory
       uses: actions/checkout@v2
 
-    - name: install kubectl
+    - name: Install kubectl
       run: |
         sudo curl -fsSL -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.13.1/bin/linux/amd64/kubectl
         sudo chmod +x /usr/bin/kubectl
 
-    - name: install krew (temporarily hardcode version)
+    - name: Install krew (temporarily hardcode version)
       run: |
         cd "$(mktemp -d)" &&
         curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew.{tar.gz,yaml}" &&
         tar zxvf krew.tar.gz &&
         ./krew-linux_amd64 install --manifest=krew.yaml --archive=krew.tar.gz
         
-    - name: get repository differences
+    - name: Get repository differences
       run: git diff --name-only --diff-filter=AM $TRAVIS_BRANCH...HEAD |
         grep -E 'plugins/.*' | tee /dev/stderr |
         xargs -I _ $HOME/bin/validate-krew-manifest -manifest _

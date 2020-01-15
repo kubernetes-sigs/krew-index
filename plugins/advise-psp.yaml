@@ -1,0 +1,37 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: advise-psp
+spec:
+  version: v1.4.0
+  homepage: https://github.com/sysdiglabs/kube-psp-advisor
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/sysdiglabs/kube-psp-advisor/releases/download/1.4.0/kubectl-advise-psp_v1.4.0_darwin_amd64.tar.gz
+    sha256: 55f852fd02b62ddbe59e8f1c00550d305201765beef900111c4c0819c85b64df 
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-advise-psp
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/sysdiglabs/kube-psp-advisor/releases/download/1.4.0/kubectl-advise-psp_v1.4.0_linux_amd64.tar.gz
+    sha256: dd496e46bff10bf5ca8b01b2e9e7626354cdba0dcab0aa7ddf72b2b809f9ad72 
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-advise-psp
+  shortDescription: Suggest pod security policies for Kubernetes cluster.
+  caveats: |
+    This plugin requires the privileges to get workloads (deployment, daemonset etc.)
+    
+    Read the documentation at:
+      https://github.com/sysdiglabs/kube-psp-advisor
+  description: |
+    This plugin suggest pod security policies based on the security context of Kubernetes cluster.
+

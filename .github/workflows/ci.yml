@@ -27,7 +27,7 @@ jobs:
         cd "$(mktemp -d)" &&
         curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew.{tar.gz,yaml}" &&
         tar zxvf krew.tar.gz &&
-        ./krew-linux_amd64 install --manifest=krew.yaml --archive=krew.tar.gz
+        ./krew-linux_amd64 install --manifest=krew.yaml --archive=krew.tar.gz | grep true
         
     - name: Validate updated plugin manifests
       shell: bash

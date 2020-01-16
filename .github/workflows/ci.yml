@@ -30,10 +30,11 @@ jobs:
         ./krew-linux_amd64 install --manifest=krew.yaml --archive=krew.tar.gz
         
     - name: Validate updated plugin manifests
+      shell: bash
       run: |
         echo ${GITHUB_REF##*/}
         echo $HOME
         set -euo pipefail
         git diff --name-only --diff-filter=AM ${GITHUB_REF##*/} |
-        grep -E 'plugins/.*' | tee /dev/stderr |
-        xargs -I _ $HOME/bin/validate-krew-manifest -manifest _
+          grep -E 'plugins/.*' | tee /dev/stderr |
+          xargs -I _ $HOME/bin/validate-krew-manifest -manifest _

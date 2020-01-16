@@ -1,16 +1,8 @@
 name: krew-index CI
 
-on: 
-  push:
-    branches: 
-      - '*'
-    tags: 
-      - 'v*.*.*'
-  pull_request:
-    branches: 
-      - '*'
-  release:
-    types: [published, created, edited]
+on:
+- push
+- pull_request
 
 jobs:
   build:
@@ -31,12 +23,15 @@ jobs:
 
     - name: Install krew
       run: |
+        set -euo pipefail
         cd "$(mktemp -d)" &&
         curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew.{tar.gz,yaml}" &&
         tar zxvf krew.tar.gz &&
         ./krew-linux_amd64 install --manifest=krew.yaml --archive=krew.tar.gz
         
     - name: Validate updated plugin manifests
-      run: git diff --name-only --diff-filter=AM $TRAVIS_BRANCH...HEAD |
+      run: |
+        set -euo pipefail
+        git diff --name-only --diff-filter=AM $GITHUB_REF...HEAD |
         grep -E 'plugins/.*' | tee /dev/stderr |
         xargs -I _ $HOME/bin/validate-krew-manifest -manifest _

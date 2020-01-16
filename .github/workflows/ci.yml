@@ -34,6 +34,6 @@ jobs:
         echo $GITHUB_REF
         echo $HOME
         set -euo pipefail
-        git diff --name-only --diff-filter=AM $GITHUB_REF |
+        git diff --name-only --diff-filter=AM $GITHUB_REF#refs/heads/ |
         grep -E 'plugins/.*' | tee /dev/stderr |
         xargs -I _ $HOME/bin/validate-krew-manifest -manifest _

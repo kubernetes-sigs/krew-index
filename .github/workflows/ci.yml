@@ -22,8 +22,8 @@ jobs:
         sudo chmod +x /usr/bin/kubectl
 
     - name: Install krew
+      shell: bash
       run: |
-        set -euo pipefail
         cd "$(mktemp -d)" &&
         curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew.{tar.gz,yaml}" &&
         tar zxvf krew.tar.gz &&
@@ -32,9 +32,6 @@ jobs:
     - name: Validate updated plugin manifests
       shell: bash
       run: |
-        echo ${GITHUB_REF##*/}
-        echo $HOME
-        set -euo pipefail
         git diff --name-only --diff-filter=AM ${GITHUB_REF##*/} |
           grep -E 'plugins/.*' | tee /dev/stderr |
           xargs -I _ $HOME/bin/validate-krew-manifest -manifest _

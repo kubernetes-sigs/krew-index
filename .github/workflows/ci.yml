@@ -31,6 +31,7 @@ jobs:
         
     - name: Validate updated plugin manifests
       run: |
+        set -u
         git diff --name-only --diff-filter=AM ${GITHUB_REF##*/} |
           grep -E 'plugins/.*' | tee /dev/stderr |
           xargs -I _ $HOME/bin/validate-krew-manifest -manifest _

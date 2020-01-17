@@ -1,0 +1,47 @@
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+command: ./kubectl-net_forward
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: net-forward
+spec:
+  version: "v1.0.2"       # required, must be in semver format, prefixed with "v"
+  platforms:
+  # specify installation script for linux 
+  - selector:             # a regular Kubernetes selector
+      matchLabels:
+        os: linux
+    # url for downloading the package archive:
+    uri: https://github.com/antitree/krew-tools/releases/download/0.0.2/krew-tools_v1.0.2.tar.gz
+    # sha256sum of the above archive file:
+    sha256: "2248c140613ce9a4796332744de6c37e82352929270bbd06b2ad6fde6e7c7f1c"
+    # copy the used files out of the zip archive, defaults to `[{from: "*", to: "."}]`
+    files:
+      - from: "net-forward/*"
+        to: "."
+    bin: "kubectl-net_forward"  # path to the plugin executable after copying files above
+  shortDescription: "Setup a true forwarder from your local machine to any TCP service accessible from within the cluster."
+  homepage: https://github.com/antitree/krew-tools
+  # (optional) use caveats field to show post-installation recommendations
+  caveats: |
+    This plugin needs the alpine:socat image available to the node:
+  description: |     # should print nicely on standard 80 char wide terminals
+    Deploy a socat listener that allows you to forward to any IP/Port that's 
+    accessible in the cluster. Similar to `kubectl port-forward` but without
+    the requiring a kubernetes to connect to.
+    
+    Examples:
+      kubectl net-forward
+      kubectl net-forward -i kubernetes.default -p 443
+      kubectl net-forward -n testnamespace -i 10.24.0.1 -p 443 -l 9999

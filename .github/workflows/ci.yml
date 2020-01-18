@@ -11,7 +11,6 @@ jobs:
     env: 
       KREW_VERSION: v0.3.3
       GO111MODULE: on
-      GOBIN: $HOME/bin
     steps:
 
     - name: Check out code into the Go module directory
@@ -22,7 +21,11 @@ jobs:
         set -euo pipefail
         sudo curl -fsSL -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.13.1/bin/linux/amd64/kubectl
         sudo chmod +x /usr/bin/kubectl
+        
+    - name: install validate-krew-manifest plugins
         go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
+      env:
+        GOBIN: $HOME/bin
 
     - name: Install krew
       shell: bash

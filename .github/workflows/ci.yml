@@ -21,8 +21,6 @@ jobs:
         set -euo pipefail
         sudo curl -fsSL -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.13.1/bin/linux/amd64/kubectl
         sudo chmod +x /usr/bin/kubectl
-
-    - name: Set GOBIN
       env: 
         GOBIN: $HOME/bin go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
 

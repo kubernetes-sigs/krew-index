@@ -31,12 +31,15 @@ jobs:
         tar zxvf krew.tar.gz &&
         ./krew-linux_amd64 install --manifest=krew.yaml --archive=krew.tar.gz
         
+    - name: Install validate-krew-manifest plugin
+      run : |
+        set -euo pipefail
+        export GOBIN=$HOME/bin
+        go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
+        
     - name: Validate updated plugin manifests
       run: |
-        export GOBIN=$HOME/bin
         set -euo pipefail
-        go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
-        ls $HOME/bin
         git diff --name-only --diff-filter=AM ${GITHUB_REF##*/} |
           grep -E 'plugins/.*' | tee /dev/stderr |
           xargs -I _ $HOME/bin/validate-krew-manifest -manifest _

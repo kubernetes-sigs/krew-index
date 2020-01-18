@@ -38,9 +38,8 @@ jobs:
         
     - name: Validate updated plugin manifests
       run: |
+        export GOBIN=$HOME/bin
         set -euo pipefail
         git diff --name-only --diff-filter=AM ${GITHUB_REF##*/} |
           grep -E 'plugins/.*' | tee /dev/stderr |
           xargs -I _ $HOME/bin/validate-krew-manifest -manifest _
-      env:
-        GOBIN: $HOME/bin

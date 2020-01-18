@@ -23,7 +23,7 @@ jobs:
         sudo chmod +x /usr/bin/kubectl
         
     - name: install validate-krew-manifest plugins
-        go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
+      run: go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
       env:
         GOBIN: $HOME/bin
 

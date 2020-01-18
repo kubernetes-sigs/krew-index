@@ -22,10 +22,10 @@ jobs:
         sudo curl -fsSL -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.13.1/bin/linux/amd64/kubectl
         sudo chmod +x /usr/bin/kubectl
         
-    - name: install validate-krew-manifest plugins
-      run: go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
-      env:
-        GOBIN: $HOME/bin
+    - name: Install validate-krew-manifest plugins
+      run: |
+        export GOBIN=$HOME/bin
+        go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
 
     - name: Install krew
       shell: bash

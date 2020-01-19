@@ -39,8 +39,14 @@ jobs:
         
     - name: Validate updated plugin manifests
       run : |
+        export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+        pwd
+        ls
+        git diff
+        echo $PATH
+        echo $GOBIN
+        kubectl krew
         set -euo pipefail
-        export PATH=$PATH:$HOME/.krew/bin
         git diff --name-only --diff-filter=AM ${GITHUB_REF##*/} |
           grep -E 'plugins/.*' | tee /dev/stderr |
           xargs -I _ $HOME/bin/validate-krew-manifest -manifest _

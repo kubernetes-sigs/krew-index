@@ -38,9 +38,9 @@ jobs:
         go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
         
     - name: Validate updated plugin manifests
-      run: |
-	export PATH="$PATH:$HOME/.krew/bin";
+      run : |
         set -euo pipefail
+        export PATH=$PATH:$HOME/.krew/bin
         git diff --name-only --diff-filter=AM ${GITHUB_REF##*/} |
           grep -E 'plugins/.*' | tee /dev/stderr |
           xargs -I _ $HOME/bin/validate-krew-manifest -manifest _

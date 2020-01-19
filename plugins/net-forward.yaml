@@ -1,0 +1,27 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: net-forward
+spec:
+  version: "v1.0.3"       
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+    uri: https://github.com/antitree/krew-net-forward/releases/download/v1.0.3/net-forward_v1.0.3.tar.gz
+    sha256: "645adb05d9ad68ecc91d9034cb80b1e2fe4762864323c12de0f2bc5afe20baa0"
+    bin: "net-forward"  
+  shortDescription: "Proxy to arbitrary TCP services on a cluster network"
+  homepage: https://github.com/antitree/krew-net-forward
+  caveats: |
+    This plugin needs the alpine:socat image available to the node.
+  description: |     
+    A plugin similar to kubectl port-forward but without requiring users to
+    enter a Pod or Svc object existing the cluster. Instead you can choose any
+    IP address and port of your choosing. You could for example use it to test
+    whether a Namespace is able to access a Pod's private IP in a different
+    Namespace. Or use it to connect to a non-k8s service located on an adjacent
+    subnet outside of the cluster itself. It does this (similar to port-forward)
+    by deploying a socat Pod and listener that you can port-forward to you to
+    create a local listener service (default 127.0.0.1:9999), which
+    auto-forwards to the IP and port the users supplies.

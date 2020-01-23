@@ -1,0 +1,43 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: deprecations
+spec:
+  shortDescription: >-    
+    Checks for deprecated objects in a cluster 
+  homepage: https://github.com/rikatz/kubepug
+  caveats: |
+    * By default, deprecations finds deprecated object relative to the current kubernetes
+    master branch. To target a different kubernetes release, use the --k8s-version
+    argument.
+    
+    * Deprecations needs permission to GET all objects in the Cluster
+  description: |     
+    This plugin shows all the deprecated objects in a Kubernetes cluster allowing 
+    the operator to verify them before upgrading the cluster. It uses the 
+    swagger.json version available in master branch of Kubernetes repository
+    (github.com/kubernetes/kubernetes) as a reference. The branch can be changed 
+    to some other desired Kubernetes version
+  version: v0.2.4
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/rikatz/kubepug/releases/download/v0.2.4/kubepug_darwin_amd64.tar.gz
+    sha256: 3033503f1f696216be857fbb69dc0891127ecb759df82c840163f4b16227145a
+    bin: "kubepug" 
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/rikatz/kubepug/releases/download/v0.2.4/kubepug_linux_amd64.tar.gz
+    sha256: 7830ca3f08a4b58703f7791d9f3a5b2fed689abc8fc1a278538b6d213f8f2137
+    bin: "kubepug" 
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/rikatz/kubepug/releases/download/v0.2.4/kubepug_windows_amd64.zip
+    sha256: 63234bf743aacba387fdb01e134ade6e011096849b4934e7e2b4958b132b7ad2
+    bin: "kubepug.exe" 

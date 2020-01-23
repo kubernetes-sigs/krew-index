@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: fleet
 spec:
-  version: "v0.1.3"
+  version: "v0.1.4"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/mhausenblas/kcf/releases/download/v0.1.3/fleet_linux_amd64.tar.gz
-    sha256: "4b70b89fd78d3dc674ff5db918f0047dca816c1622dbbf81f957b1a1419cac39"
+    uri: https://github.com/mhausenblas/kcf/releases/download/v0.1.4/fleet_linux_amd64.tar.gz
+    sha256: "56f0536804bc5230cb0a4e4c87861c27828fee1b71aab1b192fa54c75e090db1"
     files:
     - from: "./fleet"
       to: "."
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/mhausenblas/kcf/releases/download/v0.1.3/fleet_darwin_amd64.tar.gz
-    sha256: "6b1c2404a0a5a734f6313e765930b92877109ee396d290291d66d2139a74a18b"
+    uri: https://github.com/mhausenblas/kcf/releases/download/v0.1.4/fleet_darwin_amd64.tar.gz
+    sha256: "867f1c40b90334f4416062efb4651dca037defc31a0881575c0c408486487d6f"
     files:
     - from: "./fleet"
       to: "."
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/mhausenblas/kcf/releases/download/v0.1.3/fleet_windows_amd64.zip
-    sha256: "9b9df8d64551e91ae248780e78c7a6ace61c657c9d011510bab7cbad0c8734d9"
+    uri: https://github.com/mhausenblas/kcf/releases/download/v0.1.4/fleet_windows_amd64.zip
+    sha256: "33e29a5f65ba8ec16008fd51a9b62d8f9f0d25a066ea700d5cffaf0fa4757f1a"
     files:
     - from: "/fleet.exe"
       to: "."
@@ -49,7 +49,7 @@ spec:
 
     For additional options:
       $ kubectl fleet --help
-      or https://github.com/mhausenblas/kcf/blob/v0.1.3/doc/USAGE.md
+      or https://github.com/mhausenblas/kcf/blob/v0.1.4/doc/USAGE.md
 
   description: |
     Allows to get an overview and details on a fleet of Kubernetes clusters.

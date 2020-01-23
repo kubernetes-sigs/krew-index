@@ -5,7 +5,7 @@ metadata:
 spec:
   homepage: https://github.com/huazhihao/kubespy
   shortDescription: pod debugging tool for kubernetes clusters with docker runtimes
-  version: v0.3.1
+  version: v0.3.3
   description: |
     `kubespy` is a kubectl plugin implemented in bash to debug a running pod.
     It starts a temporary `spy container` which joins the namespaces of the
@@ -23,7 +23,7 @@ spec:
     container runtime and you need to be able to run privileged pods.
 
     Usage:
-      kubectl spy POD [-c CONTAINER] [--spy-image SPY_IMAGE]
+      kubectl spy POD [-c CONTAINER] [-n NAMESPACE] [--spy-image SPY_IMAGE]
 
   caveats: |
     This plugin can only work with nodes with a docker runtime with admin
@@ -37,8 +37,8 @@ spec:
         values:
         - darwin
         - linux
-    uri: https://github.com/huazhihao/kubespy/releases/download/v0.3.1/kubespy.tar.gz
-    sha256: 904f24c189003b4fa4c2b93e902b1d8ee35b191b75c0276bf599a981eb0f168a
+    uri: https://github.com/huazhihao/kubespy/releases/download/v0.3.3/kubespy.tar.gz
+    sha256: fab1365ab650d662c4cfa2c90a7ec3617795343d257cb76304ee038cdd6d5804
     bin: kubespy
     files:
     - from: ./kubespy

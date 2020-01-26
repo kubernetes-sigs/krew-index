@@ -1,0 +1,44 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: vagrant
+spec:
+  homepage: https://github.com/huazhihao/kube-vagrant
+  shortDescription: create a multi-node kubernetes cluster locally with vagrant
+  version: v0.1.0
+  description: |
+    `kube-vagrant` is a kubectl plugin to create a multi-node kubernetes
+    cluster locally with vagrant, so you can quickly set up a dev cluster
+    with one command line.
+
+    `kube-vagrant` is similar to [kops](https://github.com/kubernetes/kops)
+    which also provides command line interface to create kubernetes cluster
+    but only on a cloud environment (aws, gce or openstack). `kube-vagrant`
+    and `kops` not in conflict but complementary.
+
+    Usage:
+      # create a cluster with default settings (3 nodes with 2GB mem each)
+      $ kubectl vagrant up
+
+      # when cluster is created, config yaml will be saved to .kube/config
+      $ kubectl --kubeconfig=.kube/config cluster-info
+
+  caveats: |
+    This plugin requires vagrant and virtualbox
+
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/huazhihao/kube-vagrant/releases/download/v0.1.0/kube-vagrant.tar.gz
+    sha256: 22dc2b6ddae9d515c2535589ebbe7d7e8fe865fbf606b793549a7a95375d4b1a
+    bin: kube-vagrant
+    files:
+    - from: ./kube-vagrant
+      to: kube-vagrant
+    - from: ./LICENSE
+      to: .

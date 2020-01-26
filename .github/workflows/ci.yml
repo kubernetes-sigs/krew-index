@@ -14,7 +14,9 @@ jobs:
     steps:
 
     - name: Check out code into the Go module directory
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0  # disable shallow clones
 
     - name: Install kubectl
       run: |
@@ -23,12 +25,11 @@ jobs:
         sudo chmod +x /usr/bin/kubectl        
 
     - name: Install krew
-      shell: bash
       run: |
         set -euo pipefail
-        cd "$(mktemp -d)" &&
-        curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew.{tar.gz,yaml}" &&
-        tar zxvf krew.tar.gz &&
+        cd "$(mktemp -d)"
+        curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew.{tar.gz,yaml}"
+        tar zxvf krew.tar.gz
         ./krew-linux_amd64 install --manifest=krew.yaml --archive=krew.tar.gz
         
     - name: Install validate-krew-manifest plugin
@@ -39,6 +40,7 @@ jobs:
         
     - name: Validate updated plugin manifests
       run : |
+        set -x
         set -euo pipefail
         export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
         git diff --name-only --diff-filter=AM ${{ github.event.before }} ${{ github.sha }} |

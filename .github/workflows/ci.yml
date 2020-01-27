@@ -49,6 +49,6 @@ jobs:
         set -x
         set -euo pipefail
         export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-        git diff --name-only --diff-filter=AM ${{ github.event.before }} ${{ github.sha }} -- plugins/ |
-          tee /dev/stder |
+        git diff --name-only --diff-filter=AM ${{ github.event.before }} ${{ github.sha }} - plugins/ |
+          tee /dev/stderr |
           xargs -I _ $HOME/bin/validate-krew-manifest -manifest _

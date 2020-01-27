@@ -12,6 +12,12 @@ jobs:
       KREW_VERSION: v0.3.3
       GO111MODULE: on
     steps:
+    
+    - name: Set up Go 1.13
+      uses: actions/setup-go@v1
+      with:
+        go-version: 1.13
+      id: go
 
     - name: Check out code into the Go module directory
       uses: actions/checkout@v2
@@ -43,6 +49,6 @@ jobs:
         set -x
         set -euo pipefail
         export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-        git diff --name-only --diff-filter=AM ${{ github.event.before }} ${{ github.sha }} |
-          grep -E 'plugins/.*' | tee /dev/stderr |
+        git diff --name-only --diff-filter=AM ${{ github.event.before }} ${{ github.sha }} -- plugins/ |
+          tee /dev/stderr |
           xargs -I _ $HOME/bin/validate-krew-manifest -manifest _

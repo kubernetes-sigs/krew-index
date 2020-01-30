@@ -3,55 +3,51 @@ kind: Plugin
 metadata:
   name: access-matrix
 spec:
-  version: "v0.4.2"
+  version: v0.4.3
   platforms:
-    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.2/access-matrix-amd64-linux.tar.gz
-      sha256: eabea010d3e6f3535b34a0e9641217575705a2f47448c04b46d9d201020618e7
-      bin: access-matrix
-      files:
-        - from: ./LICENSE
-          to: .
-        - from: ./access-matrix-amd64-linux
-          to: access-matrix
-      selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.2/access-matrix-amd64-darwin.tar.gz
-      sha256: 4dcb7a2aa7eb1d4eddbcd4867eb56daeff22d3e50a0c9388bddf5918d5611ec3
-      bin: access-matrix
-      files:
-        - from: ./LICENSE
-          to: .
-        - from: ./access-matrix-amd64-darwin
-          to: access-matrix
-      selector:
-        matchLabels:
-          os: darwin
-          arch: amd64
-    - uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.2/access-matrix-amd64-windows.zip
-      sha256: e1130e3e97dee6f1372442696dedd3478cdb5441046f58bc2cef6f16abba1268
-      bin: access-matrix.exe
-      files:
-        - from: ./LICENSE
-          to: .
-        - from: ./access-matrix-amd64-windows.exe
-          to: access-matrix.exe
-      selector:
-        matchLabels:
-          os: windows
-          arch: amd64
+  - bin: access-matrix
+    uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.3/access-matrix-amd64-linux.tar.gz
+    sha256: 55ae958b1e5b6d1d7f58e1c09e1173d6d66877dec19d434dd9577ebf1743f9e2
+    files:
+      - from: ./LICENSE
+        to: .
+      - from: ./access-matrix-amd64-linux
+        to: access-matrix
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: access-matrix
+    uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.3/access-matrix-amd64-darwin.tar.gz
+    sha256: 4a6d6fc836199bfee6f76904713979570a52e06e4762342cc46e9276c0970270
+    files:
+      - from: ./LICENSE
+        to: .
+      - from: ./access-matrix-amd64-darwin
+        to: access-matrix
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: access-matrix.exe
+    uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.3/access-matrix-amd64-windows.zip
+    sha256: 70e45ef26e4eaed4b8cf1536ab80e2e3d5598810a9ced51c857c601ff1dfa1d9
+    files:
+      - from: ./LICENSE
+        to: .
+      - from: ./access-matrix-amd64-windows.exe
+        to: access-matrix.exe
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
   shortDescription: Show an RBAC access matrix for server resources
   homepage: https://github.com/corneliusweig/rakkess
   caveats: |
       Usage:
         kubectl access-matrix
         kubectl access-matrix for pods
-
-      Documentation:
-        https://github.com/corneliusweig/rakkess/blob/v0.4.2/doc/USAGE.md#usage
-  description: |+2
-
+  description: |
       Show an access matrix for server resources
 
       This plugin retrieves the full list of server resources, checks access for
@@ -63,5 +59,3 @@ spec:
       It also supports a mode which prints all subjects with access to a given
       resource (needs read access to Roles and ClusterRoles). For example:
        $ kubectl access-matrix for configmap
-
-      More on https://github.com/corneliusweig/rakkess/blob/v0.4.2/doc/USAGE.md#usage

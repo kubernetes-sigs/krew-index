@@ -1,0 +1,57 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: doker
+spec:
+  version: v0.1.0
+  homepage: https://github.com/pothulapati/doker
+  shortDescription: Gives docker-cli experience but for a kubernetes cluster.
+  description: |
+    This plugin gives users a docker-cli like experinece but in the context of
+    a kubernetes cluster, Allowing users to control and manage images, containers 
+    running in the kubernetes nodes.
+  caveats: |
+    * A Kubernetes daemonset has to be installed first which acts like an agent to 
+    which the plugin sends commands. This can be done by running
+    kubectl apply -f https://raw.githubusercontent.com/Pothulapati/doker/master/deploy/manifests.yaml
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/pothulapati/doker/releases/download/v0.1.0/doker_v0.1.0_darwin_amd64.tar.gz
+    sha256: a5b0ad5117c68331f35399339de478ba20d5671cd1567d27e917d2fd60507740
+    files:
+    - from: "*"
+      to: "."
+    bin: doker
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: 386
+    uri: https://github.com/pothulapati/doker/releases/download/v0.1.0/doker_v0.1.0_darwin_386.tar.gz
+    sha256: 9eb0ea200fc6d4bce2ffc42aad0364ae489f58b44e318b213b50118701973c24
+    files:
+    - from: "*"
+      to: "."
+    bin: doker
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/pothulapati/doker/releases/download/v0.1.0/doker_v0.1.0_linux_amd64.tar.gz
+    sha256: c77c08dcd0725314ad42d4abf53e911f301c123c3bbf7ae1b11fbacf49917410
+    files:
+    - from: "*"
+      to: "."
+    bin: doker
+  - selector:
+      matchLabels:
+        os: linux
+        arch: 386
+    uri: https://github.com/pothulapati/doker/releases/download/v0.1.0/doker_v0.1.0_linux_386.tar.gz
+    sha256: 18e170af608a18857f735504ded89c4fdb673ce264d894a3c2abd91254a35fdc
+    files:
+    - from: "*"
+      to: "."
+    bin: doker

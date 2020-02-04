@@ -5,13 +5,13 @@ metadata:
 spec:
   version: v0.1.0
   homepage: https://github.com/pothulapati/doker
-  shortDescription: Gives docker-cli experience but for a kubernetes cluster.
+  shortDescription: A docker-cli like experience but for a kubernetes cluster.
   description: |
     This plugin gives users a docker-cli like experinece but in the context of
-    a kubernetes cluster, Allowing users to control and manage images, containers 
+    a kubernetes cluster i.e Allowing users to control and manage images, containers 
     running in the kubernetes nodes.
   caveats: |
-    * A Kubernetes daemonset has to be installed first which acts like an agent to 
+    * A Kubernetes daemonset has to be installed first which acts like an agent, to 
     which the plugin sends commands. This can be done by running
     kubectl apply -f https://raw.githubusercontent.com/Pothulapati/doker/master/deploy/manifests.yaml
   platforms:

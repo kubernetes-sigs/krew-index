@@ -3,44 +3,45 @@ kind: Plugin
 metadata:
   name: get-all
 spec:
-  version: v1.3.0
+  version: v1.3.1
   platforms:
-    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.0/get-all-amd64-linux.tar.gz
-      sha256: a6d6d30cb250786f641914b7faf113922add6001e538eb3192aff6860b84caec
-      bin: get-all-amd64-linux
-      files:
-        - from: get-all-amd64-linux
-          to: .
-        - from: LICENSE
-          to: .
-      selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.0/get-all-amd64-darwin.tar.gz
-      sha256: b387a6054cd4540f563b1f0c019150860dfe926b2699b44dcc2f55bfd98d14b8
-      bin: get-all-amd64-darwin
-      files:
-        - from: get-all-amd64-darwin
-          to: .
-        - from: LICENSE
-          to: .
-      selector:
-        matchLabels:
-          os: darwin
-          arch: amd64
-    - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.0/get-all-amd64-windows.zip
-      sha256: d978efd94002b3bf4936095d50e0a0a915e0745b344889703708f30b7abecd27
-      bin: get-all-amd64-windows.exe
-      files:
-        - from: get-all-amd64-windows.exe
-          to: .
-        - from: LICENSE
-          to: .
-      selector:
-        matchLabels:
-          os: windows
-          arch: amd64
+  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.1/get-all-amd64-linux.tar.gz
+    sha256: 7b64ae2e52b40764384b2ebc003e811220a4f117142d34d4c80726f8fbdea1ab
+    bin: get-all-amd64-linux
+
+    files:
+    - from: get-all-amd64-linux
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.1/get-all-amd64-darwin.tar.gz
+    sha256: a3e30b82b679472016c2ae0038f7ffe412cb1e2fb7b4502ccaac5e73d574b15a
+    bin: get-all-amd64-darwin
+    files:
+    - from: get-all-amd64-darwin
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.1/get-all-amd64-windows.zip
+    sha256: fe4233fd7704abe8459e8376814e151d0ce6a906115b72cbd294dfa17826e247
+    bin: get-all-amd64-windows.exe
+    files:
+    - from: get-all-amd64-windows.exe
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
   shortDescription: Like `kubectl get all` but _really_ everything
   homepage: https://github.com/corneliusweig/ketall
   description: |+2

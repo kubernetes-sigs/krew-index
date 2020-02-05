@@ -1,0 +1,30 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cluster-group
+spec:
+  caveats: |
+    This plugin needs the config file clusters.ini in current dir or refer with env CLUSTERS_CONFIG.
+    This plugin needs the following programs:
+    * python >= 2.7
+  description: |
+    This plugin performs the same command across a group of multiple contexts.
+  homepage: https://github.com/u2takey/kubectl-clusters
+  platforms:
+  - bin: kubectl-cluster-group
+    files:
+    - from: ./*/kubectl-cluster-group
+      to: .
+    - from: "./*/LICENSE"
+      to: .
+    selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    sha256: f242059981c61279d2ab3a877034722cd2e8bb6e3913b12f024c6aa4fd7099d4
+    uri: https://github.com/u2takey/kubectl-clusters/archive/v0.1.4.tar.gz
+  shortDescription: Exec commands across a group of contexts.
+  version: v0.1.4

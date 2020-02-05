@@ -3,41 +3,47 @@ kind: Plugin
 metadata:
   name: sniff
 spec:
-  version: v1.3.5
+  version: v1.3.6
   homepage: https://github.com/eldadru/ksniff
   platforms:
-  - uri: https://github.com/eldadru/ksniff/releases/download/v1.3.5/ksniff.zip
-    sha256: 12873af463d5123907e64a388c150326f1d64b9ee3fb9e0e09e6dee976612260
+  - uri: https://github.com/eldadru/ksniff/releases/download/v1.3.6/ksniff.zip
+    sha256: 85d9b6e8e153a4419145794d86dad2311a7431e340ecf15449776b8a7214a4a4
     bin: kubectl-sniff
     files:
-    - from: ./kubectl-sniff-darwin
+    - from: kubectl-sniff-darwin
       to: kubectl-sniff
-    - from: ./static-tcpdump
-      to: static-tcpdump
+    - from: static-tcpdump
+      to: .
+    - from: LICENSE
+      to: .
     selector:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/eldadru/ksniff/releases/download/v1.3.5/ksniff.zip
-    sha256: 12873af463d5123907e64a388c150326f1d64b9ee3fb9e0e09e6dee976612260
+  - uri: https://github.com/eldadru/ksniff/releases/download/v1.3.6/ksniff.zip
+    sha256: 85d9b6e8e153a4419145794d86dad2311a7431e340ecf15449776b8a7214a4a4
     bin: kubectl-sniff
     files:
-    - from: ./kubectl-sniff
-      to: kubectl-sniff
-    - from: ./static-tcpdump
-      to: static-tcpdump
+    - from: kubectl-sniff
+      to: .
+    - from: static-tcpdump
+      to: .
+    - from: LICENSE
+      to: .
     selector:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/eldadru/ksniff/releases/download/v1.3.5/ksniff.zip
-    sha256: 12873af463d5123907e64a388c150326f1d64b9ee3fb9e0e09e6dee976612260
+  - uri: https://github.com/eldadru/ksniff/releases/download/v1.3.6/ksniff.zip
+    sha256: 85d9b6e8e153a4419145794d86dad2311a7431e340ecf15449776b8a7214a4a4
     bin: kubectl-sniff.exe
     files:
-    - from: ./kubectl-sniff-windows
+    - from: kubectl-sniff-windows
       to: kubectl-sniff.exe
-    - from: ./static-tcpdump
-      to: static-tcpdump
+    - from: static-tcpdump
+      to: .
+    - from: LICENSE
+      to: .
     selector:
       matchLabels:
         os: windows

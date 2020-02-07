@@ -42,7 +42,7 @@ jobs:
         export GOBIN=$HOME/bin
         go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
       
-    - name: Validate updated plugin manifests PR case
+    - name: Validate updated plugin manifests
       run : |
         set -x
         set -euo pipefail

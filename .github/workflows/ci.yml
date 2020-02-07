@@ -1,8 +1,6 @@
 name: krew-index CI
 
-on:
-- push
-- pull_request
+on: pull_request
 
 jobs:
   build:
@@ -43,12 +41,13 @@ jobs:
         set -euo pipefail
         export GOBIN=$HOME/bin
         go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
-        
+      
     - name: Validate updated plugin manifests
       run : |
         set -x
         set -euo pipefail
         export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-        git diff --name-only --diff-filter=AM ${{ github.event.before }} ${{ github.sha }} -- plugins/ |
+        git diff --name-only --diff-filter=AM ${{ github.sha }} -- plugins/ |
           tee /dev/stderr |
           xargs -I _ $HOME/bin/validate-krew-manifest -manifest _
+        

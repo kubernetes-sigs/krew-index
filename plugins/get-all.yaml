@@ -3,9 +3,9 @@ kind: Plugin
 metadata:
   name: get-all
 spec:
-  version: v1.3.1
+  version: v1.3.2-test
   platforms:
-  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.1/get-all-amd64-linux.tar.gz
+  - uri: https://github.com/does-not-exist/get-all-amd64-linux.tar.gz
     sha256: 7b64ae2e52b40764384b2ebc003e811220a4f117142d34d4c80726f8fbdea1ab
     bin: get-all-amd64-linux
 
@@ -17,30 +17,6 @@ spec:
     selector:
       matchLabels:
         os: linux
-        arch: amd64
-  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.1/get-all-amd64-darwin.tar.gz
-    sha256: a3e30b82b679472016c2ae0038f7ffe412cb1e2fb7b4502ccaac5e73d574b15a
-    bin: get-all-amd64-darwin
-    files:
-    - from: get-all-amd64-darwin
-      to: .
-    - from: LICENSE
-      to: .
-    selector:
-      matchLabels:
-        os: darwin
-        arch: amd64
-  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.1/get-all-amd64-windows.zip
-    sha256: fe4233fd7704abe8459e8376814e151d0ce6a906115b72cbd294dfa17826e247
-    bin: get-all-amd64-windows.exe
-    files:
-    - from: get-all-amd64-windows.exe
-      to: .
-    - from: LICENSE
-      to: .
-    selector:
-      matchLabels:
-        os: windows
         arch: amd64
   shortDescription: Like `kubectl get all` but _really_ everything
   homepage: https://github.com/corneliusweig/ketall

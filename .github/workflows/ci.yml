@@ -22,9 +22,9 @@ jobs:
       with:
         fetch-depth: 0  # disable shallow clones
 
-    - name: Fetch origin/master
+    - name: Fetch base branch
       run: |
-        git fetch --no-tags --prune --depth=1 origin +refs/heads/master:refs/remotes/origin/master
+        git fetch --no-tags --prune --depth=1 origin +refs/heads/${GITHUB_BASE_REF}:refs/remotes/origin/${GITHUB_BASE_REF}
 
     - name: Install kubectl
       run: |
@@ -51,7 +51,7 @@ jobs:
         set -x
         set -euo pipefail
         export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-        git diff --name-only --diff-filter=AM origin/master ${{ github.sha }} -- plugins/ |
+        git diff --name-only --diff-filter=AM origin/${GITHUB_BASE_REF} ${{ github.sha }} -- plugins/ |
           tee /dev/stderr |
           xargs -I _ $HOME/bin/validate-krew-manifest -manifest _
 

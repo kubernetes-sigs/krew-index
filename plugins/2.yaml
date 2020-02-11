@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: "2"
+spec:
+  version: "v0.0.0"
+  shortDescription: dumb file transfer to your labelled pods
+  homepage: https://steady.supply/git/kubectl-2/
+  description: |
+    it all starts with a configuration file
+
+    spec:
+      - namespace: xyz
+        label: sync=me,src=py
+        path: src:/app
+
+    which specifes a namespace to work in, a label filter used to select pods
+    and, of course, the local and remote paths involved.
+
+    the local path is watched, and when a file changes, that file is streamed
+    to all the pods matching the label specification.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+      uri: https://steady.supply/git/kubectl-2/release/v0.0.0/kubectl-2-v0.0.0-darwin-amd64.tar.gz
+      sha256: "ecf5defcd0e0d96105c38a64a97c88ddcdc99c1de18c664cd3679c7a554efd66"
+      files:
+        - from: "*"
+          to:  "."
+      bin: "kubectl-2"
+    - selector:
+        matchLabels:
+          os: linux
+      uri: https://steady.supply/git/kubectl-2/release/v0.0.0/kubectl-2-v0.0.0-linux-amd64.tar.gz
+      sha256: "a2e8d6c27ef5313ecf82f254bd8df35be8382f51c89b82d6bb747e2772b9ad3f"
+      files:
+        - from: "*"
+          to:  "."
+      bin: "kubectl-2"
+    - selector:
+        matchLabels:
+          os: windows
+      uri: https://steady.supply/git/kubectl-2/release/v0.0.0/kubectl-2-v0.0.0-windows-amd64.tar.gz
+      sha256: "4095645c71f8d6a24e65800f74f3cc7f3229a3e7fcdb89be8c3fe4da786314c9"
+      files:
+        - from: "*"
+          to:  "."
+      bin: "kubectl-2.exe"

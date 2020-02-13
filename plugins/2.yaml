@@ -3,22 +3,24 @@ kind: Plugin
 metadata:
   name: "2"
 spec:
-  version: "v0.0.1"
+  version: "v0.0.2"
   shortDescription: dumb file transfer to your labelled pods
   homepage: https://steady.supply/git/kubectl-2
   description: |
-    it all starts with a configuration file
+    command line options are `-v`, etc for glog, and `-c` to specify a
+    configuration file, eg.
 
-    spec:
-      - namespace: xyz
-        label: sync=me,src=py
-        path: src:/app
-        ignore:
-          - *.tmp
+        spec:
+        - namespace: xyz
+          label: sync=me,src=py
+          shell: ash
+          path: src:/app
+          ignore:
+            - *.tmp
 
-    which specifes a namespace to work in, a label filter used to select pods
-    and, of course, the local and remote paths involved and globs to be
-    ignored.
+    which specifes a `namespace` to work in, a `label` filter to select pods,
+    `path`s (in standard `local:remote` format), globs to be `ignore`d and the
+    `shell` offered by the default container in matched pods.
 
     the local path is watched, and when a file changes, that file is streamed
     to all the pods matching the label specification.
@@ -26,8 +28,8 @@ spec:
     - selector:
         matchLabels:
           os: darwin
-      uri: https://steady.supply/git/kubectl-2/release/v0.0.1/kubectl-2-v0.0.1-darwin-amd64.tar.gz
-      sha256: "428f355fbee96dfb0a28c382c1d524f797c14eaef171b5fe2f3a815f6720067a"
+      uri: https://steady.supply/git/kubectl-2/release/v0.0.2/kubectl-2-v0.0.2-darwin-amd64.tar.gz
+      sha256: "cdca3951ff711c2eeba93ab7e160f300df782f31ea61f124d4d7812be9288a10"
       files:
         - from: "*"
           to:  "."
@@ -35,8 +37,8 @@ spec:
     - selector:
         matchLabels:
           os: linux
-      uri: https://steady.supply/git/kubectl-2/release/v0.0.1/kubectl-2-v0.0.1-linux-amd64.tar.gz
-      sha256: "dda094a4aaa8f9351a147939435cb3ac30d4865cee225f11b122443f718f66ac"
+      uri: https://steady.supply/git/kubectl-2/release/v0.0.2/kubectl-2-v0.0.2-linux-amd64.tar.gz
+      sha256: "e438eab6f7a125278ec9b45eb09ac2a5190e0e2ed4db15a65024e9ce1cac4662"
       files:
         - from: "*"
           to:  "."
@@ -44,8 +46,8 @@ spec:
     - selector:
         matchLabels:
           os: windows
-      uri: https://steady.supply/git/kubectl-2/release/v0.0.1/kubectl-2-v0.0.1-windows-amd64.tar.gz
-      sha256: "ca0fb0dccd1abdb43ef33fabae47651df7bd90a6612e3f288f33a32f488cef52"
+      uri: https://steady.supply/git/kubectl-2/release/v0.0.2/kubectl-2-v0.0.2-windows-amd64.tar.gz
+      sha256: "49b8f5e8d16b83f522b459ace9f77b7137fb4c569ed7a7368a826a07d46a2a82"
       files:
         - from: "*"
           to:  "."

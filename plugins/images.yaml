@@ -1,0 +1,34 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: images
+spec:
+  version: v0.1.0
+  homepage: https://github.com/chenjiandongx/kubectl-images
+  shortDescription: Show container images used in the cluster.
+  description: |
+    This plugin shows container images used in the Kubernetes cluster in a
+    table view. You can show all images or show images used in a specified
+    namespace.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/chenjiandongx/kubectl-images/releases/download/v0.1.0/kubectl-images_darwin_amd64.tar.gz
+    sha256: 885bfd428a8cb09189f7c3da1b9bff2a0f8dc13a47707ec98b4071ce6f7a92d1
+    bin: kubectl-images
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/chenjiandongx/kubectl-images/releases/download/v0.1.0/kubectl-images_linux_amd64.tar.gz
+    sha256: 1c42a4f2e4e803f3b9b2d736b095193f7c47a7c7853f337e9f4f82798cf404d2
+    bin: kubectl-images
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/chenjiandongx/kubectl-images/releases/download/v0.1.0/kubectl-images_windows_amd64.tar.gz
+    sha256: e35aa6023df73d8b8218e8891643a90da91f2113e0366c2839876a0e1e4d6e82
+    bin: kubectl-images

@@ -17,11 +17,12 @@ spec:
       to: "."
     bin: "node-restart.sh"
   shortDescription: >-
-    Restart Kubernetes Nodes sequentially & gracefully
+    Restart cluster nodes sequentially & gracefully
   homepage: https://github.com/mnrgreg/kubectl-node-restart
   caveats: |
-    Execution of this plugin requires Kubernetes cluster-admin Rolebindings.
+    Execution of this plugin requires Kubernetes cluster-admin Rolebindings
+    and the ability to schedule Privileged Pods.
   description: |
     This plugin performs a sequential, rolling restart of selected nodes by first
-    Draining each node, then running a Kubernetes Job to reboot each node, and
-    finally Uncordoning each node when Ready. 
+    draining each node, then running a Kubernetes Job to reboot each node, and
+    finally uncordoning each node when Ready. 

@@ -1,0 +1,75 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: hotfix
+spec:
+  version: "v0.0.3"
+  shortDescription: dumb file transfer to your labelled pods
+  homepage: https://steady.supply/git/kubectl-hotfix
+  description: |
+
+      hotfix
+
+      dumb file sync/transfer to your labelled pods
+
+      command line options are -v, etc for glog, and -c to specify a configuration
+      file, eg.
+
+        namespace: xyz
+        ignore:
+          - "*.tmp"
+          - "*.{html,css,js}"
+        include:
+          - "*.py"
+        shell: ash
+        path: src:/app
+        target:
+          - label: service in (web, api)
+          - label: service=postgres
+            path: src/database:/app/database
+          - label: service=chrome
+            shell: bash
+          - label: service=static
+            include:
+              - "*.{html,css,js}"
+
+      which specifes defaults for the namespace to work in, the transfer paths (in
+      standard local:remote format), the globs to be ignore’d / include’d and the
+      shell offered by the default container in matched pods. this configuration will
+      be used for each target, having label filter and being able to specify any of
+      namespace, shell and path. see below for discussion on how ignore and include
+      rules are evalulated.
+
+      for each target the local path is watched, and when a file changes, that file
+      is streamed to all the pods matching the `label` specification.
+
+      for full docs, see https://steady.supply/git/kubectl-hotfix
+
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+      uri: https://steady.supply/git/kubectl-hotfix/release/v0.0.3/kubectl-hotfix-v0.0.3-darwin-amd64.tar.gz
+      sha256: "8a879f5256630866bfe033bae70b66256065c817c193c3e31ca9dd0aa78530bc"
+      files:
+        - from: "*"
+          to:  "."
+      bin: "kubectl-hotfix"
+    - selector:
+        matchLabels:
+          os: linux
+      uri: https://steady.supply/git/kubectl-hotfix/release/v0.0.3/kubectl-hotfix-v0.0.3-linux-amd64.tar.gz
+      sha256: "523b6d87dce501081f573c7bfb4ba94505d26e825ee13f0a73216109b2e38444"
+      files:
+        - from: "*"
+          to:  "."
+      bin: "kubectl-hotfix"
+    - selector:
+        matchLabels:
+          os: windows
+      uri: https://steady.supply/git/kubectl-hotfix/release/v0.0.3/kubectl-hotfix-v0.0.3-windows-amd64.tar.gz
+      sha256: "45feebf0d00fa44ab83a5d711da387aecec313e2dbc0ecb2adcaee5d3eb7f880"
+      files:
+        - from: "*"
+          to:  "."
+      bin: "kubectl-hotfix.exe"

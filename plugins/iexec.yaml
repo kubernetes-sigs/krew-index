@@ -3,39 +3,28 @@ kind: Plugin
 metadata:
   name: iexec
 spec:
-  version: "v1.2.0"
-  platforms:
-  - selector:
-      matchExpressions:
-      - {key: os, operator: In, values: [linux]}
-    uri: https://github.com/gabeduke/kubectl-iexec/releases/download/1.2.0/kubectl-iexec_1.2.0_Linux_x86_64.tar.gz
-    sha256: "3ad160c166993d2fd5b2a779a9be1c0323937f99fb0c63dd17a6ac3b92e36dc1"
-    files:
-    - from: kubectl-iexec
-      to: .
-    - from: LICENSE
-      to: .
-    bin: kubectl-iexec
-  - selector:
-      matchExpressions:
-      - {key: os, operator: In, values: [darwin]}
-    uri: https://github.com/gabeduke/kubectl-iexec/releases/download/1.2.0/kubectl-iexec_1.2.0_Darwin_x86_64.tar.gz
-    sha256: "042b069c573a5d696367c4ba73db131dff74edc9e238c2e17170ceb824151641"
-    files:
-    - from: kubectl-iexec
-      to: .
-    - from: LICENSE
-      to: .
-    bin: kubectl-iexec
-  shortDescription: Interactive selection tool for `kubectl exec`
+  version: v1.4.0
   homepage: https://github.com/gabeduke/kubectl-iexec
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/1.4.0/kubectl-iexec_1.4.0_Darwin_x86_64.tar.gz
+      sha256: f61186638d7b9fb413dbe415a7c7e541dc719089bdb7ae49581a5a1793821398
+      bin: kubectl-iexec
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/1.4.0/kubectl-iexec_1.4.0_Linux_x86_64.tar.gz
+      sha256: 71cdd15aa6662b15f99ed5cceb61c4bb17220214eabe1f49874fe4947a627428
+      bin: kubectl-iexec
+  shortDescription: Interactive selection tool for `kubectl exec`
   description: |
     Interactive pod and container selector for `kubectl exec`
   caveats: |
-    Read documentation at: https://github.com/gabeduke/kubectl-iexec
     To get help run: kubectl iexec --help
-
     Examples:
-
     Run command in container:
       kubectl iexec [pod] [command]

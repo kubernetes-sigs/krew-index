@@ -54,6 +54,7 @@ Name | Description | Stars
 [net-forward](https://github.com/antitree/krew-net-forward) | Proxy to arbitrary TCP services on a cluster network | ![GitHub stars](https://img.shields.io/github/stars/antitree/krew-net-forward.svg?label=stars&logo=github)
 [node-admin](https://github.com/danisla/kubefunc) | List nodes and run privileged pod with chroot | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
 [node-shell](https://github.com/kvaps/kubectl-node-shell) | Spawn a root shell on a node via kubectl | ![GitHub stars](https://img.shields.io/github/stars/kvaps/kubectl-node-shell.svg?label=stars&logo=github)
+[node-restart](https://github.com/MnrGreg/kubectl-node-restart) | Restart cluster nodes sequentially and gracefully | ![GitHub stars](https://img.shields.io/github/stars/mnrgreg/kubectl-node-restart.svg?label=stars&logo=github)
 [ns](https://github.com/ahmetb/kubectx) | Switch between Kubernetes namespaces | ![GitHub stars](https://img.shields.io/github/stars/ahmetb/kubectx.svg?label=stars&logo=github)
 [oidc-login](https://github.com/int128/kubelogin) | Log in to the OpenID Connect provider | ![GitHub stars](https://img.shields.io/github/stars/int128/kubelogin.svg?label=stars&logo=github)
 [open-svc](https://github.com/superbrothers/kubectl-open-svc-plugin) | Open the Kubernetes URL(s) for the specified service in your browser. | ![GitHub stars](https://img.shields.io/github/stars/superbrothers/kubectl-open-svc-plugin.svg?label=stars&logo=github)

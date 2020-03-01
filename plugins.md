@@ -76,6 +76,7 @@ Name | Description | Stars
 [sort-manifests](https://github.com/superbrothers/ksort) | Sort manifest files in a proper order by Kind | ![GitHub stars](https://img.shields.io/github/stars/superbrothers/ksort.svg?label=stars&logo=github)
 [spy](https://github.com/huazhihao/kubespy) | pod debugging tool for kubernetes clusters with docker runtimes | ![GitHub stars](https://img.shields.io/github/stars/huazhihao/kubespy.svg?label=stars&logo=github)
 [ssh-jump](https://github.com/yokawasa/kubectl-plugin-ssh-jump) | A kubectl plugin to SSH into Kubernetes nodes using a SSH jump host Pod | ![GitHub stars](https://img.shields.io/github/stars/yokawasa/kubectl-plugin-ssh-jump.svg?label=stars&logo=github)
+[sshd](https://github.com/ottoyiu/kubectl-sshd) | Run SSH server in a Pod | ![GitHub stars](https://img.shields.io/github/stars/ottoyiu/kubectl-sshd.svg?label=stars&logo=github)
 [ssm-secret](https://github.com/pr8kerl/kubectl-ssm-secret) | Import/export secrets from/to AWS SSM param store | ![GitHub stars](https://img.shields.io/github/stars/pr8kerl/kubectl-ssm-secret.svg?label=stars&logo=github)
 [sudo](https://github.com/postfinance/kubectl-sudo) | Run Kubernetes commands impersonated as group system:masters | ![GitHub stars](https://img.shields.io/github/stars/postfinance/kubectl-sudo.svg?label=stars&logo=github)
 [support-bundle](https://github.com/replicatedhq/troubleshoot) | Creates support bundles for off-cluster analysis | ![GitHub stars](https://img.shields.io/github/stars/replicatedhq/troubleshoot.svg?label=stars&logo=github)

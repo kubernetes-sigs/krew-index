@@ -3,29 +3,29 @@ kind: Plugin
 metadata:
   name: resource-capacity
 spec:
+  version: v0.4.0
+  homepage: https://github.com/robscott/kube-capacity
+  shortDescription: Provides an overview of resource requests, limits, and utilization
   platforms:
-  - uri: https://github.com/robscott/kube-capacity/releases/download/0.3.2/kube-capacity_0.3.2_Darwin_x86_64.tar.gz
-    sha256: 99157d77280e94b74b6f3b68ed94b8e01a97a9622b5d4337fb13b4d8b0f1b5a7
-    bin: kube-capacity
-    files:
-    - from: "*"
-      to: "."
-    selector:
+  - selector:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/robscott/kube-capacity/releases/download/0.3.2/kube-capacity_0.3.2_Linux_x86_64.tar.gz
-    sha256: 6313b48d5cf96959e0f76e55743bb51f3f7d965a3dbdef6b979466fc8943feac
     bin: kube-capacity
     files:
     - from: "*"
       to: "."
-    selector:
+    uri: https://github.com/robscott/kube-capacity/releases/download/0.4.0/kube-capacity_0.4.0_Darwin_x86_64.tar.gz
+    sha256: 6d41d057fb56adf90c7ce8e521d063970f55e4c7e71d9eeb44d9eebc23d4e7eb    
+  - selector:
       matchLabels:
         os: linux
         arch: amd64
-  version: v0.3.2
-  homepage: https://github.com/robscott/kube-capacity
-  shortDescription: Provides an overview of resource requests, limits, and utilization
+    bin: kube-capacity
+    files:
+    - from: "*"
+      to: "."
+    uri: https://github.com/robscott/kube-capacity/releases/download/0.4.0/kube-capacity_0.4.0_Linux_x86_64.tar.gz
+    sha256: 5784b819447d823d29622084d86d2e5eca51f7c1c016db0ae17457a7d24c6cd1
   description: |
     A simple CLI that provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster.

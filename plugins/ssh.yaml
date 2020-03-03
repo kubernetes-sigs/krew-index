@@ -1,0 +1,27 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ssh
+spec:
+  homepage: https://github.com/luksa/kubectl-plugins#kubectl-ssh-node
+  shortDescription: Provider-agnostic way of opening a remote shell to a node
+  version: v0.1.0
+  description: |
+    Enables you to access a node even when it doesn't run an SSH server
+    or when you don't have the required credentials. Also, the way you log
+    in is always the same, regardless of what provides the Kubernetes cluster
+    (e.g. Minikube, Kind, Docker Desktop, GKE, AKS, EKS, ...)
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/luksa/kubectl-plugins/archive/v0.1.0.zip
+    sha256: 71e481c16b3a94963c897d8693319337997a2c8e3a1d2c1c37d49702d6054d0e
+    bin: kubectl-ssh
+    files:
+    - from: kubectl-plugins-*/kubectl-ssh
+      to: .

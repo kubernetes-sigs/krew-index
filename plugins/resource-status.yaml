@@ -14,6 +14,8 @@ spec:
     files:
     - from: "./resource-status"
       to: "."
+    - from: LICENSE
+      to: "."
     bin: "resource-status"
   - selector:
       matchLabels:
@@ -24,6 +26,8 @@ spec:
     files:
     - from: "./resource-status"
       to: "."
+    - from: LICENSE
+      to: "."
     bin: "resource-status"
   - selector:
       matchLabels:
@@ -33,6 +37,8 @@ spec:
     sha256: "fede11f014ab553a33652733ed70f601c1468f7e085dc48a1822be0abd56ebd5"
     files:
     - from: "/resource-status.exe"
+      to: "."
+    - from: LICENSE
       to: "."
     bin: "resource-status.exe"
   shortDescription: Show status details of a given resource.

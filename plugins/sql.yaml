@@ -12,16 +12,7 @@ spec:
         arch: amd64
     uri: https://github.com/yaacov/kubectl-sql/releases/download/v0.2.11/kubectl-sql.tar.gz
     sha256: 34b42e057cb7bf4d09340469d18ea7ecaca6f109d893a3fc5782dad84c8a0c94
-    files:
-    - from: "*"
-      to: "."
     bin: kubectl-sql
-  shortDescription: Use SQL like language to query the Kubernetes cluster manager.
+  shortDescription: Query the cluster via pseudo-SQL
   description: |
-    This plugin use SQL like language to query the Kubernetes cluster manager.
-  caveats: |
-    Usage:
-      $ kubectl sql
-    For additional options:
-      $ kubectl sql --help
-      or https://github.com/yaacov/kubectl-sql
+    This plugin enables to query the kubernetes API server via a SQL like language.

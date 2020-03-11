@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: status
 spec:
-  version: v0.3.0
+  version: v0.3.1
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.3.0/status_linux_amd64.tar.gz
-    sha256: ff993fcc03bfa3450b2aed0fa1f98975221fce50fc429dcde76540a59babc0d3
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.3.1/status_linux_amd64.tar.gz
+    sha256: 2d0dfeec42f99b59d21f5fe5414616d3990979af90c08eb49057c7813c4a3551
     files:
     - from: "./status"
       to: "."
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.3.0/status_darwin_amd64.tar.gz
-    sha256: 80178d6103e0e99efaf0024691cb2f24a7119fefd66b85639538f74902847ea8
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.3.1/status_darwin_amd64.tar.gz
+    sha256: db566ac1a1a93d170a75b9e2bb9eba653d39506c5014126944b33baf9ab1b8fd
     files:
     - from: "./status"
       to: "."
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.3.0/status_windows_amd64.zip
-    sha256: f63aa82b5bd88e398afcf5861d8e1ef4608eaf2ee9008fc5d712552f5b36797b
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.3.1/status_windows_amd64.zip
+    sha256: 89a04a6f27e2566cb6b45474573e67d58d1e93e773824d1cceb6ac5a87926fa0
     files:
     - from: "/status.exe"
       to: "."

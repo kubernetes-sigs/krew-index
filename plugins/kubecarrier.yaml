@@ -1,0 +1,57 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kubecarrier
+spec:
+  description: KubeCarrier is an open source system for managing applications and
+    services across multiple Kubernetes Clusters; providing a framework to centralize
+    the management of services and provide these services with external users in a
+    self service catalog.
+  homepage: https://github.com/kubermatic/kubecarrier
+  platforms:
+  - bin: kubecarrier
+    selector:
+      matchLabels:
+        arch: amd64
+        os: linux
+    sha256: dc516240933c81298db928cd7f2dcb02b07691fd92c2d0c812a0b2b4db785964
+    uri: https://github.com/kubermatic/kubecarrier/releases/download/v0.1.0/kubecarrier_linux_amd64.tar.gz
+  - bin: kubecarrier
+    selector:
+      matchLabels:
+        arch: amd64
+        os: darwin
+    sha256: d508613b63f90002b2d9635020dd57dfe2c392fb12f74b3d095be8a8c99cf4cf
+    uri: https://github.com/kubermatic/kubecarrier/releases/download/v0.1.0/kubecarrier_darwin_amd64.tar.gz
+  - bin: kubecarrier.exe
+    selector:
+      matchLabels:
+        arch: amd64
+        os: windows
+    sha256: 254a228e7ae464bea9ba1f9861541b5f89fc922d1f7582bd46069ce43fb5018c
+    uri: https://github.com/kubermatic/kubecarrier/releases/download/v0.1.0/kubecarrier_windows_amd64.tar.gz
+  - bin: kubecarrier
+    selector:
+      matchLabels:
+        arch: "386"
+        os: linux
+    sha256: 54ef35ec116c57782ef49b3b6bb2729f8630e4d7d60655a2d506f57025566426
+    uri: https://github.com/kubermatic/kubecarrier/releases/download/v0.1.0/kubecarrier_linux_386.tar.gz
+  - bin: kubecarrier
+    selector:
+      matchLabels:
+        arch: "386"
+        os: darwin
+    sha256: 24292bf4de222ef4fa3b03434df98d064c45a11df0f2659bdba4ab1b5d267975
+    uri: https://github.com/kubermatic/kubecarrier/releases/download/v0.1.0/kubecarrier_darwin_386.tar.gz
+  - bin: kubecarrier.exe
+    selector:
+      matchLabels:
+        arch: "386"
+        os: windows
+    sha256: 0512c8a7bd4a05651ec371dee80014c31df6b4aa4fbac8273ab3de4e7265ecbd
+    uri: https://github.com/kubermatic/kubecarrier/releases/download/v0.1.0/kubecarrier_windows_386.tar.gz
+  shortDescription: KubeCarrier is an open source system for managing applications
+    and services across multiple Kubernetes Clusters
+  version: v0.1.0
+

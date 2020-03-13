@@ -1,0 +1,26 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: wls
+spec:
+  version: "v1.0.0"
+  homepage: https://github.com/mohatb/kubectl-wls
+  shortDescription: Windows-linux-shell allows you to start a shell on windows or linux nodes
+  description: |
+    kubectl-wls it is an interactive shell script that allows you to access a kubernetes windows or linux node shell.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/mohatb/kubectl-wls/archive/v1.0.0.tar.gz
+    sha256: "43e571371da3ae71ed804c7baf78f1ddcc35127e3375d815245034511d8913b5"
+    files:
+      - from: "./*/kubectl-wls"
+        to: .
+      - from: "./*/LICENSE"
+        to: .
+    bin: "kubectl-wls"

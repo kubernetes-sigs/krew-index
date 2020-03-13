@@ -5,9 +5,11 @@ metadata:
 spec:
   version: "v1.0.0"
   homepage: https://github.com/mohatb/kubectl-wls
-  shortDescription: Windows-linux-shell allows you to start a shell on windows or linux nodes
+  shortDescription: simple and interactive plugin to access a shell on windows or linux nodes
   description: |
-    kubectl-wls it is an interactive shell script that allows you to access a kubernetes windows or linux node shell.
+    kubectl interactive plugin to access a shell on windows or Linux nodes.
+    For Linux nodes: It works by creating a pod (with a privileged container) in the node you specified and using nsenter for getting a shell into your Kubernetes nodes.
+    For windows nodes: It creates a pod in any available Linux node, and it uses ssh to access windows nodes that have ssh enabled.
   platforms:
   - selector:
       matchExpressions:

@@ -1,0 +1,39 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: bindrole
+spec:
+  shortDescription: Summarize RBAC roles tied to the given subject
+  homepage: https://github.com/Ladicle/kubectl-bindrole
+  version: v1.3.0
+  platforms:
+    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.3.0/kubectl-bindrole_linux-amd64.tar.gz
+      sha256: "40e012d2687df0d31cd68bc6abaf2fe6e47de0a3d66a10b6800ae3c56c787ced"
+      bin: kubectl-bindrole
+      files:
+        - from: ./kubectl-bindrole_linux-amd64/kubectl-bindrole
+          to: "."
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.3.0/kubectl-bindrole_darwin-amd64.tar.gz
+      sha256: "ef1b4cdeb6d22a1e27e74d7220cacc5dc94445e7016fd502f11c11f5bd57e811"
+      bin: kubectl-bindrole
+      files:
+        - from: ./kubectl-bindrole_darwin-amd64/kubectl-bindrole
+          to: "."
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.3.0/kubectl-bindrole_windows-amd64.tar.gz
+      sha256: "7764edf2cd34b228ff72a522a970b29fa657f40caeb484920549ec256776c958"
+      bin: kubectl-bindrole
+      files:
+        - from: ./kubectl-bindrole_windows-amd64/kubectl-bindrole
+          to: "."
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64

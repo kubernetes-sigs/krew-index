@@ -3,35 +3,41 @@ kind: Plugin
 metadata:
   name: bindrole
 spec:
-  shortDescription: Summarize RBAC roles tied to the given subject
+  shortDescription: Summarize RBAC roles for subjects
   homepage: https://github.com/Ladicle/kubectl-bindrole
-  version: v1.3.0
+  version: v1.3.1
   platforms:
-    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.3.0/kubectl-bindrole_linux-amd64.tar.gz
-      sha256: "40e012d2687df0d31cd68bc6abaf2fe6e47de0a3d66a10b6800ae3c56c787ced"
+    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.3.1/kubectl-bindrole_linux-amd64.tar.gz
+      sha256: "853b643e158802700ea9516c58404919677941a4792bfb909011f4fd61c2c7ea"
       bin: kubectl-bindrole
       files:
         - from: ./kubectl-bindrole_linux-amd64/kubectl-bindrole
+          to: "."
+        - from: ./kubectl-bindrole_linux-amd64/LICENSE
           to: "."
       selector:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.3.0/kubectl-bindrole_darwin-amd64.tar.gz
-      sha256: "ef1b4cdeb6d22a1e27e74d7220cacc5dc94445e7016fd502f11c11f5bd57e811"
+    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.3.1/kubectl-bindrole_darwin-amd64.tar.gz
+      sha256: "e5f5b2e8bbc88a7622564724fd548efa23b151b30ac2a1dd6b8c7a35e3b45354"
       bin: kubectl-bindrole
       files:
         - from: ./kubectl-bindrole_darwin-amd64/kubectl-bindrole
+          to: "."
+        - from: ./kubectl-bindrole_darwin-amd64/LICENSE
           to: "."
       selector:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.3.0/kubectl-bindrole_windows-amd64.tar.gz
-      sha256: "7764edf2cd34b228ff72a522a970b29fa657f40caeb484920549ec256776c958"
+    - uri: https://github.com/Ladicle/kubectl-bindrole/releases/download/v1.3.1/kubectl-bindrole_windows-amd64.tar.gz
+      sha256: "da09d25afb2e6944d0f47fed09b498fc0b046a0423f2b0ce9af60ac3f4f4ef0e"
       bin: kubectl-bindrole
       files:
         - from: ./kubectl-bindrole_windows-amd64/kubectl-bindrole
+          to: "."
+        - from: ./kubectl-bindrole_windows-amd64/LICENSE
           to: "."
       selector:
         matchLabels:

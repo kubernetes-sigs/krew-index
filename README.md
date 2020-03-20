@@ -19,7 +19,7 @@ directory. You can also install [krew][krew] and list available plugins with:
 ## Submitting new plugins
 
 To learn how to create a new plugin and submit it to krew-index, read the
-[Developer Guide](https://github.com/kubernetes-sigs/krew/blob/master/docs/DEVELOPER_GUIDE.md)
+[Developer Guide](https://krew.sigs.k8s.io/docs/developer-guide/)
 and make a pull request to this repository.
 
 The decision criteria for plugins accepted to the centralized repository are
@@ -45,7 +45,7 @@ the admission criteria for this repository.
 
 ### Communication channels
 
-* [Slack](https://kubernetes.slack.com/messages/sig-cli) #sig-cli
+* [Slack](https://kubernetes.slack.com/messages/krew) #krew
 * [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cli)
 * [Kubernetes Community site](http://kubernetes.io/community/)
 

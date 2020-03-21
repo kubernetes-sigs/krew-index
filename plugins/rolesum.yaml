@@ -1,0 +1,58 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: rolesum
+spec:
+  shortDescription: Summarize RBAC roles for subjects
+  homepage: https://github.com/Ladicle/kubectl-rolesum
+  version: v1.4.0
+  platforms:
+    - uri: https://github.com/Ladicle/kubectl-rolesum/releases/download/v1.4.0/kubectl-rolesum_linux-amd64.tar.gz
+      sha256: "aaa1780cdef58cb7711a323af7d78bf8ab1b637ebab2bab9fd969dcfc8514a79"
+      bin: kubectl-rolesum
+      files:
+        - from: ./kubectl-rolesum_linux-amd64/kubectl-rolesum
+          to: "."
+        - from: ./kubectl-rolesum_linux-amd64/LICENSE
+          to: "."
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - uri: https://github.com/Ladicle/kubectl-rolesum/releases/download/v1.4.0/kubectl-rolesum_darwin-amd64.tar.gz
+      sha256: "f5fc2ab889bb0ddf47bc9e467eb6517ea7c876f7262a016d0658e15fd11aa366"
+      bin: kubectl-rolesum
+      files:
+        - from: ./kubectl-rolesum_darwin-amd64/kubectl-rolesum
+          to: "."
+        - from: ./kubectl-rolesum_darwin-amd64/LICENSE
+          to: "."
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+    - uri: https://github.com/Ladicle/kubectl-rolesum/releases/download/v1.4.0/kubectl-rolesum_windows-amd64.tar.gz
+      sha256: "04c3e1626572c8df1a2ab08b5c3d30adeff069266a0bd1e5dd0923d3d36ebac4"
+      bin: kubectl-rolesum.exe
+      files:
+        - from: ./kubectl-rolesum_windows-amd64/kubectl-rolesum.exe
+          to: "."
+        - from: ./kubectl-rolesum_windows-amd64/LICENSE
+          to: "."
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+  description: |
+    Summarize RBAC roles for subjects
+
+    This plugin displays a graphical summary of Kubernetes RBAC roles for a given
+    subject. You can easily grasp the whole picture of the roles bound to the subject.
+    Available subjects are ServiceAccount, User or Group.
+
+    Examples:
+      # Summarize roles bound to the "ci-bot" ServiceAccount.
+      kubectl rolesum ci-bot
+
+      # Summarize roles bound to the "developer" Group.
+      kubectl rolesum -k Group developer

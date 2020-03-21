@@ -43,3 +43,16 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
+  description: |
+    Summarize RBAC roles for subjects
+
+    This plugin displays a graphical summary of Kubernetes RBAC roles for a given
+    subject. You can easily grasp the whole picture of the roles bound to the subject.
+    Available subjects are ServiceAccount, User or Group.
+
+    Examples:
+      # Summarize roles bound to the "ci-bot" ServiceAccount.
+      kubectl rolesum ci-bot
+
+      # Summarize roles bound to the "developer" Group.
+      kubectl rolesum -k Group developer

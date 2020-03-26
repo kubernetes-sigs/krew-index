@@ -3,11 +3,30 @@ kind: Plugin
 metadata:
   name: kubecarrier
 spec:
-  description: KubeCarrier is an open source system for managing applications and
-    services across multiple Kubernetes Clusters; providing a framework to centralize
-    the management of services and provide these services with external users in a
-    self service catalog.
-  homepage: https://github.com/kubermatic/kubecarrier
+  version: v0.1.0
+  shortDescription: KubeCarrier installation management and control
+  description: |
+    The kubecarrier plugin for installing, upgrading and performing management
+    tasks in the Kubecarrier system.
+
+    KubeCarrier is an open source system for managing applications and services
+    across multiple Kubernetes Clusters; providing a framework to centralize
+    the management of services and provide these services with external users 
+    in a self service catalog.
+  
+    Overview:
+        https://github.com/kubermatic/kubecarrier/
+    Installation:
+  	    https://github.com/kubermatic/kubecarrier/#install-kubecarrier
+    Quick Start:
+  	    https://github.com/kubermatic/kubecarrier/blob/master/README.md
+  
+    KubeCarrier is an open source system for managing applications and services
+    across multiple Kubernetes Clusters; providing a framework to centralize
+    the management of services and provide these services with external users 
+    in a self service catalog.
+
+    homepage: https://github.com/kubermatic/kubecarrier
   platforms:
   - bin: kubecarrier
     selector:
@@ -51,7 +70,3 @@ spec:
         os: windows
     sha256: 0512c8a7bd4a05651ec371dee80014c31df6b4aa4fbac8273ab3de4e7265ecbd
     uri: https://github.com/kubermatic/kubecarrier/releases/download/v0.1.0/kubecarrier_windows_386.zip
-  shortDescription: KubeCarrier is an open source system for managing applications
-    and services across multiple Kubernetes Clusters
-  version: v0.1.0
-

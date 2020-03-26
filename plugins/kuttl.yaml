@@ -5,13 +5,13 @@ metadata:
 spec:
   version: "v0.1.0"
 
-  shortDescription: Declaratively build, install, and run operators using KUTTL.
-  homepage: https://kudo.dev/
+  shortDescription: Declaratively run and test operators
+  homepage: https://kudo.dev/docs/testing.html
   description: |
     The KUbernetes Test TooL (KUTTL) is a highly productive test
     toolkit for testing operators on Kubernetes.
   caveats: |
-    See the documentation for more information: https://kudo.dev/docs/
+    See the documentation for more information: https://kudo.dev/docs/testing.html
 
   platforms:
   - selector:
@@ -21,9 +21,6 @@ spec:
     uri: https://github.com/kudobuilder/kuttl/releases/download/v0.1.0/kuttl_0.1.0_linux_x86_64.tar.gz
     sha256: "4043a3052a0f5b6c66b80fb1ad8dcfba10cb1e3a7f40812f991e1dd304a5af90"
     bin: "./kubectl-kuttl"
-    files:
-    - from: "*"
-      to: "."
   - selector:
       matchLabels:
         os: "linux"
@@ -31,9 +28,6 @@ spec:
     uri: https://github.com/kudobuilder/kuttl/releases/download/v0.1.0/kuttl_0.1.0_linux_i386.tar.gz
     sha256: "f3ad8b823becd7d4a1829019b3dd68bf876ed5b53c4fbc71e946d6335f577d82"
     bin: "./kubectl-kuttl"
-    files:
-    - from: "*"
-      to: "."
   - selector:
       matchLabels:
         os: "darwin"
@@ -41,9 +35,6 @@ spec:
     uri: https://github.com/kudobuilder/kuttl/releases/download/v0.1.0/kuttl_0.1.0_darwin_x86_64.tar.gz
     sha256: "e7b1149bf49f7fa5f8b15e6b8607c7bb797519866bfd67364ad46f1fc2f84e7b"
     bin: "./kubectl-kuttl"
-    files:
-    - from: "*"
-      to: "."
   - selector:
       matchLabels:
         os: "darwin"
@@ -51,6 +42,3 @@ spec:
     uri: https://github.com/kudobuilder/kuttl/releases/download/v0.1.0/kuttl_0.1.0_darwin_i386.tar.gz
     sha256: "823ec605018ec9b9a7476da8a642b29a5012986e33c9f75133ed4e773108bb8d"
     bin: "./kubectl-kuttl"
-    files:
-    - from: "*"
-      to: "."

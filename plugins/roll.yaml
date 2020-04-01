@@ -1,0 +1,22 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: roll
+spec:
+  homepage: https://github.com/LifeWay/kubectl-roll-plugin
+  shortDescription: Slowly delete pods by namespace or label
+  version: v0.1.0
+  description: |
+    A utility to slowly delete pods by namespace or by label with
+    a set amount of seconds between each pod deletion.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/LifeWay/kubectl-roll-plugin/archive/master.zip
+    sha256: aba8802ab5ba03695dab2a0860c9a23d9e729a51e52c5679dcb5a6761178edd9
+    bin: kubectl-roll-plugin-master/kubectl-roll

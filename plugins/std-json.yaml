@@ -1,0 +1,26 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: std-json
+spec:
+  homepage: https://github.com/fleeto/kubectl-std-json
+  shortDescription: Export Kubernetes object in JSON format with a clean and sorted style.
+  version: v0.1.0
+  description: Export Kubernetes object in JSON format, remove some auto generated fields and then sort fields in it.
+  caveats: This plugin will invoke JQ to process JSON document.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/fleeto/kubectl-std-json/releases/download/v0.1.0/kubectl-std-json-v0.1.0.tar.gz
+    sha256: e1ad2398eaed5442042da134fb046fa8276042dd4122da4d872a8e91aeb2a339
+    bin: kubectl-std-json
+    files:
+    - from: kubectl-std-json-*/kubectl-std-json
+      to: .
+    - from: kubectl-std-json-*/LICENSE
+      to: .

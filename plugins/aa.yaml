@@ -1,0 +1,25 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: aa
+spec:
+  version: v0.0.1
+  homepage: https://github.com/sysdiglabs/kube-apparmor-manager
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/sysdiglabs/kube-apparmor-manager/releases/download/v0.0.1/kube-apparmor-manager_v0.0.1_darwin_amd64.tar.gz 
+    sha256: 3a28dddd7ccbae22d7cd40942231620596600fb80003de9c076aec8b01928457 
+    bin: kube-apparmor-manager
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/sysdiglabs/kube-apparmor-manager/releases/download/v0.0.1/kube-apparmor-manager_v0.0.1_linux_amd64.tar.gz 
+    sha256: 0ba7ce50749878792d7643b7695b8f05bfbabf072b3ffc45fc31052bd22cc43d 
+    bin: kube-apparmor-manager
+  shortDescription: Manage AppArmor profiles for cluster.
+  description: |
+    Manage AppArmor profiles through AppArmorProfile CRD and sync across all worker nodes.

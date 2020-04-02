@@ -1,0 +1,55 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cilium
+spec:
+  version: v0.1.0
+  shortDescription: Easily interact with Cilium agents.
+  homepage: https://github.com/bmcstdio/kubectl-cilium
+  description: |
+    Easily interact with Cilium agents.
+    Useful, for example, to open a shell on the Cilium agent running on a
+    particular node or co-located with a particular pod:
+
+    # Open a shell on the Cilium agent running on node 'kind-cilium-mesh-worker':
+    $ kubectl cilium exec kind-cilium-mesh-worker
+
+    # Run 'cilium monitor' on the Cilium agent co-located with the 'ns-1/nginx' pod:
+    $ kubectl cilium exec ns-1/nginx cilium monitor
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/bmcstdio/kubectl-cilium/releases/download/v0.1.0/kubectl-cilium_v0.1.0_darwin_amd64.tar.gz
+    sha256: "c8466c94337db34f0cee5be60a0715682bfabf5b5dc041d1a30b4cd9eaae0b11"
+    files:
+    - from: kubectl-cilium
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-cilium
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/bmcstdio/kubectl-cilium/releases/download/v0.1.0/kubectl-cilium_v0.1.0_linux_amd64.tar.gz
+    sha256: "4173139333fd1e8993dcfdc747ae11b54ccd123ae9668296bdb67c3d90521f0b"
+    files:
+    - from: kubectl-cilium
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-cilium
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/bmcstdio/kubectl-cilium/releases/download/v0.1.0/kubectl-cilium_v0.1.0_windows_amd64.tar.gz
+    sha256: "801d66d8fc06c04ac8f7ea0a243c1a742166eef8e1c97caf3ec322f30de92a38"
+    files:
+    - from: kubectl-cilium.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-cilium.exe

@@ -87,7 +87,7 @@ Name | Description | Stars
 [support-bundle](https://github.com/replicatedhq/troubleshoot) | Creates support bundles for off-cluster analysis | ![GitHub stars](https://img.shields.io/github/stars/replicatedhq/troubleshoot.svg?label=stars&logo=github)
 [tail](https://github.com/boz/kail) | Stream logs from multiple pods and containers using simple, dynamic source selection. | ![GitHub stars](https://img.shields.io/github/stars/boz/kail.svg?label=stars&logo=github)
 [tmux-exec](https://github.com/predatorray/kubectl-tmux-exec) | An exec multiplexer using Tmux | ![GitHub stars](https://img.shields.io/github/stars/predatorray/kubectl-tmux-exec.svg?label=stars&logo=github)
-[topology](https://github.com/bmcstdio/kubectl-topology) | Explore region topology for nodes or pods | ![GitHub stars](https://img.shields.io/github/stars/bmcstdio/kubectl-topology.svg?label=stars&logo=github)
+[topology](https://github.com/bmcustodio/kubectl-topology) | Explore region topology for nodes or pods | ![GitHub stars](https://img.shields.io/github/stars/bmcustodio/kubectl-topology.svg?label=stars&logo=github)
 [tree](https://github.com/ahmetb/kubectl-tree) | Show a tree of object hierarchies through ownerReferences | ![GitHub stars](https://img.shields.io/github/stars/ahmetb/kubectl-tree.svg?label=stars&logo=github)
 [view-allocations](https://github.com/davidB/kubectl-view-allocations) | List allocations per resources, nodes, pods. | ![GitHub stars](https://img.shields.io/github/stars/davidB/kubectl-view-allocations.svg?label=stars&logo=github)
 [view-secret](https://github.com/elsesiy/kubectl-view-secret) | Decode Kubernetes secrets | ![GitHub stars](https://img.shields.io/github/stars/elsesiy/kubectl-view-secret.svg?label=stars&logo=github)

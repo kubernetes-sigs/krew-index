@@ -4,11 +4,11 @@ metadata:
   name: roll
 spec:
   homepage: https://github.com/LifeWay/kubectl-roll-plugin
-  shortDescription: Slowly delete pods by namespace or label
-  version: v1.0.1
+  shortDescription: Slowly delete pods by namespace
+  version: v1.0.2
   description: |
-    A utility to slowly delete pods by namespace or by label with
-    a set amount of seconds between each pod deletion.
+    A utility to slowly delete pods by namespace with
+    a set amount of seconds between each deleted resource.
   platforms:
   - selector:
       matchExpressions:
@@ -17,9 +17,9 @@ spec:
         values:
         - darwin
         - linux
-    uri: https://github.com/LifeWay/kubectl-roll-plugin/archive/1.0.1.tar.gz
-    sha256: 87893476806d146c45e71290e1f1e828b212a482f81f845d03db6e0dfc329927
+    uri: https://github.com/LifeWay/kubectl-roll-plugin/archive/1.0.2.tar.gz
+    sha256: 9022434c06e3e782fb1809ae36ea48c77ab982b3480b48c233d3320df8ccb8df
     bin: roll
     files:
-    - from: kubectl-roll-plugin-1.0.1/kubectl-roll
+    - from: kubectl-roll-plugin-1.0.2/kubectl-roll
       to: roll

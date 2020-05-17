@@ -1,0 +1,26 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ktail
+spec:
+  version: "v1.6.10"
+  homepage: https://github.com/johanhaleby/kubetail
+  shortDescription: "follow logs from multiple pods at the same time distinguished by color"
+  description: |
+    Bash script that enables you to aggregate (tail/follow) logs from multiple pods into one stream and distinguish them by color. This is the same as running "kubectl logs -f " but for multiple pods.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/johanhaleby/kubetail/archive/1.6.10.tar.gz
+    sha256: 9bb4ecd1d3a7b1e9627fc8b5117d1c7ff03f2ddea25252b250395e4ac4817b26
+    files:
+    - from: "kubetail-*/kubetail"
+      to: "."
+    - from: "kubetail-*/LICENSE"
+      to: "."
+    bin: kubetail

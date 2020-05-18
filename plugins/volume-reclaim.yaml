@@ -1,0 +1,56 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: volume-reclaim
+spec:
+  version: "v0.1.0"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/dirathea/kubectl-volume-reclaim/releases/download/v0.1.0/kubectl-volume-reclaim_linux_amd64.tar.gz
+    sha256: "64fd81c6115312980b8bba9b9036e34b7608ca2f3d64e5cb0c143ce56b39ee41"
+    files:
+    - from: "./volume-reclaim"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "volume-reclaim"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/dirathea/kubectl-volume-reclaim/releases/download/v0.1.0/kubectl-volume-reclaim_darwin_amd64.tar.gz
+    sha256: "a84b614b62c4410b33a7c6d6dd8442c3020c95f4edb5c379000fe87c3ff8187b"
+    files:
+    - from: "./volume-reclaim"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "volume-reclaim"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/dirathea/kubectl-volume-reclaim/releases/download/v0.1.0/kubectl-volume-reclaim_windows_amd64.zip
+    sha256: "3e3351447c40e378bf73b0c0361aa1b8b63842fb3b6a5f15ab2442f9649ea7a9"
+    files:
+    - from: "/volume-reclaim.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "volume-reclaim.exe"
+  shortDescription: Gather all PVC and output all pvcs that doesn't belong to any workloads.
+  homepage: https://github.com/dirathea/kubectl-volume-reclaim
+  caveats: |
+    Usage:
+      $ kubectl volume-reclaim
+
+    For additional options:
+      $ kubectl volume-reclaim --help
+      or https://github.com/dirathea/kubectl-volume-reclaim/blob/v0.1.0/doc/USAGE.md
+
+  description: |
+    Kubectl plugins to gather all PVC and check whether it used in any workloads on cluster or not.
+    This could help users to remove unecessary PVCs that lead to reducing unecesary cost by unused persistent disk

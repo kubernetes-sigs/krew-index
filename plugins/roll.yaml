@@ -4,11 +4,15 @@ metadata:
   name: roll
 spec:
   homepage: https://github.com/LifeWay/kubectl-roll-plugin
-  shortDescription: Slowly delete pods by namespace
-  version: v1.0.2
+  shortDescription: Rolling restart of all persistent pods in a namespace
+  version: v1.0.4
   description: |
-    A utility to slowly delete pods by namespace with
-    a set amount of seconds between each deleted resource.
+    A utility to slowly delete all pods in a namespace that are
+    controlled by Deployments, StatefulSets, and DaemonSets. You must
+    correctly configure readiness probes to avoid any downtime.
+
+    Usage:
+      kubectl roll -n <namespace>
   platforms:
   - selector:
       matchExpressions:
@@ -17,9 +21,9 @@ spec:
         values:
         - darwin
         - linux
-    uri: https://github.com/LifeWay/kubectl-roll-plugin/archive/1.0.2.tar.gz
-    sha256: 9022434c06e3e782fb1809ae36ea48c77ab982b3480b48c233d3320df8ccb8df
+    uri: https://github.com/LifeWay/kubectl-roll-plugin/archive/1.0.4.tar.gz
+    sha256: d0e408fefdbc078410f4021644d9b03236be1f215aaaba79e2e786ef3ae10344
     bin: roll
     files:
-    - from: kubectl-roll-plugin-1.0.2/kubectl-roll
+    - from: kubectl-roll-plugin-1.0.4/kubectl-roll
       to: roll

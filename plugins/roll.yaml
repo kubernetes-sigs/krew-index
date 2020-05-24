@@ -1,0 +1,29 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: roll
+spec:
+  homepage: https://github.com/LifeWay/kubectl-roll-plugin
+  shortDescription: Rolling restart of all persistent pods in a namespace
+  version: v1.0.4
+  description: |
+    A utility to slowly delete all pods in a namespace that are
+    controlled by Deployments, StatefulSets, and DaemonSets. You must
+    correctly configure readiness probes to avoid any downtime.
+
+    Usage:
+      kubectl roll -n <namespace>
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/LifeWay/kubectl-roll-plugin/archive/1.0.4.tar.gz
+    sha256: d0e408fefdbc078410f4021644d9b03236be1f215aaaba79e2e786ef3ae10344
+    bin: roll
+    files:
+    - from: kubectl-roll-plugin-1.0.4/kubectl-roll
+      to: roll

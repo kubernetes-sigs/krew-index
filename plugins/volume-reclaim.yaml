@@ -1,7 +1,7 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: volume-reclaim
+  name: unused-volumes
 spec:
   version: "v0.1.0"
   platforms:
@@ -9,48 +9,45 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/dirathea/kubectl-volume-reclaim/releases/download/v0.1.0/kubectl-volume-reclaim_linux_amd64.tar.gz
-    sha256: "64fd81c6115312980b8bba9b9036e34b7608ca2f3d64e5cb0c143ce56b39ee41"
+    uri: https://github.com/dirathea/kubectl-unused-volumes/releases/download/v0.1.1/kubectl-unused-volumes_linux_amd64.tar.gz
+    sha256: "1f298ee31ffe904500d7b52433b597e2f3b16cd170474645ab6d5f0b9271efe7"
     files:
-    - from: "./volume-reclaim"
+    - from: "./unused-volumes"
       to: "."
     - from: LICENSE
       to: "."
-    bin: "volume-reclaim"
+    bin: "unused-volumes"
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/dirathea/kubectl-volume-reclaim/releases/download/v0.1.0/kubectl-volume-reclaim_darwin_amd64.tar.gz
-    sha256: "a84b614b62c4410b33a7c6d6dd8442c3020c95f4edb5c379000fe87c3ff8187b"
+    uri: https://github.com/dirathea/kubectl-unused-volumes/releases/download/v0.1.1/kubectl-unused-volumes_darwin_amd64.tar.gz
+    sha256: "195f46dc18ac6637e8dcce1730d8ce468385aace6fa5a62745204261b4fc7022"
     files:
-    - from: "./volume-reclaim"
+    - from: "./unused-volumes"
       to: "."
     - from: LICENSE
       to: "."
-    bin: "volume-reclaim"
+    bin: "unused-volumes"
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/dirathea/kubectl-volume-reclaim/releases/download/v0.1.0/kubectl-volume-reclaim_windows_amd64.zip
-    sha256: "3e3351447c40e378bf73b0c0361aa1b8b63842fb3b6a5f15ab2442f9649ea7a9"
+    uri: https://github.com/dirathea/kubectl-unused-volumes/releases/download/v0.1.1/kubectl-unused-volumes_windows_amd64.zip
+    sha256: "5cb8b931899bef141e085745a999deed083e39acec40065fa4ff6bb0b153d280"
     files:
-    - from: "/volume-reclaim.exe"
+    - from: "/unused-volumes.exe"
       to: "."
     - from: LICENSE
       to: "."
-    bin: "volume-reclaim.exe"
-  shortDescription: Gather all PVC and output all pvcs that doesn't belong to any workloads.
-  homepage: https://github.com/dirathea/kubectl-volume-reclaim
-  caveats: |
-    Usage:
-      $ kubectl volume-reclaim
-
-    For additional options:
-      $ kubectl volume-reclaim --help
-      or https://github.com/dirathea/kubectl-volume-reclaim/blob/v0.1.0/doc/USAGE.md
-
+    bin: "unused-volumes.exe"
+  shortDescription: List unused PVCs
+  homepage: https://github.com/dirathea/kubectl-unused-volumes
   description: |
     Kubectl plugins to gather all PVC and check whether it used in any workloads on cluster or not.
-    This could help users to remove unecessary PVCs that lead to reducing unecesary cost by unused persistent disk
+    This plugin lists all PVCs that are not used by any
+        - DaemonSet
+        - Deployment
+        - Job
+        - StatefulSet
+    Thus it helps to find unused PersitentVolumes which just cost money.

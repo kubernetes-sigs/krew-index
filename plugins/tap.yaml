@@ -5,7 +5,7 @@ metadata:
 spec:
   version: v0.1.1
   homepage: https://soluble-ai.github.io/kubetap/
-  shortDescription: "interactively proxy Kubernetes Services with ease"
+  shortDescription: "Interactively proxy Kubernetes Services with ease"
   description: |
     Interactively proxy Kubernetes Services by deploying
     intercepting proxy sidecars.
@@ -17,9 +17,6 @@ spec:
     uri: https://github.com/soluble-ai/kubetap/releases/download/v0.1.1/kubetap_0.1.1_Darwin_x86_64.tar.gz
     sha256: 62a7832c7edcff145ec1dc22a04304ac921fc2c9bf723b21142a04d1e6a65a8c
     bin: kubectl-tap
-    files:
-    - from: "*"
-      to: "."
   - selector:
       matchLabels:
         os: windows
@@ -27,9 +24,6 @@ spec:
     uri: https://github.com/soluble-ai/kubetap/releases/download/v0.1.1/kubetap_0.1.1_Windows_x86_64.zip  
     sha256: 59ccf162ff3057cac148400f6b10117d16a38ecfc86fe9e076f8a1b5816c053d
     bin: kubectl-tap.exe
-    files:
-    - from: "*"
-      to: "."
   - selector:
       matchLabels:
         os: linux
@@ -37,9 +31,6 @@ spec:
     uri: https://github.com/soluble-ai/kubetap/releases/download/v0.1.1/kubetap_0.1.1_Linux_x86_64.tar.gz
     sha256: c3bf504b4e79a7be4aa9cb86a2dc04874a0a77ca81c71b6da2bdfa61218d767d
     bin: kubectl-tap
-    files:
-    - from: "*"
-      to: "."
   - selector:
       matchLabels:
         os: linux
@@ -47,6 +38,3 @@ spec:
     uri: https://github.com/soluble-ai/kubetap/releases/download/v0.1.1/kubetap_0.1.1_Linux_arm64.tar.gz
     sha256: 33a28f1556d9292018f0fc6df35557af5b7851d4fb06d27a2a7c562247969c75
     bin: kubectl-tap
-    files:
-    - from: "*"
-      to: "."

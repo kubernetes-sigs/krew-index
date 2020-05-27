@@ -43,26 +43,6 @@ spec:
   - selector:
       matchLabels:
         os: linux
-        arch: armv7
-    uri: https://github.com/soluble-ai/kubetap/releases/download/v0.1.1/kubetap_0.1.1_Linux_armv7.tar.gz
-    sha256: e810a5d8ad3a03ffbb533a6dabf6d4334b2c80b30706cf900ac5e4adf966b1b1
-    bin: kubectl-tap
-    files:
-    - from: "*"
-      to: "."
-  - selector:
-      matchLabels:
-        os: linux
-        arch: armv6
-    uri: https://github.com/soluble-ai/kubetap/releases/download/v0.1.1/kubetap_0.1.1_Linux_armv6.tar.gz
-    sha256: b0d5c4b0678b2cb7bbdc2f0ea761ead0ddeb861eda3d7179d9e092734a48df73
-    bin: kubectl-tap
-    files:
-    - from: "*"
-      to: "."
-  - selector:
-      matchLabels:
-        os: linux
         arch: arm64
     uri: https://github.com/soluble-ai/kubetap/releases/download/v0.1.1/kubetap_0.1.1_Linux_arm64.tar.gz
     sha256: 33a28f1556d9292018f0fc6df35557af5b7851d4fb06d27a2a7c562247969c75

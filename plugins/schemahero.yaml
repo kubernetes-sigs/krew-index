@@ -1,0 +1,60 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: schemahero
+spec:
+  version: v0.9.0-alpha.1
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/schemahero/schemahero/releases/download/v0.9.0-alpha.1/kubectl-schemahero_linux_amd64.tar.gz
+    sha256: 78119f420f10fd9cc5d0d341cdc0404aea4ccc6d8da8646a0a34826e71d4dcd6
+    files:
+    - from: kubectl-schemahero
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-schemahero
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/schemahero/schemahero/releases/download/v0.9.0-alpha.1/kubectl-schemahero_darwin_amd64.tar.gz
+    sha256: 79144272c3dc396b7b950bbd2a3ddd9045c49b248577dd00de7e1ed034b0f2ad
+    files:
+    - from: kubectl-schemahero
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-schemahero
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/schemahero/schemahero/releases/download/v0.9.0-alpha.1/kubectl-schemahero_windows_amd64.tar.gz
+    sha256: 5a293788484762fbc1c7d27737e40a39db9f7f162b482b651516c06a5d3a6479
+    files:
+    - from: kubectl-schemahero.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-schemahero.exe
+  shortDescription: Cloud native, declarative database schema migrations
+  homepage: https://schemahero.io
+  caveats: |
+    Installation:
+      $ kubectl schemahero install
+
+    Documentation is available at:
+      https://schemahero.io
+
+
+  description: |
+    SchemaHero is an open-source database schema migration tool that converts 
+    a schema definition into migration scripts that can be applied in any 
+    environment. Written as both a CLI utility and a Kubernetes Operator, 
+    SchemaHero eliminates the task of creating and managing sequenced 
+    migration scripts that are compatible with all environments that an 
+    application is running in.

@@ -1,0 +1,50 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: podevents
+spec:
+  version: v0.1.1
+  homepage: https://github.com/alecjacobs5401/kubectl-diagnose
+  shortDescription: Show events for pods
+  description: |
+    This plugin shows events for all pods in the current namespace. In addition, you can filter which pods to show
+    events for as well as filter which events you want to show.
+  caveats: |
+    * The -A/--all-namespaces flag is currently not supported
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/alecjacobs5401/kubectl-diagnose/releases/download/v0.1.1/kubectl-diagnose_0.1.1_darwin_amd64.tar.gz
+    sha256: a61ab7faa2b73db1cd52397330c1bccaec0ccf1909c3db059377749a248007bb
+    files:
+    - from: LICENSE
+      to: .
+    - from: kubectl-podevents
+      to: .
+    bin: kubectl-podevents
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/alecjacobs5401/kubectl-diagnose/releases/download/v0.1.1/kubectl-diagnose_0.1.1_linux_amd64.tar.gz
+    sha256: 2cf1a20ff8607a3e729aa86b67188beb9aab1146da532b03be03fc9841860249
+    files:
+    - from: LICENSE
+      to: .
+    - from: kubectl-podevents
+      to: .
+    bin: kubectl-podevents
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/alecjacobs5401/kubectl-diagnose/releases/download/v0.1.1/kubectl-diagnose_0.1.1_windows_amd64.tar.gz
+    sha256: deb96ab4acf683073b70ef9d2f3a259212ba3c48ba712c064a9e3d3980a82fdf
+    files:
+    - from: LICENSE
+      to: .
+    - from: kubectl-podevents.exe
+      to: .
+    bin: kubectl-podevents.exe

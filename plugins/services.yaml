@@ -1,0 +1,45 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: services
+spec:
+  version: v0.1.2
+  homepage: https://github.com/feloy/kubectl-services
+  shortDescription: Explore ingresses and services and their associated backends
+  description: |
+    This plugin shows a tree of ingresses, services and associated backends. 
+    Only services of type NodePort and LoadBalancer are displayed.
+    When a Pod contains several containers and the containers declare their ports
+    (with ports.containerPort), the name of the concerned container is displayed.
+
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/feloy/kubectl-services/releases/download/v0.1.2/kubectl-services_darwin_amd64.tar.gz
+    sha256: bedab730a230de999581fbc05ea85208b92f902c26cfa43a1992d45b9d9124ab
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-services
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/feloy/kubectl-services/releases/download/v0.1.2/kubectl-services_linux_amd64.tar.gz
+    sha256: 2150e1d9258993c3176132369990449d29173498617c183dc9b571f578fab990
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-services
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/feloy/kubectl-services/releases/download/v0.1.2/kubectl-services_windows_amd64.zip
+    sha256: a0efe93394ada5b4fca3777c97d32ca4f5d80ca3e74d24a49a03c551c9f2aefd
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-services.exe

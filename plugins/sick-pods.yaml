@@ -1,13 +1,13 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: diagnose
+  name: sick-pods
 spec:
   version: v0.1.1
   homepage: https://github.com/alecjacobs5401/kubectl-diagnose
   shortDescription: Find and debug Pods that are "Not Ready"
   description: |
-    This plugin shows finds and displays debugging information for Pods
+    This plugin finds and displays debugging information for Pods
     that are "Not Ready" in the current namespace.
     Pods are deemed as "Not Ready" if they have any failing Pod Conditions
     or have any containers that do not have a "Ready" value.
@@ -26,8 +26,8 @@ spec:
     - from: LICENSE
       to: .
     - from: kubectl-diagnose
-      to: .
-    bin: kubectl-diagnose
+      to: kubectl-sick-pods
+    bin: kubectl-sick-pods
   - selector:
       matchLabels:
         os: linux
@@ -38,8 +38,8 @@ spec:
     - from: LICENSE
       to: .
     - from: kubectl-diagnose
-      to: .
-    bin: kubectl-diagnose
+      to: kubectl-sick-pods
+    bin: kubectl-sick-pods
   - selector:
       matchLabels:
         os: windows
@@ -50,5 +50,5 @@ spec:
     - from: LICENSE
       to: .
     - from: kubectl-diagnose.exe
-      to: .
-    bin: kubectl-diagnose.exe
+      to: kubectl-sick-pods.exe
+    bin: kubectl-sick-pods.exe

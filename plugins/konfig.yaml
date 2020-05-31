@@ -31,19 +31,15 @@ spec:
           os: windows
   shortDescription: Merge, split or import kubeconfig files
   homepage: https://github.com/corneliusweig/konfig
-  caveats: |
-      Usage:
-        $ kubectl konfig import --save new-cfg
-        $ kubectl konfig merge kubeconfig1 kubeconfig2 > merged
-        $ kubectl konfig export ctx1 ctx2 -k k8s.yaml,k3s.yaml > extracted
-
-      Documentation:
-        $ kubectl konfig help
-        or https://github.com/corneliusweig/konfig/blob/v0.2.2/doc/USAGE.md#usage
   description: |+2
 
       konfig helps to merge, split or import kubeconfig files
 
       This is a convenience wrapper around the `kubectl config view` command.
+
+      Usage:
+        $ kubectl konfig import --save new-cfg
+        $ kubectl konfig merge kubeconfig1 kubeconfig2 > merged
+        $ kubectl konfig export ctx1 ctx2 -k k8s.yaml,k3s.yaml > extracted
 
       More on https://github.com/corneliusweig/konfig/blob/v0.2.2/doc/USAGE.md#usage

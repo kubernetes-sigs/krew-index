@@ -58,22 +58,16 @@ spec:
   caveats: |
     virt plugin is a wrapper for virtctl originating from the KubeVirt project. In order to use virtctl you will
     need to have KubeVirt installed on your Kubernetes cluster to use it. See https://kubevirt.io/ for details
+  description: |
+    virt plugin is a wrapper for virtctl originating from the KubeVirt project. KubeVirt is a virtualization add-on to
+    Kubernetes, i.e. it enables to run existing virtual machines on Kubernetes clusters. virtctl controls virtual
+    machine related operations on your Kubernetes cluster like connecting to the serial and VNC consoles.
 
     Run
 
       kubectl virt help
 
     to get an overview of the available commands
-
-    See
-
-      https://kubevirt.io/user-guide/docs/latest/using-virtual-machines/graphical-and-console-access.html
-
-    for a usage example
-  description: |
-    virt plugin is a wrapper for virtctl originating from the KubeVirt project. KubeVirt is a virtualization add-on to
-    Kubernetes, i.e. it enables to run existing virtual machines on Kubernetes clusters. virtctl controls virtual
-    machine related operations on your Kubernetes cluster like connecting to the serial and VNC consoles.
 
     Kubevirt documentation:
       Overview:

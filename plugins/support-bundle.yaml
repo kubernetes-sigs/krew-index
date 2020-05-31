@@ -43,7 +43,20 @@ spec:
     bin: support-bundle.exe
   shortDescription: Creates support bundles for off-cluster analysis
   homepage: https://github.com/replicatedhq/troubleshoot
-  caveats: |
+  description: |
+    This plugin collects information about the cluster, and automatically
+    redacts sensitive data from being collected. This can optionally include
+    application-specific data.  The plugin writes the collected files into a
+    single archive named support-bundle.tar.gz. This archive can be manually
+    inspected or uploaded to https://vendor.replicated.com for automated
+    analysis.
+
+    Application developers can create and host a Collector manifest that
+    defines information to be collected.
+
+    For information on creating a Collector manifest, view the documentation
+    at https://help.replicated.com/docs/troubleshoot/kubernetes/collectors/defining-collectors/
+
     Usage:
       $ kubectl support-bundle <uri>
 
@@ -63,16 +76,3 @@ spec:
       For application developers writing collectors and analyzers:
       https://help.replicated.com/docs/troubleshoot/kubernetes/collectors/defining-collectors/
 
-  description: |
-    This plugin collects information about the cluster, and automatically
-    redacts sensitive data from being collected. This can optionally include
-    application-specific data.  The plugin writes the collected files into a
-    single archive named support-bundle.tar.gz. This archive can be manually
-    inspected or uploaded to https://vendor.replicated.com for automated
-    analysis.
-
-    Application developers can create and host a Collector manifest that
-    defines information to be collected.
-
-    For information on creating a Collector manifest, view the documentation
-    at https://help.replicated.com/docs/troubleshoot/kubernetes/collectors/defining-collectors/

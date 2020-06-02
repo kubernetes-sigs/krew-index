@@ -39,6 +39,7 @@ Name | Description | Stars
 [exec-cronjob](https://github.com/thecloudnatives/kubectl-plugins#exec-cronjob) | Run a CronJob immediately as Job | ![GitHub stars](https://img.shields.io/github/stars/thecloudnatives/kubectl-plugins.svg?label=stars&logo=github)
 [fields](https://github.com/rewanth1997/kubectl-fields) | Grep resources hierarchy by field name | ![GitHub stars](https://img.shields.io/github/stars/rewanth1997/kubectl-fields.svg?label=stars&logo=github)
 [fleet](https://github.com/kubectl-plus/kcf) | Shows config and resources of a fleet of clusters | ![GitHub stars](https://img.shields.io/github/stars/kubectl-plus/kcf.svg?label=stars&logo=github)
+[gadget](https://github.com/kinvolk/inspektor-gadget) | Gadgets for debugging and introspecting apps | ![GitHub stars](https://img.shields.io/github/stars/kinvolk/inspektor-gadget.svg?label=stars&logo=github)
 [get-all](https://github.com/corneliusweig/ketall) | Like `kubectl get all` but _really_ everything | ![GitHub stars](https://img.shields.io/github/stars/corneliusweig/ketall.svg?label=stars&logo=github)
 [gke-credentials](https://github.com/danisla/kubefunc) | Fetch credentials for GKE clusters | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
 [gopass](https://github.com/gopasspw/kubectl-gopass) | Imports secrets from gopass | ![GitHub stars](https://img.shields.io/github/stars/gopasspw/kubectl-gopass.svg?label=stars&logo=github)
@@ -50,10 +51,10 @@ Name | Description | Stars
 [krew](https://sigs.k8s.io/krew) | Package manager for kubectl plugins. | ![GitHub stars](https://img.shields.io/github/stars/kubernetes-sigs/krew.svg?label=stars&logo=github)
 [kubesec-scan](https://github.com/stefanprodan/kubectl-kubesec) | Scan Kubernetes resources with kubesec.io. | ![GitHub stars](https://img.shields.io/github/stars/stefanprodan/kubectl-kubesec.svg?label=stars&logo=github)
 [kudo](https://kudo.dev/) | Declaratively build, install, and run operators using KUDO. | ![GitHub stars](https://img.shields.io/github/stars/kudobuilder/kudo.svg?label=stars&logo=github)
-[kuttl](https://kuttl.dev/) | Declaratively run and test operators | 
+[kuttl](https://kuttl.dev/) | Declaratively run and test operators |
 [match-name](https://github.com/gerald1248/kubectl-match-name) | Match names of pods and other API objects | ![GitHub stars](https://img.shields.io/github/stars/gerald1248/kubectl-match-name.svg?label=stars&logo=github)
 [modify-secret](https://github.com/rajatjindal/kubectl-modify-secret) | modify secret with implicit base64 translations | ![GitHub stars](https://img.shields.io/github/stars/rajatjindal/kubectl-modify-secret.svg?label=stars&logo=github)
-[mtail](https://gitlab.com/grzesuav/kubectl-mtail) | Tail logs from multiple pods matching label selector | 
+[mtail](https://gitlab.com/grzesuav/kubectl-mtail) | Tail logs from multiple pods matching label selector |
 [neat](https://github.com/itaysk/kubectl-neat) | Remove clutter from Kubernetes manifests to make them more readable. | ![GitHub stars](https://img.shields.io/github/stars/itaysk/kubectl-neat.svg?label=stars&logo=github)
 [net-forward](https://github.com/antitree/krew-net-forward) | Proxy to arbitrary TCP services on a cluster network | ![GitHub stars](https://img.shields.io/github/stars/antitree/krew-net-forward.svg?label=stars&logo=github)
 [node-admin](https://github.com/danisla/kubefunc) | List nodes and run privileged pod with chroot | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
@@ -67,6 +68,7 @@ Name | Description | Stars
 [pod-dive](https://github.com/caiobegotti/pod-dive) | Shows a pod's workload tree and info inside a node | ![GitHub stars](https://img.shields.io/github/stars/caiobegotti/pod-dive.svg?label=stars&logo=github)
 [pod-logs](https://github.com/danisla/kubefunc) | Display a list of pods to get logs from | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
 [pod-shell](https://github.com/danisla/kubefunc) | Display a list of pods to execute a shell in | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
+[podevents](https://github.com/alecjacobs5401/kubectl-diagnose) | Show events for pods | ![GitHub stars](https://img.shields.io/github/stars/alecjacobs5401/kubectl-diagnose.svg?label=stars&logo=github)
 [popeye](https://popeyecli.io) | Scans your clusters for potential resource issues | ![GitHub stars](https://img.shields.io/github/stars/derailed/popeye.svg?label=stars&logo=github)
 [preflight](https://github.com/replicatedhq/troubleshoot) | Executes application preflight tests in a cluster | ![GitHub stars](https://img.shields.io/github/stars/replicatedhq/troubleshoot.svg?label=stars&logo=github)
 [profefe](https://github.com/profefe/kube-profefe) | Gather and manage pprof profiles from running pods | ![GitHub stars](https://img.shields.io/github/stars/profefe/kube-profefe.svg?label=stars&logo=github)
@@ -79,7 +81,11 @@ Name | Description | Stars
 [restart](https://github.com/achanda/kubectl-restart) | Restarts a pod with the given name | ![GitHub stars](https://img.shields.io/github/stars/achanda/kubectl-restart.svg?label=stars&logo=github)
 [rm-standalone-pods](https://github.com/ahmetb/kubectl-extras) | Remove all pods without owner references | ![GitHub stars](https://img.shields.io/github/stars/ahmetb/kubectl-extras.svg?label=stars&logo=github)
 [rolesum](https://github.com/Ladicle/kubectl-rolesum) | Summarize RBAC roles for subjects | ![GitHub stars](https://img.shields.io/github/stars/Ladicle/kubectl-rolesum.svg?label=stars&logo=github)
+[roll](https://github.com/LifeWay/kubectl-roll-plugin) | Rolling restart of all persistent pods in a namespace | ![GitHub stars](https://img.shields.io/github/stars/LifeWay/kubectl-roll-plugin.svg?label=stars&logo=github)
+[schemahero](https://schemahero.io) | Declarative database schema migrations via YAML |
 [score](https://github.com/zegl/kube-score) | Kubernetes static code analysis. | ![GitHub stars](https://img.shields.io/github/stars/zegl/kube-score.svg?label=stars&logo=github)
+[service-tree](https://github.com/feloy/kubectl-service-tree) | Status for ingresses, services, and their backends | ![GitHub stars](https://img.shields.io/github/stars/feloy/kubectl-service-tree.svg?label=stars&logo=github)
+[sick-pods](https://github.com/alecjacobs5401/kubectl-diagnose) | Find and debug Pods that are "Not Ready" | ![GitHub stars](https://img.shields.io/github/stars/alecjacobs5401/kubectl-diagnose.svg?label=stars&logo=github)
 [snap](https://github.com/honk-ci/kubectl-snap) | Delete half of the pods in a namespace or cluster | ![GitHub stars](https://img.shields.io/github/stars/honk-ci/kubectl-snap.svg?label=stars&logo=github)
 [sniff](https://github.com/eldadru/ksniff) | Start a remote packet capture on pods using tcpdump and wireshark | ![GitHub stars](https://img.shields.io/github/stars/eldadru/ksniff.svg?label=stars&logo=github)
 [sort-manifests](https://github.com/superbrothers/ksort) | Sort manifest files in a proper order by Kind | ![GitHub stars](https://img.shields.io/github/stars/superbrothers/ksort.svg?label=stars&logo=github)
@@ -92,9 +98,11 @@ Name | Description | Stars
 [sudo](https://github.com/postfinance/kubectl-sudo) | Run Kubernetes commands impersonated as group system:masters | ![GitHub stars](https://img.shields.io/github/stars/postfinance/kubectl-sudo.svg?label=stars&logo=github)
 [support-bundle](https://github.com/replicatedhq/troubleshoot) | Creates support bundles for off-cluster analysis | ![GitHub stars](https://img.shields.io/github/stars/replicatedhq/troubleshoot.svg?label=stars&logo=github)
 [tail](https://github.com/boz/kail) | Stream logs from multiple pods and containers using simple, dynamic source selection. | ![GitHub stars](https://img.shields.io/github/stars/boz/kail.svg?label=stars&logo=github)
+[tap](https://soluble-ai.github.io/kubetap/) | Interactively proxy Kubernetes Services with ease | ![GitHub stars](https://img.shields.io/github/stars/soluble-ai/kubetap.svg?label=stars&logo=github)
 [tmux-exec](https://github.com/predatorray/kubectl-tmux-exec) | An exec multiplexer using Tmux | ![GitHub stars](https://img.shields.io/github/stars/predatorray/kubectl-tmux-exec.svg?label=stars&logo=github)
 [topology](https://github.com/bmcustodio/kubectl-topology) | Explore region topology for nodes or pods | ![GitHub stars](https://img.shields.io/github/stars/bmcustodio/kubectl-topology.svg?label=stars&logo=github)
 [tree](https://github.com/ahmetb/kubectl-tree) | Show a tree of object hierarchies through ownerReferences | ![GitHub stars](https://img.shields.io/github/stars/ahmetb/kubectl-tree.svg?label=stars&logo=github)
+[unused-volumes](https://github.com/dirathea/kubectl-unused-volumes) | List unused PVCs | ![GitHub stars](https://img.shields.io/github/stars/dirathea/kubectl-unused-volumes.svg?label=stars&logo=github)
 [view-allocations](https://github.com/davidB/kubectl-view-allocations) | List allocations per resources, nodes, pods. | ![GitHub stars](https://img.shields.io/github/stars/davidB/kubectl-view-allocations.svg?label=stars&logo=github)
 [view-secret](https://github.com/elsesiy/kubectl-view-secret) | Decode Kubernetes secrets | ![GitHub stars](https://img.shields.io/github/stars/elsesiy/kubectl-view-secret.svg?label=stars&logo=github)
 [view-serviceaccount-kubeconfig](https://github.com/superbrothers/kubectl-view-serviceaccount-kubeconfig-plugin) | Show a kubeconfig setting to access the apiserver with a specified serviceaccount. | ![GitHub stars](https://img.shields.io/github/stars/superbrothers/kubectl-view-serviceaccount-kubeconfig-plugin.svg?label=stars&logo=github)

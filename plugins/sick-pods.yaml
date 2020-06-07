@@ -3,8 +3,8 @@ kind: Plugin
 metadata:
   name: sick-pods
 spec:
-  version: v0.1.1
-  homepage: https://github.com/alecjacobs5401/kubectl-diagnose
+  version: v0.2.0
+  homepage: https://github.com/alecjacobs5401/kubectl-sick-pods
   shortDescription: Find and debug Pods that are "Not Ready"
   description: |
     This plugin finds and displays debugging information for Pods
@@ -13,42 +13,25 @@ spec:
     or have any containers that do not have a "Ready" value.
     In addition, you can filter which pods you want to show based on labels
     or field selectors (as well as by pod name(s)).
-  caveats: |
-    * The -A/--all-namespaces flag is currently not supported
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/alecjacobs5401/kubectl-diagnose/releases/download/v0.1.1/kubectl-diagnose_0.1.1_darwin_amd64.tar.gz
-    sha256: a61ab7faa2b73db1cd52397330c1bccaec0ccf1909c3db059377749a248007bb
-    files:
-    - from: LICENSE
-      to: .
-    - from: kubectl-diagnose
-      to: kubectl-sick-pods
+    uri: https://github.com/alecjacobs5401/kubectl-sick-pods/releases/download/v0.2.0/kubectl-sick-pods_v0.2.0_darwin_amd64.tar.gz
+    sha256: 83565b7cef3a6955fc6ad58cf05fc5233898d5e1e8af5509466fe2f0f2627108
     bin: kubectl-sick-pods
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/alecjacobs5401/kubectl-diagnose/releases/download/v0.1.1/kubectl-diagnose_0.1.1_linux_amd64.tar.gz
-    sha256: 2cf1a20ff8607a3e729aa86b67188beb9aab1146da532b03be03fc9841860249
-    files:
-    - from: LICENSE
-      to: .
-    - from: kubectl-diagnose
-      to: kubectl-sick-pods
+    uri: https://github.com/alecjacobs5401/kubectl-sick-pods/releases/download/v0.2.0/kubectl-sick-pods_v0.2.0_linux_amd64.tar.gz
+    sha256: 03607d0c83a10df495b8092f69df6f4f22bf6b0a941d0d47e55f4a2772871b09
     bin: kubectl-sick-pods
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/alecjacobs5401/kubectl-diagnose/releases/download/v0.1.1/kubectl-diagnose_0.1.1_windows_amd64.tar.gz
-    sha256: deb96ab4acf683073b70ef9d2f3a259212ba3c48ba712c064a9e3d3980a82fdf
-    files:
-    - from: LICENSE
-      to: .
-    - from: kubectl-diagnose.exe
-      to: kubectl-sick-pods.exe
+    uri: https://github.com/alecjacobs5401/kubectl-sick-pods/releases/download/v0.2.0/kubectl-sick-pods_v0.2.0_windows_amd64.tar.gz
+    sha256: a74bfeb6eb773f73a76badcc01f8e115318863a5560ec2cc15a4024d2efbff4f
     bin: kubectl-sick-pods.exe

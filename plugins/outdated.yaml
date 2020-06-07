@@ -43,14 +43,6 @@ spec:
     bin: outdated.exe
   shortDescription: Finds outdated container images running in a cluster
   homepage: https://github.com/replicatedhq/outdated
-  caveats: |
-    Usage:
-      $ kubectl outdated
-
-    For additional options:
-      $ kubectl outdated --help
-      or https://github.com/replicatedhq/outdated/blob/master/doc/USAGE.md
-
   description: |
     The plugin will scan for all pods in all namespaces that you have at least
     read access to. It will then connect to the registry that hosts the image,
@@ -59,3 +51,8 @@ spec:
 
     The output is a list of all images, with the most out-of-date images in red,
     slightly outdated in yellow, and up-to-date in green.
+
+    For additional options:
+      $ kubectl outdated --help
+      or https://github.com/replicatedhq/outdated/blob/master/doc/USAGE.md
+

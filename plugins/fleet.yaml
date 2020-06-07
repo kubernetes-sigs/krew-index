@@ -43,17 +43,14 @@ spec:
     bin: "fleet.exe"
   shortDescription: Shows config and resources of a fleet of clusters
   homepage: https://github.com/kubectl-plus/kcf
-  caveats: |
-    Usage:
-      $ kubectl fleet
-
-    For additional options:
-      $ kubectl fleet --help
-      or https://github.com/kubectl-plus/kcf/blob/v0.1.4/doc/USAGE.md
-
   description: |
     Allows to get an overview and details on a fleet of Kubernetes clusters.
     The top-level command lists all active clusters found in the kubeconfig provided.
     For each cluster, configuration info such as the control plane version or 
     API server endpoint are displayed, as well as select stats, for example, 
     the number of worker nodes or namespaces found in the cluster.
+
+    For additional options:
+      $ kubectl fleet --help
+      or https://github.com/kubectl-plus/kcf/blob/v0.1.4/doc/USAGE.md
+

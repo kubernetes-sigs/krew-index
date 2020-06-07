@@ -21,7 +21,7 @@ spec:
     Prune unused configmaps/secret resources from a given namespace. It
     checks against all resources from mounted volumes, env and envFrom and
     imagePullSecrets.
-  caveats: |
+
     Usage:
         kubectl prune-unused <configmaps|secrets> [options]
 
@@ -29,7 +29,4 @@ spec:
         -n, --namespace='': If present, the namespace scope for this CLI request
         --dry-run: If true, only print the object that would be pruned, without deleting it.
         -h, --help='': Display this help
-
-    Read the documentation at:
-      https://github.com/thecloudnatives/kubectl-plugins
   homepage: https://github.com/thecloudnatives/kubectl-plugins

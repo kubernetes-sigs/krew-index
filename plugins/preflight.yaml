@@ -43,7 +43,23 @@ spec:
     bin: preflight.exe
   shortDescription: Executes application preflight tests in a cluster
   homepage: https://github.com/replicatedhq/troubleshoot
-  caveats: |
+  description: |
+    This plugin executes application-specific preflight checks and conformance
+    tests against a cluster, prior to installation of an application.
+
+    Application developers can create and host a Preflight manifest that
+    defines the minimum and desired Kubernetes environment for an application.
+    Before installing the application, a cluster admin can use this plugin to
+    execute the application preflight checksto identify any missing
+    components, configuration or incompatibilities between the cluster and the
+    desired environment.
+
+    When executing Preflight tests, the test results will be displayed in a
+    terminal-based UI on the workstation that executed the command.
+
+    For information on creating a Preflight manifest, view the documentation
+    at https://help.replicated.com/docs/troubleshoot/kubernetes/analysis/
+
     Usage:
       $ kubectl preflight <uri/path>
 
@@ -63,19 +79,3 @@ spec:
       For application developers writing collectors and analyzers:
       https://help.replicated.com/docs/troubleshoot/kubernetes/collectors/defining-collectors/
 
-  description: |
-    This plugin executes application-specific preflight checks and conformance
-    tests against a cluster, prior to installation of an application.
-
-    Application developers can create and host a Preflight manifest that
-    defines the minimum and desired Kubernetes environment for an application.
-    Before installing the application, a cluster admin can use this plugin to
-    execute the application preflight checksto identify any missing
-    components, configuration or incompatibilities between the cluster and the
-    desired environment.
-
-    When executing Preflight tests, the test results will be displayed in a
-    terminal-based UI on the workstation that executed the command.
-
-    For information on creating a Preflight manifest, view the documentation
-    at https://help.replicated.com/docs/troubleshoot/kubernetes/analysis/

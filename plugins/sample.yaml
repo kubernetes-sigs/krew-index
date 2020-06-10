@@ -1,0 +1,71 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: sample
+spec:
+  homepage: https://github.com/seredot/kubectl-sample
+  shortDescription: Prints out sample manifest YAMLs
+  version: v1.0.0
+  description: |
+    Prints out a sample manifest YAML for a given resource type.
+  platforms:
+    - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/seredot/kubectl-sample/releases/download/v1.0.0/kubectl-sample_1.0.0_Darwin_x86_64.tar.gz
+    sha256: "aafe777788f5f7864d8855192e393974f761cd8a7f26ca5648081248f0024ffd"
+    bin: "./kubectl-sample"
+    files:
+      - from: kubectl-sample
+        to: .
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm
+    uri: https://github.com/seredot/kubectl-sample/releases/download/v1.0.0/kubectl-sample_1.0.0_Linux_armv6.tar.gz
+    sha256: "af7f7b3ffb8da6159ffffdd22dd7e23c036ef2f9add31af7fc08defd6e561a52"
+    bin: "./kubectl-sample"
+    files:
+      - from: kubectl-sample
+        to: .
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/seredot/kubectl-sample/releases/download/v1.0.0/kubectl-sample_1.0.0_Linux_arm64.tar.gz
+    sha256: "96a73409bf36d984304b87cd329dc80ee284c49bfedfc2eccfcff124f344abc5"
+    bin: "./kubectl-sample"
+    files:
+      - from: kubectl-sample
+        to: .
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/seredot/kubectl-sample/releases/download/v1.0.0/kubectl-sample_1.0.0_Linux_x86_64.tar.gz
+    sha256: "2fe9e786de3cdbd0f548a2763ebe949e79da1693fc16f218050549936d8ef635"
+    bin: "./kubectl-sample"
+    files:
+      - from: kubectl-sample
+        to: .
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/seredot/kubectl-sample/releases/download/v1.0.0/kubectl-sample_1.0.0_Windows_x86_64.tar.gz
+    sha256: "c9a01ca36dc14fe25ff8568e5bfdb4c90f2ac758bfba7c4e2e4b1d5e041c82c9"
+    bin: "./kubectl-sample"
+    files:
+      - from: kubectl-sample
+        to: .
+      - from: LICENSE
+        to: .

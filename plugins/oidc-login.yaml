@@ -22,10 +22,10 @@ spec:
 
   caveats: |
     You need to setup the OIDC provider, Kubernetes API server, role binding and kubeconfig.
-  version: v1.19.1
+  version: v1.19.2
   platforms:
-    - uri: https://github.com/int128/kubelogin/releases/download/v1.19.1/kubelogin_linux_amd64.zip
-      sha256: "3bfe06b8d1935f4276335c7c7d08945f5fcb5735b9d74701663f88908e7edef7"
+    - uri: https://github.com/int128/kubelogin/releases/download/v1.19.2/kubelogin_linux_amd64.zip
+      sha256: "c57a37a5b8c883f871e81c452b664b2120dc4aa3d2c497dd1584db1fe503f22f"
       bin: kubelogin
       files:
         - from: kubelogin
@@ -36,8 +36,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/int128/kubelogin/releases/download/v1.19.1/kubelogin_darwin_amd64.zip
-      sha256: "51806d291e69cd4dce54af7bb03adf76a55397741ea00fee4d845718a171ddc0"
+    - uri: https://github.com/int128/kubelogin/releases/download/v1.19.2/kubelogin_darwin_amd64.zip
+      sha256: "02a5605d6ecf26a825d8babbe0c68bebf68ef44c572a6b25f9e87374536cacf4"
       bin: kubelogin
       files:
         - from: kubelogin
@@ -48,8 +48,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/int128/kubelogin/releases/download/v1.19.1/kubelogin_windows_amd64.zip
-      sha256: "25a8ae07b2761cf9ebd6a11ad47d530fed8360e7bf2cd19a2746a409c9a152b3"
+    - uri: https://github.com/int128/kubelogin/releases/download/v1.19.2/kubelogin_windows_amd64.zip
+      sha256: "8e8ba97e7b7204f366c14a71ba3554a39986aed28dd559117a3c76b57e881d83"
       bin: kubelogin.exe
       files:
         - from: kubelogin.exe
@@ -60,8 +60,8 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-    - uri: https://github.com/int128/kubelogin/releases/download/v1.19.1/kubelogin_linux_arm.zip
-      sha256: "1d98627f0c40172253e38a6f7a85ae0f37aafaee2f0ed98520ea59bccde69c7c"
+    - uri: https://github.com/int128/kubelogin/releases/download/v1.19.2/kubelogin_linux_arm.zip
+      sha256: "6d3560e8235fef8ebc4fa99e2e986e277c4309fbb478904a7f0a50a748fa17cd"
       bin: kubelogin
       files:
         - from: kubelogin
@@ -72,8 +72,8 @@ spec:
         matchLabels:
           os: linux
           arch: arm
-    - uri: https://github.com/int128/kubelogin/releases/download/v1.19.1/kubelogin_linux_arm64.zip
-      sha256: "774e4c3b6d1fbf5bff32e4d882893b179038996934e7acb93bc8a9ec5b1e8af5"
+    - uri: https://github.com/int128/kubelogin/releases/download/v1.19.2/kubelogin_linux_arm64.zip
+      sha256: "c3c6f63b06ca413a6021dca9cb0a75bdbe7c239abaa90599a5ce5b1e1f50c443"
       bin: kubelogin
       files:
         - from: kubelogin

@@ -1,0 +1,73 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: starboard
+spec:
+  version: "v0.2.1"
+  homepage: https://github.com/aquasecurity/starboard
+  shortDescription: >-
+    Kubernetes-native security tool kit
+  description: |+2
+    Initialize the starboard(create the custom resources, ns, sa):
+    $ kubectl starboard init
+    
+    After init startboard, you could interact with starboard following this structure:
+    starboard [VERB] TOOL [TYPE | TYPE/NAME | NONRESOURCEURL]
+
+    TOOL is the security tool in the cloud native like kube-hunter, kube-bench, vuln(trivy)
+    VERB is a logical Kubernetes API verb like 'get', 'find', etc.
+    TYPE is a Kubernetes resource. Shortcuts and API groups will be resolved, e.g. 'po' or 'pod.metrics.k8s.io'.
+    NAME is the name of a particular Kubernetes resource.
+    NONRESOURCEURL is a partial URL that starts with "/".
+    
+    If you want to find the vulnerabilities in the nginx deployment:
+
+    $ kubectl starboard find vuln deploy/nginx --namespace foo
+    $ kubectl starboard get vuln deploy/nginx --namespace foo
+
+    If you want to use the kube-bench tool, for example:
+
+    $ kubectl starboard kube-bench
+
+    For usage or examples, run:
+
+    $ kubectl starboard -h
+  caveats: |
+    The plugin requires access to create Jobs and CustomResources.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/aquasecurity/starboard/releases/download/v0.2.1/starboard_darwin_x86_64.tar.gz
+      sha256: "4852ba4635f1255f1bba441f6cfc01620aa8d1d4b6b0d21ae604a5fcebb4db8a"
+      files:
+        - from: starboard
+          to: .
+        - from: LICENSE
+          to: .
+      bin: starboard
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/aquasecurity/starboard/releases/download/v0.2.1/starboard_linux_x86_64.tar.gz
+      sha256: "1ae60786950910622cbfd34957a8a3a1a9b0746364a6c7cc59591b140a4ec25b"
+      files:
+        - from: starboard
+          to: .
+        - from: LICENSE
+          to: .
+      bin: starboard
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/aquasecurity/starboard/releases/download/v0.2.1/starboard_windows_x86_64.zip
+      sha256: "6a60319f427ac082d939db91620672ef490ef726e57398d702fd7081a12c91b3"
+      files:
+        - from: starboard.exe
+          to: .
+        - from: LICENSE
+          to: .
+      bin: starboard.exe

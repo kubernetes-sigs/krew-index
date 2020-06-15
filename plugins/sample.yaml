@@ -8,7 +8,7 @@ spec:
   version: v1.0.0
   description: |
     Prints out a sample manifest YAML for a given resource type. 
-    The plugin works similar to `kubectl create deploy --dry-run` but for arbitrary resources.
+    The plugin works similar to `kubectl create deployment nginx --image=nginx --dry-run=client -o yaml` but for arbitrary resources.
     All samples originate from kubernetes.io.
 
     Usage:

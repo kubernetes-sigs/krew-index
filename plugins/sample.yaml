@@ -7,7 +7,14 @@ spec:
   shortDescription: Prints out sample manifest YAMLs
   version: v1.0.0
   description: |
-    Prints out a sample manifest YAML for a given resource type.
+    Prints out a sample manifest YAML for a given resource type. 
+    The plugin works similar to `kubectl create deploy --dry-run` but for arbitrary resources.
+    All samples originate from kubernetes.io.
+
+    Usage:
+      kubectl sample deployment
+      kubectl sample Pod
+      kubectl sample svc
   platforms:
     - selector:
         matchLabels:

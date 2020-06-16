@@ -6,32 +6,18 @@ spec:
   version: "v0.2.1"
   homepage: https://github.com/aquasecurity/starboard
   shortDescription: >-
-    Kubernetes-native security tool kit
+    Toolkit for finding risks in kubernetes resources
   description: |+2
-    Initialize the starboard(create the custom resources, ns, sa):
-    $ kubectl starboard init
+    Starboard enables results from vulnerability scanners, workload auditors, and configuration 
+    benchmark tests to be incorporated into Kubernetes CRDs (Custom Resource Definitions) and 
+    from there, accessed through the Kubernetes API. 
     
-    After init startboard, you could interact with starboard following this structure:
-    starboard [VERB] TOOL [TYPE | TYPE/NAME | NONRESOURCEURL]
+    Users familiar with kubectl or with a dashboard tool like Octant can find security risk information at their fingertips.
 
-    TOOL is the security tool in the cloud native like kube-hunter, kube-bench, vuln(trivy)
-    VERB is a logical Kubernetes API verb like 'get', 'find', etc.
-    TYPE is a Kubernetes resource. Shortcuts and API groups will be resolved, e.g. 'po' or 'pod.metrics.k8s.io'.
-    NAME is the name of a particular Kubernetes resource.
-    NONRESOURCEURL is a partial URL that starts with "/".
+    For additional options:
+      $ kubectl starboard --help
+      or https://github.com/aquasecurity/starboard#getting-started
     
-    If you want to find the vulnerabilities in the nginx deployment:
-
-    $ kubectl starboard find vuln deploy/nginx --namespace foo
-    $ kubectl starboard get vuln deploy/nginx --namespace foo
-
-    If you want to use the kube-bench tool, for example:
-
-    $ kubectl starboard kube-bench
-
-    For usage or examples, run:
-
-    $ kubectl starboard -h
   caveats: |
     The plugin requires access to create Jobs and CustomResources.
   platforms:

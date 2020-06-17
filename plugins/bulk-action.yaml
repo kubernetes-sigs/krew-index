@@ -3,15 +3,15 @@ kind: Plugin
 metadata:
   name: bulk-action
 spec:
-  version: v1.1.0-beta
+  version: v1.1.1
   platforms:
     - selector:
        matchExpressions:
        - key: os
          operator: In
          values: ["darwin", "linux"]
-      uri: https://github.com/emreodabas/kubectl-plugins/archive/v1.1.0-beta.tar.gz
-      sha256: 80f7b55d82673253eb0957d2c248163fcce3e4c3bc609410b1e9ee2d6d6a91a7
+      uri: https://github.com/emreodabas/kubectl-plugins/releases/download/v1.1.1-beta/kubectl-plugins_v1.1.1.tar.gz
+      sha256: d2f5983132cc94be63d56963608e4d0908dbd30f198d9de3d9dc35415b16eedf
       files:
         - from: kubectl-plugins-*/kubectl-bulk
           to: .
@@ -21,11 +21,14 @@ spec:
   shortDescription: Do bulk actions on Kubernetes resources.
   caveats: |
     Usage:
-      kubectl bulk-action <get resourceTypes> (get|list|create|update|delete|remove|rollout) <command parameters>
+      kubectl bulk-action <get resourceTypes> (get|list|create|update|delete|remove|rollout|scale) <command parameters>
+
+    Help:
+      kubectl bulk-action help        
 
     This plugin needs the following programs:
     * grep
     * sed
   description: |
-    This plugin allows you to do bulk actions on Kubernetes resources.
+    This plugin allows you to do bulk actions on Kubernetes resources. Use carefully, its your own risk.
   homepage: https://github.com/emreodabas/kubectl-plugins#kubectl-bulk

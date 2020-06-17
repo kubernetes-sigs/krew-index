@@ -10,12 +10,12 @@ spec:
        - key: os
          operator: In
          values: ["darwin", "linux"]
-      uri: https://github.com/emreodabas/kubectl-plugins/releases/download/v1.1.1-beta/kubectl-plugins_1.1.1-beta.tar.gz
-      sha256: 5bb89351e850f316f1505eac5ec493c815ce87377a2d0102308e7cf58f58f3df
+      uri: https://github.com/emreodabas/kubectl-plugins/releases/download/v1.1.1-beta/kubectl-plugins_v1.1.1.tar.gz
+      sha256: d2f5983132cc94be63d56963608e4d0908dbd30f198d9de3d9dc35415b16eedf
       files:
-        - from: kubectl-plugins/kubectl-bulk
+        - from: kubectl-plugins-*/kubectl-bulk
           to: .
-        - from: kubectl-plugins/LICENSE
+        - from: kubectl-plugins-*/LICENSE
           to: .
       bin: ./kubectl-bulk
   shortDescription: Do bulk actions on Kubernetes resources.

@@ -101,6 +101,7 @@ Name | Description | Stars
 [tap](https://soluble-ai.github.io/kubetap/) | Interactively proxy Kubernetes Services with ease | ![GitHub stars](https://img.shields.io/github/stars/soluble-ai/kubetap.svg?label=stars&logo=github)
 [tmux-exec](https://github.com/predatorray/kubectl-tmux-exec) | An exec multiplexer using Tmux | ![GitHub stars](https://img.shields.io/github/stars/predatorray/kubectl-tmux-exec.svg?label=stars&logo=github)
 [topology](https://github.com/bmcustodio/kubectl-topology) | Explore region topology for nodes or pods | ![GitHub stars](https://img.shields.io/github/stars/bmcustodio/kubectl-topology.svg?label=stars&logo=github)
+[trace](https://github.com/iovisor/kubectl-trace) | Schedule bpftrace programs on your kubernetes cluster using the kubectl | ![GitHub stars](https://img.shields.io/github/stars/iovisor/kubectl-trace.svg?label=stars&logo=github)
 [tree](https://github.com/ahmetb/kubectl-tree) | Show a tree of object hierarchies through ownerReferences | ![GitHub stars](https://img.shields.io/github/stars/ahmetb/kubectl-tree.svg?label=stars&logo=github)
 [unused-volumes](https://github.com/dirathea/kubectl-unused-volumes) | List unused PVCs | ![GitHub stars](https://img.shields.io/github/stars/dirathea/kubectl-unused-volumes.svg?label=stars&logo=github)
 [view-allocations](https://github.com/davidB/kubectl-view-allocations) | List allocations per resources, nodes, pods. | ![GitHub stars](https://img.shields.io/github/stars/davidB/kubectl-view-allocations.svg?label=stars&logo=github)

@@ -9,15 +9,11 @@ spec:
   description: |
     Start a root shell in the node's host OS running.
     You need to be able to start privileged containers for that.
+
+    Usage:
+      $ kubectl node-shell <node>
   caveats: |
-        Usage:
-
-          $ kubectl node-shell <node>
-
-        Note:
-
-          You need to be allowed to start privileged pods in the cluster
-
+      You need to be allowed to start privileged pods in the cluster
   platforms:
   - selector:
       matchExpressions:

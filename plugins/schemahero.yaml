@@ -1,0 +1,61 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: schemahero
+spec:
+  version: v0.9.0
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/schemahero/schemahero/releases/download/v0.9.0/kubectl-schemahero_linux_amd64.tar.gz
+    sha256: 7c98c3696ade4151c4038d0a8b521d94ebaf4be2ee8ff528135ece42781a36ca
+    files:
+    - from: kubectl-schemahero
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-schemahero
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/schemahero/schemahero/releases/download/v0.9.0/kubectl-schemahero_darwin_amd64.tar.gz
+    sha256: 1ff1613dfcaf634eee6ccac4a671f61e4d3e5cd96950828b9c82721f2c50ab80
+    files:
+    - from: kubectl-schemahero
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-schemahero
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/schemahero/schemahero/releases/download/v0.9.0/kubectl-schemahero_windows_amd64.tar.gz
+    sha256: 7c5e5b039d0858fae772f6fad935abc1b3c1724f30d991df2ddd8cdc5a0ceea6
+    files:
+    - from: kubectl-schemahero.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-schemahero.exe
+  shortDescription: Declarative database schema migrations via YAML
+  homepage: https://schemahero.io
+  caveats: |
+    SchemaHero requires an in-cluster operator. To install the operator run:
+
+      $ kubectl schemahero install
+  description: |
+    SchemaHero is a database schema migration tool that converts a schema
+    definition into migration scripts to be applied to a database engine
+    (with current support for Postgres, Mysql and CockroachDB).
+
+    SchemaHero allows developers to define a database table schema as a
+    declarative Kubernetes object and then apply the definition to the
+    cluster. The SchemaHero operator will then query the current database
+    schema and generate (and optionally apply) the necessary SQL
+    statements to update the database to the desired schema.
+
+    To learn more, try the tutorial at https://schemahero.io/tutorial/

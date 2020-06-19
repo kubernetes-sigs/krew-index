@@ -21,12 +21,12 @@ spec:
 
     $ kubectl who-can delete pods --namespace foo
     $ kubectl who-can delete nodes
-  caveats: |
-    The plugin requires the rights to list (Cluster)Role and (Cluster)RoleBindings.
 
     For usage or examples, run:
 
     $ kubectl who-can -h
+  caveats: |
+    The plugin requires the rights to list (Cluster)Role and (Cluster)RoleBindings.
   platforms:
     - selector:
         matchLabels:

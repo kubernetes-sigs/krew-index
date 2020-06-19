@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: support-bundle
 spec:
-  version: v0.9.34
+  version: v0.9.38
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.34/support-bundle_linux_amd64.tar.gz
-    sha256: a03cb455a4e01bcba783dc381bab4f8a8806a10aeeb19fab4b904044d5728a68
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.38/support-bundle_linux_amd64.tar.gz
+    sha256: a7b3d65b689ef218e4e19b3e6e6ab1c2146155938b5d13983ea79cf3f9b452fa
     files:
     - from: support-bundle
       to: .
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.34/support-bundle_darwin_amd64.tar.gz
-    sha256: 8e6389a4ace8c25527209c39ccbf5d009b63eb962a1a0e044272aef52277df42
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.38/support-bundle_darwin_amd64.tar.gz
+    sha256: 62376f6f7d05a8f4f111defab592baedea405e1454cdb12fabdf909d00b6471c
     files:
     - from: support-bundle
       to: .
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.34/support-bundle.exe_windows_amd64.zip
-    sha256: 07093257f9188f8ae5b6f1b836e9bb3612c4a3f635e466e18d3aabf16cf5b09c
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.38/support-bundle_windows_amd64.zip
+    sha256: 30f3e9226b5eb1462ba661ca8ea36ba76ea6c83060c4a600fecabcf9ce0779b2
     files:
     - from: support-bundle.exe
       to: .
@@ -43,7 +43,20 @@ spec:
     bin: support-bundle.exe
   shortDescription: Creates support bundles for off-cluster analysis
   homepage: https://github.com/replicatedhq/troubleshoot
-  caveats: |
+  description: |
+    This plugin collects information about the cluster, and automatically
+    redacts sensitive data from being collected. This can optionally include
+    application-specific data.  The plugin writes the collected files into a
+    single archive named support-bundle.tar.gz. This archive can be manually
+    inspected or uploaded to https://vendor.replicated.com for automated
+    analysis.
+
+    Application developers can create and host a Collector manifest that
+    defines information to be collected.
+
+    For information on creating a Collector manifest, view the documentation
+    at https://help.replicated.com/docs/troubleshoot/kubernetes/collectors/defining-collectors/
+
     Usage:
       $ kubectl support-bundle <uri>
 
@@ -62,17 +75,3 @@ spec:
 
       For application developers writing collectors and analyzers:
       https://help.replicated.com/docs/troubleshoot/kubernetes/collectors/defining-collectors/
-
-  description: |
-    This plugin collects information about the cluster, and automatically
-    redacts sensitive data from being collected. This can optionally include
-    application-specific data.  The plugin writes the collected files into a
-    single archive named support-bundle.tar.gz. This archive can be manually
-    inspected or uploaded to https://vendor.replicated.com for automated
-    analysis.
-
-    Application developers can create and host a Collector manifest that
-    defines information to be collected.
-
-    For information on creating a Collector manifest, view the documentation
-    at https://help.replicated.com/docs/troubleshoot/kubernetes/collectors/defining-collectors/

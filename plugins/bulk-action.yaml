@@ -19,16 +19,13 @@ spec:
           to: .
       bin: ./kubectl-bulk
   shortDescription: Do bulk actions on Kubernetes resources.
-  caveats: |
+  description: |
+    This plugin allows you to do bulk actions on Kubernetes resources.
+
     Usage:
       kubectl bulk-action <get resourceTypes> (get|list|create|update|delete|remove|rollout|scale) <command parameters>
 
     Help:
       kubectl bulk-action help        
-
-    This plugin needs the following programs:
-    * grep
-    * sed
-  description: |
-    This plugin allows you to do bulk actions on Kubernetes resources.
+ 
   homepage: https://github.com/emreodabas/kubectl-plugins#kubectl-bulk

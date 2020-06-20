@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: fzf
+spec:
+  platforms:
+  - uri: "https://github.com/d-kuro/kubectl-fzf/releases/download/v0.1.0/kubectl-fzf_0.1.0_darwin_amd64.tar.gz"
+    sha256: "842125904ba9232c063f9503df1370e675e039ab276d0e9842b3cefbc21bdf05"
+    bin: kubectl-fzf
+    files:
+    - from: kubectl-fzf
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: "https://github.com/d-kuro/kubectl-fzf/releases/download/v0.1.0/kubectl-fzf_0.1.0_linux_amd64.tar.gz"
+    sha256: "8cf6a96ffb9427fd1923b32ae72e2242dc0e0244b2ae1503dbdc32c8"
+    bin: kubectl-fzf
+    files:
+    - from: kubectl-fzf
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: "https://github.com/d-kuro/kubectl-fzf/releases/download/v0.1.0/kubectl-fzf_0.1.0_windows_amd64.tar.gz"
+    sha256: "a4e3adc710c99a2a325e944ac2850ff72bb6e47a5f2b4bba89d83f4ae07e0b6d"
+    bin: kubectl-fzf.exe
+    files:
+    - from: kubectl-fzf.exe
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  version: "v0.1.0"
+  shortDescription: Fuzzy Finder Pod selector plugin. Currently "kubectl logs" and "kubectl exec" are supported.
+  description: |
+    Kubectl fzf is a kubectl plugin providing a Fuzzy Finder Pod selector.
+    Uses go-fuzzyfinder, so there is no dependency on fzf binaries or anything else.
+    Currently "kubectl logs" and "kubectl exec" are supported.
+  homepage: https://github.com/d-kuro/kubectl-fzf

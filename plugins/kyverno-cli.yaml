@@ -1,0 +1,43 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kyverno-cli
+spec:
+  version: v1.1.6
+  homepage: https://github.com/nirmata/kyverno
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/nirmata/kyverno/releases/download/v1.1.6/kyverno-cli_v1.1.6_linux_x86_64.tar.gz
+    sha256: 61560c57ec5eb7f7c9da0d3b8331d90c02b593f8a2a86db86714c7e34f8eb91d
+    files:
+    - from: kyverno-cli
+      to: .
+    bin: kyverno-cli
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/nirmata/kyverno/releases/download/v1.1.6/kyverno-cli_v1.1.6_darwin_x86_64.tar.gz
+    sha256: b42da77ac933ce5fa565f963ea9ffc6e00228628dc3bd0bf01deafbfbd4e9d35
+    files:
+    - from: kyverno-cli
+      to: .
+    bin: kyverno-cli
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/nirmata/kyverno/releases/download/v1.1.6/kyverno-cli_v1.1.6_windows_x86_64.zip
+    sha256: 8fa665a256295bc090471e2b3b2545c19d34dcc74a744ff81a8a05f4a9bd4066
+    files:
+    - from: kyverno-cli.exe
+      to: .
+    bin: kyverno-cli.exe
+  shortDescription: Toolkit for testing kyverno policy
+  description: |+2
+    The Kyverno Command Line Interface (CLI) is designed to validate policies and test the behavior of applying policies to resources before adding the policy to a cluster. It can be used as a kubectl plugin and as a standalone CLI.
+  caveats: |
+    The plugin requires access to create Policy and CustomResources.

@@ -3,19 +3,19 @@ kind: Plugin
 metadata:
   name: starboard
 spec:
-  version: "v0.2.2"
+  version: "v0.2.4"
   homepage: https://github.com/aquasecurity/starboard
   shortDescription: >-
     Toolkit for finding risks in kubernetes resources
   description: |+2
     Starboard enables results from vulnerability scanners, workload auditors,
     and configuration benchmark tests to be incorporated into Kubernetes CRDs
-    (Custom Resource Definitions) and from there, accessed through the 
-    Kubernetes API. 
-    
+    (Custom Resource Definitions) and from there, accessed through the
+    Kubernetes API.
+
     Users familiar with kubectl or with a dashboard tool like Octant can find
     security risk information at their fingertips.
-    
+
   caveats: |
     The plugin requires access to create Jobs and CustomResources.
   platforms:
@@ -23,8 +23,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/aquasecurity/starboard/releases/download/v0.2.2/starboard_darwin_x86_64.tar.gz
-      sha256: "ccbf5fa00685142cdf7fcbfedd56f3d798b8c868fc4bf488d33a49086b3b04e0"
+      uri: https://github.com/aquasecurity/starboard/releases/download/v0.2.4/starboard_darwin_x86_64.tar.gz
+      sha256: 25b0a443d180a68c207dc8bc2d9f23db3b0021f98b1102ddadf702a5dfdad706
       files:
         - from: starboard
           to: .
@@ -35,8 +35,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/aquasecurity/starboard/releases/download/v0.2.2/starboard_linux_x86_64.tar.gz
-      sha256: "db900e0e1711c0e17ef84cc73bd4892ec4da4f9c12a474f473dc6d9e38f4f388"
+      uri: https://github.com/aquasecurity/starboard/releases/download/v0.2.4/starboard_linux_x86_64.tar.gz
+      sha256: 01f6bb4adecf285eb6c6e0061696261d8baab2714f9cbbd7dd7ade4aeeea56b9
       files:
         - from: starboard
           to: .
@@ -47,8 +47,8 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/aquasecurity/starboard/releases/download/v0.2.2/starboard_windows_x86_64.zip
-      sha256: "722c9f44f17749d65da936174e41cff8fa076bf457e83a86b757bf6a3cf77fe3"
+      uri: https://github.com/aquasecurity/starboard/releases/download/v0.2.4/starboard_windows_x86_64.zip
+      sha256: 78aff12d00237d093d7114cebd6895ce568b95631440768ae4b6311d8a5637cf
       files:
         - from: starboard.exe
           to: .

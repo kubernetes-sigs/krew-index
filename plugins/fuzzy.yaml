@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: fuzzy
+spec:
+  platforms:
+  - uri: "https://github.com/d-kuro/kubectl-fuzzy/releases/download/v1.0.1/kubectl-fuzzy_1.0.1_darwin_amd64.tar.gz"
+    sha256: "22d882ea919f811c81e72a8bec53110fb9598f580a6e2bb1f82e2290ba06009c"
+    bin: kubectl-fuzzy
+    files:
+    - from: kubectl-fuzzy
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: "https://github.com/d-kuro/kubectl-fuzzy/releases/download/v1.0.1/kubectl-fuzzy_1.0.1_linux_amd64.tar.gz"
+    sha256: "3b05ace0adfe071b5cb8c8b5af4760412c361170d6de9c3faa087b69a5aa2517"
+    bin: kubectl-fuzzy
+    files:
+    - from: kubectl-fuzzy
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: "https://github.com/d-kuro/kubectl-fuzzy/releases/download/v1.0.1/kubectl-fuzzy_1.0.1_windows_amd64.tar.gz"
+    sha256: "c141dfb18754d125b455c18e9dea95a1c14db45b34508e5c7ad1b3a85d84135a"
+    bin: kubectl-fuzzy.exe
+    files:
+    - from: kubectl-fuzzy.exe
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  version: "v1.0.1"
+  shortDescription: Fuzzy Finder Pod selector plugin. Currently "kubectl logs" and "kubectl exec" are supported.
+  description: |
+    Kubectl fuzzy is a kubectl plugin providing a Fuzzy Finder Pod selector.
+    Uses go-fuzzyfinder, so there is no dependency on fzf binaries or anything else.
+    Currently "kubectl logs" and "kubectl exec" are supported.
+  homepage: https://github.com/d-kuro/kubectl-fuzzy

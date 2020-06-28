@@ -1,0 +1,54 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: oulogin
+spec:
+  version: "v0.0.3"
+  homepage: https://github.com/TremoloSecurity/kubectl-login
+  shortDescription: "Login to a cluster via OpenUnison"
+  description: |
+    Launches a browser to login to the cluster via OpenUnison.  OpenUnison's 
+    certificate MUST be trusted by the local system.  
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+    uri: https://nexus.tremolo.io/repository/oulogin/oulogin-0.0.3-macos.zip
+    sha256: e8ba317da82e86a25f3e43b62345bcb6469ecd71c0a5f5531b2af8347a5af9b9
+    files:
+    - from: "oulogin"
+      to: "oulogin"
+    - from: "LICENSE"
+      to: "LICENSE"
+    bin: oulogin
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - linux
+    uri: https://nexus.tremolo.io/repository/oulogin/oulogin-0.0.3-linux.zip
+    sha256: 65a1b5715274dc4edff8902aeff8510c1e58a80378e8bacaf4f787608a86d674
+    files:
+    - from: "oulogin"
+      to: "oulogin"
+    - from: "LICENSE"
+      to: "LICENSE"
+    bin: oulogin
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - windows
+    uri: https://nexus.tremolo.io/repository/oulogin/oulogin-0.0.3-win.zip
+    sha256: 0662b02de4a37a672bebdbc32fe19011fb7cd702057f8377333211a3f8e2f49d
+    files:
+    - from: "oulogin.exe"
+      to: "oulogin.exe"
+    - from: "LICENSE"
+      to: "LICENSE"
+    bin: oulogin.exe

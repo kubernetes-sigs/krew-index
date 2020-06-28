@@ -3,13 +3,13 @@ kind: Plugin
 metadata:
   name: custom-cols
 spec:
-  version: "v0.0.4"
+  version: "v0.0.5"
   platforms:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-    uri: https://github.com/webofmars/kubectl-custom-cols/archive/v0.0.4.tar.gz
-    sha256: "911bd824020802f586dab65da095611962a9cf1e6ca7be8db1c0dd5a1f660cea"
+    uri: https://github.com/webofmars/kubectl-custom-cols/archive/v0.0.5.tar.gz
+    sha256: "ea967d0c0d73e7d26a222b8632f16a06dec9d6c8a2680b968b6fb00ca1139284"
     files:
     - from: "./kubectl-custom-cols-*/kubectl-custom-cols"
       to: .
@@ -29,8 +29,9 @@ spec:
     It's time saving to retrieve some often needed infos like
     image names, containers names, versions, labels, etc...
     It currently supports the following templates (but PRs are welcome upstream):
-    - annotations
     - images
+    - resources
     - limits
-    - qos-class
     - requests
+    - annotations
+    - qos-class

@@ -16,9 +16,6 @@ spec:
         arch: amd64
     uri: https://github.com/giantswarm/kubectl-gs/releases/download/v0.5.0/kubectl-gs_0.5.0_darwin_amd64.tar.gz
     sha256: "40ea6f92f70482e74688798d89af472d2c4c5b11a444c271aa5bf4d1cd322f33"
-    files:
-    - from: kubectl-gs
-      to: .
     bin: ./kubectl-gs
   - selector:
       matchLabels:
@@ -26,9 +23,6 @@ spec:
         arch: "386"
     uri: https://github.com/giantswarm/kubectl-gs/releases/download/v0.5.0/kubectl-gs_0.5.0_darwin_386.tar.gz
     sha256: "5dcb8ff00a317c6dbc11464fc66a273e1edb7f94d7edc5290f7e9e157023e071"
-    files:
-    - from: kubectl-gs
-      to: .
     bin: ./kubectl-gs
   - selector:
       matchLabels:
@@ -36,9 +30,6 @@ spec:
         arch: amd64
     uri: https://github.com/giantswarm/kubectl-gs/releases/download/v0.5.0/kubectl-gs_0.5.0_linux_amd64.tar.gz
     sha256: "eb0d28e84782fe12128a599c4dd86c1cd3c5d83254d928085cff5510b6bf5dde"
-    files:
-    - from: kubectl-gs
-      to: .
     bin: ./kubectl-gs
   - selector:
       matchLabels:
@@ -46,7 +37,4 @@ spec:
         arch: "386"
     uri: https://github.com/giantswarm/kubectl-gs/releases/download/v0.5.0/kubectl-gs_0.5.0_linux_386.tar.gz
     sha256: "a26b77677be18e5fcfbf373288e1a793faf375c34cee7287763ce29a0ed7b186"
-    files:
-    - from: kubectl-gs
-      to: .
     bin: ./kubectl-gs

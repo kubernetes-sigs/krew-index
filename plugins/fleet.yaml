@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: fleet
 spec:
-  version: v0.1.7
+  version: v0.1.8
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/kubectl-plus/kcf/releases/download/v0.1.7/fleet_linux_amd64.tar.gz
-    sha256: 4adab6c4fd6238231932a326ec73c998f6c7069699b465a00f9144a8540ecc8e
+    uri: https://github.com/kubectl-plus/kcf/releases/download/v0.1.8/fleet_linux_amd64.tar.gz
+    sha256: d5a0caf3aec438b3d719d2b7cd9b089f000e3f3c75c75be89c5345aab23aeb40
     files:
     - from: "./fleet"
       to: "."
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/kubectl-plus/kcf/releases/download/v0.1.7/fleet_darwin_amd64.tar.gz
-    sha256: f78eda6260001e3f0963ab3694a0354c64b45946f5d09c4db5a7ff799be6ec85
+    uri: https://github.com/kubectl-plus/kcf/releases/download/v0.1.8/fleet_darwin_amd64.tar.gz
+    sha256: a5a634d1f1175e87e7325d09149c85e4ee2eaef3d40e3b1ff98d999aff32c978
     files:
     - from: "./fleet"
       to: "."
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/kubectl-plus/kcf/releases/download/v0.1.7/fleet_windows_amd64.zip
-    sha256: d8d0835eec7e6e6c74d58598a74ab7c647670da5f91f8f010751c3e3e278d277
+    uri: https://github.com/kubectl-plus/kcf/releases/download/v0.1.8/fleet_windows_amd64.zip
+    sha256: 5ff4bfdf8081b782b8dfc6f65627dd18a8ceddd47e7dc9c2141ca5176cca6f59
     files:
     - from: "/fleet.exe"
       to: "."
@@ -43,14 +43,17 @@ spec:
     bin: "fleet.exe"
   shortDescription: Shows config and resources of a fleet of clusters
   homepage: https://github.com/kubectl-plus/kcf
+  caveats: |
+    Usage:
+      $ kubectl fleet
+
+    For additional options:
+      $ kubectl fleet --help
+      or https://github.com/kubectl-plus/kcf/blob/v0.1.4/doc/USAGE.md
+
   description: |
     Allows to get an overview and details on a fleet of Kubernetes clusters.
     The top-level command lists all active clusters found in the kubeconfig provided.
     For each cluster, configuration info such as the control plane version or 
     API server endpoint are displayed, as well as select stats, for example, 
     the number of worker nodes or namespaces found in the cluster.
-
-    For additional options:
-      $ kubectl fleet --help
-      or https://github.com/kubectl-plus/kcf/blob/v0.1.4/doc/USAGE.md
-

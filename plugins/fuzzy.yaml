@@ -41,10 +41,9 @@ spec:
         os: windows
         arch: amd64
   version: "v1.2.0"
-  shortDescription: Fuzzy Finder Kubernetes object selector plugin.
+  shortDescription: Fuzzy and partial string search for kubectl
   description: |
-    Kubectl fuzzy is providing a Fuzzy Finder selector.
-    Provides interactive object selection and preview for commands "kubectl describe" etc.
-    And supports fuzzy string matching, so you can find the Kubernetes object
-    you want by typing a few characters in a row.
+    This tool uses fzf(1)-like fuzzy-finder to do partial or fuzzy search of Kubernetes resources.
+    Instead of specifying full resource names to kubectl commands,
+    you can choose them from an interactive list that you can filter by typing a few characters.
   homepage: https://github.com/d-kuro/kubectl-fuzzy

@@ -15,6 +15,8 @@ spec:
     files:
     - from: kyverno
       to: .
+    - from: LICENSE
+      to: .
     bin: kyverno
   - selector:
       matchLabels:
@@ -24,6 +26,8 @@ spec:
     sha256: b42da77ac933ce5fa565f963ea9ffc6e00228628dc3bd0bf01deafbfbd4e9d35
     files:
     - from: kyverno
+      to: .
+    - from: LICENSE
       to: .
     bin: kyverno
   - selector:
@@ -35,9 +39,10 @@ spec:
     files:
     - from: kyverno.exe
       to: .
+    - from: LICENSE
+      to: .
     bin: kyverno.exe
-  shortDescription: Toolkit for testing kyverno policy
+  shortDescription: Kyverno is a policy engine for kubernetes 
   description: |+2
-    The Kyverno Command Line Interface (CLI) is designed to validate policies and test the behavior of applying policies to resources before adding the policy to a cluster. It can be used as a kubectl plugin and as a standalone CLI.
-  caveats: |
-    The plugin requires access to create Policy and CustomResources
+     Kyverno is a policy engine that provides simplified validation, mutation, and generation of resource configurations. Kyverno cli can be used to test policies and apply policies to resources files
+

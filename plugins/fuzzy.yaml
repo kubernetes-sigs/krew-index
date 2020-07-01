@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: fuzzy
+spec:
+  platforms:
+  - uri: "https://github.com/d-kuro/kubectl-fuzzy/releases/download/v1.2.0/kubectl-fuzzy_1.2.0_darwin_amd64.tar.gz"
+    sha256: "59f176e9fc76d6a36396b4ea09116669c303da8c291fcc43d4b5dd6f3391a2ab"
+    bin: kubectl-fuzzy
+    files:
+    - from: kubectl-fuzzy
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: "https://github.com/d-kuro/kubectl-fuzzy/releases/download/v1.2.0/kubectl-fuzzy_1.2.0_linux_amd64.tar.gz"
+    sha256: "321f209dc348d85674b637b8694cf0ac0ab865c56937b41ca7bbe1702c356f9e"
+    bin: kubectl-fuzzy
+    files:
+    - from: kubectl-fuzzy
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: "https://github.com/d-kuro/kubectl-fuzzy/releases/download/v1.2.0/kubectl-fuzzy_1.2.0_windows_amd64.tar.gz"
+    sha256: "9ffda7c43175736e21285d9b11ba70cd87e6037cae71e4e747851f346f6f01da"
+    bin: kubectl-fuzzy.exe
+    files:
+    - from: kubectl-fuzzy.exe
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  version: "v1.2.0"
+  shortDescription: Fuzzy and partial string search for kubectl
+  description: |
+    This tool uses fzf(1)-like fuzzy-finder to do partial or fuzzy search of Kubernetes resources.
+    Instead of specifying full resource names to kubectl commands,
+    you can choose them from an interactive list that you can filter by typing a few characters.
+  homepage: https://github.com/d-kuro/kubectl-fuzzy

@@ -1,0 +1,55 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: np-viewer
+spec:
+  version: "v1.0.3"
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/runoncloud/kubectl-np-viewer/releases/download/v1.0.3/kubectl-np-viewer_linux_amd64.tar.gz
+      sha256: "c727b092d6d2a48a447828a6ce9cecc03a32eb68073d1408a8d31f29858393dd"
+      files:
+        - from: "./kubectl-np-viewer"
+          to: "np-viewer"
+        - from: LICENSE
+          to: "."
+      bin: "np-viewer"
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/runoncloud/kubectl-np-viewer/releases/download/v1.0.3/kubectl-np-viewer_darwin_amd64.tar.gz
+      sha256: "fa2d7c95065a9dac56e9d493ae3693e6b6b30208433bb840b20392499d8b050e"
+      files:
+        - from: "./kubectl-np-viewer"
+          to: "np-viewer"
+        - from: LICENSE
+          to: "."
+      bin: "np-viewer"
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/runoncloud/kubectl-np-viewer/releases/download/v1.0.3/kubectl-np-viewer_windows_amd64.zip
+      sha256: "ebfee5ff65296f0ace96eb9af37e2016277e05c7dc2e6979b65f0b9ff730534e"
+      files:
+        - from: "/kubectl-np-viewer.exe"
+          to: "np-viewer.exe"
+        - from: LICENSE
+          to: "."
+      bin: "np-viewer.exe"
+  shortDescription: A kubectl plugin to visualize network policies rules
+  homepage: https://github.com/runoncloud/kubectl-np-viewer
+  caveats: |
+    Usage:
+      $ kubectl np-viewer
+
+    For additional options:
+      $ kubectl np-viewer --help
+      or https://github.com/runoncloud/kubectl-np-viewer/blob/master/doc/USAGE.md
+
+  description: |
+    A visualization tool for Kubernetes clusters administrator to make network policies rules easily understandable

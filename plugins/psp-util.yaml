@@ -1,0 +1,27 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: psp-util
+spec:
+  description: |
+    A Kubectl plugin to manage Pod Security Policy(PSP) and the related RBAC Resources.
+    Attach/Detach PSP to/from RBACs(Group, User) or ServiceAccounts and
+    view the relations which PSP is effected to the Subjects in cluster.
+  homepage: https://github.com/jlandowner/psp-util
+  platforms:
+  - bin: psp-util
+    selector:
+      matchLabels:
+        arch: amd64
+        os: darwin
+    sha256: 703eb95b4e9643f0edae0420aaf8dbb23ffd4227c6cf62a036195583340ccadf
+    uri: https://github.com/jlandowner/psp-util/releases/download/v1.0.0/psp-util_v1.0.0_darwin_amd64.tar.gz
+  - bin: psp-util
+    selector:
+      matchLabels:
+        arch: amd64
+        os: linux
+    sha256: d722ab3dc4290509844fce3f6acdf353a2cff87a3a5d53a94715bac5e38e9e54
+    uri: https://github.com/jlandowner/psp-util/releases/download/v1.0.0/psp-util_v1.0.0_linux_amd64.tar.gz
+  shortDescription: Manage Pod Security Policy(PSP) and the related RBACs
+  version: v1.0.0

@@ -9,25 +9,6 @@ spec:
   description: |
     A kubectl plugin that is easy-to-use, flexible, and interactive
     You will have the ability to roam around the Kubernetes world with a blazing fast selection menu
-  caveats: |
-    Usage:
-      # Print an interactive list of namespaces and describe the chosen one
-      kubectl interactive describe namespaces
-
-      # Print an interactive list of pods filtered by --like <filter> and describe the chosen one
-      kubectl interactive describe pods --like nginx
-
-      # Print an interactive list of configmap filtered by -n <namespace> and edit the chosen one
-      kubectl interactive edit configmap -n kube-system
-
-      # Print an interactive list of pods filtered by --like <filter> and -f <exec extra flags>  and exec the chosen one
-      kubectl interactive exec --like nginx -f "it bash"
-
-      # Print an interactive list of pods filtered by --like <filter> and -f <exec extra flags>  and show the chosen pod logs
-      kubectl interactive logs --like nginx -f "-f"
-
-      # Print an interactive list of deployments and delete the chosen one
-      kubectl interactive delete deployment
   platforms:
   - selector:
       matchLabels:

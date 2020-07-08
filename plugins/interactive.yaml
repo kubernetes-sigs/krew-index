@@ -5,10 +5,10 @@ metadata:
 spec:
   version: v1.0.3
   homepage: https://github.com/similarweb/kubectl-interactive
-  shortDescription: A kubectl plugin that provides interactive, easy-to-use and flexible interface
+  shortDescription: A kubectl plugin that provides an interactive wrapper on top of kubectl.
   description: |
-    A kubectl plugin that is easy-to-use, flexible, and interactive
-    You will have the ability to roam around the Kubernetes world with a blazing fast selection menu
+    A kubectl plugin that provides an interactive wrapper on top of kubectl.
+    This plugin is similar to a proxy in front of kubectl that provides an easier method to use and explore kubernetes objects with confidence.
   platforms:
   - selector:
       matchLabels:
@@ -16,9 +16,6 @@ spec:
         arch: amd64
     uri: https://github.com/similarweb/kubectl-interactive/releases/download/v1.0.3/kubectl-interactive_1.0.3_Darwin_x86_64.tar.gz
     sha256: d11624612a8924fa61b6e14e7d1d48731e283bbf85e2105dbc56ff07b44441a0
-    files:
-    - from: "*"
-      to: "."
     bin: kubectl-interactive
   - selector:
       matchLabels:
@@ -26,9 +23,6 @@ spec:
         arch: amd64
     uri: https://github.com/similarweb/kubectl-interactive/releases/download/v1.0.3/kubectl-interactive_1.0.3_Linux_x86_64.tar.gz
     sha256: 4f3c7482c560d923c39ef4e79b57cca0366e5970104ac28a7352876c94cacd4a
-    files:
-    - from: "*"
-      to: "."
     bin: kubectl-interactive
   - selector:
       matchLabels:
@@ -36,7 +30,6 @@ spec:
         arch: amd64
     uri: https://github.com/similarweb/kubectl-interactive/releases/download/v1.0.3/kubectl-interactive_1.0.3_Windows_x86_64.tar.gz
     sha256: b466ec910933d646e120ca65884f2413fe6fd1289a88408735003927ff2080cc
-    files:
-    - from: "*"
-      to: "."
     bin: kubectl-interactive.exe
+
+    

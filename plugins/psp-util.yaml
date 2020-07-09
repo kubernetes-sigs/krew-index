@@ -14,14 +14,21 @@ spec:
       matchLabels:
         arch: amd64
         os: darwin
-    sha256: 703eb95b4e9643f0edae0420aaf8dbb23ffd4227c6cf62a036195583340ccadf
-    uri: https://github.com/jlandowner/psp-util/releases/download/v1.0.0/psp-util_v1.0.0_darwin_amd64.tar.gz
+    uri: https://github.com/jlandowner/psp-util/releases/download/v1.0.1/psp-util_v1.0.1_darwin_amd64.tar.gz
+    sha256: cd66a83af5f644262ae360f17a7ef6474670ad5fe60fb878afbc5574c50e1bf8
   - bin: psp-util
     selector:
       matchLabels:
         arch: amd64
         os: linux
-    sha256: d722ab3dc4290509844fce3f6acdf353a2cff87a3a5d53a94715bac5e38e9e54
-    uri: https://github.com/jlandowner/psp-util/releases/download/v1.0.0/psp-util_v1.0.0_linux_amd64.tar.gz
+    uri: https://github.com/jlandowner/psp-util/releases/download/v1.0.1/psp-util_v1.0.1_linux_amd64.tar.gz
+    sha256: 7aed9b6b313fdf14b594bc3313016b06abfbb24490422450a124062b334f40cf
+  - bin: psp-util.exe
+    selector:
+      matchLabels:
+        arch: amd64
+        os: windows
+    uri: https://github.com/jlandowner/psp-util/releases/download/v1.0.1/psp-util_v1.0.1_windows_amd64.tar.gz
+    sha256: 3db69c4e814738f039f774d92b934d047c8b678306ae92de20b99f7c02c112eb
   shortDescription: Manage Pod Security Policy(PSP) and the related RBACs
-  version: v1.0.0
+  version: v1.0.1

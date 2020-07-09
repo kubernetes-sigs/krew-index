@@ -3,32 +3,30 @@ kind: Plugin
 metadata:
   name: score
 spec:
-  version: "v1.7.0"
+  version: v1.7.2
   homepage: https://github.com/zegl/kube-score
   platforms:
-  - selector:
-      matchLabels:
-        os: darwin
-    uri: https://github.com/zegl/kube-score/releases/download/v1.7.0/kube-score_1.7.0_darwin_amd64.tar.gz
-    sha256: "bd70861e5ca05c436c2fea3db3f14108b907030261b312e771f8b55959e38a48"
-    files:
-    - from: "kube-score"
-      to: .
-    - from: "LICENSE"
-      to: .
-    bin: kube-score
-
-  - selector:
-      matchLabels:
-        os: linux
-    uri: https://github.com/zegl/kube-score/releases/download/v1.7.0/kube-score_1.7.0_linux_amd64.tar.gz
-    sha256: "0cbb369448996c90e3e7d690d6e3d4db434a5a6fc3122a740549c6a9b8c5ce26"
-    files:
-    - from: "kube-score"
-      to: .
-    - from: "LICENSE"
-      to: .
-    bin: kube-score
-
+    - selector:
+        matchLabels:
+          os: darwin
+      uri: https://github.com/zegl/kube-score/releases/download/v1.7.2/kube-score_1.7.2_darwin_amd64.tar.gz
+      sha256: 98269992d036cb1ac6d41c23ffbd393ce7bb9e5ea94236c4168120077cc1e71a
+      files:
+        - from: "kube-score"
+          to: .
+        - from: "LICENSE"
+          to: .
+      bin: kube-score
+    - selector:
+        matchLabels:
+          os: linux
+      uri: https://github.com/zegl/kube-score/releases/download/v1.7.2/kube-score_1.7.2_linux_amd64.tar.gz
+      sha256: c383745250ae267ec92d8b92fda7791a108d0ee64a5c563f77f8707149e45c11
+      files:
+        - from: "kube-score"
+          to: .
+        - from: "LICENSE"
+          to: .
+      bin: kube-score
   shortDescription: Kubernetes static code analysis.
   description: Kubernetes object analysis with recommendations for improved reliability and security.

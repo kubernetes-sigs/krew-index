@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: df-pv
 spec:
-  version: v0.2.2
+  version: v0.2.3
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/yashbhutwala/kubectl-df-pv/releases/download/v0.2.2/kubectl-df-pv_v0.2.2_linux_amd64.tar.gz
-    sha256: cd41f299ef06387d57edf0d700b5f5f8ca1db527c0fb75d1e42cad8bee6c305a
+    uri: https://github.com/yashbhutwala/kubectl-df-pv/releases/download/v0.2.3/kubectl-df-pv_v0.2.3_linux_amd64.tar.gz
+    sha256: 137a743e1edf277f46bd36d4f831c977d0f2ab1d1793c38ebc3d7a041f2e7eb7
     files:
     - from: "df-pv"
       to: "."
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/yashbhutwala/kubectl-df-pv/releases/download/v0.2.2/kubectl-df-pv_v0.2.2_darwin_amd64.tar.gz
-    sha256: 491ed54d8abb8e5dd533744c5d39a8dff89a60109561c597e455dd63eb1f0695
+    uri: https://github.com/yashbhutwala/kubectl-df-pv/releases/download/v0.2.3/kubectl-df-pv_v0.2.3_darwin_amd64.tar.gz
+    sha256: 4976aff095385b1cf7aab07211449d4eba187ea851333795c7b2a1861c37c1a1
     files:
     - from: "df-pv"
       to: "."
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/yashbhutwala/kubectl-df-pv/releases/download/v0.2.2/kubectl-df-pv_v0.2.2_windows_amd64.zip
-    sha256: 3d3d3181d844c788e3d8f85150a6c1f20790f755794babbc49deca227c2f64ee
+    uri: https://github.com/yashbhutwala/kubectl-df-pv/releases/download/v0.2.3/kubectl-df-pv_v0.2.3_windows_amd64.zip
+    sha256: 92faa6cc18caebc3b99b1c00d717429ee2098356a862b84ba07eaacc437dffc7
     files:
     - from: "df-pv.exe"
       to: "."

@@ -1,0 +1,32 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: chonk
+spec:
+  version: v0.1.1
+  homepage: https://github.com/nickgerace/kubechonk
+  shortDescription: Find the chonkiest nodes with this kubectl plugin.
+  description: |
+    This plugin returns all the node(s) with the highest number of CPU cores, and all the node(s) with the largest amount of memory.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/nickgerace/kubechonk/releases/download/v0.1.1/kubechonk-v0.1.1-linux-amd64.tar.gz
+    sha256: def8abd34130a797869dd6c2b3ac2a4b7af8901a1a36d288d1efa9fc33402b6e
+    bin: kubectl-chonk
+  - selector:	
+      matchLabels:	
+        os: darwin	
+        arch: amd64	
+    uri: https://github.com/nickgerace/kubechonk/releases/download/v0.1.1/kubechonk-v0.1.1-darwin-amd64.tar.gz
+    sha256: ea981378e1e02c0df71a095cf03f50394b7497fd8c6a3ed5fa245bc0ae85edc5
+    bin: kubectl-chonk
+  - selector:	
+      matchLabels:	
+        os: windows
+        arch: amd64	
+    uri: https://github.com/nickgerace/kubechonk/releases/download/v0.1.1/kubechonk-v0.1.1-windows-amd64.zip
+    sha256: 78ebdecf11b91e60ce4928b5a43b78f157654c6fe4267ba03048caa95782ed37
+    bin: kubectl-chonk.exe

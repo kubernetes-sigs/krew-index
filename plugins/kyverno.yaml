@@ -3,46 +3,46 @@ kind: Plugin
 metadata:
   name: kyverno
 spec:
-  version: v1.1.6
+  version: v1.1.7
   homepage: https://github.com/nirmata/kyverno
   platforms:
-  - selector:
-      matchLabels:
-        os: linux
-        arch: amd64
-    uri: https://github.com/nirmata/kyverno/releases/download/v1.1.6/kyverno-cli_v1.1.6_linux_x86_64.tar.gz
-    sha256: 61560c57ec5eb7f7c9da0d3b8331d90c02b593f8a2a86db86714c7e34f8eb91d
-    files:
-    - from: kyverno
-      to: .
-    - from: LICENSE
-      to: .
-    bin: kyverno
-  - selector:
-      matchLabels:
-        os: darwin
-        arch: amd64
-    uri: https://github.com/nirmata/kyverno/releases/download/v1.1.6/kyverno-cli_v1.1.6_darwin_x86_64.tar.gz
-    sha256: b42da77ac933ce5fa565f963ea9ffc6e00228628dc3bd0bf01deafbfbd4e9d35
-    files:
-    - from: kyverno
-      to: .
-    - from: LICENSE
-      to: .
-    bin: kyverno
-  - selector:
-      matchLabels:
-        os: windows
-        arch: amd64
-    uri: https://github.com/nirmata/kyverno/releases/download/v1.1.6/kyverno-cli_v1.1.6_windows_x86_64.zip
-    sha256: 8fa665a256295bc090471e2b3b2545c19d34dcc74a744ff81a8a05f4a9bd4066
-    files:
-    - from: kyverno.exe
-      to: .
-    - from: LICENSE
-      to: .
-    bin: kyverno.exe
-  shortDescription: Kyverno is a policy engine for kubernetes 
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/nirmata/kyverno/releases/download/v1.1.7/kyverno-cli_v1.1.7_linux_x86_64.tar.gz
+      sha256: f8df3724d65b55acfea97a165fe69a537dc7321e5e50a8a1622a9d9fdea4ff08
+      files:
+        - from: kyverno
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kyverno
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/nirmata/kyverno/releases/download/v1.1.7/kyverno-cli_v1.1.7_darwin_x86_64.tar.gz
+      sha256: 4005b0ca0b4c9c49d984f49e25ef4b621cd0f19169d2818323081b611ec93b9d
+      files:
+        - from: kyverno
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kyverno
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/nirmata/kyverno/releases/download/v1.1.7/kyverno-cli_v1.1.7_windows_x86_64.zip
+      sha256: 5def08dacde4b4c2b006325dab0bf606bc40decb5448e9ca41e0497f92b8d9b5
+      files:
+        - from: kyverno.exe
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kyverno.exe
+  shortDescription: Kyverno is a policy engine for kubernetes
   description: |+2
     Kyverno is used to test kyverno policies and apply policies to resources files
   caveats: |

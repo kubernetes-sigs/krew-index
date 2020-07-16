@@ -53,26 +53,6 @@ spec:
     bin: kubectl-cert_manager
   - selector:
       matchLabels:
-        os: linux
-        arch: ppc64le
-    uri: https://github.com/jetstack/cert-manager/releases/download/v0.16.0-alpha.0/kubectl-cert_manager-linux-ppc64le.tar.gz
-    sha256: 26c4b892b21fd72eac40795710f6e4a98b64e55b214e2eaf0cfcf4c94bbc43bc
-    files:
-    - from: "*"
-      to: "."
-    bin: kubectl-cert_manager
-  - selector:
-      matchLabels:
-        os: linux
-        arch: s390x
-    uri: https://github.com/jetstack/cert-manager/releases/download/v0.16.0-alpha.0/kubectl-cert_manager-linux-s390x.tar.gz
-    sha256: 6078c5c2241e8f5e3d5891b39981b0df53a2ff7e9faf7d894d3acc6624268983
-    files:
-    - from: "*"
-      to: "."
-    bin: kubectl-cert_manager
-  - selector:
-      matchLabels:
         os: windows
         arch: amd64
     uri: https://github.com/jetstack/cert-manager/releases/download/v0.16.0-alpha.0/kubectl-cert_manager-windows-amd64.tar.gz

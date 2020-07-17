@@ -7,9 +7,10 @@ spec:
   homepage: https://github.com/jetstack/cert-manager
   shortDescription: Manage cert-manager resources inside your cluster
   description: |
-    A plugin accompanying cert-manger, a Kubernetes add-on to automate the management
-    and issuance of TLS certificates. Allows for direct interaction with cert-manager resources
-    e.g. manual renewal of Certificate resources.
+    The official plugin accompanying cert-manger, a Kubernetes add-on to
+    automate the management and issuance of TLS certificates. Allows for
+    direct interaction with cert-manager resources e.g. manual renewal of
+    Certificate resources.
   platforms:
   - selector:
       matchLabels:
@@ -17,9 +18,6 @@ spec:
         arch: amd64
     uri: https://github.com/jetstack/cert-manager/releases/download/v0.16.0-alpha.0/kubectl-cert_manager-darwin-amd64.tar.gz
     sha256: 8cf4386e60c3cd866a53c782cccb36227e7f94a62472c1137a8a6d90c8945e21
-    files:
-      - from: "*"
-        to: "."
     bin: kubectl-cert_manager
   - selector:
       matchLabels:
@@ -27,9 +25,6 @@ spec:
         arch: amd64
     uri: https://github.com/jetstack/cert-manager/releases/download/v0.16.0-alpha.0/kubectl-cert_manager-linux-amd64.tar.gz
     sha256: 25bd96a6c88bee8dd1b549cb851c1df280c27d5039e1a6ffbc9c5755805eb402
-    files:
-    - from: "*"
-      to: "."
     bin: kubectl-cert_manager
   - selector:
       matchLabels:
@@ -37,9 +32,6 @@ spec:
         arch: arm
     uri: https://github.com/jetstack/cert-manager/releases/download/v0.16.0-alpha.0/kubectl-cert_manager-linux-arm.tar.gz
     sha256: 79bc8e20d53df855e5a0d225f2350b8d465074aae8580ac309cc3ac72b7e6998
-    files:
-    - from: "*"
-      to: "."
     bin: kubectl-cert_manager
   - selector:
       matchLabels:
@@ -47,9 +39,6 @@ spec:
         arch: arm64
     uri: https://github.com/jetstack/cert-manager/releases/download/v0.16.0-alpha.0/kubectl-cert_manager-linux-arm64.tar.gz
     sha256: 65237e3c4b154f469cce1d01db89ca489ff67914783f27412c704d954feda3be
-    files:
-    - from: "*"
-      to: "."
     bin: kubectl-cert_manager
   - selector:
       matchLabels:
@@ -57,7 +46,4 @@ spec:
         arch: amd64
     uri: https://github.com/jetstack/cert-manager/releases/download/v0.16.0-alpha.0/kubectl-cert_manager-windows-amd64.tar.gz
     sha256: dee38af3381057d0f870d385ed6658a350b8c67d66e76bb9228cfbeb83ff439e
-    files:
-    - from: "*"
-      to: "."
     bin: kubectl-cert_manager

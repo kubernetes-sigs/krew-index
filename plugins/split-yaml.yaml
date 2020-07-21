@@ -1,0 +1,69 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: split-yaml
+spec:
+  version: v0.1.0
+  homepage: https://github.com/nathforge/kubectl-split-yaml
+  shortDescription: Split YAML output into one file per resource.
+  description: |
+    Split Kubernetes YAML output into one file per resource, e.g
+    `kubectl get deploy -o yaml | kubectl split-yaml -p deployments`
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm
+    uri: https://github.com/nathforge/kubectl-split-yaml/releases/download/v0.1.0/kubectl-split-yaml_0.1.0_linux_armv6.tar.gz
+    sha256: 0886f2f8877ae5e7d2bc920dbc0cd23cab9aa24a7f820c445a9839cde7fa13ea
+    bin: kubectl-split-yaml
+  - selector:
+      matchLabels:
+        os: linux
+        arch: '386'
+    uri: https://github.com/nathforge/kubectl-split-yaml/releases/download/v0.1.0/kubectl-split-yaml_0.1.0_linux_386.tar.gz
+    sha256: 49fd3b9de779388f6e68d09131ae1a598e7f1a17ba95f2c3c1eb05161e4b87d7
+    bin: kubectl-split-yaml
+  - selector:
+      matchLabels:
+        os: windows
+        arch: '386'
+    uri: https://github.com/nathforge/kubectl-split-yaml/releases/download/v0.1.0/kubectl-split-yaml_0.1.0_windows_386.tar.gz
+    sha256: 81ebb46a8d8318026c8a1a57d9a9d2b501568bdcfc661af2ae8789b858f4ede5
+    bin: kubectl-split-yaml.exe
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/nathforge/kubectl-split-yaml/releases/download/v0.1.0/kubectl-split-yaml_0.1.0_linux_amd64.tar.gz
+    sha256: 8fa9cd92c38f745bf22c5415573067bda2955016db9e5bdcec165fc7b6a2e116
+    bin: kubectl-split-yaml
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/nathforge/kubectl-split-yaml/releases/download/v0.1.0/kubectl-split-yaml_0.1.0_linux_arm64.tar.gz
+    sha256: 9d0a1fe35de704c58a9f0e081412f812755d6ee5464de6b298649a1fed1e8b58
+    bin: kubectl-split-yaml
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: '386'
+    uri: https://github.com/nathforge/kubectl-split-yaml/releases/download/v0.1.0/kubectl-split-yaml_0.1.0_darwin_386.tar.gz
+    sha256: c7e593e17047cd6829045908ab686ede422399b12e4d46fe2099794d05672783
+    bin: kubectl-split-yaml
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/nathforge/kubectl-split-yaml/releases/download/v0.1.0/kubectl-split-yaml_0.1.0_darwin_amd64.tar.gz
+    sha256: e9e9f462b262c383fff52a85b818a6f33eda0e91ea853fabc6405a4d4f7e9e44
+    bin: kubectl-split-yaml
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/nathforge/kubectl-split-yaml/releases/download/v0.1.0/kubectl-split-yaml_0.1.0_windows_amd64.tar.gz
+    sha256: ed549280909b653a86041d72447378f1ee240c187d99de09cd78019d6a6bca1a
+    bin: kubectl-split-yaml.exe
+

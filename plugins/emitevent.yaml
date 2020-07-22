@@ -1,0 +1,25 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: emitevent
+spec:
+  version: v0.0.1
+  homepage: https://github.com/rajatjindal/kubectl-emitevent
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-emitevent/releases/download/v0.0.1/kubectl-emitevent_v0.0.1_darwin_amd64.tar.gz
+    sha256: b86b0c6c24d6db3adfd523eee1f73db8d09b92613080169cd5c6e8853e035f06
+    bin: kubectl-emitevent
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-emitevent/releases/download/v0.0.1/kubectl-emitevent_v0.0.1_linux_amd64.tar.gz
+    sha256: ad811795cece68d4d8d39a63d98feae68a48c249b02bf1314e8e676d379e36b1
+    bin: kubectl-emitevent
+  shortDescription: emit event for the requested object
+  description: |
+    This plugin emits the event for the requested object

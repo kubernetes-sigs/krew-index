@@ -1,0 +1,30 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: emit-event
+spec:
+  version: v0.0.3
+  homepage: https://github.com/rajatjindal/kubectl-emit-event
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-emit-event/releases/download/v0.0.3/kubectl-emit-event_v0.0.3_darwin_amd64.tar.gz
+    sha256: b3b396ab693093591b4742d6d15a24941848bdbb39ab9904cf599ead1e3a6a35
+    bin: kubectl-emit-event
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-emit-event/releases/download/v0.0.3/kubectl-emit-event_v0.0.3_linux_amd64.tar.gz
+    sha256: 28c76c70ea6ba727e1d8bd01fee4262f6ec36b965b2552f84ca3926cc7d7eeaf
+    bin: kubectl-emit-event
+  shortDescription: Emit Kubernetes Events for the requested object
+  description: |
+    This plugin emits the Kubernetes Events for the requested object
+
+    Example
+    -------
+
+    kubectl emit-event daemonset/kube-proxy -n kube-system --reason "foo-reason" --message "bar-message"

@@ -27,6 +27,7 @@ Name | Description | Stars
 [cssh](https://github.com/containership/kubectl-cssh) | SSH into Kubernetes nodes | ![GitHub stars](https://img.shields.io/github/stars/containership/kubectl-cssh.svg?label=stars&logo=github)
 [ctx](https://github.com/ahmetb/kubectx) | Switch between contexts in your kubeconfig | ![GitHub stars](https://img.shields.io/github/stars/ahmetb/kubectx.svg?label=stars&logo=github)
 [custom-cols](https://github.com/webofmars/kubectl-custom-cols) | A "kubectl get" replacement with customizable column presets | ![GitHub stars](https://img.shields.io/github/stars/webofmars/kubectl-custom-cols.svg?label=stars&logo=github)
+[datadog](https://github.com/DataDog/datadog-operator) | Easily interact with Datadog agents. | ![GitHub stars](https://img.shields.io/github/stars/DataDog/datadog-operator.svg?label=stars&logo=github)
 [debug-shell](https://github.com/danisla/kubefunc) | Create pod with interactive kube-shell. | ![GitHub stars](https://img.shields.io/github/stars/danisla/kubefunc.svg?label=stars&logo=github)
 [debug](https://github.com/verb/kubectl-debug) | Attach ephemeral debug container to running pod | ![GitHub stars](https://img.shields.io/github/stars/verb/kubectl-debug.svg?label=stars&logo=github)
 [deprecations](https://github.com/rikatz/kubepug) | Checks for deprecated objects in a cluster | ![GitHub stars](https://img.shields.io/github/stars/rikatz/kubepug.svg?label=stars&logo=github)

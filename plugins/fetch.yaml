@@ -1,0 +1,29 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: fetch
+spec:
+  version: "v0.1.0"
+  homepage: https://github.com/olegsu/kubectl-fetch
+  shortDescription: "Fetch Kubernetes files from remote destinations"
+  description: |
+    Fetch Kubernetes files from remote destinations
+    Example git: kubectl fetch git --repo https://github.com/kubernetes/examples --path guestbook/all-in-one | kubectl applay -f -
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/olegsu/kubectl-fetch/releases/download/v0.1.0/kubectl-fetch_0.1.0_Darwin_x86_64.tar.gz
+      sha256: 72749495dee48d64ea4bef077b1323b69aee513f701640e6c2bf34746d3f39f2
+      files:
+        - from: "/*"
+          to: "."
+      bin: "./kubectl-fetch"
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/olegsu/kubectl-fetch/releases/download/v0.1.0/kubectl-fetch_0.1.0_Linux_x86_64.tar.gz
+      bin: "./kubectl-fetch"
+      sha256: 0ed62b6f8c28fa0bd66d0dbe2cfdde6f214c64016c2f69175f8a176dfdaabda6

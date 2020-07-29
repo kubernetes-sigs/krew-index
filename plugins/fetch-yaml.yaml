@@ -8,7 +8,9 @@ spec:
   shortDescription: "Fetch Kubernetes files from remote destinations"
   description: |
     Fetch Kubernetes files from remote destinations
-    Example git: kubectl fetch-yaml git --repo https://github.com/kubernetes/examples --path guestbook/all-in-one | kubectl apply -f -
+    Example git: kubectl fetch-yaml git --repo \
+    https://github.com/kubernetes/examples --path guestbook/all-in-one | \
+    kubectl apply -f -
   platforms:
     - selector:
         matchLabels:

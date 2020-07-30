@@ -1,0 +1,60 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: operator
+spec:
+  version: v0.0.3
+  homepage: https://github.com/operator-framework/kubectl-operator
+  shortDescription: Manage Kubernetes Operators with Operator Lifecycle Manager
+  description: |
+    This plugin is a package manager for Operators in your cluster. It
+    simplifies adding and removing Operator catalogs, and it has familiar
+    commands for installing, uninstalling, and listing available and
+    installed Operators.
+  caveats: |
+    * This plugin requires Operator Lifecycle Manager to be installed in your
+      cluster. See the installation instructions at https://olm.operatorframework.io/docs/getting-started/
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: "https://github.com/operator-framework/kubectl-operator/releases/download/v0.0.3/kubectl-operator_v0.0.3_darwin_amd64.tar.gz"
+    sha256: c7a8c04aa5488bb3eb82f984dd24f2251de7e7d6230e08b88f33d6c697b4b4bd
+    bin: kubectl-operator
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: "https://github.com/operator-framework/kubectl-operator/releases/download/v0.0.3/kubectl-operator_v0.0.3_linux_amd64.tar.gz"
+    sha256: d0a237c7fc85af0aa576262b1dec23978a187d7588dd32f1d4aea684d0d2fa84
+    bin: kubectl-operator
+  - selector:
+      matchLabels:
+        os: linux
+        arch: ppc64le
+    uri: "https://github.com/operator-framework/kubectl-operator/releases/download/v0.0.3/kubectl-operator_v0.0.3_linux_ppc64le.tar.gz"
+    sha256: 00c6fee18cc4f1a2f69cc000141d3b274257642ce36d2a113df1f8188e210a47
+    bin: kubectl-operator
+  - selector:
+      matchLabels:
+        os: linux
+        arch: s390x
+    uri: "https://github.com/operator-framework/kubectl-operator/releases/download/v0.0.3/kubectl-operator_v0.0.3_linux_s390x.tar.gz"
+    sha256: 31ba2422be84c98a805bdda7579134f79aebd6e4ac3afb748f6459ae9959ef7f
+    bin: kubectl-operator
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: "https://github.com/operator-framework/kubectl-operator/releases/download/v0.0.3/kubectl-operator_v0.0.3_linux_arm64.tar.gz"
+    sha256: 286ea87f168b4fa36ab873fc6d1826fc3f8d659f08fad214b620c0cf6d49c908
+    bin: kubectl-operator
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: "https://github.com/operator-framework/kubectl-operator/releases/download/v0.0.3/kubectl-operator_v0.0.3_windows_amd64.tar.gz"
+    sha256: cb54cd88ab169f09521ea5f06759e2b267eb7ecccc6407e94071e151ae1b0389
+    bin: kubectl-operator.exe
+

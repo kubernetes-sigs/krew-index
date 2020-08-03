@@ -5,15 +5,19 @@ metadata:
 spec:
   version: v0.0.3
   homepage: https://github.com/operator-framework/kubectl-operator
-  shortDescription: Manage Kubernetes Operators with Operator Lifecycle Manager
+  shortDescription: Manage operators with Operator Lifecycle Manager
   description: |
-    This plugin is a package manager for Operators in your cluster. It
-    simplifies adding and removing Operator catalogs, and it has familiar
+    This plugin is a package manager for operators in your cluster. It
+    simplifies adding and removing operator catalogs, and it has familiar
     commands for installing, uninstalling, and listing available and
-    installed Operators.
+    installed operators.
+
+    One example of a catalog is the public operatorhub.io index, which
+    is installed by default with Operator Lifecycle Manager.
   caveats: |
     * This plugin requires Operator Lifecycle Manager to be installed in your
-      cluster. See the installation instructions at https://olm.operatorframework.io/docs/getting-started/
+      cluster. See the installation instructions at
+      https://olm.operatorframework.io/docs/getting-started/
   platforms:
   - selector:
       matchLabels:

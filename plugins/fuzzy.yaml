@@ -4,8 +4,8 @@ metadata:
   name: fuzzy
 spec:
   platforms:
-  - uri: "https://github.com/d-kuro/kubectl-fuzzy/releases/download/v1.5.1/kubectl-fuzzy_1.5.1_darwin_amd64.tar.gz"
-    sha256: "337e275b0e13a54d2d9f796b484b267b49d5f4e2fce0828f3882d9dd9f9b64ec"
+  - uri: "https://github.com/d-kuro/kubectl-fuzzy/releases/download/v1.5.2/kubectl-fuzzy_1.5.2_darwin_amd64.tar.gz"
+    sha256: "c20acf750427e1cec3e42dffe2092d544a2a89b94ead4be26ad3f9f67624a903"
     bin: kubectl-fuzzy
     files:
     - from: kubectl-fuzzy
@@ -16,8 +16,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: "https://github.com/d-kuro/kubectl-fuzzy/releases/download/v1.5.1/kubectl-fuzzy_1.5.1_linux_amd64.tar.gz"
-    sha256: "a6a483dd66bd82e7ec3f365b905ded2ebf8f02c19aa68f87ff91cb284cdcc0db"
+  - uri: "https://github.com/d-kuro/kubectl-fuzzy/releases/download/v1.5.2/kubectl-fuzzy_1.5.2_linux_amd64.tar.gz"
+    sha256: "bf1d6659965ab9b8e1583b55e380ca682aee25552a5673d587091741c81dccd1"
     bin: kubectl-fuzzy
     files:
     - from: kubectl-fuzzy
@@ -28,8 +28,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: "https://github.com/d-kuro/kubectl-fuzzy/releases/download/v1.5.1/kubectl-fuzzy_1.5.1_windows_amd64.tar.gz"
-    sha256: "ea2f6d1daa475775aed59a6cc7366f9b8bfdba7963f3f1b9bfed150fc7452688"
+  - uri: "https://github.com/d-kuro/kubectl-fuzzy/releases/download/v1.5.2/kubectl-fuzzy_1.5.2_windows_amd64.tar.gz"
+    sha256: "d3569b62ec003bb0bcd1434f78383fcd5bb6aa46be3eb1342d71aa3dc2362ba1"
     bin: kubectl-fuzzy.exe
     files:
     - from: kubectl-fuzzy.exe
@@ -40,7 +40,7 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-  version: "v1.5.1"
+  version: "v1.5.2"
   shortDescription: Fuzzy and partial string search for kubectl
   description: |
     This tool uses fzf(1)-like fuzzy-finder to do partial or fuzzy search of Kubernetes resources.

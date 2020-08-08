@@ -1,0 +1,25 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: wd
+spec:
+  version: "v0.0.1"
+  homepage: https://github.com/smsilva/kubernetes/tree/master/krew/plugins/wd
+  shortDescription: "Waits for all Deployment Replicas become Ready"
+  description: |
+    Waits for all Deployment Replicas become Ready.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - linux
+    uri: https://github.com/smsilva/kubernetes/releases/download/v0.0.1/kubectl-wd-0.0.1.tar.gz
+    sha256: a309f654cf7f568cf99c981ece2143cadda9e9f72d6cbf78aa4fd23303aacd7c
+    files:
+    - from: "wd.sh"
+      to: "kubectl-wd.sh"
+    - from: "LICENSE"
+      to: "."
+    bin: kubectl-wd.sh

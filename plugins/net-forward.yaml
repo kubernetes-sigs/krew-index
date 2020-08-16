@@ -6,8 +6,8 @@ spec:
   version: "v1.0.3"       
   platforms:
   - selector:
-      matchLabels:
-        os: linux
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
     uri: https://github.com/antitree/krew-net-forward/releases/download/v1.0.3/net-forward_v1.0.3.tar.gz
     sha256: "645adb05d9ad68ecc91d9034cb80b1e2fe4762864323c12de0f2bc5afe20baa0"
     bin: "net-forward"  

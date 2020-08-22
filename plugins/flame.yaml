@@ -5,9 +5,11 @@ metadata:
 spec:
   version: "v0.1.0"
   homepage: https://github.com/VerizonMedia/kubectl-flame
-  shortDescription: "Generate Flame Graphs"
+  shortDescription: Generate CPU flame graphs from pods
+  caveats: |
+    Currently, only Java is supported.
   description: |
-    Generate flame graphs without restarting pods and with low overhead.
+    Generate CPU flame graphs without restarting pods and with low overhead.
   platforms:
     - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.0/kubectl-flame_0.1.0_darwin_amd64.tar.gz
       sha256: 6d1eee56c4ec4a620ae44f57eb372dccdaef86d4ba71c4fc9ba53bca378fd1de

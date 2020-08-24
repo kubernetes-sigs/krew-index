@@ -1,0 +1,45 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: graph
+spec:
+  version: v0.1.0
+  homepage: https://github.com/steveteuber/kubectl-graph
+  shortDescription: Visualize Kubernetes resources and relationships.
+  description: |
+    This plugin generates a visual representation of Kubernetes resources and
+    relationships. The graph is outputted in dot or cypher format, which can
+    be used by Graphviz or Neo4j.
+  caveats: |
+    This plugin requires Graphviz or Neo4j to visualize the dependency graph.
+    Please see the quickstart guide for more information:
+    https://github.com/steveteuber/kubectl-graph#quickstart
+  platforms:
+  - bin: kubectl-graph
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.1.0/kubectl-graph_v0.1.0_darwin_amd64.tar.gz
+    sha256: 50c7185f002ec9e98330868859079dcd28e7de98f828bf56deed0a1dfc42670f
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kubectl-graph
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.1.0/kubectl-graph_v0.1.0_linux_amd64.tar.gz
+    sha256: 6e22d9e86dee7515cc36c13b2a2879648e68f87bbefeb1fc780d72cfa61dd5cb
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-graph
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.1.0/kubectl-graph_v0.1.0_linux_arm64.tar.gz
+    sha256: f6e8c5c5a0c3e9fcbc89e6d15e28b90b9fbd47148188bd54bbe5c82d65f8b57b
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - bin: kubectl-graph.exe
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.1.0/kubectl-graph_v0.1.0_windows_amd64.zip
+    sha256: e8606d5a51fd6d8c3e643a614e44929207df58ff55eec9cc4e4964cc1d40034f
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

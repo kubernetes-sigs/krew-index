@@ -5,14 +5,14 @@ metadata:
 spec:
   homepage: https://github.com/VerizonMedia/kubectl-flame
   shortDescription: Generate CPU flame graphs from pods
-  version: v0.1.1
+  version: v0.1.2
   description: |
     Generate CPU flame graphs without restarting pods and with low overhead.
   caveats: |
     Currently, only Java is supported.
   platforms:
-    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.1/kubectl-flame_v0.1.1_darwin_x86_64.tar.gz
-      sha256: 6518f41cf23fdc5357efb7e1ea220fd02416effea4696e546a40963cdc6e1177
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.2/kubectl-flame_v0.1.2_darwin_x86_64.tar.gz
+      sha256: 2e9481fa66f99dcf245c61ef2ad088b60a26904799492a3cd7a47169e9471721
       bin: kubectl-flame
       files:
         - from: kubectl-flame
@@ -23,8 +23,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.1/kubectl-flame_v0.1.1_linux_x86_64.tar.gz
-      sha256: 2429441266a69f708f2611c8b38af678994b4058c0eb3621b8489847b8497726
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.2/kubectl-flame_v0.1.2_linux_x86_64.tar.gz
+      sha256: 13ba8c93fc1032e768c535d0747949f7c77a199020591ce17b9175c190d50528
       bin: kubectl-flame
       files:
         - from: kubectl-flame
@@ -35,8 +35,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.1/kubectl-flame_v0.1.1_windows_x86_64.zip
-      sha256: 86f28d59d1a08b880795e2319cc79a4160bde84bce0adf00a808a4199b0c98c9
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.2/kubectl-flame_v0.1.2_windows_x86_64.zip
+      sha256: 228da7572b5c757b7970bbede818cc2013cdbbb3282593ed28ede9252a3821e1
       bin: kubectl-flame.exe
       files:
         - from: kubectl-flame.exe

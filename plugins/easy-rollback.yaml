@@ -1,0 +1,32 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: easy-rollback
+spec:
+  version: v1.0.19
+  homepage: https://github.com/Trendyol/kubectl-easy-rollback
+  shortDescription: Rollback your images.
+  description: |
+    Show previously deployed image versions and easily rollback to selected one.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/Trendyol/kubectl-easy-rollback/releases/download/v1.0.19/kubectl-easy-rollback_1.0.19_Darwin_x86_64.tar.gz
+      sha256: a9e1597b3f6f243fe53a71428f1b0f590b21be2c2afe53484496ba03db2c0f5b
+      bin: kubectl-easy-rollback
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/Trendyol/kubectl-easy-rollback/releases/download/v1.0.19/kubectl-easy-rollback_1.0.19_Linux_x86_64.tar.gz
+      sha256: b93694598c04a2379615ca73b477840ce419bac75d0ae50a5e65bc89a54a2107
+      bin: kubectl-easy-rollback
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/Trendyol/kubectl-easy-rollback/releases/download/v1.0.19/kubectl-easy-rollback_1.0.19_Windows_x86_64.tar.gz
+      sha256: 2a81ef45045525cbac899a563a0599406f2cf88b25452fa69cf993fdaf7e32ee
+      bin: kubectl-easy-rollback.exe

@@ -1,0 +1,44 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: build
+spec:
+  version: "v1.2.0"
+  homepage: https://github.com/kvaps/kubectl-build
+  shortDescription: Build dockerfiles directly in your Kubernetes cluster. 
+  description: |
+    Kubectl build mimics the kaniko executor, but performs building on your Kubernetes cluster side.
+    This allows you to simply build your local dockerfiles remotely without leaving your cozy environment.
+
+    Usage:
+
+      Show all kaniko commands
+      $ kubectl build --help
+      
+      Build from current directory
+      $ kubectl build -c . -d docker.io/some/image:latest
+      
+      Login to remote registry
+      $ docker login docker.io
+      
+      Use cache building
+      $ kubectl build -c . -d docker.io/some/image:latest --cache --cache-repo docker.io/some/cache
+
+      Save image name and digest to file
+      $ kubectl build -c . -d docker.io/some/image:latest --digest-file /tmp/digest --image-name-with-digest-file /tmp/image
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/kvaps/kubectl-build/archive/v1.2.0.tar.gz
+    sha256: "74b1e64edf66581dcef2f3512642e3c861f1f0a70588ace1d59fcd2c960c14bf"
+    files:
+    - from: kubectl-build-*/kubectl-build
+      to: .
+    - from: kubectl-build-*/LICENSE
+      to: .
+    bin: "kubectl-build"

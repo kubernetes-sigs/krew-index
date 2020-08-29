@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: bd-xray
 spec:
-  version: v0.1.0
+  version: v0.1.1
   platforms:
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: "https://github.com/blackducksoftware/kubectl-bd-xray/releases/download/v0.1.0/kubectl-bd-xray_v0.1.0_linux_amd64.tar.gz"
-      sha256: a9387238f5d6e82daf307faf772289400121f6801a06bded1cedeae453c939ab
+      uri: "https://github.com/blackducksoftware/kubectl-bd-xray/releases/download/v0.1.1/kubectl-bd-xray_v0.1.1_linux_amd64.tar.gz"
+      sha256: e2dde42fa702f3fbd5015d42315645dedb665b88af975425d2dec8747f743108
       files:
         - from: "bd-xray"
           to: "."
@@ -21,8 +21,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: "https://github.com/blackducksoftware/kubectl-bd-xray/releases/download/v0.1.0/kubectl-bd-xray_v0.1.0_darwin_amd64.tar.gz"
-      sha256: d531e9d7e2a06d9f30ee1057fedfe285d5de5696e0d2d557dd23bf2f2951c889
+      uri: "https://github.com/blackducksoftware/kubectl-bd-xray/releases/download/v0.1.1/kubectl-bd-xray_v0.1.1_darwin_amd64.tar.gz"
+      sha256: 6a04074eb61c6b759e32444b054db27f6477113ac231ce5f3bcff2c8ab905531
       files:
         - from: "bd-xray"
           to: "."
@@ -33,8 +33,8 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: "https://github.com/blackducksoftware/kubectl-bd-xray/releases/download/v0.1.0/kubectl-bd-xray_v0.1.0_windows_amd64.zip"
-      sha256: f9632b0343612f089c57ad00760f9bcd9978a1b147bfe45922680eea1f80968f
+      uri: "https://github.com/blackducksoftware/kubectl-bd-xray/releases/download/v0.1.1/kubectl-bd-xray_v0.1.1_windows_amd64.zip"
+      sha256: f454b9c5e84ee1b004b072cbca0b3ff982d1578a45efab4cbe798bc97d06dece
       files:
         - from: "bd-xray.exe"
           to: "."

@@ -7,14 +7,14 @@ jobs:
     name: Build and Tags
     runs-on: ubuntu-latest
     env:
-      KREW_VERSION: v0.3.4
+      KREW_VERSION: v0.4.0
       GO111MODULE: on
     steps:
 
-    - name: Set up Go 1.13
+    - name: Set up Go 1.14
       uses: actions/setup-go@v1
       with:
-        go-version: 1.13
+        go-version: 1.14
       id: go
 
     - name: Check out PR branch
@@ -29,7 +29,7 @@ jobs:
     - name: Install kubectl
       run: |
         set -euo pipefail
-        sudo curl -fsSL -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.13.1/bin/linux/amd64/kubectl
+        sudo curl -fsSL -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.18.8/bin/linux/amd64/kubectl
         sudo chmod +x /usr/bin/kubectl
 
     - name: Install krew
@@ -44,7 +44,9 @@ jobs:
       run : |
         set -euo pipefail
         export GOBIN=$HOME/bin
-        go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
+        # TODO(corneliusweig): pin validator version after next release
+        # go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
+        go get sigs.k8s.io/krew/cmd/validate-krew-manifest@HEAD
 
     - name: Validate updated plugin manifests
       run : |

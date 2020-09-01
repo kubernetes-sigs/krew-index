@@ -1,0 +1,47 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: edit-status
+spec:
+  version: v0.1.0
+  homepage: https://github.com/ulucinar/kubectl-edit-status
+  shortDescription: Edit /status subresources
+  description: |
+    This plugin allows editing /status subresource interactively via a text editor.
+    The editor to be used can be specified via the KUBE_EDITOR or EDITOR
+    environment variables and the default editor is vi.
+  caveats: |
+    * For resources that are not in default namespace, currently you must
+      specify -n/--namespace explicitly (namespace of the current kubeconfig context
+      is not yet used).
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/ulucinar/kubectl-edit-status/releases/download/v0.1.0/kubectl-edit-status_v0.1.0_darwin_amd64.tar.gz
+      sha256: 5dfef266c8db616be3296ebaab5e7cdef85e447c89c7a4588e9f2e065b11c856
+      files:
+        - from: "*"
+          to: "."
+      bin: kubectl-edit_status
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/ulucinar/kubectl-edit-status/releases/download/v0.1.0/kubectl-edit-status_v0.1.0_linux_amd64.tar.gz
+      sha256: 274c52bcab995f8c3b506cd7b34e44b1bf2b459375497c3460cd16e64ae606fb
+      files:
+        - from: "*"
+          to: "."
+      bin: kubectl-edit_status
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/ulucinar/kubectl-edit-status/releases/download/v0.1.0/kubectl-edit-status_v0.1.0_windows_amd64.tar.gz
+      sha256: 4b9fa2ef8925cdf3b4c8e90d64539fec9a2ad1602950dd7f1cbe4abbfa57f8fc
+      files:
+        - from: "*"
+          to: "."
+      bin: kubectl-edit_status.exe

@@ -5,11 +5,12 @@ metadata:
 spec:
   version: v0.1.0
   homepage: https://github.com/ulucinar/kubectl-edit-status
-  shortDescription: Edit /status subresources
+  shortDescription: Edit /status subresources of CRs
   description: |
     This plugin allows editing /status subresource interactively via a text editor.
-    The editor to be used can be specified via the KUBE_EDITOR or EDITOR
-    environment variables and the default editor is vi.
+    The intended use case is updating status.conditions (or any status field)
+    for a custom resource. The editor to be used can be specified via
+    the KUBE_EDITOR or EDITOR environment variables and the default editor is vi.
   caveats: |
     * For resources that are not in default namespace, currently you must
       specify -n/--namespace explicitly (namespace of the current kubeconfig context

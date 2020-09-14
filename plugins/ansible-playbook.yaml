@@ -1,0 +1,30 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ansible-playbook
+spec:
+  homepage: https://github.com/Akasurde/kubectl-ansible-playbook
+  shortDescription: Run Ansible Playbooks on Kubernetes Pods
+  version: v0.2.0
+  description: |
+    Use Ansible K8S dynamic inventory plugin and kubectl connection plugin to run
+    Ansible playbooks on the given pods.
+  caveats: |
+    You need to install Ansible>=2.9.10 and Ansible kubernetes community collection
+    (community.kubernetes) before hand to run this plugin.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/Akasurde/kubectl-ansible-playbook/archive/v0.2.0.tar.gz
+    sha256: 1542d195cde94b0aa4452c822c020938cc733607b4cf5621d2865c378d28dc8c
+    bin: "./kubectl-ansible_playbook"
+    files:
+      - from: "./*/kubectl-ansible_playbook"
+        to: .
+      - from: "./*/LICENSE"
+        to: .

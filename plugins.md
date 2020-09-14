@@ -15,6 +15,7 @@ Name | Description | Stars
 ---- | ----------- | -----
 [access-matrix](https://github.com/corneliusweig/rakkess) | Show an RBAC access matrix for server resources | ![GitHub stars](https://img.shields.io/github/stars/corneliusweig/rakkess.svg?label=stars&logo=github)
 [advise-psp](https://github.com/sysdiglabs/kube-psp-advisor) | Suggests PodSecurityPolicies for cluster. | ![GitHub stars](https://img.shields.io/github/stars/sysdiglabs/kube-psp-advisor.svg?label=stars&logo=github)
+[ansible-playbook](https://github.com/Akasurde/kubectl-ansible-playbook) | Execute Ansible Playbooks on Pods. | ![GitHub stars](https://img.shields.io/github/stars/Akasurde/kubectl-ansible-playbook.svg?label=stars&logo=github)
 [apparmor-manager](https://github.com/sysdiglabs/kube-apparmor-manager) | Manage AppArmor profiles for cluster. | ![GitHub stars](https://img.shields.io/github/stars/sysdiglabs/kube-apparmor-manager.svg?label=stars&logo=github)
 [auth-proxy](https://github.com/int128/kauthproxy) | Authentication proxy to a pod or service | ![GitHub stars](https://img.shields.io/github/stars/int128/kauthproxy.svg?label=stars&logo=github)
 [bulk-action](https://github.com/emreodabas/kubectl-plugins#kubectl-bulk) | Do bulk actions on Kubernetes resources. | ![GitHub stars](https://img.shields.io/github/stars/emreodabas/kubectl-plugins.svg?label=stars&logo=github)

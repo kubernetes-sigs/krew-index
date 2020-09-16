@@ -1,0 +1,29 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: grab-resources
+spec:
+  version: "v0.1.0"
+  platforms:
+  - uri: https://github.com/dougsland/kubectl-grab-resources/archive/kubectl-grab-resources-v0.1.0.tar.gz
+    sha256: f837f517897891407ebc01127826c0afe61a86ea382474a8e1e4a7cbb12fe074
+    bin: kubectl-grab_resources
+    files:
+    - from: "./*/kubectl-grab_resources"
+      to: .
+    - from: "./*/LICENSE"
+      to: .
+    selector:
+      matchExpressions:
+      -   {key: os, operator: In, values: [darwin, linux]}
+  caveats: |
+    This plugin needs the following programs:
+    * kubectl neat plugin
+    Examples:
+    Generates the YAML file from app=kibana label
+      kubectl grab-resources -l app=kibana -o resources-label-app_kibana-2020-09-25-19:58:00.yaml
+  description: |
+    kubectl grab-resources command collects all resources from the
+    cluster based on label input and export to YAML file.
+  shortDescription: Export resources based on label input.
+  homepage: https://github.com/dougsland/kubectl-grab-resources

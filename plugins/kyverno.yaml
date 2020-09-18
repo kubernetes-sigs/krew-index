@@ -3,15 +3,15 @@ kind: Plugin
 metadata:
   name: kyverno
 spec:
-  version: v1.1.11
+  version: v1.1.12
   homepage: https://github.com/nirmata/kyverno
   platforms:
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/nirmata/kyverno/releases/download/v1.1.11/kyverno-cli_v1.1.11_linux_x86_64.tar.gz
-      sha256: 1b806a6bbad6337d8ab4f1f2ec6432c76ce2d92dfdb0131aeb9e953a3447468b
+      uri: https://github.com/nirmata/kyverno/releases/download/v1.1.12/kyverno-cli_v1.1.12_linux_x86_64.tar.gz
+      sha256: 6f000cd888580ea48e484fec47b9de28ac534080bf8f168479f422d6051f4e34
       files:
         - from: kyverno
           to: .
@@ -22,8 +22,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/nirmata/kyverno/releases/download/v1.1.11/kyverno-cli_v1.1.11_darwin_x86_64.tar.gz
-      sha256: efd6f6f721f859da6986f7dee0efc2e63d1883d92e1755b7ff92a55b284e26ba
+      uri: https://github.com/nirmata/kyverno/releases/download/v1.1.12/kyverno-cli_v1.1.12_darwin_x86_64.tar.gz
+      sha256: bb051fef2f12c929c4a10100324079fb439e51ae3ddd2ad875b3bccbd7f22484
       files:
         - from: kyverno
           to: .
@@ -34,8 +34,8 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/nirmata/kyverno/releases/download/v1.1.11/kyverno-cli_v1.1.11_windows_x86_64.zip
-      sha256: 02866f836e0dcd933644e2a7c24e72cadf6459e5e886145c43adf4ca7d29c1fa
+      uri: https://github.com/nirmata/kyverno/releases/download/v1.1.12/kyverno-cli_v1.1.12_windows_x86_64.zip
+      sha256: c00fe2d144019635a2e94bb675b01ca5ee17ebe8b4d1bfd67205fcf23938100a
       files:
         - from: kyverno.exe
           to: .

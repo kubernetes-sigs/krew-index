@@ -1,0 +1,36 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: reap
+spec:
+  version: v0.10.0
+  homepage: https://github.com/micnncim/kubectl-reap
+  shortDescription: Delete unused Kubernetes resources.
+  description: |
+    This plugin deletes unused Kubernetes resources. It supports Pods,
+    ConfigMaps, Secrets, PersistentVolumes, PersistentVolumeClaims,
+    Jobs, PodDisruptionBudgets, and HorizontalPodAutoscalers.
+  caveats: |
+    This plugin never deletes resources in the `kube-system` namespace.  
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/micnncim/kubectl-reap/releases/download/v0.10.0/kubectl-reap_0.10.0_darwin_amd64.tar.gz
+    sha256: 9c32ba97d2049167756c4d818fcd8b07bf68e92652a73fd927709a727b52e5b9
+    bin: kubectl-reap
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/micnncim/kubectl-reap/releases/download/v0.10.0/kubectl-reap_0.10.0_linux_amd64.tar.gz
+    sha256: 577024bac8ff95f6d495226aa278aa4ef09283f581df8cb323206a2ca5221b66
+    bin: kubectl-reap
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/micnncim/kubectl-reap/releases/download/v0.10.0/kubectl-reap_0.10.0_windows_amd64.tar.gz
+    sha256: 3430360b52857df7b14acd59768917a79af2e8ae286826a4791d5565133a069c
+    bin: kubectl-reap.exe

@@ -50,6 +50,7 @@ Name | Description | Stars
 [gopass](https://github.com/gopasspw/kubectl-gopass) | Imports secrets from gopass | ![GitHub stars](https://img.shields.io/github/stars/gopasspw/kubectl-gopass.svg?label=stars&logo=github)
 [grep](https://github.com/guessi/kubectl-grep) | Filter Kubernetes resources by matching their names | ![GitHub stars](https://img.shields.io/github/stars/guessi/kubectl-grep.svg?label=stars&logo=github)
 [gs](https://github.com/giantswarm/kubectl-gs) | Handle custom resources with Giant Swarm | ![GitHub stars](https://img.shields.io/github/stars/giantswarm/kubectl-gs.svg?label=stars&logo=github)
+[hns](https://github.com/kubernetes-sigs/multi-tenancy/tree/master/incubator/hnc) | Manage hierarchical namespaces (part of HNC) | ![GitHub stars](https://img.shields.io/github/stars/kubernetes-sigs/multi-tenancy.svg?label=stars&logo=github)
 [iexec](https://github.com/gabeduke/kubectl-iexec) | Interactive selection tool for `kubectl exec` | ![GitHub stars](https://img.shields.io/github/stars/gabeduke/kubectl-iexec.svg?label=stars&logo=github)
 [images](https://github.com/chenjiandongx/kubectl-images) | Show container images used in the cluster. | ![GitHub stars](https://img.shields.io/github/stars/chenjiandongx/kubectl-images.svg?label=stars&logo=github)
 [ingress-nginx](https://kubernetes.github.io/ingress-nginx/kubectl-plugin/) | Interact with ingress-nginx | ![GitHub stars](https://img.shields.io/github/stars/kubernetes/ingress-nginx.svg?label=stars&logo=github)

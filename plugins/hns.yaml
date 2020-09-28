@@ -1,0 +1,35 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: hns
+spec:
+  shortDescription: Manage hierarchical namespaces (part of HNC)
+  description: |
+    Manipulates hierarchical namespaces provided by the Hierarchical Namespace Controller (HNC).
+  version: v0.5.3-rc1
+  homepage: https://github.com/kubernetes-sigs/multi-tenancy/tree/master/incubator/hnc/docs/user-guide
+  platforms:
+  - uri: https://github.com/kubernetes-sigs/multi-tenancy/releases/download/hnc-v0.5.3-rc1/kubectl-hns.tar.gz
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    sha256: b605ad56083f0f9190fadbc502c7eb1f81b27c9acae297d593a2ac75bd807565
+    files:
+      - from: "kubectl/kubectl-hns_linux_amd64"
+        to: "."
+      - from: "kubectl/LICENSE"
+        to: "."
+    bin: "./kubectl-hns_linux_amd64"
+  - uri: https://github.com/kubernetes-sigs/multi-tenancy/releases/download/hnc-v0.5.3-rc1/kubectl-hns.tar.gz
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    sha256: b605ad56083f0f9190fadbc502c7eb1f81b27c9acae297d593a2ac75bd807565
+    files:
+      - from: "kubectl/kubectl-hns_darwin_amd64"
+        to: "."
+      - from: "kubectl/LICENSE"
+        to: "."
+    bin: "./kubectl-hns_darwin_amd64"

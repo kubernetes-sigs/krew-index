@@ -18,16 +18,11 @@ spec:
     bin: kubectl-exec_cronjob.sh
   shortDescription: Run a CronJob immediately as Job
   description: |
+    Run a CronJob immediately as Job by extracting the Job spec and creating a
+    Job instance thereof.
+  caveats: |
     DEPRECATION NOTICE:
     This plugin isn't necessary anymore, the kubectl cli let you create
     cronjob with the create subcommand:
         kubectl create job --from cronjob/my-cronjob my-job
-
-    Run a CronJob immediately as Job by extracting the Job spec and creating a
-    Job instance thereof.
-
-    Options:
-        -n, --namespace='': If present, the namespace scope for this CLI request
-        --dry-run: If true, only print the object that would be sent, without sending it.
-        -h, --help: Display this help
   homepage: https://github.com/FikaWorks/kubectl-plugins#exec-cronjob

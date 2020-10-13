@@ -25,6 +25,7 @@ Name | Description | Stars
 [cilium](https://github.com/bmcustodio/kubectl-cilium) | Easily interact with Cilium agents. | ![GitHub stars](https://img.shields.io/github/stars/bmcustodio/kubectl-cilium.svg?label=stars&logo=github)
 [cluster-group](https://github.com/u2takey/kubectl-clusters) | Exec commands across a group of contexts. | ![GitHub stars](https://img.shields.io/github/stars/u2takey/kubectl-clusters.svg?label=stars&logo=github)
 [config-cleanup](https://github.com/b23llc/kubectl-config-cleanup) | Automatically clean up your kubeconfig | ![GitHub stars](https://img.shields.io/github/stars/b23llc/kubectl-config-cleanup.svg?label=stars&logo=github)
+[configrep](https://gitlab.com/loomsen/kubectl-configrep) | Find patterns in configmaps | ![GitLab stars](https://img.shields.io/badge/dynamic/json?color=green&label=gitlab%20stars&query=%24.star_count&url=https%3A%2F%2Fgitlab.com%2Fapi%2Fv4%2Fprojects%2F21745902)
 [cssh](https://github.com/containership/kubectl-cssh) | SSH into Kubernetes nodes | ![GitHub stars](https://img.shields.io/github/stars/containership/kubectl-cssh.svg?label=stars&logo=github)
 [ctx](https://github.com/ahmetb/kubectx) | Switch between contexts in your kubeconfig | ![GitHub stars](https://img.shields.io/github/stars/ahmetb/kubectx.svg?label=stars&logo=github)
 [custom-cols](https://github.com/webofmars/kubectl-custom-cols) | A "kubectl get" replacement with customizable column presets | ![GitHub stars](https://img.shields.io/github/stars/webofmars/kubectl-custom-cols.svg?label=stars&logo=github)

@@ -1,0 +1,36 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  # 'name' must match the filename of the manifest.
+  name: configrep
+spec:
+  # 'version' is a valid semantic version string (see semver.org)
+  version: "v0.0.1"
+  # 'homepage' usually links to the GitHub repository of the plugin
+  homepage: https://gitlab.com/loomsen/kubectl-configrep
+  # 'shortDescription' explains what the plugin does in only a few words
+  shortDescription: "Finds configmaps containing a pattern"
+  description: |
+    Find configmaps containing a pattern. Like grep -l for configmaps.
+    It will return the configmap name.
+  # 'platforms' specify installation methods for various platforms (os/arch)
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+        - linux
+    # 'uri' specifies .zip or .tar.gz archive URL of a plugin
+    uri: https://github.com/loomsen/kubectl-configrep/-/archive/v0.0.1/kubectl-configrep-v0.0.1.tar.gz
+    # 'sha256' is the sha256sum of the url above
+    sha256: d7079b79bf4e10e55ded435a2e862efe310e019b6c306a8ff04191238ef4b2b4
+    # 'files' lists which files should be extracted out from downloaded archive
+    files:
+    - from: "configrep.sh"
+      to: "./configrep.sh"
+    - from: "LICENSE"
+      to: "."
+    # 'bin' specifies the path to the the plugin executable among extracted files
+    bin: configrep.sh

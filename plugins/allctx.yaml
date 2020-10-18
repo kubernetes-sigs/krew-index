@@ -1,0 +1,24 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: allctx
+spec:
+  homepage: https://github.com/onatm/kubectl-allctx
+  shortDescription: Run commands on contexts in your kubeconfig
+  version: "v1.3.0"
+  description: |
+    This command allows you to run kubectl commands on multiple contexts.
+  platforms:
+    - uri: https://github.com/onatm/kubectl-allctx/releases/download/v1.3.0/bundle.tar.gz
+      sha256: 8b9000864ca72401b57928953d548b85d2bf7c227682c80c0c75db256370d212
+      bin: ./kubectl-allctx
+      files:
+        - from: ./kubectl-allctx
+          to: .
+        - from: ./LICENSE
+          to: .
+      selector:
+        matchExpressions:
+          - key: os
+            operator: In
+            values: ["darwin", "linux"]

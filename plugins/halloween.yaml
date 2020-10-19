@@ -1,0 +1,21 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: halloween
+spec:
+  homepage: https://github.com/scraly/kubectl-halloween
+  shortDescription: Display Hallowen emoji randomly before resources name
+  version: v0.0.2
+  description: |
+    This plugin allows you to add randomly a Halloween emoji just before the resources name. It's a special Halloween mode.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/scraly/kubectl-halloween/archive/0.0.2.tar.gz
+    sha256: 9ba08889c830da352f084e07264f8437766b45d2ae959055d4d33ff7ba9b4487
+    bin: kubectl-halloween

@@ -1,0 +1,23 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: creyaml
+spec:
+  version: v0.0.1
+  homepage: https://github.com/sahil-lakhwani/kubectl-creyaml
+  shortDescription: Generate Custom Resource Example Yaml (CREYaml) from Custom Resource Definition
+  description: |
+    This plugin creates example Custom Reource YAML for specified CustomResourceDefinition.
+  caveats: |
+    * The CRD needs to be in the cluster.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/sahil-lakhwani/kubectl-creyaml/releases/download/v0.0.1/kubectl-creyaml.tar.gz
+    sha256: 210ea084cf302c08782c7cd4fb1fe56565937a3aa85838853fec69cdaa741ebd
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-creyaml

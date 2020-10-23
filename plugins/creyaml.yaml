@@ -5,9 +5,10 @@ metadata:
 spec:
   version: v0.0.1
   homepage: https://github.com/sahil-lakhwani/kubectl-creyaml
-  shortDescription: Generate Custom Resource Example Yaml (CREYaml) from Custom Resource Definition
+  shortDescription: Generate Custom Resource Example Yaml
   description: |
-    This plugin creates example Custom Reource YAML for specified CustomResourceDefinition.
+    This plugin creates example Custom Reource YAML for specified
+    Custom Resource Definition.
   caveats: |
     * The CRD needs to be in the cluster.
   platforms:
@@ -16,8 +17,5 @@ spec:
         os: linux
         arch: amd64
     uri: https://github.com/sahil-lakhwani/kubectl-creyaml/releases/download/v0.0.1/kubectl-creyaml.tar.gz
-    sha256: 6301618b6eb44b664969b31c14c470a1a90d36ee4ba230b54ea625b56d0ae555
-    files:
-    - from: "*"
-      to: "."
+    sha256: 6301618b6eb44b664969b31c14c470a1a90d36ee4ba230b54ea625b56d0ae555    
     bin: kubectl-creyaml

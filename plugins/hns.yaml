@@ -18,20 +18,20 @@ spec:
     HNC is controlled via regular Kubernetes objects, but this plugin makes it
     easy to create subnamespaces, arrange regular (full) namespaces into
     hierarchies, and configure HNC to propagate different kinds of objects.
-  version: v0.5.3
+  version: v0.6.0
   caveats: |
-    This plugin requires HNC v0.5.x on your cluster. Get it at
+    This plugin requires HNC v0.6.x on your cluster. Get it at
 
-      https://github.com/kubernetes-sigs/multi-tenancy/releases/tag/hnc-v0.5.3
+      https://github.com/kubernetes-sigs/multi-tenancy/releases/tag/hnc-v0.6.0
 
     or via:
 
-      kubectl apply -f https://github.com/kubernetes-sigs/multi-tenancy/releases/download/hnc-v0.5.3/hnc-manager.yaml
+      kubectl apply -f https://github.com/kubernetes-sigs/multi-tenancy/releases/download/hnc-v0.6.0/hnc-manager.yaml
 
-    This version of the plugin uses the HNC v1alpha1 API, and is compatible
-    with HNC v0.5.x. Later versions of HNC will not support v1alpha1, so if you
-    are running any later version of HNC, you must upgrade to a compatible
-    version of this plugin.
+    This version of the plugin uses the HNC v1alpha2 API, and is not compatible
+    with HNC v0.5.x, which only provides v1alpha1. If you need the plugin for
+    HNC v0.5.x, please follow the installation directions from the release page
+    for your version.
 
     Watch out for the following common misconceptions when using HNC:
 
@@ -41,27 +41,27 @@ spec:
     The user guide contains much more information.
   homepage: https://github.com/kubernetes-sigs/multi-tenancy/tree/master/incubator/hnc/docs/user-guide
   platforms:
-  - uri: https://github.com/kubernetes-sigs/multi-tenancy/releases/download/hnc-v0.5.3/kubectl-hns.tar.gz
+  - uri: https://github.com/kubernetes-sigs/multi-tenancy/releases/download/hnc-v0.6.0/kubectl-hns.tar.gz
     selector:
       matchLabels:
         os: linux
         arch: amd64
-    sha256: c80da0c77d5cf052abd302e6862dab3f1254d9ceb0cb9b39e0d64b71ebfd4647
+    sha256: 42d455520c765ce2ea0ceab54a1f68b3fd0b8e42ca44280a526404607bff03df
     files:
-      - from: "kubectl/kubectl-hns_linux_amd64"
+      - from: "bin/kubectl/kubectl-hns_linux_amd64"
         to: "."
-      - from: "kubectl/LICENSE"
+      - from: "bin/kubectl/LICENSE"
         to: "."
     bin: "./kubectl-hns_linux_amd64"
-  - uri: https://github.com/kubernetes-sigs/multi-tenancy/releases/download/hnc-v0.5.3/kubectl-hns.tar.gz
+  - uri: https://github.com/kubernetes-sigs/multi-tenancy/releases/download/hnc-v0.6.0/kubectl-hns.tar.gz
     selector:
       matchLabels:
         os: darwin
         arch: amd64
-    sha256: c80da0c77d5cf052abd302e6862dab3f1254d9ceb0cb9b39e0d64b71ebfd4647
+    sha256: 42d455520c765ce2ea0ceab54a1f68b3fd0b8e42ca44280a526404607bff03df
     files:
-      - from: "kubectl/kubectl-hns_darwin_amd64"
+      - from: "bin/kubectl/kubectl-hns_darwin_amd64"
         to: "."
-      - from: "kubectl/LICENSE"
+      - from: "bin/kubectl/LICENSE"
         to: "."
     bin: "./kubectl-hns_darwin_amd64"

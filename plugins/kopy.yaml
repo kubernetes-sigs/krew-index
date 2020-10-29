@@ -1,0 +1,51 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kopy
+spec:
+  version: "v0.0.1"
+  homepage: https://github.com/TejaBeta/kopy
+  shortDescription: Plugin to copy resources from one context to another
+  description: |
+      kopy is a kubectl plugin or a cli to copy K8s resources from one 
+      context to another context. Only requirement here is to have both 
+      the contexts inside your kube config and appropriate accesses to 
+      the clusters.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/TejaBeta/kopy/releases/download/v0.0.1/kopy_0.0.1_Darwin_x86_64.tar.gz
+    sha256: 32e9a6f924f4144e5baa3fa265c69311b37ef9a574ea41c485653cebeac40c96
+    files:
+      - from: "./LICENSE"
+        to: "."
+      - from: "./kopy"
+        to: "."
+    bin: "kopy"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/TejaBeta/kopy/releases/download/v0.0.1/kopy_0.0.1_Linux_x86_64.tar.gz
+    sha256: 020c4cc44dd6cc5e04fe5bb72f52cc30fc81e258dd6c1475339af0ccb5829cd5
+    files:
+      - from: "./LICENSE"
+        to: "."
+      - from: "./kopy"
+        to: "."
+    bin: "kopy"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/TejaBeta/kopy/releases/download/v0.0.1/kopy_0.0.1_Windows_x86_64.tar.gz
+    sha256: af61c0c49331a7e01fb8f377c9fb1f6e60f4037aebbea43aa62c40d564c700d4
+    files:
+      - from: "./LICENSE"
+        to: "."
+      - from: "./kopy.exe"
+        to: "."
+    bin: "kopy.exe"
+    

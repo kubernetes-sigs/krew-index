@@ -1,0 +1,30 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: rabbitmq
+spec:
+  homepage: https://github.com/rabbitmq/cluster-operator
+  shortDescription: Manage RabbitMQ clusters
+  version: v0.48.0
+  description: |
+    A plugin providing utilities to operate RabbitMQ clusters deployed
+    by the RabbitMQ cluster operator.
+  caveats: |
+    This plugin requires the RabbitMQ cluster operator to be installed.
+    To install the RabbitMQ cluster operator run `kubectl rabbitmq install-cluster-operator`.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/rabbitmq/cluster-operator/archive/0.48.0.tar.gz
+    sha256: 82d09f2bd1a6744549b871e9823b7008f40eca9d7e6c0fd16d028f2ea520c0a9
+    bin: kubectl-rabbitmq
+    files:
+    - from: cluster-operator-*/bin/kubectl-rabbitmq
+      to: .
+    - from: cluster-operator-*/LICENSE.txt
+      to: .

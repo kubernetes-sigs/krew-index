@@ -9,6 +9,9 @@ spec:
   description: |
     A plugin providing utilities to operate RabbitMQ clusters deployed
     by the RabbitMQ cluster operator.
+  caveats: |
+    This plugin requires the RabbitMQ cluster operator to be installed.
+    To install the RabbitMQ cluster operator run `kubectl rabbitmq install-cluster-operator`.
   platforms:
   - selector:
       matchExpressions:

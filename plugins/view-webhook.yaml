@@ -3,30 +3,32 @@ kind: Plugin
 metadata:
   name: view-webhook
 spec:
-  version: v0.0.7
+  version: v0.0.19
   homepage: https://github.com/Trendyol/kubectl-view-webhook
+  platforms:
+  - selector:
+      matchExpressions:
+        - key: os
+          operator: In
+          values:
+            - darwin
+    uri: https://github.com/Trendyol/kubectl-view-webhook/releases/download/v0.0.19/kubectl-view-webhook_v0.0.19_darwin_amd64.tar.gz
+    sha256: 8df80c59ede4a5695329cf7af40bf8ff67bb296f16bc88ec1ab7a3b06f2c5685
+    bin: kubectl-view-webhook
+  - selector:
+      matchExpressions:
+        - key: os
+          operator: In
+          values:
+            - linux
+    uri: https://github.com/Trendyol/kubectl-view-webhook/releases/download/v0.0.19/kubectl-view-webhook_v0.0.19_linux_amd64.tar.gz
+    sha256: 4645ac64b5e830b2ce0cffcf7877c3fc0ad4e49df1a3b012d5188ed939893527
+    bin: kubectl-view-webhook
   shortDescription: Visualize your webhook configurations
   description: |
     Visualize critical parts of the admission webhook configuration resource
-  platforms:
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: amd64
-      uri: https://github.com/Trendyol/kubectl-view-webhook/releases/download/v0.0.7/kubectl-view-webhook_0.0.7_darwin_amd64.tar.gz
-      sha256: 4caa0ba1909317c22d6c79b7a650c8bf367baa0e2aced2b1e33999a800c60389
-      bin: kubectl-view-webhook
-    - selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-      uri: https://github.com/Trendyol/kubectl-view-webhook/releases/download/v0.0.7/kubectl-view-webhook_0.0.7_linux_amd64.tar.gz
-      sha256: e3d2d9dfa2cd149ca35bedb2b991dbd2cafe58809af5c74729001692810fdd7d
-      bin: kubectl-view-webhook
-    - selector:
-        matchLabels:
-          os: linux
-          arch: 386
-      uri: https://github.com/Trendyol/kubectl-view-webhook/releases/download/v0.0.7/kubectl-view-webhook_0.0.7_linux_386.tar.gz
-      sha256: bc0718240ed83cd431efc90d57517a2ab6e9d8674c29823e99f28e7ebcf281d8
-      bin: kubectl-view-webhook
+    Usage:
+      kubectl view-webhook [flags]
+      kubectl view-webhook NAME [flags]
+      Visualize critical parts of the admission webhook configuration resource.
+      Read more documentation at: https://github.com/Trendyol/kubectl-view-webhook

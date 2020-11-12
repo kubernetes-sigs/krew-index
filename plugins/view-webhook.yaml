@@ -1,0 +1,32 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: view-webhook
+spec:
+  version: v0.0.7
+  homepage: https://github.com/Trendyol/kubectl-view-webhook
+  shortDescription: Visualize your webhook configurations
+  description: |
+    Visualize critical parts of the admission webhook configuration resource
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/Trendyol/kubectl-view-webhook/releases/download/v0.0.7/kubectl-view-webhook_0.0.7_darwin_amd64.tar.gz
+      sha256: 4caa0ba1909317c22d6c79b7a650c8bf367baa0e2aced2b1e33999a800c60389
+      bin: kubectl-view-webhook
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/Trendyol/kubectl-view-webhook/releases/download/v0.0.7/kubectl-view-webhook_0.0.7_linux_amd64.tar.gz
+      sha256: e3d2d9dfa2cd149ca35bedb2b991dbd2cafe58809af5c74729001692810fdd7d
+      bin: kubectl-view-webhook
+    - selector:
+        matchLabels:
+          os: linux
+          arch: 386
+      uri: https://github.com/Trendyol/kubectl-view-webhook/releases/download/v0.0.7/kubectl-view-webhook_0.0.7_linux_386.tar.gz
+      sha256: bc0718240ed83cd431efc90d57517a2ab6e9d8674c29823e99f28e7ebcf281d8
+      bin: kubectl-view-webhook

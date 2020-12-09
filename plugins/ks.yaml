@@ -1,0 +1,31 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ks
+spec:
+  version: v0.0.9
+  homepage: https://github.com/linuxsuren/ks
+  shortDescription: Make it be easy to manupulate Kubesphere
+  description: |
+    Kubesphere is enterprise-grade container platform tailored for multicloud and multi-cluster management
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/linuxsuren/ks/releases/download/v0.0.9/kubectl-ks-darwin-amd64.tar.gz
+      sha256: d28b3e3c9a9b7cb878ad6b0cafcdb6801ad3d4606338a45a558b721efc46108d
+      files:
+        - from: "*"
+          to: "."
+      bin: kubectl-ks
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/linuxsuren/ks/releases/download/v0.0.9/kubectl-ks-linux-amd64.tar.gz
+      sha256: bbf713d059b1add169defc2492056a155314ad27764761899c5c6c477ede615c
+      files:
+        - from: "*"
+          to: "."
+      bin: kubectl-ks

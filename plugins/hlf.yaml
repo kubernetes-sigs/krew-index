@@ -5,10 +5,11 @@ metadata:
 spec:
   version: "v1.0.0"
   homepage: https://github.com/kfsoftware/hlf-operator
-  shortDescription: "Deploy and manage Hyperledger Fabric Peers, Orderers and Certificate authorities"
+  shortDescription: "Deploy and manage Hyperledger Fabric components"
   description: |
-    The kubectl-hlf plugin wraps the Hyperledger Fabric Operator and provides a simple
-    interface to create and manage Hyperledger Fabric Peers, Orderers and Certificate authorities
+    The kubectl-hlf plugin wraps the HLF Operator and provides a simple
+    interface to create and manage Hyperledger Fabric Peers, 
+    Orderers and Certificate authorities
   caveats: |
     * For resources that are not in default namespace, currently you must
       specify -n/--namespace explicitly (the current namespace setting is not

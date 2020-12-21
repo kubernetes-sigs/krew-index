@@ -5,14 +5,14 @@ metadata:
 spec:
   homepage: https://github.com/VerizonMedia/kubectl-flame
   shortDescription: Generate CPU flame graphs from pods
-  version: v0.1.5
+  version: v0.1.7
   description: |
     Generate CPU flame graphs without restarting pods and with low overhead.
   caveats: |
-    Currently, only Java is supported.
+    Currently supported languages: Go, Java (any JVM based language) and Python
   platforms:
-    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.5/kubectl-flame_v0.1.5_darwin_x86_64.tar.gz
-      sha256: f13f30c3705511d5fb3d213780ee190f82898f85708d6d199ad8bf1a139c9c88
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.7/kubectl-flame_v0.1.7_darwin_x86_64.tar.gz
+      sha256: 127feb320a3541cd0b64dc58d0d18a575211074a2a96edab84c935c37949f1b6
       bin: kubectl-flame
       files:
         - from: kubectl-flame
@@ -23,8 +23,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.5/kubectl-flame_v0.1.5_linux_x86_64.tar.gz
-      sha256: 45f9dccb1f5a9a61d47c4860e3aa7618120f3b1d8f2d0b53df48f59d02831f08
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.7/kubectl-flame_v0.1.7_linux_x86_64.tar.gz
+      sha256: b5d9c9aa8101d3dbbc8bfff9896c71b171fbe90f22d2f28836be5c9afde446c9
       bin: kubectl-flame
       files:
         - from: kubectl-flame
@@ -35,8 +35,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.5/kubectl-flame_v0.1.5_windows_x86_64.zip
-      sha256: b7571252d328211804b8777c357af9b063b365b2dad68c14700e0fbeb5b53123
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.7/kubectl-flame_v0.1.7_windows_x86_64.zip
+      sha256: 326e6c23d152a5b397fba519b3d92d2541bb1f1965058ee63cd3d0788cf8fab2
       bin: kubectl-flame.exe
       files:
         - from: kubectl-flame.exe

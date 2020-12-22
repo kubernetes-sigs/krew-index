@@ -1,0 +1,33 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: diagnose
+spec:
+  version: v0.1.0
+  homepage: https://github.com/dastergon/kubectl-diagnose
+  shortDescription: Find objects in a problematic state
+  description: |
+    This plugin assists users in finding
+    Kubernetes objects in a problematic state.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/dastergon/kubectl-diagnose/releases/download/v0.1.0/kubectl-diagnose_v0.1.0_darwin_amd64.tar.gz
+    sha256: 195ae3a9d72ccedc41c482526523709be47278f1e22b7be89795deed0a7d9372
+    bin: kubectl-diagnose
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/dastergon/kubectl-diagnose/releases/download/v0.1.0/kubectl-diagnose_v0.1.0_linux_amd64.tar.gz
+    sha256: 4baaac193f676366498f0113f03220690760b363479c876a7734ad4cc130cdd9
+    bin: kubectl-diagnose
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/dastergon/kubectl-diagnose/releases/download/v0.1.0/kubectl-diagnose_v0.1.0_windows_amd64.tar.gz
+    sha256: bacb364dce252ada74de66f34d9222e27ca3b30a125c31780d85b93879477c28
+    bin: kubectl-diagnose.exe

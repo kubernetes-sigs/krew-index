@@ -7,8 +7,14 @@ spec:
   homepage: https://github.com/dastergon/kubectl-janitor
   shortDescription: Lists objects in a problematic state
   description: |
-    This plugin assists in finding
-    Kubernetes objects in a problematic state.
+    Troubleshooting Kubernetes clusters sometimes requires
+    a combination of kubectl commands and other command-line tools
+    such as jq to do correlations around the issues that the various
+    objects might have. Moreover, sometimes the supported options
+    of the --field-selector flag might be limited as well.
+    This plugin assists in finding Kubernetes objects in a problematic state.
+    It currently supports Job, Pod, PersistentVolume,
+    and PersistentVolumeClaim resources.
   platforms:
   - selector:
       matchLabels:

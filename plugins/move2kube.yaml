@@ -1,0 +1,31 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: move2kube
+spec:
+  version: v0.2.0-alpha.5
+  homepage: https://move2kube.konveyor.io/
+  shortDescription: Migrate your application to run on Kubernetes
+  description: |
+    Move2Kube is a tool that uses source artifacts such as Docker Compose files
+    or Cloud Foundry manifest files, and even source code, to generate Kubernetes
+    deployment artifacts including K8s yamls, Helm charts, CI/CD pipelines, and Operators.
+  caveats: |
+    * Optional dependencies:
+      - docker
+      - operator-sdk
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/konveyor/move2kube/releases/download/v0.2.0-alpha.5/move2kube-v0.2.0-alpha.5-darwin-amd64.tar.gz
+      sha256: 028185704652ea71ee37a23459b2bd3700721d09c672ef5723c8390e0d3cf6c9
+      bin: move2kube/move2kube
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/konveyor/move2kube/releases/download/v0.2.0-alpha.5/move2kube-v0.2.0-alpha.5-linux-amd64.tar.gz
+      sha256: 481563ddf2fb08d711deb39236b1f15960b1867f3d4941a27c13afca0bd4e849
+      bin: move2kube/move2kube

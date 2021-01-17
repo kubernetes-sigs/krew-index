@@ -5,7 +5,7 @@ metadata:
 spec:
   version: "v0.0.4"
   homepage: https://github.com/TremoloSecurity/kubectl-login
-  shortDescription: "login to a cluster via OpenUnison from the command line"
+  shortDescription: "Login to a cluster via OpenUnison"
   description: |
     Launches a browser to login to the cluster via OpenUnison.  OpenUnison's certificate MUST be trusted by the local system.  
   platforms:
@@ -16,7 +16,7 @@ spec:
         values:
         - darwin
     uri: https://nexus.tremolo.io/repository/oulogin/oulogin-0.0.4-macos.zip
-    sha256: 9900c71b1ab07b7a063a4295e99c7bd45a4b01e8359b381755ea87dfebbd4010
+    sha256: f6ed66558cddcc4ee0779f1bd862a577f4ae186549911a0d9f75b747584994e0
     files:
     - from: "oulogin"
       to: "oulogin"
@@ -30,7 +30,7 @@ spec:
         values:
         - linux
     uri: https://nexus.tremolo.io/repository/oulogin/oulogin-0.0.4-linux.zip
-    sha256: b052c61a15b195feec9f842f42c3f795fdaab9b9f2608447864dbc93ddf4b30c
+    sha256: 8342ff0f69d8d479f78659d910c6e23bf62f70ff91840022ff50f21244bd0677
     files:
     - from: "oulogin"
       to: "oulogin"
@@ -44,7 +44,7 @@ spec:
         values:
         - windows
     uri: https://nexus.tremolo.io/repository/oulogin/oulogin-0.0.4-win.zip
-    sha256: 588c6ee9398b604c13de5e610fd13d8295b1649abb0baf16794b22792a1fd0f3
+    sha256: efe11e4b3f228767fb53eba8c3d42d6f3ce9db2f09983e3c54726df361ac0dd2
     files:
     - from: "oulogin.exe"
       to: "oulogin.exe"

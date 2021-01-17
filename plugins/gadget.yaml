@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: gadget
 spec:
-  version: v0.1.0
+  version: v0.2.1
   homepage: https://github.com/kinvolk/inspektor-gadget
   shortDescription: Gadgets for debugging and introspecting apps
   description: |
@@ -30,13 +30,20 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/kinvolk/inspektor-gadget/releases/download/v0.1.0/inspektor-gadget-linux-amd64.tar.gz
-    sha256: b0f6078d37d96e7efbf946d893c12007d4e09fcc8b0ed2cf77912ff2e661513f
+    uri: https://github.com/kinvolk/inspektor-gadget/releases/download/v0.2.1/inspektor-gadget-linux-amd64.tar.gz
+    sha256: 2d898272cf801767f841180f4f457b9a08225583562477f861da43aff4e6561f
     bin: kubectl-gadget
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/kinvolk/inspektor-gadget/releases/download/v0.1.0/inspektor-gadget-darwin-amd64.tar.gz
-    sha256: e32708a3e9704cdc98190a1500d9eaf1e7850d68f2f7ce81984c70905fca4277
+    uri: https://github.com/kinvolk/inspektor-gadget/releases/download/v0.2.1/inspektor-gadget-darwin-amd64.tar.gz
+    sha256: c4156e8547bbe7038265ada980ea1bc3f322a61bd3d5cc46ba3ff728d6e00610
+    bin: kubectl-gadget
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/kinvolk/inspektor-gadget/releases/download/v0.2.1/inspektor-gadget-windows-amd64.tar.gz
+    sha256: 9df68c95738dfae11d6d34ba327d4c52026320fc5b779273cb38133b4fec2e89
     bin: kubectl-gadget

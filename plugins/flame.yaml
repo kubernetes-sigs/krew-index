@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: flame
+spec:
+  homepage: https://github.com/VerizonMedia/kubectl-flame
+  shortDescription: Generate CPU flame graphs from pods
+  version: v0.1.9
+  description: |
+    Generate CPU flame graphs without restarting pods and with low overhead.
+  caveats: |
+    Currently supported languages: Go, Java (any JVM based language) and Python
+  platforms:
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.9/kubectl-flame_v0.1.9_darwin_x86_64.tar.gz
+      sha256: e632cbad8798eb76309d8e193a83d83444154fb1633b55352416ee349a41e019
+      bin: kubectl-flame
+      files:
+        - from: kubectl-flame
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.9/kubectl-flame_v0.1.9_linux_x86_64.tar.gz
+      sha256: f8927ed7b3cdca76b516393a365f130916000597f9ff8e0bcc2272dc56f13982
+      bin: kubectl-flame
+      files:
+        - from: kubectl-flame
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.9/kubectl-flame_v0.1.9_windows_x86_64.zip
+      sha256: 72b2cac7dae764d8f25590fb669372b5ec6d4b25e339f73b507d94f05abfc343
+      bin: kubectl-flame.exe
+      files:
+        - from: kubectl-flame.exe
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64

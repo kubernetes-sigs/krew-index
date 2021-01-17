@@ -1,0 +1,50 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: operator
+spec:
+  version: v0.1.0
+  homepage: https://github.com/operator-framework/kubectl-operator
+  shortDescription: Manage operators with Operator Lifecycle Manager
+  description: |
+    This plugin is a package manager for operators in your cluster. It
+    simplifies adding and removing operator catalogs, and it has familiar
+    commands for installing, uninstalling, and listing available and
+    installed operators.
+
+    One example of a catalog is the public operatorhub.io index, which
+    is installed by default with Operator Lifecycle Manager.
+  caveats: |
+    * This plugin requires Operator Lifecycle Manager to be installed in your
+      cluster. See the installation instructions at
+      https://olm.operatorframework.io/docs/getting-started/
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.1.0/kubectl-operator_v0.1.0_darwin_amd64.tar.gz
+    sha256: d08895655f03f3f5ba374f40834ef37aa5f2022f2c6a52c99c4e6e78c65926d6
+    bin: kubectl-operator
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.1.0/kubectl-operator_v0.1.0_linux_amd64.tar.gz
+    sha256: 5d17c001841e55842be5f8bb1f0fd2d7a5b22a12cf8b8877c37b626480ed81f7
+    bin: kubectl-operator
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.1.0/kubectl-operator_v0.1.0_linux_arm64.tar.gz
+    sha256: 2eb6cfbb8dab6c0c136f858d3e6eaf393cf7588345b89fa12f0d6934cc2c532b
+    bin: kubectl-operator
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.1.0/kubectl-operator_v0.1.0_windows_amd64.tar.gz
+    sha256: df9f7ecabc25a62691da9774d7538cbb8a99a123a314c47714fec3710aab8112
+    bin: kubectl-operator.exe
+

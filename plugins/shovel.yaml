@@ -1,0 +1,56 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: shovel
+spec:
+  homepage: https://github.com/dodopizza/kubectl-shovel
+  shortDescription: Gather diagnostics for .NET Core applications
+  version: v0.2.0
+  description: |
+    Plugin for gathering diagnostics from running in Kubernetes .NET Core
+    applications. It runs the job on the specified pod's node with a mount
+    to its /tmp folder with application's diagnostic socket and runs specified
+    tool against it. Supported tools are: dotnet-gcdump and dotnet-trace
+  caveats: |
+    It can work with .NET Core 3.0+ applications and Kubernetes clusters with
+    docker or containerd runtime. Permissions to get pods and create jobs are
+    required. Also it requires allowance to mount /var/lib/docker path for
+    docker runtime and /run/containerd for containerd from a host in read-only
+    mode
+  platforms:
+    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.2.0/kubectl-shovel_Darwin_x86_64.tar.gz
+      sha256: e3cbb042b6f1c62781761363788e1c582ead1ceff7e562fbeaabc7d51e6eff6c
+      bin: kubectl-shovel
+      files:
+        - from: kubectl-shovel
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.2.0/kubectl-shovel_Linux_x86_64.tar.gz
+      sha256: 504824475a0ada65931ec80f75ac85b0abf63ac75682f67107eca9079b242e29
+      bin: kubectl-shovel
+      files:
+        - from: kubectl-shovel
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.2.0/kubectl-shovel_Windows_x86_64.zip
+      sha256: d4122c68675244088ca50d3978e5774aa6848c1e36ca90e7b0fe14d80466daff
+      bin: kubectl-shovel.exe
+      files:
+        - from: kubectl-shovel.exe
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64

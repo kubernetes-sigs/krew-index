@@ -1,0 +1,61 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: fuzzy
+spec:
+  platforms:
+  - uri: "https://github.com/d-kuro/kubectl-fuzzy/releases/download/v1.8.1/kubectl-fuzzy_1.8.1_darwin_amd64.tar.gz"
+    sha256: "9fdd553ec742366a3bc780cf04b6534a2277ad66f3cf180f03775a79c8340181"
+    bin: kubectl-fuzzy
+    files:
+    - from: kubectl-fuzzy
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: "https://github.com/d-kuro/kubectl-fuzzy/releases/download/v1.8.1/kubectl-fuzzy_1.8.1_linux_amd64.tar.gz"
+    sha256: "b513d93a9335f3fcb6929aa4058e985837a9e2cb3af1969799d21c563086671d"
+    bin: kubectl-fuzzy
+    files:
+    - from: kubectl-fuzzy
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: "https://github.com/d-kuro/kubectl-fuzzy/releases/download/v1.8.1/kubectl-fuzzy_1.8.1_linux_arm64.tar.gz"
+    sha256: "100bebe9b56b187846a52e7bafdff5bdf4c170ea89175cec6215e516e907d9c8"
+    bin: kubectl-fuzzy
+    files:
+    - from: kubectl-fuzzy
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - uri: "https://github.com/d-kuro/kubectl-fuzzy/releases/download/v1.8.1/kubectl-fuzzy_1.8.1_windows_amd64.tar.gz"
+    sha256: "8001ed2833e63a08b20526fdc687383e6d516cf7cee70f66c81822a3685f8664"
+    bin: kubectl-fuzzy.exe
+    files:
+    - from: kubectl-fuzzy.exe
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  version: "v1.8.1"
+  shortDescription: Fuzzy and partial string search for kubectl
+  description: |
+    This tool uses fzf(1)-like fuzzy-finder to do partial or fuzzy search of Kubernetes resources.
+    Instead of specifying full resource names to kubectl commands,
+    you can choose them from an interactive list that you can filter by typing a few characters.
+  homepage: https://github.com/d-kuro/kubectl-fuzzy

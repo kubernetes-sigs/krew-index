@@ -9,7 +9,7 @@ spec:
     removing default values, runtime information, and other internal fields.
     Examples:
     `$ kubectl get pod mypod -o yaml | kubectl neat`
-    `$ kubectl neat pod mypod -o yaml`
+    `$ kubectl neat get -- pod mypod -o yaml`
   homepage: https://github.com/itaysk/kubectl-neat
   platforms:
   - bin: ./kubectl-neat
@@ -20,8 +20,8 @@ spec:
       matchLabels:
         arch: amd64
         os: darwin
-    sha256: e6afaa5a7943885674adff51e22121d02f9c9c4fc3ea7edd6893189c75674d2c
-    uri: https://github.com/itaysk/kubectl-neat/releases/download/v1.2.0/kubectl-neat_darwin.tar.gz
+    sha256: b7ed767154106fe29a62c6143566d5a37f86fbd577f964525db3263d97a9e93b
+    uri: https://github.com/itaysk/kubectl-neat/releases/download/v2.0.2/kubectl-neat_darwin.tar.gz
   - bin: ./kubectl-neat
     files:
     - from: /*
@@ -30,7 +30,7 @@ spec:
       matchLabels:
         arch: amd64
         os: linux
-    sha256: d515a1c09c4450f7a9ab30bcdccd516f18a4dfd8c42311ffb41fb53d7c8ff2c8
-    uri: https://github.com/itaysk/kubectl-neat/releases/download/v1.2.0/kubectl-neat_linux.tar.gz
+    sha256: 95dac6c3776fcf14bf19aa158b880d9df39f059354246673d18a8af232513925
+    uri: https://github.com/itaysk/kubectl-neat/releases/download/v2.0.2/kubectl-neat_linux.tar.gz
   shortDescription: Remove clutter from Kubernetes manifests to make them more readable.
-  version: v1.2.0
+  version: v2.0.2

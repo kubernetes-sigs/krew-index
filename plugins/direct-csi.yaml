@@ -1,0 +1,24 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: direct-csi
+spec:
+  version: v1.0.0
+  homepage: https://github.com/minio/direct-csi
+  shortDescription: CSI driver to manage drives in k8s cluster as volumes
+  description: |
+    This plugin deploys and manages the lifecycle of DirectCSI driver - a driver
+    that creates volumes from drives available in the kubernetes cluster
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    files:
+      - from: kubectl-direct_csi
+        to: .
+      - from: LICENSE
+        to: .
+    uri: https://github.com/minio/direct-csi/releases/download/v1.0.0/kubectl-direct_csi_linux_amd64.zip
+    sha256: c10ece85e577b41b68bdb97214e524b85f66d5a0a47b127c6039c4ef717bb6b7
+    bin: kubectl-direct_csi

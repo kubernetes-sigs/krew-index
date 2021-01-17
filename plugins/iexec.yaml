@@ -3,27 +3,27 @@ kind: Plugin
 metadata:
   name: iexec
 spec:
-  version: v1.4.0
+  version: v1.8.0
   homepage: https://github.com/gabeduke/kubectl-iexec
   platforms:
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/1.4.0/kubectl-iexec_1.4.0_Darwin_x86_64.tar.gz
-      sha256: f61186638d7b9fb413dbe415a7c7e541dc719089bdb7ae49581a5a1793821398
+      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/v1.8.0/kubectl-iexec_v1.8.0_Darwin_x86_64.tar.gz
+      sha256: dd45b70ed9d5ec122fc5d9cae3a9dd2881685eb829bbd54ed9f8c5410f28c09f
       bin: kubectl-iexec
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/1.4.0/kubectl-iexec_1.4.0_Linux_x86_64.tar.gz
-      sha256: 71cdd15aa6662b15f99ed5cceb61c4bb17220214eabe1f49874fe4947a627428
+      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/v1.8.0/kubectl-iexec_v1.8.0_Linux_x86_64.tar.gz
+      sha256: 701bfc512f096c6bf27d996dfabc625b30b21e164608265030039aae546835c5
       bin: kubectl-iexec
   shortDescription: Interactive selection tool for `kubectl exec`
   description: |
     Interactive pod and container selector for `kubectl exec`
-
+  caveats: |
     To get help run: kubectl iexec --help
     Examples:
     Run command in container:

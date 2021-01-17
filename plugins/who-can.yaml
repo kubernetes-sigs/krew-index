@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: who-can
 spec:
-  version: "v0.1.1"
+  version: "v0.2.0"
   homepage: https://github.com/aquasecurity/kubectl-who-can
   shortDescription: >-
     Shows who has RBAC permissions to access Kubernetes resources
@@ -32,8 +32,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.1/kubectl-who-can_darwin_x86_64.tar.gz
-      sha256: "ec83629ccb54b977dfc6f8806800d82d570f1be235d468565222ea33559923f5"
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.2.0/kubectl-who-can_darwin_x86_64.tar.gz
+      sha256: 7b254418583668c9b02421bbd4a8459646916c3951f3cf2a3f6bc449d2cdf389
       files:
         - from: kubectl-who-can
           to: .
@@ -44,8 +44,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.1/kubectl-who-can_linux_x86_64.tar.gz
-      sha256: "53e2bb61203daca7905d5936f4aea2f7d848536dcdd2f84532289ae4097921f6"
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.2.0/kubectl-who-can_linux_x86_64.tar.gz
+      sha256: 67f9533bc874192c4043a87e3edc7fd4c62c3ba811f764ef04004b309cc242d7
       files:
         - from: kubectl-who-can
           to: .
@@ -56,11 +56,12 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.1/kubectl-who-can_windows_x86_64.zip
-      sha256: "9dcbbb80f453ae567312b82b634f22e4950c5b077e9f6455f8a75fbdb5a2de63"
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.2.0/kubectl-who-can_windows_x86_64.zip
+      sha256: 7054ac9a9031b5d11d11eb5a9f262e37037a021c7b896f4b0be262cb0adf9983
       files:
         - from: kubectl-who-can.exe
           to: .
         - from: LICENSE
           to: .
       bin: kubectl-who-can.exe
+

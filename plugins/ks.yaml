@@ -3,24 +3,32 @@ kind: Plugin
 metadata:
   name: ks
 spec:
-  version: v0.0.10
+  version: v0.0.12
   homepage: https://github.com/linuxsuren/ks
-  shortDescription: This plugin simplifies the work when you're managing or developing with KubeSphere.
+  shortDescription: Simple management of KubeSphere components
   description: |
-    This plugin helps you to manage the components of KubeSphere without typing a lot of words. 
-    Make it be much easier if you want to enable, disable, check the logs output, or even upgrade it.
+    This plugin simplifies management of KubeSphere components. KubeSphere helps to run continuous delivery pipelines on Kubernetes. 
+    You can enable/disable, inspect logs, or upgrade KubeSphere components.
+  caveats: |
+    ks is now installed! To start using kubectl plugins, you need to install
+    KubeSphere first:
+      $ kk create cluster --with-kubesphere [version]
+
+    You can find documentation at
+      https://github.com/kubesphere/kubekey
+
   platforms:
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/linuxsuren/ks/releases/download/v0.0.10/kubectl-ks-darwin-amd64.tar.gz
-      sha256: d065b49f3bebb0b2d4d8bb9d8172b6a79e0fe7ee99f3fb779716ae6e8a44caa6
+      uri: https://github.com/linuxsuren/ks/releases/download/v0.0.12/kubectl-ks-darwin-amd64.tar.gz
+      sha256: b54eecd6b8a5263692074aa8601d3956dd91df676bdeedd2850a801ef9405363
       bin: kubectl-ks
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/linuxsuren/ks/releases/download/v0.0.10/kubectl-ks-linux-amd64.tar.gz
-      sha256: 53b205001d95be40c6aa64158c7e5b79090c79950d60bd5b797aa4f0f5d069c9
+      uri: https://github.com/linuxsuren/ks/releases/download/v0.0.12/kubectl-ks-linux-amd64.tar.gz
+      sha256: efa5179bef5cb2bb8dcadf842085f0901227b18e6d6e3385dd6a2c35e5d464c8
       bin: kubectl-ks

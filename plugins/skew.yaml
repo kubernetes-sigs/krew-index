@@ -11,8 +11,6 @@ spec:
       the kubernetes official version skew policy. If your usage is "skewed",
       a warning message is shown.
   platforms:
-
-  # linux
   - selector:
       matchLabels:
         os: linux
@@ -20,8 +18,6 @@ spec:
     uri: https://github.com/dty1er/kubectl-skew/releases/download/v0.0.3/kubectl-skew_0.0.3_Linux_x86_64.tar.gz
     sha256: 9e325ee7011f157ce071c9c2a5253ad03a9163aea72d7c8d40c298fda1bf3ec8
     bin: kubectl-skew
-
-  # darwin
   - selector:
       matchLabels:
         os: darwin
@@ -29,8 +25,6 @@ spec:
     uri: https://github.com/dty1er/kubectl-skew/releases/download/v0.0.3/kubectl-skew_0.0.3_Darwin_x86_64.tar.gz
     sha256: 4ab9399734bc3fe7a29776d37d587c6d72c8f0b5d1b43ce1bd6b406ca34408a7
     bin: kubectl-skew
-
-  # windows
   - selector:
       matchLabels:
         os: windows

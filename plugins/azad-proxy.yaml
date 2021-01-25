@@ -41,10 +41,18 @@ spec:
         os: windows
         arch: amd64
   version: "v0.0.3"
+  homepage: https://github.com/xenitab/azad-kube-proxy
+  caveats: |
+    This plugin is used in combination with the azad-kube-proxy:
+    - https://github.com/xenitab/azad-kube-proxy
+
+    There shouldn't be a use case where you can use the plugin without the proxy.
+    If you haven't been asked by a cluster admin to install this plugin - it may
+    not be the one you need.
   shortDescription: Generate and handle authentication for azad-kube-proxy
   description: |
-    Works together with the proxy (Azure AD Kubernetes API Proxy: azad-kube-proxy) to make it easier to generate
-    the kubeconfig and handles the authentication. The proxy itself enables you to use Azure AD to authenticate
-    to any Kubernetes API, decouples you from the Cloud providers FQDNs and solves issues related to Azure AD
-    groups for users with more than 200 of them.
-  homepage: https://github.com/xenitab/azad-kube-proxy
+    Works together with the proxy (Azure AD Kubernetes API Proxy: azad-kube-proxy)
+    to make it easier to generate the kubeconfig and handles the authentication.
+    The proxy itself enables you to use Azure AD to authenticate to any Kubernetes
+    API, decouples you from the Cloud providers FQDNs and solves issues related 
+    to Azure AD groups for users with more than 200 of them.

@@ -1,0 +1,61 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: mc
+spec:
+  version: v0.4.0
+  homepage: https://github.com/jonnylangefeld/kubectl-mc
+  shortDescription: Run kubectl commands against multiple clusters at once
+  description: |+2
+    A Multi Cluster kubectl Client
+
+    If you work at a company or organization that maintains multiple Kubernetes
+    clusters it is fairly common to connect to multiple different kubernetes
+    clusters throughout your day. And sometimes you want to execute a command
+    against multiple clusters at once. For instance to get the status of a
+    deployment across all `staging` clusters.
+
+    `kubectl-mc` (short for multi cluster) supports this workflow and significantly
+    reduces the return time by executing the necessary API requests in parallel go
+    routines.
+
+    Examples:
+
+    # list all kind contexts
+    mc -r kind -l
+
+    # list the pods in the kube-system namespace of all dev clusters
+    mc -r dev -- get pods -n kube-system
+
+    # run a debug container on every kind cluster in the context
+    mc --regex kind -- run debug --image=markeijsermans/debug --command -- sleep infinity
+
+    # list all contexts with 'dev' in the name, but not '-ci-' in the name
+    mc -r dev -l -n '-test-'
+
+    # list all pods with label 'app.kubernetes.io/name=audit' in the 'default' namespace from all clusters with 'gke' in the name, but not 'dev'
+    # run max 5 processes in parallel and enable debug output
+    mc -r gke -n 'dev' -p 5 -d -- get pods -n gatekeeper-system -l app.kubernetes.io/name=audit
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.4.0/kubectl-mc_v0.4.0_darwin_amd64.tar.gz
+    sha256: 541f8036a60ae620e5e1c0bfb47937d546199c215ad5bfabece3dbc22fc75b52
+    bin: kubectl-mc
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.4.0/kubectl-mc_v0.4.0_linux_amd64.tar.gz
+    sha256: a207e37458136d6e1dccea98b40875204c9dcbc7e9f77e3592ff65f11769a2c2
+    bin: kubectl-mc
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.4.0/kubectl-mc_v0.4.0_windows_amd64.tar.gz
+    sha256: 36b0b2287fbf767398ce12d19f1ef776614cdbd62b7094690954b99c1904079d
+    bin: kubectl-mc.exe
+

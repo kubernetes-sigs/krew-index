@@ -22,8 +22,9 @@ spec:
     A kubectl plugin that creates a local SOCKS5 proxy through which you can
     access to Services or Pods in a Kubernetes cluster.
     
-    What the plugin actually does is that it create a SOCKS5 proxy server Pod (based on serjs/go-socks5-proxy) in a Kubernetes cluster and forwards a local port (default:1080) to the proxy.
-    So you can access to Servcies or Pods in Kuberenetes cluster by using the local 
-    port as SOCKS5 proxy like this:
+    What the plugin actually does is that it create a SOCKS5 proxy server Pod
+    (based on serjs/go-socks5-proxy) in a Kubernetes cluster and forwards a local
+    port (default:1080) to the proxy. So you can access Services or Pods in the
+    Kuberenetes cluster by using the local port as SOCKS5 proxy like this:
 
     curl --socks5-hostname localhost:1080 http://httpbin.default.svc.cluster.local/header

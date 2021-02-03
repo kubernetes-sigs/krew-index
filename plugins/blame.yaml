@@ -1,0 +1,41 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: blame
+spec:
+  version: v0.0.2
+  platforms:
+  - bin: blame
+    uri: https://github.com/knight42/kubectl-blame/releases/download/v0.0.3/kubectl-blame-v0.0.3-linux-amd64.tar.gz
+    sha256: e6fbad9f6dbd8b9847c57e203858d289be11e3f3eb51d735d84fba2ff2736efe
+    files:
+      - from: ./LICENSE
+        to: .
+      - from: ./kubectl-blame
+        to: blame
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: blame
+    uri: https://github.com/knight42/kubectl-blame/releases/download/v0.0.3/kubectl-blame-v0.0.3-darwin-amd64.tar.gz
+    sha256: 617c81dce51da5c05615054a759c6ca22aa63165fde6479146a7e5d785f9dad9
+    files:
+      - from: ./LICENSE
+        to: .
+      - from: ./kubectl-blame
+        to: blame
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  shortDescription: Show who modified fields of a Kubernetes object
+  homepage: https://github.com/knight42/kubectl-blame
+  caveats: |
+      The plugin is only compatible with kubernetes versions 1.18 and above.
+ 
+      As long as the field '.metadata.managedFields' of the given resource is 
+      set properly, this command is able to display the manager of each field.
+  description: |
+      Annotates each line of a resource's YAML to identify the responsible 
+      actor and the time the field was last operated on.

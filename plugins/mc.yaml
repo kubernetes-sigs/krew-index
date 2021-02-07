@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: mc
 spec:
-  version: v0.4.0
+  version: v0.5.0
   homepage: https://github.com/jonnylangefeld/kubectl-mc
   shortDescription: Run kubectl commands against multiple clusters at once
   description: |+2
@@ -30,32 +30,35 @@ spec:
     # run a debug container on every kind cluster in the context
     mc --regex kind -- run debug --image=markeijsermans/debug --command -- sleep infinity
 
-    # list all contexts with 'dev' in the name, but not '-ci-' in the name
+    # list all contexts with 'dev' in the name, but not '-test-' in the name
     mc -r dev -l -n '-test-'
 
     # list all pods with label 'app.kubernetes.io/name=audit' in the 'default' namespace from all clusters with 'gke' in the name, but not 'dev'
     # run max 5 processes in parallel and enable debug output
     mc -r gke -n 'dev' -p 5 -d -- get pods -n gatekeeper-system -l app.kubernetes.io/name=audit
+
+    # print the context and the pod names in kube-system using jq
+    mc -r kind -o json -- get pods -n kube-system | jq 'keys[] as $k | "\($k) \(.[$k] | .items[].metadata.name)"'
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.4.0/kubectl-mc_v0.4.0_darwin_amd64.tar.gz
-    sha256: 541f8036a60ae620e5e1c0bfb47937d546199c215ad5bfabece3dbc22fc75b52
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.5.0/kubectl-mc_v0.5.0_darwin_amd64.tar.gz
+    sha256: b059a56b9db41bbeaf5c40d83c2f73384b085ae94ec747c97f4d01dca4ce0f52
     bin: kubectl-mc
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.4.0/kubectl-mc_v0.4.0_linux_amd64.tar.gz
-    sha256: a207e37458136d6e1dccea98b40875204c9dcbc7e9f77e3592ff65f11769a2c2
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.5.0/kubectl-mc_v0.5.0_linux_amd64.tar.gz
+    sha256: 3fa3f94fd38cc6d112fe121e706e870ac39364ccf2d68bf1c8b79693f8012e12
     bin: kubectl-mc
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.4.0/kubectl-mc_v0.4.0_windows_amd64.tar.gz
-    sha256: 36b0b2287fbf767398ce12d19f1ef776614cdbd62b7094690954b99c1904079d
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.5.0/kubectl-mc_v0.5.0_windows_amd64.tar.gz
+    sha256: 4b4ae8aa68faf4268cc478869932492eebf56f9f619ace5feb88431c33ed1ef6
     bin: kubectl-mc.exe
 

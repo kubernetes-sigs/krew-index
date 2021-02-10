@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: oulogin
 spec:
-  version: "v0.0.5"
+  version: "v0.0.6"
   homepage: https://github.com/TremoloSecurity/kubectl-login
   shortDescription: "Login to a cluster via OpenUnison"
   description: |
@@ -16,8 +16,8 @@ spec:
         operator: "In"
         values:
         - darwin
-    uri: https://nexus.tremolo.io/repository/oulogin/oulogin-0.0.5-macos.zip
-    sha256: f1ba9ecd37692037fd58b97b74e0c0c4b889b082259f086c5e3f7fb6eda6935b
+    uri: https://nexus.tremolo.io/repository/oulogin/oulogin-0.0.6-macos.zip
+    sha256: af8af0ca46ba7e4fd30645eeb02aec95e88129ee5e33dc3d013d60815d92b32f
     files:
     - from: "oulogin"
       to: "oulogin"
@@ -30,8 +30,8 @@ spec:
         operator: "In"
         values:
         - linux
-    uri: https://nexus.tremolo.io/repository/oulogin/oulogin-0.0.5-linux.zip
-    sha256: f99eab8494d3e83e71e0d0346f2cf3a685a92f75d7665f342e73f67bf70920cc
+    uri: https://nexus.tremolo.io/repository/oulogin/oulogin-0.0.6-linux.zip
+    sha256: 204dfd3794a722af292b356ce3febd7313540441a6c920982980e3a6eb8fb159
     files:
     - from: "oulogin"
       to: "oulogin"
@@ -44,11 +44,11 @@ spec:
         operator: "In"
         values:
         - windows
-    uri: https://nexus.tremolo.io/repository/oulogin/oulogin-0.0.5-win.zip
-    sha256: 53e5091a400ff9403e4e40542f66fec8ff5e13020cabb8aa48279a3f824ccc4a
+    uri: https://nexus.tremolo.io/repository/oulogin/oulogin-0.0.6-win.zip
+    sha256: 278f9f07394f885daecfb9f0bd37fc083f05d32da8a6e3d7e0f76832a9365adb
     files:
     - from: "oulogin.exe"
       to: "oulogin.exe"
     - from: "LICENSE"
       to: "LICENSE"
-    bin: oulogin.exe
+    bin: oulogin.exe%                                                           

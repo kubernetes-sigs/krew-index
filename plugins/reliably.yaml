@@ -1,0 +1,28 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: "reliably"
+spec:
+  version: v0.0.2
+  homepage: https://github.com/reliablyhd/kubectl-reliably
+  shortDescription: "Surfaces reliability issues in Kubernetes."
+  description: |
+    Surfaces reliability issues in your Kubernetes configuration,
+    using the Reliably CLI.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/reliablyhq/kubectl-reliably/archive/v0.0.2.tar.gz
+    sha256: f1a3d308b2321e38ac436cd1becd02863fc706c6525a60fd70823ee8bd7f193f
+    files:
+    - from: "kubectl-reliably-*/reliably.sh"
+      to: "."
+    - from: "kubectl-reliably-*/LICENSE"
+      to: "."
+    bin: reliably.sh
+  caveats: This plugin needs bash

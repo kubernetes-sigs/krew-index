@@ -1,0 +1,55 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cyclonus
+spec:
+  version: "v0.0.1"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.0.1/kubectl-cyclonus_linux_amd64.tar.gz
+    sha256: "77eab0286935fc27b10a6db13bc29959e116371fbcb1f5e7d6e6aab1ea9e34c7"
+    files:
+    - from: "./kubectl-cyclonus"
+      to: "cyclonus"
+    - from: LICENSE
+      to: "."
+    bin: "cyclonus"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.0.1/kubectl-cyclonus_darwin_amd64.tar.gz
+    sha256: "73cf532ee32873b13b82430d4fbdd579007a5770f8c4fe46b929313bcddd579b"
+    files:
+    - from: "./kubectl-cyclonus"
+      to: "cyclonus"
+    - from: LICENSE
+      to: "."
+    bin: "cyclonus"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.0.1/kubectl-cyclonus_windows_amd64.zip
+    sha256: "9ff97f71be0dd6ec86b8cf9cd08c571843762e4ad9d0b692c207cac299882ce5"
+    files:
+    - from: "/kubectl-cyclonus.exe"
+      to: "cyclonus.exe"
+    - from: LICENSE
+      to: "."
+    bin: "cyclonus.exe"
+  shortDescription: Analysis tools for network policies.
+  homepage: https://github.com/mattfenwick/kubectl-cyclonus
+  caveats: |
+    Usage:
+      $ kubectl cyclonus
+
+    For additional options:
+      $ kubectl cyclonus --help
+      or https://github.com/mattfenwick/kubectl-cyclonus/blob/v0.0.1/doc/USAGE.md
+
+  description: |
+    This plugin provides a suite of tools for working with network policies.

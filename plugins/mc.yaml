@@ -7,38 +7,12 @@ spec:
   homepage: https://github.com/jonnylangefeld/kubectl-mc
   shortDescription: Run kubectl commands against multiple clusters at once
   description: |+2
-    A Multi Cluster kubectl Client
+    This plugin helps to work with multiple kubernetes clusters at once, filtered by
+    a regular expression. For instance to get the status of a deployment across all
+    `staging` clusters run the following command:
+    mc -r staging -- get deployments -n kube-system
 
-    If you work at a company or organization that maintains multiple Kubernetes
-    clusters it is fairly common to connect to multiple different kubernetes
-    clusters throughout your day. And sometimes you want to execute a command
-    against multiple clusters at once. For instance to get the status of a
-    deployment across all `staging` clusters.
-
-    `kubectl-mc` (short for multi cluster) supports this workflow and significantly
-    reduces the return time by executing the necessary API requests in parallel go
-    routines.
-
-    Examples:
-
-    # list all kind contexts
-    mc -r kind -l
-
-    # list the pods in the kube-system namespace of all dev clusters
-    mc -r dev -- get pods -n kube-system
-
-    # run a debug container on every kind cluster in the context
-    mc --regex kind -- run debug --image=markeijsermans/debug --command -- sleep infinity
-
-    # list all contexts with 'dev' in the name, but not '-test-' in the name
-    mc -r dev -l -n '-test-'
-
-    # list all pods with label 'app.kubernetes.io/name=audit' in the 'default' namespace from all clusters with 'gke' in the name, but not 'dev'
-    # run max 5 processes in parallel and enable debug output
-    mc -r gke -n 'dev' -p 5 -d -- get pods -n gatekeeper-system -l app.kubernetes.io/name=audit
-
-    # print the context and the pod names in kube-system using jq
-    mc -r kind -o json -- get pods -n kube-system | jq 'keys[] as $k | "\($k) \(.[$k] | .items[].metadata.name)"'
+    For more examples run kubectl mc --help
   platforms:
   - selector:
       matchLabels:
@@ -61,4 +35,3 @@ spec:
     uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.5.0/kubectl-mc_v0.5.0_windows_amd64.tar.gz
     sha256: 4b4ae8aa68faf4268cc478869932492eebf56f9f619ace5feb88431c33ed1ef6
     bin: kubectl-mc.exe
-

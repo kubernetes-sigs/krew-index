@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: cyclonus
 spec:
-  version: "v0.0.1"
+  version: "v0.0.2"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.0.1/kubectl-cyclonus_linux_amd64.tar.gz
-    sha256: "77eab0286935fc27b10a6db13bc29959e116371fbcb1f5e7d6e6aab1ea9e34c7"
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.0.2/kubectl-cyclonus_linux_amd64.tar.gz
+    sha256: "743161ed2dde4a56ddab20a5eef7a944a5cb18e0fdf92a24cc44dd9f68a89eb0"
     files:
     - from: "./kubectl-cyclonus"
       to: "cyclonus"
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.0.1/kubectl-cyclonus_darwin_amd64.tar.gz
-    sha256: "73cf532ee32873b13b82430d4fbdd579007a5770f8c4fe46b929313bcddd579b"
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.0.2/kubectl-cyclonus_darwin_amd64.tar.gz
+    sha256: "1252258113e66b52969b25b8949faa10a4a4b3036ca25e8c4b4e9594e47a6aa0"
     files:
     - from: "./kubectl-cyclonus"
       to: "cyclonus"
@@ -33,23 +33,21 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.0.1/kubectl-cyclonus_windows_amd64.zip
-    sha256: "9ff97f71be0dd6ec86b8cf9cd08c571843762e4ad9d0b692c207cac299882ce5"
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.0.2/kubectl-cyclonus_windows_amd64.zip
+    sha256: "24d9f7e6c2df41417cc1ce93972c78acea0ea1a431dfb199496b445d8c0e6e15"
     files:
     - from: "/kubectl-cyclonus.exe"
       to: "cyclonus.exe"
     - from: LICENSE
       to: "."
     bin: "cyclonus.exe"
-  shortDescription: Analysis tools for network policies.
+  shortDescription: NetworkPolicy analysis tool suite
   homepage: https://github.com/mattfenwick/kubectl-cyclonus
-  caveats: |
-    Usage:
-      $ kubectl cyclonus
-
-    For additional options:
-      $ kubectl cyclonus --help
-      or https://github.com/mattfenwick/kubectl-cyclonus/blob/v0.0.1/doc/USAGE.md
-
   description: |
-    This plugin provides a suite of tools for working with network policies.
+    This plugin provides a suite of tools for working with network policies, including:
+    - linting to detect common problems
+    - target- and pod-based resolution of policies, to understand how policies work in practice
+      and override each other
+    - simulation of traffic allow/deny based on application of policies to source and destination
+      pod and namespace labels and IP addresses
+

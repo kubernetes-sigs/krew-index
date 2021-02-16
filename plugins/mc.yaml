@@ -10,9 +10,7 @@ spec:
     This plugin helps to work with multiple kubernetes clusters at once, filtered by
     a regular expression. For instance to get the status of a deployment across all
     `staging` clusters run the following command:
-    mc -r staging -- get deployments -n kube-system
-
-    For more examples run kubectl mc --help
+    kubectl mc -r staging -- get deployments -n kube-system
   platforms:
   - selector:
       matchLabels:

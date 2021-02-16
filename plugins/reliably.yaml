@@ -1,28 +1,37 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: "reliably"
+  name: reliably
 spec:
-  version: v0.0.2
-  homepage: https://github.com/reliablyhd/kubectl-reliably
+  version: v0.3.0
+  platforms:
+  - uri: https://github.com/reliablyhq/cli/releases/download/v0.3.0/reliably_v0.3.0_darwin_amd64.tar.gz
+    sha256: b704ac7c018a4446d397acc05cc1d25caee14584b27c76465f39a60cd5529d09
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    bin: reliably
+    files:
+    - from: "reliably"
+      to: "."
+    - from: LICENSE
+      to: .
+  - uri: https://github.com/reliablyhq/cli/releases/download/v0.3.0/reliably_v0.3.0_linux_amd64.tar.gz
+    sha256: 3f43d20d52215220ec5d439f09e119e544fb678ef75a01a3d441bef685790d53
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    bin: reliably
+    files:
+    - from: "reliably"
+      to: "."
+    - from: LICENSE
+      to: .
+  homepage: https://github.com/reliablyhq/cli
   shortDescription: "Surfaces reliability issues in Kubernetes."
   description: |
     Surfaces reliability issues in your Kubernetes configuration,
     using the Reliably CLI.
-  platforms:
-  - selector:
-      matchExpressions:
-      - key: "os"
-        operator: "In"
-        values:
-        - darwin
-        - linux
-    uri: https://github.com/reliablyhq/kubectl-reliably/archive/v0.0.2.tar.gz
-    sha256: f1a3d308b2321e38ac436cd1becd02863fc706c6525a60fd70823ee8bd7f193f
-    files:
-    - from: "kubectl-reliably-*/reliably.sh"
-      to: "."
-    - from: "kubectl-reliably-*/LICENSE"
-      to: "."
-    bin: reliably.sh
-  caveats: This plugin needs bash
+  

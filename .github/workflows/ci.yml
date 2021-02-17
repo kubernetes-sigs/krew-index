@@ -46,7 +46,7 @@ jobs:
         export GOBIN=$HOME/bin
         # TODO(corneliusweig): pin validator version after next release
         # go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
-        go get sigs.k8s.io/krew/cmd/validate-krew-manifest@60ca400404fcd12c9f14b68aead7191ae4748e4d
+        go get sigs.k8s.io/krew/cmd/validate-krew-manifest@ec169f8c9c53e0aaaf57f1f73fb38590842ceb77
 
     - name: Validate updated plugin manifests
       run : |

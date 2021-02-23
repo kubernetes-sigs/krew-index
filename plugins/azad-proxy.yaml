@@ -4,8 +4,8 @@ metadata:
   name: azad-proxy
 spec:
   platforms:
-  - uri: https://github.com/XenitAB/azad-kube-proxy/releases/download/v0.0.9/kubectl-azad_proxy-darwin-amd64.zip
-    sha256: a4de4d2b587fb7f2ef054512cde4608e27fa9cb2d65376e64c28231490195dd3
+  - uri: https://github.com/XenitAB/azad-kube-proxy/releases/download/v0.0.10/kubectl-azad_proxy-darwin-amd64.zip
+    sha256: 7ecf2341d64f0e83f06c06dc6ddff45eb8c3f0187d094c5336cef6e4dda093d9
     bin: kubectl-azad_proxy
     files:
     - from: kubectl-azad_proxy
@@ -16,8 +16,20 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/XenitAB/azad-kube-proxy/releases/download/v0.0.9/kubectl-azad_proxy-linux-amd64.zip
-    sha256: 1a686b717e5cb54432b076e22e06a16dbe6ef3fbb634fc98ea42ba21bd750501
+  - uri: https://github.com/XenitAB/azad-kube-proxy/releases/download/v0.0.10/kubectl-azad_proxy-darwin-arm64.zip
+    sha256: 9f4a8d906f17c91f782e77e520b1d6ba4ef32054b831b4b7e307bf60fdf1a6eb
+    bin: kubectl-azad_proxy
+    files:
+    - from: kubectl-azad_proxy
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - uri: https://github.com/XenitAB/azad-kube-proxy/releases/download/v0.0.10/kubectl-azad_proxy-linux-amd64.zip
+    sha256: 9b8743ace36b87497cf38473a80161e5c78e044f2ebefc53ae0fa667c5fdb5d4
     bin: kubectl-azad_proxy
     files:
     - from: kubectl-azad_proxy
@@ -28,8 +40,32 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/XenitAB/azad-kube-proxy/releases/download/v0.0.9/kubectl-azad_proxy-windows-amd64.zip
-    sha256: f5991b8ef06812400c44488a644c999d85095431b3011fedecdc08ab4ce5b8cd
+  - uri: https://github.com/XenitAB/azad-kube-proxy/releases/download/v0.0.10/kubectl-azad_proxy-linux-arm64.zip
+    sha256: 2eb1780bf186211b838777262c9be764fe2393be89bee4e26805092d70982151
+    bin: kubectl-azad_proxy
+    files:
+    - from: kubectl-azad_proxy
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - uri: https://github.com/XenitAB/azad-kube-proxy/releases/download/v0.0.10/kubectl-azad_proxy-linux-arm.zip
+    sha256: 7c573370e90207f4387a5f461c5373a0fca6866dd7fb19d84ac68f0caeeeb8b3
+    bin: kubectl-azad_proxy
+    files:
+    - from: kubectl-azad_proxy
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm
+  - uri: https://github.com/XenitAB/azad-kube-proxy/releases/download/v0.0.10/kubectl-azad_proxy-windows-amd64.zip
+    sha256: 87f3e6dce4ce0bcd7579ccea88801cf686184b3143c6ccbd2891b5bf9bf7aa06
     bin: kubectl-azad_proxy.exe
     files:
     - from: kubectl-azad_proxy.exe
@@ -40,7 +76,7 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-  version: "v0.0.9"
+  version: "v0.0.10"
   homepage: https://github.com/XenitAB/azad-kube-proxy
   caveats: |
     This plugin is used in combination with the azad-kube-proxy:

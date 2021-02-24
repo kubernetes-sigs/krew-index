@@ -3,12 +3,12 @@ kind: Plugin
 metadata:
   name: mc
 spec:
-  version: v0.5.0
+  version: v0.6.0
   homepage: https://github.com/jonnylangefeld/kubectl-mc
   shortDescription: Run kubectl commands against multiple clusters at once
   description: |+2
     This plugin helps to work with multiple kubernetes clusters at once, filtered by
-    a regular expression. For instance to get the status of a deployment across all
+    a regular expression. For instance to get the status of a deployment across all 
     `staging` clusters run the following command:
     kubectl mc -r staging -- get deployments -n kube-system
   platforms:
@@ -16,20 +16,20 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.5.0/kubectl-mc_v0.5.0_darwin_amd64.tar.gz
-    sha256: b059a56b9db41bbeaf5c40d83c2f73384b085ae94ec747c97f4d01dca4ce0f52
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.6.0/kubectl-mc_v0.6.0_darwin_amd64.tar.gz
+    sha256: 701a3b9da9a9489ddb66f0c54499e9d33d4679149581483a9ec48ad1aa55055c
     bin: kubectl-mc
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.5.0/kubectl-mc_v0.5.0_linux_amd64.tar.gz
-    sha256: 3fa3f94fd38cc6d112fe121e706e870ac39364ccf2d68bf1c8b79693f8012e12
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.6.0/kubectl-mc_v0.6.0_linux_amd64.tar.gz
+    sha256: 04b3c5ccfe3e822f90e609766a4c4290d93c94bc13ae0a590a286865113e2323
     bin: kubectl-mc
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.5.0/kubectl-mc_v0.5.0_windows_amd64.tar.gz
-    sha256: 4b4ae8aa68faf4268cc478869932492eebf56f9f619ace5feb88431c33ed1ef6
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.6.0/kubectl-mc_v0.6.0_windows_amd64.tar.gz
+    sha256: 5cd9092c34fd43608a81e99c2da9dfd084ce66389448e8242af1afe687b1c810
     bin: kubectl-mc.exe

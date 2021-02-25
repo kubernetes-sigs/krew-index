@@ -1,0 +1,54 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: sniffer
+spec:
+  version: "v0.0.1"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/sunny0826/kubectl-sniffer/releases/download/v0.0.1/sniffer_linux_amd64.tar.gz
+    sha256: "13499ebe08ff7880ce2c6a83ae3981086a782e785c71c20a725b99256fa3578a"
+    files:
+    - from: "./sniffer"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "sniffer"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/sunny0826/kubectl-sniffer/releases/download/v0.0.1/sniffer_darwin_amd64.tar.gz
+    sha256: "f9ec5b523612e82bb944c216b0d55a78a9657cbb42526bada7ea642280f30caf"
+    files:
+    - from: "./sniffer"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "sniffer"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/sunny0826/kubectl-sniffer/releases/download/v0.0.1/sniffer_windows_amd64.zip
+    sha256: "100c6c058cc041b41cbaec728ddc303511366ef5474a0549a98b809c7ee2b8ca"
+    files:
+    - from: "/sniffer.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "sniffer.exe"
+  shortDescription: A new plugin
+  homepage: https://github.com/sunny0826/kubectl-sniffer
+  description: |
+    Find related workloads, namespace, node, service, configmap, secret, ingress and HPA by pod name and display them in a tree and table.
+
+    Usage:
+          $ kubectl sniffer [pod name]
+
+        For additional options:
+          $ kubectl sniffer --help
+          or https://github.com/sunny0826/kubectl-sniffer/blob/v0.1.0/doc/USAGE.md

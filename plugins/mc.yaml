@@ -1,0 +1,35 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: mc
+spec:
+  version: v0.6.1
+  homepage: https://github.com/jonnylangefeld/kubectl-mc
+  shortDescription: Run kubectl commands against multiple clusters at once
+  description: |+2
+    This plugin helps to work with multiple kubernetes clusters at once, filtered by
+    a regular expression. For instance to get the status of a deployment across all
+    `staging` clusters run the following command:
+    kubectl mc -r staging -- get deployments -n kube-system
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.6.1/kubectl-mc_v0.6.1_darwin_amd64.tar.gz
+    sha256: 0fb3e6af002de4e40a5de0c670a14b49b1bb6cea82d9785abbbbe84756d80665
+    bin: kubectl-mc
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.6.1/kubectl-mc_v0.6.1_linux_amd64.tar.gz
+    sha256: 1ff5813089181efea9148e47b51c39cf38a3442de8b4fcf8ea718a286849502f
+    bin: kubectl-mc
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.6.1/kubectl-mc_v0.6.1_windows_amd64.tar.gz
+    sha256: 3401045737a11d07e0ee516b21d6ee5786ffc3860dbcf416470cacadf403f9e4
+    bin: kubectl-mc.exe

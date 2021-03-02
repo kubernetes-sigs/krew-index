@@ -1,0 +1,22 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: colour
+spec:
+  version: "v1.0.0"
+  platforms:
+  - uri: https://github.com/meltingrobot/kubernetes-colour/archive/1.0.0.tar.gz
+    sha256: 57260145394924096b2050579a495db3c1b0a94b7aa86c2e45df1de7f5ec9ec7
+    bin: kubectl-colour
+    files:
+    - from: "./*/kubectl-colour"
+      to: .
+    - from: "./*/LICENSE"
+      to: .
+    selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+  description: |
+    This plugin gives some basic color/colour output for kubectl get node/pod
+  shortDescription: Color/Colour output for get node/pod
+  homepage: https://github.com/meltingrobot/kubernetes-colour

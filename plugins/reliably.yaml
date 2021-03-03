@@ -3,10 +3,10 @@ kind: Plugin
 metadata:
   name: reliably
 spec:
-  version: v0.3.0
+  version: v0.5.0
   platforms:
-  - uri: https://github.com/reliablyhq/cli/releases/download/v0.3.0/reliably_v0.3.0_darwin_amd64.tar.gz
-    sha256: b704ac7c018a4446d397acc05cc1d25caee14584b27c76465f39a60cd5529d09
+  - uri: https://github.com/reliablyhq/cli/releases/download/v0.5.0/reliably-darwin-amd64.tar.gz
+    sha256: ecb30d3edb17ebf49dc73a842d2771ea69f0ef16f8b1d12dc8765c7b7bb2ff3d
     selector:
       matchLabels:
         os: darwin
@@ -17,8 +17,8 @@ spec:
       to: "."
     - from: LICENSE
       to: .
-  - uri: https://github.com/reliablyhq/cli/releases/download/v0.3.0/reliably_v0.3.0_linux_amd64.tar.gz
-    sha256: 3f43d20d52215220ec5d439f09e119e544fb678ef75a01a3d441bef685790d53
+  - uri: https://github.com/reliablyhq/cli/releases/download/v0.5.0/reliably-linux-amd64.tar.gz
+    sha256: 51af9c6c7376e352c773412606a8143045c0072792ecec2518d2542a63b4f4c5
     selector:
       matchLabels:
         os: linux

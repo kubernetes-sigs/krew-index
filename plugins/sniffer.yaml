@@ -1,48 +1,48 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: sniffer
+  name: pod-lens
 spec:
-  version: "v0.0.1"
+  version: "v0.1.0"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-sniffer/releases/download/v0.0.1/sniffer_linux_amd64.tar.gz
-    sha256: "13499ebe08ff7880ce2c6a83ae3981086a782e785c71c20a725b99256fa3578a"
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.0/pod-lens_linux_amd64.tar.gz
+    sha256: "937d7e6c77d7d66fb7fc125b867427f8cced40e59ff8cdb8a2e97aad9ffae991"
     files:
-    - from: "./sniffer"
+    - from: "./pod-lens"
       to: "."
     - from: LICENSE
       to: "."
-    bin: "sniffer"
+    bin: "pod-lens"
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-sniffer/releases/download/v0.0.1/sniffer_darwin_amd64.tar.gz
-    sha256: "f9ec5b523612e82bb944c216b0d55a78a9657cbb42526bada7ea642280f30caf"
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.0/pod-lens_darwin_amd64.tar.gz
+    sha256: "f31adacbc39a510bbd85db8aac0c10fcacae6e115885552618192b6b42db5ed8"
     files:
-    - from: "./sniffer"
+    - from: "./pod-lens"
       to: "."
     - from: LICENSE
       to: "."
-    bin: "sniffer"
+    bin: "pod-lens"
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-sniffer/releases/download/v0.0.1/sniffer_windows_amd64.zip
-    sha256: "100c6c058cc041b41cbaec728ddc303511366ef5474a0549a98b809c7ee2b8ca"
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.0/pod-lens_windows_amd64.zip
+    sha256: "7ca4262474b6efe1929572321de05f07d040953a2d9dc3197dc66c16b5803328"
     files:
-    - from: "/sniffer.exe"
+    - from: "/pod-lens.exe"
       to: "."
     - from: LICENSE
       to: "."
-    bin: "sniffer.exe"
+    bin: "pod-lens.exe"
   shortDescription: Sniffing pod-related resources
-  homepage: https://github.com/sunny0826/kubectl-sniffer
+  homepage: https://github.com/sunny0826/kubectl-pod-lens
   description: |
     Find related workloads, namespace, node, service, configmap, secret, 
     ingress and HPA by pod name and display them in a tree and table.

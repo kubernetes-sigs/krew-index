@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: pod-lens
 spec:
-  version: "v0.1.0"
+  version: "v0.1.1"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.0/pod-lens_linux_amd64.tar.gz
-    sha256: "937d7e6c77d7d66fb7fc125b867427f8cced40e59ff8cdb8a2e97aad9ffae991"
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.1/pod-lens_linux_amd64.tar.gz
+    sha256: 219f1f42e055c1f9d604aba048ab64d9268e36489bc475c92c68051a74695a0a
     files:
     - from: "./pod-lens"
       to: "."
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.0/pod-lens_darwin_amd64.tar.gz
-    sha256: "f31adacbc39a510bbd85db8aac0c10fcacae6e115885552618192b6b42db5ed8"
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.1/pod-lens_darwin_amd64.tar.gz
+    sha256: 94aa7603b50f4ce765b0de7ddcbde7ed38981a53009e7995c2a9fdf016015b9b
     files:
     - from: "./pod-lens"
       to: "."
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.0/pod-lens_windows_amd64.zip
-    sha256: "7ca4262474b6efe1929572321de05f07d040953a2d9dc3197dc66c16b5803328"
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.1/pod-lens_windows_amd64.zip
+    sha256: 128c8ff67f5a37bbdd881b88f8f5eaf68091123efe730cefeb9ebeb2d28b1a3f
     files:
     - from: "/pod-lens.exe"
       to: "."
@@ -44,5 +44,5 @@ spec:
   shortDescription: Sniffing pod-related resources
   homepage: https://github.com/sunny0826/kubectl-pod-lens
   description: |
-    Find related workloads, namespace, node, service, configmap, secret, 
+    Find related workloads, namespace, node, service, configmap, secret,
     ingress and HPA by pod name and display them in a tree and table.

@@ -3,46 +3,46 @@ kind: Plugin
 metadata:
   name: virt
 spec:
-  version: "v0.34.0"
+  version: "v0.39.0"
   platforms:
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: amd64
-      uri: "https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v0.34.0/virtctl-darwin-amd64.tar.gz"
-      sha256: "606f483283f608f3332fb249eefc9cb3f0076444901e10bc94318e35a54dd72b"
-      files:
-        - from: "/virtctl/virtctl-darwin-amd64"
-          to: "virtctl"
-        - from: virtctl/LICENSE
-          to: .
-      bin: "virtctl"
-    - selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-      uri: "https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v0.34.0/virtctl-linux-amd64.tar.gz"
-      sha256: "aa1db58a06b201690736acbfb53c4c67cf1da263a26a6515f1bb88de0fafc4c9"
-      files:
-        - from: "/virtctl/virtctl-linux-amd64"
-          to: "virtctl"
-        - from: virtctl/LICENSE
-          to: .
-      bin: "virtctl"
-    - selector:
-        matchLabels:
-          os: windows
-          arch: amd64
-      uri: "https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v0.34.0/virtctl-windows-amd64.exe.tar.gz"
-      sha256: "1d62e97de2f1588222b5a964f051faddc9b7ced413d0a97344e5c8eb396790a2"
-      files:
-        - from: "/virtctl/virtctl-windows-amd64.exe"
-          to: "virtctl.exe"
-        - from: virtctl/LICENSE
-          to: .
-      bin: "virtctl.exe"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v0.39.0/virtctl-darwin-amd64.tar.gz
+    sha256: d4ac01df6e5470a3f5e535da5b97731138741670381d3ad34bc2af133b657e23
+    files:
+    - from: "/virtctl/virtctl-darwin-amd64"
+      to: "virtctl"
+    - from: virtctl/LICENSE
+      to: .
+    bin: "virtctl"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v0.39.0/virtctl-linux-amd64.tar.gz
+    sha256: f652336a1c70cd7f7744684c9debd033ca7126a9a6082b00d6f2129193a16519
+    files:
+    - from: "/virtctl/virtctl-linux-amd64"
+      to: "virtctl"
+    - from: virtctl/LICENSE
+      to: .
+    bin: "virtctl"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v0.39.0/virtctl-windows-amd64.exe.tar.gz
+    sha256: 01f0f04f8a438c9ee6467e03353ef1ecf4b587cff05635423c475100cbc6342a
+    files:
+    - from: "/virtctl/virtctl-windows-amd64.exe"
+      to: "virtctl.exe"
+    - from: virtctl/LICENSE
+      to: .
+    bin: "virtctl.exe"
   shortDescription: Control KubeVirt virtual machines using virtctl
-  homepage: https://kubevirt.io
+  homepage: https://github.com/kubevirt/kubectl-virt-plugin
   caveats: |
     virt plugin is a wrapper for virtctl originating from the KubeVirt project. In order to use virtctl you will
     need to have KubeVirt installed on your Kubernetes cluster to use it. See https://kubevirt.io/ for details

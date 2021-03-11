@@ -4,8 +4,8 @@ metadata:
   name: open-svc
 spec:
   platforms:
-  - uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.4.2/kubectl-open_svc-darwin-amd64.zip
-    sha256: a46d1b01a63b31b41b3fba5f8fda1d542f33c562f6fc0716eb4f612f51136b18
+  - uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.4.3/kubectl-open_svc-darwin-amd64.zip
+    sha256: 3666681f32ea40f94fdf2fd997f6ec482a8cceb4f8441e04b33ba9f77763e934
     bin: kubectl-open_svc
     files:
     - from: kubectl-open_svc
@@ -16,8 +16,20 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.4.2/kubectl-open_svc-linux-amd64.zip
-    sha256: 5c633b772a639cd5f3e372d2bcb0bc0f24e6b512764eefdaf9ba19927536658e
+  - uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.4.3/kubectl-open_svc-darwin-arm64.zip
+    sha256: 26ee6965acdc9e0a0c3c36e044121d7e03fb27f7f76e94f3b84858e69d6fcf60
+    bin: kubectl-open_svc
+    files:
+    - from: kubectl-open_svc
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.4.3/kubectl-open_svc-linux-amd64.zip
+    sha256: 5bd3ccb7d52432758e6879ceb400090cfecf45e4e2c19ec082aa80b8d41ca4e9
     bin: kubectl-open_svc
     files:
     - from: kubectl-open_svc
@@ -28,8 +40,32 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.4.2/kubectl-open_svc-windows-amd64.zip
-    sha256: aa7ac49d2cc24e85a4636d464b4662f8e6fe6d0ce7d92439da2aa7113e422995
+  - uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.4.3/kubectl-open_svc-linux-arm64.zip
+    sha256: eaafbeddaabc50a6706bb08e1a980c927eef9b30e43c1ab5fc9b30c703d5806e
+    bin: kubectl-open_svc
+    files:
+    - from: kubectl-open_svc
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.4.3/kubectl-open_svc-linux-arm.zip
+    sha256: 0521405658bf9ead21174bf40a26d375fc0eeaa1b0f8558a60021443c547a162
+    bin: kubectl-open_svc
+    files:
+    - from: kubectl-open_svc
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm
+  - uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.4.3/kubectl-open_svc-windows-amd64.zip
+    sha256: f25454cf6916c4d363a327666b904e967865809960030a970cf33d2514237ca4
     bin: kubectl-open_svc.exe
     files:
     - from: kubectl-open_svc.exe
@@ -40,7 +76,7 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-  version: "v2.4.2"
+  version: "v2.4.3"
   shortDescription: Open the Kubernetes URL(s) for the specified service in your browser.
   description: |
     Open the Kubernetes URL(s) for the specified service in your browser.

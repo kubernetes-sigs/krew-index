@@ -3,19 +3,19 @@ kind: Plugin
 metadata:
   name: gs
 spec:
-  version: v0.18.0
+  version: v1.24.0
   homepage: https://github.com/giantswarm/kubectl-gs
   shortDescription: Handle custom resources with Giant Swarm
   description: |
-    Simplifies creating clusters and node pools via Giant Swarm Kubernetes
-    control planes, as well as installing app catalogs and apps.
+    Simplifies creating clusters and node pools via Giant Swarm
+    management clusters, as well as installing app catalogs and apps.
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v0.18.0/kubectl-gs-v0.18.0-darwin-amd64.tar.gz
-    sha256: 5a9a49765f98ce8ffd549f4bc5178d6b58fb3832c7babd41f9d68c59fc845cb1
+    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v1.24.0/kubectl-gs-v1.24.0-darwin-amd64.tar.gz
+    sha256: db29601389c7b95412c7f10826d0007d8d237f1b75327580acb51f3e636a3e46
     files:
     - from: ./kubectl-gs-*/*
       to: .
@@ -24,8 +24,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v0.18.0/kubectl-gs-v0.18.0-linux-amd64.tar.gz
-    sha256: cb036840781ffaf6c855dc4661d1e68e977a26b7b140502e74303118217e7b68
+    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v1.24.0/kubectl-gs-v1.24.0-linux-amd64.tar.gz
+    sha256: f772771e0de9b8e6ad5ebaf783e700f386f2a6deac49b1427f4a5edca7d5fc4d
     files:
     - from: ./kubectl-gs-*/*
       to: .

@@ -5,14 +5,14 @@ metadata:
 spec:
   homepage: https://github.com/VerizonMedia/kubectl-flame
   shortDescription: Generate CPU flame graphs from pods
-  version: v0.1.5
+  version: v0.2.2
   description: |
     Generate CPU flame graphs without restarting pods and with low overhead.
   caveats: |
-    Currently, only Java is supported.
+    Currently supported languages: Go, Java (any JVM based language), Python and Ruby.
   platforms:
-    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.5/kubectl-flame_v0.1.5_darwin_x86_64.tar.gz
-      sha256: f13f30c3705511d5fb3d213780ee190f82898f85708d6d199ad8bf1a139c9c88
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.2.2/kubectl-flame_v0.2.2_darwin_x86_64.tar.gz
+      sha256: 6fec57f3975255ebad5cfed67cf06792279a982b1082d8104ce28a691ac261b5
       bin: kubectl-flame
       files:
         - from: kubectl-flame
@@ -23,8 +23,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.5/kubectl-flame_v0.1.5_linux_x86_64.tar.gz
-      sha256: 45f9dccb1f5a9a61d47c4860e3aa7618120f3b1d8f2d0b53df48f59d02831f08
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.2.2/kubectl-flame_v0.2.2_linux_x86_64.tar.gz
+      sha256: 0c745c8ed7e4bd2516d9efa93d2fafb831ed96d04bd1306397aed31fe03287f2
       bin: kubectl-flame
       files:
         - from: kubectl-flame
@@ -35,8 +35,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.1.5/kubectl-flame_v0.1.5_windows_x86_64.zip
-      sha256: b7571252d328211804b8777c357af9b063b365b2dad68c14700e0fbeb5b53123
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.2.2/kubectl-flame_v0.2.2_windows_x86_64.zip
+      sha256: 69252c242b0e5829cf5d6965c0d0f1f457c562a8ab0a5e89a82653665c8e85ce
       bin: kubectl-flame.exe
       files:
         - from: kubectl-flame.exe

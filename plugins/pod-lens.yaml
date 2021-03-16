@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: pod-lens
 spec:
-  version: "v0.1.2"
+  version: "v0.1.3"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.2/pod-lens_linux_amd64.tar.gz
-    sha256: f3d33565df651893e7fd1c5b3505f4d484922e92311c89edaf1cf19e2ac54de5
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.3/pod-lens_linux_amd64.tar.gz
+    sha256: 82523797e11715ab9cb43101b351b9ea75ea602e29fdf0d95b111cc2f88f518d
     files:
     - from: "./pod-lens"
       to: "."
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.2/pod-lens_darwin_amd64.tar.gz
-    sha256: 7ec6c71b50b22710313e97e87efbb5a086b8227daf017c992da669ffe3951eea
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.3/pod-lens_darwin_amd64.tar.gz
+    sha256: b12dfde9186025455ffbf22649870d61e71f5a29eca03752b994e6a580df2b94
     files:
     - from: "./pod-lens"
       to: "."
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.2/pod-lens_windows_amd64.zip
-    sha256: 2757db91be168ccd850e3acd367b82465f2bfcdc4c7c612814b004f1aacb9316
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.3/pod-lens_windows_amd64.zip
+    sha256: 0b2856913fc86aed6bc77bcbef5e67bb93d421355c25f6c26102cd975989430f
     files:
     - from: "/pod-lens.exe"
       to: "."

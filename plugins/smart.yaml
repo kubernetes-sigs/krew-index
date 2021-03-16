@@ -1,0 +1,27 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: smart
+spec:
+  homepage: https://github.com/FingerLiu/kubectl-smart
+  shortDescription: A plugin that makes kubectl smart with name search.
+  version: v0.0.1
+  description: |
+      A kubectl plugin that makes kubectl smart with name search.Type less letters!Save more life!
+      Added grep support for most kubectl sub commands.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/FingerLiu/kubectl-smart/archive/0.0.3.tar.gz
+    sha256: 747897fcc67d3d05a1481215fec00884063fd20bfcdc796de3e7101fe1b960a0
+    bin: kubectl-smart
+    files:
+    - from: kubectl-smart-*/kubectl-smart
+      to: .
+    - from: kubectl-smart-*/LICENSE
+      to: .

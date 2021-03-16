@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: flyte
+spec:
+  version: "v0.7.1"
+  homepage: https://github.com/flyteorg/flyte
+  shortDescription: Monitor, launch and manage flyte executions
+  description: |
+      Kubectl-flyte can be used to manage workflows in a kubernetes cluster executed
+      by FlytePropeller. Users can monitor, visualize executing workflows, delete or
+      terminate executions in bulk, and dive into quota utilization for tenants. The
+      tool allows users to launch yaml based Flyte workflows without FlyteAdmin.
+      
+      For more information about Flyte refer to https://flyte.org
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/flyteorg/flytepropeller/releases/download/v0.7.1/kubectl-flyte_v0.7.1_darwin_x86_64.tar.gz
+      sha256: 54789da100b5e838e49546dacba4b4d47a0fac189579964a1c5c97e836b973aa
+      files:
+        - from: kubectl-flyte
+          to: flyte
+        - from: LICENSE
+          to: .
+      bin: flyte
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/flyteorg/flytepropeller/releases/download/v0.7.1/kubectl-flyte_v0.7.1_linux_x86_64.tar.gz
+      sha256: cabbb59196ccf3fdced3fb7659ebe19f0b973237549afd0195a2e120626775a2
+      files:
+        - from: kubectl-flyte
+          to: flyte
+        - from: LICENSE
+          to: .
+      bin: flyte

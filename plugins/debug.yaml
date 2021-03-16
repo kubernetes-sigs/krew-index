@@ -29,12 +29,22 @@ spec:
   shortDescription: Attach ephemeral debug container to running pod
   homepage: https://github.com/verb/kubectl-debug
   caveats: |
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    IMPORTANT DEPRECATION NOTICE
+
+    This plugin is only for use with versions of kubectl less than 1.20. Beginning with
+    version 1.20, `kubectl debug` is built into kubectl and this plugin will be ignored.
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
     This plugin requires the alpha EphemeralContainers feature to be enabled in the cluster.
     See https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/ for
     enabling features.
   description: |
-    This plugin attaches an Ephemeral Container to a running pod for use as an interactive
-    debugging session. For example, to run busybox in the running pod "mypod":
+    This plugin is used with versions of kubectl less than 1.20 to attach an Ephemeral
+    Container to a running pod for use as an interactive debugging session. Beginning with
+    version 1.20, `kubectl debug` is built into kubectl and this plugin will be ignored.
+
+    For example, to run busybox in the running pod "mypod":
     
       # kubectl debug mypod --attach
     

@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: pod-lens
 spec:
-  version: "v0.1.3"
+  version: "v0.1.4"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.3/pod-lens_linux_amd64.tar.gz
-    sha256: 82523797e11715ab9cb43101b351b9ea75ea602e29fdf0d95b111cc2f88f518d
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.4/pod-lens_linux_amd64.tar.gz
+    sha256: 8041b185ffcbe228fe5f2ea6a23c64ab4ac3d84658857e7ab7e0b185c2d5afde
     files:
     - from: "./pod-lens"
       to: "."
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.3/pod-lens_darwin_amd64.tar.gz
-    sha256: b12dfde9186025455ffbf22649870d61e71f5a29eca03752b994e6a580df2b94
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.4/pod-lens_darwin_amd64.tar.gz
+    sha256: e5853ee7bca4ff71dd7cb280bd95a8a34d9d72a7d11e944efaf6113d59640626
     files:
     - from: "./pod-lens"
       to: "."
@@ -33,16 +33,16 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.3/pod-lens_windows_amd64.zip
-    sha256: 0b2856913fc86aed6bc77bcbef5e67bb93d421355c25f6c26102cd975989430f
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.4/pod-lens_windows_amd64.zip
+    sha256: bc9a565de44aec54a848d07a61267a284991183c2d00b7e322cd7c2dfe4abdbb
     files:
     - from: "/pod-lens.exe"
       to: "."
     - from: LICENSE
       to: "."
     bin: "pod-lens.exe"
-  shortDescription: Sniffing pod-related resources
-  homepage: https://github.com/sunny0826/kubectl-pod-lens
+  shortDescription: Show pod-related resources
+  homepage: https://pod-lens.guoxudong.io
   description: |
     Find related workloads, namespace, node, service, configmap, secret,
-    ingress and HPA by pod name and display them in a tree and table.
+    ingress, PVC and HPA by pod name and display them in a tree and table.

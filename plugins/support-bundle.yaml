@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: support-bundle
 spec:
-  version: v0.10.11
+  version: v0.10.12
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.10.11/support-bundle_linux_amd64.tar.gz
-    sha256: 8783cf395d51fc27fe41e7e82deb16973a1b1ac32e326d46d9b9a7a3bd5b65e5
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.10.12/support-bundle_linux_amd64.tar.gz
+    sha256: 6c68f7d519b5fdfb3845366a4b2dbadb2e281896ae752d0f8e0e91eb1ac7e4dc
     files:
     - from: support-bundle
       to: .
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.10.11/support-bundle_darwin_amd64.tar.gz
-    sha256: 9975e060467f75f34291a8a06936d590154ed812dd211d1ee0d7af6b483bc45d
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.10.12/support-bundle_darwin_amd64.tar.gz
+    sha256: fafd07c0343a2f2e3b13faf32aef8e8902d948b10b55d20334c7100b3c4af1f2
     files:
     - from: support-bundle
       to: .
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.10.11/support-bundle_windows_amd64.zip
-    sha256: 21090609b89c213d626f3d45d27f240664aef9ab3b7f3af5593c50761a3bc675
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.10.12/support-bundle_windows_amd64.zip
+    sha256: d01f19ace719b897249e6f8c6c7bbcd019fc2fc32b4af5cb75c9ea279bc5d7ca
     files:
     - from: support-bundle.exe
       to: .

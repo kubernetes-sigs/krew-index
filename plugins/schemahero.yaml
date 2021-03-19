@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: schemahero
 spec:
-  version: v0.11.3
+  version: v0.12.0
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/schemahero/schemahero/releases/download/v0.11.3/kubectl-schemahero_linux_amd64.tar.gz
-    sha256: 8700532fd96053b9f20291025af6674d56940cac3e6bbd5ee9889c76f2aba0c1
+    uri: https://github.com/schemahero/schemahero/releases/download/v0.12.0/kubectl-schemahero_linux_amd64.tar.gz
+    sha256: af5d457dedc8b88c8dcded397701e586ed575e51d0e31913163806ee215c998e
     files:
     - from: kubectl-schemahero
       to: .
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/schemahero/schemahero/releases/download/v0.11.3/kubectl-schemahero_darwin_amd64.tar.gz
-    sha256: 4d13ef70359b822188945e28a45ca1eb4189628356239b19700abb695cf5a06e
+    uri: https://github.com/schemahero/schemahero/releases/download/v0.12.0/kubectl-schemahero_darwin_amd64.tar.gz
+    sha256: ae4cc99340c5b5a005cac6e5f5a416b10a37d582c31e5390a06205de19413fd4
     files:
     - from: kubectl-schemahero
       to: .
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/schemahero/schemahero/releases/download/v0.11.3/kubectl-schemahero_windows_amd64.tar.gz
-    sha256: 2381433e92da046e03c52019fbd184c279e218e00e43d9a75b67202914fb808a
+    uri: https://github.com/schemahero/schemahero/releases/download/v0.12.0/kubectl-schemahero_windows_amd64.tar.gz
+    sha256: 61cee2b212a9e554b5848b06fa5a9e8558ff618810c1b1521780453b79eddce2
     files:
     - from: kubectl-schemahero.exe
       to: .

@@ -1,0 +1,52 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: socat
+spec:
+  homepage: https://github.com/int128/kubectl-socat
+  shortDescription: connect to external host via socat pod
+  description: This is a kubectl plugin to connect to an external host via socat Pod on a cluster
+  version: v0.3.0
+  platforms:
+  - bin: kubectl-socat
+    uri: https://github.com/int128/kubectl-socat/releases/download/v0.3.0/kubectl-socat_linux_amd64.zip
+    sha256: 57b9d0e519920b903aae5d0d68c64cb5521c18fcf44517da654ac5c4137fce53
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-socat
+    uri: https://github.com/int128/kubectl-socat/releases/download/v0.3.0/kubectl-socat_linux_arm64.zip
+    sha256: 8e7dff6766277afaa49d8766937493eb91fa3494cd5d903109276e5ebd8f63c7
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - bin: kubectl-socat
+    uri: https://github.com/int128/kubectl-socat/releases/download/v0.3.0/kubectl-socat_linux_arm.zip
+    sha256: 17cc3c20d4bacc302bc6cca15cdb09e1751b36297506ac83e6f22afa874c834a
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm
+  - bin: kubectl-socat
+    uri: https://github.com/int128/kubectl-socat/releases/download/v0.3.0/kubectl-socat_darwin_amd64.zip
+    sha256: bafd5e562fb96ebca0b48d8f0a4b55875ace6f8cd5a99750179d530662846e26
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kubectl-socat
+    uri: https://github.com/int128/kubectl-socat/releases/download/v0.3.0/kubectl-socat_darwin_arm64.zip
+    sha256: 52be366815659f3ccbbefb3ddad2601a4148be3c6595905c5360fe58b2b8a37c
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: kubectl-socat
+    uri: https://github.com/int128/kubectl-socat/releases/download/v0.3.0/kubectl-socat_windows_amd64.zip
+    sha256: d9aca26557e6e461920d4f1f370d5aeac6080087a9cee912f444203f4c6d4f1c
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

@@ -4,14 +4,16 @@ metadata:
   name: carbonetes-scan
 spec:
   homepage: https://github.com/carbonetes/kubectl-carbonetes-scan
-  shortDescription: Seamlessly integrates complete container analysis directly into your Kubernetes cluster.
-  version: v1.0.0
+  shortDescription: Integrates container analysis directly into your cluster.
+  version: v1.0.1
   description: |
     Provides complete container analysis and
     policy evaluation as a fully managed service.
     Carbonetes analyzes your container images for native
     code vulnerabilities, software composition analysis (SCA),
     license types, malware, secrets, and bill of materials.
+  caveats: |
+    Docker needs to be installed on your machine to use this plugin.
   platforms:
   - selector:
       matchExpressions:
@@ -20,8 +22,8 @@ spec:
         values:
         - darwin
         - linux
-    uri: https://github.com/carbonetes/kubectl-carbonetes-scan/archive/refs/tags/v1.0.0.tar.gz
-    sha256: ee9152b7920cb8524ecc3ae8fe96721a266c48da759ba3d802b58f77cd3ad2c2
+    uri: https://github.com/carbonetes/kubectl-carbonetes-scan/archive/refs/tags/v1.0.1.tar.gz
+    sha256: 6c9db80385ac7d2452c1ee0aaf1977f9858eef32862c349a7f6a7d730717dfb3
     bin: kubectl-carbonetes-scan
     files:
     - from: kubectl-carbonetes-scan-*/kubectl-carbonetes-scan

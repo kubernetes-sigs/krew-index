@@ -1,0 +1,30 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: carbonetes-scan
+spec:
+  homepage: https://github.com/carbonetes/kubectl-carbonetes-scan
+  shortDescription: Seamlessly integrates complete container analysis directly into your Kubernetes cluster.
+  version: v1.0.0
+  description: |
+    Provides complete container analysis and
+    policy evaluation as a fully managed service.
+    Carbonetes analyzes your container images for native
+    code vulnerabilities, software composition analysis (SCA),
+    license types, malware, secrets, and bill of materials.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/carbonetes/kubectl-carbonetes-scan/archive/refs/tags/v1.0.0.tar.gz
+    sha256: ee9152b7920cb8524ecc3ae8fe96721a266c48da759ba3d802b58f77cd3ad2c2
+    bin: kubectl-carbonetes-scan
+    files:
+    - from: kubectl-carbonetes-scan-*/kubectl-carbonetes-scan
+      to: .
+    - from: kubectl-carbonetes-scan-*/LICENSE
+      to: .

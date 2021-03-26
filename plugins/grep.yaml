@@ -3,30 +3,45 @@ kind: Plugin
 metadata:
   name: grep
 spec:
-  version: v1.3.1
-  homepage: https://github.com/guessi/kubectl-grep
   platforms:
-  - selector:
+  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.3.2/kubectl-grep-Darwin-x86_64.tar.gz
+    sha256: 7b173cea85891d15ab3d54f479bcd5bbd51e550ab53bab1046bb7b9a626bf33a
+    bin: kubectl-grep
+    files:
+    - from: kubectl-grep
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/guessi/kubectl-grep/releases/download/v1.3.1/kubectl-grep-Darwin-x86_64.tar.gz
-    sha256: 9114d2e3e6d9736769d728ffcfab3d7e288b00c63cd09a3588a03136cce1bdc8
+  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.3.2/kubectl-grep-Linux-x86_64.tar.gz
+    sha256: f0b0a00c434a10e3aa8c7c4772ee13c387feb3f87c85a593bd1bd9c01168d422
     bin: kubectl-grep
-  - selector:
+    files:
+    - from: kubectl-grep
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/guessi/kubectl-grep/releases/download/v1.3.1/kubectl-grep-Linux-x86_64.tar.gz
-    sha256: 7617489db1b28f6505345a8f3f2068b803b352aa1a6b60a2a2099e136b91e2c3
-    bin: kubectl-grep
-  - selector:
+  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.3.2/kubectl-grep-Windows-x86_64.tar.gz
+    sha256: 37bb589aba0ad9115c0d23821170148fa39ce74a0134b55f10db950d3703d44f
+    bin: kubectl-grep.exe
+    files:
+    - from: kubectl-grep.exe
+      to: .
+    - from: LICENSE.txt
+      to: .
+    selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/guessi/kubectl-grep/releases/download/v1.3.1/kubectl-grep-Windows-x86_64.tar.gz
-    sha256: a21418a938b899d6b7dfa159a666bf52e54a12af26d811a1ae29dde74adca37a
-    bin: kubectl-grep.exe
+  version: v1.3.2
+  homepage: https://github.com/guessi/kubectl-grep
   shortDescription: Filter Kubernetes resources by matching their names
   description: |
     Filter Kubernetes resources by matching their names

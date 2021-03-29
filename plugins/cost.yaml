@@ -1,0 +1,60 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cost
+spec:
+  version: v0.1.3
+  shortDescription: View cluster cost information
+  description: |
+    Uses Kubecost's API to gather and format cluster cost information broken
+    down by various aggregations like namespace, deployment, and label.
+  homepage: https://github.com/kubecost/kubectl-cost
+  platforms:
+  - uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.1.3/kubectl-cost-darwin-amd64.tar.gz
+    sha256: 3d060bbf7883198282fc2b9b189b3fae3f277566307ce233b67c344869f0ec15
+    bin: kubectl-cost
+    files:
+    - from: kubectl-cost
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.1.3/kubectl-cost-darwin-arm64.tar.gz
+    sha256: d40f1a0e9ba868821d3a2aa7a62bb0a112055d0c00d976ffa7cdc09c5351eba0
+    bin: kubectl-cost
+    files:
+    - from: kubectl-cost
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.1.3/kubectl-cost-linux-amd64.tar.gz
+    sha256: 87cb10063d26b8a072fbf2b98372fa5aa9d5bef884d91ffd38a97bd99c37459a
+    bin: kubectl-cost
+    files:
+    - from: kubectl-cost
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.1.3/kubectl-cost-windows-amd64.tar.gz
+    sha256: 3391be9091b988da1f3b12a133e9c8412193f20bf9c4349812d7b1e3b90b336c
+    bin: kubectl-cost.exe
+    files:
+    - from: kubectl-cost
+      to: kubectl-cost.exe
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

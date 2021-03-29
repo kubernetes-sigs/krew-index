@@ -1,0 +1,61 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pexec
+spec:
+  homepage: https://github.com/ssup2/kpexec
+  shortDescription: Execute process with privileges in a pod
+  description: |
+    pexec is a kubernetes cli that runs commands in a container with high
+    privileges. It runs a highly privileged container on the same node as
+    the target container and joins into the namespaces of the target container
+    (IPC, UTS, PID, net, mount). This is useful for debugging where you often
+    need to execute commands with high privileges. Also, pexec has a tools
+    mode, which adds useful debugging tools into the debugged container. The
+    tools mode is useful when there necessary debugging tools are missing in the
+    target container.
+
+    In contrast, kubectl-exec runs the command with the same privileges as the
+    container. For example, if a container does not have network privileges,
+    the command executed by kubectl-exec also has no network privileges.
+    This makes debugging the pod difficult. If you use pexec instead
+    of kubectl-exec, you can easily get high privileges for debugging.
+  caveats: |
+    pexec requires the privileges to run privileged pods with hostPID.
+  version: v0.2.8
+  platforms:
+  - bin: kpexec
+    uri: https://github.com/ssup2/kpexec/releases/download/v0.2.8/kpexec_0.2.8_Linux_amd64.tar.gz
+    sha256: e829b5f5b8140d912aa1c300d7471b477a97066e1c54905a94d92a255897312e
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kpexec
+    uri: https://github.com/ssup2/kpexec/releases/download/v0.2.8/kpexec_0.2.8_Linux_arm64.tar.gz
+    sha256: ff41b987f89093d86b58d8cdfcf1de70430406beea1834f19fad41574cc49459
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - bin: kpexec
+    uri: https://github.com/ssup2/kpexec/releases/download/v0.2.8/kpexec_0.2.8_Darwin_amd64.tar.gz
+    sha256: 414fad9180edfe7d69f9dfed8f8c1f91d9eb16cd3c136203daf13f0bbfc333e5
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kpexec
+    uri: https://github.com/ssup2/kpexec/releases/download/v0.2.8/kpexec_0.2.8_Darwin_arm64.tar.gz
+    sha256: 3c924cbd4b7528551e6aa56b8df210a605911f5e8144e4898b4ae31809359ec9
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: kpexec.exe
+    uri: https://github.com/ssup2/kpexec/releases/download/v0.2.8/kpexec_0.2.8_Windows_amd64.tar.gz
+    sha256: 0e25a3965e77dc2a6a450ff8b53d113a415e59e7514d2a8887c3ff6dfdccaec6
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

@@ -13,44 +13,32 @@ spec:
   homepage: https://github.com/itaysk/kubectl-neat
   platforms:
   - bin: ./kubectl-neat
-    files:
-    - from: /*
-      to: .
     selector:
       matchLabels:
         arch: amd64
         os: linux
-    sha256: a79b791cc4b28bcb583977a2adabd23ed09e75d39cfc105a7e42a4e3bd007448
+    sha256: b036300ab33fa20f9ff9fcd87a1bdc32dcaf7110bc28cdeb879ab07d3d9c963b
     uri: https://github.com/itaysk/kubectl-neat/releases/download/v2.0.3/kubectl-neat_linux_amd64.tar.gz
   - bin: ./kubectl-neat
-    files:
-    - from: /*
-      to: .
     selector:
       matchLabels:
         arch: arm64
         os: linux
-    sha256: 1007ac8c87711f9c9af54df7bc2eebcd509dd4bb71bf2f4d93f5c21288a6908b
+    sha256: 1e3e175fdd220bb11128eb83cdbd986aa8e83dd4e1e55c285a0c5c97dacd26aa
     uri: https://github.com/itaysk/kubectl-neat/releases/download/v2.0.3/kubectl-neat_linux_arm64.tar.gz
   - bin: ./kubectl-neat
-    files:
-    - from: /*
-      to: .
     selector:
       matchLabels:
         arch: amd64
         os: darwin
-    sha256: 3978854708a22cda658e9a01c0198933cc772e5757caac1e4fbb7a3949905f30
+    sha256: f575ca517d80d4e3671195e6064dd99de86ed1d5e91bbbb6b94d377384ae0db9
     uri: https://github.com/itaysk/kubectl-neat/releases/download/v2.0.3/kubectl-neat_darwin_amd64.tar.gz
   - bin: ./kubectl-neat
-    files:
-    - from: /*
-      to: .
     selector:
       matchLabels:
         arch: arm64
         os: darwin
-    sha256: b1a8f89b161a762df63580d3f239fb96852a0f96ae54ae8d4c2c12f7a5e4d20d
+    sha256: 05866e6c565d2e66737d5d6623a3a86f71bcce0e869601856f1ce9af69e97103
     uri: https://github.com/itaysk/kubectl-neat/releases/download/v2.0.3/kubectl-neat_darwin_arm64.tar.gz
   shortDescription: Remove clutter from Kubernetes manifests to make them more readable.
   version: v2.0.3

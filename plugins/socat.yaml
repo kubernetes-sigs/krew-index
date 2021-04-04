@@ -1,51 +1,59 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: socat
+  name: external-forward
 spec:
-  homepage: https://github.com/int128/kubectl-socat
-  shortDescription: Connect to external host via socat pod
-  description: Connect to an external host via socat Pod on a cluster
-  version: v0.3.0
+  homepage: https://github.com/int128/kubectl-external-forward
+  shortDescription: Connect to external host via cluster
+  description: |
+    This allows you to connect from your laptop to a host outside of a cluster.
+    It is useful when a host such as database is in a private network and unreachable from your laptop.
+    While `kubectl port-forward` connects to a pod inside a cluster, this connects to a host outside a cluster.
+
+    This plugin runs a TCP proxy pod on a cluster and set up a port-forwarder on your laptop.
+    You just run your application with localhost configuration as if a database is running on local.
+    No proxy configuration such as HTTP_PROXY or SOCKS is needed.
+
+  version: v0.4.0
   platforms:
-  - bin: kubectl-socat
-    uri: https://github.com/int128/kubectl-socat/releases/download/v0.3.0/kubectl-socat_linux_amd64.zip
-    sha256: 57b9d0e519920b903aae5d0d68c64cb5521c18fcf44517da654ac5c4137fce53
+  - bin: kubectl-external_forward
+    uri: https://github.com/int128/kubectl-external-forward/releases/download/v0.4.0/kubectl-external_forward_linux_amd64.zip
+    sha256: ecbda3adf9fb35043a672afe65b381690263e1f3e58c0b6c9cfd38c5e3fac818
     selector:
       matchLabels:
         os: linux
         arch: amd64
-  - bin: kubectl-socat
-    uri: https://github.com/int128/kubectl-socat/releases/download/v0.3.0/kubectl-socat_linux_arm64.zip
-    sha256: 8e7dff6766277afaa49d8766937493eb91fa3494cd5d903109276e5ebd8f63c7
+  - bin: kubectl-external_forward
+    uri: https://github.com/int128/kubectl-external-forward/releases/download/v0.4.0/kubectl-external_forward_linux_arm64.zip
+    sha256: ab58fcf067067c50deca69fe3d73ee14859418e849db9c8e7125f7713d628b91
     selector:
       matchLabels:
         os: linux
         arch: arm64
-  - bin: kubectl-socat
-    uri: https://github.com/int128/kubectl-socat/releases/download/v0.3.0/kubectl-socat_linux_arm.zip
-    sha256: 17cc3c20d4bacc302bc6cca15cdb09e1751b36297506ac83e6f22afa874c834a
+  - bin: kubectl-external_forward
+    uri: https://github.com/int128/kubectl-external-forward/releases/download/v0.4.0/kubectl-external_forward_linux_arm.zip
+    sha256: 7f9ff8bca7a214bf627eab7a726ae54143bb91edd316a4c8ce677405e1c4c0e8
     selector:
       matchLabels:
         os: linux
         arch: arm
-  - bin: kubectl-socat
-    uri: https://github.com/int128/kubectl-socat/releases/download/v0.3.0/kubectl-socat_darwin_amd64.zip
-    sha256: bafd5e562fb96ebca0b48d8f0a4b55875ace6f8cd5a99750179d530662846e26
+  - bin: kubectl-external_forward
+    uri: https://github.com/int128/kubectl-external-forward/releases/download/v0.4.0/kubectl-external_forward_darwin_amd64.zip
+    sha256: 91bb5ebef6a143574754ad11d6254d21170e3693005751b79698f3978434b6ea
     selector:
       matchLabels:
         os: darwin
         arch: amd64
-  - bin: kubectl-socat
-    uri: https://github.com/int128/kubectl-socat/releases/download/v0.3.0/kubectl-socat_darwin_arm64.zip
-    sha256: 52be366815659f3ccbbefb3ddad2601a4148be3c6595905c5360fe58b2b8a37c
+  - bin: kubectl-external_forward
+    uri: https://github.com/int128/kubectl-external-forward/releases/download/v0.4.0/kubectl-external_forward_darwin_arm64.zip
+    sha256: 5162bc69c8e5c921115b63843eec696040e0741bec34e64a5111d2ca67254984
     selector:
       matchLabels:
         os: darwin
         arch: arm64
-  - bin: kubectl-socat
-    uri: https://github.com/int128/kubectl-socat/releases/download/v0.3.0/kubectl-socat_windows_amd64.zip
-    sha256: d9aca26557e6e461920d4f1f370d5aeac6080087a9cee912f444203f4c6d4f1c
+  - bin: kubectl-external_forward
+    uri: https://github.com/int128/kubectl-external-forward/releases/download/v0.4.0/kubectl-external_forward_windows_amd64.zip
+    sha256: 23b7bbc6c448d83788410b12b49f1c192f6e15d3cb25344b523d6509da9db8f3
     selector:
       matchLabels:
         os: windows

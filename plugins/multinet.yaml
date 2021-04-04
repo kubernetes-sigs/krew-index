@@ -1,0 +1,26 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: multinet
+spec:
+  version: v0.2.1
+  homepage: https://github.com/k8snetworkplumbingwg/kubectl-multinet
+  shortDescription: "Shows pods' network-status of multi-net-spec"
+  description: |
+    Shows pods' network-status annotation, defined in NPWG multi-net-spec,
+    https://github.com/k8snetworkplumbingwg/multi-net-spec.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/k8snetworkplumbingwg/kubectl-multinet/releases/download/v0.2.1/kubectl-multinet_0.2.1_linux_amd64.tar.gz
+    sha256: 71f9a63ed36b68eec64ec9e36be09ec95f846412799f95b9b93e69b85bd4f8a3
+    bin: kubectl-multinet
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/k8snetworkplumbingwg/kubectl-multinet/releases/download/v0.2.1/kubectl-multinet_0.2.1_linux_arm64.tar.gz
+    sha256: c7c1946983f24051cce985efaeb94c724668862831cd1c4dce61439502083090
+    bin: kubectl-multinet

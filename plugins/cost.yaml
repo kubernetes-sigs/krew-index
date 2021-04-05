@@ -8,6 +8,13 @@ spec:
   description: |
     Uses Kubecost's API to gather and format cluster cost information broken
     down by various aggregations like namespace, deployment, and label.
+
+    Kubecost is a cluster-side daemon that tracks the real cost of Kubernetes
+    resources by combining resource utilization monitoring with your provider's
+    cost data. Website: https://www.kubecost.com/
+  caveats: |
+    Requires Kubecost (a cluster-side daemon) to be installed in your cluster.
+    See https://www.kubecost.com/install for installation instructions.
   homepage: https://github.com/kubecost/kubectl-cost
   platforms:
   - uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.1.4/kubectl-cost-darwin-amd64.tar.gz

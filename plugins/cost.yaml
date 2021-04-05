@@ -11,7 +11,10 @@ spec:
 
     Kubecost is a cluster-side daemon that tracks the real cost of Kubernetes
     resources by combining resource utilization monitoring with your provider's
-    cost data. Website: https://www.kubecost.com/
+    cost data. Kubecost support GCP/GKE, AWS/EKS, Azure/AKS, and custom
+    (including on-prem) "providers" via user-specified pricing sheets.
+
+    Website: https://www.kubecost.com/
   caveats: |
     Requires Kubecost (a cluster-side daemon) to be installed in your cluster.
     See https://www.kubecost.com/install for installation instructions.

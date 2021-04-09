@@ -3,14 +3,26 @@ kind: Plugin
 metadata:
   name: outdated
 spec:
-  version: v0.4.0
+  version: v0.4.1
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/replicatedhq/outdated/releases/download/v0.4.0/outdated_linux_amd64.tar.gz
-    sha256: 9776189b0842ab483e162394a7353d4028f3ceda36557b05482adbe7733c7b3c
+    uri: https://github.com/replicatedhq/outdated/releases/download/v0.4.1/outdated_linux_amd64.tar.gz
+    sha256: 5232dfd09e40a5f47bce9bbf22e614bbd21a2bac84ad38993a16c3dfe439f7cd
+    files:
+    - from: outdated
+      to: .
+    - from: LICENSE
+      to: .
+    bin: outdated
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/replicatedhq/outdated/releases/download/v0.4.1/outdated_linux_arm64.tar.gz
+    sha256: 8f1ea9215a87873de1b804379112510217f755e384de699c419753e37dd82fb9
     files:
     - from: outdated
       to: .
@@ -21,8 +33,20 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/replicatedhq/outdated/releases/download/v0.4.0/outdated_darwin_amd64.tar.gz
-    sha256: 160335da1bfa60a4c0befa4f7ab125ae21ed64cd177f03eadaabeeb5ea15131e
+    uri: https://github.com/replicatedhq/outdated/releases/download/v0.4.1/outdated_darwin_amd64.tar.gz
+    sha256: b9d9e78b1f15bc31143269520ba649b90b850a84b9b954d9a17b87e06cda3f32
+    files:
+    - from: outdated
+      to: .
+    - from: LICENSE
+      to: .
+    bin: outdated
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/replicatedhq/outdated/releases/download/v0.4.1/outdated_darwin_arm64.tar.gz
+    sha256: 08a5ca4be9f1e6efd48d2219f64460f3cbd0af16265459e7ffebd37c44bf3ea7
     files:
     - from: outdated
       to: .
@@ -33,8 +57,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/replicatedhq/outdated/releases/download/v0.4.0/outdated_windows_amd64.zip
-    sha256: 84e5ffccf2aa95595d9df087d056c49dd442001e317b4f644961e298cfa85e02
+    uri: https://github.com/replicatedhq/outdated/releases/download/v0.4.1/outdated_windows_amd64.zip
+    sha256: 03ff087f562ec7640859d8b002f67849a0385c8f54d5be19dc8ee8a34a9eb4dd
     files:
     - from: outdated.exe
       to: .

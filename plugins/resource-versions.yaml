@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: resource-versions
+spec:
+  version: v0.1.0
+  platforms:
+  - bin: kubectl-resource-versions
+    uri: https://github.com/chengshiwen/kubectl-resource-versions/releases/download/v0.1.0/kubectl-resource-versions-darwin-amd64.tar.gz
+    sha256: 407d562fa3c34f49bc1b101294d06fec13639ff95c23bb2d071a5326f67de9af
+    files:
+      - from: "kubectl-resource-versions-darwin-amd64/*"
+        to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kubectl-resource-versions
+    uri: https://github.com/chengshiwen/kubectl-resource-versions/releases/download/v0.1.0/kubectl-resource-versions-linux-amd64.tar.gz
+    sha256: ecbbbd0892dd2e49f4b487ff92c95e2c322e3eb7b02c78b8354aef216404d643
+    files:
+      - from: "kubectl-resource-versions-linux-amd64/*"
+        to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-resource-versions.exe
+    uri: https://github.com/chengshiwen/kubectl-resource-versions/releases/download/v0.1.0/kubectl-resource-versions-windows-amd64.tar.gz
+    sha256: 062eee95e959de5d0c0230a51ab03a05d2f992d070bed5dd0d75311cfd1835c5
+    files:
+      - from: "kubectl-resource-versions-windows-amd64/*"
+        to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  shortDescription: Print the supported API resource versions on the server
+  homepage: https://github.com/chengshiwen/kubectl-resource-versions
+  caveats: |
+      Usage:
+        kubectl resource-versions [flags]
+  description: |
+      Print the supported API resource versions on the server
+
+      Have you ever wondered which api group and version should be used for a specified resource on a provided kubernetes cluster?
+      It is useful to find out the matrix of resources and api versions by using this kubectl plugin as shown below:
+
+      $ kubectl resource-versions

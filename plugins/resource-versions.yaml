@@ -35,15 +35,6 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-  shortDescription: Print the supported API resource versions on the server
+  shortDescription: Print available versions of each API
   homepage: https://github.com/chengshiwen/kubectl-resource-versions
-  caveats: |
-      Usage:
-        kubectl resource-versions [flags]
-  description: |
-      Print the supported API resource versions on the server
-
-      Have you ever wondered which api group and version should be used for a specified resource on a provided kubernetes cluster?
-      It is useful to find out the matrix of resources and api versions by using this kubectl plugin as shown below:
-
-      $ kubectl resource-versions
+  description: This plugin prints the API resources available on the API server along with groups/versions that offer that API

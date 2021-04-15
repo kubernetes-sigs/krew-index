@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: minio
 spec:
-  version: v4.0.7
+  version: v4.0.8
   homepage: https://github.com/minio/operator/tree/master/kubectl-minio
   shortDescription: Deploy and manage MinIO Operator and Tenant(s)
   description: |
@@ -18,20 +18,20 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/minio/operator/releases/download/v4.0.7/kubectl-minio_darwin_amd64.zip
-    sha256: a9bd557994e12854a4b5c3534560895b108c89bb4adca59dc58f0a7e9c94df0f
+    uri: https://github.com/minio/operator/releases/download/v4.0.8/kubectl-minio_darwin_amd64.zip
+    sha256: e387b33c49ff98f03f9449cf33ddcd3068bb4f98c7ea47a0ba303e047c4d36b4
     bin: kubectl-minio
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/minio/operator/releases/download/v4.0.7/kubectl-minio_linux_amd64.zip
-    sha256: c53c4857f5ab30f8d39fbb0d63cfeb7a8b10c4d22ee30e1c72808eb5a43cdf29
+    uri: https://github.com/minio/operator/releases/download/v4.0.8/kubectl-minio_linux_amd64.zip
+    sha256: 71aa52f8c1179fad9b73045380fe9ce9b5cebff2529291ae89743f7b6e5d5015
     bin: kubectl-minio
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/minio/operator/releases/download/v4.0.7/kubectl-minio_windows_amd64.zip
-    sha256: 93a29064d8f8f3f206706641cb3905953801c08d0137e1dddce9cedfafd904e2
+    uri: https://github.com/minio/operator/releases/download/v4.0.8/kubectl-minio_windows_amd64.zip
+    sha256: 530792f414dc196b9a71e9accdc937e6ade5b43a1009f00fe8e03e24ecab5c8b
     bin: kubectl-minio.exe

@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: cyclonus
 spec:
-  version: "v0.1.3"
+  version: "v0.1.4"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.1.3/kubectl-cyclonus_linux_amd64.tar.gz
-    sha256: b4a8bdadfd51f411e3138a72e5b63ea393b3a7bad365e0d40b06cc51c55724e0
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.1.4/kubectl-cyclonus_linux_amd64.tar.gz
+    sha256: d16a627549263ad1e8bccb1e8849ec8b29454d302227a9bcedbc0e819747c897
     files:
     - from: "./kubectl-cyclonus"
       to: "cyclonus"
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.1.3/kubectl-cyclonus_darwin_amd64.tar.gz
-    sha256: abe998347313db8f7e9ae77efc9d65c2256216065dad3fced887a213b404ffd0
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.1.4/kubectl-cyclonus_darwin_amd64.tar.gz
+    sha256: a6f8c98639d8308d8d65eb2b4e21481b2b93aeb3d49f45d26959c1764a5cad3d
     files:
     - from: "./kubectl-cyclonus"
       to: "cyclonus"
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.1.3/kubectl-cyclonus_windows_amd64.zip
-    sha256: e9471ceee44f4e0dcf52f6a42482a953f0e0e633a339196705bbc02e280e8937
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.1.4/kubectl-cyclonus_windows_amd64.zip
+    sha256: 62780bebd8423c4698896fea740a8b08e2b80b6616d046f23d361b9511b4d79c
     files:
     - from: "/kubectl-cyclonus.exe"
       to: "cyclonus.exe"

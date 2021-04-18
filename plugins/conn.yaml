@@ -15,9 +15,10 @@ spec:
       - {key: os, operator: In, values: [darwin, linux]}
   version: "v1.0.1"
   homepage: https://github.com/sysnet4admin/k8s-plugins
-  shortDescription: Display pods's list per each namespace and connect to container 
+  shortDescription: Container Connector in a pod 
   description: |
-    Uses 'conn' could connect pod. 
-    If pod have multicontainer, it can show up container in pod. 
-    Furthermore, default namepsace is default but you could change simple add more name after 'conn'
+    Uses 'conn' could connect container in a pod as bounce shell.  
+    If pod have multicontainer, it shows up container list in a pod. 
+    Furthermore, you are able to choose namespace (i.e. prod, dev and others) for your own purpose. 
+    Usage is https://github.com/sysnet4admin/k8s-plugins/tree/main/krew/conn
     Origin source came from https://github.com/sysnet4admin/IaC/blob/master/tools/k8s_rc.sh 

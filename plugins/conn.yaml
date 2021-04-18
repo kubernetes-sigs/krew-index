@@ -1,0 +1,23 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: conn
+spec:
+  platforms:
+  - sha256: 7aba7524bb10b355b322f8ad9b92d0ef4b4d63ac3480c17c59442c8be096e358
+    uri: https://github.com/sysnet4admin/k8s-plugins/releases/download/v1.0.1/k8s-plugins.zip
+    bin: conn.sh
+    files:
+    - from: "*/conn/*"
+      to: "."
+    selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+  version: "v1.0.1"
+  homepage: https://github.com/sysnet4admin/k8s-plugins
+  shortDescription: Display pods's list per each namespace and connect to container 
+  description: |
+    Uses 'conn' could connect pod. 
+    If pod have multicontainer, it can show up container in pod. 
+    Furthermore, default namepsace is default but you could change simple add more name after 'conn'
+    Origin source came from https://github.com/sysnet4admin/IaC/blob/master/tools/k8s_rc.sh 

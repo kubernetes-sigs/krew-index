@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: cost
 spec:
-  version: v0.1.4
+  version: v0.1.6
   shortDescription: View cluster cost information
   description: |
     Uses Kubecost's API to gather and format cluster cost information broken
@@ -20,8 +20,9 @@ spec:
     See https://www.kubecost.com/install for installation instructions.
   homepage: https://github.com/kubecost/kubectl-cost
   platforms:
-  - uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.1.4/kubectl-cost-darwin-amd64.tar.gz
-    sha256: 46a021e30f774143fbfbf182da4f898511e8fd481f7b172f9ba84bdfefd15f84
+  - bin: kubectl-cost
+    uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.1.6/kubectl-cost-darwin-amd64.tar.gz
+    sha256: ee8a0814a12b20ccd0422253aff59bbd622b8eb3f12b00e083b1961047c7f464
     bin: kubectl-cost
     files:
     - from: kubectl-cost
@@ -32,9 +33,9 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.1.4/kubectl-cost-darwin-arm64.tar.gz
-    sha256: 91180b3fddbb30298e69ceccc68bfe53e7bda8d452d201943b9a62a3afbc545d
-    bin: kubectl-cost
+  - bin: kubectl-cost
+    uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.1.6/kubectl-cost-darwin-arm64.tar.gz
+    sha256: baa37238ef385e124ccabc17ebed54f4d232bc951a222b1598a7c0e9257dda57
     files:
     - from: kubectl-cost
       to: .
@@ -44,9 +45,9 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-  - uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.1.4/kubectl-cost-linux-amd64.tar.gz
-    sha256: c2e66cbc9a690ef84d3b62366f29652f99d45960181031e1095c97a9725b1ef0
-    bin: kubectl-cost
+  - bin: kubectl-cost
+    uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.1.6/kubectl-cost-linux-amd64.tar.gz
+    sha256: 93c6b36d333a303381bac3055ced0dd044d27b0d180cb4a5f8f63e594c5f0461
     files:
     - from: kubectl-cost
       to: .
@@ -56,9 +57,9 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.1.4/kubectl-cost-windows-amd64.tar.gz
-    sha256: 974ec890eba1eb7db99d57a1d3ef73139de7b586b8fb6d50a6c17ece0579e55b
-    bin: kubectl-cost.exe
+  - bin: kubectl-cost.exe
+    uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.1.6/kubectl-cost-windows-amd64.tar.gz
+    sha256: f7fe9e827ea06938933dbed87fec884095dd4e5d47923cc779af7c62940d4411
     files:
     - from: kubectl-cost
       to: kubectl-cost.exe

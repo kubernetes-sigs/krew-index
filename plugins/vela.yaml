@@ -14,6 +14,8 @@ spec:
     files:
     - from: "*/kubectl-vela"
       to: "."
+    - from: "*/LICENSE"
+      to: "."
     bin: "kubectl-vela"
   - selector:
       matchLabels:
@@ -24,6 +26,8 @@ spec:
     files:
     - from: "*/kubectl-vela"
       to: "."
+    - from: "*/LICENSE"
+      to: "."
     bin: "kubectl-vela"
   - selector:
       matchLabels:
@@ -33,6 +37,8 @@ spec:
     sha256: 430d0134fb4dc22c36fd3a129a0571796d8c84d6c3d14845a1ef2b1a7584d989
     files:
     - from: "*/kubectl-vela.exe"
+      to: "."
+    - from: "*/LICENSE"
       to: "."
     bin: "kubectl-vela.exe"
   shortDescription: A Modern Application Deployment System Based on Kubernetes and OAM.

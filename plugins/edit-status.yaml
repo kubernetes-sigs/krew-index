@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: edit-status
 spec:
-  version: v0.1.0
+  version: v0.2.0
   homepage: https://github.com/ulucinar/kubectl-edit-status
   shortDescription: Edit /status subresources of CRs
   description: |
@@ -20,20 +20,27 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/ulucinar/kubectl-edit-status/releases/download/v0.1.0/kubectl-edit-status_v0.1.0_darwin_amd64.tar.gz
-      sha256: 5dfef266c8db616be3296ebaab5e7cdef85e447c89c7a4588e9f2e065b11c856
+      uri: https://github.com/ulucinar/kubectl-edit-status/releases/download/v0.2.0/kubectl-edit-status_v0.2.0_darwin_amd64.tar.gz
+      sha256: dbb65ab56beb3ece575748c17961e76018ff2e3eb74a4d221369b308d049f8e3
+      bin: kubectl-edit_status
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/ulucinar/kubectl-edit-status/releases/download/v0.2.0/kubectl-edit-status_v0.2.0_darwin_arm64.tar.gz
+      sha256: 94022f35297521268ced92be7474e300a7b086079dd0c442c790310c20ba6959
       bin: kubectl-edit_status
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/ulucinar/kubectl-edit-status/releases/download/v0.1.0/kubectl-edit-status_v0.1.0_linux_amd64.tar.gz
-      sha256: 274c52bcab995f8c3b506cd7b34e44b1bf2b459375497c3460cd16e64ae606fb
+      uri: https://github.com/ulucinar/kubectl-edit-status/releases/download/v0.2.0/kubectl-edit-status_v0.2.0_linux_amd64.tar.gz
+      sha256: f4c463eb61532c865875715862c3e18c17f688f0f0d59365d77c32f37d9b82d5
       bin: kubectl-edit_status
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/ulucinar/kubectl-edit-status/releases/download/v0.1.0/kubectl-edit-status_v0.1.0_windows_amd64.tar.gz
-      sha256: 4b9fa2ef8925cdf3b4c8e90d64539fec9a2ad1602950dd7f1cbe4abbfa57f8fc
+      uri: https://github.com/ulucinar/kubectl-edit-status/releases/download/v0.2.0/kubectl-edit-status_v0.2.0_windows_amd64.tar.gz
+      sha256: 006d2367463cadacf3dee6b026530eabf62e1826078a4c883b16a2f0e76cfc66
       bin: kubectl-edit_status.exe

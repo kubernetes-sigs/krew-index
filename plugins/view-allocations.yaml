@@ -3,25 +3,26 @@ kind: Plugin
 metadata:
   name: view-allocations
 spec:
-  version: "v0.12.1"
+  version: "v0.13.0"
   platforms:
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.12.1/kubectl-view-allocations_0.12.1-x86_64-apple-darwin.tar.gz
-      sha256: "d0f9532a2b7664f1ac119204bbff38e75102687a7752f0779fd1e72f82ed7f80"
+      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.13.0/kubectl-view-allocations_0.13.0-x86_64-apple-darwin.tar.gz
+      sha256: "680e87e72f250c2f635e61e7a79ba593c5da9a6cd752a065c4d5cbf8e71da025"
       bin: "./kubectl-view-allocations"
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.12.1/kubectl-view-allocations_0.12.1-x86_64-unknown-linux-gnu.tar.gz
-      sha256: "95063687d626ff0ee68189ca2d5de8cba0d81bb1ad26affb7efcbb0fd88e75f3"
+      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.13.0/kubectl-view-allocations_0.13.0-x86_64-unknown-linux-gnu.tar.gz
+      sha256: "f9d60fa3988647c120d3c2177e385517c1e24aac1805169e44fa58180248577a"
       bin: "./kubectl-view-allocations"
   shortDescription: List allocations per resources, nodes, pods.
   homepage: https://github.com/davidB/kubectl-view-allocations
   description: |
     This plugin lists resources (cpu, memory, gpu,...) allocations (requested,
-    limit, allocatable) as defined into the manifest of nodes and running pods.
+    limit, allocatable) as defined into the manifest of nodes and running pods,
+    and utilization from metrics-server.
     try `kubectl view-allocations -h`, `kubectl view-allocations`

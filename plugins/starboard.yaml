@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: starboard
 spec:
-  version: "v0.10.2"
+  version: "v0.10.3"
   homepage: https://github.com/aquasecurity/starboard
   shortDescription: >-
     Toolkit for finding risks in kubernetes resources
@@ -23,8 +23,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/aquasecurity/starboard/releases/download/v0.10.2/starboard_darwin_x86_64.tar.gz
-      sha256: c144dfe559b3eeb167eb5df049ffaf3d67267b4f84fed6fd95326b0c75b20a55
+      uri: https://github.com/aquasecurity/starboard/releases/download/v0.10.3/starboard_darwin_x86_64.tar.gz
+      sha256: ef5a9c04db976127c26a0e4f848e2d590fad703868d40483aea66d9eb0badfd1
       files:
         - from: starboard
           to: .
@@ -35,8 +35,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/aquasecurity/starboard/releases/download/v0.10.2/starboard_linux_x86_64.tar.gz
-      sha256: eed5a4c5eed543151f48c574bfafca50b41f4d09fd515e5642e4ec744fe36ddf
+      uri: https://github.com/aquasecurity/starboard/releases/download/v0.10.3/starboard_linux_x86_64.tar.gz
+      sha256: 3853ff314569fe055ee3e2b014e4ab6ae8c8327834ed309c68279ad5db0d0d30
       files:
         - from: starboard
           to: .
@@ -47,8 +47,8 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/aquasecurity/starboard/releases/download/v0.10.2/starboard_windows_x86_64.zip
-      sha256: 27861d8d8af3af7fcbff59f0d00db831ec320da81c29b70ef893840655ac29f4
+      uri: https://github.com/aquasecurity/starboard/releases/download/v0.10.3/starboard_windows_x86_64.zip
+      sha256: b467f1786aadc41a6ba44195d1a5754fd5e22c484243adcfcdb360adff82941d
       files:
         - from: starboard.exe
           to: .

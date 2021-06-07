@@ -22,39 +22,39 @@ spec:
     of kubectl-exec, you can easily get high privileges for debugging.
   caveats: |
     pexec requires the privileges to run privileged pods with hostPID.
-  version: "v0.3.2"
+  version: "v0.3.3"
   platforms:
   - bin: kubectl-pexec
-    uri: https://github.com/ssup2/kpexec/releases/download/v0.3.2/kubectl_pexec_v0.3.2_Linux_amd64.tar.gz
-    sha256: 2856db0733380837636c240845a763be85754f24fd23e6ee7f63a3b36533eafd
+    uri: https://github.com/ssup2/kpexec/releases/download/v0.3.3/kubectl_pexec_v0.3.3_Linux_amd64.tar.gz
+    sha256: 9af51aa9fb73c342a68af463542e2e81d68046956ca2af3bf62c1c31d42d247c
     selector:
       matchLabels:
         os: linux
         arch: amd64
   - bin: kubectl-pexec
-    uri: https://github.com/ssup2/kpexec/releases/download/v0.3.2/kubectl_pexec_v0.3.2_Linux_arm64.tar.gz
-    sha256: 120b62687d98c18fe0da19719e02272ccb83b985621e4ff012cec58544e5d9da
+    uri: https://github.com/ssup2/kpexec/releases/download/v0.3.3/kubectl_pexec_v0.3.3_Linux_arm64.tar.gz
+    sha256: ff70252d17ba898a712f30a828aeb7f994cdf740f4ff6e785317fda84d5f056b
     selector:
       matchLabels:
         os: linux
         arch: arm64
   - bin: kubectl-pexec
-    uri: https://github.com/ssup2/kpexec/releases/download/v0.3.2/kubectl_pexec_v0.3.2_Darwin_amd64.tar.gz
-    sha256: 54853856cae3f077cfed630a1e23b0f14b1eee1473da0a98379fe85800ddb4bd
+    uri: https://github.com/ssup2/kpexec/releases/download/v0.3.3/kubectl_pexec_v0.3.3_Darwin_amd64.tar.gz
+    sha256: b25dbb2cd30fc539b6af62f6b48c87f3eaae483e67d308a0b38cfceebd283839
     selector:
       matchLabels:
         os: darwin
         arch: amd64
   - bin: kubectl-pexec
-    uri: https://github.com/ssup2/kpexec/releases/download/v0.3.2/kubectl_pexec_v0.3.2_Darwin_arm64.tar.gz
-    sha256: 387812427a55f10ea3daf06c32682a936c4b31cbd59c1aaa758ee982a3b215c1
+    uri: https://github.com/ssup2/kpexec/releases/download/v0.3.3/kubectl_pexec_v0.3.3_Darwin_arm64.tar.gz
+    sha256: 27fb11616c6c709809530e2b012888c16c20af73993ae351c0e0893867220b50
     selector:
       matchLabels:
         os: darwin
         arch: arm64
   - bin: kubectl-pexec.exe
-    uri: https://github.com/ssup2/kpexec/releases/download/v0.3.2/kubectl_pexec_v0.3.2_Windows_amd64.tar.gz
-    sha256: 2afac4406a113fdb619ab58ecf2ebc0bb9108fb192c16a6a2a6ae9ebc35586cf
+    uri: https://github.com/ssup2/kpexec/releases/download/v0.3.3/kubectl_pexec_v0.3.3_Windows_amd64.tar.gz
+    sha256: e5434e6dbc0bdc249d37eb1977a42b5bced2a33864f726d0804192084bf24241
     selector:
       matchLabels:
         os: windows

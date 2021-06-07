@@ -5,7 +5,7 @@ metadata:
 spec:
   homepage: https://github.com/dodopizza/kubectl-shovel
   shortDescription: Gather diagnostics for .NET Core applications
-  version: v0.2.0
+  version: v0.4.0
   description: |
     Plugin for gathering diagnostics from running in Kubernetes .NET Core
     applications. It runs the job on the specified pod's node with a mount
@@ -18,8 +18,8 @@ spec:
     docker runtime and /run/containerd for containerd from a host in read-only
     mode
   platforms:
-    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.2.0/kubectl-shovel_Darwin_x86_64.tar.gz
-      sha256: e3cbb042b6f1c62781761363788e1c582ead1ceff7e562fbeaabc7d51e6eff6c
+    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.4.0/kubectl-shovel_Darwin_x86_64.tar.gz
+      sha256: d9b94e864c4c1898f1f38e1c725f74b3de6cbad2225d25f8f50583e23d20100b
       bin: kubectl-shovel
       files:
         - from: kubectl-shovel
@@ -30,8 +30,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.2.0/kubectl-shovel_Linux_x86_64.tar.gz
-      sha256: 504824475a0ada65931ec80f75ac85b0abf63ac75682f67107eca9079b242e29
+    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.4.0/kubectl-shovel_Linux_x86_64.tar.gz
+      sha256: 17830c6c1754789a81ed3d91ed1dcefeabc5c0807316b93aaa8b69c014e306ff
       bin: kubectl-shovel
       files:
         - from: kubectl-shovel
@@ -42,8 +42,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.2.0/kubectl-shovel_Windows_x86_64.zip
-      sha256: d4122c68675244088ca50d3978e5774aa6848c1e36ca90e7b0fe14d80466daff
+    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.4.0/kubectl-shovel_Windows_x86_64.zip
+      sha256: 315a49ddedb2a20791f113686f06f17cac3a2750d9409968c799f2c8760b25af
       bin: kubectl-shovel.exe
       files:
         - from: kubectl-shovel.exe

@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pod-lens
+spec:
+  version: "v0.1.5"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.5/pod-lens_linux_amd64.tar.gz
+    sha256: 16bf74894c4e9e54ed14a01bdc5a0a10a26b2a3890dd72a5ac2b1580feadd0af
+    files:
+    - from: "./pod-lens"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "pod-lens"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.5/pod-lens_darwin_amd64.tar.gz
+    sha256: 6837bf7ec878e85362d3d420afd5824a944348077c726f7551ee16490ea0973c
+    files:
+    - from: "./pod-lens"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "pod-lens"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.5/pod-lens_windows_amd64.zip
+    sha256: bda2973e08bd0c09cef0ab63aaa2528d338eb00c6547e6ef1011c83f880def8e
+    files:
+    - from: "/pod-lens.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "pod-lens.exe"
+  shortDescription: Show pod-related resources
+  homepage: https://pod-lens.guoxudong.io
+  description: |
+    Find related workloads, namespace, node, service, configmap, secret,
+    ingress, PVC and HPA by pod name and display them in a tree and table.

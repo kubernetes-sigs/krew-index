@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: resource-versions
+spec:
+  version: v0.1.1
+  platforms:
+  - bin: kubectl-resource-versions
+    uri: https://github.com/chengshiwen/kubectl-resource-versions/releases/download/v0.1.1/kubectl-resource-versions-darwin-amd64.tar.gz
+    sha256: 48f31d24f9ebaeed6c24fabb568c26f500809a444a8efde5cdb653dff8fae132
+    files:
+      - from: "kubectl-resource-versions-darwin-amd64/*"
+        to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kubectl-resource-versions
+    uri: https://github.com/chengshiwen/kubectl-resource-versions/releases/download/v0.1.1/kubectl-resource-versions-linux-amd64.tar.gz
+    sha256: 60c9fd5db5694109bae69a760c2252996e19b260ea89215e1d5e1037c09ae1b8
+    files:
+      - from: "kubectl-resource-versions-linux-amd64/*"
+        to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-resource-versions.exe
+    uri: https://github.com/chengshiwen/kubectl-resource-versions/releases/download/v0.1.1/kubectl-resource-versions-windows-amd64.tar.gz
+    sha256: c806215594ab835d213abb8a2f2d9d2651c4aaad10a9223f47e214e66ab7ffc7
+    files:
+      - from: "kubectl-resource-versions-windows-amd64/*"
+        to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  shortDescription: Print available versions of each API
+  homepage: https://github.com/chengshiwen/kubectl-resource-versions
+  description: Print the API resources along with the supported API versions on the server

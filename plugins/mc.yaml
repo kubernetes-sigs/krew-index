@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: mc
 spec:
-  version: v0.6.1
+  version: v1.1.1
   homepage: https://github.com/jonnylangefeld/kubectl-mc
   shortDescription: Run kubectl commands against multiple clusters at once
   description: |+2
@@ -16,20 +16,20 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.6.1/kubectl-mc_v0.6.1_darwin_amd64.tar.gz
-    sha256: 0fb3e6af002de4e40a5de0c670a14b49b1bb6cea82d9785abbbbe84756d80665
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.1/kubectl-mc_v1.1.1_darwin_amd64.tar.gz
+    sha256: 3c8b05904a499e845fb7da5163de38758611bbcac5f5a081f9cb624ce8c98ccc
     bin: kubectl-mc
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.6.1/kubectl-mc_v0.6.1_linux_amd64.tar.gz
-    sha256: 1ff5813089181efea9148e47b51c39cf38a3442de8b4fcf8ea718a286849502f
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.1/kubectl-mc_v1.1.1_linux_amd64.tar.gz
+    sha256: f4eb23dfec31eb63d459b5409e60e7770f8b141d5dbf152d709abc3824e339b4
     bin: kubectl-mc
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v0.6.1/kubectl-mc_v0.6.1_windows_amd64.tar.gz
-    sha256: 3401045737a11d07e0ee516b21d6ee5786ffc3860dbcf416470cacadf403f9e4
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.1/kubectl-mc_v1.1.1_windows_amd64.tar.gz
+    sha256: 564756095d59ab3486e3db28f639d972b45d3d15f5ebaedc49cf5157581091e4
     bin: kubectl-mc.exe

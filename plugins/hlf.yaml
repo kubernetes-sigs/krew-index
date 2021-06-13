@@ -3,13 +3,12 @@ kind: Plugin
 metadata:
   name: hlf
 spec:
-  version: "v1.1.0"
+  version: "v1.2.1"
   homepage: https://github.com/kfsoftware/hlf-operator
-  shortDescription: "Deploy and manage Hyperledger Fabric components"
+  shortDescription: "Deploy and manage Hyperledger Fabric Peers, Orderers and Certificate authorities"
   description: |
-    The kubectl-hlf plugin wraps the HLF Operator and provides a simple
-    interface to create and manage Hyperledger Fabric Peers, 
-    Orderers and Certificate authorities
+    The kubectl-hlf plugin wraps the Hyperledger Fabric Operator and provides a simple
+    interface to create and manage Hyperledger Fabric Peers, Orderers and Certificate authorities
   caveats: |
     * For resources that are not in default namespace, currently you must
       specify -n/--namespace explicitly (the current namespace setting is not
@@ -19,20 +18,30 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/kfsoftware/hlf-operator/releases/download/v1.1.0/kubectl-hlf_darwin_amd64.zip
-      sha256: 7d99eb3cd754e30db82529f62d76d840ea28cfd99999d67bdd4624edfd5d5738
+      uri: https://github.com/kfsoftware/hlf-operator/releases/download/v1.2.1/kubectl-hlf_1.2.1_darwin_amd64.zip
+      sha256: 0a506e3b9d4175afa93c13d2676c1ca8fdf75c365efde7aa0de3ffad8737c28d
+      files:
+        - from: kubectl-hlf_1.2.1_darwin_amd64
+          to: kubectl-hlf
       bin: kubectl-hlf
+
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/kfsoftware/hlf-operator/releases/download/v1.1.0/kubectl-hlf_linux_amd64.zip
-      sha256: f586be1e5c4de89576c8953b65af61be4a6defa1b4d0ede29d31b2bd823b4647
+      uri: https://github.com/kfsoftware/hlf-operator/releases/download/v1.2.1/kubectl-hlf_1.2.1_linux_amd64.zip
+      sha256: d5ba605ce72a816c5e2ff86abfd7407b640075bd6d677b05df5ee3c9efc0350b
+      files:
+        - from: kubectl-hlf_1.2.1_linux_amd64
+          to: kubectl-hlf
       bin: kubectl-hlf
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/kfsoftware/hlf-operator/releases/download/v1.1.0/kubectl-hlf_windows_amd64.zip
-      sha256: 94ea33219eb2206d9d2c1a6594274e617be54c72a3f27dd80fc379a4334f2f25
-      bin: kubectl-hlf.exe
+      uri: https://github.com/kfsoftware/hlf-operator/releases/download/v1.2.1/kubectl-hlf_1.2.1_windows_amd64.zip
+      sha256: 3ba6c84d0af930383544a4de10c5e4a1b33acef7f8978c49dc3abdfeaf8a1167
+      files:
+        - from: kubectl-hlf_1.2.1_windows_amd64
+          to: kubectl-hlf
+      bin: kubectl-hlf

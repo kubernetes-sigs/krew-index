@@ -29,20 +29,17 @@ spec:
         os: windows
         arch: amd64
 
-  shortDescription: Kubernetes RBAC Power Toys - Visualize, Analyze, Generate & Query
+  shortDescription: RBAC Power Toys - Visualize, Analyze, Generate & Query.
   homepage: https://github.com/alcideio/rbac-tool
   description: |
-    This plugin is a collection of Kubernetes RBAC power tools to simplify Kubernetes RBAC.
+    This plugin is a collection of RBAC power tools to simplify RBAC analysis and configuration.
 
-    Available Commands:
-      auditgen        Generate RBAC policy from Kubernetes audit events
-      generate        Generate Role or ClusterRole and reduce the use of wildcards
+    Available Sub-Commands:
+      auditgen        Generate RBAC policy from Kubernetes audit events (audit log)
+      generate        Generate Role or ClusterRole and reduce the use of wildcards.
       lookup          RBAC Lookup by subject (user/group/serviceaccount) name
-      policy-rules    RBAC List Policy Rules For subject (user/group/serviceaccount) name
-      version         Print rbac-tool version
-      visualize       A RBAC visualizer
-      who-can         Shows which subjects have RBAC permissions to perform an action
+      policy-rules    List RBAC Policy Rules For subject (user/group/serviceaccount) name across all bindings
+      version         Print version
+      visualize       A graph visualization of RBAC permissions
+      who-can         Shows which subjects have RBAC permissions to perform a specified action
 
-    Flags:
-      -h, --help      help for rbac-tool
-      -v, --v Level   number for the log level verbosity

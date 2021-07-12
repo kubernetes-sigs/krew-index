@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: rbac-tool
+spec:
+  version: v1.1.1
+  platforms:
+  - bin: rbac-tool
+    uri: https://github.com/alcideio/rbac-tool/releases/download/v1.1.1/rbac-tool_v1.1.1_linux_amd64.tar.gz
+    sha256: ecdc8b365b8f9bb4303d194e777a9e7fdf3376158e3a2fb78cf7425007118a1d
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+
+  - bin: rbac-tool
+    uri: https://github.com/alcideio/rbac-tool/releases/download/v1.1.1/rbac-tool_v1.1.1_darwin_amd64.tar.gz
+    sha256: 038d583a98783bf72324eda1c9bab88edff115c1a0b03f4e67c27ea55f7a6407
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+
+  - bin: rbac-tool.exe
+    uri: https://github.com/alcideio/rbac-tool/releases/download/v1.1.1/rbac-tool_v1.1.1_windows_amd64.tar.gz
+    sha256: 1cd62b006b1cfc484866760ca846ca3d2701791e300a1f419b756e29cdc7b6a8
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+
+  shortDescription: Kubernetes RBAC Power Toys - Visualize, Analyze, Generate & Query
+  homepage: https://github.com/alcideio/rbac-tool
+  description: |
+    This plugin is a collection of Kubernetes RBAC power tools to simplify Kubernetes RBAC.
+
+    Available Commands:
+      auditgen        Generate RBAC policy from Kubernetes audit events
+      generate        Generate Role or ClusterRole and reduce the use of wildcards
+      lookup          RBAC Lookup by subject (user/group/serviceaccount) name
+      policy-rules    RBAC List Policy Rules For subject (user/group/serviceaccount) name
+      version         Print rbac-tool version
+      visualize       A RBAC visualizer
+      who-can         Shows which subjects have RBAC permissions to perform an action
+
+    Flags:
+      -h, --help      help for rbac-tool
+      -v, --v Level   number for the log level verbosity

@@ -35,3 +35,12 @@ spec:
     This plugin is a collection of RBAC power tools to simplify RBAC analysis and configuration.
     You can visualize, analyze, query permissions as well as generate policies in multiple ways.
 
+    Examples:
+    # Generate HTML visualzation of your RBAC permissions
+    kubectl rbac-tool viz
+
+    # Query who can read secrets
+    kubectl rbac-tool who-can get secret
+
+    # Generate a ClusterRole policy that allows to read everything except secrets and services
+    kubectl rbac-tool  gen  --deny-resources=secrets.,services. --allowed-verbs=get,list

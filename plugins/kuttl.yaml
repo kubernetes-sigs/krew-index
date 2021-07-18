@@ -32,3 +32,10 @@ spec:
     uri: https://github.com/kudobuilder/kuttl/releases/download/v0.11.0/kuttl_0.11.0_darwin_x86_64.tar.gz
     sha256: "da03fd5e86c719cd063a8147087b19dcc2c973918a741b609525ac0dc216d6ca"
     bin: "./kubectl-kuttl"
+  - selector:
+      matchLabels:
+        os: "darwin"
+        arch: "arm64"
+    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.11.0/kuttl_0.11.0_darwin_arm64.tar.gz
+    sha256: "ab76241d3f694f3255a26e8d2b3ae157788d87ef496440e855aa4d23720a8b51"
+    bin: "./kubectl-kuttl"

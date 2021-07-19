@@ -3,33 +3,33 @@ kind: Plugin
 metadata:
   name: rbac-tool
 spec:
-  version: v1.1.1
+  version: v1.1.4
   platforms:
   - bin: rbac-tool
-    uri: https://github.com/alcideio/rbac-tool/releases/download/v1.1.1/rbac-tool_v1.1.1_linux_amd64.tar.gz
-    sha256: ecdc8b365b8f9bb4303d194e777a9e7fdf3376158e3a2fb78cf7425007118a1d
+    uri: https://github.com/alcideio/rbac-tool/releases/download/v1.1.4/rbac-tool_v1.1.4_linux_amd64.tar.gz
+    sha256: ea2448c699548ee8ee3df1fa0560ddde9a3e60a871af190a5d709074f71695d3
     selector:
       matchLabels:
         os: linux
         arch: amd64
 
   - bin: rbac-tool
-    uri: https://github.com/alcideio/rbac-tool/releases/download/v1.1.1/rbac-tool_v1.1.1_darwin_amd64.tar.gz
-    sha256: 038d583a98783bf72324eda1c9bab88edff115c1a0b03f4e67c27ea55f7a6407
+    uri: https://github.com/alcideio/rbac-tool/releases/download/v1.1.4/rbac-tool_v1.1.4_darwin_amd64.tar.gz
+    sha256: 5a829f4d62e748a6d27e52f5ce465f2b182d21780262259f5c62d89039ece026
     selector:
       matchLabels:
         os: darwin
         arch: amd64
 
   - bin: rbac-tool.exe
-    uri: https://github.com/alcideio/rbac-tool/releases/download/v1.1.1/rbac-tool_v1.1.1_windows_amd64.tar.gz
-    sha256: 1cd62b006b1cfc484866760ca846ca3d2701791e300a1f419b756e29cdc7b6a8
+    uri: https://github.com/alcideio/rbac-tool/releases/download/v1.1.4/rbac-tool_v1.1.4_windows_amd64.tar.gz
+    sha256: 4f01a894e4159a9508f19bf6958194be6b3381045eac1ba7535bb19ae728edc6
     selector:
       matchLabels:
         os: windows
         arch: amd64
 
-  shortDescription: Plugin to analyze permissions and generate policies
+  shortDescription: Plugin to analyze RBAC permissions and generate policies
   homepage: https://github.com/alcideio/rbac-tool
   description: |
     This plugin is a collection of RBAC tools to simplify analysis and configuration.

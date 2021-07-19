@@ -29,10 +29,10 @@ spec:
         os: windows
         arch: amd64
 
-  shortDescription: RBAC power toys to analyze permissions and generate policies
+  shortDescription: Plugin to analyze permissions and generate policies
   homepage: https://github.com/alcideio/rbac-tool
   description: |
-    This plugin is a collection of RBAC power tools to simplify RBAC analysis and configuration.
+    This plugin is a collection of RBAC tools to simplify analysis and configuration.
     You can visualize, analyze, query permissions as well as generate policies in multiple ways.
 
     Examples:
@@ -43,4 +43,4 @@ spec:
     kubectl rbac-tool who-can get secret
 
     # Generate a ClusterRole policy that allows to read everything except secrets and services
-    kubectl rbac-tool  gen  --deny-resources=secrets.,services. --allowed-verbs=get,list
+    kubectl rbac-tool gen --deny-resources=secrets.,services. --allowed-verbs=get,list

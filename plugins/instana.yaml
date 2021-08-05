@@ -1,0 +1,41 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: instana
+spec:
+  shortDescription: Interact with instana
+  description: |
+    The official kubectl plugin for self-hosted instana.
+  version: v0.31.0
+  homepage: https://kubernetes.github.io/ingress-nginx/kubectl-plugin/
+  platforms:
+  - uri: https://self-hosted.instana.io/kubectl/kubectl-instana-darwin_amd64-release-201-0.tar.gz
+    sha256: 749b76bfff438342bda92fa98d57400a56a0d2f405a5ab83d53a8c7f28113c2d
+    files:
+    - from: "*"
+      to: "."
+    bin: "./kubectl-instana"
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://self-hosted.instana.io/kubectl/kubectl-instana-linux_amd64-release-201-0.tar.gz
+    sha256: 5b3146d1c2f526f6faacabbfac19f790af7a85b74b7fcba2add36c86d9c0eb9f
+    files:
+    - from: "*"
+      to: "."
+    bin: "./kubectl-instana"
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://self-hosted.instana.io/kubectl/kubectl-instana-windows_amd64-release-201-0.tar.gz
+    sha256: 21f9e99eaa8d6b1d408bf6f60ef3a965bbcb6e5002563bc8c68b179976454002
+    files:
+    - from: "*"
+      to: "."
+    bin: "./kubectl-instana.exe"
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

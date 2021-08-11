@@ -5,17 +5,10 @@ metadata:
 spec:
   version: v0.0.5
   homepage: https://github.com/knight42/kubectl-blame
-  shortDescription: Show the manager of each field of given resource with information from managed fields.
+  shortDescription: Show who edited resource fields.
   description: |
-    Annotate each line in the given resource's YAML with information from the managedFields to show who last modified the field.
-
-    Examples:
-
-    # Blame pod 'foo' in default namespace
-    kubectl blame pods foo
-
-    # Blame deployment 'bar' in 'ns1' namespace
-    kubectl blame -n ns1 deploy bar
+    Annotate each line in the given resource's YAML with information from the managedFields to show
+    who last modified the field.
   platforms:
   - selector:
       matchLabels:

@@ -6,11 +6,11 @@ spec:
   shortDescription: Interact with instana
   description: |
     The official kubectl plugin for self-hosted instana.
-  version: v0.31.0
-  homepage: https://kubernetes.github.io/ingress-nginx/kubectl-plugin/
+  version: v205-0
+  homepage: https://www.instana.com/docs/self_hosted_instana_k8s/instana_kubectl_plugin/
   platforms:
-  - uri: https://self-hosted.instana.io/kubectl/kubectl-instana-darwin_amd64-release-201-0.tar.gz
-    sha256: 749b76bfff438342bda92fa98d57400a56a0d2f405a5ab83d53a8c7f28113c2d
+  - uri: https://self-hosted.instana.io/kubectl/kubectl-instana-darwin_amd64-release-205-0.tar.gz
+    sha256: 694eaae76a2e8f5b96ec1a018490c8dd2ce72eb0dda3fe6e2024f38cce8b6c6f
     files:
     - from: "*"
       to: "."
@@ -19,8 +19,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://self-hosted.instana.io/kubectl/kubectl-instana-linux_amd64-release-201-0.tar.gz
-    sha256: 5b3146d1c2f526f6faacabbfac19f790af7a85b74b7fcba2add36c86d9c0eb9f
+  - uri: https://self-hosted.instana.io/kubectl/kubectl-instana-linux_amd64-release-205-0.tar.gz
+    sha256: c346cd36ef5822f6d225e266f6882666acf65f885df0f3ac6f4deb6025cddef4
     files:
     - from: "*"
       to: "."
@@ -29,8 +29,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://self-hosted.instana.io/kubectl/kubectl-instana-windows_amd64-release-201-0.tar.gz
-    sha256: 21f9e99eaa8d6b1d408bf6f60ef3a965bbcb6e5002563bc8c68b179976454002
+  - uri: https://self-hosted.instana.io/kubectl/kubectl-instana-windows_amd64-release-205-0.tar.gz
+    sha256: 022ff107fa026556968d91702782daf5ff848abdeb71621335c60232512abc05
     files:
     - from: "*"
       to: "."

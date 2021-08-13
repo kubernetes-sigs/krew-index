@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: direct-csi
 spec:
-  version: v1.4.0
+  version: v1.4.1
   homepage: https://github.com/minio/direct-csi
   shortDescription: CSI driver to manage drives in k8s cluster as volumes
   description: |
@@ -19,8 +19,8 @@ spec:
         to: .
       - from: LICENSE
         to: .
-    uri: https://github.com/minio/direct-csi/releases/download/v1.4.0/kubectl-direct_csi_linux_amd64.zip
-    sha256: a938591947e1cba55c5008003ccffcb0f150398825cdf2f99bf10d4b665ef985
+    uri: https://github.com/minio/direct-csi/releases/download/v1.4.1/kubectl-direct_csi_linux_amd64.zip
+    sha256: 9a22c7ce47b416bf88a81a9d4e2c89eef7e2640661c2d06183d112e890b1a835
     bin: kubectl-direct_csi
   - selector:
       matchLabels:
@@ -31,8 +31,8 @@ spec:
         to: kubectl-direct_csi
       - from: LICENSE
         to: .
-    uri: https://github.com/minio/direct-csi/releases/download/v1.4.0/kubectl-direct_csi_windows_amd64.zip
-    sha256: 4834913defc663d61f126aecab312d9aa0bf0d6283ed1f53bce2e3a8ea2bb1a3
+    uri: https://github.com/minio/direct-csi/releases/download/v1.4.1/kubectl-direct_csi_windows_amd64.zip
+    sha256: 563c9f4d768ef26281d626a7bde5999ab0175d260db2bf3a4d4c7597f60eb504
     bin: kubectl-direct_csi
   - selector:
       matchLabels:
@@ -43,6 +43,6 @@ spec:
         to: .
       - from: LICENSE
         to: .
-    uri: https://github.com/minio/direct-csi/releases/download/v1.4.0/kubectl-direct_csi_darwin_amd64.zip
-    sha256: 3b7ac314a0c72c6ee8defe4c5ebe8966c9f6b477b3c4b81f128347a01a6b0b09
+    uri: https://github.com/minio/direct-csi/releases/download/v1.4.1/kubectl-direct_csi_darwin_amd64.zip
+    sha256: 278b08c58dd46a640d4b088a0a0295bb659c719abb3219d654bcd1d1461530dc
     bin: kubectl-direct_csi

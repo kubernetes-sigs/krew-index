@@ -6,8 +6,8 @@ spec:
   version: v0.1.1
   platforms:
   - bin: kubectl-resource-versions
-    uri: https://github.com/chengshiwen/kubectl-resource-versions/releases/download/v0.1.1/kubectl-resource-versions-darwin-amd64.tar.gz
-    sha256: 48f31d24f9ebaeed6c24fabb568c26f500809a444a8efde5cdb653dff8fae132
+    uri: https://github.com/chengshiwen/kubectl-resource-versions/releases/download/v0.1.2/kubectl-resource-versions-darwin-amd64.tar.gz
+    sha256: dd108c9d25fc4e5eb6c7b384a4860d1a526d68cd82dc3dec9618d5d9b8baf3c8
     files:
       - from: "kubectl-resource-versions-darwin-amd64/*"
         to: .
@@ -16,8 +16,18 @@ spec:
         os: darwin
         arch: amd64
   - bin: kubectl-resource-versions
-    uri: https://github.com/chengshiwen/kubectl-resource-versions/releases/download/v0.1.1/kubectl-resource-versions-linux-amd64.tar.gz
-    sha256: 60c9fd5db5694109bae69a760c2252996e19b260ea89215e1d5e1037c09ae1b8
+    uri: https://github.com/chengshiwen/kubectl-resource-versions/releases/download/v0.1.2/kubectl-resource-versions-darwin-arm64.tar.gz
+    sha256: c3633ef114fcc9886cc4413de2156318397fa0eb5df53ab2e0bc2246bfc112c4
+    files:
+      - from: "kubectl-resource-versions-darwin-arm64/*"
+        to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: kubectl-resource-versions
+    uri: https://github.com/chengshiwen/kubectl-resource-versions/releases/download/v0.1.2/kubectl-resource-versions-linux-amd64.tar.gz
+    sha256: 743bffa253900e3a2189496977c26fdee0224827ae806b704cde1261410ecb8a
     files:
       - from: "kubectl-resource-versions-linux-amd64/*"
         to: .
@@ -26,8 +36,8 @@ spec:
         os: linux
         arch: amd64
   - bin: kubectl-resource-versions.exe
-    uri: https://github.com/chengshiwen/kubectl-resource-versions/releases/download/v0.1.1/kubectl-resource-versions-windows-amd64.tar.gz
-    sha256: c806215594ab835d213abb8a2f2d9d2651c4aaad10a9223f47e214e66ab7ffc7
+    uri: https://github.com/chengshiwen/kubectl-resource-versions/releases/download/v0.1.2/kubectl-resource-versions-windows-amd64.tar.gz
+    sha256: 06c1adc49162a54c85b59a77ff93a1898e2df547a8cb451d1b1cc73efca7303d
     files:
       - from: "kubectl-resource-versions-windows-amd64/*"
         to: .
@@ -35,6 +45,6 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-  shortDescription: Print available versions of each API
+  shortDescription: Print supported API resource versions
   homepage: https://github.com/chengshiwen/kubectl-resource-versions
   description: Print the API resources along with the supported API versions on the server

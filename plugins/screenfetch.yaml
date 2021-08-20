@@ -1,0 +1,32 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: screenfetch
+spec:
+  version: v0.1.0
+  homepage: https://github.com/kubernetes-lab/kubectl-screenfetch
+  shortDescription: Screenfetch for Kubernetes
+  description: |
+    This plugin fetchs stats info within a Kubernetes cluster, just like screenfetch or neofetch in any OS.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/kubernetes-lab/kubectl-screenfetch/releases/download/v0.1.0/kubectl-screenfetch_v0.1.0_linux_amd64.tar.gz
+      sha256: 3d9fc7c6daf70a24b381669581fbf8f4fafc5173daf8a22511b9da466be4a22f
+      bin: kubectl-screenfetch
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/kubernetes-lab/kubectl-screenfetch/releases/download/v0.1.0/kubectl-screenfetch_v0.1.0_darwin_amd64.tar.gz
+      sha256: e1808744c0ef569d314674509ac47cfd83f40bbeb82ff2247c197c055124e853
+      bin: kubectl-screenfetch
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/kubernetes-lab/kubectl-screenfetch/releases/download/v0.1.0/kubectl-screenfetch_v0.1.0_windows_amd64.tar.gz
+      sha256: 58a5b041f1635aae86023e8eabce04d8a1051dbaa48ceb75eac1cffdfd2f6aa5
+      bin: kubectl-screenfetch.exe

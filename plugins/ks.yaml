@@ -3,8 +3,8 @@ kind: Plugin
 metadata:
   name: ks
 spec:
-  version: v0.0.12
-  homepage: https://github.com/linuxsuren/ks
+  version: v0.0.42
+  homepage: https://github.com/kubesphere-sigs/ks
   shortDescription: Simple management of KubeSphere components
   description: |
     This plugin simplifies management of KubeSphere components. KubeSphere helps to run continuous delivery pipelines on Kubernetes. 
@@ -22,13 +22,13 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/linuxsuren/ks/releases/download/v0.0.12/kubectl-ks-darwin-amd64.tar.gz
-      sha256: b54eecd6b8a5263692074aa8601d3956dd91df676bdeedd2850a801ef9405363
+      uri: https://github.com/kubesphere-sigs/ks/releases/download/v0.0.42/kubectl-ks-darwin-amd64.tar.gz
+      sha256: 8f8400af908139a4c7398b0a035dc7cd43af459e5483e7664e21d90b1eb51cbf
       bin: kubectl-ks
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/linuxsuren/ks/releases/download/v0.0.12/kubectl-ks-linux-amd64.tar.gz
-      sha256: efa5179bef5cb2bb8dcadf842085f0901227b18e6d6e3385dd6a2c35e5d464c8
+      uri: https://github.com/kubesphere-sigs/ks/releases/download/v0.0.42/kubectl-ks-linux-amd64.tar.gz
+      sha256: b7eaa7adfa435d26e7296d4fec6e454164889cfcff7e13ad96f7e15c4095b4c2
       bin: kubectl-ks

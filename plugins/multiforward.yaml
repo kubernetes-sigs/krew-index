@@ -1,0 +1,21 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: multiforward
+spec:
+  version: v0.0.0
+  homepage: https://github.com/njnygaard/kubectl-multiforward
+  shortDescription: Port Forward to multiple Kubernetes Services
+  description: |
+    This plugin allows you to forward to multiple Kubernetes Services
+    without the use of multiple terminal windows.
+  caveats: |
+    * You should have ~/.multiforward.yaml or ./.multiforward.yaml configured
+  platforms:
+  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v.0.0.0/kubectl-multiforward-darwin-arm64.tar.gz
+    sha256: f12b91969fac10aacd70cea39a3a7001ed148545af424cf61c6d4703cd505fdb
+    bin: kubectl-multiforward
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64

@@ -1,0 +1,55 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cm
+spec:
+  version: v1.0.0-beta.4
+  homepage: https://github.com/open-cluster-management/cm-cli
+  shortDescription: Provides commands to interract with OCM/ACM to provision and managed your Hybrid Cloud presence from the command-line,
+  description: |
+    This plugin allows you to take several actions on an OCM/ACM environment such as 
+    create/delete/attach/detach nanaged clusters or managed clusterpools.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.4/cm_darwin_amd64.tar.gz
+    sha256: e0ac52155c781fc07612eb376fe219c51fa43d7cd552b6dede2673e50d7441a4
+    bin: cm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.4/cm_linux_amd64.tar.gz
+    sha256: bdc41b8f29a5ddc6a78a3c4fd5d198030084436dbc8cd313ca150d8462e6881d
+    bin: cm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.4/cm_linux_arm64.tar.gz
+    sha256: f110ed572b613dd17dd1cc24a6ea825100c32723ea51a7a3787448ce60063b0e
+    bin: cm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: ppc64ie
+    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.4/cm_linux_ppc64le.tar.gz
+    sha256: 86a6921f8ee4fca88fa6099db0ec1a4c880dc2ed14ccd7fb541dcaf12d0c5ae8
+    bin: cm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.4/cm_linux_s390x.tar.gz
+    sha256: 071420c13508c71932ddf81ce90601c2a6bee492b03a942edfeab6b5dc375171
+    bin: cm
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.4/cm_windows_amd64.zip
+    sha256: d02a553f078967b52ad380a99e61107f472180220e9a1118674a15619e22eb98
+    bin: cm
+

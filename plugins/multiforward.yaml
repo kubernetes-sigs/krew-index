@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: multiforward
 spec:
-  version: v0.0.0
+  version: v0.0.1
   homepage: https://github.com/njnygaard/kubectl-multiforward
   shortDescription: Port Forward to multiple Kubernetes Services
   description: |
@@ -12,10 +12,31 @@ spec:
   caveats: |
     * You should have ~/.multiforward.yaml or ./.multiforward.yaml configured
   platforms:
-  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v.0.0.0/kubectl-multiforward-darwin-arm64.tar.gz
-    sha256: f12b91969fac10aacd70cea39a3a7001ed148545af424cf61c6d4703cd505fdb
+  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v.0.0.1/kubectl-multiforward-darwin-arm64.tar.gz
+    sha256: 9dfd75e491f720d8b2001e4dae41d9d7eb2db4db209eb545ab1618e6f6648441
     bin: kubectl-multiforward
     selector:
       matchLabels:
         os: darwin
+        arch: arm64
+  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v.0.0.1/kubectl-multiforward-darwin-amd64.tar.gz
+    sha256: a665f95a758dfd08e7ec5c9132ffb1b83df6f65c24e9b89c36f8f5b35208a6e3
+    bin: kubectl-multiforward
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v.0.0.1/kubectl-multiforward-linux-amd64.tar.gz
+    sha256: 989801c8cfa7fc12f882c5d65be887f58bd615c302a77de69cf7bc6de8420bf5
+    bin: kubectl-multiforward
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v.0.0.1/kubectl-multiforward-windows-amd64.tar.gz
+    sha256: 724c2419c1c1f5351fb5ace682de6e5047700ea2a443aa2c7c63f0272dd2dca5
+    bin: kubectl-multiforward
+    selector:
+      matchLabels:
+        os: windows
         arch: amd64

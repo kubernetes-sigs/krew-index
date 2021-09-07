@@ -1,0 +1,60 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: gitlab
+spec:
+  version: "v0.0.1"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://gitlab.cn/gitlab-cn/cloud-native/kubectl-gitlab/-/releases/v0.0.1/downloads/gitlab_linux_amd64.tar.gz
+    sha256: e03da99bbd52e494928d691ef7819ba717adbe2536a4d0d8eb0431b8f7cc0d04
+    files:
+    - from: "./gitlab"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "gitlab"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://gitlab.cn/gitlab-cn/cloud-native/kubectl-gitlab/-/releases/v0.0.1/downloads/gitlab_darwin_amd64.tar.gz
+    sha256: f88e83c394feeb76db8c7b34c195d4e7936dff5bb9658f8cf730309262d19380
+    files:
+    - from: "./gitlab"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "gitlab"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://gitlab.cn/gitlab-cn/cloud-native/kubectl-gitlab/-/releases/v0.0.1/downloads/gitlab_darwin_arm64.tar.gz
+    sha256: cf8226cad249c02a278e0e51c353e8b9b5d59a47883162396b98cfccfa2c6efc
+    files:
+    - from: "./gitlab"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "gitlab"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://gitlab.cn/gitlab-cn/cloud-native/kubectl-gitlab/-/releases/v0.0.1/downloads/gitlab_windows_amd64.zip
+    sha256: a9e299613b192821315252c321d0a6d3e4fb969da2507f178d393484fe99b8cb
+    files:
+    - from: "/gitlab.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "gitlab.exe"
+  shortDescription: kubectl plugin for GitLab Kubernetes integration
+  homepage: https://gitlab.cn/gitlab-cn/cloud-native/kubectl-gitlab
+  description: |
+    A plugin to help your GitLab connect and manage your Kubernetes cluster.
+

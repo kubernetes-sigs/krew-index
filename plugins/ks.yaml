@@ -11,12 +11,9 @@ spec:
     to run continuous delivery pipelines on Kubernetes. You can enable/disable,
     inspect logs, or upgrade KubeSphere components.
   caveats: |
-    ks is now installed! To start using kubectl plugins, you need to install
-    KubeSphere first:
-      $ kk create cluster --with-kubesphere [version]
-
-    You can find documentation at
-      https://github.com/kubesphere/kubekey
+    You need to have KubeSphere installed in your cluster to use this plugin.
+    See https://github.com/kubesphere/kubesphere#installation
+    for installation instructions
 
   platforms:
     - selector:

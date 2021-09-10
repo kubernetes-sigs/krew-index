@@ -12,29 +12,29 @@ spec:
   caveats: |
     * You should have ~/.multiforward.yaml or ./.multiforward.yaml configured
   platforms:
-  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v0.0.1/kubectl-multiforward-darwin-arm64.tar.gz
-    sha256: 9dfd75e491f720d8b2001e4dae41d9d7eb2db4db209eb545ab1618e6f6648441
-    bin: kubectl-multiforward
-    selector:
-      matchLabels:
-        os: darwin
-        arch: arm64
-  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v0.0.1/kubectl-multiforward-darwin-amd64.tar.gz
-    sha256: a665f95a758dfd08e7ec5c9132ffb1b83df6f65c24e9b89c36f8f5b35208a6e3
-    bin: kubectl-multiforward
-    selector:
-      matchLabels:
-        os: darwin
-        arch: amd64
-  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v0.0.1/kubectl-multiforward-linux-amd64.tar.gz
-    sha256: 989801c8cfa7fc12f882c5d65be887f58bd615c302a77de69cf7bc6de8420bf5
+  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v0.0.3/kubectl-multiforward-linux-amd64.tar.gz
+    sha256: 12fb84b304be9fb70e2e7f69772ddf6fb883dd2637ac9b6c0b55f3eea293033b
     bin: kubectl-multiforward
     selector:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v0.0.1/kubectl-multiforward-windows-amd64.zip
-    sha256: 724c2419c1c1f5351fb5ace682de6e5047700ea2a443aa2c7c63f0272dd2dca5
+  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v0.0.3/kubectl-multiforward-darwin-amd64.tar.gz
+    sha256: 38543b6ea5ef06f7b4df1ca2a922e62fd72d6512c4a83b0a515e5c9c8678202e
+    bin: kubectl-multiforward
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v0.0.3/kubectl-multiforward-darwin-arm64.tar.gz
+    sha256: 8c38e736c769760f723bd76f9d4fe6364c3958582e4c1db8ef6a3150905cafee
+    bin: kubectl-multiforward
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v0.0.3/kubectl-multiforward-windows-amd64.zip
+    sha256: 34cba0d69682dc6711705a5ef01a445eb5128d794ac32dcfe679968df0c77499
     bin: kubectl-multiforward
     selector:
       matchLabels:

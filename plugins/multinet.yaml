@@ -1,0 +1,35 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: multinet
+spec:
+  version: v0.2.2
+  homepage: https://github.com/k8snetworkplumbingwg/kubectl-multinet
+  shortDescription: "Shows pods' network-status of multi-net-spec"
+  description: |
+    Shows pods' network-status annotation, defined in NPWG multi-net-spec,
+    https://github.com/k8snetworkplumbingwg/multi-net-spec.
+    Usage:
+      kubectl multinet -n <namespace-name>
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/k8snetworkplumbingwg/kubectl-multinet/releases/download/v0.2.2/kubectl-multinet_v0.2.2_linux_amd64.tar.gz
+    sha256: 842425cd3e8f7cac85a0e0829907829b4bdbf2c11cd2eadf841d5c58ff85fa17
+    bin: kubectl-multinet
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/k8snetworkplumbingwg/kubectl-multinet/releases/download/v0.2.2/kubectl-multinet_v0.2.2_linux_arm64.tar.gz
+    sha256: 7ec6e31a7c93617588d9f3fb70ae2b1be92721ca1f235fc8c8243ac4dc689981
+    bin: kubectl-multinet
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/k8snetworkplumbingwg/kubectl-multinet/releases/download/v0.2.2/kubectl-multinet_v0.2.2_darwin_amd64.tar.gz
+    sha256: 963644e328bcfa6d500e2d7dc7e044c0639f0bb997a5c42c8e246b3299f71354
+    bin: kubectl-multinet

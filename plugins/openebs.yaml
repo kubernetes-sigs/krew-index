@@ -1,0 +1,53 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: openebs
+spec:
+  version: v0.3.1
+  homepage: https://github.com/openebs/openebsctl
+  shortDescription: View and debug OpenEBS storage resources
+  description: |
+    The openebs plugin provides a simplified interface to view
+    and debug different OpenEBS volumes and related storage resources.
+  caveats: |
+    * This plugin works with newer OpenEBS releases, where volumes are
+      provisioned by CSI.
+    * For resources that are not in default namespace, you must specify
+      -n/--namespace explicitly (the current namespace setting is not
+      yet used).
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/openebs/openebsctl/releases/download/v0.3.1/kubectl-openebs_v0.3.1_Darwin_x86_64.tar.gz
+    sha256: c08d6a5cf63b380062c0f81105b8eeba1184f60a09d2df3ace1093669dc0c9a9
+    bin: kubectl-openebs
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/openebs/openebsctl/releases/download/v0.3.1/kubectl-openebs_v0.3.1_Darwin_arm64.tar.gz
+    sha256: 2119aacfc1dc825ae796d40dd852663fbc6143edff7cd281c12af07647c79326
+    bin: kubectl-openebs
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/openebs/openebsctl/releases/download/v0.3.1/kubectl-openebs_v0.3.1_Linux_x86_64.tar.gz
+    sha256: 101b3a850edc68c63db0134fe5e0efd77f2d1ea02ebd07c6f6a8386112cf890f
+    bin: kubectl-openebs
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/openebs/openebsctl/releases/download/v0.3.1/kubectl-openebs_v0.3.1_Linux_arm64.tar.gz
+    sha256: 3a822abb528c4880e549f835a73daacf9530a42cac4f7a28dac456aa6e17fadc
+    bin: kubectl-openebs
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/openebs/openebsctl/releases/download/v0.3.1/kubectl-openebs_v0.3.1_Windows_x86_64.zip
+    sha256: 9bcda6b974217a7ce492ffd123eecb63dfdd3f64216dcafc52d00a51b597d934
+    bin: kubectl-openebs.exe

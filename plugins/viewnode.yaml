@@ -1,0 +1,35 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: viewnode
+spec:
+  version: v0.6.0
+  homepage: https://github.com/NTTDATA-EMEA/viewnode
+  shortDescription: Shows nodes with their pods and containers
+  description: |
+    This plugin shows nodes with their pods and containers.
+    It support filtering of nodes and pods. It is very useful when you need
+    to monitor multiple resources such as nodes, pods or containers
+    in a dynamic environment like a CI/CD platform.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/NTTDATA-EMEA/viewnode/releases/download/v0.6.0/viewnode_0.6.0_darwin_amd64.tar.gz
+      sha256: e4b3e87fef6b023ed09949399ee431762132321d736f49fe4d18be077f128962
+      bin: viewnode
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/NTTDATA-EMEA/viewnode/releases/download/v0.6.0/viewnode_0.6.0_linux_amd64.tar.gz
+      sha256: b8c986ff3af9402c679a0a828febd8338223d142c8da3b376019b1146d88c023
+      bin: viewnode
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/NTTDATA-EMEA/viewnode/releases/download/v0.6.0/viewnode_0.6.0_windows_amd64.tar.gz
+      sha256: c28eb6f42a0254302fa7e1eb8b81e91841d848ba0c86e3322af669315b220fbb
+      bin: viewnode.exe

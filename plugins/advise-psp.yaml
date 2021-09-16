@@ -3,22 +3,22 @@ kind: Plugin
 metadata:
   name: advise-psp
 spec:
-  version: v2.0.0
+  version: v2.0.1
   homepage: https://github.com/sysdiglabs/kube-psp-advisor
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/sysdiglabs/kube-psp-advisor/releases/download/v2.0.0/kube-psp-advisor_v2.0.0_darwin_amd64.tar.gz
-    sha256: 1a30c3dc8a8fdbd9491411a9059e1f3c100feb6931b010f15403c5e625fd3489
+    uri: https://github.com/sysdiglabs/kube-psp-advisor/releases/download/v2.0.1/kube-psp-advisor_v2.0.1_darwin_amd64.tar.gz
+    sha256: 2e07c8eb57b8aa2e8a67e2621ac864ffa5e02e10e3ad17d7f49575cbb69ed369
     bin: kubectl-advise-psp
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/sysdiglabs/kube-psp-advisor/releases/download/v2.0.0/kube-psp-advisor_v2.0.0_linux_amd64.tar.gz
-    sha256: 33680f8c405b516f978971aabb433cffbc8202ab49b1611a43a3ffc169de935c
+    uri: https://github.com/sysdiglabs/kube-psp-advisor/releases/download/v2.0.1/kube-psp-advisor_v2.0.1_linux_amd64.tar.gz
+    sha256: 48b62f59cff71a7e9494ef50ca76990c4d6caec5942972589df7d26d43555532
     bin: kubectl-advise-psp
   shortDescription: Suggests PodSecurityPolicies for cluster.
   description: |

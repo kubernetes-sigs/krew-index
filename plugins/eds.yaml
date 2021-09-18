@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: eds
+spec:
+  version: "v0.7.0"
+  shortDescription: Interact and manage ExtendedDaemonset resources
+  description: |
+    The ExtendedDaemonset kubectl plugin provides useful utilities to operate daemonsets
+    via the ExtendedDaemonset controller and the ExtendedDaemonset CRD.
+  homepage: https://github.com/DataDog/extendeddaemonset
+  platforms:
+    - uri: https://github.com/DataDog/extendeddaemonset/releases/download/v0.7.0/kubectl-eds_0.7.0_darwin_amd64.zip
+      sha256: "dba910f0ca75d9b542d49a929c188ffec073303bfd3560995f18fa6f55d09dc1"
+      bin: kubectl-eds
+      files:
+        - from: kubectl-eds
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+    - uri: https://github.com/DataDog/extendeddaemonset/releases/download/v0.7.0/kubectl-eds_0.7.0_linux_amd64.zip
+      sha256: "c10f5bc2e028aca5a15715c5fe50735991b486146c9ee3dcb956e92225aa2780"
+      bin: kubectl-eds
+      files:
+        - from: kubectl-eds
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - uri: https://github.com/DataDog/extendeddaemonset/releases/download/v0.7.0/kubectl-eds_0.7.0_windows_amd64.zip
+      sha256: "509f862acda7634c8bfba355853db3b316a16645203f075988a980597e18a9fa"
+      bin: kubectl-eds.exe
+      files:
+        - from: kubectl-eds.exe
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64

@@ -1,0 +1,108 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: resource-snapshot
+spec:
+  version: "v0.1.3"
+  platforms:
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/fbrubbo/kubectl-snapshot/archive/v0.1.3.tar.gz
+    sha256: "24efd80a13dc532e63b34341b6f229e759e995a922a39745d9f40c9ba24d02e8"
+    files:
+    - from: "kubectl-snapshot-*/bin/kubectl-snapshot-linux-amd64"
+      to:  "."
+    - from: "kubectl-snapshot-*/LICENSE"
+      to: "."
+    bin: "./kubectl-snapshot-linux-amd64"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: 386
+    uri: https://github.com/fbrubbo/kubectl-snapshot/archive/v0.1.3.tar.gz
+    sha256: "24efd80a13dc532e63b34341b6f229e759e995a922a39745d9f40c9ba24d02e8"
+    files:
+    - from: "kubectl-snapshot-*/bin/kubectl-snapshot-linux-386"
+      to:  "."
+    - from: "kubectl-snapshot-*/LICENSE"
+      to: "."      
+    bin: "./kubectl-snapshot-linux-386"
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/fbrubbo/kubectl-snapshot/archive/v0.1.3.tar.gz
+    sha256: "24efd80a13dc532e63b34341b6f229e759e995a922a39745d9f40c9ba24d02e8"
+    files:
+    - from: "kubectl-snapshot-*/bin/kubectl-snapshot-darwin-amd64"
+      to:  "."
+    - from: "kubectl-snapshot-*/LICENSE"
+      to: "."
+    bin: "./kubectl-snapshot-darwin-amd64"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: 386
+    uri: https://github.com/fbrubbo/kubectl-snapshot/archive/v0.1.3.tar.gz
+    sha256: "24efd80a13dc532e63b34341b6f229e759e995a922a39745d9f40c9ba24d02e8"
+    files:
+    - from: "kubectl-snapshot-*/bin/kubectl-snapshot-darwin-386"
+      to:  "."
+    - from: "kubectl-snapshot-*/LICENSE"
+      to: "."
+    bin: "./kubectl-snapshot-darwin-386"
+    
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/fbrubbo/kubectl-snapshot/archive/v0.1.3.tar.gz
+    sha256: "24efd80a13dc532e63b34341b6f229e759e995a922a39745d9f40c9ba24d02e8"
+    files:
+    - from: "kubectl-snapshot-*/bin/kubectl-snapshot-windows-amd64.exe"
+      to:  "."
+    - from: "kubectl-snapshot-*/LICENSE"
+      to: "."
+    bin: "./kubectl-snapshot-windows-amd64.exe"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: 386
+    uri: https://github.com/fbrubbo/kubectl-snapshot/archive/v0.1.3.tar.gz
+    sha256: "24efd80a13dc532e63b34341b6f229e759e995a922a39745d9f40c9ba24d02e8"
+    files:
+    - from: "kubectl-snapshot-*/bin/kubectl-snapshot-windows-386.exe"
+      to:  "."
+    - from: "kubectl-snapshot-*/LICENSE"
+      to: "."
+    bin: "./kubectl-snapshot-windows-386.exe"    
+
+  shortDescription: >-    
+    Prints a snapshot of nodes, pods and HPAs resource usage
+  homepage: https://github.com/fbrubbo/kubectl-snapshot
+  description: |
+    This plugin takes a snapshot of resources (ie. cpu and memory) usage for 
+    pods, HPAs, deployments without HPA and nodes. Other best configuration 
+    practices, such as Pod Disruption Budget, probes and etc are also included. 
+    This is specialy useful to understand, at scale, what you have configured 
+    in your cluster. 
+
+    Usage:
+      kubectl snapshot
+      kubectl snapshot -csv-output <NAME>
+
+    Other fine tunning are allowed, to understand more type:
+      kubectl snapshot -h
+
+    In order to do more advanced analysis, we strongly suggested you to save 
+    the output in csv files, using the command below, and importing them in 
+    a spreadsheet.
+
+      kubectl snapshot -csv-output <NAME>
+
+    For a suggestion on how to interpret the data see
+    https://github.com/fbrubbo/kubectl-snapshot/blob/master/README.md#sugestions-on-how-to-interpret-the-data

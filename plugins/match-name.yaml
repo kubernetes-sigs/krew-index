@@ -1,0 +1,43 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: match-name
+spec:
+  version: "v0.1.3"
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/gerald1248/kubectl-match-name/releases/download/v0.1.5/kubectl-match_name-darwin-amd64.zip
+    sha256: c972254ad63a6d85ee12bd20cdd22e20773bd99340e902b770771b1b1c1bd041 
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-match_name
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/gerald1248/kubectl-match-name/releases/download/v0.1.5/kubectl-match_name-linux-amd64.zip
+    sha256: 38f0959e5bfdfb64c3668082543b32012bee8bc8809b5128221c423ede746cbb
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-match_name
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/gerald1248/kubectl-match-name/releases/download/v0.1.5/kubectl-match_name-windows-amd64.zip
+    sha256: eedd09422de180bcdc6be51ac052e3dbc0fc5079792efbef86007be7d695666c
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-match_name.exe
+  homepage: https://github.com/gerald1248/kubectl-match-name
+  shortDescription: Match names of pods and other API objects
+  caveats: |
+    API object coverage is incomplete.
+  description: |
+    This plugin allows fast regex matching for the names of pods and other API objects. It reduces typing and simplifies automation.

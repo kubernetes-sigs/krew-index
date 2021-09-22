@@ -1,0 +1,35 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: duck
+spec:
+  version: v0.0.1
+  homepage: https://github.com/n3wscott/kubectl-duck
+  shortDescription: List custom resources with ducktype support
+  description: |
+    This plugin allows you to list and get custom resources based on ducktype
+    labels on CRDs.
+  caveats: |
+    * Ducktype labels are currenly hardcoded to known types from Knative.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/n3wscott/kubectl-duck/releases/download/v0.0.1/kubectl-duck_v0.0.1_darwin_amd64.tar.gz
+    sha256: 86294517e15b77297eeeafcb515ed7dd5f1c0ea13f6bfa4e1ecdc9d8096ab009
+    bin: kubectl-duck
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/n3wscott/kubectl-duck/releases/download/v0.0.1/kubectl-duck_v0.0.1_linux_amd64.tar.gz
+    sha256: 47cc0bce7b01ca4fcde89ea30d9dad862591477e0647e30eb3367606968069e0
+    bin: kubectl-duck
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/n3wscott/kubectl-duck/releases/download/v0.0.1/kubectl-duck_v0.0.1_windows_amd64.tar.gz
+    sha256: e48aa627f39d338a3b86f7c08d45885b800df70b759a267cb120f11957cbfe9b
+    bin: kubectl-duck.exe

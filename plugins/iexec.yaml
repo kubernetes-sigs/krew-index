@@ -1,0 +1,44 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: iexec
+spec:
+  version: v1.14.0
+  homepage: https://github.com/gabeduke/kubectl-iexec
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/v1.14.0/kubectl-iexec_v1.14.0_Darwin_arm64.tar.gz
+      sha256: e96fcdcaa8f4f56010000de383e6e28f8bdb1c1427763890b5614693e15e4c2d
+      bin: kubectl-iexec
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/v1.14.0/kubectl-iexec_v1.14.0_Darwin_x86_64.tar.gz
+      sha256: 81b86bb10f74b5889aa79502255c4162b88ed8f958262f0988b64668072aea9f
+      bin: kubectl-iexec
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/v1.14.0/kubectl-iexec_v1.14.0_Linux_arm64.tar.gz
+      sha256: 707a97ca71c32a088e405685232b5bb43da43343b4b3aa80e09a4adfd395a051
+      bin: kubectl-iexec
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/v1.14.0/kubectl-iexec_v1.14.0_Linux_x86_64.tar.gz
+      sha256: 4636c2c8299e464af69cfbfea80662932e6b2f0fd060facb4a99edd23e398a38
+      bin: kubectl-iexec
+  shortDescription: Interactive selection tool for `kubectl exec`
+  description: |
+    Interactive pod and container selector for `kubectl exec`
+  caveats: |
+    To get help run: kubectl iexec --help
+    Examples:
+    Run command in container:
+      kubectl iexec [pod] [command]

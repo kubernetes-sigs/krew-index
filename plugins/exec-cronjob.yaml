@@ -1,0 +1,28 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: exec-cronjob
+spec:
+  version: v0.6.0
+  platforms:
+  - selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+    uri: https://github.com/FikaWorks/kubectl-plugins/archive/v0.6.0.zip
+    sha256: b92740c91efe7c7101c4d51fb456c08c8fc4014621cac2144a30895c257b6559
+    files:
+    - from: kubectl-plugins-*/exec-cronjob/*
+      to: .
+    - from: kubectl-plugins-*/LICENSE
+      to: .
+    bin: kubectl-exec_cronjob.sh
+  shortDescription: Run a CronJob immediately as Job
+  description: |
+    Run a CronJob immediately as Job by extracting the Job spec and creating a
+    Job instance thereof.
+  caveats: |
+    DEPRECATION NOTICE:
+    This plugin isn't necessary anymore, the kubectl cli let you create
+    cronjob with the create subcommand:
+        kubectl create job --from cronjob/my-cronjob my-job
+  homepage: https://github.com/FikaWorks/kubectl-plugins#exec-cronjob

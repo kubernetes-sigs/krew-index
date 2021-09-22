@@ -1,0 +1,52 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: graph
+spec:
+  version: v0.1.2
+  homepage: https://github.com/steveteuber/kubectl-graph
+  shortDescription: Visualize Kubernetes resources and relationships.
+  description: |
+    This plugin generates a visual representation of Kubernetes resources and
+    relationships. The graph is outputted in dot or cypher format, which can
+    be used by Graphviz or Neo4j.
+  caveats: |
+    This plugin requires Graphviz or Neo4j to visualize the dependency graph.
+    Please see the quickstart guide for more information:
+    https://github.com/steveteuber/kubectl-graph#quickstart
+  platforms:
+  - bin: kubectl-graph
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.1.2/kubectl-graph_v0.1.2_darwin_amd64.tar.gz
+    sha256: 96ffc45ad1dbc8afa5af0a9e509e2bfe8082d79daa2d3cbc0fd0d84e147eecc2
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kubectl-graph
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.1.2/kubectl-graph_v0.1.2_darwin_arm64.tar.gz
+    sha256: cf6539ecafe85bd3a0df81391d29e80d41112b73f740ba54735211db87516df5
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: kubectl-graph
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.1.2/kubectl-graph_v0.1.2_linux_amd64.tar.gz
+    sha256: 2a430fe5e61dcd7e653baee271eeaeee010f6b2f9e21a617dafa5795f5abecc8
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-graph
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.1.2/kubectl-graph_v0.1.2_linux_arm64.tar.gz
+    sha256: 6201158e52b03ca377143fb28ca7b01d10bbe81cbf1b38adcf98579d82a33a14
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - bin: kubectl-graph.exe
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.1.2/kubectl-graph_v0.1.2_windows_amd64.zip
+    sha256: 985c7d145ec92bed97f5a6598b2c9b92501a6ae4ce01674c0637469635de30eb
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

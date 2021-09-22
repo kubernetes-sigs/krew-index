@@ -1,0 +1,56 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: fields
+spec:
+  platforms:
+  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.2.3/kubectl-fields-Darwin-x86_64.tar.gz
+    sha256: 2b07be546f1b5f69f718b99d8c874336895850021fb905175e304ba15f71ccb4
+    bin: kubectl-fields
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.2.3/kubectl-fields-Linux-x86_64.tar.gz
+    sha256: 5b4d0b63556929eb101cd7006898214ab9681dca94da5f40757a3556259adcc7
+    bin: kubectl-fields
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/rewanth1997/kubectl-fields/releases/download/v1.2.3/kubectl-fields-Windows-x86_64.zip
+    sha256: eced38433f2127c83e169585f387f5b43eee95eba75b8de37efa3ed1261a814e
+    bin: kubectl-fields.exe
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  version: v1.2.3
+  homepage: https://github.com/rewanth1997/kubectl-fields
+  shortDescription: Grep resources hierarchy by field name
+  description: |
+    kubectl-fields parses specified kubectl resources to match given pattern(s).
+    It prints parental hierarchy of matched fields in one-liner format.
+
+    More on https://github.com/rewanth1997/kubectl-fields
+
+    Examples:
+
+    Find resource field hierarchy:
+    $ kubectl fields svc affinity
+    spec.sessionAffinity
+    spec.sessionAffinityConfig
+
+    Find resource field hierarchy (case sensitive match):
+    $ kubectl fields po.spec.volumes -I Ver
+    downwardAPI.items.fieldRef.apiVersion
+    projected.sources.downwardAPI.items.fieldRef.apiVersion

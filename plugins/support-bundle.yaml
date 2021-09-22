@@ -1,0 +1,77 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: support-bundle
+spec:
+  version: v0.13.10
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.13.10/support-bundle_linux_amd64.tar.gz
+    sha256: 7c8a11693a12293099b5711937e58a7d7de82445152473189fa3dacb03172001
+    files:
+    - from: support-bundle
+      to: .
+    - from: LICENSE
+      to: .
+    bin: support-bundle
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.13.10/support-bundle_darwin_amd64.tar.gz
+    sha256: 31be21a7ce05bde2f4115e26a700b0f55ba26a4bb6d7a82a95edec8d6c1404d4
+    files:
+    - from: support-bundle
+      to: .
+    - from: LICENSE
+      to: .
+    bin: support-bundle
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.13.10/support-bundle_windows_amd64.zip
+    sha256: 2c929e8d8d788faeb560451f33333e9a4d5c1e9ddce42fd42d8b2f0743407f6f
+    files:
+    - from: support-bundle.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: support-bundle.exe
+  shortDescription: Creates support bundles for off-cluster analysis
+  homepage: https://github.com/replicatedhq/troubleshoot
+  description: |
+    This plugin collects information about the cluster, and automatically
+    redacts sensitive data from being collected. This can optionally include
+    application-specific data.  The plugin writes the collected files into a
+    single archive named support-bundle.tar.gz. This archive can be manually
+    inspected or uploaded to https://vendor.replicated.com for automated
+    analysis.
+
+    Application developers can create and host a Collector manifest that
+    defines information to be collected.
+
+    For information on creating a Collector manifest, view the documentation
+    at https://help.replicated.com/docs/troubleshoot/kubernetes/collectors/defining-collectors/
+
+    Usage:
+      $ kubectl support-bundle <uri>
+
+      where <uri> references a set of application collectors
+
+      For example:
+
+      $ kubectl support-bundle https://troubleshoot.replicated.com
+
+    For additional options:
+      $ kubectl support-bundle --help
+
+    Documentation:
+      Full documentation on this plugin is available at:
+      https://help.replicated.com/docs/troubleshoot/kubernetes/support-bundle/overview/
+
+      For application developers writing collectors and analyzers:
+      https://help.replicated.com/docs/troubleshoot/kubernetes/collectors/defining-collectors/

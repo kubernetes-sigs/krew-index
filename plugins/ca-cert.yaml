@@ -1,0 +1,26 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ca-cert
+spec:
+  platforms:
+  - sha256: 8be8ed348d02285abc46bbf7a4cc83da0ee9d54dc2c5bf86a7b64947811b843c
+    uri: https://github.com/ahmetb/kubectl-extras/archive/c403c5714a4442b8314e5a86b0ff63f7a815f83f.zip
+    bin: ca-cert.bash
+    files:
+    - from: "/*/ca-cert/*"
+      to: "."
+    - from: "/*/LICENSE"
+      to: "."
+    selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+  version: "v0.0.0"
+  homepage: https://github.com/ahmetb/kubectl-extras
+  shortDescription: Print the PEM CA certificate of the current cluster
+  description: |
+    Pretty print the current cluster certificate. The plugin formats the
+    certificate in PEM format described in RFC1421.
+  caveats: |
+    This plugin needs the following programs:
+    * base64

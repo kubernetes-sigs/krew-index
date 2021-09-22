@@ -1,0 +1,44 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: eksporter
+spec:
+  version: v1.7.0
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+        - windows
+    uri: https://github.com/Kyrremann/kubectl-eksporter/releases/download/v1.7.0/eksporter.tar.gz
+    sha256: 9f3478544b89fa30afc9a3df651cc5909e438537322b612d3d62d09a8ec08b0f
+    files:
+    - from: "/eksporter.rb"
+      to: "."
+    - from: "/LICENSE"
+      to: "."
+    bin: "./eksporter.rb"
+  shortDescription: Export resources and removes a pre-defined set of fields for later import
+  homepage: https://github.com/Kyrremann/kubectl-eksporter
+  caveats: |
+    This plugin needs the following programs:
+    * ruby
+  description: |
+    This plugin helps you export a resource, and removes a pre-defined set of
+    fields. This is useful for when you have resource you want to migrate from
+    one namespace or cluster, to another one, but need to edit/add some fields
+    before applying.
+
+    If you just need to move one resource, it's probably easier to just:
+      kubectl get -oyaml | kubectl create -f -
+
+    Run the tool with:
+      kubectl eksporter <resource> <resource_name>
+    Or with piping:
+      kubectl get pods -o yaml <resource_name> | kubectl eksporter
+
+    You can keep some of the pre-defined fields by listing them with --keep.
+      kubectl eksporter ingress my-web-site --keep annotations

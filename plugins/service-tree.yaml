@@ -1,0 +1,36 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: service-tree
+spec:
+  version: v0.2.1
+  homepage: https://github.com/feloy/kubectl-service-tree
+  shortDescription: Status for ingresses, services, and their backends
+  description: |
+    This plugin shows a tree of ingresses, services and associated backends. 
+    Only services of type NodePort and LoadBalancer are displayed.
+    When a Pod contains several containers and the containers declare their ports
+    (with ports.containerPort), the name of the concerned container is displayed.
+
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/feloy/kubectl-service-tree/releases/download/v0.2.1/kubectl-service-tree_darwin_amd64.tar.gz
+    sha256: c576f3bb6e664077eef773ed7c206ce77de53adb22946105370c6bb95837e086
+    bin: kubectl-service-tree
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/feloy/kubectl-service-tree/releases/download/v0.2.1/kubectl-service-tree_linux_amd64.tar.gz
+    sha256: 8f224b377b8a429b2d7f2d197bb54a9c96f0fdceb31902881af94ff12df1dfe6
+    bin: kubectl-service-tree
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/feloy/kubectl-service-tree/releases/download/v0.2.1/kubectl-service-tree_windows_amd64.zip
+    sha256: f86a2dca3205d221fee77167c34afba5b58bf0d1d2489cb522df1b20f58c91d2
+    bin: kubectl-service-tree.exe

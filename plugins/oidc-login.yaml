@@ -1,0 +1,68 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: oidc-login
+spec:
+  homepage: https://github.com/int128/kubelogin
+  shortDescription: Log in to the OpenID Connect provider
+  description: |
+    This is a kubectl plugin for Kubernetes OpenID Connect (OIDC) authentication.
+
+    ## Credential plugin mode
+    kubectl executes oidc-login before calling the Kubernetes APIs.
+    oidc-login automatically opens the browser and you can log in to the provider.
+    After authentication, kubectl gets the token from oidc-login and you can access the cluster.
+    See https://github.com/int128/kubelogin#credential-plugin-mode for more.
+
+    ## Standalone mode
+    Run `kubectl oidc-login`.
+    It automatically opens the browser and you can log in to the provider.
+    After authentication, it writes the token to the kubeconfig and you can access the cluster.
+    See https://github.com/int128/kubelogin#standalone-mode for more.
+
+  caveats: |
+    You need to setup the OIDC provider, Kubernetes API server, role binding and kubeconfig.
+  version: v1.25.0
+  platforms:
+  - bin: kubelogin
+    uri: https://github.com/int128/kubelogin/releases/download/v1.25.0/kubelogin_linux_amd64.zip
+    sha256: 95aa5af71f46cc8f23af098d7303815de42763aaa6367db50315805669d3c6aa
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubelogin
+    uri: https://github.com/int128/kubelogin/releases/download/v1.25.0/kubelogin_linux_arm64.zip
+    sha256: b0fc09e189016d59a11c7f6722bd564a484c8defd320b71862860fc2fc00caa4
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - bin: kubelogin
+    uri: https://github.com/int128/kubelogin/releases/download/v1.25.0/kubelogin_linux_arm.zip
+    sha256: 2593aa82e5840a2ef239d7bbadddff2151cc7aadaf54d8a60dfab0a4aac5b1b0
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm
+  - bin: kubelogin
+    uri: https://github.com/int128/kubelogin/releases/download/v1.25.0/kubelogin_darwin_amd64.zip
+    sha256: a82f8a441ee379c5cb9252933702f9d7a86a46f5ccd0ac7693b52c09f53542a3
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kubelogin
+    uri: https://github.com/int128/kubelogin/releases/download/v1.25.0/kubelogin_darwin_arm64.zip
+    sha256: 945fb26a7c970c30857c5e9d08f8440955273588c0363995a21a5e8a47598434
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: kubelogin.exe
+    uri: https://github.com/int128/kubelogin/releases/download/v1.25.0/kubelogin_windows_amd64.zip
+    sha256: f7ca9af58f40e2824adbcf1f5c24b7d42178e4c0aa708917fd67248344ecf3b2
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

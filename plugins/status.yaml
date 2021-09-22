@@ -1,0 +1,52 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: status
+spec:
+  version: v0.4.1
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.4.1/status_linux_amd64.tar.gz
+    sha256: 550e974c9c18ac40759f9e25b8419e3d20aec850b0e20305b08fea7006791ad7
+    files:
+    - from: "./status"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "status"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.4.1/status_darwin_amd64.tar.gz
+    sha256: ebf9e6158bca3d4f37ed080e01f2432771502ca9fd31a3a8583248406602cb93
+    files:
+    - from: "./status"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "status"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.4.1/status_windows_amd64.zip
+    sha256: ffa7e83276f2ee8137cfeeaaa157243507410de899d6876ea1588596380e94f2
+    files:
+    - from: "/status.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "status.exe"
+  shortDescription: Show status details of a given resource.
+  homepage: https://github.com/bergerx/kubectl-status
+  description: |
+    Show status details of a given resource. Most useful when debugging Pod issues.
+
+    For additional options:
+      $ kubectl status --help
+      or https://github.com/bergerx/kubectl-status/blob/master/doc/USAGE.md
+

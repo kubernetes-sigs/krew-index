@@ -1,0 +1,47 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: rbac-view
+spec:
+  version: "v0.2.1"
+  homepage: https://github.com/jasonrichardsmith/rbac-view
+  shortDescription: A tool to visualize your RBAC permissions.
+  caveats: |
+    Run "kubectl rbac-view" to open a browser with an html view of your permissions.
+  platforms:
+  - uri: https://github.com/jasonrichardsmith/rbac-view/releases/download/v0.2.1/rbac-view.v0.2.1.darwin.tar.gz
+    sha256: 0a042551e9fa8255227292a5ff74073ea67efd98fde9bab4f4c0709e1f3d19c1
+    bin: rbac-view
+    files:
+    - from: bin/darwin/rbac-view
+      to: rbac-view
+    - from: LICENSE
+      to: LICENSE
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/jasonrichardsmith/rbac-view/releases/download/v0.2.1/rbac-view.v0.2.1.linux.tar.gz
+    sha256: fc20abf295d3e6f012e45e5b5f04b316e57b5858e9bcec0a9b19c0db47b0ba07
+    bin: rbac-view
+    files:
+    - from: bin/linux/rbac-view
+      to: rbac-view
+    - from: LICENSE
+      to: LICENSE
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/jasonrichardsmith/rbac-view/releases/download/v0.2.1/rbac-view.v0.2.1.windows.tar.gz
+    sha256: 5fb66464cfe1a32930d62f16f6bc642e61577a74cf0bc6178dd59b2a710c617a
+    bin: rbac-view
+    files:
+    - from: bin/windows/rbac-view
+      to: rbac-view
+    - from: LICENSE
+      to: LICENSE
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

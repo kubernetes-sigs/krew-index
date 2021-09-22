@@ -1,0 +1,94 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: azad-proxy
+spec:
+  platforms:
+  - uri: https://github.com/XenitAB/azad-kube-proxy/releases/download/v0.0.24/kubectl-azad_proxy-darwin-amd64.zip
+    sha256: 98ed23f7e8c3648ab02afc62c373b7fbc9852077bfe7e0864d33e34f23ff64f0
+    bin: kubectl-azad_proxy
+    files:
+    - from: kubectl-azad_proxy
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/XenitAB/azad-kube-proxy/releases/download/v0.0.24/kubectl-azad_proxy-darwin-arm64.zip
+    sha256: 69ce19e875876ee6a028d2a73fbd06bc6566fceb56894e97f492625341a66dad
+    bin: kubectl-azad_proxy
+    files:
+    - from: kubectl-azad_proxy
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - uri: https://github.com/XenitAB/azad-kube-proxy/releases/download/v0.0.24/kubectl-azad_proxy-linux-amd64.zip
+    sha256: 63040aedb88cff3d296f347f965f4e0b0aa6afcbe7d0a8a8cee2addb52f4086e
+    bin: kubectl-azad_proxy
+    files:
+    - from: kubectl-azad_proxy
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/XenitAB/azad-kube-proxy/releases/download/v0.0.24/kubectl-azad_proxy-linux-arm64.zip
+    sha256: 07f12b18ced233b28f980837a54018f872eff05c262381fd061415d3c3458e43
+    bin: kubectl-azad_proxy
+    files:
+    - from: kubectl-azad_proxy
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - uri: https://github.com/XenitAB/azad-kube-proxy/releases/download/v0.0.24/kubectl-azad_proxy-linux-arm.zip
+    sha256: 083bba4a435c0394a75c9bbdb45a1ae7d9f412030c09561345457e11ea7b4fea
+    bin: kubectl-azad_proxy
+    files:
+    - from: kubectl-azad_proxy
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm
+  - uri: https://github.com/XenitAB/azad-kube-proxy/releases/download/v0.0.24/kubectl-azad_proxy-windows-amd64.zip
+    sha256: 2acd0fca2a6a37a619c01397723b1a63b19d64faec0c9ab60f97bb47aeda7b5e
+    bin: kubectl-azad_proxy.exe
+    files:
+    - from: kubectl-azad_proxy.exe
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  version: "v0.0.24"
+  homepage: https://github.com/XenitAB/azad-kube-proxy
+  caveats: |
+    This plugin is used in combination with the azad-kube-proxy:
+    - https://github.com/XenitAB/azad-kube-proxy
+
+    There shouldn't be a use case where you can use the plugin without the proxy.
+    If you haven't been asked by a cluster admin to install this plugin - it may
+    not be the one you need.
+  shortDescription: Generate and handle authentication for azad-kube-proxy
+  description: |
+    Works together with the proxy (Azure AD Kubernetes API Proxy: azad-kube-proxy)
+    to make it easier to generate the kubeconfig and handles the authentication.
+    The proxy itself enables you to use Azure AD to authenticate to any Kubernetes
+    API, decouples you from the Cloud providers FQDNs and solves issues related 
+    to Azure AD groups for users with more than 200 of them.

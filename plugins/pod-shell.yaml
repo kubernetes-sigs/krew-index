@@ -1,0 +1,18 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pod-shell
+spec:
+  platforms:
+  - sha256: c548f94d8efd1fb8aa35a54b7e5cdb64ae012447122d9704f3cee4163bbbe9c3
+    uri: https://github.com/danisla/kubefunc/archive/v1.0.1.zip
+    bin: pod-shell.sh
+    files:
+    - from: "/*/pod-shell/*"
+      to: "."
+    selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+  version: "v1.0.1"
+  homepage: https://github.com/danisla/kubefunc
+  shortDescription: Display a list of pods to execute a shell in

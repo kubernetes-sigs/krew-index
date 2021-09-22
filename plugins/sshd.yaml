@@ -1,0 +1,30 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: sshd
+spec:
+  version: "v0.1.0"
+  platforms:
+  - uri: https://github.com/ottoyiu/kubectl-sshd/archive/v0.1.0.tar.gz
+    sha256: 592dbf172f4bd35317b6632e120056c803e29c5713a28d876b69baf2f9955dba
+    bin: kubectl-sshd
+    files:
+    - from: "./*/bin/static-dropbear"
+      to: .
+    - from: "./*/bin/kubectl-sshd"
+      to: .
+    - from: "./*/LICENSE"
+      to: .
+    selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+  caveats: |
+    This plugin requires that the 'tar' binary to be present in your container.
+  description: |
+    This plugin allows users to run a SSH server (Dropbear) in a running Pod.
+    Running a temporary SSH server can be useful to execute applications
+    that rely on SSH as a protocol, such as scp, rsync and rdiff-backup.
+    However, this plugin should not be used as a replacement for `kubectl exec`
+    and `kubectl cp`.
+  shortDescription: Run SSH server in a Pod
+  homepage: https://github.com/ottoyiu/kubectl-sshd

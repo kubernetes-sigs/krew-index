@@ -1,0 +1,42 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: view-cert
+spec:
+  version: v0.0.3
+  homepage: https://github.com/lmolas/kubectl-view-cert
+  shortDescription: View certificate information stored in secrets
+  description: |
+    View certificate information (version, serial number, issuer, subject 
+    and validity) stored in secrets. 
+    Supported secret types are kubernetes.io/tls. But you can parse any
+    type of secret by specifying secret name and secret key to read.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.3/kubectl-view-cert_v0.0.3_darwin_amd64.tar.gz
+    sha256: 2b8f80feaf9d3de8a7e1dd8a963fb781b29f4934df9c079b93c1e709f42752a2
+    bin: kubectl-view-cert
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.3/kubectl-view-cert_v0.0.3_linux_amd64.tar.gz
+    sha256: 16c2868e30b8d6c8f9677d2e8b8cf30cf6df015faf9c4fede87f1944ea31fa7d
+    bin: kubectl-view-cert
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.3/kubectl-view-cert_v0.0.3_linux_arm64.tar.gz
+    sha256: e8120731a6660b9331343cfba9ed712c6db4dc5ae6b895bf4d80a843bb0aeb89
+    bin: kubectl-view-cert
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.3/kubectl-view-cert_v0.0.3_windows_amd64.tar.gz
+    sha256: bb876e2005dedd2f1a9dc2d1d634c8d1621914ad75ae16f0b872d7d3cd80e3fa
+    bin: kubectl-view-cert.exe

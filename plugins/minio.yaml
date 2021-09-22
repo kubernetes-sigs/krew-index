@@ -1,0 +1,51 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: minio
+spec:
+  version: v4.2.8
+  homepage: https://github.com/minio/operator/tree/master/kubectl-minio
+  shortDescription: Deploy and manage MinIO Operator and Tenant(s)
+  description: |
+    The kubectl-minio plugin wraps the MinIO Operator and provides a simplified 
+    interface to create and manage MinIO tenant clusters.
+  caveats: |
+    * For resources that are not in default namespace, currently you must
+      specify -n/--namespace explicitly (the current namespace setting is not
+      yet used).
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/minio/operator/releases/download/v4.2.8/kubectl-minio_darwin_amd64.zip
+    sha256: ce1795e50e0bff1d38cc67bc8378e06f0c315c2f9ffbcb07c6726d001df076a6
+    bin: kubectl-minio
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/minio/operator/releases/download/v4.2.8/kubectl-minio_darwin_arm64.zip
+    sha256: 5a084e13d87078643edfb8c8532f22f1e993bef9d1c22f1a09e09429dcabbf84
+    bin: kubectl-minio
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/minio/operator/releases/download/v4.2.8/kubectl-minio_linux_amd64.zip
+    sha256: 1d4a4b14148f59555ed5b9a451a377e9c11f97a753ed9a8d42b26a45a9f9baeb
+    bin: kubectl-minio
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/minio/operator/releases/download/v4.2.8/kubectl-minio_linux_arm64.zip
+    sha256: 09b1ea561d5d5c37a19e902c79b2a1b644b5f61b13cf669242702fdcba546ecc
+    bin: kubectl-minio
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/minio/operator/releases/download/v4.2.8/kubectl-minio_windows_amd64.zip
+    sha256: 258a745d64cf14352af2cc5696b9de8a6fabe479913009f4c7549a1c58dd4697
+    bin: kubectl-minio.exe

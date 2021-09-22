@@ -1,0 +1,23 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: "restart"
+spec:
+  platforms:
+  - uri: https://github.com/achanda/kubectl-restart/archive/v0.0.3.zip
+    sha256: d7079b79bf4e10e55ded435a2e862efe310e019b6c306a8ff04191238ef4b2b4
+    bin: restart.sh
+    files:
+    - from: "/kubectl-restart-*/restart.sh"
+      to: "."
+    - from: "/kubectl-restart-*/LICENSE"
+      to: "."
+    selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+  version: "v0.0.1"
+  homepage: https://github.com/achanda/kubectl-restart
+  shortDescription: "Restarts a pod with the given name"
+  description: |
+    Restarts a pod with the given name. The existing pod
+    will be deleted and created again, not a true restart.

@@ -1,0 +1,73 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: access-matrix
+spec:
+  version: v0.5.0
+  platforms:
+  - bin: access-matrix-amd64-linux
+    uri: https://github.com/corneliusweig/rakkess/releases/download/v0.5.0/access-matrix-amd64-linux.tar.gz
+    sha256: 3217c192703d1d62ef7c51a3d50979eaa8f3c73c9a2d5d0727d4fbe07d89857a
+    files:
+      - from: LICENSE
+        to: .
+      - from: access-matrix-amd64-linux
+        to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: access-matrix-amd64-darwin
+    uri: https://github.com/corneliusweig/rakkess/releases/download/v0.5.0/access-matrix-amd64-darwin.tar.gz
+    sha256: ac6d445e5e01146df7bed77243d09f7f323a65a2ff96ba43dd48a0c0632e98af
+    files:
+      - from: LICENSE
+        to: .
+      - from: access-matrix-amd64-darwin
+        to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: access-matrix-arm64-darwin
+    uri: https://github.com/corneliusweig/rakkess/releases/download/v0.5.0/access-matrix-arm64-darwin.tar.gz
+    sha256: 11766425a1ec8f74b0ccfb3788f5e7230c8e37142fb1835f71a945d02ed2e916
+    files:
+      - from: LICENSE
+        to: .
+      - from: access-matrix-arm64-darwin
+        to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: access-matrix-amd64-windows.exe
+    uri: https://github.com/corneliusweig/rakkess/releases/download/v0.5.0/access-matrix-amd64-windows.zip
+    sha256: 6ec96238a99123aa01acf9344f0075876ce5ff5d33f406e22950f8caba0540ed
+    files:
+      - from: LICENSE
+        to: .
+      - from: access-matrix-amd64-windows.exe
+        to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  shortDescription: Show an RBAC access matrix for server resources
+  homepage: https://github.com/corneliusweig/rakkess
+  caveats: |
+      Usage:
+        kubectl access-matrix
+        kubectl access-matrix for pods
+  description: |
+      Show an access matrix for server resources
+
+      This plugin retrieves the full list of server resources, checks access for
+      the current user with the given verbs, and prints the result as a matrix.
+      This complements the usual "kubectl auth can-i" command, which works for
+      a single resource and a single verb. For example:
+       $ kubectl access-matrix
+
+      It also supports a mode which prints all subjects with access to a given
+      resource (needs read access to Roles and ClusterRoles). For example:
+       $ kubectl access-matrix for configmap

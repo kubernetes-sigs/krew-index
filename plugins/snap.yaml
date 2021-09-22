@@ -1,0 +1,30 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: snap
+spec:
+  version: "v0.1.0"
+  homepage: https://github.com/honk-ci/kubectl-snap
+  platforms:
+  - selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+    uri: https://github.com/honk-ci/kubectl-snap/releases/download/0.1.0/kubectl-snap-0.1.0.tar.gz
+    sha256: "8df10f76e82f71b34c737d128b7b369e0daf641118577822872537e787a6755d"
+    bin: kubectl-snap
+    files:
+    - from: "kubectl-snap"
+      to: .
+    - from: "LICENSE"
+      to: .
+  shortDescription: Delete half of the pods in a namespace or cluster
+  caveats: |
+    To reiterate: This will delete half of the pods within the designated space. 
+
+    Currently, if there are pods that have failed or completed, they may get 
+    deleted and you may lose debug/log data. 
+  description: |
+    This plugin will delete half of the pods in a namespace or the whole 
+    cluster. It is indiscriminate and may delete all pods under a deployment.
+
+    Restore balance to your cluster at the speed of a snap.

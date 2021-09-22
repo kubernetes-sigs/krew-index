@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: config-cleanup
+spec:
+  version: "v0.5.0"
+  shortDescription: Automatically clean up your kubeconfig
+  description: |
+    This plugin will attempt to connect to each apiserver specified by a context entry in your kubeconfig.
+    If the connection succeeds then the user, cluster, and context entries are maintained in the result.
+    Otherwise, the entries are removed.
+  homepage: https://github.com/b23llc/kubectl-config-cleanup
+  platforms:
+  - uri: https://github.com/b23llc/kubectl-config-cleanup/releases/download/v0.5.0/kubectl-config-cleanup_0.5.0_Linux_x86_64.tar.gz
+    sha256: 0efdcabfb3aa205e62179ee29d8f9f4f542d2ef31005147ae0b411a2ea776cdf
+    bin: kubectl-config_cleanup
+    files:
+    - from: "./kubectl-config_cleanup"
+      to: "."
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/b23llc/kubectl-config-cleanup/releases/download/v0.5.0/kubectl-config-cleanup_0.5.0_Darwin_x86_64.tar.gz
+    sha256: 44b14fdf5b46c5a798fd61d7d20a0e6ff513b5d6ecfe88de156a7e344a8e3e69
+    bin: kubectl-config_cleanup
+    files:
+    - from: "./kubectl-config_cleanup"
+      to: "."
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/b23llc/kubectl-config-cleanup/releases/download/v0.5.0/kubectl-config-cleanup_0.5.0_Windows_x86_64.zip
+    sha256: e259be7518240597e773c744469b49a6bc8bb01ed0df19627cea6df9579889a2
+    bin: kubectl-config_cleanup.exe
+    files:
+    - from: "./kubectl-config_cleanup.exe"
+      to: "."
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

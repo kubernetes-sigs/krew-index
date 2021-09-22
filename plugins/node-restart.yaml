@@ -1,0 +1,28 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: node-restart
+spec:
+  version: "v1.0.2"
+  platforms:
+  - selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+    uri: https://github.com/MnrGreg/kubectl-node-restart/releases/download/v1.0.2/v1.0.2.zip
+    sha256: "d36464d3685fb981e142c9480c22463eff346265ad5b9b9bee6f89174b208dbd"
+    files:
+    - from: "*.sh"
+      to:  "."
+    - from: "LICENSE"
+      to: "."
+    bin: "node-restart.sh"
+  shortDescription: >-
+    Restart cluster nodes sequentially and gracefully
+  homepage: https://github.com/mnrgreg/kubectl-node-restart
+  caveats: |
+    Execution of this plugin requires Kubernetes cluster-admin Rolebindings
+    and the ability to schedule Privileged Pods.
+  description: |
+    This plugin performs a sequential, rolling restart of selected nodes by first
+    draining each node, then running a Kubernetes Job to reboot each node, and
+    finally uncordoning each node when Ready. 

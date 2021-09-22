@@ -1,0 +1,38 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: hlf
+spec:
+  version: "v1.3.2"
+  homepage: https://github.com/kfsoftware/hlf-operator
+  shortDescription: "Deploy and manage Hyperledger Fabric components"
+  description: |
+    The kubectl-hlf plugin wraps the HLF Operator and provides a simple
+    interface to create and manage Hyperledger Fabric Peers, 
+    Orderers and Certificate authorities
+  caveats: |
+    * For resources that are not in default namespace, currently you must
+      specify -n/--namespace explicitly (the current namespace setting is not
+      yet used).
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/kfsoftware/hlf-operator/releases/download/v1.3.2/kubectl-hlf_darwin_amd64.zip
+      sha256: 31e5b0bbeb7d55aa07f089672649f860a66c51da49bdace2e29f681dee9a5ab2
+      bin: kubectl-hlf
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/kfsoftware/hlf-operator/releases/download/v1.3.2/kubectl-hlf_linux_amd64.zip
+      sha256: 2ca33b574b4ff141404666936b206cc68d038a52906714538ae9a1a05ccdd901
+      bin: kubectl-hlf
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/kfsoftware/hlf-operator/releases/download/v1.3.2/kubectl-hlf_windows_amd64.zip
+      sha256: 75a9251c12e518ad45ac1543faeb088107a0b61f49b11c4853bd361b39122f1e
+      bin: kubectl-hlf.exe

@@ -1,0 +1,34 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pod-inspect
+spec:
+  version: v0.1.8
+  homepage: https://github.com/jpriebe/kubectl-pod-inspect
+  shortDescription: Get all of a pod's details at a glance
+  description: |
+    Provides detailed information about a pod, including its containers' statuses,
+    pod events, and logs from non-ready containers.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/jpriebe/kubectl-pod-inspect/releases/download/v0.1.8/kubectl-pod-inspect_0.1.8_Darwin_x86_64.tar.gz
+    sha256: e9c0b34bcfc3f11036ba38913adfd928551299e324bacfb7176b4b397a059ed6
+    bin: kubectl-pod_inspect
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/jpriebe/kubectl-pod-inspect/releases/download/v0.1.8/kubectl-pod-inspect_0.1.8_Linux_x86_64.tar.gz
+    sha256: 84f091b8a4b6c60cd6124980deb4a434c394ec76fc32f166c0a8f326f5f344f2  
+    bin: kubectl-pod_inspect
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/jpriebe/kubectl-pod-inspect/releases/download/v0.1.8/kubectl-pod-inspect_0.1.8_Windows_x86_64.tar.gz
+    sha256: 9169738c72e4d73cfec11cae7792f7ac704c2c9f2ba5c5583ea21e92b74f8151
+    bin: kubectl-pod_inspect.exe
+

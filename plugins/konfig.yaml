@@ -1,0 +1,34 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: konfig
+spec:
+  version: "v0.2.6"
+  platforms:
+    - uri: https://github.com/corneliusweig/konfig/releases/download/v0.2.6/bundle.tar.gz
+      sha256: 2dad241ad2bbf83b9d338880a0fb9c209f960b2dc233c2d7489ac264524170bc
+      bin: konfig-krew
+      files:
+        - from: ./konfig-krew
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchExpressions:
+          - key: os
+            operator: In
+            values: ["darwin", "linux"]
+  shortDescription: Merge, split or import kubeconfig files
+  homepage: https://github.com/corneliusweig/konfig
+  description: |+2
+
+      konfig helps to merge, split or import kubeconfig files
+
+      This is a convenience wrapper around the `kubectl config view` command.
+
+      Usage:
+        $ kubectl konfig import --save new-cfg
+        $ kubectl konfig merge kubeconfig1 kubeconfig2 > merged
+        $ kubectl konfig export ctx1 ctx2 -k k8s.yaml,k3s.yaml > extracted
+
+      More on https://github.com/corneliusweig/konfig/blob/master/doc/USAGE.md#konfig

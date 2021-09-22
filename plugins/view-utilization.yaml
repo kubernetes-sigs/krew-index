@@ -1,0 +1,24 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: view-utilization
+spec:
+  version: "v0.3.3"
+  platforms:
+  - selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+    uri: https://github.com/etopeter/kubectl-view-utilization/releases/download/v0.3.3/kubectl-view-utilization-v0.3.3.tar.gz
+    sha256: "bcdd9925d13ff3837f61336269f9d45e338ca14df2f8174120bd571217d99918"
+    bin: "kubectl-view-utilization"
+    files:
+    - from: "*"
+      to: "."
+  homepage: https://github.com/etopeter/kubectl-view-utilization
+  shortDescription: Shows cluster cpu and memory utilization
+  caveats: |
+    This plugin needs the following programs:
+    * bash
+    * awk (gawk,mawk,awk)
+  description: |
+    This plugin shows cluster resource utilization based on cpu and memory. It collects pod requests and node available resources to calculate metrics.

@@ -1,0 +1,61 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pexec
+spec:
+  homepage: https://github.com/ssup2/kpexec
+  shortDescription: Execute process with privileges in a pod
+  description: |
+    pexec is a kubernetes cli that runs commands in a container with high
+    privileges. It runs a highly privileged container on the same node as
+    the target container and joins into the namespaces of the target container
+    (IPC, UTS, PID, net, mount). This is useful for debugging where you often
+    need to execute commands with high privileges. Also, pexec has a tools
+    mode, which adds useful debugging tools into the debugged container. The
+    tools mode is useful when there necessary debugging tools are missing in the
+    target container.
+
+    In contrast, kubectl-exec runs the command with the same privileges as the
+    container. For example, if a container does not have network privileges,
+    the command executed by kubectl-exec also has no network privileges.
+    This makes debugging the pod difficult. If you use pexec instead
+    of kubectl-exec, you can easily get high privileges for debugging.
+  caveats: |
+    pexec requires the privileges to run privileged pods with hostPID.
+  version: "v0.3.4"
+  platforms:
+  - bin: kubectl-pexec
+    uri: https://github.com/ssup2/kpexec/releases/download/v0.3.4/kubectl_pexec_v0.3.4_Linux_amd64.tar.gz
+    sha256: 7f7db077976f8f2285a05347b1776f7e250194b50bdc071d1102d114211f09b0
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-pexec
+    uri: https://github.com/ssup2/kpexec/releases/download/v0.3.4/kubectl_pexec_v0.3.4_Linux_arm64.tar.gz
+    sha256: 4702b9f4a5047f3e8e1ed74637e94e38ab8b26c81444f9963f5d42ee0a9148bb
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - bin: kubectl-pexec
+    uri: https://github.com/ssup2/kpexec/releases/download/v0.3.4/kubectl_pexec_v0.3.4_Darwin_amd64.tar.gz
+    sha256: 976e38cbc3f7fcec5a90e1314239ed4c3ddfeb4de0fbf541ddb24c2e257d682a
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kubectl-pexec
+    uri: https://github.com/ssup2/kpexec/releases/download/v0.3.4/kubectl_pexec_v0.3.4_Darwin_arm64.tar.gz
+    sha256: e543d27807b3792f192a4955fb856131434b969fb336ca22cdab75a4cb047617
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: kubectl-pexec.exe
+    uri: https://github.com/ssup2/kpexec/releases/download/v0.3.4/kubectl_pexec_v0.3.4_Windows_amd64.tar.gz
+    sha256: 147bcdc21c93cd425c537fcf3aaf91453128af15d66b3e5b21121d7b696b9795
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

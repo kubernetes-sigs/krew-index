@@ -1,0 +1,57 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: grep
+spec:
+  platforms:
+  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.4.0/kubectl-grep-Darwin-x86_64.tar.gz
+    sha256: 0331800fb928a33ab09633b3ea90fe58f82f6ebb09ee08a07172be0afd1e8925
+    bin: kubectl-grep
+    files:
+    - from: kubectl-grep
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.4.0/kubectl-grep-Linux-x86_64.tar.gz
+    sha256: 85c4184a4863e58f0d1689c490774fda009bffb9fb4e56301853365c64b399a1
+    bin: kubectl-grep
+    files:
+    - from: kubectl-grep
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.4.0/kubectl-grep-Windows-x86_64.tar.gz
+    sha256: a935c96dafda58e14a0cffd23034cca61a67ac0548eaff3003e3bcc450f71590
+    bin: kubectl-grep.exe
+    files:
+    - from: kubectl-grep.exe
+      to: .
+    - from: LICENSE.txt
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  version: v1.4.0
+  homepage: https://github.com/guessi/kubectl-grep
+  shortDescription: Filter Kubernetes resources by matching their names
+  description: |
+    Filter Kubernetes resources by matching their names
+
+    Examples:
+
+    List all pods in all namespaces
+    $ kubectl grep pods --all-namespaces
+
+    List all pods in namespace "star-lab" which contain the keyword "flash"
+    $ kubectl grep pods -n star-lab flash
+
+    No more pipe, built-in grep :-)

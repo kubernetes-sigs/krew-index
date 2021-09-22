@@ -1,0 +1,31 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: bulk-action
+spec:
+  version: v1.1.1
+  platforms:
+    - selector:
+       matchExpressions:
+       - key: os
+         operator: In
+         values: ["darwin", "linux"]
+      uri: https://github.com/emreodabas/kubectl-plugins/releases/download/v1.1.1/kubectl-plugins_v1.1.1.tar.gz
+      sha256: d2f5983132cc94be63d56963608e4d0908dbd30f198d9de3d9dc35415b16eedf
+      files:
+        - from: kubectl-plugins-*/kubectl-bulk
+          to: .
+        - from: kubectl-plugins-*/LICENSE
+          to: .
+      bin: ./kubectl-bulk
+  shortDescription: Do bulk actions on Kubernetes resources.
+  description: |
+    This plugin allows you to do bulk actions on Kubernetes resources.
+
+    Usage:
+      kubectl bulk-action <get resourceTypes> (get|list|create|update|delete|remove|rollout|scale) <command parameters>
+
+    Help:
+      kubectl bulk-action help        
+ 
+  homepage: https://github.com/emreodabas/kubectl-plugins#kubectl-bulk

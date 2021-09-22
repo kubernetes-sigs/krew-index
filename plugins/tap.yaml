@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: tap
+spec:
+  version: v0.1.2
+  homepage: https://soluble-ai.github.io/kubetap/
+  shortDescription: "Interactively proxy Kubernetes Services with ease"
+  description: |
+    Interactively proxy Kubernetes Services by deploying
+    intercepting proxy sidecars.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/soluble-ai/kubetap/releases/download/v0.1.2/kubetap_0.1.2_Darwin_x86_64.tar.gz
+    sha256: 9ddea952974ef3802db505738368279be012756e1fe8d858a0959a50f97879b4
+    bin: kubectl-tap
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/soluble-ai/kubetap/releases/download/v0.1.2/kubetap_0.1.2_Windows_x86_64.zip
+    sha256: 06b4f7fa3b042ce34520898186d761158fedeeb48d2aea402e0337fd5bcc6938
+    bin: kubectl-tap.exe
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/soluble-ai/kubetap/releases/download/v0.1.2/kubetap_0.1.2_Linux_x86_64.tar.gz
+    sha256: 9f16cc721b8912a705ad2cb0fd8dfdf018f9b54d70a56fbf46d6a5030bda5526
+    bin: kubectl-tap
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/soluble-ai/kubetap/releases/download/v0.1.2/kubetap_0.1.2_Linux_arm64.tar.gz
+    sha256: bacefd89b685c7adf6965ceacdbd25c73dac972a82bec38166aa2790128fc773
+    bin: kubectl-tap

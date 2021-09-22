@@ -1,0 +1,34 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: tunnel
+spec:
+  version: v1.4.3
+  homepage: https://github.com/omrikiei/ktunnel
+  shortDescription: Reverse tunneling between cluster and your machine
+  description: |
+      This plugin establishes a reverse tunnel between the Kubernetes cluster
+      and your local machine. It lets you expose your machine as a service in
+      the cluster or expose it to a specific deployment as a local host.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.4.3/ktunnel_1.4.3_Darwin_x86_64.tar.gz
+    sha256: cca31810c52002ce3d51d9e7bd965ea1fff44590407e088f4e3683bac58db9bc
+    bin: ktunnel
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.4.3/ktunnel_1.4.3_Linux_x86_64.tar.gz
+    sha256: c07df74f7698ef0877d65f4a1bfe9521fffb3ba5e93039a13cb1ea5d93c12160
+    bin: ktunnel
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.4.3/ktunnel_1.4.3_Windows_x86_64.tar.gz
+    sha256: c28bc36799da282a28a052478d29e2a50738c3a3dbcbcd04146f8ec20dbca8de
+    bin: ktunnel.exe

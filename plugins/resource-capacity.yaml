@@ -16,7 +16,17 @@ spec:
     - from: "*"
       to: "."
     uri: https://github.com/robscott/kube-capacity/releases/download/v0.6.1/kube-capacity_0.6.1_Darwin_x86_64.tar.gz
-    sha256: 2478837131619660a0a1a642d97d7eb7add1bf3a3d5fbffcb9b04deb38de7b44 
+    sha256: 2478837131619660a0a1a642d97d7eb7add1bf3a3d5fbffcb9b04deb38de7b44
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    bin: kube-capacity
+    files:
+    - from: "*"
+      to: "."
+    uri: https://github.com/robscott/kube-capacity/releases/download/v0.6.1/kube-capacity_0.6.1_Darwin_arm64.tar.gz
+    sha256: 8de14f756ac621c727417fb103c54b987a12e3debc9aa162b8af440883a752cc
   - selector:
       matchLabels:
         os: linux
@@ -27,5 +37,25 @@ spec:
       to: "."
     uri: https://github.com/robscott/kube-capacity/releases/download/v0.6.1/kube-capacity_0.6.1_Linux_x86_64.tar.gz
     sha256: 41cb861913ee9efd624b401f40d292b2fc344b455c9d971fe685b80a65162625
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    bin: kube-capacity
+    files:
+    - from: "*"
+      to: "."
+    uri: https://github.com/robscott/kube-capacity/releases/download/v0.6.1/kube-capacity_0.6.1_Linux_arm64.tar.gz
+    sha256: cdda0664639c79fe9ebe479a082f8e5578545c545a38d9324d90f41fd19a38b4
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    bin: kube-capacity.exe
+    files:
+    - from: "*"
+      to: "."
+    uri: https://github.com/robscott/kube-capacity/releases/download/v0.6.1/kube-capacity_0.6.1_Windows_x86_64.tar.gz
+    sha256: 9dd3d658e2466c14460b4a54beafc7b107b8802fd89d0ef6e568d97acbbcc1f7
   description: |
     A simple CLI that provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster.

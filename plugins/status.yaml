@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: status
 spec:
-  version: v0.4.1
+  version: v0.5.1
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.4.1/status_linux_amd64.tar.gz
-    sha256: 550e974c9c18ac40759f9e25b8419e3d20aec850b0e20305b08fea7006791ad7
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.5.1/status_linux_amd64.tar.gz
+    sha256: 830a9fb793808be369f8c97255dd09b78c4b8d4425a52dd83b8fa05a95f1b550
     files:
     - from: "./status"
       to: "."
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.4.1/status_darwin_amd64.tar.gz
-    sha256: ebf9e6158bca3d4f37ed080e01f2432771502ca9fd31a3a8583248406602cb93
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.5.1/status_darwin_amd64.tar.gz
+    sha256: 3b5f188d1e051003a25d9545bf1c5cbf76d2cbdaaa62a43d2ac09cbbf17bd3b5
     files:
     - from: "./status"
       to: "."
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.4.1/status_windows_amd64.zip
-    sha256: ffa7e83276f2ee8137cfeeaaa157243507410de899d6876ea1588596380e94f2
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.5.1/status_windows_amd64.zip
+    sha256: 4956701e3b8a2db1068d5ba313cc239d6450bb8f7f1ad1adfecafa8872142aef
     files:
     - from: "/status.exe"
       to: "."
@@ -43,10 +43,13 @@ spec:
     bin: "status.exe"
   shortDescription: Show status details of a given resource.
   homepage: https://github.com/bergerx/kubectl-status
-  description: |
-    Show status details of a given resource. Most useful when debugging Pod issues.
+  caveats: |
+    Usage:
+      $ kubectl status
 
     For additional options:
       $ kubectl status --help
       or https://github.com/bergerx/kubectl-status/blob/master/doc/USAGE.md
 
+  description: |
+    Show status details of a given resource. Most useful when debugging Pod issues.

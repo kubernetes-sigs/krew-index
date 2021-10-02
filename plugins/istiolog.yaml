@@ -1,0 +1,53 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: istiolog
+spec:
+  version: v0.0.2
+  homepage: https://github.com/TejaBeta/kubectl-istiolog
+  shortDescription: Manipulate istio-proxy logging level without istioctl.
+  description: |
+    kubectl-istiolog plugin enables ops-teams and developers to view istio
+    sidecar(istio-proxy) logs by manipulating the logger names and logger 
+    levels of Envoy instance without any additional tools like istioctl. Plugin
+    also provides a functionality to tail istio-proxy logs within a single
+    command.
+
+    Eg: 
+      kubectl istiolog my-applicaiton-pod-0 -n dev -l debug -f
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/TejaBeta/kubectl-istiolog/releases/download/v0.0.2/kubectl-istiolog_0.0.2_Darwin_x86_64.tar.gz
+    sha256: e43e6b0a74fc76e4b2538dd48a6458af3bc92350c064d5115aa118f4b354d9d8
+    bin: kubectl-istiolog
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/TejaBeta/kubectl-istiolog/releases/download/v0.0.2/kubectl-istiolog_0.0.2_Darwin_arm64.tar.gz
+    sha256: e04b4571fa9f3812df9527e1ed107b4f8f3f3db74dc58335a61aa5f93caa85cb
+    bin: kubectl-istiolog
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/TejaBeta/kubectl-istiolog/releases/download/v0.0.2/kubectl-istiolog_0.0.2_Linux_x86_64.tar.gz
+    sha256: 9f70541cb63d0d66fb171c4d508805a0aebcd6aee1709f8246d7cb5a8cb3cad6
+    bin: kubectl-istiolog
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/TejaBeta/kubectl-istiolog/releases/download/v0.0.2/kubectl-istiolog_0.0.2_Linux_arm64.tar.gz
+    sha256: 648d8f6db66e1e9a7879e4ada060cacbe2e4c82fc768887b6118e0c2de51b7bf
+    bin: kubectl-istiolog
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/TejaBeta/kubectl-istiolog/releases/download/v0.0.2/kubectl-istiolog_0.0.2_windows_x86_64.tar.gz
+    sha256: 8b98aaffd7ee66b7299b4f2083fd141d0e53486f5e8acc9cac12abfb8b07e5da
+    bin: kubectl-istiolog.exe

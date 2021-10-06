@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: gadget
 spec:
-  version: v0.3.0
+  version: v0.3.1
   homepage: https://github.com/kinvolk/inspektor-gadget
   shortDescription: Gadgets for debugging and introspecting apps
   description: |
@@ -17,7 +17,7 @@ spec:
     fetch the log data from ring buffers and display it. What BPF programs are
     and how Inspektor Gadget uses them is briefly explained in the architecture
     document:
-    https://github.com/kinvolk/inspektor-gadget/blob/main/Documentation/architecture.md
+    https://github.com/kinvolk/inspektor-gadget/blob/main/docs/architecture.md
   caveats: |
     Inspektor Gadget needs to be deployed to each node:
 
@@ -30,38 +30,38 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/kinvolk/inspektor-gadget/releases/download/v0.3.0/inspektor-gadget-linux-amd64.tar.gz
-    sha256: d8c9e9a556dec76b54f9788530db61a42d9ed8f4a849a178d6245b438c30e16b
+    uri: https://github.com/kinvolk/inspektor-gadget/releases/download/v0.3.1/inspektor-gadget-linux-amd64.tar.gz
+    sha256: 3f7eca79b16270ee0f5817dddacf260bc65763aa540451676d336dfab89313a6
     bin: kubectl-gadget
 
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/kinvolk/inspektor-gadget/releases/download/v0.3.0/inspektor-gadget-linux-arm64.tar.gz
-    sha256: 054eb561baf732d397a5324200aad653e61782ba3ebd3b37dbba84b00863b4d7
+    uri: https://github.com/kinvolk/inspektor-gadget/releases/download/v0.3.1/inspektor-gadget-linux-arm64.tar.gz
+    sha256: fd29a791514615eccc9a74a29d87a93f68142fe21d7136ac99fd359f00a1156b
     bin: kubectl-gadget
 
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/kinvolk/inspektor-gadget/releases/download/v0.3.0/inspektor-gadget-darwin-amd64.tar.gz
-    sha256: 911c24b78fbcd38f52035b03a7b00531164722ce06432ac10ad41221406b466f
+    uri: https://github.com/kinvolk/inspektor-gadget/releases/download/v0.3.1/inspektor-gadget-darwin-amd64.tar.gz
+    sha256: 8d2193daa5861b9f1f751ec604e38994cceda1d84efc0c96448895a09a6d0822
     bin: kubectl-gadget
 
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/kinvolk/inspektor-gadget/releases/download/v0.3.0/inspektor-gadget-darwin-arm64.tar.gz
-    sha256: 600500ecfd5a6ed796aed056e3632bff2435423e6c6edca2e0f8dc512eb836cd
+    uri: https://github.com/kinvolk/inspektor-gadget/releases/download/v0.3.1/inspektor-gadget-darwin-arm64.tar.gz
+    sha256: 0362b72fef088a0f347b2a43e02b12dbb5bbc8b471a11de1e0c400c78fc2d497
     bin: kubectl-gadget
 
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/kinvolk/inspektor-gadget/releases/download/v0.3.0/inspektor-gadget-windows-amd64.tar.gz
-    sha256: fddfdc0ca818d7bbe9a2c62b758106f8eb96d724039daac298f0cdc10c2ff2f0
+    uri: https://github.com/kinvolk/inspektor-gadget/releases/download/v0.3.1/inspektor-gadget-windows-amd64.tar.gz
+    sha256: 4d9409038cee6a46e86d552587be3aa02324931019f014d0ca8a1b286e5505e0
     bin: kubectl-gadget

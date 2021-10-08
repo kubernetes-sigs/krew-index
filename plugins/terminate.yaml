@@ -1,0 +1,53 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: terminate
+spec:
+  version: v0.1.0
+  homepage: https://github.com/xcoulon/kubectl-terminate
+  shortDescription: Removes the finalizers on a resoure and deletes it
+  description: |
+    Sometimes (hopefully on your dev cluster) you may find yourself with a namespace stuck in `Terminating` phase because one of its child resource has a finalizer, but the operator (or controller) in charge of dealing with this finalizer is already gone (for example, it has been uninstalled). This is quite annoying and sadly the `--force`, `grace-period`, etc. flags won't help. The only way to get rid of the resource is to PATCH it in order to remove the finalizers, then delete it. Doing it with a good old `curl` command is possible, but let's admit it, it's a bit cumbersome.
+    This command takes care of removing the finalizer and deleting the resource, so that the namespace can be deleted for good.
+    
+    Warning: Use at your own risk!
+
+    Usage:
+      kubectl terminate [<type> <name>|<type/name>]
+
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/xcoulon/kubectl-terminate/releases/download/v0.1.0/kubectl-terminate_0.1.0_Darwin_x86_64.tar.gz
+    sha256: 3121b20c309169f4faa8fe80f4986fb08504efa6596b83789532f9e7fb5bd2a4
+    bin: kubectl-terminate
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/xcoulon/kubectl-terminate/releases/download/v0.1.0/kubectl-terminate_0.1.0_Darwin_arm64.tar.gz
+    sha256: b340ac04a9ea7871e45f1be26f9ffc1949884243b394ca9df6e9c19c1c6b2803
+    bin: kubectl-terminate
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/xcoulon/kubectl-terminate/releases/download/v0.1.0/kubectl-terminate_0.1.0_Linux_x86_64.tar.gz
+    sha256: 0e7aa63eab5dc71a760deb1e398121f83d239d3b5e1440c8e4868c10cd620bb6
+    bin: kubectl-terminate
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/xcoulon/kubectl-terminate/releases/download/v0.1.0/kubectl-terminate_0.1.0_Linux_arm64.tar.gz
+    sha256: 33c33f37d51225e3e1d87e24ace6cd7685525fdb27ea74fd5e5ff587a5c66ede
+    bin: kubectl-terminate
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/xcoulon/kubectl-terminate/releases/download/v0.1.0/kubectl-terminate_0.1.0_Windows_x86_64.tar.gz
+    sha256: 89dd6765aa9a1534ea44b78a47510fb1d0283ee7eafae33250610421e72df873
+    bin: kubectl-terminate

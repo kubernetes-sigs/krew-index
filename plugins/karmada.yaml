@@ -1,0 +1,50 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: karmada
+spec:
+  description: 'Karmada: Open, Multi-Cloud, Multi-Cluster Kubernetes Orchestration'
+  homepage: https://github.com/karmada-io/karmada
+  platforms:
+  - bin: kubectl-karmada
+    files:
+    - from: kubectl-karmada
+      to: .
+    selector:
+      matchLabels:
+        arch: arm64
+        os: linux
+    sha256: ebc61efa4c0d5b167aedcf5332e31581b30070db283c96cb62f96273ede68cff
+    uri: https://github.com/karmada-io/karmada/releases/download/v0.9.0/kubectl-karmada-linux-arm64.tar.gz
+  - bin: kubectl-karmada
+    files:
+    - from: kubectl-karmada
+      to: .
+    selector:
+      matchLabels:
+        arch: arm64
+        os: darwin
+    sha256: 2abc36ed70305f63c500f376004e7ab9552ad6eb0cc95218069756bec26cf3e8
+    uri: https://github.com/karmada-io/karmada/releases/download/v0.9.0/kubectl-karmada-darwin-arm64.tar.gz
+  - bin: kubectl-karmada
+    files:
+    - from: kubectl-karmada
+      to: .
+    selector:
+      matchLabels:
+        arch: amd64
+        os: linux
+    sha256: dff4d95aee2a7c3d696a3680b50f6519c44ee528d436923a00e8c39c75f06e73
+    uri: https://github.com/karmada-io/karmada/releases/download/v0.9.0/kubectl-karmada-linux-amd64.tar.gz
+  - bin: kubectl-karmada
+    files:
+    - from: kubectl-karmada
+      to: .
+    selector:
+      matchLabels:
+        arch: amd64
+        os: darwin
+    sha256: ba48662e4e3cc2975df8cd8c078427e688de4b0721e093d06cb21ca0bcf61cbe
+    uri: https://github.com/karmada-io/karmada/releases/download/v0.9.0/kubectl-karmada-darwin-amd64.tar.gz
+  shortDescription: CLI of karmada
+  version: v0.9.0

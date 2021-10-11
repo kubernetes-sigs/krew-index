@@ -1,0 +1,27 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: rook-ceph
+spec:
+  version: "v0.0.1"
+  homepage: https://github.com/rook/kubectl-rook-ceph
+  shortDescription: "Rook plugin for Ceph management"
+  description: |
+     Krew plugin to provide insight to Rook configuration of the Ceph storage provider.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+        - linux
+        - windows
+    uri: https://github.com/rook/kubectl-rook-ceph/archive/v0.0.1.zip
+    sha256: 2ca817372441097235c0b7e8dff87c0e99153b154dc83a6a47fc5d691a966209
+    files:
+    - from: "kubectl-rook-ceph-0.0.1/kubectl-rook-ceph.sh"
+      to: "kubect-rook-ceph.sh"
+    - from: "kubectl-rook-ceph-0.0.1/LICENSE"
+      to: "."
+    bin: kubect-rook-ceph.sh

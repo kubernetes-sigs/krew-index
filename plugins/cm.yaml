@@ -1,9 +1,11 @@
+# Copyright Contributors to the Open Cluster Management project
+
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
   name: cm
 spec:
-  version: v1.0.0-beta.4
+  version: v1.0.0-beta.6
   homepage: https://github.com/open-cluster-management/cm-cli
   shortDescription: Provides commands to interract with OCM/ACM to provision and managed your Hybrid Cloud presence from the command-line,
   description: |
@@ -14,42 +16,41 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.4/cm_darwin_amd64.tar.gz
-    sha256: e0ac52155c781fc07612eb376fe219c51fa43d7cd552b6dede2673e50d7441a4
+    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.6/cm_darwin_amd64.tar.gz
+    sha256: d1caee1e8ab274b2ac6bbf0a808870c0abb03d77d188531aee669ef949d50bd1
     bin: cm
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.4/cm_linux_amd64.tar.gz
-    sha256: bdc41b8f29a5ddc6a78a3c4fd5d198030084436dbc8cd313ca150d8462e6881d
+    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.6/cm_linux_amd64.tar.gz
+    sha256: 11e34139cae8d8b53384d94ca108a420f8ee9bce2220e96f894563357c6d1f51
     bin: cm
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.4/cm_linux_arm64.tar.gz
-    sha256: f110ed572b613dd17dd1cc24a6ea825100c32723ea51a7a3787448ce60063b0e
+    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.6/cm_linux_arm64.tar.gz
+    sha256: a6d4ccda4587f2b7f91aea48139f642fe8a89bb3b89bf0aecc0fcdd97ba6b340
     bin: cm
   - selector:
       matchLabels:
         os: linux
         arch: ppc64ie
-    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.4/cm_linux_ppc64le.tar.gz
-    sha256: 86a6921f8ee4fca88fa6099db0ec1a4c880dc2ed14ccd7fb541dcaf12d0c5ae8
+    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.6/cm_linux_ppc64le.tar.gz
+    sha256: c463ffc4c1a8166b123c92226b7ef8d77206af15a95bb4a4b9091f87fc9512ad
     bin: cm
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.4/cm_linux_s390x.tar.gz
-    sha256: 071420c13508c71932ddf81ce90601c2a6bee492b03a942edfeab6b5dc375171
+    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.6/cm_linux_s390x.tar.gz
+    sha256: cf1beef22a2f37076b71a2d753286e3bba97ad63c1779204e6d14d9470fa034f
     bin: cm
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.4/cm_windows_amd64.zip
-    sha256: d02a553f078967b52ad380a99e61107f472180220e9a1118674a15619e22eb98
+    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.0-beta.6/cm_windows_amd64.zip
+    sha256: 4fe6c0d143af48e4b4dca4cc7afcf452ce43f1a6fc83a9f9c0be295ba60cbc43
     bin: cm
-

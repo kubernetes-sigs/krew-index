@@ -10,41 +10,49 @@ spec:
     files:
     - from: kubectl-karmada
       to: .
+    - from: LICENSE
+      to: .
     selector:
       matchLabels:
         arch: arm64
         os: linux
-    sha256: ebc61efa4c0d5b167aedcf5332e31581b30070db283c96cb62f96273ede68cff
+    sha256: ea5af805ad23c228aac166ddc11a7d003585b1f0e3878a040acfb8bdca37a4a7
     uri: https://github.com/karmada-io/karmada/releases/download/v0.9.0/kubectl-karmada-linux-arm64.tar.gz
   - bin: kubectl-karmada
     files:
     - from: kubectl-karmada
       to: .
+    - from: LICENSE
+      to: .
     selector:
       matchLabels:
         arch: arm64
         os: darwin
-    sha256: 2abc36ed70305f63c500f376004e7ab9552ad6eb0cc95218069756bec26cf3e8
+    sha256: 48e65276fd2b1888311429e61f00b717bc3d33e1e9011bb09c84b484610a8d03
     uri: https://github.com/karmada-io/karmada/releases/download/v0.9.0/kubectl-karmada-darwin-arm64.tar.gz
   - bin: kubectl-karmada
     files:
     - from: kubectl-karmada
       to: .
+    - from: LICENSE
+      to: .
     selector:
       matchLabels:
         arch: amd64
         os: linux
-    sha256: dff4d95aee2a7c3d696a3680b50f6519c44ee528d436923a00e8c39c75f06e73
+    sha256: e6f24ac28fda3f02a5899a361d1121dd466100ade7cae6f2bab450a742c087af
     uri: https://github.com/karmada-io/karmada/releases/download/v0.9.0/kubectl-karmada-linux-amd64.tar.gz
   - bin: kubectl-karmada
     files:
     - from: kubectl-karmada
       to: .
+    - from: LICENSE
+      to: .
     selector:
       matchLabels:
         arch: amd64
         os: darwin
-    sha256: ba48662e4e3cc2975df8cd8c078427e688de4b0721e093d06cb21ca0bcf61cbe
+    sha256: d1358d4c9d4c74443549f04af0ac3a661921f9f754e68d97d68ef41bbfeb47c0
     uri: https://github.com/karmada-io/karmada/releases/download/v0.9.0/kubectl-karmada-darwin-amd64.tar.gz
   shortDescription: CLI of karmada
   version: v0.9.0

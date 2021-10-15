@@ -1,0 +1,42 @@
+# Copyright Contributors to the Open Cluster Management project
+
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: clusteradm
+spec:
+  version: v0.1.0-alpha.6
+  homepage: https://github.com/open-cluster-management-io/clusteradm
+  shortDescription: Provides commands for OCM.
+  description: |
+    This plugin allows you to manage clusters on the open-cluster-management platform.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/open-cluster-management-io/clusteradm/releases/download/v0.1.0-alpha.6/clusteradm_darwin_amd64.tar.gz
+    sha256: 596d79c30e862a0e5a7f255a6017a7bc30d6b5513b674231db3fd750ff7eb339
+    bin: clusteradm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/open-cluster-management-io/clusteradm/releases/download/v0.1.0-alpha.6/clusteradm_linux_amd64.tar.gz
+    sha256: 2d3cac050b9826fbcecf926b9c7bf9859f131c6858f160d59d20c3cd6600e361
+    bin: clusteradm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/open-cluster-management-io/clusteradm/releases/download/v0.1.0-alpha.6/clusteradm_linux_arm64.tar.gz
+    sha256: 40cb1c302191b8674368e13f229a673a6e50f86b6cc2b23366f0931b9669737e
+    bin: clusteradm
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/open-cluster-management-io/clusteradm/releases/download/v0.1.0-alpha.6/clusteradm_windows_amd64.zip
+    sha256: 881b45955ce870ae21687099f6d0aa123e8bcbafcddfbb6732500e409c73a5f8
+    bin: clusteradm.exe
+

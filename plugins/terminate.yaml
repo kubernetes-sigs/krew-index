@@ -7,20 +7,14 @@ spec:
   homepage: https://github.com/xcoulon/kubectl-terminate
   shortDescription: Removes the finalizers on a resource and deletes it
   description: |
-    Sometimes (hopefully on your dev cluster) you may find yourself with a 
-    namespace stuck in `Terminating` phase because one of its child resource 
-    has a finalizer, but the operator (or controller) in charge of dealing with
-    this finalizer is already gone (for example, it has been uninstalled). 
-    
-    This is quite annoying and sadly the `--force`, `grace-period`, etc. flags 
-    won't help. The only way to get rid of the resource is to PATCH it in order 
-    to remove the finalizers, then delete it. Doing it with a good old `curl` 
-    command is possible, but let's admit it, it's a bit cumbersome.
-    
-    This command takes care of removing the finalizer and deleting the resource, 
-    so that the namespace can be deleted for good.
-    
-    Warning: Use at your own risk!
+    Removing a resource with a finalizer does not succeed when the resource
+    has a finalizer, and the operator (or controller) for that resource is already
+    gone (for example, it has been uninstalled).
+
+    Deleting such a resource requires patching the resource to the finalizer. This
+    command first removes the finalizer and then deletes the resource.
+
+    WARNING: Use at your own risk!
 
   platforms:
   - selector:

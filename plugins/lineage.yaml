@@ -3,47 +3,48 @@ kind: Plugin
 metadata:
   name: lineage
 spec:
-  version: v0.3.0
+  version: v0.4.0
   homepage: https://github.com/tohjustin/kube-lineage
-  shortDescription: Display all dependent resources
+  shortDescription: Display all dependent resources or resource dependencies
   description: |
-    This plugin prints a table of dependents of the specified resource.
+    This plugin prints a table of dependencies or dependents of the specified
+    resource.
   caveats: |
-    The tool only shows dependencies among the resources you have access to.
-    So for restricted users, the result may be incomplete.
+    The tool only shows dependencies or dependents among the resources you have
+    access to. So for restricted users, the result may be incomplete.
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/tohjustin/kube-lineage/releases/download/v0.3.0/kube-lineage_darwin_amd64.tar.gz
-    sha256: bb4046986ee365aecaaf767f90bddab78da816327e78bb258dc846b523290870
+    uri: https://github.com/tohjustin/kube-lineage/releases/download/v0.4.0/kube-lineage_darwin_amd64.tar.gz
+    sha256: eb9ee06f9a30cc0488b6fa37eed6416e1513d581b98b3730f80d977b642368e8
     bin: kube-lineage
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/tohjustin/kube-lineage/releases/download/v0.3.0/kube-lineage_darwin_arm64.tar.gz
-    sha256: ac8c6dfeb7e87d93c84860622d89f5becec76def78610cdd7b7cab6c219f2930
+    uri: https://github.com/tohjustin/kube-lineage/releases/download/v0.4.0/kube-lineage_darwin_arm64.tar.gz
+    sha256: 821e2db1a5e008831822af49dea925d284a611dba227dea217564956c6222836
     bin: kube-lineage
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/tohjustin/kube-lineage/releases/download/v0.3.0/kube-lineage_linux_amd64.tar.gz
-    sha256: 08be7deb0e8e8fe1d2f91f501389f98f1c35cd431cd6c6a609f47b6ca79865a4
+    uri: https://github.com/tohjustin/kube-lineage/releases/download/v0.4.0/kube-lineage_linux_amd64.tar.gz
+    sha256: 83003131c09275c828c02540fec68bcf83b11db2b133cf3f7ee80daea7b831b5
     bin: kube-lineage
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/tohjustin/kube-lineage/releases/download/v0.3.0/kube-lineage_linux_arm64.tar.gz
-    sha256: 08da53acbab24c0bdbfb1b2fc556f72f419c8779dab1af283442e6b51e059d11
+    uri: https://github.com/tohjustin/kube-lineage/releases/download/v0.4.0/kube-lineage_linux_arm64.tar.gz
+    sha256: c46c36713933bf1205d0d3be60983419ef3580d195f0d2bc99441722bd3c9fa6
     bin: kube-lineage
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/tohjustin/kube-lineage/releases/download/v0.3.0/kube-lineage_windows_amd64.zip
-    sha256: a547eebed020e5573d35ae7f038fe7abc0b1868ff587963c36f9a47eada04949
+    uri: https://github.com/tohjustin/kube-lineage/releases/download/v0.4.0/kube-lineage_windows_amd64.zip
+    sha256: 7bee7e618e462d7eb451a3c40fce8cac0458f4f524251a4570bd5dc423ffa0d5
     bin: kube-lineage.exe

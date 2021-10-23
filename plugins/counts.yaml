@@ -1,0 +1,68 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: counts
+spec:
+  platforms:
+  - uri: https://github.com/wshihadeh/kubectl-counts/releases/download/v0.0.3/kubectl-counts-Darwin-x86_64.tar.gz
+    sha256: 4c652a980b13cce8d64142f8f74ddd0baab9f4be95fab3e1b33d8aad3831f8cc
+    bin: kubectl-counts
+    files:
+    - from: kubectl-counts
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/wshihadeh/kubectl-counts/releases/download/v0.0.3/kubectl-counts-Linux-x86_64.tar.gz
+    sha256: 8e7d33400813673cd53ed2b3734d16055c6fdae6336136a8fd33f4f4bc949b03
+    bin: kubectl-counts
+    files:
+    - from: kubectl-counts
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/wshihadeh/kubectl-counts/releases/download/v0.0.3/kubectl-counts-Windows-x86_64.tar.gz
+    sha256: c96ece94de579603ed8476e0926a230efaa92dc1b3f2cb8c96ec1245b1f2408a
+    bin: kubectl-counts.exe
+    files:
+    - from: kubectl-counts.exe
+      to: .
+    - from: LICENSE.txt
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  version: v0.0.3
+  homepage: https://github.com/wshihadeh/kubectl-counts
+  shortDescription: Filter Kubernetes resources by matching their names
+  description: |
+    Get pod counts
+    $ kubectl counts pod --by=ns
+    $ kubectl counts pod --by=node
+    $ kubectl counts pod --by=restarts
+    $ kubectl counts pod --by=status
+
+    Get service counts
+    $ kubectl counts services --by=ns
+    $ kubectl counts services --by=type
+
+    Get jobs counts
+    $ kubectl counts jobs --by=ns
+    $ kubectl counts jobs --by=container
+    $ kubectl counts jobs --by=image
+
+    Get deployment counts
+    $ kubectl counts deployments --by=ns
+
+    Get ingress counts
+    $ kubectl counts ingresses --by=ns
+    $ kubectl counts ingresses --by=class
+    $ kubectl counts ingresses --by=address

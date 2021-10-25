@@ -6,7 +6,6 @@ spec:
   version: v0.1.2
   platforms:
   - selector:
-  
       matchLabels:
         os: linux
         arch: amd64
@@ -24,6 +23,12 @@ spec:
         arch: amd64
     uri: https://github.com/soraro/kurt/releases/download/v0.1.2/kurt_darwin_amd64.tar.gz
     sha256: 2f3eab14ced90e790d4d0983eb8ed5937f6d53e77417d985938af9cbe4f0afb2
+    files:
+    - from: kurt
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kurt
   - selector:
       matchLabels:
         os: darwin

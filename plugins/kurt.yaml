@@ -1,0 +1,87 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kurt
+spec:
+  version: v0.1.2
+  platforms:
+  - selector:
+  
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/soraro/kurt/releases/download/v0.1.2/kurt_linux_amd64.tar.gz
+    sha256: a1ba86f0ec24f9e6ed1d1ee3774d14315b81907ffcf9c76ea3536ec416836e56
+    files:
+    - from: kurt
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kurt
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/soraro/kurt/releases/download/v0.1.2/kurt_darwin_amd64.tar.gz
+    sha256: 2f3eab14ced90e790d4d0983eb8ed5937f6d53e77417d985938af9cbe4f0afb2
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/soraro/kurt/releases/download/v0.1.2/kurt_0.1.2_darwin_arm64.tar.gz
+    sha256: ccc5bdedcf5d235c9bf6a4ee568a48cf5c9f5495631ced871efe1db9e99e4469
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/soraro/kurt/releases/download/v0.1.2/kurt_0.1.2_linux_arm64.tar.gz
+    sha256: bbc73415f135072d6ee64f6c6693787bb64483bbb65ed7252953f20b3bdecced
+    files:
+    - from: kurt
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kurt
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/soraro/kurt/releases/download/v0.1.2/kurt_windows_amd64.zip
+    sha256: fbfb4ae71f30b00585ed0e32372be9b8cd31ca69b503ca38fe3e4cb481e3c56c
+    files:
+    - from: kurt.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kurt.exe
+  shortDescription: A restart tracker that gives context to what is restarting in your cluster
+  homepage: https://github.com/soraro/kurt
+  description: |
+    kurt: KUbernetes Restart Tracker
+
+    A restart tracker that gives context to what is restarting in your cluster
+
+    Usage:
+      kubectl kurt [command]
+
+    Available Commands:
+      all         Print all groupings collected by kurt!
+      completion  generate the autocompletion script for the specified shell
+      help        Help about any command
+      labels      Only print restart counts grouped by labels
+      namespaces  Only print namespace-wide restart counts
+      nodes       Only print node restart counts
+      pods        Only print pod restart counts
+      version     Print the current version and exit
+
+    Flags:
+      -h, --help                help for kurt
+      -l, --label strings       Specify multiple times for the label keys you want to see.
+                                For example: "kurt all -l app"
+      -c, --limit int           Limit the number of resources you want to see. Set limit to 0 for no limits. Must be positive.
+                                For example: "kurt all -c=10" (default 5)
+      -n, --namespace strings   Specify namespace for kurt to collect restart metrics.
+                                Leave blank to collect in all namespaces.
+
+    Use "kubectl kurt [command] --help" for more information about a command.
+

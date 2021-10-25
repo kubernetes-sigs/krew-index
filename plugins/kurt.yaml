@@ -35,6 +35,12 @@ spec:
         arch: arm64
     uri: https://github.com/soraro/kurt/releases/download/v0.1.2/kurt_0.1.2_darwin_arm64.tar.gz
     sha256: ccc5bdedcf5d235c9bf6a4ee568a48cf5c9f5495631ced871efe1db9e99e4469
+    files:
+    - from: kurt
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kurt
   - selector:
       matchLabels:
         os: darwin

@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: kurt
 spec:
-  version: v0.1.2
+  version: v0.1.3
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/soraro/kurt/releases/download/v0.1.2/kurt_0.1.2_linux_amd64.tar.gz
-    sha256: a1ba86f0ec24f9e6ed1d1ee3774d14315b81907ffcf9c76ea3536ec416836e56
+    uri: https://github.com/soraro/kurt/releases/download/v0.1.3/kurt_0.1.3_linux_amd64.tar.gz
+    sha256: 1f31c2c5fe50fca9146ae6ca1873c5ffc5427ed278f747bc2a413d815745fe2a
     files:
     - from: kurt
       to: .
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/soraro/kurt/releases/download/v0.1.2/kurt_0.1.2_darwin_amd64.tar.gz
-    sha256: 2f3eab14ced90e790d4d0983eb8ed5937f6d53e77417d985938af9cbe4f0afb2
+    uri: https://github.com/soraro/kurt/releases/download/v0.1.3/kurt_0.1.3_darwin_amd64.tar.gz
+    sha256: 864ed8e35033def3cb43529e5ef3acf65383f88cf6892732e004fe620fffc839
     files:
     - from: kurt
       to: .
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/soraro/kurt/releases/download/v0.1.2/kurt_0.1.2_darwin_arm64.tar.gz
-    sha256: ccc5bdedcf5d235c9bf6a4ee568a48cf5c9f5495631ced871efe1db9e99e4469
+    uri: https://github.com/soraro/kurt/releases/download/v0.1.3/kurt_0.1.3_darwin_arm64.tar.gz
+    sha256: afd6d95b7c155ed137fcebd1c0966a726758a9652a0808f40b5b181beff90888
     files:
     - from: kurt
       to: .
@@ -45,8 +45,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/soraro/kurt/releases/download/v0.1.2/kurt_0.1.2_linux_arm64.tar.gz
-    sha256: bbc73415f135072d6ee64f6c6693787bb64483bbb65ed7252953f20b3bdecced
+    uri: https://github.com/soraro/kurt/releases/download/v0.1.3/kurt_0.1.3_linux_arm64.tar.gz
+    sha256: 7574a5afded84e98650ff37f928c118b8e1f34cb1d3f6ea9eb247c377f3ee281
     files:
     - from: kurt
       to: .
@@ -57,21 +57,27 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/soraro/kurt/releases/download/v0.1.2/kurt_0.1.2_windows_amd64.zip
-    sha256: fbfb4ae71f30b00585ed0e32372be9b8cd31ca69b503ca38fe3e4cb481e3c56c
+    uri: https://github.com/soraro/kurt/releases/download/v0.1.3/kurt_0.1.3_windows_amd64.zip
+    sha256: 400eb9647db10ba4d7b3d72ad4c75d1215fa88e80ed61a5f059331020c800156
     files:
     - from: kurt.exe
       to: .
     - from: LICENSE
       to: .
     bin: kurt.exe
-  shortDescription: A restart tracker that gives context to what is restarting in your cluster
+  shortDescription: Find what's restarting and why
   homepage: https://github.com/soraro/kurt
   description: |
-    kurt: KUbernetes Restart Tracker
+    Use kurt to see pods that are restarting in your cluster and get further context to issues by grouping the results.
+    Top 5 results from all groupings:
+    kubectl kurt all
 
-    A restart tracker that gives context to what is restarting in your cluster
+    Top 5 nodes with restarting pods:
+    kubectl kurt nodes
 
-    Usage:
-      kubectl kurt [command]
+    All restarting pods in the test namespace:
+    kubectl kurt pods -c 0 -n test
+
+    Help:
+    kubectl kurt -h
 

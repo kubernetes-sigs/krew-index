@@ -3,32 +3,22 @@ kind: Plugin
 metadata:
   name: kubeone
 spec:
-  version: "v1.3.0"
+  version: v1.3.0
   platforms:
     - selector:
         matchLabels:
           os: linux
           arch: amd64
       uri: https://github.com/kubermatic/kubeone/releases/download/v1.3.0/kubeone_1.3.0_linux_amd64.zip
-      sha256: "810cee80f8adcbc90b836525b70869641e0e4f079a3dda05dd3187b708c38248"
-      files:
-        - from: "./kubeone"
-          to: "."
-        - from: LICENSE
-          to: "."
-      bin: "kubeone"
+      sha256: 810cee80f8adcbc90b836525b70869641e0e4f079a3dda05dd3187b708c38248
+      bin: kubeone
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
       uri: https://github.com/kubermatic/kubeone/releases/download/v1.3.0/kubeone_1.3.0_darwin_amd64.zip
-      sha256: "3dc786156c48acfabb7f9ae39483ec2ea12983bb371d0f447095d5a0afeca96b"
-      files:
-        - from: "./kubeone"
-          to: "."
-        - from: LICENSE
-          to: "."
-      bin: "kubeone"
+      sha256: 3dc786156c48acfabb7f9ae39483ec2ea12983bb371d0f447095d5a0afeca96b
+      bin: kubeone
   shortDescription: Kubermatic KubeOne automate cluster operations on all your cloud, on-prem, edge, and IoT environments
   homepage: https://github.com/kubermatic/kubeone
   caveats: ""

@@ -5,11 +5,11 @@ metadata:
 spec:
   version: v1.0.0
   homepage: https://github.com/patrickdappollonio/kubectl-slice
-  shortDescription: slice multiple Kubernetes files into smaller files with ease. Slice multi-YAML files into individual files.
+  shortDescription: Split a multi-YAML file into individual files.
   description: |
-    kubectl-slice is a neat tool that allows you to slice a single multi-YAML Kubernetes manifest into multiple
-    subfiles using a naming convention you choose. This is done by parsing the YAML code and giving you the option
-    to access any key from the YAML object using Go Templates.
+    This is a tool that can split a multi-YAML Kubernetes manifest into multiple subfiles using 
+    a naming convention you choose. This is done by parsing the YAML code and giving you the option
+    to access any key from the YAML object by loading it into a Go Templates.
   platforms:
     - selector:
         matchLabels:

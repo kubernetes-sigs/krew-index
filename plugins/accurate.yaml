@@ -1,0 +1,74 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: accurate
+spec:
+  version: v0.2.0
+  homepage: https://github.com/cybozu-go/accurate
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/cybozu-go/accurate/releases/download/v0.2.0/kubectl-accurate_v0.2.0_darwin_amd64.tar.gz
+      sha256: 53b52d7604405bdc46eeb09758ffcb83d1b7a418a3dd4a1aeb2c0ee04a285307
+      bin: kubectl-accurate
+      files:
+        - from: kubectl-accurate
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/cybozu-go/accurate/releases/download/v0.2.0/kubectl-accurate_v0.2.0_darwin_arm64.tar.gz
+      sha256: 8b6f253fe1d832add7c683c73400ffa4a74bcebdd4da2841cb735a57d47551d2
+      bin: kubectl-accurate
+      files:
+        - from: kubectl-accurate
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/cybozu-go/accurate/releases/download/v0.2.0/kubectl-accurate_v0.2.0_linux_amd64.tar.gz
+      sha256: 19e37dc0c161d582925e69b8d47b60dd56f75d9c8158c557b922a96e37861276
+      bin: kubectl-accurate
+      files:
+        - from: kubectl-accurate
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/cybozu-go/accurate/releases/download/v0.2.0/kubectl-accurate_v0.2.0_linux_arm64.tar.gz
+      sha256: 695699fb785281fce32b8a647aefeae8f99cd0b08069ba3a82f09ebea92c451a
+      bin: kubectl-accurate
+      files:
+        - from: kubectl-accurate
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/cybozu-go/accurate/releases/download/v0.2.0/kubectl-accurate_v0.2.0_windows_amd64.tar.gz
+      sha256: 8071ba0042c8f5ec1a8a20b16ad79660eb75cfbc03df970ff9a5e40c377b4b9d
+      bin: kubectl-accurate.exe
+      files:
+        - from: kubectl-accurate.exe
+          to: .
+        - from: LICENSE
+          to: .
+  shortDescription: Accurate is a Kubernetes controller for multi-tenancy.
+  description: |
+    kubectl-accurate is a subcommand of kubectl to manage Accurate features.
+    Accurate is a Kubernetes controller for multi-tenancy.
+    It propagates resources between namespaces accurately and allows tenant users to create/delete sub-namespaces.
+    Read more documentation at: https://cybozu-go.github.io/accurate/index.html

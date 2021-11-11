@@ -1,0 +1,27 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: redeploy
+spec:
+  version: "v0.0.1"
+  homepage: https://github.com/tcoupin/kubectl-redeploy
+  shortDescription: "Trigger redeploy of a deployment"
+  description: |
+     Krew plugin to trigger redeploy of a deployment.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+        - linux
+        - windows
+    uri: https://github.com/tcoupin/kubectl-redeploy/archive/v0.0.1.zip
+    sha256: 18CB0519980EE19AEEF25A1DD2BD337AFF56BB6DB78CE71F3AA96C0FF9F5E18D
+    files:
+    - from: "kubectl-redeploy-0.0.1/kubectl-redeploy.sh"
+      to: "kubect-redeploy.sh"
+    - from: "kubectl-redeploy-0.0.1/LICENSE"
+      to: "."
+    bin: kubect-redeploy.sh

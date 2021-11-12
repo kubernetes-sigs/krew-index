@@ -3,15 +3,25 @@ kind: Plugin
 metadata:
   name: kadalu
 spec:
+<<<<<<< HEAD
   version: "v0.8.8"
   homepage: https://github.com/kadalu/kadalu
   shortDescription: Manage Kadalu Operator, CSI and Storage pods
+=======
+  version: "v0.8.7"
+  homepage: https://github.com/kadalu/kadalu
+  shortDescription: "Deploy and manage Kadalu Operator, CSI and Storage pods"
+>>>>>>> 07b0bb71e4e599361dd86db03bfc4b241ea78546
   description: |
     Kadalu project offers a lightweight Persistent storage solution
     for applications running in Kubernetes.
 
     kubectl-kadalu helps to install Kadalu Operator and provides
+<<<<<<< HEAD
     sub-commands to manage/monitor Kadalu CSI and Storage pods.
+=======
+    sub-commands to manage/monitor Kadalu Storage pods.
+>>>>>>> 07b0bb71e4e599361dd86db03bfc4b241ea78546
   platforms:
   - selector:
       matchExpressions:
@@ -20,6 +30,11 @@ spec:
         values:
         - darwin
         - linux
+<<<<<<< HEAD
     uri: https://github.com/kadalu/kadalu/releases/download/0.8.8/kubectl-kadalu.tar.gz
     sha256: 37ee14f8494d527f358fd12f96bfceed5b39d979085f163b8722593b754244de
+=======
+    uri: https://github.com/kadalu/kadalu/releases/download/0.8.7/kubectl-kadalu.tar.gz
+    sha256: d0d754d6e4e08f7a09f25913bf787e9da5944488b7f630cc57d99655dc2b242b
+>>>>>>> 07b0bb71e4e599361dd86db03bfc4b241ea78546
     bin: kubectl-kadalu

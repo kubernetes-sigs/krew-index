@@ -1,0 +1,72 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: moco
+spec:
+  version: v0.10.8
+  homepage: https://github.com/cybozu-go/moco
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/cybozu-go/moco/releases/download/v0.10.8/kubectl-moco_v0.10.8_darwin_amd64.tar.gz
+      sha256: e21ceb25b2477d2a411c3fe086ded9920beecd50418cdde572118b3f6bd8e880
+      bin: kubectl-moco
+      files:
+        - from: kubectl-moco
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/cybozu-go/moco/releases/download/v0.10.8/kubectl-moco_v0.10.8_darwin_arm64.tar.gz
+      sha256: 7bf02ab67f303fea054b9220460708879adc4201228ee1e2a411cb27a956c6fd
+      bin: kubectl-moco
+      files:
+        - from: kubectl-moco
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/cybozu-go/moco/releases/download/v0.10.8/kubectl-moco_v0.10.8_linux_amd64.tar.gz
+      sha256: fd5730e3b1175a5b276086dfb2880d460b89a503942a09f06016fe1f1836c0ec
+      bin: kubectl-moco
+      files:
+        - from: kubectl-moco
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/cybozu-go/moco/releases/download/v0.10.8/kubectl-moco_v0.10.8_linux_arm64.tar.gz
+      sha256: 41afa6c5da05bb3afcb7e0a01cba10ac9d907888a871231ce3de7434620e7c93
+      bin: kubectl-moco
+      files:
+        - from: kubectl-moco
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/cybozu-go/moco/releases/download/v0.10.8/kubectl-moco_v0.10.8_windows_amd64.tar.gz
+      sha256: beaf7769b5e1754832dbe6eacca797b66b481c67058fb7f723a92bda0c2c6320
+      bin: kubectl-moco.exe
+      files:
+        - from: kubectl-moco.exe
+          to: .
+        - from: LICENSE
+          to: .
+  shortDescription: kubectl-moco is a plugin for kubectl to control MySQL clusters of MOCO.
+  description: |
+    kubectl-moco is a plugin for kubectl to control MySQL clusters of MOCO.
+    Read more documentation at: https://cybozu-go.github.io/moco/kubectl-moco.html

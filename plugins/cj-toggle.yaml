@@ -1,0 +1,28 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cj-toggle
+spec:
+  description: |
+    The plugin manipulates the suspend state of CronJobs. You can:
+        * Toggle the spec.suspend flag.
+        * Save current state to and restore state from a file
+        * Overwrite the spec.suspend flag
+        You can select CronJobs by:
+          * By label
+          * By namespace
+          * Across all namespaces
+  homepage: https://github.com/pymag09/kubectl_cj-toggle
+  platforms:
+  - bin: "./cj-toggle.sh"
+    files:
+    - from: /*
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/pymag09/kubectl_cj-toggle/releases/download/v1.0.0/cj-toggle-v1.0.0.tar.gz
+    sha256: 5a0d99727b40eaa7b87ab1ff89b3f38a04da0434dd94053f0cbc0256e08d44fc
+  shortDescription: Enable/disable CronJobs
+  version: v1.0.0

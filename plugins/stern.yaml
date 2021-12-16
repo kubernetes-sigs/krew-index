@@ -3,48 +3,50 @@ kind: Plugin
 metadata:
   name: stern
 spec:
-  version: v1.20.1
+  version: v1.21.0
   platforms:
   - bin: stern.exe
-    uri: https://github.com/stern/stern/releases/download/v1.20.1/stern_1.20.1_windows_amd64.tar.gz
-    sha256: 3ed6ccd050a72b68faf2f8f931969aabbd4b69fa69e1abe7ca4aaa2cf4889c22
+    uri: https://github.com/stern/stern/releases/download/v1.21.0/stern_1.21.0_windows_arm64.tar.gz
+    sha256: 83ea1d297f4f470f2e947c187d97a005349e03b3a6eb703a4fc237a1f6315fb8
+    selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+  - bin: stern.exe
+    uri: https://github.com/stern/stern/releases/download/v1.21.0/stern_1.21.0_windows_amd64.tar.gz
+    sha256: c3f148576e604b250f4df4769079f7b69f62b2dfcdff10dc5fbd51815c297331
     selector:
       matchLabels:
         os: windows
         arch: amd64
-    files:
-    - from: stern_*_windows_amd64/*
-      to: .
   - bin: stern
-    uri: https://github.com/stern/stern/releases/download/v1.20.1/stern_1.20.1_linux_arm64.tar.gz
-    sha256: 194bbdf77a9eaee71fa830c59db5bd9af8148d710fbe64dc656ab505ad2f66c3
+    uri: https://github.com/stern/stern/releases/download/v1.21.0/stern_1.21.0_linux_arm64.tar.gz
+    sha256: f76cc25846b01354cf2e8cde211914ca910b77c919df1bf287c2448c65e74c1b
     selector:
       matchLabels:
         os: linux
         arch: arm64
-    files:
-    - from: stern_*_linux_arm64/*
-      to: .
   - bin: stern
-    uri: https://github.com/stern/stern/releases/download/v1.20.1/stern_1.20.1_linux_amd64.tar.gz
-    sha256: a7c24a6804e4c7a1fcf5ed6db1cdaa6f8ff9c4a640939c2be00c84b116668094
+    uri: https://github.com/stern/stern/releases/download/v1.21.0/stern_1.21.0_linux_amd64.tar.gz
+    sha256: 18bb5afa0426d1ca2e975bee2a04037378d99ffdda6e3383a575ad28d5c2d04d
     selector:
       matchLabels:
         os: linux
         arch: amd64
-    files:
-    - from: stern_*_linux_amd64/*
-      to: .
   - bin: stern
-    uri: https://github.com/stern/stern/releases/download/v1.20.1/stern_1.20.1_darwin_amd64.tar.gz
-    sha256: ca7e2a15d0f4d848227b09041c23a333d662b2e08c6d9d48171216ea801d561c
+    uri: https://github.com/stern/stern/releases/download/v1.21.0/stern_1.21.0_darwin_arm64.tar.gz
+    sha256: 6fecf90318039282bc5432726b49b4eb88653fb7dc33c94f00b3f04e4f3cf82a
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: stern
+    uri: https://github.com/stern/stern/releases/download/v1.21.0/stern_1.21.0_darwin_amd64.tar.gz
+    sha256: 41c1e1083d00cebbfe0d267cac0edf89bf1326319939b6b33c683d03611bc9f0
     selector:
       matchLabels:
         os: darwin
         arch: amd64
-    files:
-    - from: stern_*_darwin_amd64/*
-      to: .
   shortDescription: Multi pod and container log tailing
   homepage: https://github.com/stern/stern
   description: |

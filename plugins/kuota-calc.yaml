@@ -1,0 +1,37 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kuota-calc
+spec:
+  version: v0.1.0
+  homepage: https://github.com/postfinance/kuota-calc
+  shortDescription: Calculate the maximum needed resource quota for k8s objects.
+  description: |
+    This plugin calculates the maximum needed resource quota for you. The deployment
+    strategy, replicas and all containers are taken into account to calculate the
+    resources needed in order to be able to perform a rolling update and still have
+    enough resource quota.
+  caveats: |
+    * Currently kuota-calc only supports apps/v1.Deployment and apps/v1.StatefulSet resources
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/postfinance/kuota-calc/releases/download/v0.1.0/kuota-calc_darwin_x86_64.zip
+    sha256: 8a17040a61407e1800c74ef9e3f9abb15889995fff9b1a1274f0552cf8a13645
+    bin: kuota-calc
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/postfinance/kuota-calc/releases/download/v0.1.0/kuota-calc_linux_x86_64.zip
+    sha256: 770b9cbcd56fbcc27da13b0f6d1c2294614396d57d01989edc385af5d945cae9
+    bin: kuota-calc
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/postfinance/kuota-calc/releases/download/v0.1.0/kuota-calc_windows_x86_64.zip
+    sha256: 6e37ec0def5d47623a2753b5c1cbdf16b1c2de1b7b1f111e8069611976351086
+    bin: kuota-calc.exe

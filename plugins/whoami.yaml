@@ -3,15 +3,15 @@ kind: Plugin
 metadata:
   name: whoami
 spec:
-  version: v0.0.33
+  version: v0.0.39
   homepage: https://github.com/rajatjindal/kubectl-whoami
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.33/kubectl-whoami_v0.0.33_darwin_amd64.tar.gz
-    sha256: 7d7820ca92128cbf8a70e3690540368aa3d3e8f790d66337099fb2c2d4f00bad
+    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.39/kubectl-whoami_v0.0.39_darwin_amd64.tar.gz
+    sha256: 5ee723d1dd91cbdba920eb127b539362a9e05787e50f9d32c1a329b29c0c8468
     files:
     - from: "*"
       to: "."
@@ -20,17 +20,13 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.33/kubectl-whoami_v0.0.33_linux_amd64.tar.gz
-    sha256: 334ae9f9fc978343e784dc0eb5022196e8050c0e4fe55c7121f8d42bf95fe9fe
+    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.39/kubectl-whoami_v0.0.39_linux_amd64.tar.gz
+    sha256: 6d67361b12fbcf2c41bd5f48d5608845d04b153ede347e654dd68424aded1d41
     files:
     - from: "*"
       to: "."
     bin: kubectl-whoami
   shortDescription: Show the subject that's currently authenticated as.
-  caveats: |
-    This plugin has only been tested with RBAC token, ServiceAccount token, and BasicAuth. 
-
-    It will be great if we can get volunteers to test it with other Auth providers.
   description: |
     This plugin show the subject that's currently authenticated as.
 

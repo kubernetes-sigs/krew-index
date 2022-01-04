@@ -1,0 +1,63 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: multiforward
+spec:
+  version: v0.0.5
+  homepage: https://github.com/njnygaard/kubectl-multiforward
+  shortDescription: Port Forward to multiple Kubernetes Services
+  description: |
+    This plugin allows you to forward to multiple Kubernetes Services
+    without the use of multiple terminal windows.
+  caveats: |
+    You should have ~/.multiforward.yaml or ./.multiforward.yaml configured.
+    See `multiforward --help` for format details.
+  platforms:
+  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v0.0.5/kubectl-multiforward-linux-amd64.tar.gz
+    sha256: f3f13e6331e77cc74f8e6b32c9ef7a34f586236d94f65c21bb8949ad13571e28
+    bin: kubectl-multiforward
+    files:
+    - from: "./kubectl-multiforward"
+      to: "."
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v0.0.5/kubectl-multiforward-darwin-amd64.tar.gz
+    sha256: 7f8789e1feaf03c0d538741b17a9095053f6f429007e0f1be09442ba856485d0
+    bin: kubectl-multiforward
+    files:
+    - from: "./kubectl-multiforward"
+      to: "."
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v0.0.5/kubectl-multiforward-darwin-arm64.tar.gz
+    sha256: ea92441551fe6c5b40c41c6ec1abf73a640ef6c0a7a0a32591ecbbe4686d1f82
+    bin: kubectl-multiforward
+    files:
+    - from: "./kubectl-multiforward"
+      to: "."
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - uri: https://github.com/njnygaard/kubectl-multiforward/releases/download/v0.0.5/kubectl-multiforward-windows-amd64.zip
+    sha256: 5b309d67f89c25111708e5edbbc310ff893da1953e89cc15bf125770359e20d9
+    bin: kubectl-multiforward.exe
+    files:
+    - from: "./kubectl-multiforward.exe"
+      to: "."
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

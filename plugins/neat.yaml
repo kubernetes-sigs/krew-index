@@ -9,28 +9,36 @@ spec:
     removing default values, runtime information, and other internal fields.
     Examples:
     `$ kubectl get pod mypod -o yaml | kubectl neat`
-    `$ kubectl neat pod mypod -o yaml`
+    `$ kubectl neat get -- pod mypod -o yaml`
   homepage: https://github.com/itaysk/kubectl-neat
   platforms:
   - bin: ./kubectl-neat
-    files:
-    - from: /*
-      to: .
-    selector:
-      matchLabels:
-        arch: amd64
-        os: darwin
-    sha256: e6afaa5a7943885674adff51e22121d02f9c9c4fc3ea7edd6893189c75674d2c
-    uri: https://github.com/itaysk/kubectl-neat/releases/download/v1.2.0/kubectl-neat_darwin.tar.gz
-  - bin: ./kubectl-neat
-    files:
-    - from: /*
-      to: .
     selector:
       matchLabels:
         arch: amd64
         os: linux
-    sha256: d515a1c09c4450f7a9ab30bcdccd516f18a4dfd8c42311ffb41fb53d7c8ff2c8
-    uri: https://github.com/itaysk/kubectl-neat/releases/download/v1.2.0/kubectl-neat_linux.tar.gz
+    sha256: b036300ab33fa20f9ff9fcd87a1bdc32dcaf7110bc28cdeb879ab07d3d9c963b
+    uri: https://github.com/itaysk/kubectl-neat/releases/download/v2.0.3/kubectl-neat_linux_amd64.tar.gz
+  - bin: ./kubectl-neat
+    selector:
+      matchLabels:
+        arch: arm64
+        os: linux
+    sha256: 1e3e175fdd220bb11128eb83cdbd986aa8e83dd4e1e55c285a0c5c97dacd26aa
+    uri: https://github.com/itaysk/kubectl-neat/releases/download/v2.0.3/kubectl-neat_linux_arm64.tar.gz
+  - bin: ./kubectl-neat
+    selector:
+      matchLabels:
+        arch: amd64
+        os: darwin
+    sha256: f575ca517d80d4e3671195e6064dd99de86ed1d5e91bbbb6b94d377384ae0db9
+    uri: https://github.com/itaysk/kubectl-neat/releases/download/v2.0.3/kubectl-neat_darwin_amd64.tar.gz
+  - bin: ./kubectl-neat
+    selector:
+      matchLabels:
+        arch: arm64
+        os: darwin
+    sha256: 05866e6c565d2e66737d5d6623a3a86f71bcce0e869601856f1ce9af69e97103
+    uri: https://github.com/itaysk/kubectl-neat/releases/download/v2.0.3/kubectl-neat_darwin_arm64.tar.gz
   shortDescription: Remove clutter from Kubernetes manifests to make them more readable.
-  version: v1.2.0
+  version: v2.0.3

@@ -1,0 +1,41 @@
+# Copyright Contributors to the Open Cluster Management project
+
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cm
+spec:
+  version: v1.0.4
+  homepage: https://github.com/open-cluster-management/cm-cli
+  shortDescription: Provides commands for OCM/MCE/ACM.
+  description: |
+    This plugin allows you to manage clusters on the OCM/MCE/ACM platform.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.4/cm_darwin_amd64.tar.gz
+    sha256: 99d1fe3a838454f32e26f6bb94bbd9239f3176e405f24791e9b50c82d1d8f4f5
+    bin: cm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.4/cm_linux_amd64.tar.gz
+    sha256: ada2efcd78e69b0537e4aa001ddd0daac7ac5ad4e8cac3061599fb03e6a85a7a
+    bin: cm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.4/cm_linux_arm64.tar.gz
+    sha256: 3beb595630568014e1fd075c03c96890187022e87fd9bcd897231eaf058443c2
+    bin: cm
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.4/cm_windows_amd64.zip
+    sha256: 223815a8f18678b7e67aa2cb52a895d3d679262182c1b630c2fe3b8884d457e3
+    bin: cm.exe

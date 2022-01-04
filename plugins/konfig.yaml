@@ -3,10 +3,10 @@ kind: Plugin
 metadata:
   name: konfig
 spec:
-  version: "v0.2.2"
+  version: "v0.2.6"
   platforms:
-    - uri: https://github.com/corneliusweig/konfig/releases/download/v0.2.2/bundle.tar.gz
-      sha256: 69ee54d2fa509417e26a393c7f13fa7b7127d5370a975acc585455af0576677f
+    - uri: https://github.com/corneliusweig/konfig/releases/download/v0.2.6/bundle.tar.gz
+      sha256: 2dad241ad2bbf83b9d338880a0fb9c209f960b2dc233c2d7489ac264524170bc
       bin: konfig-krew
       files:
         - from: ./konfig-krew
@@ -18,17 +18,6 @@ spec:
           - key: os
             operator: In
             values: ["darwin", "linux"]
-    - uri: https://github.com/corneliusweig/konfig/releases/download/v0.2.2/bundle.tar.gz
-      sha256: 69ee54d2fa509417e26a393c7f13fa7b7127d5370a975acc585455af0576677f
-      bin: konfig-krew.exe
-      files:
-        - from: ./konfig-krew
-          to: konfig-krew.exe
-        - from: LICENSE
-          to: .
-      selector:
-        matchLabels:
-          os: windows
   shortDescription: Merge, split or import kubeconfig files
   homepage: https://github.com/corneliusweig/konfig
   description: |+2
@@ -42,4 +31,4 @@ spec:
         $ kubectl konfig merge kubeconfig1 kubeconfig2 > merged
         $ kubectl konfig export ctx1 ctx2 -k k8s.yaml,k3s.yaml > extracted
 
-      More on https://github.com/corneliusweig/konfig/blob/v0.2.2/doc/USAGE.md#usage
+      More on https://github.com/corneliusweig/konfig/blob/master/doc/USAGE.md#konfig

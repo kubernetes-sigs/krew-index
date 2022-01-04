@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: kuttl
 spec:
-  version: "v0.4.0"
+  version: "v0.11.1"
 
   shortDescription: Declaratively run and test operators
   homepage: https://kuttl.dev/
@@ -15,27 +15,27 @@ spec:
       matchLabels:
         os: "linux"
         arch: "amd64"
-    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.4.0/kuttl_0.4.0_linux_x86_64.tar.gz
-    sha256: "947dbf0fb8ffcc8a5ea8346f2aa308e2e271743192331ac3f05cc8c4e90950e8"
+    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.11.1/kuttl_0.11.1_linux_x86_64.tar.gz
+    sha256: "de812a9ccf9a45e42776789910cf431984b4d6ca8f7542b50cae2f474de8a5fa"
     bin: "./kubectl-kuttl"
   - selector:
       matchLabels:
         os: "linux"
         arch: "386"
-    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.4.0/kuttl_0.4.0_linux_i386.tar.gz
-    sha256: "831abda034b4f1ebdeca349adca783f30053ec5f6948df8af2373704b8606cff"
+    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.11.1/kuttl_0.11.1_linux_i386.tar.gz
+    sha256: "4d581025370da830f25b1a20e6c2f882bb6d182a10bf813ae017f74125133907"
     bin: "./kubectl-kuttl"
   - selector:
       matchLabels:
         os: "darwin"
         arch: "amd64"
-    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.4.0/kuttl_0.4.0_darwin_x86_64.tar.gz
-    sha256: "d2bf88f9a7726d69c657f5e63a9a4bc4189f5f58accec556c4389232b5eb827c"
+    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.11.1/kuttl_0.11.1_darwin_x86_64.tar.gz
+    sha256: "50d6af3aea60bc31a2c785d762ad95a4ee3a5b35f5f73f74b9f4f5a4c6e0ac93"
     bin: "./kubectl-kuttl"
   - selector:
       matchLabels:
         os: "darwin"
-        arch: "386"
-    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.4.0/kuttl_0.4.0_darwin_i386.tar.gz
-    sha256: "d94c57e44b6e09790bcadfbd1a230b5e5bda8b31d26576170cd486779d7135c2"
+        arch: "arm64"
+    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.11.1/kuttl_0.11.1_darwin_arm64.tar.gz
+    sha256: "a1091d655aaaa4d8a976ab88420382620f5ea6261fe49dccbf806f52baa2b0fe"
     bin: "./kubectl-kuttl"

@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: preflight
 spec:
-  version: v0.9.36
+  version: v0.26.0
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.36/preflight_linux_amd64.tar.gz
-    sha256: 5dc18614a66cb3a3818eaaebde6038f14b93c019d8176f1373c7aca3bf7ec71b
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.26.0/preflight_linux_amd64.tar.gz
+    sha256: d529ec7e754c207944e82ff3304a4a2cafa0d25bc0c389e5d9a2340151df0b2b
     files:
     - from: preflight
       to: .
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.36/preflight_darwin_amd64.tar.gz
-    sha256: f05a46dd7581eed4a6a8e3dd2c7cf754b82c583362c655f893d68cbbc23799a2
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.26.0/preflight_darwin_amd64.tar.gz
+    sha256: 677228cce647f1c1cf4910880e6fea387a6d5c1a81e7e3255a5ebac0facb4035
     files:
     - from: preflight
       to: .
@@ -31,10 +31,22 @@ spec:
     bin: preflight
   - selector:
       matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.26.0/preflight_darwin_arm64.tar.gz
+    sha256: d9fca0a0bf8d638a3be3ab5d910c824f1924d5e2600fe4098e7f73e64ada7b7b
+    files:
+    - from: preflight
+      to: .
+    - from: LICENSE
+      to: .
+    bin: preflight    
+  - selector:
+      matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.36/preflight_windows_amd64.zip
-    sha256: d0fc645ee78d6640643a32bc44e582a7f956c08898bc019ceed54793f44406ff
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.26.0/preflight_windows_amd64.zip
+    sha256: 7c1f6f6952cb2b4d7067d734944b376a144c43262184dee6206287dbc2a98e92
     files:
     - from: preflight.exe
       to: .
@@ -78,4 +90,3 @@ spec:
 
       For application developers writing collectors and analyzers:
       https://help.replicated.com/docs/troubleshoot/kubernetes/collectors/defining-collectors/
-

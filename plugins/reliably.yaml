@@ -1,0 +1,36 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: reliably
+spec:
+  version: v0.33.1
+  platforms:
+  - uri: https://github.com/reliablyhq/cli/releases/download/v0.33.1/reliably-darwin-amd64.tar.gz
+    sha256: f63b177efdf358b18c3833a26df8ee896948a3706b0ee393beef8794063d69a8
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    bin: reliably
+    files:
+    - from: "reliably"
+      to: "."
+    - from: LICENSE
+      to: .
+  - uri: https://github.com/reliablyhq/cli/releases/download/v0.33.1/reliably-linux-amd64.tar.gz
+    sha256: dadea3d6b2f8f39d4593071a8f5ebfc061d05c37b808b920e4a5813a1cd2d912
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    bin: reliably
+    files:
+    - from: "reliably"
+      to: "."
+    - from: LICENSE
+      to: .
+  homepage: https://reliably.com/docs
+  shortDescription: "Surfaces reliability issues in Kubernetes"
+  description: |
+    Surfaces reliability issues in your Kubernetes configuration,
+    using the Reliably CLI.

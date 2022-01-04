@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: trace
+spec:
+  version: v0.1.2
+  homepage: https://github.com/iovisor/kubectl-trace
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/iovisor/kubectl-trace/releases/download/v0.1.2/kubectl-trace_v0.1.2_darwin_amd64.tar.gz
+    sha256: 0415b77d55565ac5fd4d5f04a8b96500b4510366c26679c2dbc292bafe3f32f5
+    bin: kubectl-trace
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/iovisor/kubectl-trace/releases/download/v0.1.2/kubectl-trace_v0.1.2_linux_amd64.tar.gz
+    sha256: 465fb0b1bfd21ded9cbaf0c4224ebe1cdfaa2be3bf69bc72c37948ebcc023c7e
+    bin: kubectl-trace
+  - selector:
+      matchLabels:
+        os: linux
+        arch: 386
+    uri: https://github.com/iovisor/kubectl-trace/releases/download/v0.1.2/kubectl-trace_v0.1.2_linux_386.tar.gz
+    sha256: 33846a6875624b2e11c2878ef8b92ef8ac96fcb6648652c63df4b53c17b1976f
+    bin: kubectl-trace
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/iovisor/kubectl-trace/releases/download/v0.1.2/kubectl-trace_v0.1.2_windows_amd64.zip
+    sha256: 11c144bd2a03f62b9b522518dcecc8b773c466dfb7ba6383011422ba412cf93a
+    bin: kubectl-trace.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: 386
+    uri: https://github.com/iovisor/kubectl-trace/releases/download/v0.1.2/kubectl-trace_v0.1.2_windows_386.zip
+    sha256: 01075c662f607001907f9a79357f53cd1d28a960985f785c9fac42b234b9c0e3
+    bin: kubectl-trace.exe
+  shortDescription: Trace Kubernetes pods and nodes with system tools
+  description: |
+    This plugin is used to analyze production systems and Kubernetes workloads
+    by scheduling a trace job on a target node or alongside a target pod in
+    order to analyze it with eBPF and other tracing and profiling technologies.

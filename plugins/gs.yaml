@@ -1,0 +1,52 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: gs
+spec:
+  version: v1.58.0
+  homepage: https://github.com/giantswarm/kubectl-gs
+  shortDescription: Handle custom resources with Giant Swarm
+  description: |
+    Simplifies creating clusters and node pools via Giant Swarm
+    management clusters, as well as installing app catalogs and apps.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v1.58.0/kubectl-gs-v1.58.0-darwin-amd64.tar.gz
+    sha256: 340d252ffe0e90f7bd3f66bd58ac844966f8837f8e18cdd48bf6d26fb1ec3e0f
+    files:
+    - from: ./kubectl-gs-*/*
+      to: .
+    bin: ./kubectl-gs
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v1.58.0/kubectl-gs-v1.58.0-darwin-arm64.tar.gz
+    sha256: 3fd46ddc41986d55ea5e7700c177672d1c2b31cd56ffbc58762bbb8335fbb83a
+    files:
+    - from: ./kubectl-gs-*/*
+      to: .
+    bin: ./kubectl-gs
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v1.58.0/kubectl-gs-v1.58.0-linux-amd64.tar.gz
+    sha256: 9760cba7748bfeae9444fa66b412fcb2a9ccb8614d4e5be47b16fd9d3ab0416b
+    files:
+    - from: ./kubectl-gs-*/*
+      to: .
+    bin: ./kubectl-gs
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v1.58.0/kubectl-gs-v1.58.0-linux-arm64.tar.gz
+    sha256: 263fe36cb66dad3867721a882e58df10e8cff8ed35c4c3dafa36fdcf5e8dd6d6
+    files:
+    - from: ./kubectl-gs-*/*
+      to: .
+    bin: ./kubectl-gs

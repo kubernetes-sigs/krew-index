@@ -3,27 +3,41 @@ kind: Plugin
 metadata:
   name: iexec
 spec:
-  version: v1.4.0
+  version: v1.18.0
   homepage: https://github.com/gabeduke/kubectl-iexec
   platforms:
     - selector:
         matchLabels:
           os: darwin
+          arch: arm64
+      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/v1.18.0/kubectl-iexec_v1.18.0_Darwin_arm64.tar.gz
+      sha256: c3eba985e89c61b2f6c563d62d7b84c20f9db44bf2a779a80257f59684a974bb
+      bin: kubectl-iexec
+    - selector:
+        matchLabels:
+          os: darwin
           arch: amd64
-      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/1.4.0/kubectl-iexec_1.4.0_Darwin_x86_64.tar.gz
-      sha256: f61186638d7b9fb413dbe415a7c7e541dc719089bdb7ae49581a5a1793821398
+      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/v1.18.0/kubectl-iexec_v1.18.0_Darwin_x86_64.tar.gz
+      sha256: cc7926462d9f88f4a7dfb859a5a54b3cd0b1d81ae761ed0f5c25cf046e6c2888
+      bin: kubectl-iexec
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/v1.18.0/kubectl-iexec_v1.18.0_Linux_arm64.tar.gz
+      sha256: 7241d66753b12abe40930d2e776966e06dfb5a33c555273b8a885c1e806fc08f
       bin: kubectl-iexec
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/1.4.0/kubectl-iexec_1.4.0_Linux_x86_64.tar.gz
-      sha256: 71cdd15aa6662b15f99ed5cceb61c4bb17220214eabe1f49874fe4947a627428
+      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/v1.18.0/kubectl-iexec_v1.18.0_Linux_x86_64.tar.gz
+      sha256: 776858e7408d3433aed9689f7cdc74e3df219d4a661ce361b956324dd14181ec
       bin: kubectl-iexec
   shortDescription: Interactive selection tool for `kubectl exec`
   description: |
     Interactive pod and container selector for `kubectl exec`
-
+  caveats: |
     To get help run: kubectl iexec --help
     Examples:
     Run command in container:

@@ -1,0 +1,35 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: realname-diff
+spec:
+  version: v0.1.1
+  platforms:
+  - bin: kubectl-realname_diff
+    uri: https://github.com/hhiroshell/kubectl-realname-diff/releases/download/v0.1.1/kubectl-realname-diff-linux-amd64.zip
+    sha256: ba5d1ca7452717e798d7c1413857919541d291e8bd6385b5c83d5b8857f9d6f6
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-realname_diff
+    uri: https://github.com/hhiroshell/kubectl-realname-diff/releases/download/v0.1.1/kubectl-realname-diff-darwin-amd64.zip
+    sha256: 28a10e70064f814614de5de57473cae20b099639747ef3b855b6d0eda090443d
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  shortDescription: Diffs live and local resources ignoring Kustomize hash-suffixes
+  homepage: https://github.com/hhiroshell/kubectl-realname-diff
+  description: |
+    Kubectl realname-diff works the same as kubectl diff, but if you set "real
+    name" as a label, local and live resources with the same label will be
+    compared.
+
+    This is especially beneficial if you use the Kustomize and enable hash
+    suffixing ConfigMap/Secret names. In case of `kubectl diff`, local and live
+    resources with hash suffixed name are considered as irrelevant. So you will not
+    be able to get any results comparing them.
+
+    With realname-diff, you can compare the resources with hash suffixed name by
+    specifying the comparison target with "real name" labels.

@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: direct-csi
 spec:
-  version: v1.4.6
+  version: v2.0.1
   homepage: https://github.com/minio/direct-csi
   shortDescription: CSI driver to manage drives in k8s cluster as volumes
   description: |
@@ -14,34 +14,34 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/minio/direct-csi/releases/download/v1.4.6/kubectl-direct_csi_darwin_amd64.zip
-    sha256: 2a490da7f100d5dd788fb7a4f9830e194d5441592eb9ce41a8e9c771527f5f8f
+    uri: https://github.com/minio/direct-csi/releases/download/v2.0.1/kubectl-direct_csi_darwin_amd64.zip
+    sha256: 39707a2881bd665d07b90ff573a34f1b1fab009689af57ce6a3c59eaa859cbc0
     bin: kubectl-direct_csi
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/minio/direct-csi/releases/download/v1.4.6/kubectl-direct_csi_darwin_arm64.zip
-    sha256: 54f1c75a79b1cc2a310e59c3da12bb2fdff3bc32d9adcc7d55cc1920de31054e
+    uri: https://github.com/minio/direct-csi/releases/download/v2.0.1/kubectl-direct_csi_darwin_arm64.zip
+    sha256: e7b15ff2b701ed8ed9a080fa9d9420ea1ce6454f6ae1ccd2d014803d4a24f4a0
     bin: kubectl-direct_csi
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/minio/direct-csi/releases/download/v1.4.6/kubectl-direct_csi_linux_amd64.zip
-    sha256: 07bbcec30d1e1edec73568b1db27e77eb039c7f0f9d0674e2aa3d9f3a3a06baf
+    uri: https://github.com/minio/direct-csi/releases/download/v2.0.1/kubectl-direct_csi_linux_amd64.zip
+    sha256: 9515e3ce2b0346c670fdff03a4d615d7fc55c702669c06a16576c07dbeb8d9d3
     bin: kubectl-direct_csi
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/minio/direct-csi/releases/download/v1.4.6/kubectl-direct_csi_linux_arm64.zip
-    sha256: beb63f26ce2772a8ba2b9c0480553188f7f0d8fe7b93a4538d5eefd87dd07e6f
+    uri: https://github.com/minio/direct-csi/releases/download/v2.0.1/kubectl-direct_csi_linux_arm64.zip
+    sha256: 202c64c974385d0dc15d8775c94a7c2f79f05afb31082e17dc7c37f2d1879340
     bin: kubectl-direct_csi
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/minio/direct-csi/releases/download/v1.4.6/kubectl-direct_csi_windows_amd64.zip
-    sha256: f97e2ed8647c060f4add460d159b6682b2b833cd9595af8d825e58e2f096e5f4
+    uri: https://github.com/minio/direct-csi/releases/download/v2.0.1/kubectl-direct_csi_windows_amd64.zip
+    sha256: 7f92d6a2c3ff92c3f8c958b4ab439aa12546cd4f4b419608432f20aac7c980d4
     bin: kubectl-direct_csi.exe

@@ -1,0 +1,43 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ktop
+spec:
+  version: v0.2.0
+  platforms:
+    - bin: kubectl-ktop
+      uri: https://github.com/vladimirvivien/ktop/releases/download/v0.2.0/kubectl-ktop_v0.2.0_linux_arm64.tar.gz
+      sha256: f6e979ccfbd24467b94db44e11e17a43fa80afc2fd90fcb0aac0139327b464b3
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+    - bin: kubectl-ktop
+      uri: https://github.com/vladimirvivien/ktop/releases/download/v0.2.0/kubectl-ktop_v0.2.0_linux_amd64.tar.gz
+      sha256: 6390c612c4715fe0debc8df476a52325fc71a3e4fdb8ace1d9de2629afcfd0a8
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - bin: kubectl-ktop
+      uri: https://github.com/vladimirvivien/ktop/releases/download/v0.2.0/kubectl-ktop_v0.2.0_darwin_arm64.tar.gz
+      sha256: f941b71c0628dffade4b178fc00b69e466118aacd3065f3f6128228d2fe9d548
+      selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+    - bin: kubectl-ktop
+      uri: https://github.com/vladimirvivien/ktop/releases/download/v0.2.0/kubectl-ktop_v0.2.0_darwin_amd64.tar.gz
+      sha256: a4348ea29fc11821292e78b7f114cc5a9d441fa0404b5b7f1c65fcf57a50f1c8
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+  shortDescription: A top tool to display workload metrics
+  homepage: https://github.com/vladimirvivien/ktop
+  caveats: |
+    * By default, ktop displays metrics for resources in the default namespace. You can override this behavior
+    by providing a --namespace or use -A for all namespaces.
+  description: |
+    This is a kubectl plugin for ktop, a top-like tool for displaying workload
+    metrics for a running Kubernetes cluster.

@@ -5,7 +5,7 @@ metadata:
 spec:
   homepage: https://github.com/mumoshu/config-registry
   shortDescription: Switch between registered kubeconfigs
-  version: v0.2.1
+  version: v0.2.2
   description: |
     Switch between kubeconfigs stored in your local filesystem.
     Similar to "ctx" and "ns", but for switching the whole kubeconfig.
@@ -28,27 +28,34 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/mumoshu/config-registry/releases/download/v0.2.1/config-registry_v0.2.1_darwin_amd64.tar.gz
-    sha256: d35481b4d7255c19a1225959cad1b77dd7f525b37d3f02bef4b8f36a16a3af28
+    uri: https://github.com/mumoshu/config-registry/releases/download/v0.2.2/config-registry_v0.2.2_darwin_amd64.tar.gz
+    sha256: 1183da12b057010c957edc0f7194f1d78ba687a6a5981cb3f9366d1a5754696d
+    bin: config-registry
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/mumoshu/config-registry/releases/download/v0.2.2/config-registry_v0.2.2_darwin_arm64.tar.gz
+    sha256: d2754246a1f1d9b2a19dd305de3c64e5e199a36e8fb2323d474da4c0acf239f1
     bin: config-registry
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/mumoshu/config-registry/releases/download/v0.2.1/config-registry_v0.2.1_linux_amd64.tar.gz
-    sha256: 30ac043d20203bc4941454913247ab2b799267c120a43e3401aebe2bdce45b0c
+    uri: https://github.com/mumoshu/config-registry/releases/download/v0.2.2/config-registry_v0.2.2_linux_amd64.tar.gz
+    sha256: 548af88b1c6104a29e9b38ca4fda3a5d22d029c58bb099cb92819dbccb829b25
     bin: config-registry
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/mumoshu/config-registry/releases/download/v0.2.1/config-registry_v0.2.1_linux_arm64.tar.gz
-    sha256: 8fdeefcc3004b1f41303abbd81647355135c30322b68ecce4dbb58620092be0f
+    uri: https://github.com/mumoshu/config-registry/releases/download/v0.2.2/config-registry_v0.2.2_linux_arm64.tar.gz
+    sha256: bbd946d0efc764df07f55a3acc01942c7ea5a8b86541208c8e5cb00b4fa599c9
     bin: config-registry
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/mumoshu/config-registry/releases/download/v0.2.1/config-registry_v0.2.1_windows_amd64.zip
-    sha256: 6b197d0297bd6ef0218d8f2fecb6980f5abd81031909d85ebc52c4e125e56be1
+    uri: https://github.com/mumoshu/config-registry/releases/download/v0.2.2/config-registry_v0.2.2_windows_amd64.zip
+    sha256: b0562a4a21ba93707bc54ba0018dd72bde979b8b33cc474227f8a1f453b174d0
     bin: config-registry.exe

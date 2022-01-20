@@ -22,14 +22,14 @@ spec:
   shortDescription: Diffs live and local resources ignoring Kustomize hash-suffixes
   homepage: https://github.com/hhiroshell/kubectl-realname-diff
   description: |
-    Normally, kubectl realname-diff works the same as kubectl diff, but if you set
-    "real name" as a label, local and live resources with the same label will be
+    Kubectl realname-diff works the same as kubectl diff, but if you set "real
+    name" as a label, local and live resources with the same label will be
     compared.
 
-    This is especially beneficial if you use the Kustomize and enable the hash
-    suffixed ConfigMap/Secret name. In case of `kubectl diff`, local and live
+    This is especially beneficial if you use the Kustomize and enable hash
+    suffixing ConfigMap/Secret names. In case of `kubectl diff`, local and live
     resources with hash suffixed name are considered as irrelevant. So you will not
     be able to get any results comparing them.
 
-    However, with realname-diff, you can compare the resources with hash suffixed
-    name by specifying the comparison target with "real name" labels.
+    With realname-diff, you can compare the resources with hash suffixed name by
+    specifying the comparison target with "real name" labels.

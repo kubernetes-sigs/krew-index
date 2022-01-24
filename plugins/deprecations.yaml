@@ -26,7 +26,14 @@ spec:
         arch: amd64
     uri: https://github.com/rikatz/kubepug/releases/download/v1.3.2/kubepug_darwin_amd64.tar.gz
     sha256: 3c5e6d49e1a32d2e102004486ae929dcede6ac07bad1a8c2243e2c6cc1c0eb67
-    bin: "kubepug" 
+    bin: "kubepug"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/rikatz/kubepug/releases/download/v1.3.2/kubepug_darwin_arm64.tar.gz
+    sha256: f11ce7b78f1a31b27d4b014fb1edd234ece19684bda485316f6c23de5ab083b1
+    bin: "kubepug"
   - selector:
       matchLabels:
         os: linux

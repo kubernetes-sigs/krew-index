@@ -43,9 +43,10 @@ jobs:
       run: |
         set -euo pipefail
         cd "$(mktemp -d)"
-        curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew.{tar.gz,yaml}"
-        tar zxvf krew.tar.gz
-        ./krew-linux_amd64 install --manifest=krew.yaml --archive=krew.tar.gz
+        curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew.yaml"
+        curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew-linux_amd64.tar.gz"
+        tar zxvf krew-linux_amd64.tar.gz
+        ./krew-linux_amd64 install --manifest=krew.yaml --archive=krew-linux_amd64.tar.gz
 
     - name: Install validate-krew-manifest plugin
       run : |

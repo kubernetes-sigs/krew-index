@@ -7,7 +7,7 @@ jobs:
     name: Validate plugin manifests
     runs-on: ubuntu-latest
     env:
-      KREW_VERSION: v0.4.2
+      KREW_VERSION: v0.4.3
       GO111MODULE: on
     steps:
 
@@ -52,9 +52,7 @@ jobs:
       run : |
         set -euo pipefail
         export GOBIN=$HOME/bin
-        # TODO(corneliusweig): pin validator version after next release
-        # go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
-        go get sigs.k8s.io/krew/cmd/validate-krew-manifest@b015efbdf40d4cce7e02b9e4e4805d373c40aa25
+        go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
 
     - name: Validate updated plugin manifests
       run : |

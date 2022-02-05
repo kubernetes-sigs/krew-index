@@ -7,7 +7,7 @@ jobs:
     name: Validate plugin manifests
     runs-on: ubuntu-latest
     env:
-      KREW_VERSION: v0.4.0
+      KREW_VERSION: v0.4.3
       GO111MODULE: on
     steps:
 
@@ -43,17 +43,16 @@ jobs:
       run: |
         set -euo pipefail
         cd "$(mktemp -d)"
-        curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew.{tar.gz,yaml}"
-        tar zxvf krew.tar.gz
-        ./krew-linux_amd64 install --manifest=krew.yaml --archive=krew.tar.gz
+        curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew.yaml"
+        curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew-linux_amd64.tar.gz"
+        tar zxvf krew-linux_amd64.tar.gz
+        ./krew-linux_amd64 install --manifest=krew.yaml --archive=krew-linux_amd64.tar.gz
 
     - name: Install validate-krew-manifest plugin
       run : |
         set -euo pipefail
         export GOBIN=$HOME/bin
-        # TODO(corneliusweig): pin validator version after next release
-        # go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
-        go get sigs.k8s.io/krew/cmd/validate-krew-manifest@b015efbdf40d4cce7e02b9e4e4805d373c40aa25
+        go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
 
     - name: Validate updated plugin manifests
       run : |

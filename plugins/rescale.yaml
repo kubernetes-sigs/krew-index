@@ -1,0 +1,75 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: rescale
+spec:
+  version: v1.0.1
+  homepage: https://github.com/wywywywy/kubectl-rescale
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/wywywywy/kubectl-rescale/releases/download/v1.0.1/kubectl-rescale_v1.0.1_darwin_amd64.tar.gz
+    sha256: e66d58df25b562bda8892d871d0a79e689441fac89c94217009664e56cc35d5e
+    bin: kubectl-rescale
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/wywywywy/kubectl-rescale/releases/download/v1.0.1/kubectl-rescale_v1.0.1_darwin_arm64.tar.gz
+    sha256: 80a21e67f6bb9b8c8cf8ef5fdb245c19cbb97923615be564084ea75a2a3f3ecd
+    bin: kubectl-rescale
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/wywywywy/kubectl-rescale/releases/download/v1.0.1/kubectl-rescale_v1.0.1_linux_amd64.tar.gz
+    sha256: 236de823ae2dcb3fff6d30e0d9ded30fc90101e278b35df68debaad8e7f1aeff
+    bin: kubectl-rescale
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/wywywywy/kubectl-rescale/releases/download/v1.0.1/kubectl-rescale_v1.0.1_linux_arm64.tar.gz
+    sha256: ca7a94d3f21f84b8aaa386a03cff9a55e9cb0674c69351f7457764762b4b78c2
+    bin: kubectl-rescale
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/wywywywy/kubectl-rescale/releases/download/v1.0.1/kubectl-rescale_v1.0.1_windows_amd64.tar.gz
+    sha256: d0d2d5a230fff9c7f53697b343e40a2f1dc255a41ec72b531f8b05247c37a9d4
+    bin: kubectl-rescale.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/wywywywy/kubectl-rescale/releases/download/v1.0.1/kubectl-rescale_v1.0.1_windows_arm64.tar.gz
+    sha256: 4a7c949418d851efbc69e32df21c364bb116891788d016a8afff46efd33e15a3
+    bin: kubectl-rescale.exe
+  shortDescription: Scale a deployment or statefulset to 0 then back up to the original desired replica count.
+  description: |
+    A kubectl plugin to scale a deployment or statefulset to 0 then back up to the original desired replica count.
+
+    Usage:
+      kubectl rescale [name of deployment/statefulset] [flags]
+
+    Examples:
+      # scale a deployment to 0 replicas then back up to the original count
+      kubectl rescale deployment/nginx
+
+      # scale a statefulset to 0 replicas then back up to the original count
+      kubectl rescale statefulset/mysql
+
+      # scale a statefulset to 0 replicas then back up to the original count, and wait for a maximum of 600 seconds to do so
+      kubectl rescale statefulset/mysql --max-wait-seconds=600
+
+      # it also supports short names
+      kubectl rescale sts/mysql
+
+      # if the kind is not provided, it will first try to find a deployment with the supplied name, and if not found then statefulset
+      kubectl rescale nginx
+
+      # a namespace can also be supplied
+      kubectl rescale deployment/nginx -n dev

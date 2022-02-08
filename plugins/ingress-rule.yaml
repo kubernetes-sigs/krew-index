@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: ingress-rule
 spec:
-  version: v0.1.0
+  version: v0.2.0
   platforms:
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/pragaonj/ingress-rule-updater/releases/download/v0.1.0/ingress-rule_v0.1.0_linux_amd64.tar.gz
-      sha256: 85b05d9ce9f5d3381d513c111aa2a3cfba214bab79f499dc2dc7973906d70875
+      uri: https://github.com/pragaonj/ingress-rule-updater/releases/download/v0.2.0/ingress-rule_v0.2.0_linux_amd64.tar.gz
+      sha256: 317b4bdd9e4b5a9e0a3afb62e2557520c03947736cb981c13bcdb933a1b0cf74
       files:
         - from: "./ingress-rule"
           to: "."
@@ -21,8 +21,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/pragaonj/ingress-rule-updater/releases/download/v0.1.0/ingress-rule_v0.1.0_darwin_amd64.tar.gz
-      sha256: f79a2424b54f33546bb35c78d0c7059752deb4bd37bea841ad81ff424ed42b89
+      uri: https://github.com/pragaonj/ingress-rule-updater/releases/download/v0.2.0/ingress-rule_v0.2.0_darwin_amd64.tar.gz
+      sha256: 2d9cd144bbaa27c790f05244f891327ff86357ca456915753e14b5051b70943b
       files:
         - from: "./ingress-rule"
           to: "."
@@ -33,20 +33,20 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/pragaonj/ingress-rule-updater/releases/download/v0.1.0/ingress-rule_v0.1.0_windows_amd64.zip
-      sha256: 4159631f4b0fadf6b8d8b9092b1533de9e69ab13abf2f32c6cb473adbebb7dcb
+      uri: https://github.com/pragaonj/ingress-rule-updater/releases/download/v0.2.0/ingress-rule_v0.2.0_windows_amd64.zip
+      sha256: 3c1ff6ebfde3712e5c40710ff2fdc1926683cb980b19e75b4db14a5910336552
       files:
         - from: "/ingress-rule.exe"
           to: "."
         - from: LICENSE
           to: "."
       bin: "ingress-rule.exe"
-  shortDescription: Update ingress rules via command line.
+  shortDescription: Update Ingress rules via command line
   homepage: https://github.com/pragaonj/ingress-rule-updater
   description: |
-    Add/remove rules to/from a kubernetes ingress via command line.
-    This plugin allows the configuration of an ingress resource with command line arguments.
+    Add/remove rules to/from a Kubernetes Ingress via command line.
+    This plugin allows the configuration of an Ingress resource with command line arguments.
     
-    When adding/deleting a backend rule the ingress will be updated.
-    On creation of a rule for a non-existing ingress name a new ingress will be created.
-    If the last rule is deleted the ingress will be deleted as well.
+    When adding/deleting a backend rule the Ingress will be updated.
+    On creation of a rule for a non-existing Ingress name a new Ingress will be created.
+    If the last rule is deleted the Ingress will be deleted as well.

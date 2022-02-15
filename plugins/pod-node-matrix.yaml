@@ -1,0 +1,42 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pod-node-matrix
+spec:
+  version: v0.0.2
+  homepage: https://github.com/ardaguclu/kubectl-pod-node-matrix
+  shortDescription: Show [pod x node] matrix in terms of pod statuses
+  description: |
+    This plugin shows [pod x node] matrix in terms of pod statuses 
+    with suitable colors to mitigate troubleshooting effort.
+  caveats: |
+    * Due to the console width limitation, it does not support huge number of nodes.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/ardaguclu/kubectl-pod-node-matrix/releases/download/v0.0.2/kubectl-pod-node-matrix_v0.0.2_darwin_amd64.tar.gz
+      sha256: c4b356a26d5cb9cc3edde0b9d7330308a7a40504c0b012a98ac14deb780b8a3e
+      bin: kubectl-pod-node-matrix
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/ardaguclu/kubectl-pod-node-matrix/releases/download/v0.0.2/kubectl-pod-node-matrix_v0.0.2_darwin_arm64.tar.gz
+      sha256: 03601ae3a897e7c2a281e6c51ac21dbd8124008e8734dd5ed2bb13282a509807
+      bin: kubectl-pod-node-matrix
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/ardaguclu/kubectl-pod-node-matrix/releases/download/v0.0.2/kubectl-pod-node-matrix_v0.0.2_linux_amd64.tar.gz
+      sha256: a489b7c1da08084839f3d2c37e478c1e6c4fe8df5039a160060bcfd701404585
+      bin: kubectl-pod-node-matrix
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/ardaguclu/kubectl-pod-node-matrix/releases/download/v0.0.2/kubectl-pod-node-matrix_v0.0.2_windows_amd64.tar.gz
+      sha256: a5b8764f6981215f7b1f358b53fa962459368f7647b6cb52397f86e37ac3870f
+      bin: kubectl-pod-node-matrix.exe

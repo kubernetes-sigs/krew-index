@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: resource
+spec:
+  version: v0.2.0
+  homepage: https://github.com/bryant-rh/kubectl-resource
+  shortDescription: Display Resource (CPU/Memory/PodCount) Usage and Request and Limit.
+  description: |
+    This plugin Display Resource (CPU/Memory/PodCount) Usage and Request and Limit.
+    The resource command allows you to see the resource consumption for nodes or pods.
+    This command requires Metrics Server to be correctly configured and working on the server.
+  caveats: |
+    Usage:
+      kubectl-resource [flags] [options]
+      kubectl-resource [command]
+
+    Examples:
+      node        Display Resource (CPU/Memory/PodCount) usage of nodes
+      pod         Display Resource (CPU/Memory)          usage of pods
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/bryant-rh/kubectl-resource/releases/download/v0.2.0/kubectl-resource_v0.2.0_darwin_amd64.tar.gz
+    sha256: db49bcc380d0f1ab85cf39b689ae1ffba744635e74faed2c304a6f0a5b1714a1
+    bin: kubectl-resource
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/bryant-rh/kubectl-resource/releases/download/v0.2.0/kubectl-resource_v0.2.0_darwin_arm64.tar.gz
+    sha256: e4a4d7e99a8ccb9411f3ef6462f90aaa2648ae4ebf8f04050459f4217f89a97e
+    bin: kubectl-resource
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/bryant-rh/kubectl-resource/releases/download/v0.2.0/kubectl-resource_v0.2.0_linux_amd64.tar.gz
+    sha256: 5d2a89529fd65fded1ab616559eb28e093b3726afceb9784b00d83bd807d84f3
+    bin: kubectl-resource
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/bryant-rh/kubectl-resource/releases/download/v0.2.0/kubectl-resource_v0.2.0_windows_amd64.tar.gz
+    sha256: e2ce710000f8cdd4b24e2e78ab41462a36beeb8e2904d34ad781d233118c9751
+    bin: kubectl-resource.exe

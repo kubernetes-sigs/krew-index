@@ -1,0 +1,41 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: openid-connect
+spec:
+  version: "0.2"
+  homepage: https://github.com/devopstales/kube-openid-connect
+  shortDescription: Login to a cluster via openid-connect
+  description: |
+    Launches a browser to login to the cluster via openid-connect. openid-connect's 
+    certificate MUST be trusted by the local system.
+
+    Run `kubectl login <openid-connect-ingress-url>`.
+    It automatically opens the browser and you can log in to the provider.
+    After authentication, it writes the token to the kubeconfig and you can access the cluster.
+  caveats: |
+    1) You need to install the openid-connect server component by helm:
+    2) You need to setup the OIDC provider at Kubernetes API server.
+    3) You need to setup role binding for users or groupe.
+  platforms:
+  - bin: kubectl-login
+    uri: https://github.com/devopstales/kube-openid-connect/releases/download/client_v0.2/kubectl-login_linux.tar.gz
+    sha256: dd01b92f1f33194359d1c5b172adcd7ac938609028fc449dd4c84c9f93a3e4b9
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-login
+    uri: https://github.com/devopstales/kube-openid-connect/releases/download/client_v0.2/kubectl-login_osx.tar.gz
+    sha256: 6f6f64c90fc1359508cf9c1429788ecf6f75ee5127bd9020c250043787b87afc
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: kubectl-login.exe
+    uri: https://github.com/devopstales/kube-openid-connect/releases/download/client_v0.2/kubectl-login_windows.zip
+    sha256: 82617b07be3c55ebcc6f686b5d297f8d5257e1a0a8b40686d3eadcc046169a4a
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

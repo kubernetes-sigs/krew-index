@@ -18,14 +18,27 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/giorgosdi/nodeinfo/releases/download/v0.0.2/kubectl_nodeinfo_darwin_amd64.tar.gz
-    sha256: 9850afc231e462a1fefb991d72c312ccee4625e52a8d69ea107076fbb6a294bc
+    uri: https://github.com/giorgosdi/nodeinfo/releases/download/v0.0.3/kubectl_nodeinfo_darwin_amd64.tar.gz
+    sha256: 4f0fa064571ccce88ee40898902a960017cff3a50c24bb766866b3eb4c1dfd85
     bin: kubectl-nodeinfo
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/giorgosdi/nodeinfo/releases/download/v0.0.2/kubectl_nodeinfo_linux_amd64.tar.gz
-    sha256: b76ccca2cd7eeb29e5e72e20cfab54a0ee21219c3323c5f18a459526b558e259
+    uri: https://github.com/giorgosdi/nodeinfo/releases/download/v0.0.3/kubectl_nodeinfo_linux_amd64.tar.gz
+    sha256: e03f593d2e99dfd5672c032a165977a336ace31bd1cee1b9a697297cc092d1e9
     bin: kubectl-nodeinfo
-
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/giorgosdi/nodeinfo/releases/download/v0.0.3/kubectl_nodeinfo_darwin_arm64.tar.gz
+    sha256: 86aaf53ce7d23332d0f90db4c5fadbfb81d0a721ec80876ef85c235df943f1a2
+    bin: kubectl-nodeinfo
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/giorgosdi/nodeinfo/releases/download/v0.0.3/kubectl_nodeinfo_linux_arm64.tar.gz
+    sha256: 125cb1d8eefa9a4858395068bac8681b182e60d076a54f6609e695b080c1bebd
+    bin: kubectl-nodeinfo

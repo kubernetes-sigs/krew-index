@@ -5,8 +5,8 @@ kind: Plugin
 metadata:
   name: cm
 spec:
-  version: v1.0.3
-  homepage: https://github.com/open-cluster-management/cm-cli
+  version: v1.0.6
+  homepage: https://github.com/stolostron/cm-cli
   shortDescription: Provides commands for OCM/MCE/ACM.
   description: |
     This plugin allows you to manage clusters on the OCM/MCE/ACM platform.
@@ -15,27 +15,27 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.3/cm_darwin_amd64.tar.gz
-    sha256: ac07743865f40f352935e13be0ee3c8ae5419ce90c9c8983003190594c9ba143
+    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.6/cm_darwin_amd64.tar.gz
+    sha256: 95d6f035b14878d5104369d6da8e266b840c67fee316bdea8058178cb97e185a
     bin: cm
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.3/cm_linux_amd64.tar.gz
-    sha256: 4649eb1e02b5562ec6a8aed22ddc0cbf66c7e22cb02c22e96179b0b86fc13434
+    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.6/cm_linux_amd64.tar.gz
+    sha256: b2c3c77f560dfe7269349ac13914c7294a69db5df9133d385fe53b5e0943f9b9
     bin: cm
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.3/cm_linux_arm64.tar.gz
-    sha256: 9e1cd7a58021bd43adae16f28e88b1e5a10f6addbf41bd02c9a6be9c8741ec8b
+    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.6/cm_linux_arm64.tar.gz
+    sha256: 20a1b7e8454dc9d7aac4aae668023d8f78f326f9360ce08ee60f0bfa77b42272
     bin: cm
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/open-cluster-management/cm-cli/releases/download/v1.0.3/cm_windows_amd64.zip
-    sha256: dfb9cbe03487bed6d7a025048db79083742a334ffffa9d251cc45027745af126
+    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.6/cm_windows_amd64.zip
+    sha256: a3da527cf47fd9b13bf4d777e6807c3b7c31fabe1d983b16c67bf9d54e2c5524
     bin: cm.exe

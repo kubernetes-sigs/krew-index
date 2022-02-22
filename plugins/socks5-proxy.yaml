@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: socks5-proxy
 spec:
-  version: "v1.0.2"
+  version: "v1.1.0"
   homepage: https://github.com/yokawasa/kubectl-plugin-socks5-proxy
   platforms:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-    uri: https://github.com/yokawasa/kubectl-plugin-socks5-proxy/archive/v1.0.2.zip
-    sha256: 71ad9e85899c8d911b64710213890ec62bc6a2bb0e2ae9c90aac2dbf05814906
+    uri: https://github.com/yokawasa/kubectl-plugin-socks5-proxy/archive/v1.1.0.zip
+    sha256: d8b6e81034ec09c665ee1bf58eba6818bf67da02b29ef3ec048d3b524add444e
     files:
     - from: "./*/kubectl-socks5-proxy"
       to: .

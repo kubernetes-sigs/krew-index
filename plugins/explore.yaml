@@ -1,0 +1,47 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: explore
+spec:
+  version: v0.4.5
+  homepage: https://github.com/kei6u/kubectl-explore
+  shortDescription: A better kubectl explain with the fuzzy finder
+  description: |
+    Fuzzy-find and explain the fields associated with
+    supported API resource.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/kei6u/kubectl-explore/releases/download/v0.4.5/kubectl-explore_v0.4.5_darwin_amd64.tar.gz
+    sha256: 4116d562de397ce451e32f3e9934086464ae5aa5c17a1f7b0e1a5e25a09a64a4
+    bin: kubectl-explore
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/kei6u/kubectl-explore/releases/download/v0.4.5/kubectl-explore_v0.4.5_darwin_arm64.tar.gz
+    sha256: b676a70e8301f111f3b50dfaf1c9395215f6065b4e55c99096d82e4e64b0202a
+    bin: kubectl-explore
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/kei6u/kubectl-explore/releases/download/v0.4.5/kubectl-explore_v0.4.5_linux_amd64.tar.gz
+    sha256: 16a2b4fc66ad5a07e71cfdeaddd99fee4a993e80575882cf2baaf324929aceb2
+    bin: kubectl-explore
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/kei6u/kubectl-explore/releases/download/v0.4.5/kubectl-explore_v0.4.5_linux_arm64.tar.gz
+    sha256: 7faa3a1cffc88c4720a9566dc3c4a0d6f474b6a47fddbd2f24985a96566d52d0
+    bin: kubectl-explore
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/kei6u/kubectl-explore/releases/download/v0.4.5/kubectl-explore_v0.4.5_windows_amd64.tar.gz
+    sha256: fdeb8bdbb05b8fd73664f8d638be57f0f2d7d664b01a7ea4ef10b952de085d39
+    bin: kubectl-explore.exe

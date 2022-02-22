@@ -5,14 +5,14 @@ metadata:
 spec:
   homepage: https://github.com/VerizonMedia/kubectl-flame
   shortDescription: Generate CPU flame graphs from pods
-  version: v0.2.2
+  version: v0.2.4
   description: |
     Generate CPU flame graphs without restarting pods and with low overhead.
   caveats: |
-    Currently supported languages: Go, Java (any JVM based language), Python and Ruby.
+    Currently supported languages: Go, Java (any JVM based language), Python, Ruby, and NodeJS.
   platforms:
-    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.2.2/kubectl-flame_v0.2.2_darwin_x86_64.tar.gz
-      sha256: 6fec57f3975255ebad5cfed67cf06792279a982b1082d8104ce28a691ac261b5
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.2.4/kubectl-flame_v0.2.4_darwin_x86_64.tar.gz
+      sha256: 913544dc04d324374430513afb70e4d9a9542a7d9e607b1975643f9bfb0e9b1c
       bin: kubectl-flame
       files:
         - from: kubectl-flame
@@ -23,8 +23,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.2.2/kubectl-flame_v0.2.2_linux_x86_64.tar.gz
-      sha256: 0c745c8ed7e4bd2516d9efa93d2fafb831ed96d04bd1306397aed31fe03287f2
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.2.4/kubectl-flame_v0.2.4_linux_x86_64.tar.gz
+      sha256: b5257217ac044d2996396d94f656ca2e2d4ec6b0208e8a01a8bbb2ca4075ba69
       bin: kubectl-flame
       files:
         - from: kubectl-flame
@@ -35,8 +35,20 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.2.2/kubectl-flame_v0.2.2_windows_x86_64.zip
-      sha256: 69252c242b0e5829cf5d6965c0d0f1f457c562a8ab0a5e89a82653665c8e85ce
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.2.4/kubectl-flame_v0.2.4_linux_arm64.tar.gz
+      sha256: 1ce0585b973fa351a2f748246b22b2d986bb0d010703cdfa50edfeb285d03c38
+      bin: kubectl-flame
+      files:
+        - from: kubectl-flame
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.2.4/kubectl-flame_v0.2.4_windows_x86_64.zip
+      sha256: 51a6c800ea376ad6cb8c8918b2981a63cd2bb5ec886ec57c8d9d9a37b7947e6c
       bin: kubectl-flame.exe
       files:
         - from: kubectl-flame.exe

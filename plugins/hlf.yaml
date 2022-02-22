@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: hlf
 spec:
-  version: "v1.3.2"
+  version: "v1.5.0"
   homepage: https://github.com/kfsoftware/hlf-operator
   shortDescription: "Deploy and manage Hyperledger Fabric components"
   description: |
@@ -19,20 +19,20 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/kfsoftware/hlf-operator/releases/download/v1.3.2/kubectl-hlf_darwin_amd64.zip
-      sha256: 31e5b0bbeb7d55aa07f089672649f860a66c51da49bdace2e29f681dee9a5ab2
+      uri: https://github.com/kfsoftware/hlf-operator/releases/download/v1.5.0/kubectl-hlf_darwin_amd64.zip
+      sha256: cfa67235166cf99ba346477294683e9465a9f86cf4c6c3316321b40f3e615b23
       bin: kubectl-hlf
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/kfsoftware/hlf-operator/releases/download/v1.3.2/kubectl-hlf_linux_amd64.zip
-      sha256: 2ca33b574b4ff141404666936b206cc68d038a52906714538ae9a1a05ccdd901
+      uri: https://github.com/kfsoftware/hlf-operator/releases/download/v1.5.0/kubectl-hlf_linux_amd64.zip
+      sha256: dcfbf609caeb345779473cf173b6b0acb7bcc72c93c106ca10c17a91076c6e0c
       bin: kubectl-hlf
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/kfsoftware/hlf-operator/releases/download/v1.3.2/kubectl-hlf_windows_amd64.zip
-      sha256: 75a9251c12e518ad45ac1543faeb088107a0b61f49b11c4853bd361b39122f1e
+      uri: https://github.com/kfsoftware/hlf-operator/releases/download/v1.5.0/kubectl-hlf_windows_amd64.zip
+      sha256: 5adfe12860c7ad24f4f23164c8ec50ef8ddc81766ef9dcd6a3b5ce5f4dfdca75
       bin: kubectl-hlf.exe

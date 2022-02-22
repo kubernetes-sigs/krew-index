@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: preflight
 spec:
-  version: v0.22.1
+  version: v0.29.0
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.22.1/preflight_linux_amd64.tar.gz
-    sha256: 433d5f0c97b3fc62a8af2d43befc71f7847c90d40c4971972c430677a9c35ed3
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.29.0/preflight_linux_amd64.tar.gz
+    sha256: 0309a1c72a83736fc1503454193f022fab95b32dff7f4647cbce24cf5c79b192
     files:
     - from: preflight
       to: .
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.22.1/preflight_darwin_amd64.tar.gz
-    sha256: 05fd3b0d9fdc52ee8caf61b6d604de8b3baee39e6eb099860daaeee445125590
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.29.0/preflight_darwin_amd64.tar.gz
+    sha256: c6f19bc4a0e2fb76dadb8d74097d4abe1b715aeaaf073afdfa7d6e9d7f2841da
     files:
     - from: preflight
       to: .
@@ -31,10 +31,22 @@ spec:
     bin: preflight
   - selector:
       matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.29.0/preflight_darwin_arm64.tar.gz
+    sha256: 181636293d863a20603dd6cd50054cd4958e590ff0c507021afab8d6179790bc
+    files:
+    - from: preflight
+      to: .
+    - from: LICENSE
+      to: .
+    bin: preflight    
+  - selector:
+      matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.22.1/preflight_windows_amd64.zip
-    sha256: 0ff50aa4ba9f29babc8046d97ea554f65202443289f5dbb8fa28f3a7fcc9543e
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.29.0/preflight_windows_amd64.zip
+    sha256: e9c2d3052e8f15a415a70f05b484b784ecd60a559a00e194c800c4a1a6fad693
     files:
     - from: preflight.exe
       to: .

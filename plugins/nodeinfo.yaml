@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: nodeinfo
 spec:
-  version: v0.0.3-1
+  version: v0.0.4
   homepage: https://github.com/giorgosdi/nodeinfo
   shortDescription: Show all the pods and their metrics in a given node
   Description: |
@@ -18,27 +18,27 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/giorgosdi/nodeinfo/releases/download/v0.0.3-1/kubectl_nodeinfo_darwin_amd64.tar.gz
-    sha256: e8cc2d63faeb66c1a9ad9d7c7f774a9bd75a0c8f12ed5d97bfd48cfd7587031a
+    uri: https://github.com/giorgosdi/nodeinfo/releases/download/v0.0.4/kubectl_nodeinfo_darwin_amd64.tar.gz
+    sha256: 12a21502f159d1ab7b2b95da3be4c6e6c0e088eff138309fd0495a9b9075b8e1
     bin: kubectl-nodeinfo
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/giorgosdi/nodeinfo/releases/download/v0.0.3-1/kubectl_nodeinfo_linux_amd64.tar.gz
-    sha256: 2cfb019cbb72b5dc234801018f1e28d79ccdf46a38e6b16c1da99e32a55cabf7
+    uri: https://github.com/giorgosdi/nodeinfo/releases/download/v0.0.4/kubectl_nodeinfo_linux_amd64.tar.gz
+    sha256: f19d6e0fd8dfe5468e29177cbec31c5b1b1b9080a002bb526b4e91db47b67858
     bin: kubectl-nodeinfo
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/giorgosdi/nodeinfo/releases/download/v0.0.3-1/kubectl_nodeinfo_darwin_arm64.tar.gz
-    sha256: 6dd4067bdaf769ec644586a59dd0e3d5c3b1f19514487e6fabc198cdda1a997a
+    uri: https://github.com/giorgosdi/nodeinfo/releases/download/v0.0.4/kubectl_nodeinfo_darwin_arm64.tar.gz
+    sha256: 750a433c8631eb660048db0a98b63047731493f8459054c144249d4566e19297
     bin: kubectl-nodeinfo
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/giorgosdi/nodeinfo/releases/download/v0.0.3-1/kubectl_nodeinfo_linux_arm64.tar.gz
-    sha256: daaed2e7d5a0acc61d18796869dadb5f4d9e5c549a82ae29402f99f1e7b6cb2b
+    uri: https://github.com/giorgosdi/nodeinfo/releases/download/v0.0.4/kubectl_nodeinfo_linux_arm64.tar.gz
+    sha256: 19bbd71555424e23eebdce649c0547d76408a2dd072558e77d44654133ff4688
     bin: kubectl-nodeinfo

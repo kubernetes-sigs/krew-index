@@ -5,11 +5,15 @@ metadata:
 spec:
   version: "v0.1.0"
   homepage: https://github.com/pabateman/kubectl-nsenter
-  shortDescription: "Execute shell command under container namespace of pod"
+  shortDescription: "Run shell command in Pod's namespace on the node over SSH connection"
   description: |
-    Kubectl plugin for pod's linux namespaces command execution via direct node ssh connection
+    This plugin establishes a connection to node that's running the Pod over SSH and uses
+    nsenter to run commands in the container's namespace. You would need something
+    like this to run programs that are missing in the container image but presents on node.
   caveats: |
-    Almost done. Now activate your ssh agent ang go on!
+    * This plugin needs SSH access to nodes
+    * Remote user must have root access
+    * Nodes need to have 'nsenter'
   platforms:
   - selector:
       matchLabels:

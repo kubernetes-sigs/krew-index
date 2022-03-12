@@ -3,13 +3,13 @@ kind: Plugin
 metadata:
   name: node-restart
 spec:
-  version: "v1.0.5"
+  version: "v1.0.6"
   platforms:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-    uri: https://github.com/MnrGreg/kubectl-node-restart/releases/download/v1.0.5/v1.0.5.zip
-    sha256: 8f3bf602e6705a3325da6fd6b740887dd0c0743cfad2dbf9c2b767744796d59a
+    uri: https://github.com/MnrGreg/kubectl-node-restart/releases/download/v1.0.6/v1.0.6.zip
+    sha256: 50b5388448c61fbd41ce6069bb1242af12fcfb13da2cc1ef1d11b8406ff48d9f
     files:
     - from: "*.sh"
       to:  "."

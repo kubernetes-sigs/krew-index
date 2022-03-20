@@ -1,0 +1,146 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: profile
+spec:
+  homepage: https://github.com/josepdcs/kubectl-profile
+  shortDescription: Generate CPU profiling graphs from pods (Docker, Cri-o are supported). This is a fork of flame plugin.
+  version: v0.1.0
+  description: |
+    Generate CPU profiling graphs without restarting pods and with low overhead. Docker, Cri-o are supported, Containerd support is comming soon. 
+    This is an open source fork of https://github.com/yahoo/kubectl-flame with several new features and bug fixes.
+  caveats: |
+    Currently supported languages: Go, Java (any JVM based language), Python, Ruby, and NodeJS.
+  platforms:
+    - uri: https://github.com/josepdcs/kubectl-profile/releases/download/v0.1.0/kubectl-profile_v0.1.0_darwin_x86_64.tar.gz
+      sha256: 8c4d29bd23d8b80a4443d92cf284be6160319d67e9e5dcdeebd9c83a2f420da0
+      bin: kubectl-profile
+      files:
+        - from: kubectl-profile
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+    - uri: https://github.com/josepdcs/kubectl-profile/releases/download/v0.1.0/kubectl-profile_v0.1.0_darwin_arm64.tar.gz
+        sha256: 8ee77b48429f5a8bc028a0ac25760af03160aa72b4a014865d736c144fc879fd
+        bin: kubectl-profile
+        files:
+          - from: kubectl-profile
+            to: .
+          - from: LICENSE
+            to: .
+        selector:
+          matchLabels:
+            os: darwin
+            arch: arm64
+    - uri: https://github.com/josepdcs/kubectl-profile/releases/download/v0.1.0/kubectl-profile_v0.1.0_linux_x86_64.tar.gz
+      sha256: 3ebce6dbeee77bfad7b0ebd63876b4a223cc42549f1710c5bb0f3275daf16efb
+      bin: kubectl-profile
+      files:
+        - from: kubectl-profile
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - uri: https://github.com/josepdcs/kubectl-profile/releases/download/v0.1.0/kubectl-profile_v0.1.0_linux_arm64.tar.gz
+      sha256: ef654b9403eb15fc70f9d27d239f21cd83b17086bf42a8555a3629cddbf3e209
+      bin: kubectl-profile
+      files:
+        - from: kubectl-profile
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+    - uri: https://github.com/josepdcs/kubectl-profile/releases/download/v0.1.0/kubectl-profile_v0.1.0_linux_ppc64le.tar.gz
+        sha256: 8d78c427d2aac7364341fd78bd5b69eb2bed5bde3b2c5e9327694e5e346824c5
+        bin: kubectl-profile
+        files:
+          - from: kubectl-profile
+            to: .
+          - from: LICENSE
+            to: .
+        selector:
+          matchLabels:
+            os: linux
+            arch: ppc64le
+    - uri: https://github.com/josepdcs/kubectl-profile/releases/download/v0.1.0/kubectl-profile_v0.1.0_linux_armv7.tar.gz
+        sha256: b7c5ef59bdadb772c26170e3b7019541b490e75e7e88e3378e61d00e486ee0fb
+        bin: kubectl-profile
+        files:
+          - from: kubectl-profile
+            to: .
+          - from: LICENSE
+            to: .
+        selector:
+          matchLabels:
+            os: linux
+            arch: armv7
+    - uri: https://github.com/josepdcs/kubectl-profile/releases/download/v0.1.0/kubectl-profile_v0.1.0_linux_armhf.tar.gz
+        sha256: c916ecbf5be22ccd14ebad8c0a34ee11d0ad84e84c8412881feed887061d021b
+        bin: kubectl-profile
+        files:
+          - from: kubectl-profile
+            to: .
+          - from: LICENSE
+            to: .
+        selector:
+          matchLabels:
+            os: linux
+            arch: armhf
+    - uri: https://github.com/josepdcs/kubectl-profile/releases/download/v0.1.0/kubectl-profile_v0.1.0_windows_x86_64.zip
+      sha256: 83091262efc00e74ae7b2e93577c467ae51c51da97977324f54914b7bdcc8942
+      bin: kubectl-profile.exe
+      files:
+        - from: kubectl-profile.exe
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+    - uri: https://github.com/josepdcs/kubectl-profile/releases/download/v0.1.0/kubectl-profile_v0.1.0_windows_armhf.zip
+        sha256: 3718ae7ab5e1a588420be422ec88f035ecf4abf9256933cd3e9b673577f3a45a
+        bin: kubectl-profile.exe
+        files:
+          - from: kubectl-profile.exe
+            to: .
+          - from: LICENSE
+            to: .
+        selector:
+          matchLabels:
+            os: windows
+            arch: armhf
+    - uri: https://github.com/josepdcs/kubectl-profile/releases/download/v0.1.0/kubectl-profile_v0.1.0_windows_arm64.zip
+        sha256: 7e0ce85e64ef4cc1e441e7ae215129a3e6d9aca1b918a8c72123f0cf639f1da6
+        bin: kubectl-profile.exe
+        files:
+          - from: kubectl-profile.exe
+            to: .
+          - from: LICENSE
+            to: .
+        selector:
+          matchLabels:
+            os: windows
+            arch: arm64
+    - uri: https://github.com/josepdcs/kubectl-profile/releases/download/v0.1.0/kubectl-profile_v0.1.0_windows_armv7.zip
+        sha256: 8106428fd57eb8a1a3cd93da1b259b450d176bbb3fe993756eb65ebb7aaffa8b
+        bin: kubectl-profile.exe
+        files:
+          - from: kubectl-profile.exe
+            to: .
+          - from: LICENSE
+            to: .
+        selector:
+          matchLabels:
+            os: windows
+            arch: armv7

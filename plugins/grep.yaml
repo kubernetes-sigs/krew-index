@@ -4,8 +4,8 @@ metadata:
   name: grep
 spec:
   platforms:
-  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.5.1/kubectl-grep-Darwin-x86_64.tar.gz
-    sha256: 2342d0c5903e19b9576a772cb1ff17e455e61ae54284ec568eb3de2e43cf194a
+  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.6.0/kubectl-grep-Darwin-x86_64.tar.gz
+    sha256: f48ae15a75d25173f8b558ca2869d67e7d8bcb798dec5bd1c2a09cc18583f896
     bin: kubectl-grep
     files:
     - from: kubectl-grep
@@ -16,8 +16,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.5.1/kubectl-grep-Linux-x86_64.tar.gz
-    sha256: b4ee9668705a5ff43d974b32994e6cdf4b20d35b9290610be028cbdb14b41a67
+  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.6.0/kubectl-grep-Linux-x86_64.tar.gz
+    sha256: 495e623f75f7533b43949ffd7a16bdd7d80031c95397aa8790c1fbac833f512d
     bin: kubectl-grep
     files:
     - from: kubectl-grep
@@ -28,8 +28,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.5.1/kubectl-grep-Windows-x86_64.tar.gz
-    sha256: 83f3a0c92b5c1d28e15979017086b7d43a40703cb20f50b4dfeaa60f9dc237ba
+  - uri: https://github.com/guessi/kubectl-grep/releases/download/v1.6.0/kubectl-grep-Windows-x86_64.tar.gz
+    sha256: bd3acec7d65232b05525248941d5c2da1bbcd4f08eb0a78c1ad588f4c1dddb1a
     bin: kubectl-grep.exe
     files:
     - from: kubectl-grep.exe
@@ -40,7 +40,7 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-  version: v1.5.1
+  version: v1.6.0
   homepage: https://github.com/guessi/kubectl-grep
   shortDescription: Filter Kubernetes resources by matching their names
   description: |

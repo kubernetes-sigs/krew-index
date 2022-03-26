@@ -15,7 +15,27 @@ spec:
     After authentication, it writes the token to the kubeconfig and you can access the cluster.
   caveats: |
     1) You need to install the openid-connect server component by helm:
+        helm repo add devopstales https://devopstales.github.io/helm-charts
+        helm repo update
+
+        kubectl create ns kubeauth
+        kubens kubeauth
+        helm upgrade --install kubelogin devopstales/kube-openid-connect -f values.yaml
     2) You need to setup the OIDC provider at Kubernetes API server.
+        nano /etc/kubernetes/manifests/kube-apiserver.yaml
+        ...
+        command:
+        - /hyperkube
+        - apiserver
+        ...
+        - --oidc-issuer-url={{ oidcServerURL }}
+        - --oidc-client-id={{ oidcClientID }}
+        - --oidc-username-claim=email
+        - --oidc-groups-claim=groups
+        # for self sign cert or custom ca
+        #- --oidc-ca-file=/etc/kubernetes/pki/rootca.pem
+
+        systemctl restart kubelet
     3) You need to setup role binding for users or groupe.
   platforms:
   - bin: kubectl-login

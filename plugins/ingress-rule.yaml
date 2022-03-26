@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: ingress-rule
 spec:
-  version: v0.2.0
+  version: v0.3.1
   platforms:
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/pragaonj/ingress-rule-updater/releases/download/v0.2.0/ingress-rule_v0.2.0_linux_amd64.tar.gz
-      sha256: 317b4bdd9e4b5a9e0a3afb62e2557520c03947736cb981c13bcdb933a1b0cf74
+      uri: https://github.com/pragaonj/ingress-rule-updater/releases/download/v0.3.1/ingress-rule_v0.3.1_linux_amd64.tar.gz
+      sha256: e6915f47abd2442eaa573df9b066a4e0a013728bad70cf030d78145443756e8c
       files:
         - from: "./ingress-rule"
           to: "."
@@ -21,8 +21,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/pragaonj/ingress-rule-updater/releases/download/v0.2.0/ingress-rule_v0.2.0_darwin_amd64.tar.gz
-      sha256: 2d9cd144bbaa27c790f05244f891327ff86357ca456915753e14b5051b70943b
+      uri: https://github.com/pragaonj/ingress-rule-updater/releases/download/v0.3.1/ingress-rule_v0.3.1_darwin_amd64.tar.gz
+      sha256: 68b639616e54b6e97363c023e77a1e818299c470e8ed9be9da97ca60b6ac6797
       files:
         - from: "./ingress-rule"
           to: "."
@@ -33,8 +33,8 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/pragaonj/ingress-rule-updater/releases/download/v0.2.0/ingress-rule_v0.2.0_windows_amd64.zip
-      sha256: 3c1ff6ebfde3712e5c40710ff2fdc1926683cb980b19e75b4db14a5910336552
+      uri: https://github.com/pragaonj/ingress-rule-updater/releases/download/v0.3.1/ingress-rule_v0.3.1_windows_amd64.zip
+      sha256: 0413fa9962697fdd55b66e740e1cec455612c81e0d6ca169523612ad5a9f3212
       files:
         - from: "/ingress-rule.exe"
           to: "."

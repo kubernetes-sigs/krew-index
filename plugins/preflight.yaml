@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: preflight
 spec:
-  version: v0.31.2
+  version: v0.31.3
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.31.2/preflight_linux_amd64.tar.gz
-    sha256: 09eea340af1eb125ad887a576ff6d83e40e83deb1886c2f46ebc3146e9262840
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.31.3/preflight_linux_amd64.tar.gz
+    sha256: ebbd8e8a2d66323be78462939ded3a737b00a3390d68a17cfab2d1e2be0b01da
     files:
     - from: preflight
       to: .
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.31.2/preflight_darwin_amd64.tar.gz
-    sha256: 85364bbced53616a70016507db3c01fe8bf2b9e06826b609593c07b132108751
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.31.3/preflight_darwin_amd64.tar.gz
+    sha256: fb07610eda91b23eba5b1deac4c8e4459aa4c8c803f702b5520f8ea2c44448ec
     files:
     - from: preflight
       to: .
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.31.2/preflight_darwin_arm64.tar.gz
-    sha256: 386b33e7d47d013217e22216e8df5874ab92dcb003231bb8ad10dd8ac20ea5bb
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.31.3/preflight_darwin_arm64.tar.gz
+    sha256: a7d08cf2426c5de14bc0121d76485d301bcd79a9d38c0cd8e7d120e124a4d09a
     files:
     - from: preflight
       to: .
@@ -45,8 +45,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.31.2/preflight_windows_amd64.zip
-    sha256: bfb4f8b1f8884decd5ed8cd4148eb6a1d8a2d17416feeb9b5c3fe9be52da97a0
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.31.3/preflight_windows_amd64.zip
+    sha256: 954834f4b50c9ae7efa01fcdd3ecb01fa0d874218d86db48167935688774fe09
     files:
     - from: preflight.exe
       to: .

@@ -1,0 +1,63 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: dds
+spec:
+  version: {{ .TagName }}
+  homepage: https://github.com/aws-containers/kubectl-detector-for-docker-socket
+  shortDescription: Detect if workloads are mounting the docker socket
+  description: |
+    This plugin checks workloads in a Kubernetes cluster or manifest files
+    and reports if any of the mounted volumes contain the string "docker.sock".
+  caveats: |
+    * If your docker socket is mounted at a different path name it will not
+    be checked.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/aws-containers/kubectl-detector-for-docker-socket/releases/download/v0.1.0/kubectl-detector-for-docker-socket_0.1.0_darwin_amd64.tar.gz
+    sha256: ddea35ab1e6dad3003643975cd02feb299a4d45e30ee07ee70a60b8bc8f46f60
+    bin: "./kubectl-dds"
+    files:
+    - from: kubectl-example
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/aws-containers/kubectl-detector-for-docker-socket/releases/download/v0.1.0/kubectl-detector-for-docker-socket_0.1.0_darwin_arm64.tar.gz
+    sha256: 6b0d087f534a0e42b78957671ec08491215df8f4d309eedca88704b3110059ad
+    bin: "./kubectl-dds"
+    files:
+    - from: kubectl-example
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/aws-containers/kubectl-detector-for-docker-socket/releases/download/v0.1.0/kubectl-detector-for-docker-socket_0.1.0_linux_amd64.tar.gz
+    sha256: fc5b5b2fd4282a373e205852ae5eca0c4bea099271a90beb25d951235d1f5580
+    bin: "./kubectl-dds"
+    files:
+    - from: kubectl-example
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/aws-containers/kubectl-detector-for-docker-socket/releases/download/v0.1.0/kubectl-detector-for-docker-socket_0.1.0_windows_amd64.tar.gz
+    sha256: 0c55637a01cb53da20c74a7c9a5a3cdbaf6e078345c96b483cd27cf1b35ee5f2
+    bin: "./kubectl-dds.exe"
+    files:
+    - from: kubectl-dds.exe
+      to: .
+    - from: LICENSE
+      to: .

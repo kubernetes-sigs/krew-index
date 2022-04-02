@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: kurt
 spec:
-  version: v0.2.2
+  version: v0.3.0
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/soraro/kurt/releases/download/v0.2.2/kurt_linux_amd64.tar.gz
-    sha256: faab22b43746dd1f3be427c78f10145e15f94073a3b359c0ea0f31f28cd48d07
+    uri: https://github.com/soraro/kurt/releases/download/v0.3.0/kurt_linux_amd64.tar.gz
+    sha256: 95c1ff0a1f0bc3d4bb98e426ef61d2d40099409786d1c393de9bc613e6b758ed
     files:
     - from: kurt
       to: .
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/soraro/kurt/releases/download/v0.2.2/kurt_darwin_amd64.tar.gz
-    sha256: 323e93cf3adc6942104eb5fa7043729aa1cb830063b5f1e84ae11d774e52328d
+    uri: https://github.com/soraro/kurt/releases/download/v0.3.0/kurt_darwin_amd64.tar.gz
+    sha256: f8247c80f3819be0426d5d5f434fff7cff0ea4c4089a591a00f25abc73259e32
     files:
     - from: kurt
       to: .
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/soraro/kurt/releases/download/v0.2.2/kurt_darwin_arm64.tar.gz
-    sha256: 5f9312869bdb2b2b9947b5cbf71255bf241593b14a3ca1d521ba64fcd9bbf314
+    uri: https://github.com/soraro/kurt/releases/download/v0.3.0/kurt_darwin_arm64.tar.gz
+    sha256: 31952a801120da5849319882cfceb1a1189ff2da5f54d7d772c0a374994d0380
     files:
     - from: kurt
       to: .
@@ -45,8 +45,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/soraro/kurt/releases/download/v0.2.2/kurt_linux_arm64.tar.gz
-    sha256: 3a4587636189cd4fb1e1b9dae84e644e390311902495918be52bfba8e66c767b
+    uri: https://github.com/soraro/kurt/releases/download/v0.3.0/kurt_linux_arm64.tar.gz
+    sha256: f59f7cbbb837274d19ff64dcc846c0cc8bce3a6bc5767db957f19c3584ffd68d
     files:
     - from: kurt
       to: .
@@ -57,8 +57,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/soraro/kurt/releases/download/v0.2.2/kurt_windows_amd64.zip
-    sha256: edba6258f624bc6e57e408aab5676a7023ad2148dd7d240e00cc30c1bc7c4be8
+    uri: https://github.com/soraro/kurt/releases/download/v0.3.0/kurt_windows_amd64.zip
+    sha256: 120a215aedca6a376518889c16c9d4045a41c0dd759ee59652631f7e898f829b
     files:
     - from: kurt.exe
       to: .

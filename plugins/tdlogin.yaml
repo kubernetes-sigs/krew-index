@@ -1,16 +1,16 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: openid-connect
+  name: dtlogin
 spec:
   version: v1.0.0
   homepage: https://github.com/devopstales/kube-openid-connect
   shortDescription: Login to a cluster via openid-connect
   description: |
-    Launches a browser to login to the cluster via openid-connect. openid-connect's 
+    Launches a browser to login to the cluster via DevOpsTales openid-connect-server. openid-connect-server's 
     certificate MUST be trusted by the local system.
 
-    Run `kubectl login <openid-connect-ingress-url>`.
+    Run `kubectl dtlogin <openid-connect-ingress-url>`.
     It automatically opens the browser and you can log in to the provider.
     After authentication, it writes the token to the kubeconfig and you can access the cluster.
   caveats: |

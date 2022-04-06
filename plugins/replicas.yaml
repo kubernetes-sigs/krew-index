@@ -1,0 +1,57 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: replicas
+spec:
+  version: v0.0.1
+  homepage: https://github.com/xyctruth/kubectl-replicas
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/xyctruth/kubectl-replicas/releases/download/v0.0.1/kubectl-replicas_linux_amd64.tar.gz
+    sha256: 4908946c37ec250a8ad430c511712fbf128f42a88e38e4a0ba126e50250dd293
+    bin: kubectl-replicas
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/xyctruth/kubectl-replicas/releases/download/v0.0.1/kubectl-replicas_linux_arm64.tar.gz
+    sha256: 82bfaafd4d4c8903d446b6d4aed27a087d3962302179b6e62499126dc514918e
+    bin: kubectl-replicas
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/xyctruth/kubectl-replicas/releases/download/v0.0.1/kubectl-replicas_darwin_amd64.tar.gz
+    sha256: 7fe7d6b6807d8ef9fc95de513b5f6dd1c772abc1e68a3421f408a3f09c04dfef
+    bin: kubectl-replicas
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/xyctruth/kubectl-replicas/releases/download/v0.0.1/kubectl-replicas_darwin_arm64.tar.gz
+    sha256: 7480b229ae9835a8bf806a26eaf58800336179c245062eaed130786fc77d0b9d
+    bin: kubectl-replicas
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/xyctruth/kubectl-replicas/releases/download/v0.0.1/kubectl-replicas_windows_amd64.zip
+    sha256: b3286ff4cfd0a0898ebddcb641005ea19d695c92d4d09e4c32c64074bdd7c979
+    bin: kubectl-replicas.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/xyctruth/kubectl-replicas/releases/download/v0.0.1/kubectl-replicas_windows_arm64.zip
+    sha256: 4f8cc057bc6495db89e2dadb7d73465c878f66fb2d31b480a9f9d8e4d4004aaa
+    bin: kubectl-replicas.exe
+  shortDescription: Stash replicas of deployment
+  description: |
+    Usage:
+      kubectl replicas stash -n <namespace-name> 
+      kubectl replicas stash -n <namespace-name> 
+      This plugin stash replicas of deployment, save some resources.
+      Read more documentation at: https://github.com/xyctruth/kubectl-replicas

@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: rename-pvc
 spec:
-  version: "v0.2.0"
+  version: "v0.2.1"
   homepage: https://github.com/stackitcloud/rename-pvc
   shortDescription: "Rename a PersistentVolumeClaim (PVC)"
   description: |
@@ -13,36 +13,36 @@ spec:
   caveats: "Be sure to create a backup of your data in the PVC before using rename-pvc!"
   platforms:
   - bin: rename-pvc
-    uri: https://github.com/stackitcloud/rename-pvc/releases/download/v0.2.0/rename-pvc-linux-amd64.tar.gz
-    sha256: fabecf2d37d87edbdd035b70ab868c91893c0ed430d5e5e9aefb666da7c64ad2
+    uri: https://github.com/stackitcloud/rename-pvc/releases/download/v0.2.1/rename-pvc-linux-amd64.tar.gz
+    sha256: d695143ae5fdaec78faaa01a71df37d8516a628ad0cd8896c27b9183be27bd65
     selector:
       matchLabels:
         os: linux
         arch: amd64
   - bin: rename-pvc
-    uri: https://github.com/stackitcloud/rename-pvc/releases/download/v0.2.0/rename-pvc-linux-arm64.tar.gz
-    sha256: 381c001be68ac711fb663962edb426801d95b1d38380ac1a0c527cd186ff8dd0
+    uri: https://github.com/stackitcloud/rename-pvc/releases/download/v0.2.1/rename-pvc-linux-arm64.tar.gz
+    sha256: 0ee7308002436cc79fffb4b360cc96eac7267a0bfd679f336eef33b5de6905e8
     selector:
       matchLabels:
         os: linux
         arch: arm64
   - bin: rename-pvc
-    uri: https://github.com/stackitcloud/rename-pvc/releases/download/v0.2.0/rename-pvc-darwin-amd64.tar.gz
-    sha256: cdda93348546e2bfad39d2d71b2d0bed37c706a9c455ecd250b82e2009924ef9
+    uri: https://github.com/stackitcloud/rename-pvc/releases/download/v0.2.1/rename-pvc-darwin-amd64.tar.gz
+    sha256: 56344d387c817c5ccbe84835d2f91b0e6d2ff498c938dc33802c13ed4e92f74b
     selector:
       matchLabels:
         os: darwin
         arch: amd64
   - bin: rename-pvc
-    uri: https://github.com/stackitcloud/rename-pvc/releases/download/v0.2.0/rename-pvc-darwin-arm64.tar.gz
-    sha256: 26ca2fcbd8d1590f9f6c3a305d31106c4c20424d8088c334840d53fab71e387f
+    uri: https://github.com/stackitcloud/rename-pvc/releases/download/v0.2.1/rename-pvc-darwin-arm64.tar.gz
+    sha256: 0b586bad0ad97cdb03465acdb365f60e4b601d2b590cfd21a030857cec01bb40
     selector:
       matchLabels:
         os: darwin
         arch: arm64
   - bin: rename-pvc.exe
-    uri: https://github.com/stackitcloud/rename-pvc/releases/download/v0.2.0/rename-pvc-windows-amd64.zip
-    sha256: 679dca8c34e2ba5b082cf6605cf514d60aa58b41737bc19e9a10baeb870f99ea
+    uri: https://github.com/stackitcloud/rename-pvc/releases/download/v0.2.1/rename-pvc-windows-amd64.zip
+    sha256: caefd75846475b3bf8fc9118f231e8a4242749734f53f427a3308e6c469c30b9
     selector:
       matchLabels:
         os: windows

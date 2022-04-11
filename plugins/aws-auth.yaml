@@ -1,0 +1,43 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: aws-auth
+spec:
+  version: {{ .TagName }}
+  homepage: https://github.com/keiko/aws-auth
+  shortDescription: "Makes the management of the aws-auth config map for EKS Kubernetes clusters easier"
+  description: |
+    Useful for automation purposes, any workflow that needs 
+    to grant IAM access to an EKS cluster can use this plugin 
+    to modify the config map.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    {{addURIAndSha "https://github.com/keikoproj/aws-auth/releases/download/{{ .TagName }}/aws-auth_{{ .TagName }}_darwin_amd64.tar.gz" .TagName }}
+    bin: aws-auth
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    {{addURIAndSha "https://github.com/keikoproj/aws-auth/releases/download/{{ .TagName }}/aws-auth_{{ .TagName }}_darwin_arm64.tar.gz" .TagName }}
+    bin: aws-auth
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    {{addURIAndSha "https://github.com/keikoproj/aws-auth/releases/download/{{ .TagName }}/aws-auth_{{ .TagName }}_linux_amd64.tar.gz" .TagName }}
+    bin: aws-auth
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    {{addURIAndSha "https://github.com/keikoproj/aws-auth/releases/download/{{ .TagName }}/aws-auth_{{ .TagName }}_linux_arm64.tar.gz" .TagName }}
+    bin: aws-auth
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    {{ addURIAndSha "https://github.com/keikoproj/aws-auth/releases/download/{{ .TagName }}/aws-auth_{{ .TagName }}_windows_amd64.tar.gz" .TagName }}
+    bin: aws-auth.exe

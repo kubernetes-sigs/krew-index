@@ -1,0 +1,65 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: diag
+spec:
+  version: v0.0.5
+  homepage: https://github.com/solo-io/kdiag
+  platforms:
+  - uri: https://github.com/solo-io/kdiag/releases/download/v0.0.5/kubectl-diag_v0.0.5_darwin_amd64.tar.gz
+    sha256: a19e2c6e9449fde670d13ab8bda7c0444f4539b83d9faa6020f14cf29dbdafb2
+    bin: kubectl-diag
+    files:
+    - from: kubectl-diag
+      to: kubectl-diag
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/solo-io/kdiag/releases/download/v0.0.5/kubectl-diag_v0.0.5_darwin_arm64.tar.gz
+    sha256: b687aaea96a67021b89cfb16d1c07226a7bbb180bc6261fea7a2da80b6a77958
+    bin: kubectl-diag
+    files:
+    - from: kubectl-diag-darwin-arm64
+      to: kubectl-diag
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - uri: https://github.com/solo-io/kdiag/releases/download/v0.0.5/kubectl-diag_v0.0.5_linux_amd64.tar.gz
+    sha256: d3adb1571a0e1b5366be6f1584fce5d818fa52f4859d0980f51ab25cf234b781
+    bin: kubectl-diag
+    files:
+    - from: kubectl-diag
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/solo-io/kdiag/releases/download/v0.0.5/kubectl-diag_v0.0.5_windows_amd64.tar.gz
+    sha256: 1f53818eeb711673317e8f79ed4f5c71151c677077ce6a53375bc1849fb4cc45
+    bin: kubectl-diag.exe
+    files:
+    - from: kubectl-diag.exe
+      to: kubectl-diag.exe
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  shortDescription: Diagnostics tools for kubernetes developers.
+  caveats: |
+    This uses high privilege ephemeral containers, and not suited for production.
+  description: |
+    When working with systems that span multiple micro-services, it can be hard to get a local setup
+    working in-order to debug it. This plugin has a set of tools to assist you with that. Redirecting traffic
+    from a pod to your laptop, so you can only run the components you care about locally. Viewing logs
+    from multiple pods at the same time, so you can see how the system responds on both ends.
+

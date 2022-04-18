@@ -1,0 +1,47 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: safe
+spec:
+  version: 0.0.1-alpha
+  homepage: https://github.com/rumstead/kubectl-safe
+  shortDescription: Prompts before running edit commands
+  description: |
+    This plugin allows users to confirm when they get prompted
+    on certain kubectl commands.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/rumstead/kubectl-safe/releases/download/0.0.1-alpha/kubectl-safe_0.0.1-alpha_darwin_amd64.tar.gz
+    sha256: dd133478cafd3228583b69e806e547013b897a57d8a18f25dc32e405400a8fbb
+      bin: kubectl-safe
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/rumstead/kubectl-safe/releases/download/0.0.1-alpha/kubectl-safe_0.0.1-alpha_darwin_arm64.tar.gz
+    sha256: 765f2cd8dd5fadb384ebcd6315029c1d721b817e8ce6e87d77902d3c24209335
+      bin: kubectl-safe
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/rumstead/kubectl-safe/releases/download/0.0.1-alpha/kubectl-safe_0.0.1-alpha_linux_amd64.tar.gz
+    sha256: af321a76bcc97d9d298170e7287cce7bdb54e888a6f46aba70dca2bb1e4f2393
+      bin: kubectl-safe
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/rumstead/kubectl-safe/releases/download/0.0.1-alpha/kubectl-safe_0.0.1-alpha_linux_arm64.tar.gz
+    sha256: 0db79e44d908ab9d27430f66a96ebe21a5f63d6dc0e63fe40616952e8f0ee855
+      bin: kubectl-safe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/rumstead/kubectl-safe/releases/download/0.0.1-alpha/kubectl-safe_0.0.1-alpha_windows_amd64.tar.gz
+    sha256: e3a1c29f07c3a75d7e6c1eedebfb9089c04ffe33661cd8bbe1b8242aeb60219f
+      bin: kubectl-safe.exe

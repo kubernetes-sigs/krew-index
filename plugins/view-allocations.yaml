@@ -3,25 +3,33 @@ kind: Plugin
 metadata:
   name: view-allocations
 spec:
-  version: "v0.12.1"
+  version: "v0.14.8"
   platforms:
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.12.1/kubectl-view-allocations_0.12.1-x86_64-apple-darwin.tar.gz
-      sha256: "d0f9532a2b7664f1ac119204bbff38e75102687a7752f0779fd1e72f82ed7f80"
+      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.14.8/kubectl-view-allocations_0.14.8-x86_64-apple-darwin.tar.gz
+      sha256: "6eb3c7b84928a3b00b793ed58efc7932d865c384cd9fe4d6bdcc8e35bb4d7f86"
+      bin: "./kubectl-view-allocations"
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.14.8/kubectl-view-allocations_0.14.8-aarch64-apple-darwin.tar.gz
+      sha256: "e07e2c3ae542acd2350caca59f1139e8431ed2f1e664d2140314dc98b5d9de39"
       bin: "./kubectl-view-allocations"
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.12.1/kubectl-view-allocations_0.12.1-x86_64-unknown-linux-gnu.tar.gz
-      sha256: "95063687d626ff0ee68189ca2d5de8cba0d81bb1ad26affb7efcbb0fd88e75f3"
+      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.14.8/kubectl-view-allocations_0.14.8-x86_64-unknown-linux-gnu.tar.gz
+      sha256: "1c3878bb1f26e30b0d72f05374d9053bfbe7516b2d94c863f1bd0ae0f03da8de"
       bin: "./kubectl-view-allocations"
   shortDescription: List allocations per resources, nodes, pods.
   homepage: https://github.com/davidB/kubectl-view-allocations
   description: |
     This plugin lists resources (cpu, memory, gpu,...) allocations (requested,
-    limit, allocatable) as defined into the manifest of nodes and running pods.
+    limit, allocatable) as defined in the manifest of nodes and running pods,
+    and utilization from metrics-server.
     try `kubectl view-allocations -h`, `kubectl view-allocations`

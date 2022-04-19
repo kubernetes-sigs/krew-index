@@ -1,0 +1,64 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: karmada
+spec:
+  description: |
+    Karmada (Kubernetes Armada) is a Kubernetes management system that enables
+    you to run your cloud-native applications across multiple Kubernetes
+    clusters and clouds, with no changes to your applications. By speaking
+    Kubernetes-native APIs and providing advanced scheduling capabilities,
+    Karmada enables truly open, multi-cloud Kubernetes.
+    This cli tools controls a federation of Karmada clusters.
+  homepage: https://github.com/karmada-io/karmada
+  platforms:
+  - bin: kubectl-karmada
+    files:
+    - from: kubectl-karmada
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        arch: arm64
+        os: linux
+    uri: https://github.com/karmada-io/karmada/releases/download/v1.1.1/kubectl-karmada-linux-arm64.tgz
+    sha256: 670152b30a4933a6aa72d9763300828c2f584ce290d3007d250b24f61a2a0593
+  - bin: kubectl-karmada
+    files:
+    - from: kubectl-karmada
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        arch: arm64
+        os: darwin
+    uri: https://github.com/karmada-io/karmada/releases/download/v1.1.1/kubectl-karmada-darwin-arm64.tgz
+    sha256: b6857f0eae436fc257ba7a2a94225309290713e828c9866db0b8ec1849727513
+  - bin: kubectl-karmada
+    files:
+    - from: kubectl-karmada
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        arch: amd64
+        os: linux
+    uri: https://github.com/karmada-io/karmada/releases/download/v1.1.1/kubectl-karmada-linux-amd64.tgz
+    sha256: 1fda0116a511a3a143db9e002bf08b0c2f82944d7a17306d1a809d7de7ef2a78
+  - bin: kubectl-karmada
+    files:
+    - from: kubectl-karmada
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        arch: amd64
+        os: darwin
+    uri: https://github.com/karmada-io/karmada/releases/download/v1.1.1/kubectl-karmada-darwin-amd64.tgz
+    sha256: 46b2d9378c4629cee28cfc8a2541a4a3841a2445557d7342b28c6eea891dfc24
+  shortDescription: Manage clusters with Karmada federation.
+  version: v1.1.1

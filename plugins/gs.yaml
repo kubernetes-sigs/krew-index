@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: gs
 spec:
-  version: v1.25.0
+  version: v2.7.1
   homepage: https://github.com/giantswarm/kubectl-gs
   shortDescription: Handle custom resources with Giant Swarm
   description: |
@@ -14,8 +14,18 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v1.25.0/kubectl-gs-v1.25.0-darwin-amd64.tar.gz
-    sha256: 4cd85e72d52a79bafad2b0cba9768fa0749046be76f29f0e20cdc9acb415649e
+    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v2.7.1/kubectl-gs-v2.7.1-darwin-amd64.tar.gz
+    sha256: a71744e84a9dc67e642d1ed2b8a27dac58fb38d66d9c23a16e2530ba55ef000f
+    files:
+    - from: ./kubectl-gs-*/*
+      to: .
+    bin: ./kubectl-gs
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v2.7.1/kubectl-gs-v2.7.1-darwin-arm64.tar.gz
+    sha256: b70dc92c1bb4b3c580a75a528e0015269d700c94142e6b8e4491bdfb71aeeb2d
     files:
     - from: ./kubectl-gs-*/*
       to: .
@@ -24,8 +34,18 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v1.25.0/kubectl-gs-v1.25.0-linux-amd64.tar.gz
-    sha256: f85e5dcea1f828bbc37258ab8d532243669aac09a1a4d078001b7726bddf12d2
+    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v2.7.1/kubectl-gs-v2.7.1-linux-amd64.tar.gz
+    sha256: da85bbb4b66b68c565fc30fbe13b0c6dce875b19a312fd64be707cd5e0b4dfc9
+    files:
+    - from: ./kubectl-gs-*/*
+      to: .
+    bin: ./kubectl-gs
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v2.7.1/kubectl-gs-v2.7.1-linux-arm64.tar.gz
+    sha256: 87dde3d426639c1c230d739a7e0d8955af00429e7cf3e311b3425e054717818c
     files:
     - from: ./kubectl-gs-*/*
       to: .

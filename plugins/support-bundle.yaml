@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: support-bundle
 spec:
-  version: v0.10.10
+  version: v0.31.4
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.10.10/support-bundle_linux_amd64.tar.gz
-    sha256: 9015647be61dc6b472e21f8084aaf0b023be44cee9b936f84ed029b6d8f9033f
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.31.4/support-bundle_linux_amd64.tar.gz
+    sha256: 4f7902962c75fc8761c6dadcd09cb48506dce8d6db8c5333398690b34536370b
     files:
     - from: support-bundle
       to: .
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.10.10/support-bundle_darwin_amd64.tar.gz
-    sha256: 56d6618db354bff8055f78a1531b4bb3d391e0196f4246f286ed0cc0f8de53ec
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.31.4/support-bundle_darwin_amd64.tar.gz
+    sha256: 91b7570d102431aa06d6a4394ebcfd751dffd5ebdfa28c4e89991998f36327f0
     files:
     - from: support-bundle
       to: .
@@ -31,10 +31,22 @@ spec:
     bin: support-bundle
   - selector:
       matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.31.4/support-bundle_darwin_arm64.tar.gz
+    sha256: f01e9032c1d560d625e7d3f08bccd6519fb96fb5bdb8bdee097c524421182303
+    files:
+    - from: support-bundle
+      to: .
+    - from: LICENSE
+      to: .
+    bin: support-bundle    
+  - selector:
+      matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.10.10/support-bundle_windows_amd64.zip
-    sha256: 2c30a14bbe90274749c162e7f8fe3e8261b9e4d0ac185ed93c9780895ce019bf
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.31.4/support-bundle_windows_amd64.zip
+    sha256: af8fb28ca4a3e6c16cf811a20368948770d9975ea953575fce7dd9b796eba9b1
     files:
     - from: support-bundle.exe
       to: .

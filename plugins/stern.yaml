@@ -1,0 +1,63 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: stern
+spec:
+  version: v1.21.0
+  platforms:
+  - bin: stern.exe
+    uri: https://github.com/stern/stern/releases/download/v1.21.0/stern_1.21.0_windows_arm64.tar.gz
+    sha256: 83ea1d297f4f470f2e947c187d97a005349e03b3a6eb703a4fc237a1f6315fb8
+    selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+  - bin: stern.exe
+    uri: https://github.com/stern/stern/releases/download/v1.21.0/stern_1.21.0_windows_amd64.tar.gz
+    sha256: c3f148576e604b250f4df4769079f7b69f62b2dfcdff10dc5fbd51815c297331
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  - bin: stern
+    uri: https://github.com/stern/stern/releases/download/v1.21.0/stern_1.21.0_linux_arm64.tar.gz
+    sha256: f76cc25846b01354cf2e8cde211914ca910b77c919df1bf287c2448c65e74c1b
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - bin: stern
+    uri: https://github.com/stern/stern/releases/download/v1.21.0/stern_1.21.0_linux_amd64.tar.gz
+    sha256: 18bb5afa0426d1ca2e975bee2a04037378d99ffdda6e3383a575ad28d5c2d04d
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: stern
+    uri: https://github.com/stern/stern/releases/download/v1.21.0/stern_1.21.0_darwin_arm64.tar.gz
+    sha256: 6fecf90318039282bc5432726b49b4eb88653fb7dc33c94f00b3f04e4f3cf82a
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: stern
+    uri: https://github.com/stern/stern/releases/download/v1.21.0/stern_1.21.0_darwin_amd64.tar.gz
+    sha256: 41c1e1083d00cebbfe0d267cac0edf89bf1326319939b6b33c683d03611bc9f0
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  shortDescription: Multi pod and container log tailing
+  homepage: https://github.com/stern/stern
+  description: |
+    Stern allows you to `tail` multiple pods on Kubernetes and multiple containers
+    within the pod. Each result is color coded for quicker debugging.
+
+    The query is a regular expression so the pod name can easily be filtered and
+    you don't need to specify the exact id (for instance omitting the deployment
+    id). If a pod is deleted it gets removed from tail and if a new pod is added it
+    automatically gets tailed.
+
+    When a pod contains multiple containers Stern can tail all of them too without
+    having to do this manually for each one. Simply specify the `container` flag to
+    limit what containers to show. By default all containers are listened to.

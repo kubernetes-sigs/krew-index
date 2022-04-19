@@ -1,0 +1,47 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: karbon
+spec:
+  version: v0.7.0
+  homepage: https://github.com/nutanix/kubectl-karbon
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/nutanix/kubectl-karbon/releases/download/v0.7.0/kubectl-karbon_v0.7.0_darwin_amd64.tar.gz
+    sha256: 16d8f138cd0995af7ff34a59ee2fd7287fdb6da0f2c9df70d79b02e3f59cc5b8
+    bin: kubectl-karbon
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/nutanix/kubectl-karbon/releases/download/v0.7.0/kubectl-karbon_v0.7.0_darwin_arm64.tar.gz
+    sha256: 15420654c991220b4dc4dbb2004d44742a135496b8891dfc633b0cf3ce112422
+    bin: kubectl-karbon
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/nutanix/kubectl-karbon/releases/download/v0.7.0/kubectl-karbon_v0.7.0_linux_amd64.tar.gz
+    sha256: 935ab4d706e656693cf92c238bcf1f619e84548e9da2fa10619f0e68df38afb0
+    bin: kubectl-karbon
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/nutanix/kubectl-karbon/releases/download/v0.7.0/kubectl-karbon_v0.7.0_linux_arm64.tar.gz
+    sha256: 524c7b80f8f1c149edbef81f05497f84aa31bdb26f49b242c104c02031608e1f
+    bin: kubectl-karbon
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/nutanix/kubectl-karbon/releases/download/v0.7.0/kubectl-karbon_v0.7.0_windows_amd64.tar.gz
+    sha256: c8e67b58a2bd2148383d5a0ace8189b781950ebfbf840e1ffda97fb3bbd6e2f5
+    bin: kubectl-karbon.exe
+  shortDescription: Connect to Nutanix Karbon cluster
+  description: |
+    This plugin allow to quickly connect to an existing Nutanix karbon cluster without the need to connect to Prism UI.
+    Read more documentation at: https://github.com/nutanix/kubectl-karbon

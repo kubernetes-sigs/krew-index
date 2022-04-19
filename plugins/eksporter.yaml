@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: eksporter
 spec:
-  version: v1.3.1
+  version: v1.7.1
   platforms:
   - selector:
       matchExpressions:
@@ -13,8 +13,8 @@ spec:
         - darwin
         - linux
         - windows
-    uri: https://github.com/Kyrremann/kubectl-eksporter/releases/download/v1.3.1/eksporter.tar.gz
-    sha256: 2300840b6590af63f3c7cef9e4d5ac9fa0809f9b4110ef38d9df7bb2176fdcc8
+    uri: https://github.com/Kyrremann/kubectl-eksporter/releases/download/v1.7.1/eksporter.tar.gz
+    sha256: 1f08d931692256dd779a12f7d162c12f42f58e443438a9134c8e117a73b90359
     files:
     - from: "/eksporter.rb"
       to: "."
@@ -39,3 +39,6 @@ spec:
       kubectl eksporter <resource> <resource_name>
     Or with piping:
       kubectl get pods -o yaml <resource_name> | kubectl eksporter
+
+    You can keep some of the pre-defined fields by listing them with --keep.
+      kubectl eksporter ingress my-web-site --keep annotations

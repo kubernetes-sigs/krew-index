@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: pod-lens
 spec:
-  version: "v0.1.3"
+  version: "v0.2.2"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.3/pod-lens_linux_amd64.tar.gz
-    sha256: 82523797e11715ab9cb43101b351b9ea75ea602e29fdf0d95b111cc2f88f518d
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.2.2/pod-lens_linux_amd64.tar.gz
+    sha256: 59ca73e40b59bc880de8b333f894118a2fb7e1d74bcc2970cede99d063465847
     files:
     - from: "./pod-lens"
       to: "."
@@ -21,8 +21,20 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.3/pod-lens_darwin_amd64.tar.gz
-    sha256: b12dfde9186025455ffbf22649870d61e71f5a29eca03752b994e6a580df2b94
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.2.2/pod-lens_darwin_amd64.tar.gz
+    sha256: aab291795d6729dd90103a8230344bb9fe12359bd4ad1cae297cb58fa9a54a6f
+    files:
+    - from: "./pod-lens"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "pod-lens"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.2.2/pod-lens_darwin_arm64.tar.gz
+    sha256: 3993d37a9e93f8840708d5c403dc767f2a4e239c1d31caa92b56a9f05241e6c5
     files:
     - from: "./pod-lens"
       to: "."
@@ -33,16 +45,16 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.1.3/pod-lens_windows_amd64.zip
-    sha256: 0b2856913fc86aed6bc77bcbef5e67bb93d421355c25f6c26102cd975989430f
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.2.2/pod-lens_windows_amd64.zip
+    sha256: 3a15e2821507354444f4e99a729dee52c4fc5f748d3b17ec12d6fc0e4aaa85f5
     files:
     - from: "/pod-lens.exe"
       to: "."
     - from: LICENSE
       to: "."
     bin: "pod-lens.exe"
-  shortDescription: Sniffing pod-related resources
-  homepage: https://github.com/sunny0826/kubectl-pod-lens
+  shortDescription: Show pod-related resources
+  homepage: https://pod-lens.guoxudong.io
   description: |
     Find related workloads, namespace, node, service, configmap, secret,
-    ingress and HPA by pod name and display them in a tree and table.
+    ingress, PVC and HPA by pod name and display them in a tree and table.

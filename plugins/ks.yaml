@@ -1,0 +1,32 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ks
+spec:
+  version: v0.0.43
+  homepage: https://github.com/kubesphere-sigs/ks
+  shortDescription: Simple management of KubeSphere components
+  description: |
+    This plugin simplifies management of KubeSphere components. KubeSphere helps
+    to run continuous delivery pipelines on Kubernetes. You can enable/disable,
+    inspect logs, or upgrade KubeSphere components.
+  caveats: |
+    You need to have KubeSphere installed in your cluster to use this plugin.
+    See https://github.com/kubesphere/kubesphere#installation
+    for installation instructions
+
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/kubesphere-sigs/ks/releases/download/v0.0.43/kubectl-ks-darwin-amd64.tar.gz
+      sha256: 6540ebf9cfbd84cc001b9b17e77859969c8e11f310067d7375868dbbb9459ec6
+      bin: kubectl-ks
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/kubesphere-sigs/ks/releases/download/v0.0.43/kubectl-ks-linux-amd64.tar.gz
+      sha256: 37b81740ce3d79d5158e964907a5d7c964e0de017836e3993e9c8a14f0e4109f
+      bin: kubectl-ks

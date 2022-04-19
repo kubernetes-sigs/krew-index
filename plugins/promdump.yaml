@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: promdump
+spec:
+  version: v0.2.3
+  homepage: https://github.com/ihcsim/promdump
+  shortDescription: Dumps the head and persistent blocks of Prometheus.
+  description: |
+    promdump dumps the head and persistent blocks of Prometheus. It supports
+    filtering the persistent blocks by time range.
+
+    promdump is a tool that can be used to dump Prometheus data blocks. It is
+    different from the 'promtool tsdb dump' command in such a way that its output
+    can be re-used in another Prometheus instance. And unlike the Promethues TSDB
+    'snapshot' API, promdump doesn't require Prometheus to be started with the
+    '--web.enable-admin-api' option. Instead of dumping the entire TSDB, promdump
+    offers the flexibility to filter persistent blocks by time range.
+
+    To get started, follow the steps at https://github.com/ihcsim/promdump#getting-started
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/ihcsim/promdump/releases/download/v0.2.3/kubectl-promdump-darwin-amd64-v0.2.3.tar.gz
+    sha256: f05ad0a692b2853b6d2073fa3a2d9444066a613abb68bf1ee14646c641963e69
+    bin: kubectl-promdump
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/ihcsim/promdump/releases/download/v0.2.3/kubectl-promdump-darwin-arm64-v0.2.3.tar.gz
+    sha256: 67ce7dc246516b76a8b4a81e24cf64a699eea5adbc6919d3e5f04805ac4550b2
+    bin: kubectl-promdump
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/ihcsim/promdump/releases/download/v0.2.3/kubectl-promdump-linux-amd64-v0.2.3.tar.gz
+    sha256: 3495df5a7f329792ec1c1ee31dd89b2e5f2607db601a17b8964c0a8a1b976d19
+    bin: kubectl-promdump
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/ihcsim/promdump/releases/download/v0.2.3/kubectl-promdump-windows-amd64-v0.2.3.tar.gz
+    sha256: e7f5462d6f408e0945215393e6c383e4e880bb12cea33a28abd9c77cbfe04e78
+    bin: kubectl-promdump.exe

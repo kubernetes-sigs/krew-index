@@ -1,0 +1,57 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pvmigrate
+spec:
+  version: v0.4.4
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/replicatedhq/pvmigrate/releases/download/v0.4.4/pvmigrate_linux_amd64.tar.gz
+    sha256: ef3013595f30591ffbd1154f3d656e42db5e2efb2ed1acb7757f7f8bc7b91950
+    files:
+    - from: pvmigrate
+      to: .
+    - from: LICENSE
+      to: .
+    bin: pvmigrate
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/replicatedhq/pvmigrate/releases/download/v0.4.4/pvmigrate_darwin_amd64.tar.gz
+    sha256: bbeafc9e24adf3812bf4862a08c437452262848d8071c351216759ca0ead8e1c
+    files:
+    - from: pvmigrate
+      to: .
+    - from: LICENSE
+      to: .
+    bin: pvmigrate
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/replicatedhq/pvmigrate/releases/download/v0.4.4/pvmigrate_windows_amd64.zip
+    sha256: 06ad5044ef9e6faba20686b378802ed301eaa8bfa97e166535441c60444d9926
+    files:
+    - from: pvmigrate.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: pvmigrate.exe
+  shortDescription: Migrates PVs between StorageClasses
+  homepage: https://github.com/replicatedhq/pvmigrate
+  description: |
+    This plugin migrates PVs from one StorageClass to another, changing
+    PVCs and restarting pods as required.
+
+    Usage:
+      $ kubectl pvmigrate --source-sc myoriginalsc --dest-sc mynewsc
+
+      where both `myoriginalsc` and `mynewsc` are StorageClasses.
+
+    For additional options:
+      $ kubectl pvmigrate --help
+

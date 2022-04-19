@@ -1,0 +1,42 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: relay
+spec:
+  version: v0.0.4
+  homepage: https://github.com/knight42/krelay
+  shortDescription: Drop-in "port-forward" replacement with UDP and hostname resolution.
+  description: |
+    This kubectl plugin is a drop-in replacement for `kubectl port-forward` with some enhanced features:
+    * Supports UDP port forwarding
+    * Forwarding data to the given IP or hostname that is accessible within the kubernetes cluster
+    * Forwarding session will not be interfered after performing rolling updates
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/knight42/krelay/releases/download/v0.0.4/kubectl-relay_v0.0.4_darwin-amd64.tar.gz
+    sha256: 2ed6a63cbc2e5d8996fda0afb7bf5894724759489a8d644a13d93ebf49b832ec
+    bin: kubectl-relay
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/knight42/krelay/releases/download/v0.0.4/kubectl-relay_v0.0.4_darwin-arm64.tar.gz
+    sha256: f79b2783ca25e00063f4bc42ff911d71eb0d387c3724a4322d2aa0200a626b82
+    bin: kubectl-relay
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/knight42/krelay/releases/download/v0.0.4/kubectl-relay_v0.0.4_linux-amd64.tar.gz
+    sha256: d0879db3eb5f00bc42811d026438bde3860e3c9c8db9168485df8667db756e65
+    bin: kubectl-relay
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/knight42/krelay/releases/download/v0.0.4/kubectl-relay_v0.0.4_linux-arm64.tar.gz
+    sha256: b2f15a9217c445e69d4a560d7c056a3ba562925cd0ac2509827f5eaedf87b95f
+    bin: kubectl-relay

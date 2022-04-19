@@ -3,12 +3,11 @@ kind: Plugin
 metadata:
   name: get-all
 spec:
-  version: v1.3.7
+  version: v1.3.8
   platforms:
-  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.7/get-all-amd64-linux.tar.gz
-    sha256: 2c9436798bc1dd062addd34884d9921ff72c2951b8b7ddedbe05bc5d5f4e8311
+  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.8/get-all-amd64-linux.tar.gz
+    sha256: f2595f998f02b64b4b360905a64bf72060a89060713d9120febf5451073e4071
     bin: get-all-amd64-linux
-
     files:
     - from: get-all-amd64-linux
       to: .
@@ -18,8 +17,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.7/get-all-amd64-darwin.tar.gz
-    sha256: 27df91fccdeb2fc44f14d34a71fd9f620f8ba2c629ebe0b82eb6e9b4e343ce4e
+  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.8/get-all-amd64-darwin.tar.gz
+    sha256: 3a39db7c04c730bb1d2667cfbfd667b08fb2391c071be5a5d2f15eb3ea7391e1
     bin: get-all-amd64-darwin
     files:
     - from: get-all-amd64-darwin
@@ -30,8 +29,20 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.7/get-all-amd64-windows.zip
-    sha256: cea0aea449f05a7aa38fd319b02f51671c35fbc97f81b0bcd6807bf26d266713
+  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.8/get-all-arm64-darwin.tar.gz
+    sha256: 1354ff2b1561ed752c9d25e7bf74200447ff3551f4b3eae1903d05d2ff6e727e
+    bin: get-all-arm64-darwin
+    files:
+    - from: get-all-arm64-darwin
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.8/get-all-amd64-windows.zip
+    sha256: bc783037888fd9176f638dc65de6131ba076ad82f662ef400b897a37447c54c7
     bin: get-all-amd64-windows.exe
     files:
     - from: get-all-amd64-windows.exe

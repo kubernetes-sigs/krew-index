@@ -1,0 +1,70 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cost
+spec:
+  version: v0.2.4
+  shortDescription: View cluster cost information
+  description: |
+    Uses Kubecost's API to gather and format cluster cost information broken
+    down by various aggregations like namespace, deployment, and label.
+
+    Kubecost is a cluster-side daemon that tracks the real cost of Kubernetes
+    resources by combining resource utilization monitoring with your provider's
+    cost data. Kubecost support GCP/GKE, AWS/EKS, Azure/AKS, and custom
+    (including on-prem) "providers" via user-specified pricing sheets.
+
+    Website: https://www.kubecost.com/
+  caveats: |
+    Requires Kubecost (a cluster-side daemon) to be installed in your cluster.
+    See https://www.kubecost.com/install for installation instructions.
+  homepage: https://github.com/kubecost/kubectl-cost
+  platforms:
+  - bin: kubectl-cost
+    uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.2.4/kubectl-cost-darwin-amd64.tar.gz
+    sha256: 1fc26ace75f113074a868f87c27ec3a4b5b460a820710a36163595d6323278b5
+    files:
+    - from: kubectl-cost
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kubectl-cost
+    uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.2.4/kubectl-cost-darwin-arm64.tar.gz
+    sha256: 0c5743d97aef31690269af731a5a2aaaefe189ffae02c1c3dc69a41781ef3fc3
+    files:
+    - from: kubectl-cost
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: kubectl-cost
+    uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.2.4/kubectl-cost-linux-amd64.tar.gz
+    sha256: b21c5f9dfb6ef72951033f7b4f8f2b5cb8818a8ebfcda9b924337ff30958a032
+    files:
+    - from: kubectl-cost
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-cost.exe
+    uri: https://github.com/kubecost/kubectl-cost/releases/download/v0.2.4/kubectl-cost-windows-amd64.tar.gz
+    sha256: 9c13a38bae6c00e20ae13c7e1642b9e203aa95fee6597011b6c4305a514d16c8
+    files:
+    - from: kubectl-cost
+      to: kubectl-cost.exe
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

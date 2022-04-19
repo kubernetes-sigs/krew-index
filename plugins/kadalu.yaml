@@ -1,0 +1,30 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kadalu
+spec:
+  version: "v0.8.14"
+  homepage: https://github.com/kadalu/kadalu
+  shortDescription: Manage Kadalu Operator, CSI and Storage pods
+  description: |
+    Kadalu project offers a lightweight Persistent storage solution
+    for applications running in Kubernetes.
+
+    kubectl-kadalu helps to install Kadalu Operator and provides
+    sub-commands to manage/monitor Kadalu CSI and Storage pods.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/kadalu/kadalu/releases/download/0.8.14/kubectl-kadalu.tar.gz
+    sha256: 2fc081c3770dd7edb3368e7145d7acf826539f5204ebb020b185e6ced8e73c77
+    bin: kubectl-kadalu
+    files:
+    - from: kubectl-kadalu
+      to: .
+    - from: LICENSE
+      to: .

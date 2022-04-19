@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: pod-inspect
 spec:
-  version: v0.1.8
+  version: v0.1.9
   homepage: https://github.com/jpriebe/kubectl-pod-inspect
   shortDescription: Get all of a pod's details at a glance
   description: |
@@ -14,21 +14,27 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/jpriebe/kubectl-pod-inspect/releases/download/v0.1.8/kubectl-pod-inspect_0.1.8_Darwin_x86_64.tar.gz
-    sha256: e9c0b34bcfc3f11036ba38913adfd928551299e324bacfb7176b4b397a059ed6
+    uri: https://github.com/jpriebe/kubectl-pod-inspect/releases/download/v0.1.9/kubectl-pod-inspect_0.1.9_Darwin_x86_64.tar.gz
+    sha256: a5ff8e021fb9113892c4410fe8a577f70a08f7dbb29920a4c2dd17ced865249d
+    bin: kubectl-pod_inspect
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/jpriebe/kubectl-pod-inspect/releases/download/v0.1.9/kubectl-pod-inspect_0.1.9_Darwin_arm64.tar.gz
+    sha256: 461ddff930197b9a57ab34f97dfdd03849f314fa762088c2029ab15456e70db1
     bin: kubectl-pod_inspect
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/jpriebe/kubectl-pod-inspect/releases/download/v0.1.8/kubectl-pod-inspect_0.1.8_Linux_x86_64.tar.gz
-    sha256: 84f091b8a4b6c60cd6124980deb4a434c394ec76fc32f166c0a8f326f5f344f2  
+    uri: https://github.com/jpriebe/kubectl-pod-inspect/releases/download/v0.1.9/kubectl-pod-inspect_0.1.9_Linux_x86_64.tar.gz
+    sha256: 6248073893f3a195818026c41282d80bd237e2461c1588ced4be7e5131c35fe3  
     bin: kubectl-pod_inspect
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/jpriebe/kubectl-pod-inspect/releases/download/v0.1.8/kubectl-pod-inspect_0.1.8_Windows_x86_64.tar.gz
-    sha256: 9169738c72e4d73cfec11cae7792f7ac704c2c9f2ba5c5583ea21e92b74f8151
+    uri: https://github.com/jpriebe/kubectl-pod-inspect/releases/download/v0.1.9/kubectl-pod-inspect_0.1.9_Windows_x86_64.tar.gz
+    sha256: b7df4b74676bca92f2b4e0852200d41524235b5c4a4465caf447cfabf5730c64
     bin: kubectl-pod_inspect.exe
-

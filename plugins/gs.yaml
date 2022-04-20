@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: gs
 spec:
-  version: v2.7.1
+  version: v2.7.10
   homepage: https://github.com/giantswarm/kubectl-gs
   shortDescription: Handle custom resources with Giant Swarm
   description: |
@@ -14,8 +14,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v2.7.1/kubectl-gs-v2.7.1-darwin-amd64.tar.gz
-    sha256: a71744e84a9dc67e642d1ed2b8a27dac58fb38d66d9c23a16e2530ba55ef000f
+    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v2.7.10/kubectl-gs-v2.7.10-darwin-amd64.tar.gz
+    sha256: 2103bef99a5e6dc6723de855703031b306a5d5fedd183c5a231d46b7245af0a0
     files:
     - from: ./kubectl-gs-*/*
       to: .
@@ -24,8 +24,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v2.7.1/kubectl-gs-v2.7.1-darwin-arm64.tar.gz
-    sha256: b70dc92c1bb4b3c580a75a528e0015269d700c94142e6b8e4491bdfb71aeeb2d
+    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v2.7.10/kubectl-gs-v2.7.10-darwin-arm64.tar.gz
+    sha256: 5b11deac75fff759a66bc04f4311dd2c1c7194131d23e9965e1206d9f08f4c11
     files:
     - from: ./kubectl-gs-*/*
       to: .
@@ -34,8 +34,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v2.7.1/kubectl-gs-v2.7.1-linux-amd64.tar.gz
-    sha256: da85bbb4b66b68c565fc30fbe13b0c6dce875b19a312fd64be707cd5e0b4dfc9
+    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v2.7.10/kubectl-gs-v2.7.10-linux-amd64.tar.gz
+    sha256: bbf5bd2f3146e5f9a1d16ad2d3cdf8f98f2b5a6d0c141ed70133e3813e962228
     files:
     - from: ./kubectl-gs-*/*
       to: .
@@ -44,9 +44,19 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v2.7.1/kubectl-gs-v2.7.1-linux-arm64.tar.gz
-    sha256: 87dde3d426639c1c230d739a7e0d8955af00429e7cf3e311b3425e054717818c
+    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v2.7.10/kubectl-gs-v2.7.10-linux-arm64.tar.gz
+    sha256: 294fb0a47e42257ef87cf3eb22f4bbc0e47d98c6e625464971a511578e6ed161
     files:
     - from: ./kubectl-gs-*/*
       to: .
     bin: ./kubectl-gs
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/giantswarm/kubectl-gs/releases/download/v2.7.10/kubectl-gs-v2.7.10-windows-amd64.zip
+    sha256: 8e4620825d0d73ff610a947be2fb4506fc9a4290c8472b6c90d84436ac1ec743
+    files:
+    - from: ./kubectl-gs-*/*
+      to: .
+    bin: ./kubectl-gs.exe

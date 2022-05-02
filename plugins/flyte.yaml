@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: flyte
 spec:
-  version: "v1.0.1"
+  version: "v1.1.0"
   homepage: https://github.com/flyteorg/flyte
   shortDescription: Monitor, launch and manage flyte executions
   description: |
@@ -18,8 +18,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/flyteorg/flytepropeller/releases/download/v1.0.1/kubectl-flyte_v1.0.1_darwin_x86_64.tar.gz
-      sha256: 920506c13d6118979682ec644ba4e80edfef07e1a0bb107d2674d4f76c867770
+      uri: https://github.com/flyteorg/flytepropeller/releases/download/v1.1.0/kubectl-flyte_v1.1.0_darwin_x86_64.tar.gz
+      sha256: 2974c2bd29ce155385f675d019025af7fabeef2880ef033cdd1f1878e24e2558
       files:
         - from: kubectl-flyte
           to: flyte
@@ -30,8 +30,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/flyteorg/flytepropeller/releases/download/v1.0.1/kubectl-flyte_v1.0.1_linux_x86_64.tar.gz
-      sha256: 06cdc0e8733a9e1b20b8bb18d14db39b83bdac2645ef7723e9f6a3430b30af62
+      uri: https://github.com/flyteorg/flytepropeller/releases/download/v1.1.0/kubectl-flyte_v1.1.0_linux_x86_64.tar.gz
+      sha256: 16835e8f3ab19822ef757f2067a74b9476bfa3f23f45ffa5e09b7b9309579214
       files:
         - from: kubectl-flyte
           to: flyte

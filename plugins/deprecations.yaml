@@ -18,26 +18,33 @@ spec:
     swagger.json version available in master branch of Kubernetes repository
     (github.com/kubernetes/kubernetes) as a reference. The branch can be changed 
     to some other desired Kubernetes version
-  version: v1.3.2
+  version: v1.3.3
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/rikatz/kubepug/releases/download/v1.3.2/kubepug_darwin_amd64.tar.gz
-    sha256: 3c5e6d49e1a32d2e102004486ae929dcede6ac07bad1a8c2243e2c6cc1c0eb67
-    bin: "kubepug" 
+    uri: https://github.com/rikatz/kubepug/releases/download/v1.3.3/kubepug_darwin_amd64.tar.gz
+    sha256: 1624d7808d0b2dc0e5ca7f97a8720a6be442410bce4ccc2942dc9bb88aaa159f
+    bin: "kubepug"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/rikatz/kubepug/releases/download/v1.3.3/kubepug_darwin_arm64.tar.gz
+    sha256: 3f7878c4792ec016fdf5d87e4cc614f39e015c677e0bc877d7daeed3b2c04b27
+    bin: "kubepug"
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/rikatz/kubepug/releases/download/v1.3.2/kubepug_linux_amd64.tar.gz
-    sha256: c09d7d06715ced8140950233319f0a749628da0ca21558bd6253e9777ca312f3
+    uri: https://github.com/rikatz/kubepug/releases/download/v1.3.3/kubepug_linux_amd64.tar.gz
+    sha256: 03808691f638752ec3dcba9998a8a7a3b75de62326cccd549b8b4636694e32da
     bin: "kubepug" 
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/rikatz/kubepug/releases/download/v1.3.2/kubepug_windows_amd64.zip
-    sha256: 109f236faeaca46ce6bce9b8a271fca6b5596716f3c18aa9f47c9c95de6dce4a
+    uri: https://github.com/rikatz/kubepug/releases/download/v1.3.3/kubepug_windows_amd64.zip
+    sha256: 92f3755680f64a305bac35d2b854f8325644af9ef374bc996281359c1c6eccc8
     bin: "kubepug.exe" 

@@ -1,0 +1,52 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cnpg
+spec:
+  version: v1.15.0
+  platforms:
+    - bin: kubectl-cnpg.exe
+      uri: https://github.com/cloudnative-pg/cloudnative-pg/releases/download/v1.15.0/kubectl-cnpg_1.15.0_windows_x86_64.tar.gz
+      sha256: fe47c14d0a43ce1829badaaa77eaa6e1e6b9c22c3ac54b63cafa8e2d85143715
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+    - bin: kubectl-cnpg.exe
+      uri: https://github.com/cloudnative-pg/cloudnative-pg/releases/download/v1.15.0/kubectl-cnpg_1.15.0_windows_arm64.tar.gz
+      sha256: c6eb88776df9ee91ce3fda78339270fb2c1c0e4b0105ba28074e6266e99fdae5
+      selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+    - bin: kubectl-cnpg
+      uri: https://github.com/cloudnative-pg/cloudnative-pg/releases/download/v1.15.0/kubectl-cnpg_1.15.0_linux_x86_64.tar.gz
+      sha256: eebaf477dede54fd37b19e25d21f4249594777415b538a2db28c7be4f430b1aa
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - bin: kubectl-cnpg
+      uri: https://github.com/cloudnative-pg/cloudnative-pg/releases/download/v1.15.0/kubectl-cnpg_1.15.0_linux_arm64.tar.gz
+      sha256: 792d3d0f6eb758f29adc04abf70873e5a43bfebbfbe36201ef8ac298bc64ca4f
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+    - bin: kubectl-cnpg
+      uri: https://github.com/cloudnative-pg/cloudnative-pg/releases/download/v1.15.0/kubectl-cnpg_1.15.0_darwin_x86_64.tar.gz
+      sha256: 66cf1353c0b908ac8484ac0eb11cba1fec78d424e970415ccb11a5e129fff8a5
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+    - bin: kubectl-cnpg
+      uri: https://github.com/cloudnative-pg/cloudnative-pg/releases/download/v1.15.0/kubectl-cnpg_1.15.0_darwin_arm64.tar.gz
+      sha256: 61b2d5171cc663435157d23bfcb787691f647e77b11fa65df080b02579a2c8c6
+      selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+  shortDescription: Manage your CloudNativePG clusters
+  homepage: https://cloudnative-pg.io/
+  description: This plugin provides multiple commands to help you manage your CloudNativePG clusters.

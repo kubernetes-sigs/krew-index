@@ -3,10 +3,10 @@ kind: Plugin
 metadata:
   name: doctor
 spec:
-  version: "v0.3.0"
+  version: "v0.3.1"
   platforms:
-  - uri: https://github.com/emirozer/kubectl-doctor/releases/download/0.3.0/kubectl-doctor_darwin_amd64.zip
-    sha256: c07c4a2ae741e2dbcd0fc4c9e543ca6558877ee74a16e9d9c129a6ffc834f1a2
+  - uri: https://github.com/emirozer/kubectl-doctor/releases/download/0.3.1/kubectl-doctor_darwin_amd64
+    sha256: 80e2f80b0552424ac2513a7aea27e93c2e4f72d2e59a3f7b55fce3869e8ef79f
     bin: kubectl-doctor
     files:
     - from: "*"
@@ -15,8 +15,28 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/emirozer/kubectl-doctor/releases/download/0.3.0/kubectl-doctor_linux_amd64.zip
-    sha256: 94ac5b4f6061176ade6650031e85018baf093b2a27b28ce5e73a78af1ceebc2a
+  - uri: https://github.com/emirozer/kubectl-doctor/releases/download/0.3.1/kubectl-doctor_darwin_arm64
+    sha256: 9da5fed6df4597e0ce7d05dee789f0c36ee969619790cbaaedc1d0f645b3bd21
+    bin: kubectl-doctor
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - uri: https://github.com/emirozer/kubectl-doctor/releases/download/0.3.1/kubectl-doctor_freebsd_amd64
+    sha256: 85b8cd63c2caf8f6b06cafa1d2d5a6b94862e61eebcd7e7d65df842189f64633
+    bin: kubectl-doctor
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: freebsd
+        arch: amd64
+  - uri: https://github.com/emirozer/kubectl-doctor/releases/download/0.3.1/kubectl-doctor_linux_amd64
+    sha256: 0abd3ac3a02b1a9a04af7fb2fa7808ad937a1b48e7974414172da225e2737033
     bin: kubectl-doctor
     files:
     - from: "*"
@@ -25,8 +45,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/emirozer/kubectl-doctor/releases/download/0.3.0/kubectl-doctor_linux_arm.zip
-    sha256: 862eaf8e81df8fb7afd5e3f711373def4b7c5fd6aa807e17f186b2b04fb5d949
+  - uri: https://github.com/emirozer/kubectl-doctor/releases/download/0.3.1/kubectl-doctor_linux_arm
+    sha256: 58f48989a379f959bb8b114833c57540d3d3dde8ac2d5e3dda8f72d047af8aa1
     bin: kubectl-doctor
     files:
     - from: "*"
@@ -35,8 +55,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm
-  - uri: https://github.com/emirozer/kubectl-doctor/releases/download/0.3.0/kubectl-doctor_windows_amd64.zip
-    sha256: f7db26a242fa6f3f525878aad81971750bf149ac0801b88539ca4cc1bf29713a
+  - uri: https://github.com/emirozer/kubectl-doctor/releases/download/0.3.1/kubectl-doctor_windows_amd64
+    sha256: 0a0778c11b0d0ce2a46eafd600a2597473ebf9e1916b845c257ffade50d4654c
     bin: kubectl-doctor.exe
     files:
     - from: "*"

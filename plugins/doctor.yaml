@@ -25,16 +25,6 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-  - uri: https://github.com/emirozer/kubectl-doctor/releases/download/0.3.1/kubectl-doctor_freebsd_amd64
-    sha256: 85b8cd63c2caf8f6b06cafa1d2d5a6b94862e61eebcd7e7d65df842189f64633
-    bin: kubectl-doctor
-    files:
-    - from: "*"
-      to: "."
-    selector:
-      matchLabels:
-        os: freebsd
-        arch: amd64
   - uri: https://github.com/emirozer/kubectl-doctor/releases/download/0.3.1/kubectl-doctor_linux_amd64
     sha256: 0abd3ac3a02b1a9a04af7fb2fa7808ad937a1b48e7974414172da225e2737033
     bin: kubectl-doctor

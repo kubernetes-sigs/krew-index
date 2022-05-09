@@ -1,0 +1,79 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: etcdviewer
+spec:
+  version: "v0.1.0"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/double12gzh/etcdviewer/releases/download/v0.1.0/etcdviewer_linux_amd64.tar.gz
+    sha256: "8904e0c9adcfc2623550202759fe106f617eb2b54fd761570965cc5989ca304a"
+    files:
+    - from: "./etcdviewer"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "etcdviewer"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/double12gzh/etcdviewer/releases/download/v0.1.0/etcdviewer_darwin_amd64.tar.gz
+    sha256: "1183f515c851a773cbedfaed24f1dd777e00f82090bd5b2ddcf18a5ebf7ecfb4"
+    files:
+    - from: "./etcdviewer"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "etcdviewer"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/double12gzh/etcdviewer/releases/download/v0.1.0/etcdviewer_windows_amd64.zip
+    sha256: "5b9e71c3b032a4b50fe2a5d5064afc10c854dc55b4fee30986df319fcbdb12f0"
+    files:
+    - from: "/etcdviewer.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "etcdviewer.exe"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: 386
+    uri: https://github.com/double12gzh/etcdviewer/releases/download/v0.1.0/etcdviewer_windows_386.zip
+    sha256: "12909f81ee4eb29c4c104b3d7ddb190cacda29205c19fb81f3f74b8b71e75b44"
+    files:
+    - from: "/etcdviewer.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "etcdviewer.exe"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: 386
+    uri: https://github.com/double12gzh/etcdviewer/releases/download/v0.1.0/etcdviewer_windows_386.tar.gz
+    sha256: "ae52de46ba0bb430cf21b83c157c56a0adf036541c16cc31183d3adb115a02ef"
+    files:
+    - from: "/etcdviewer"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "etcdviewer"
+  shortDescription: A new etcdviewer
+  homepage: https://github.com/double12gzh/etcdviewer
+  caveats: |
+    Usage:
+      $ kubectl etcdviewer
+
+    For additional options:
+      $ kubectl etcdviewer --help
+      or https://github.com/double12gzh/etcdviewer/blob/v0.1.0/doc/USAGE.md
+
+  description: |
+    This is a plugin to get data from etcd stored by Kubernetes

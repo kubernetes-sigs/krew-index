@@ -5,7 +5,7 @@ kind: Plugin
 metadata:
   name: cm
 spec:
-  version: v1.0.8
+  version: v1.0.9
   homepage: https://github.com/stolostron/cm-cli
   shortDescription: Provides commands for OCM/MCE/ACM.
   description: |
@@ -15,27 +15,34 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.8/cm_darwin_amd64.tar.gz
-    sha256: 8a39a0aade2e43acc943be7e36c0c52ec28e026065a6f84d6bcdd1701bbe4735
+    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.9/cm_darwin_amd64.tar.gz
+    sha256: 958e82b7a46b8cf294861562887f00f2ed83c1edb3adc39f2c1963d22a78185c
+    bin: cm
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.9/cm_darwin_arm64.tar.gz
+    sha256: 9fb5b66a91ccdfe0f1c97903dd6c4d9f578b79a51d760fb4e7b88d3675034596
     bin: cm
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.8/cm_linux_amd64.tar.gz
-    sha256: c2c21f887c4b7af6c11f1104f148c462b6ea2fb1497767f049c96d24f1866928
+    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.9/cm_linux_amd64.tar.gz
+    sha256: dee8bb875f6b4f9138ddaee0dd30480d31145671692ff03e1952641567fd4e31
     bin: cm
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.8/cm_linux_arm64.tar.gz
-    sha256: 146700a886a292ce151e6daa14065d0373fbce130cd94c6251243c1703fe6deb
+    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.9/cm_linux_arm64.tar.gz
+    sha256: 5b7f215f64ac5cab390c2618aba545352cef8fc5a47a8e7077f2646d2572a96e
     bin: cm
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.8/cm_windows_amd64.zip
-    sha256: 78899789b34bb25691573d33cbb4a6527de0ce36983baf35eb3cf6364256cdc9
+    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.9/cm_windows_amd64.zip
+    sha256: 08a0fafac47e9630578d044f1763ef7759cb6f6d4c5575f8ade3958ab3366ba8
     bin: cm.exe

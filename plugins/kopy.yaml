@@ -1,0 +1,46 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kopy
+spec:
+  version: v0.0.1
+  homepage: https://github.com/giorgosdi/kubectl-kopy
+  shortDescription: Copy a Kubernetes object between namespaces
+  Description: |
+    This plugin takes two arguments, a kubernetes object and its name and 
+    two flags, `-n` and `--target` that are the source/destination namespaces
+    and copies the kubernetes object from the source to the destination namespace
+    removing the clutter from the generated fields.
+  caveats: |
+    * The plugin does not take into account if a user chooses a context
+      other than the default in the chosen KUBECONFIG
+    * The plugin cannot read multiple KUBECONFIGs in the KUBECONFIG environment variable
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/giorgosdi/kubectl-kopy/releases/download/v0.0.1/kubectl_kopy_darwin_amd64.tar.gz
+    sha256: c82821be1f3e92d4e7a62716abaae277eae64fae8af5c0d1652b26e5677cb29c
+    bin: kubectl-kopy
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/giorgosdi/kubectl-kopy/releases/download/v0.0.1/kubectl_kopy_linux_amd64.tar.gz
+    sha256: b74427961b31b8735a8179657233309655b7935a78a62ea83a31fe9b31c5d232
+    bin: kubectl-kopy
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/giorgosdi/kubectl-kopy/releases/download/v0.0.1/kubectl_kopy_darwin_arm64.tar.gz
+    sha256: ac6fb003f9844d67106a266e040ec98da2a4b43f6550459f2d4baa4777e23360
+    bin: kubectl-kopy
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/giorgosdi/kubectl-kopy/releases/download/v0.0.1/kubectl_kopy_linux_arm64.tar.gz
+    sha256: 573808ed58f6d4cf6814fb47e9156c03d5e891f96e1609ae412def04c74e83ca
+    bin: kubectl-kopy

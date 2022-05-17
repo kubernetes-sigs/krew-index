@@ -1,0 +1,27 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: crd-extractor
+spec:
+  version: v0.0.1
+  homepage: https://github.com/datreeio/CRDs-catalog
+  shortDescription: Extract CRDs from your cluster and convert them to JSON schema
+  description: |
+    This plugin extracts Kubernetes CRDs from a cluster and converts them to JSON schema.
+    These schemas are then used by Datree and other tools for resource validation.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/datreeio/crds-catalog/releases/latest/download/kubectl-crd-extractor.zip
+    sha: "709afb742ec4e7675673914d408fe525dd9f1bb5852f11a25cc7cfe1b4c8d3be"
+    files:
+    - from: "kubectl-crd-extractor"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-crd-extractor

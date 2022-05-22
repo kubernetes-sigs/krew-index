@@ -1,0 +1,43 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: point
+spec:
+  version: "v0.1.0"
+  homepage: https://github.com/davidchua/kubectl-point
+  shortDescription: "Points an Ingress to any external source"
+  description: |
+    Generates a headless Service and/or Ingress which allows operators to make use of the existing Ingress controller to receive traffic and proxies it to any accessible downstream source.
+
+    This plugin also allows for the autoconfiguration of TLS certs on the generated ingress if cert-manager is present.
+  caveats: |
+    Requires `cert-manager` (> v1.x) to be installed for automatic TLS configuration.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/davidchua/kubectl-point/releases/download/v0.1.0/kubectl-point_0.1.0_Darwin_arm64.tar.gz
+    sha256: 4e9f6668207c4227181f98aae447229677941446e670abcca01c6ee5abc65e8b
+    bin: kubectl-point
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/davidchua/kubectl-point/releases/download/v0.1.0/kubectl-point_0.1.0_Darwin_x86_64.tar.gz
+    sha256: 9b5c2ccd9a055c7ec7dd5d7de36749274d28e5b54f03472951dbce59aa08e571
+    bin: kubectl-point
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/davidchua/kubectl-point/releases/download/v0.1.0/kubectl-point_0.1.0_Linux_x86_64.tar.gz
+    sha256: 7e0eb8eb4fa6d01f8e7a16e553572beb54791316f57317a77cf1249a19d59e8b
+    bin: kubectl-point
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/davidchua/kubectl-point/releases/download/v0.1.0/kubectl-point_0.1.0_Linux_arm64.tar.gz
+    sha256: a16d143f1c4ac3eeb3954903656724537e76a71c0f92bc7751ebfb79b927f589
+    bin: kubectl-point

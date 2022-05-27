@@ -1,0 +1,29 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: interact-sh
+spec:
+  version: v0.1.1
+  homepage: https://github.com/ya-makariy/kubectl-sh-rs
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+      uri: https://github.com/ya-makariy/kubectl-sh-rs/releases/download/v0.1.1/kubectl-sh-rs_v0.1.1_x86_64-apple-darwin.tar.gz
+      sha256: c474e0573dbf8c9c9ca5444dac6baabc8a98b0893609ba8560217cf5ed9fc269
+      bin: kubectl-sh
+    - selector:
+        matchLabels:
+          os: linux
+      uri: https://github.com/ya-makariy/kubectl-sh-rs/releases/download/v0.1.1/kubectl-sh-rs_v0.1.1_x86_64-unknown-linux-musl.tar.gz
+      sha256: 528833f59f22688d01ec39a157ffddca00e18401e281e8258c05e6efc933e06e
+      bin: kubectl-sh
+    - selector:
+        matchLabels:
+          os: windows
+      uri: https://github.com/ya-makariy/kubectl-sh-rs/releases/download/v0.1.1/kubectl-sh-rs_v0.1.1_x86_64-pc-windows-gnu.zip
+      sha256: de307cfe27fe944cf683ee8783edce5744420222a5c4e62db89ab59548e9093e
+      bin: kubectl-sh.exe
+  shortDescription: Faster way to to access shell of pod's container through interactive selections
+  description: |
+    Faster way to to access shell of pod's container through interactive selections

@@ -1,6 +1,10 @@
 name: krew-index CI
 
-on: pull_request
+on:
+  push:
+    branches:
+      - master
+  pull_request:
 
 jobs:
   build:
@@ -17,12 +21,21 @@ jobs:
         go-version: '1.14'
       id: go
 
+    - name: Go module cache
+      uses: actions/cache@v3
+      with:
+        path: ~/go/pkg/mod
+        key: ${{ runner.os }}-go-${{ env.KREW_VERSION }}
+        restore-keys: |
+          ${{ runner.os }}-go-
+
     - name: Check out PR branch
       uses: actions/checkout@v3
       with:
         fetch-depth: 0  # disable shallow clones
 
     - name: Fetch base branch
+      if: github.event_name == 'pull_request'
       run: |
         git fetch --no-tags --prune --depth=1 origin +refs/heads/${GITHUB_BASE_REF}:refs/remotes/origin/${GITHUB_BASE_REF}
 
@@ -48,6 +61,7 @@ jobs:
         go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
 
     - name: Validate updated plugin manifests
+      if: github.event_name == 'pull_request'
       run : |
         set -x
         set -euo pipefail
@@ -55,4 +69,3 @@ jobs:
         git diff --name-only --diff-filter=AM origin/${GITHUB_BASE_REF} ${{ github.sha }} -- plugins/ |
           tee /dev/stderr |
           xargs -I _ $HOME/bin/validate-krew-manifest -manifest _
-

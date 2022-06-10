@@ -6,8 +6,7 @@ spec:
   version: "v0.0.1"
   homepage: https://github.com/tremolosecurity/openunison-control
   shortDescription: "Deploy OpenUnison for authentication and automation"
-  description: |
-    Deploys OpenUnison for authentication and automation.  Also deploys satelites for multi-cluster authentication.  See https://openunison.github.io/deployauth/ for detailed instructions
+  description: Deploys OpenUnison, see https://openunison.github.io/deployauth/ for details
   platforms:
   - selector:
       matchExpressions:
@@ -16,7 +15,7 @@ spec:
         values:
         - darwin
     uri: https://nexus.tremolo.io/repository/ouctl/ouctl-0.0.1-macos.zip
-    sha256: bc1134123d59ab7c5ff00373cc29d6c013193047dc4a3df19bc55cda46967b09
+    sha256: 9834ef86444f27749b8015d2684b273383144a54f8eb74b6b3edd898c671755d
     files:
     - from: "ouctl"
       to: "ouctl"
@@ -30,7 +29,7 @@ spec:
         values:
         - linux
     uri: https://nexus.tremolo.io/repository/ouctl/ouctl-0.0.1-linux.zip
-    sha256: 19775449fbda23f67416d14f4f836642e94b6a5a534b945e9689304c58c93fd6
+    sha256: e78310549ff3fc882a91c54bd2caf3b9f841d8767a5843ee383303aca709d0eb
     files:
     - from: "ouctl"
       to: "ouctl"
@@ -44,7 +43,7 @@ spec:
         values:
         - windows
     uri: https://nexus.tremolo.io/repository/ouctl/ouctl-0.0.1-win.zip
-    sha256: bef47063b64bb61e351e2228fb7894e8c9ff791b63681652a4b7318ac7464d61
+    sha256: 984511d6f3b96fc27040112861daa35768c8b128c0df1361ae7e16c47162b7c7
     files:
     - from: "ouctl.exe"
       to: "ouctl.exe"

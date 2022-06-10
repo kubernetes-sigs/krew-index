@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: sick-pods
 spec:
-  version: v0.2.0
+  version: v0.3.0
   homepage: https://github.com/alecjacobs5401/kubectl-sick-pods
   shortDescription: Find and debug Pods that are "Not Ready"
   description: |
@@ -18,20 +18,34 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/alecjacobs5401/kubectl-sick-pods/releases/download/v0.2.0/kubectl-sick-pods_v0.2.0_darwin_amd64.tar.gz
-    sha256: 83565b7cef3a6955fc6ad58cf05fc5233898d5e1e8af5509466fe2f0f2627108
+    uri: https://github.com/alecjacobs5401/kubectl-sick-pods/releases/download/v0.3.0/kubectl-sick-pods_v0.3.0_darwin_amd64.tar.gz
+    sha256: e9c90e341c91cc7041ca7d35612772c7682a3fe8d191d41f04ce86b4788bdbe6
+    bin: kubectl-sick-pods
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/alecjacobs5401/kubectl-sick-pods/releases/download/v0.3.0/kubectl-sick-pods_v0.3.0_darwin_arm64.tar.gz
+    sha256: 28098f3ada79c027d2943ee8d36e0440fae3f53490bd991b362b7e2436f6beb4
     bin: kubectl-sick-pods
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/alecjacobs5401/kubectl-sick-pods/releases/download/v0.2.0/kubectl-sick-pods_v0.2.0_linux_amd64.tar.gz
-    sha256: 03607d0c83a10df495b8092f69df6f4f22bf6b0a941d0d47e55f4a2772871b09
+    uri: https://github.com/alecjacobs5401/kubectl-sick-pods/releases/download/v0.3.0/kubectl-sick-pods_v0.3.0_linux_amd64.tar.gz
+    sha256: 16b959245686449410689ed2de709401eae082646cae4c763118e77dfd8cebd9
+    bin: kubectl-sick-pods
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/alecjacobs5401/kubectl-sick-pods/releases/download/v0.3.0/kubectl-sick-pods_v0.3.0_linux_arm64.tar.gz
+    sha256: 10d4de47da0e67fc2c9b2be08ba73061c2bc6a6a1943659e27d805e6c3b565c6
     bin: kubectl-sick-pods
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/alecjacobs5401/kubectl-sick-pods/releases/download/v0.2.0/kubectl-sick-pods_v0.2.0_windows_amd64.tar.gz
-    sha256: a74bfeb6eb773f73a76badcc01f8e115318863a5560ec2cc15a4024d2efbff4f
+    uri: https://github.com/alecjacobs5401/kubectl-sick-pods/releases/download/v0.3.0/kubectl-sick-pods_v0.3.0_windows_amd64.tar.gz
+    sha256: a709012211276c7502b8094c36b1fcb001bb8fb342158d175064f88f3beed4bf
     bin: kubectl-sick-pods.exe

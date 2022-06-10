@@ -1,0 +1,55 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: print-env
+spec:
+  version: v0.1.2
+  platforms:
+  - bin: kubectl-print-env.exe
+    uri: https://github.com/pedrobarco/kubectl-print-env/releases/download/v0.1.2/kubectl-print-env_v0.1.2_windows_arm64.zip
+    sha256: d5bc0bb0624b27ee3c46a9839cef1efa7167db33fd96680a881ab3f59d7df58d
+    selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+  - bin: kubectl-print-env.exe
+    uri: https://github.com/pedrobarco/kubectl-print-env/releases/download/v0.1.2/kubectl-print-env_v0.1.2_windows_amd64.zip
+    sha256: e2dd7ace3b1be0a53fc4af586884505796318eafcae6841a0f7754c50100d85d
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  - bin: kubectl-print-env
+    uri: https://github.com/pedrobarco/kubectl-print-env/releases/download/v0.1.2/kubectl-print-env_v0.1.2_linux_arm64.tar.gz
+    sha256: 932022f8d1a80dbc2e77c15245fabc6f23f1418012692954f7f29840485a9717
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - bin: kubectl-print-env
+    uri: https://github.com/pedrobarco/kubectl-print-env/releases/download/v0.1.2/kubectl-print-env_v0.1.2_linux_amd64.tar.gz
+    sha256: b2ff1e7f8cac626b3eecdea25ef76e956387a0c5aaccac3b88145139df6f9b91
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-print-env
+    uri: https://github.com/pedrobarco/kubectl-print-env/releases/download/v0.1.2/kubectl-print-env_v0.1.2_darwin_arm64.tar.gz
+    sha256: 1ec6be2fe7bbb08139545510d42a20491a3e393e0e543ebbfa62976c5a9b3678
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: kubectl-print-env
+    uri: https://github.com/pedrobarco/kubectl-print-env/releases/download/v0.1.2/kubectl-print-env_v0.1.2_darwin_amd64.tar.gz
+    sha256: 812c792a58ddfb4e3acd84b69ad33558061a48547b7e58a9888023361b646a63
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  shortDescription: Build config files from k8s environments.
+  homepage: https://github.com/pedrobarco/kubectl-print-env
+  description: |
+    Prints a config file by parsing environment information about the specified
+    resources. You can select the output format using the --output flag.
+

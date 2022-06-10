@@ -3,42 +3,49 @@ kind: Plugin
 metadata:
   name: graph
 spec:
-  version: v0.1.1
+  version: v0.5.0
   homepage: https://github.com/steveteuber/kubectl-graph
   shortDescription: Visualize Kubernetes resources and relationships.
   description: |
     This plugin generates a visual representation of Kubernetes resources and
-    relationships. The graph is outputted in dot or cypher format, which can
-    be used by Graphviz or Neo4j.
+    relationships. The graph is outputted in AQL, CQL or DOT format which can
+    be used by ArangoDB, Neo4j or Graphviz.
   caveats: |
     This plugin requires Graphviz or Neo4j to visualize the dependency graph.
     Please see the quickstart guide for more information:
     https://github.com/steveteuber/kubectl-graph#quickstart
   platforms:
   - bin: kubectl-graph
-    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.1.1/kubectl-graph_v0.1.1_darwin_amd64.tar.gz
-    sha256: 793b5dc54cf8e7db5c5db90b73ad965fb540df140cc20942b57f4bd16f4fac10
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.5.0/kubectl-graph_v0.5.0_darwin_amd64.tar.gz
+    sha256: 782501e9f815fd0ddc613d54f0f053ff4ea7ebfdf0328b7a4ded861bff097efe
     selector:
       matchLabels:
         os: darwin
         arch: amd64
   - bin: kubectl-graph
-    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.1.1/kubectl-graph_v0.1.1_linux_amd64.tar.gz
-    sha256: c954834229a044eae7c2b3ca2cb2eb6a101241787a5f9bf550b2b1ba56986440
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.5.0/kubectl-graph_v0.5.0_darwin_arm64.tar.gz
+    sha256: 1a5a55d8f23ed29d410ab960c5ae450ebedb7e57d7b43c89b0d0473d57cec842
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: kubectl-graph
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.5.0/kubectl-graph_v0.5.0_linux_amd64.tar.gz
+    sha256: 151d4992324b22bb37c4f09f5fc15cb14f62d05899914c4b410eb3a40a695232
     selector:
       matchLabels:
         os: linux
         arch: amd64
   - bin: kubectl-graph
-    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.1.1/kubectl-graph_v0.1.1_linux_arm64.tar.gz
-    sha256: d826e713c1bb889f4a7d35ef10741db436032af38ecc8987f3e5db48adf7cff6
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.5.0/kubectl-graph_v0.5.0_linux_arm64.tar.gz
+    sha256: a959e36a3a0d17ea7dcd0c2ddfe606bb896fa078f3724b3b871a34e3ad4f54b1
     selector:
       matchLabels:
         os: linux
         arch: arm64
   - bin: kubectl-graph.exe
-    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.1.1/kubectl-graph_v0.1.1_windows_amd64.zip
-    sha256: 7b777d653b22ce619be57b4f4009af125fb55bae969dec20fba0e8014ae178f1
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.5.0/kubectl-graph_v0.5.0_windows_amd64.zip
+    sha256: b21be0bb4129bf03f7f92f98e3128acd3a9993ae1c31a22530358508a5a34d6e
     selector:
       matchLabels:
         os: windows

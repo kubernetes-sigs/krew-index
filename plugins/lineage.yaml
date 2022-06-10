@@ -1,0 +1,50 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: lineage
+spec:
+  version: v0.5.0
+  homepage: https://github.com/tohjustin/kube-lineage
+  shortDescription: Display all dependent resources or resource dependencies
+  description: |
+    This plugin prints a table of dependencies or dependents of the specified
+    resource.
+  caveats: |
+    The tool only shows dependencies or dependents among the resources you have
+    access to. So for restricted users, the result may be incomplete.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/tohjustin/kube-lineage/releases/download/v0.5.0/kube-lineage_darwin_amd64.tar.gz
+    sha256: 22c4bdb8e4ccf8b1e74ed4e4ebab50559274e59321665afde7729665fd7d18de
+    bin: kube-lineage
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/tohjustin/kube-lineage/releases/download/v0.5.0/kube-lineage_darwin_arm64.tar.gz
+    sha256: 208c96fb9f1caf8bff514dddaadc54c9ab3635b1c1f3e8ae5ee0645f08f18907
+    bin: kube-lineage
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/tohjustin/kube-lineage/releases/download/v0.5.0/kube-lineage_linux_amd64.tar.gz
+    sha256: 6b0d3cfea813fb6389a463d5ec556f04dcda0f74b6cecfe61e330aab730fee7f
+    bin: kube-lineage
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/tohjustin/kube-lineage/releases/download/v0.5.0/kube-lineage_linux_arm64.tar.gz
+    sha256: db4a0325f65c5372cefc5f56317b5e213b2b2f61dd2c027c34c808d11f2bfd41
+    bin: kube-lineage
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/tohjustin/kube-lineage/releases/download/v0.5.0/kube-lineage_windows_amd64.zip
+    sha256: 3bcbbec7f2d8a62c32dd9304721bb4429d52254a63eed889b280a79c756e462b
+    bin: kube-lineage.exe

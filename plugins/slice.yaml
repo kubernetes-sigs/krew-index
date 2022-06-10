@@ -1,0 +1,55 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: slice
+spec:
+  version: v1.2.3
+  homepage: https://github.com/patrickdappollonio/kubectl-slice
+  shortDescription: Split a multi-YAML file into individual files.
+  description: |
+    This is a tool that can split a multi-YAML Kubernetes manifest into multiple subfiles using
+    a naming convention you choose. This is done by parsing the YAML code and giving you the option
+    to access any key from the YAML object by loading it into a Go Templates.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.3/kubectl-slice_1.2.3_darwin_arm64.tar.gz
+      sha256: 059e269d185e5ebc0a9c06a15862ea9ac28fae1727dae5265b05074980846dff
+      bin: kubectl-slice
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.3/kubectl-slice_1.2.3_darwin_x86_64.tar.gz
+      sha256: 618b0abaa098898850fdb32f5f0658d2187053f66254fedb8156dff8ffcf114d
+      bin: kubectl-slice
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.3/kubectl-slice_1.2.3_linux_arm64.tar.gz
+      sha256: c8bb1d54beb838888d1217f524f4cd1aeabc03d051a368a67015fed38c6357cf
+      bin: kubectl-slice
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm
+      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.3/kubectl-slice_1.2.3_linux_armv6.tar.gz
+      sha256: 12d765ebc2a9b3947e329a70f702760e7155d755adec6d9c67ab6afd6a4efc61
+      bin: kubectl-slice
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.3/kubectl-slice_1.2.3_linux_x86_64.tar.gz
+      sha256: b66cee60598b0b27694bfb34a4f4f59ae6705b53baeb457da5087f3123961091
+      bin: kubectl-slice
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.3/kubectl-slice_1.2.3_windows_x86_64.tar.gz
+      sha256: 74c1d4717fa122f51dcb135d5cfc68635c7ee64f8c097c620a73e88ab4d269e3
+      bin: kubectl-slice.exe

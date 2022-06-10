@@ -16,41 +16,47 @@ spec:
     You need to configure authentication in the kubeconfig.
     See https://github.com/int128/kauthproxy for more.
 
-  version: v1.1.0
+  version: v1.2.1
   platforms:
-    - uri: https://github.com/int128/kauthproxy/releases/download/v1.1.0/kauthproxy_linux_amd64.zip
-      sha256: "3d8024b232b660609de7ba3851915cdc4a33f479c89b347973c6406b0c7e0b98"
-      bin: kauthproxy
-      files:
-        - from: kauthproxy
-          to: .
-        - from: LICENSE
-          to: .
-      selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-    - uri: https://github.com/int128/kauthproxy/releases/download/v1.1.0/kauthproxy_darwin_amd64.zip
-      sha256: "628bfae223f47f94747a9dd1503298bd3d203bc4550e56a5dd0b16805f320641"
-      bin: kauthproxy
-      files:
-        - from: kauthproxy
-          to: .
-        - from: LICENSE
-          to: .
-      selector:
-        matchLabels:
-          os: darwin
-          arch: amd64
-    - uri: https://github.com/int128/kauthproxy/releases/download/v1.1.0/kauthproxy_windows_amd64.zip
-      sha256: "8fd3d97099f5d4ee9d51cdd1f2a0318d56fcaea040ca042b2cc4f22bedd6f7e5"
-      bin: kauthproxy.exe
-      files:
-        - from: kauthproxy.exe
-          to: .
-        - from: LICENSE
-          to: .
-      selector:
-        matchLabels:
-          os: windows
-          arch: amd64
+  - bin: kauthproxy
+    uri: https://github.com/int128/kauthproxy/releases/download/v1.2.1/kauthproxy_linux_amd64.zip
+    sha256: 8199aad0e90d626bf37886558e2a13ae8b13ec280d47c7d52957addf2ce0c283
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kauthproxy
+    uri: https://github.com/int128/kauthproxy/releases/download/v1.2.1/kauthproxy_linux_arm64.zip
+    sha256: 4b66e50e503e105126d0563c12ba45be687ddc5c48cfc2ff50c7c4fe0fcfbf19
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - bin: kauthproxy
+    uri: https://github.com/int128/kauthproxy/releases/download/v1.2.1/kauthproxy_linux_arm.zip
+    sha256: 90b8b6fabc3e19863b33a30f2d8e8ce037890faab3208ac236072a1a3d4eea0a
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm
+  - bin: kauthproxy
+    uri: https://github.com/int128/kauthproxy/releases/download/v1.2.1/kauthproxy_darwin_amd64.zip
+    sha256: 2ef6540dbb6d7018d8a516b65dee216f99cc09a1eee2a32ca2f54c642d7210a4
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kauthproxy
+    uri: https://github.com/int128/kauthproxy/releases/download/v1.2.1/kauthproxy_darwin_arm64.zip
+    sha256: c911d7ea4e068ce59806448180c1d4e9cf72e46ff165d2e0ed401170b84e4445
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: kauthproxy.exe
+    uri: https://github.com/int128/kauthproxy/releases/download/v1.2.1/kauthproxy_windows_amd64.zip
+    sha256: 5fd0f93da2dcf545773205cd1fc1a5fed41806c559862fbc9c10f7fabe38fd73
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

@@ -1,0 +1,28 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: assert
+spec:
+  homepage: https://github.com/morningspace/kubeassert
+  shortDescription: "Assert Kubernetes resources"
+  version: "v0.2.0"
+  description: |
+    Provides a set of assertions that can be used to quickly 
+    assert Kubernetes resources from the command line against 
+    your working cluster.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/morningspace/kubeassert/archive/v0.2.0.tar.gz
+    sha256: a35b62a111212a74c954f2991fdfa7b4cad8e92b9318773f87c9ff8c12a5ea52
+    bin: kubectl-assert.sh
+    files:
+    - from: "/kubeassert-*/kubectl-assert.sh"
+      to: "."
+    - from: "/kubeassert-*/LICENSE"
+      to: "."

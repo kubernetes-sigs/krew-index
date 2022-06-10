@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: cyclonus
 spec:
-  version: "v0.0.3"
+  version: "v0.1.6"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.0.3/kubectl-cyclonus_linux_amd64.tar.gz
-    sha256: da3d903ee47b036091e144d38886828dd9ad3e7635f831a56bef94956f1b46a2
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.1.6/kubectl-cyclonus_linux_amd64.tar.gz
+    sha256: f5fbd8217cd567e66055889c70b13660e21cf45eb8df7af28b1d42646be14401
     files:
     - from: "./kubectl-cyclonus"
       to: "cyclonus"
@@ -21,8 +21,20 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.0.3/kubectl-cyclonus_darwin_amd64.tar.gz
-    sha256: 0e0462d4cc81463d62728b8dd2c34f001c94c9bb396f033a672e9dbf369596a5
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.1.6/kubectl-cyclonus_darwin_amd64.tar.gz
+    sha256: 090e4cc1a3068c091187fcb46833cfe6b9099cec6147456c55b4bb7031dc30eb
+    files:
+    - from: "./kubectl-cyclonus"
+      to: "cyclonus"
+    - from: LICENSE
+      to: "."
+    bin: "cyclonus"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.1.6/kubectl-cyclonus_darwin_arm64.tar.gz
+    sha256: e087420f6b4ca8a0b9b4d67d689401b87dc9afc889e28a94d5813bcbd9f5a892
     files:
     - from: "./kubectl-cyclonus"
       to: "cyclonus"
@@ -33,8 +45,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.0.3/kubectl-cyclonus_windows_amd64.zip
-    sha256: 0fb50b6afc460d5397e78a712c1873a369a7ca4d3e28e766c0109b4e886be8f4
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.1.6/kubectl-cyclonus_windows_amd64.zip
+    sha256: eefef26c8dd5432514980e9c7d0e3ee38b651decd9ff2f0f3634dae3a22a190f
     files:
     - from: "/kubectl-cyclonus.exe"
       to: "cyclonus.exe"

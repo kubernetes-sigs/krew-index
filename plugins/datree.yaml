@@ -1,0 +1,31 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: datree
+spec:
+  version: v0.1.1
+  homepage: https://github.com/datreeio/kubectl-datree
+  shortDescription: Scan your cluster resources for misconfigurations
+  description: |
+    Datree is a static code analysis tool for kubernetes manifest files.
+    This plugin allows scanning resources within your cluster for misconfigurations.
+  caveats: |
+    Before using this plugin, the Datree CLI needs to be installed.
+    See https://hub.datree.io/ for quick and easy installation.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/datreeio/kubectl-datree/releases/download/v0.1.1/kubectl-datree.zip
+    sha256: 40998584fbcc15ba7340eb91ec4fd5f25e58b70b45d1706b00bdc15ea479af47
+    files:
+    - from: "kubectl-datree"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-datree
+    

@@ -1,0 +1,62 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: rbac-tool
+spec:
+  version: v1.6.3
+  platforms:
+  - bin: rbac-tool
+    uri: https://github.com/alcideio/rbac-tool/releases/download/v1.6.3/rbac-tool_v1.6.3_linux_amd64.tar.gz
+    sha256: c8e375a0933e8dee4360315bae511096125214578ea357eec258797869eb1098
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+
+  - bin: rbac-tool
+    uri: https://github.com/alcideio/rbac-tool/releases/download/v1.6.3/rbac-tool_v1.6.3_linux_arm64.tar.gz
+    sha256: a1501c73a2ad0993ab44218eb42acbb95f8cdc824b5b05c0b815def11a7b4168
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+
+  - bin: rbac-tool
+    uri: https://github.com/alcideio/rbac-tool/releases/download/v1.6.3/rbac-tool_v1.6.3_darwin_amd64.tar.gz
+    sha256: 81a6b5f97b43b4f0cc2d585427a0955aceafdd332d95f1c02eb64ee0127c2e09
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+
+  - bin: rbac-tool
+    uri: https://github.com/alcideio/rbac-tool/releases/download/v1.6.3/rbac-tool_v1.6.3_darwin_arm64.tar.gz
+    sha256: fdf16337c4a1d4e747e0216cb00d5bda21b21305381e6807ef011f109990d5cc
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+
+  - bin: rbac-tool.exe
+    uri: https://github.com/alcideio/rbac-tool/releases/download/v1.6.3/rbac-tool_v1.6.3_windows_amd64.tar.gz
+    sha256: e8f01ce53a0bf07b72b4aba68dd4fd52b68991c8aae0c72dc53f106f672c8513
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+
+  shortDescription: Plugin to analyze RBAC permissions and generate policies
+  homepage: https://github.com/alcideio/rbac-tool
+  description: |
+    This plugin is a collection of RBAC tools to simplify analysis and configuration.
+    You can visualize, analyze, query permissions as well as generate policies in multiple ways.
+
+    Examples:
+    # Generate HTML visualzation of your RBAC permissions
+    kubectl rbac-tool viz
+
+    # Query who can read secrets
+    kubectl rbac-tool who-can get secret
+
+    # Generate a ClusterRole policy that allows to read everything except secrets and services
+    kubectl rbac-tool gen --deny-resources=secrets.,services. --allowed-verbs=get,list

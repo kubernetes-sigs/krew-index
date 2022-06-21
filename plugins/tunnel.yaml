@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: tunnel
 spec:
-  version: v1.4.7
+  version: v1.4.8
   homepage: https://github.com/omrikiei/ktunnel
   shortDescription: Reverse tunneling between cluster and your machine
   description: |
@@ -15,20 +15,42 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.4.7/ktunnel_1.4.7_Darwin_x86_64.tar.gz
-    sha256: 82bed4060dda9c7f9cb8c48e6d3994e3b6a5e24b0b05e49657ca81a6a192cfcc
+    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.4.8/ktunnel_1.4.8_Darwin_x86_64.tar.gz
+    sha256: 6c6f6a68582eb98ca516d82136838b26aae5af00f261414554a991860165f765
+    bin: ktunnel
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.4.8/ktunnel_1.4.8_Darwin_arm64.tar.gz
+    sha256: a697658ea291db0d7c4647cf0e67986b63015b53eb52398180757808bd3262b5
     bin: ktunnel
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.4.7/ktunnel_1.4.7_Linux_x86_64.tar.gz
-    sha256: 7342ea8277ec97f4814f3fe427bc97b6ed6660ab9a77ecc2d5443683c0950b40
+    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.4.8/ktunnel_1.4.8_Linux_x86_64.tar.gz
+    sha256: 6d501d6fe2ea0e3e1bedb1420e76f0c012e50f90a3a4590c8dd1c62536beda21
+    bin: ktunnel
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.4.8/ktunnel_1.4.8_Linux_arm64.tar.gz
+    sha256: 76f2e7a13fd738dfd4a76713fe4e97ad65c3a4e6d59a6bf173cacbfc0b8a1615
     bin: ktunnel
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.4.7/ktunnel_1.4.7_Windows_x86_64.tar.gz
-    sha256: 54731ff6aaf9fbfbe4bc484b8626b802a684e9d271f321b0e3a30887ee3bd7e4
+    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.4.8/ktunnel_1.4.8_Windows_x86_64.tar.gz
+    sha256: bc20de563b71e877c6fe398b22c6fb881961b515fa8e6831d55500648a9e0d0c
     bin: ktunnel.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.4.8/ktunnel_1.4.8_Windows_arm64.tar.gz
+    sha256: e7dfaa1d752702915d5c4fbb76a5979a36d8f57e0c4bd71a7ddbf244a5244c1c
+    bin: ktunnel.exe
+

@@ -1,0 +1,35 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: windows-debug
+spec:
+  version: v0.1.2
+  homepage: https://github.com/jsturtevant/windows-debug
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/jsturtevant/windows-debug/releases/download/v0.1.2/kubectl-windows-debug-v0.1.2.tar.gz
+    sha256: 5c13553af09b98acf0001d1bc94155a7dbbbd1cb54ad84d0faaac770689e2b10
+    bin: kubectl-windows-debug
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/jsturtevant/windows-debug/releases/download/v0.1.2/kubectl-windows-debug-v0.1.2.tar.gz
+    sha256: 5c13553af09b98acf0001d1bc94155a7dbbbd1cb54ad84d0faaac770689e2b10
+    bin: kubectl-windows-debug
+  shortDescription:  Windows node access via kubectl
+  description: |
+      kubectl plugin for launching a Windows pod that will give you access to the specified node
+      and provide a few useful utilities for debugging Windows processes.
+      Access to the node is provided by a Windows Host Process Containers feature in Kubernetes.
+
+      To use this plugin you will need:
+      - kubernetes 1.22+ (with the WindowsHostProcessContainers feature-gate enabled)
+      - containerd 1.6+ as the runtime
+
+      By default it uses container image https://github.com/jsturtevant/windows-debug/pkgs/container/windows-debug
+      which has some useful utilities for debugging Windows processes pre-installed.
+      You can provide your own image by using --image flag.

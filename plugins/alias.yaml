@@ -1,0 +1,39 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: alias
+spec:
+  version: "v0.0.2"
+  platforms:
+  - selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+    uri: https://github.com/predatorray/kubectl-alias/releases/download/v0.0.2/kubectl-alias-0.0.2.tar.gz
+    sha256: "662bee04bbdb5cbfb9c1a5494f6ccbbc4b0e9c81b8f304d7a8f787c03ade5ad3"
+    bin: "bin/kubectl-alias"
+  shortDescription: >- 
+    The missing alias command for kubectl.
+  homepage: https://github.com/predatorray/kubectl-alias
+  caveats: |
+    IMPORTANT! Please add this line to your rc (~/.zsh or ~/.bashrc) file.
+
+        export PATH="$PATH:$HOME/.krew/store/alias/v0.0.2/alias"
+
+    This plugin needs the following programs:
+    * gnu-getopt(1)
+    * sed(1)
+
+    Since the `getopt` in GNU-Linux is by default the GNU's one,
+    it is not required to install `gnu-getopt` again.
+
+    But, if you are using Mac, please follow the instruction below.
+    1. `brew install gnu-getopt`, or download it from its website
+       and install it manually.
+    2. Either add `export GNU_GETOPT_PREFIX="$(brew --prefix gnu-getopt)"`
+       to your profile file, which is RECOMMENDED.
+       Or, replace the `getopt` with `gnu-getopt` by adding it to
+       the head of `$PATH` env, like
+       `export PATH="$(brew --prefix gnu-getopt)/bin:$PATH"`.
+  description: |
+    The missing alias command for kubectl.
+    It helps you create aliases for your frequently-used kubectl commands.

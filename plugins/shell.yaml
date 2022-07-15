@@ -1,0 +1,28 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: shell
+spec:
+  homepage: https://gitlab.com/hojerst/kubectl-shell
+  shortDescription: "Kubernetes Shell Spawner with Mounting"
+  version: "v1.1.1"
+  description: |
+    Allows to spawn a shell image in a kubernetes cluster and attach to it.
+    It is similar to "kubectl run" but allows to easily mount hostPath, secret
+    configmaps and pvcs into this Pod.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+        - linux
+    uri: https://gitlab.com/hojerst/kubectl-shell/-/archive/v1.1.1/kubectl-shell-v1.1.1.tar.gz
+    sha256: af3b9fa105fb24dc352f48580831751604d69feaa7aee60ee7522a258a88b322
+    bin: kubectl-shell
+    files:
+    - from: "kubectl-shell-*/kubectl-shell"
+      to: "."
+    - from: "kubectl-shell-*/LICENSE"
+      to: "."

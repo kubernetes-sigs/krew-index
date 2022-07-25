@@ -3,11 +3,11 @@ kind: Plugin
 metadata:
   name: diag
 spec:
-  version: v0.0.5
+  version: v0.0.9
   homepage: https://github.com/solo-io/kdiag
   platforms:
-  - uri: https://github.com/solo-io/kdiag/releases/download/v0.0.5/kubectl-diag_v0.0.5_darwin_amd64.tar.gz
-    sha256: a19e2c6e9449fde670d13ab8bda7c0444f4539b83d9faa6020f14cf29dbdafb2
+  - uri: https://github.com/solo-io/kdiag/releases/download/v0.0.9/kubectl-diag_v0.0.9_darwin_amd64.tar.gz
+    sha256: fd38a1a2ace63bcf688879e32d94d0b6a556094b9733477b71c9ac1d7ce377b4
     bin: kubectl-diag
     files:
     - from: kubectl-diag
@@ -18,8 +18,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/solo-io/kdiag/releases/download/v0.0.5/kubectl-diag_v0.0.5_darwin_arm64.tar.gz
-    sha256: b687aaea96a67021b89cfb16d1c07226a7bbb180bc6261fea7a2da80b6a77958
+  - uri: https://github.com/solo-io/kdiag/releases/download/v0.0.9/kubectl-diag_v0.0.9_darwin_arm64.tar.gz
+    sha256: 313930e71e5b5d6969ab888e8bd267be3a19d0f868b6036e10768f9f16e22a0a
     bin: kubectl-diag
     files:
     - from: kubectl-diag
@@ -30,8 +30,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-  - uri: https://github.com/solo-io/kdiag/releases/download/v0.0.5/kubectl-diag_v0.0.5_linux_amd64.tar.gz
-    sha256: d3adb1571a0e1b5366be6f1584fce5d818fa52f4859d0980f51ab25cf234b781
+  - uri: https://github.com/solo-io/kdiag/releases/download/v0.0.9/kubectl-diag_v0.0.9_linux_amd64.tar.gz
+    sha256: b730497346284b919e7d18786f924589b801dac0a7904bdd58898214679f3221
     bin: kubectl-diag
     files:
     - from: kubectl-diag
@@ -42,8 +42,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/solo-io/kdiag/releases/download/v0.0.5/kubectl-diag_v0.0.5_windows_amd64.tar.gz
-    sha256: 1f53818eeb711673317e8f79ed4f5c71151c677077ce6a53375bc1849fb4cc45
+  - uri: https://github.com/solo-io/kdiag/releases/download/v0.0.9/kubectl-diag_v0.0.9_windows_amd64.tar.gz
+    sha256: 1339b8d745fd2d61aa5e8cd063dc6f724a4c6598d307ba599db935fdd6cd91f6
     bin: kubectl-diag.exe
     files:
     - from: kubectl-diag.exe
@@ -54,12 +54,14 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-  shortDescription: Diagnostics tools for kubernetes developers.
+  shortDescription: Debug/Diagnostics tools for kubernetes backend systems developers.
   caveats: |
     This uses high privilege ephemeral containers, and not suited for production.
   description: |
-    When working with systems that span multiple micro-services, it can be hard to get a local setup
-    working in-order to debug it. This plugin has a set of tools to assist you with that. Redirecting traffic
-    from a pod to your laptop, so you can only run the components you care about locally. Viewing logs
-    from multiple pods at the same time, so you can see how the system responds on both ends.
+        Systems that span multiple micro-services (istio for example), can be hard to debug.
+        This plugin has a set of tools to assist you with such debugging:
+        - Redirecting traffic from a pod to a laptop, so you can run a server on your laptop and redirect client
+          traffic from the cluster to it (i.e. run istiod with your changes locally, and have envoy from the cluster connect to it)
+        - Viewing logs from multiple pods at the same time (i.e. run a curl command and see logs form all the bookinfo pods as the request travels through them)
+        - Ability to exec into distroless/scratch containers. To let you can exec to your pods even if they don't have a shell binary in them (i.e. deployments in staging environments).
 

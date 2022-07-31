@@ -3,12 +3,12 @@ kind: Plugin
 metadata:
   name: count
 spec:
-  version: v0.2.5
+  version: v0.2.6
   homepage: https://github.com/chenjiandongx/kubectl-count
-  shortDescription: Show resources count in the cluster.
+  shortDescription: Count resources by kind
   description: |
-    kubectl-count uses the dynamic library to found server preferred resources and then
-    leverages informer mechanism to list resources.
+    kubectl-count make it easy to count resources by kind. All kinds in your Kubernetes could be retrieved. 
+    You can show all resources or show resources in a specified namespace.
   platforms:
   - selector:
       matchLabels:
@@ -19,8 +19,8 @@ spec:
         to: .
       - from: LICENSE
         to: .
-    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.2.5/kubectl-count_darwin_amd64.tar.gz
-    sha256: 7cb0cb67e066a6120035f7e534a5e2e0a28fc97ff3326bbe665504d22cae5eb1
+    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.2.6/kubectl-count_darwin_amd64.tar.gz
+    sha256: 09aa6f5ae4e6bd9232c1e8c6e8d87a0e94b4abedb1b1a13f08a256ecd5e24db9
     bin: kubectl-count
   - selector:
       matchLabels:
@@ -31,8 +31,8 @@ spec:
         to: .
       - from: LICENSE
         to: .
-    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.2.5/kubectl-count_darwin_arm64.tar.gz
-    sha256: 3b69ac38a0fc48d8effed6fdfca9f821972b33225d59cd3b4698432b4852d469
+    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.2.6/kubectl-count_darwin_arm64.tar.gz
+    sha256: ae596983b5e2fc64a3d63ff1fce68438a690ea4548622e4912dac8cd8b13e6cf
     bin: kubectl-count
   - selector:
       matchLabels:
@@ -43,8 +43,8 @@ spec:
         to: .
       - from: LICENSE
         to: .
-    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.2.5/kubectl-count_linux_amd64.tar.gz
-    sha256: 3f800a043a8ccc2ec2b50f1a0fb914b3fb43a8605207181537822c8228bdad3e
+    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.2.6/kubectl-count_linux_amd64.tar.gz
+    sha256: a803d8db7ae75879f02b498287805be74fff81445080ee69e94ae2f2d7ef8f36
     bin: kubectl-count
   - selector:
       matchLabels:
@@ -55,8 +55,8 @@ spec:
         to: .
       - from: LICENSE
         to: .
-    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.2.5/kubectl-count_linux_arm64.tar.gz
-    sha256: cdfe4f1c654b40c2cc509432b16710c1dd85626b0d4b08d8c24ef1dbe7d1fa19
+    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.2.6/kubectl-count_linux_arm64.tar.gz
+    sha256: 14a86b64ab7c7855cc8d914c474633062ec78d0d1261988fc2b08cab54374ab1
     bin: kubectl-count
   - selector:
       matchLabels:
@@ -67,8 +67,8 @@ spec:
         to: .
       - from: LICENSE
         to: .
-    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.2.5/kubectl-count_linux_arm.tar.gz
-    sha256: f9de22bba2e8fd70d6b19c8a834aaf486c042510df2c8605b18de4bde3bc2a70
+    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.2.6/kubectl-count_linux_arm.tar.gz
+    sha256: fc2577892e814b727b9ee516a0fb67680d9880ea920e634fce04370f31a7d590
     bin: kubectl-count
   - selector:
       matchLabels:
@@ -79,6 +79,6 @@ spec:
         to: .
       - from: LICENSE
         to: .
-    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.2.5/kubectl-count_windows_amd64.tar.gz
-    sha256: 4abb868a2aed480a2d7c96c2b92f6c67a6f68fa19cecae839f0782b4ea768b57
+    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.2.6/kubectl-count_windows_amd64.tar.gz
+    sha256: 3b671c4626ced32a07f89174b7a3d7cacee5921eb032acbb7b7d316fc3f021db
     bin: kubectl-count.exe

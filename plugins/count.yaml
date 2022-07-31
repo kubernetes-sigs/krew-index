@@ -1,0 +1,83 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: count
+spec:
+  version: v0.1.0
+  homepage: https://github.com/chenjiandongx/kubectl-count
+  shortDescription: Show resources count in the cluster.
+  description: |
+    kubectl-count uses the dynamic library to found server preferred resources and then leverages informer mechanism to list resources.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    files:
+      - from: kubectl-count
+        to: .
+      - from: LICENSE
+        to: .
+    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.1.0/kubectl-count_darwin_amd64.tar.gz
+    sha256: 4b639342ee680b0ac1b98ed4768906c2d10ebddeff9bc440683b739ee7b1d0b4
+    bin: kubectl-count
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    files:
+      - from: kubectl-count
+        to: .
+      - from: LICENSE
+        to: .
+    uri: https://github.com/chenjiandongx/kubectl-counnt/releases/download/v0.1.0/kubectl-count_darwin_arm64.tar.gz
+    sha256: 532a31d0fab2ddf7b9bef065a3ce7c3e3465f8b611a3add3a5a6aee96ea296d1
+    bin: kubectl-count
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    files:
+      - from: kubectl-count
+        to: .
+      - from: LICENSE
+        to: .
+    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.1.0/kubectl-count_linux_amd64.tar.gz
+    sha256: 77df68d32b3e8cd43265bba75b4c819fadfe8e58b3f316534e09ed996c44903e
+    bin: kubectl-count
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    files:
+      - from: kubectl-count
+        to: .
+      - from: LICENSE
+        to: .
+    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.1.0/kubectl-count_linux_arm64.tar.gz
+    sha256: 5ef52d31020001bd8ff5e243162fc45afee48a079f348ab62bb0ea7661478809
+    bin: kubectl-count
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm
+    files:
+      - from: kubectl-count
+        to: .
+      - from: LICENSE
+        to: .
+    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.1.0/kubectl-count_linux_arm.tar.gz
+    sha256: 04cb83e6157f67e4b63db594554a6de92202dd844e96437d9aa7cb307b6f8792
+    bin: kubectl-count
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    files:
+      - from: kubectl-count.exe
+        to: .
+      - from: LICENSE
+        to: .
+    uri: https://github.com/chenjiandongx/kubectl-count/releases/download/v0.1.0/kubectl-count_windows_amd64.tar.gz
+    sha256: b45e26fec11aa747e99be9136c06626fe65c3c995f678bb8cd2d21c7caa86195
+    bin: kubectl-count.exe

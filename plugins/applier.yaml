@@ -1,0 +1,49 @@
+# Copyright Contributors to the Open Cluster Management project
+
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: applier
+spec:
+  version: v1.2.1
+  homepage: https://github.com/stolostron/applier
+  shortDescription: Provides an apply and render commands for template based resources.
+  description: |
+    This plugin allows you apply on kubernetes template resources (golang text/template) or just render them.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/stolostron/applier/releases/download/v1.2.1/applier_darwin_amd64.tar.gz
+    sha256: ac14316d0fe2b7761207c0bf4d0d635cc47c6a5422420de893803c79953806dc
+    bin: applier
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/stolostron/applier/releases/download/v1.2.1/applier_darwin_arm64.tar.gz
+    sha256: 4e33b236e144ea9eaa87e42cdd5e73f81596dabc9514b6ff581bccd012069314
+    bin: applier
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/stolostron/applier/releases/download/v1.2.1/applier_linux_amd64.tar.gz
+    sha256: 8a077c7bdb18ca3082db99018e0ffc247fa843f9fed5316079fd08abcdc0f6bd
+    bin: applier
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/stolostron/applier/releases/download/v1.2.1/applier_linux_arm64.tar.gz
+    sha256: e3eed9e72713736237856b8d5b3a4374a2471608a984ef529addb9a4849e07ba
+    bin: applier
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/stolostron/applier/releases/download/v1.2.1/applier_windows_amd64.zip
+    sha256: 6b8434edfbfc2b94f5d85d548e9ef4b685687c5b129868e0ed11a45e598bc885
+    bin: applier.exe
+

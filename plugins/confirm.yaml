@@ -1,0 +1,59 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: confirm
+spec:
+  version: v0.1.0
+  homepage: https://github.com/brianpursley/kubectl-confirm
+  shortDescription: Dry-run / diff / confirm before running a command
+  description: |
+    This plugin shows the current configuration, performs a dry-run 
+    (if available), and displays a diff (if available), and then prompts 
+    you to confirm by typing 'yes' before proceeding to execute the kubectl 
+    command.
+
+    It shows the current configuration and prompts for confirmation for all 
+    kubectl commands.
+
+    It performs a dry-run for the following kubectl commands: annotate, apply, 
+    autoscale, cordon, create, delete, drain, expose, label, patch, replace, 
+    run, scale, set, taint, uncordon.
+
+    It performs a diff for the following kubectl commands: annotate, apply, 
+    autoscale, create, expose, label, patch, replace, run, scale, set, taint.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/brianpursley/kubectl-confirm/releases/download/v0.1.0/kubectl-confirm-darwin-amd64.tar.gz
+      sha256: 147c053a5f9d8bdb281c6ca7a40576f22186ed49fb510510da7d14a3d56bf6bf
+      bin: kubectl-confirm
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/brianpursley/kubectl-confirm/releases/download/v0.1.0/kubectl-confirm-darwin-arm64.tar.gz
+      sha256: 53188a1efca52663fdf829317367811cb959769e60c471bd552a0d64a4eb93aa
+      bin: kubectl-confirm
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/brianpursley/kubectl-confirm/releases/download/v0.1.0/kubectl-confirm-linux-amd64.tar.gz
+      sha256: cdc0ae10906291608691e2dec8cc6acc123189df0bf3cb5bc7ad0913283ff48b
+      bin: kubectl-confirm
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/brianpursley/kubectl-confirm/releases/download/v0.1.0/kubectl-confirm-linux-arm64.tar.gz
+      sha256: a73b01e7d04a87b03be1d8c23e9275d8bf653552c4b86ca246afc1420c5d89d0
+      bin: kubectl-confirm
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/brianpursley/kubectl-confirm/releases/download/v0.1.0/kubectl-confirm-windows-amd64.tar.gz
+      sha256: 7cfa6a8694b77515a86a4291413a18ddd96b3943c6c4cd72d5fe41dfb1190ac5
+      bin: kubectl-confirm.exe

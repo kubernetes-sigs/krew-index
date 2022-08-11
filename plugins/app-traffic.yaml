@@ -1,0 +1,73 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: app-traffic
+spec:
+  homepage: https://github.com/dodopizza/kubectl-app-traffic
+  shortDescription: Disable/Enable applicatoin traffic for service
+  version: v1.0.2
+  description: |
+    Plugin for disabling and enabling applicatoin traffic for service in Kubernetes.
+  caveats: |
+    None
+  platforms:
+    - uri: https://github.com/dodopizza/kubectl-app-traffic/releases/download/1.0.2/kubectl-app_traffic_Darwin_x86_64.tar.gz
+      sha256: edd63cf872441e6808c19a599974d637d0dea299d8332be3869e53ea967d3669
+      bin: kubectl-app-traffic
+      files:
+        - from: kubectl-app-traffic
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+    - uri: https://github.com/dodopizza/kubectl-app-traffic/releases/download/1.0.2/kubectl-app_traffic_Darwin_arm64.tar.gz
+      sha256: 1bbe9aa831186b426bd5d31eb0ac761e9918f1e383981c6a725cacb8b4e5051b
+      bin: kubectl-app-traffic
+      files:
+        - from: kubectl-app-traffic
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+    - uri: https://github.com/dodopizza/kubectl-app-traffic/releases/download/1.0.2/kubectl-app_traffic_Linux_x86_64.tar.gz
+      sha256: 1ed8594d031e27ae34a1172417ff4fe12d535efac98d0c937e1ca408f694757b
+      bin: kubectl-app-traffic
+      files:
+        - from: kubectl-app-traffic
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - uri: https://github.com/dodopizza/kubectl-app-traffic/releases/download/1.0.2/kubectl-app_traffic_Linux_arm64.tar.gz
+      sha256: fbe127db9ffdf66c74599d710d04a9253971f60b3e1951fe0b82ecfffcfd1152
+      bin: kubectl-app-traffic
+      files:
+        - from: kubectl-app-traffic
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+    - uri: https://github.com/dodopizza/kubectl-app-traffic/releases/download/1.0.2/kubectl-app_traffic_Windows_x86_64.zip
+      sha256: 41e362777be09fead027416fcad686ee0b38e50d870773dc42ed0fde272167ce
+      bin: kubectl-app-traffic.exe
+      files:
+        - from: kubectl-app-traffic.exe
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64

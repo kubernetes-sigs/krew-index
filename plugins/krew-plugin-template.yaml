@@ -1,0 +1,28 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: krew-plugin-template
+spec:
+  version: v1.0.10
+  homepage: https://github.com/armandomeeuwenoord/krew-plugin-template
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/armandomeeuwenoord/krew-plugin-template/releases/download/v1.0.10/krew-plugin-template_v1.0.10_darwin_amd64.tar.gz
+    sha256: c1ee9c075648e6d475fb4ad3a6bc44cd822ef44af5566a2a6c5e7c948d6902f8
+    bin: krew-plugin-template
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/armandomeeuwenoord/krew-plugin-template/releases/download/v1.0.10/krew-plugin-template_v1.0.10_linux_amd64.tar.gz
+    sha256: b2d14e6e8bdbf8c424079cb345cea85c35e0901ec2f4c1fbec14cd239079c39d
+    bin: krew-plugin-template
+  shortDescription: Evicts the given pod
+  description: |
+    Usage:
+      krew-plugin-template <pod-name> -n <namespace-name>
+      This plugin evicts the given pod. This is particularly useful for testing pod disruption budget rules.
+      Read more documentation at: https://github.com/armandomeeuwenoord/krew-plugin-template

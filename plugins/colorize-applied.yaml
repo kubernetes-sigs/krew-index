@@ -5,9 +5,11 @@ metadata:
 spec:
   version: v0.0.1
   homepage: https://github.com/cappyzawa/kubectl-colorize-applied
-  shortDescription: "Colorize the applied result"
+  shortDescription: "Colorize results of apply/dry-run"
   description: |
-    Enjoy coloring the applied results.
+    This plugin colorizes the results of apply/dry-run.
+    Each line containing the following strings is colored:
+    "pruned", "configured", "created", and "unchanged".
   platforms:
   - selector:
       matchLabels:

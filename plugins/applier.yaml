@@ -5,7 +5,7 @@ kind: Plugin
 metadata:
   name: applier
 spec:
-  version: v1.2.3
+  version: v1.2.4
   homepage: https://github.com/stolostron/applier
   shortDescription: Apply 'go text/template' files on k8s.
   description: |
@@ -15,34 +15,34 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/stolostron/applier/releases/download/v1.2.3/applier_darwin_amd64.tar.gz
-    sha256: e7961475136d3ccec6f7247051480ce0496d1eb78d6f40755364c86add15da91
+    uri: https://github.com/stolostron/applier/releases/download/v1.2.4/applier_darwin_amd64.tar.gz
+    sha256: 7981a1be7654619d48b44a024b4041930af2348429b85627a63dcc1fa637fbc2
     bin: applier
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/stolostron/applier/releases/download/v1.2.3/applier_darwin_arm64.tar.gz
-    sha256: 0998b1ab5f9286d2fda2fb684dcf41ac836c9f43b0763007436943c8e621acfb
+    uri: https://github.com/stolostron/applier/releases/download/v1.2.4/applier_darwin_arm64.tar.gz
+    sha256: def12c77fe9063779cbc7545a971309a65b768a86045c3407b5f94d5b4bdc1af
     bin: applier
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/stolostron/applier/releases/download/v1.2.3/applier_linux_amd64.tar.gz
-    sha256: 2584d0965dff3fa79c14c4dc9218631a00fa72d8a40e72b1ff7efa386312f3dc
+    uri: https://github.com/stolostron/applier/releases/download/v1.2.4/applier_linux_amd64.tar.gz
+    sha256: 964d14f7d0199bb5f2d9d48bf5b505d1d2ad85ce0db456d83583d0be99e80e5b
     bin: applier
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/stolostron/applier/releases/download/v1.2.3/applier_linux_arm64.tar.gz
-    sha256: ad95d327ab8ba03f21c00211e9734f36ea3ce2650e493b3e6693df677a33447b
+    uri: https://github.com/stolostron/applier/releases/download/v1.2.4/applier_linux_arm64.tar.gz
+    sha256: d9d20728efd879c7ba2a50026b0dbe649d6691c0a686de6c3b591ed61db31806
     bin: applier
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/stolostron/applier/releases/download/v1.2.3/applier_windows_amd64.zip
-    sha256: 55094ceea7c355971c079825a28ee0635b77ec52b5511d2059577895bf428875
+    uri: https://github.com/stolostron/applier/releases/download/v1.2.4/applier_windows_amd64.zip
+    sha256: 5afcb8b8b2071dba679acc180fa66ad87c35c966e3b9b07d6663e460f0b8a062
     bin: applier.exe

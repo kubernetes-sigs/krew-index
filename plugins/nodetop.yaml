@@ -1,0 +1,23 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: nodetop
+spec:
+  version: v0.0.1
+  homepage: https://github.com/rajatjindal/kubectl-nodetop
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-nodetop/releases/download/v0.0.1/kubectl-nodetop_v0.0.1_darwin_amd64.tar.gz
+    sha256: a935268b6222aa43ab02c21bc1c1a450a425ef165b9c85968c56bb2594cf573c
+    bin: kubectl-nodetop
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-nodetop/releases/download/v0.0.1/kubectl-nodetop_v0.0.1_linux_amd64.tar.gz
+    sha256: b5fd7650b24d3b2231bfc8fbbd7a485039968da39e9401cf8ba76c9337639098
+    bin: kubectl-nodetop
+  shortDescription: Display resource (CPU/memory) usage of pods grouped by nodes

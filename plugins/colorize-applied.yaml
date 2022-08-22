@@ -3,46 +3,44 @@ kind: Plugin
 metadata:
   name: colorize-applied
 spec:
-  version: v0.0.1
+  version: v0.0.2
   homepage: https://github.com/cappyzawa/kubectl-colorize-applied
-  shortDescription: "Colorize results of apply/dry-run"
+  shortDescription: "Colorize the applied result"
   description: |
-    This plugin colorizes the results of apply/dry-run.
-    Each line containing the following strings is colored:
-    "pruned", "configured", "created", and "unchanged".
+    Enjoy coloring the applied results.
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/cappyzawa/kubectl-colorize-applied/releases/download/v0.0.1/kubectl-colorize-applied-darwin-amd64.tar.gz
-    sha256: 1dd5de5f4dd342eb85bfbb2c409e2caff18dfc21bc6d387aa77a81c3c3ad5559
+    uri: https://github.com/cappyzawa/kubectl-colorize-applied/releases/download/v0.0.2/kubectl-colorize-applied-darwin-amd64.tar.gz
+    sha256: ce0845523b5e33ad8d35f02ce14247308c70b91a9f854d45a5974f80a6653daa
     bin: kubectl-colorize-applied
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/cappyzawa/kubectl-colorize-applied/releases/download/v0.0.1/kubectl-colorize-applied-darwin-arm64.tar.gz
-    sha256: d3688c6a74ee280284b9d043ac90c1461a875beb9688c012b54a307bdbcfca6c
+    uri: https://github.com/cappyzawa/kubectl-colorize-applied/releases/download/v0.0.2/kubectl-colorize-applied-darwin-arm64.tar.gz
+    sha256: 9753a3cd131a9d32f72995570547aa57b6c59114a1bc06256b62914d341cfff7
     bin: kubectl-colorize-applied
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/cappyzawa/kubectl-colorize-applied/releases/download/v0.0.1/kubectl-colorize-applied-linux-amd64.tar.gz
-    sha256: a768d63005517bd28aa3f00e1fd4a5928079e5c98b5d509e0cc58515fe6227e1
+    uri: https://github.com/cappyzawa/kubectl-colorize-applied/releases/download/v0.0.2/kubectl-colorize-applied-linux-amd64.tar.gz
+    sha256: 15d979ac1e0078037b8289d8c39c4f50769ba78feca41e3249c338a47979fc40
     bin: kubectl-colorize-applied
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/cappyzawa/kubectl-colorize-applied/releases/download/v0.0.1/kubectl-colorize-applied-linux-arm64.tar.gz
-    sha256: e207fa9fe8aca3adaddaf154c849f1752f0e0433d37c39c2f83b406285d481ea
+    uri: https://github.com/cappyzawa/kubectl-colorize-applied/releases/download/v0.0.2/kubectl-colorize-applied-linux-arm64.tar.gz
+    sha256: 4a55d69bcf161a030b57c0e0dc4b58e1725b901a50ed0319529d7cbd2e5b4784
     bin: kubectl-colorize-applied
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/cappyzawa/kubectl-colorize-applied/releases/download/v0.0.1/kubectl-colorize-applied-windows-amd64.tar.gz
-    sha256: 93e4272c96c7a4e0349cb8d150602609f9f5cfeff9bed4333a4b7f2db55f37fc
+    uri: https://github.com/cappyzawa/kubectl-colorize-applied/releases/download/v0.0.2/kubectl-colorize-applied-windows-amd64.tar.gz
+    sha256: 26bb6eeb9402dc83f0bff5925ec6ac5f9c4a4533c65dee8aef4b62b2fdf04b83
     bin: kubectl-colorize-applied.exe

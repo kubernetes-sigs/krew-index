@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: mc
 spec:
-  version: v1.1.2
+  version: v1.1.3
   homepage: https://github.com/jonnylangefeld/kubectl-mc
   shortDescription: Run kubectl commands against multiple clusters at once
   description: |+2
@@ -16,20 +16,62 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.2/kubectl-mc_v1.1.2_darwin_amd64.tar.gz
-    sha256: 7a40cb1486adeb3333c88c4c914157accf81689ec51a8cc58c93ee8c16b07ac1
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.3/kubectl-mc_v1.1.3_darwin_amd64.tar.gz
+    sha256: ce281e91e8c1677894e1e6e6db602d0ca2b907ff032a0a657e77d0bc78db1cac
+    bin: kubectl-mc
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.3/kubectl-mc_v1.1.3_darwin_arm64.tar.gz
+    sha256: d08706b1336be5b016db3be858b4bb571982573d2c7f439267900a1dafad6aa5
     bin: kubectl-mc
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.2/kubectl-mc_v1.1.2_linux_amd64.tar.gz
-    sha256: 875d4f401d5cb774c8cde073a8e5a96645080631cf5aef7b50128496a55de377
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.3/kubectl-mc_v1.1.3_linux_amd64.tar.gz
+    sha256: 20d7928ab439a7db536ebef403ffe833847458c38f16179f750670e7ba75e165
+    bin: kubectl-mc
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.3/kubectl-mc_v1.1.3_linux_arm64.tar.gz
+    sha256: 07b3db4b5a4aadc7fcd4cb6cdec9c4e46810dc47221be3f3eb27a9727cb4cc47
+    bin: kubectl-mc
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.3/kubectl-mc_v1.1.3_linux_armv7.tar.gz
+    sha256: 0f8be94240e7ce78b95197e8df9402d0f236cbb2b1e821747392e1aa175dc378
+    bin: kubectl-mc
+  - selector:
+      matchLabels:
+        os: linux
+        arch: 386
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.3/kubectl-mc_v1.1.3_linux_386.tar.gz
+    sha256: 16b6512f8b2fdeae34e08b4dcdfde0c16dfa769e65af584c88adfe215f810469
     bin: kubectl-mc
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.2/kubectl-mc_v1.1.2_windows_amd64.tar.gz
-    sha256: 7bc5492b9a3e7afde2c00e24d2f45f803659fd0c7b819bb7912cfefc617af587
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.3/kubectl-mc_v1.1.3_windows_amd64.tar.gz
+    sha256: fdf6c7307020938f619e510013fb8234fae11267ab1ca5d9d0bcdd1ceb8a137a
+    bin: kubectl-mc.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.3/kubectl-mc_v1.1.3_windows_armv7.tar.gz
+    sha256: 2a7c17cbbda0974b894333ba0ed06500fcf25b4cd834c6f407ba37607be073c0
+    bin: kubectl-mc.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: 386
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.3/kubectl-mc_v1.1.3_windows_386.tar.gz
+    sha256: 90cf2c53aa82cd984848e6eeaa9202f2cc3ea100e347745f383b482f9f5e1bbd
     bin: kubectl-mc.exe

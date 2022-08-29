@@ -1,0 +1,56 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: execws
+spec:
+  homepage: https://github.com/jpts/kubectl-execws
+  shortDescription: kubectl exec using WebSockets
+  version: v0.1.0
+  description: A replacement for "kubectl exec" that works over WebSocket connections.
+  caveats: |
+    Node direct-exec functionality requires connection to the kubelet API to work, since it
+    bypassess the apiserver by design.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: "https://github.com/jpts/kubectl-execws/releases/download/v0.1.0/kubectl-execws_v0.1.0_linux_amd64.tar.gz"
+    sha256: d9a622e2e90a1185647baa5134ee93634ce17d6813294a8e1c674c67592085f2
+    bin: kubectl-execws
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: "https://github.com/jpts/kubectl-execws/releases/download/v0.1.0/kubectl-execws_v0.1.0_linux_arm64.tar.gz"
+    sha256: c6aba7d3bffeb771e6e62e70cab5610260109977523cb5ac39fc8be0aa891099
+    bin: kubectl-execws
+  - selector:
+      matchLabels:
+        os: linux
+        arch: armv7
+    uri: "https://github.com/jpts/kubectl-execws/releases/download/v0.1.0/kubectl-execws_v0.1.0_linux_armv7.tar.gz"
+    sha256: 762ef6fadf42dca5e8658be718dfcc3587aa83d5f53afbe966822ea442de57fb
+    bin: kubectl-execws
+  - selector:
+      matchLabels:
+        os: linux
+        arch: armv6
+    uri: "https://github.com/jpts/kubectl-execws/releases/download/v0.1.0/kubectl-execws_v0.1.0_linux_armv6.tar.gz"
+    sha256: 81d21f538a972a6049c1a314e3b23b39230f919f64740c03d40147972c6290d2
+    bin: kubectl-execws
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: "https://github.com/jpts/kubectl-execws/releases/download/v0.1.0/kubectl-execws_v0.1.0_darwin_amd64.tar.gz"
+    sha256: 586a996d8fe605f657ce288b83b55081896d212a37c0c88956e77600f6fcf0e1
+    bin: kubectl-execws
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: "https://github.com/jpts/kubectl-execws/releases/download/v0.1.0/kubectl-execws_v0.1.0_darwin_arm64.tar.gz"
+    sha256: 5e042aad9224c7f2479c6efa95e4b8c2e14486cecade638f29e52c816c2a92f2
+    bin: kubectl-execws
+  

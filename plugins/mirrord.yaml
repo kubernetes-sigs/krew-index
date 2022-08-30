@@ -1,0 +1,25 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: mirrord
+spec:
+  shortDescription: Easily mirror traffic from your Kubernetes cluster to your development environment.
+  description: |
+    Run your service in the context of your cloud environment, with access 
+    to other microservices, databases, queues, and managed services, 
+    all without leaving the local setup you know and love.
+  version: v2.10.1
+  homepage: https://github.com/metalbear-co/mirrord
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+      uri: https://github.com/metalbear-co/mirrord/releases/download/2.10.1/mirrord_mac_universal.zip
+      sha256: 5d65b523bcf97cd10e52c5bbba0ca58cf84c3f866e3bb4349c2a6c5f70c9cbbe
+      bin: mirrord
+    - selector:
+        matchLabels:
+          os: linux
+      uri: https://github.com/metalbear-co/mirrord/releases/download/2.10.1/mirrord_linux_x86_64.zip
+      sha256: 3f1b2420001fbf7bb3bb010167571e7b351d08ccdbf75d64526877f8fa63c027
+      bin: mirrord

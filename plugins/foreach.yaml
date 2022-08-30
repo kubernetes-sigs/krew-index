@@ -11,38 +11,38 @@ spec:
     simultaneously and print their output, prefixed by context name.
     Choose contexts with exact name match or regular expressions.
   platforms:
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: amd64
-      uri: https://github.com/ahmetb/kubectl-foreach/releases/download/v0.1.0/kubectl-foreach_v0.1.0_darwin_amd64.tar.gz
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/ahmetb/kubectl-foreach/releases/download/v0.1.0/kubectl-foreach_v0.1.0_darwin_amd64.tar.gz
     sha256: a1c572f64dadfca7088421adad8b203f520fbe251ab08d61501d4629665bad86
-      bin: kubectl-foreach
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: arm64
-      uri: https://github.com/ahmetb/kubectl-foreach/releases/download/v0.1.0/kubectl-foreach_v0.1.0_darwin_arm64.tar.gz
+    bin: kubectl-foreach
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/ahmetb/kubectl-foreach/releases/download/v0.1.0/kubectl-foreach_v0.1.0_darwin_arm64.tar.gz
     sha256: 6d2b1d715ba81d1a0c40a9f9e93288175f67e4d14252dec33df928a62459d27e
-      bin: kubectl-foreach
-    - selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-      uri: https://github.com/ahmetb/kubectl-foreach/releases/download/v0.1.0/kubectl-foreach_v0.1.0_linux_amd64.tar.gz
+    bin: kubectl-foreach
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/ahmetb/kubectl-foreach/releases/download/v0.1.0/kubectl-foreach_v0.1.0_linux_amd64.tar.gz
     sha256: ed93b7d02b59927f18fea23f9c0d07321adaf15af5afee52ec801846d0cf722e
-      bin: kubectl-foreach
-    - selector:
-        matchLabels:
-          os: linux
-          arch: arm64
-      uri: https://github.com/ahmetb/kubectl-foreach/releases/download/v0.1.0/kubectl-foreach_v0.1.0_linux_arm64.tar.gz
+    bin: kubectl-foreach
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/ahmetb/kubectl-foreach/releases/download/v0.1.0/kubectl-foreach_v0.1.0_linux_arm64.tar.gz
     sha256: c1d67b5d02122fe8514b4f768c829f5d3986661083bec8cf0c242d7c03448e10
-      bin: kubectl-foreach
-    - selector:
-        matchLabels:
-          os: windows
-          arch: amd64
-      uri: https://github.com/ahmetb/kubectl-foreach/releases/download/v0.1.0/kubectl-foreach_v0.1.0_windows_amd64.tar.gz
+    bin: kubectl-foreach
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/ahmetb/kubectl-foreach/releases/download/v0.1.0/kubectl-foreach_v0.1.0_windows_amd64.tar.gz
     sha256: 2384493f126f10cf3fa07fc252058155d64b975fcc100c20ca16caa0e1898ead
-      bin: kubectl-foreach.exe
+    bin: kubectl-foreach.exe

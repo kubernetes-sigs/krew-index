@@ -6,10 +6,15 @@ spec:
   homepage: https://github.com/jpts/kubectl-execws
   shortDescription: kubectl exec using WebSockets
   version: v0.1.0
-  description: A replacement for "kubectl exec" that works over WebSocket connections.
+  description: |
+    The kubectl execws plugin provides users the ability to exec over
+    WebSockets. This provides compatiblity with loadbalancers which don't
+    support the SPDY protocol. It also provides the ability to skip the
+    need for the "get pods" RBAC permission and the ability to exec directly
+    via a node, where direct connection to the apiserver is not available.
   caveats: |
-    Node direct-exec functionality requires connection to the kubelet API to work, since it
-    bypassess the apiserver by design.
+    Node direct-exec functionality requires connection to the kubelet API to
+    work, since it bypassess the apiserver by design.
   platforms:
   - selector:
       matchLabels:
@@ -46,4 +51,3 @@ spec:
     uri: "https://github.com/jpts/kubectl-execws/releases/download/v0.1.0/kubectl-execws_v0.1.0_darwin_arm64.tar.gz"
     sha256: 5e042aad9224c7f2479c6efa95e4b8c2e14486cecade638f29e52c816c2a92f2
     bin: kubectl-execws
-  

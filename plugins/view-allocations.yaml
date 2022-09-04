@@ -3,28 +3,28 @@ kind: Plugin
 metadata:
   name: view-allocations
 spec:
-  version: "v0.14.8"
+  version: "v0.15.1"
   platforms:
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.14.8/kubectl-view-allocations_0.14.8-x86_64-apple-darwin.tar.gz
-      sha256: "6eb3c7b84928a3b00b793ed58efc7932d865c384cd9fe4d6bdcc8e35bb4d7f86"
+      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.15.1/kubectl-view-allocations_0.15.1-x86_64-apple-darwin.tar.gz
+      sha256: "243729b1e24653c8b49c5bdd9780c1865b516984981cfe9ebbb10eeb2e02e29f"
       bin: "./kubectl-view-allocations"
     - selector:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.14.8/kubectl-view-allocations_0.14.8-aarch64-apple-darwin.tar.gz
-      sha256: "e07e2c3ae542acd2350caca59f1139e8431ed2f1e664d2140314dc98b5d9de39"
+      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.15.1/kubectl-view-allocations_0.15.1-aarch64-apple-darwin.tar.gz
+      sha256: "52829ee5cb71221c92d678e2d6fc085294620d32d11227ad15ab9b082b53ff8a"
       bin: "./kubectl-view-allocations"
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.14.8/kubectl-view-allocations_0.14.8-x86_64-unknown-linux-gnu.tar.gz
-      sha256: "1c3878bb1f26e30b0d72f05374d9053bfbe7516b2d94c863f1bd0ae0f03da8de"
+      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.15.1/kubectl-view-allocations_0.15.1-x86_64-unknown-linux-gnu.tar.gz
+      sha256: "14a62b31545c97c175ffa525bedd20ca727b7139247d9102052cc79f4d2fee64"
       bin: "./kubectl-view-allocations"
   shortDescription: List allocations per resources, nodes, pods.
   homepage: https://github.com/davidB/kubectl-view-allocations

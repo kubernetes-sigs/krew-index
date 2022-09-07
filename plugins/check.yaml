@@ -1,0 +1,27 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: check
+spec:
+  version: "v0.7.2"
+  homepage: https://gitlab.com/diogoregateiro/k8s-check-plugin
+  shortDescription: "Checks a cluster for correctness."
+  description: |
+    Checks a cluster to determine if common services are working.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - linux
+    uri: https://gitlab.com/diogoregateiro/k8s-check-plugin/uploads/93327abcef47ddbd63d33709a473341d/kubectl-check-v0.7.2.tar.gz
+    sha256: e017b5aa5d818d003c776652282beba0dca5b1c9858b3c56d64d718f1454685c
+    files:
+    - from: "manifests"
+      to: "manifests"
+    - from: "LICENSE"
+      to: "."
+    - from: "kubectl-check"
+      to: "."
+    bin: kubectl-check

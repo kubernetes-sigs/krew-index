@@ -3,46 +3,46 @@ kind: Plugin
 metadata:
   name: eds
 spec:
-  version: "v0.7.0"
-  shortDescription: Interact and manage ExtendedDaemonset resources
+  version: "v0.8.0"
+  shortDescription: Easily interact and manage ExtendedDaemonset resources.
   description: |
     The ExtendedDaemonset kubectl plugin provides useful utilities to operate daemonsets
     via the ExtendedDaemonset controller and the ExtendedDaemonset CRD.
   homepage: https://github.com/DataDog/extendeddaemonset
   platforms:
-    - uri: https://github.com/DataDog/extendeddaemonset/releases/download/v0.7.0/kubectl-eds_0.7.0_darwin_amd64.zip
-      sha256: "dba910f0ca75d9b542d49a929c188ffec073303bfd3560995f18fa6f55d09dc1"
-      bin: kubectl-eds
-      files:
-        - from: kubectl-eds
-          to: .
-        - from: LICENSE
-          to: .
-      selector:
-        matchLabels:
-          os: darwin
-          arch: amd64
-    - uri: https://github.com/DataDog/extendeddaemonset/releases/download/v0.7.0/kubectl-eds_0.7.0_linux_amd64.zip
-      sha256: "c10f5bc2e028aca5a15715c5fe50735991b486146c9ee3dcb956e92225aa2780"
-      bin: kubectl-eds
-      files:
-        - from: kubectl-eds
-          to: .
-        - from: LICENSE
-          to: .
-      selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-    - uri: https://github.com/DataDog/extendeddaemonset/releases/download/v0.7.0/kubectl-eds_0.7.0_windows_amd64.zip
-      sha256: "509f862acda7634c8bfba355853db3b316a16645203f075988a980597e18a9fa"
-      bin: kubectl-eds.exe
-      files:
-        - from: kubectl-eds.exe
-          to: .
-        - from: LICENSE
-          to: .
-      selector:
-        matchLabels:
-          os: windows
-          arch: amd64
+  - uri: https://github.com/DataDog/extendeddaemonset/releases/download/v0.8.0/kubectl-eds_0.8.0_darwin_amd64.zip
+    sha256: "047f6ca5b002be6cea7e9f976c7db1ae15143ab80914eb87d5c888caca1414ea"
+    bin: kubectl-eds
+    files:
+    - from: kubectl-eds
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/DataDog/extendeddaemonset/releases/download/v0.8.0/kubectl-eds_0.8.0_linux_amd64.zip
+    sha256: "7f44e7498e2f32896bfa88d5b7161d5d463d9c80769c7cd6bd2a0634667d70b5"
+    bin: kubectl-eds
+    files:
+    - from: kubectl-eds
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/DataDog/extendeddaemonset/releases/download/v0.8.0/kubectl-eds_0.8.0_windows_amd64.zip
+    sha256: "0707ca5d332ed181bdc1a6ee14fe03ab40907b577fbfa9b05f6185e6430f04d5"
+    bin: kubectl-eds.exe
+    files:
+    - from: kubectl-eds.exe
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

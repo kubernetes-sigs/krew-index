@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: virt
 spec:
-  version: "v0.57.0"
+  version: "v0.57.1"
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v0.57.0/virtctl-darwin-amd64.tar.gz
-    sha256: eed4e1fa36d7a15f90532a7fbbbe6c030ebf85e48c5cc8d6149a9a32b6ec628a
+    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v0.57.1/virtctl-darwin-amd64.tar.gz
+    sha256: d96e225dbc41c70553effa9105c52e789aefd9571ed2ad3800a998051f50cf69
     files:
     - from: "/virtctl/virtctl-darwin-amd64"
       to: "virtctl"
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v0.57.0/virtctl-linux-amd64.tar.gz
-    sha256: b40e6123af32df7da92df419b4a249a262312c62457b04bfbe36b18d5bc6d3cd
+    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v0.57.1/virtctl-linux-amd64.tar.gz
+    sha256: 14f3ebef4afb20d8f844f6bf702a06b7fdfa5d4c12e060effd74b8a639e00f1e
     files:
     - from: "/virtctl/virtctl-linux-amd64"
       to: "virtctl"
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v0.57.0/virtctl-windows-amd64.exe.tar.gz
-    sha256: ff0c13188c9c57711a20afc401c318b9b56397373e4c621e07b7b64f85403e7d
+    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v0.57.1/virtctl-windows-amd64.exe.tar.gz
+    sha256: bed4e5a1b7bd410a965096d3fb2ec11190eb3fcc9af571f031f641a298fe037b
     files:
     - from: "/virtctl/virtctl-windows-amd64.exe"
       to: "virtctl.exe"

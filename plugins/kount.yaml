@@ -1,0 +1,75 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kount
+spec:
+  version: v0.0.1
+  homepage: https://github.com/adityajoshi12/kubectl-kount
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/adityajoshi12/kubectl-kount/releases/download/v0.0.1/kubectl-kount_v0.0.1_darwin_amd64.tar.gz
+      sha256: c0c5d3f1733c3e6556d8231a33708cb05eb18db22f2bb4fcad1e91631f762845
+      bin: kubectl-kount
+      files:
+        - from: kubectl-kount
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/adityajoshi12/kubectl-kount/releases/download/v0.0.1/kubectl-kount_v0.0.1_darwin_arm64.tar.gz
+      sha256: 4e73590f874a3ea039915d4ee76ee8632bbf80d7bdcf2dd5df1e43d4b2ae3950
+      bin: kubectl-kount
+      files:
+        - from: kubectl-kount
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/adityajoshi12/kubectl-kount/releases/download/v0.0.1/kubectl-kount_v0.0.1_linux_amd64.tar.gz
+      sha256: cd556e573338fdc42825eda42ce28b4088f6ca65e73702a328edbeff607ed9cb
+      bin: kubectl-kount
+      files:
+        - from: kubectl-kount
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/adityajoshi12/kubectl-kount/releases/download/v0.0.1/kubectl-kount_v0.0.1_linux_arm64.tar.gz
+      sha256: 18017004eda5f7ca00143d47dba171e7174980c361f1a152f9a02b336cf8612a
+      bin: kubectl-kount
+      files:
+        - from: kubectl-kount
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/adityajoshi12/kubectl-kount/releases/download/v0.0.1/kubectl-kount_v0.0.1_windows_amd64.tar.gz
+      sha256: 30f16adcca489e1cd25cde8e5bd67d505219263868d3653eb0381f1eaaf6e47c
+      bin: kubectl-kount.exe
+      files:
+        - from: kubectl-kount.exe
+          to: .
+        - from: LICENSE
+          to: .
+  shortDescription: count kubernetes resource instances.
+  description: |
+    This plugin is a subcommand of kubectl to count kubernetes object.
+    It can be used to count kubernetes native resources like pods, deployment,
+    configmap, services etc.
+
+    

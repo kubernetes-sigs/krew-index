@@ -1,7 +1,7 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: watch
+  name: delta-watch
 spec:
   homepage: https://github.com/imuxin/kubectl-watch
   shortDescription: A kubectl plugin to provide a pretty delta change view
@@ -11,6 +11,11 @@ spec:
     the last. Then use git-delta or difftastic tool to provide a pretty view in the terminal.
   caveats: |
     If you use default diff tool "git-delta", you need to preinstall git. If use "--diff-tool difft", git is optional.
+    Usage:
+        kubectl delta-watch <resource>
+        kubectl delta-watch <resource> -A
+        kubectl delta-watch <resource> -n <namespace>
+        kubectl delta-watch <resource> <name> -n <namespace>
   version: v0.2.1
   platforms:
   - bin: kubectl-watch

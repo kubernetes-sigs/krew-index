@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: vela
 spec:
-  version: "v1.5.4"
+  version: "v1.4.12"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/oam-dev/kubevela/releases/download/v1.5.4/kubectl-vela-v1.5.4-linux-amd64.tar.gz
-    sha256: 44649454e0659a696f7ab58afa4e3bbf33c55c1c2658cc022d4e0db5341f6689
+    uri: https://github.com/oam-dev/kubevela/releases/download/v1.4.12/kubectl-vela-v1.4.12-linux-amd64.tar.gz
+    sha256: e7e1a6665e83486051c34dd7007ac36360b6114c1f41b6cf84f3a4596061657b
     files:
     - from: "*/kubectl-vela"
       to: "."
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/oam-dev/kubevela/releases/download/v1.5.4/kubectl-vela-v1.5.4-darwin-amd64.tar.gz
-    sha256: 7b51f3b1ea3faa1ce78d3178f0878424b4ef2d8d282aa5dd99a5af861a963930
+    uri: https://github.com/oam-dev/kubevela/releases/download/v1.4.12/kubectl-vela-v1.4.12-darwin-amd64.tar.gz
+    sha256: df9f760afde0ab12fd03cf605551efe28c6932a5fb801de891fdd5a2542c234b
     files:
     - from: "*/kubectl-vela"
       to: "."
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/oam-dev/kubevela/releases/download/v1.5.4/kubectl-vela-v1.5.4-windows-amd64.zip
-    sha256: ae1fa4e65b8ff1a2dedc527d91dd2ba39d9386ebb4593fc4e7df816737e736c5
+    uri: https://github.com/oam-dev/kubevela/releases/download/v1.4.12/kubectl-vela-v1.4.12-windows-amd64.zip
+    sha256: 0227b7909a0fa1553bbb7d6d2f9359e2d5b0eff2a1183ed7f69c5f94a9041324
     files:
     - from: "*/kubectl-vela"
       to: "kubectl-vela.exe"

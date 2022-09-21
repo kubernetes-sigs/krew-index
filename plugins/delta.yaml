@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: delta
 spec:
-  homepage: https://github.com/imuxin/kubectl-watch
+  homepage: https://github.com/imuxin/kubectl-delta
   shortDescription: A kubectl plugin to provide a pretty delta change view
   description: |
     This is a kubectl plugin to provide a pretty delta change view of being watched kubernetes resources.
@@ -16,18 +16,18 @@ spec:
         kubectl delta <resource> -A
         kubectl delta <resource> -n <namespace>
         kubectl delta <resource> <name> -n <namespace>
-  version: v0.2.1
+  version: v0.2.2
   platforms:
-  - bin: kubectl-watch
-    uri: https://github.com/imuxin/kubectl-watch/releases/download/0.2.1/kubectl-watch-x86_64-unknown-linux-gnu.tar.gz
-    sha256: 991c6a107687ecdd130edcc78a0623d619e3c2d0106f7515035581e21b8edeb0
+  - bin: kubectl-delta
+    uri: https://github.com/imuxin/kubectl-delta/releases/download/v0.2.2/kubectl-delta-x86_64-unknown-linux-gnu.tar.gz
+    sha256: 3d27065ddde69e6516dbb55b222bc201d5f9c61a13c040a52e19bcb1d9a3504c
     selector:
       matchLabels:
         os: linux
         arch: amd64
-  - bin: kubectl-watch
-    uri: https://github.com/imuxin/kubectl-watch/releases/download/0.2.1/kubectl-watch-x86_64-apple-darwin.tar.gz
-    sha256: 537c92b34aacc30d0de35210f99c138954cf57956aff3632696cd63db6d282d8
+  - bin: kubectl-delta
+    uri: https://github.com/imuxin/kubectl-delta/releases/download/v0.2.2/kubectl-delta-x86_64-apple-darwin.tar.gz
+    sha256: 81ab0c48a6f3e36a9eb921865f16a2b54bc8bd19afbc9414819d4b53138bd400
     selector:
       matchLabels:
         os: darwin

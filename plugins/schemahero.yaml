@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: schemahero
 spec:
-  version: v0.13.2
+  version: v0.13.3
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/schemahero/schemahero/releases/download/v0.13.2/kubectl-schemahero_linux_amd64.tar.gz
-    sha256: 25423b141a0bff1c0c4d7752fc3f3cbbbbe34b2d7caa25cd6788577677cccf50
+    uri: https://github.com/schemahero/schemahero/releases/download/v0.13.3/kubectl-schemahero_linux_amd64.tar.gz
+    sha256: 826b5bf6395d4640aa78acbf7a831574aaa355eaf70b46ac61613e3214e7fb12
     files:
     - from: kubectl-schemahero
       to: .
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/schemahero/schemahero/releases/download/v0.13.2/kubectl-schemahero_linux_arm64.tar.gz
-    sha256: f25c5597979cf076b1ff89bc624cb0494dd15ef48f0d2fe7b30f560bba663211
+    uri: https://github.com/schemahero/schemahero/releases/download/v0.13.3/kubectl-schemahero_linux_arm64.tar.gz
+    sha256: 968a321ab2c380d393c9fb801c444292c5b8e5eee800272fba85b8f1ba3f9a99
     files:
     - from: kubectl-schemahero
       to: .
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/schemahero/schemahero/releases/download/v0.13.2/kubectl-schemahero_darwin_amd64.tar.gz
-    sha256: 1ebe499a028b33076027e5e6d0f7358ce471d9d36252be6781b4b715305fef50
+    uri: https://github.com/schemahero/schemahero/releases/download/v0.13.3/kubectl-schemahero_darwin_amd64.tar.gz
+    sha256: c2a3701a80101e10b444d61312a64852cd5922ddaf5186cc2d94cf2b65ad99d3
     files:
     - from: kubectl-schemahero
       to: .
@@ -45,8 +45,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/schemahero/schemahero/releases/download/v0.13.2/kubectl-schemahero_darwin_arm64.tar.gz
-    sha256: 2667203a99e7770a9d3d640a053f60b5c4ff6801a4f1b3d2d0ad4ccfa6062893
+    uri: https://github.com/schemahero/schemahero/releases/download/v0.13.3/kubectl-schemahero_darwin_arm64.tar.gz
+    sha256: 29aa7a241e427e37fa9b1bf9e7a6be3598ed3876fc9d1b56e57710d3edc04437
     files:
     - from: kubectl-schemahero
       to: .
@@ -57,8 +57,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/schemahero/schemahero/releases/download/v0.13.2/kubectl-schemahero_windows_amd64.tar.gz
-    sha256: 59203e43df308ac455cad4d935882b5540ad30a1d10d40c06a2cf5c5f3a1ef33
+    uri: https://github.com/schemahero/schemahero/releases/download/v0.13.3/kubectl-schemahero_windows_amd64.tar.gz
+    sha256: 1c23f8e7dedd12f5a2814cca48066fef628b4836a53faa32e0ad48c2c3416b51
     files:
     - from: kubectl-schemahero.exe
       to: .
@@ -74,7 +74,7 @@ spec:
   description: |
     SchemaHero is a database schema migration tool that converts a schema
     definition into migration scripts to be applied to a database engine
-    (with current support for Postgres, Mysql and CockroachDB).
+    (with current support for Postgres, Mysql, rqlite and CockroachDB).
 
     SchemaHero allows developers to define a database table schema as a
     declarative Kubernetes object and then apply the definition to the

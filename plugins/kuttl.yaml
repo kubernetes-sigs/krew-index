@@ -21,6 +21,13 @@ spec:
   - selector:
       matchLabels:
         os: "linux"
+        arch: "arm64"
+    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.13.0/kuttl_0.13.0_linux_arm64.tar.gz
+    sha256: "4e12ff05c3b10d80af4211f330f614520fa029a0ff1c7aeef2e5045fbbb053d2"
+    bin: "./kubectl-kuttl"
+  - selector:
+      matchLabels:
+        os: "linux"
         arch: "386"
     uri: https://github.com/kudobuilder/kuttl/releases/download/v0.13.0/kuttl_0.13.0_linux_i386.tar.gz
     sha256: "845c356ff9d84bafaceff1842592f1fb0423d7de28ed6829be3b91f38ff5509c"

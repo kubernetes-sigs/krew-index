@@ -27,6 +27,13 @@ spec:
     bin: "./kubectl-kuttl"
   - selector:
       matchLabels:
+        os: "linux"
+        arch: "arm64"
+    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.13.0/kuttl_0.13.0_linux_arm64.tar.gz
+    sha256: "4e12ff05c3b10d80af4211f330f614520fa029a0ff1c7aeef2e5045fbbb053d2"
+    bin: "./kubectl-kuttl"
+  - selector:
+      matchLabels:
         os: "darwin"
         arch: "amd64"
     uri: https://github.com/kudobuilder/kuttl/releases/download/v0.13.0/kuttl_0.13.0_darwin_x86_64.tar.gz

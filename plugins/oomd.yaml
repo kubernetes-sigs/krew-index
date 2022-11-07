@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: oomd
+spec:
+  version: 'v0.0.2'
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: "https://github.com/jdockerty/kubectl-oomd/releases/download/v0.0.2/oomd_linux_amd64.tar.gz"
+    sha256: "d004aeba760503b4883ce7fed454962855d00bc4624c3c015704515a96e973dc"
+    files:
+    - from: "./oomd"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "oomd"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: "https://github.com/jdockerty/kubectl-oomd/releases/download/v0.0.2/oomd_darwin_amd64.tar.gz"
+    sha256: "6f9baac1561b39ce694482e796c895e8c485d4ac0bbbe10cb39c1484df357117"
+    files:
+    - from: "./oomd"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "oomd"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: "https://github.com/jdockerty/kubectl-oomd/releases/download/v0.0.2/oomd_windows_amd64.zip"
+    sha256: "9a26d0651464f482da50c63927d337bd93904e15676400a88f793d3654910288"
+    files:
+    - from: "/oomd.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "oomd.exe"
+  shortDescription: Show recently OOMKilled pods
+  homepage: https://github.com/jdockerty/kubectl-oomd
+  description: |
+    Display pods and their corresponding containers which have recently
+    been 'OOMKilled'

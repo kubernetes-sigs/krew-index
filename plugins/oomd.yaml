@@ -1,16 +1,19 @@
+# This is a templated file which is used by the krew-release-bot
+# from the GitHub Action to raise a pull request to the krew-index
+# (https://github.com/kubernetes-sigs/krew-index) with the correct tag
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
   name: oomd
 spec:
-  version: 'v0.0.2'
+  version: v0.0.3
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: "https://github.com/jdockerty/kubectl-oomd/releases/download/v0.0.2/oomd_linux_amd64.tar.gz"
-    sha256: "d004aeba760503b4883ce7fed454962855d00bc4624c3c015704515a96e973dc"
+    uri: https://github.com/jdockerty/kubectl-oomd/releases/download/v0.0.3/oomd_linux_amd64.tar.gz
+    sha256: f0e09095c1b7adcb697aea8febc07983e2543ceed6fdce497d48499989c7a08d
     files:
     - from: "./oomd"
       to: "."
@@ -21,8 +24,20 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: "https://github.com/jdockerty/kubectl-oomd/releases/download/v0.0.2/oomd_darwin_amd64.tar.gz"
-    sha256: "6f9baac1561b39ce694482e796c895e8c485d4ac0bbbe10cb39c1484df357117"
+    uri: https://github.com/jdockerty/kubectl-oomd/releases/download/v0.0.3/oomd_darwin_amd64.tar.gz
+    sha256: e737f8df58ebd5012f8500273fbff14df4a4fcf8eea82dfc22d0be47a2abf4aa
+    files:
+    - from: "./oomd"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "oomd"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/jdockerty/kubectl-oomd/releases/download/v0.0.3/oomd_darwin_arm64.tar.gz
+    sha256: 98f33348eeac411dee726501494ae8595cc5f9c29f0ebedef130816ba363efc5
     files:
     - from: "./oomd"
       to: "."
@@ -33,8 +48,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: "https://github.com/jdockerty/kubectl-oomd/releases/download/v0.0.2/oomd_windows_amd64.zip"
-    sha256: "9a26d0651464f482da50c63927d337bd93904e15676400a88f793d3654910288"
+    uri: https://github.com/jdockerty/kubectl-oomd/releases/download/v0.0.3/oomd_windows_amd64.zip
+    sha256: 58b8be7b5ea415653ac5a0c1270302d2d2c5c37bb13436ae5b002262a9662fb6
     files:
     - from: "/oomd.exe"
       to: "."

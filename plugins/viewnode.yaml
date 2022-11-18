@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: viewnode
 spec:
-  version: v0.8.2
+  version: v0.8.3
   homepage: https://github.com/NTTDATA-DACH/viewnode
   shortDescription: Displays nodes with their pods and containers and provides metrics for resources
   description: |
@@ -17,20 +17,27 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v0.8.2/viewnode_0.8.2_darwin_amd64.tar.gz
-      sha256: 9d535dc6b66cc64b75c74f84db172a958609444cecff35fc25e0c47650f38a23
+      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v0.8.3/viewnode_v0.8.3_darwin_amd64.tar.gz
+      sha256: c4fab573b195e38570c96f6855b983caf5204d9f91e8e981b7809769f2aa756d
+      bin: viewnode
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v0.8.3/viewnode_v0.8.3_darwin_arm64.tar.gz
+      sha256: d4fc38ce4da28c0b30dea0e8e2d9a6b94c0c18c4d348f1c8767e94571a9c6d39
       bin: viewnode
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v0.8.2/viewnode_0.8.2_linux_amd64.tar.gz
-      sha256: ce5023f230da06485737b890f67b90bfef446f1117169b6faacc25367c73bad0
+      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v0.8.3/viewnode_v0.8.3_linux_amd64.tar.gz
+      sha256: 058b8017cccd750a1256de32f55470ff2ffd0fe06d58a3b7afc0718e05a8e43b
       bin: viewnode
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v0.8.2/viewnode_0.8.2_windows_amd64.tar.gz
-      sha256: 2cebcaa56b0ed7b84056690c043d0cd48dd69f513ef11c471730a61b3947dae6
+      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v0.8.3/viewnode_v0.8.3_windows_amd64.tar.gz
+      sha256: 4b5c3c0f43d6e7e877cbe0e4d7e0584b50f2ea4c5a0ae1452a939f67b707e830
       bin: viewnode.exe

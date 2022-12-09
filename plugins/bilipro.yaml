@@ -1,0 +1,28 @@
+# This is the manifest template
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: bilipro
+spec:
+  # very initial version
+  version: "v0.0.1"
+  homepage: https://github.com/RayWangQvQ/BiliBiliToolPro
+  shortDescription: "Manage bilibili pro in your k8s cluster"
+  description: |
+    Deploy bilibili tool in your k8s cluster,
+    update it, Get its status and delete it.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - linux
+    uri: https://github.com/RayWangQvQ/BiliBiliToolPro/krew/bilipro.tar.gz
+    sha256: 0341702a20f7bee2d78867196d136d02a1c6b09b83093bec7387cb3395a0961d
+    files:
+    - from: LICENSE
+      to: .
+    - from: kubectl-bilipro
+      to: .
+    bin: kubectl-bilipro

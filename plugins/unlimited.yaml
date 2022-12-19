@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: unlimited
+spec:
+  version: "v0.2.0"
+  homepage: https://github.com/nilic/kubectl-unlimited
+  shortDescription: Show running containers with no limits set
+  description: |
+    Display information about running containers with no CPU and memory limits set
+    so you can detect potential noisy neighbors and optimize cluster's performance
+    and resource consumption.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: "https://github.com/nilic/kubectl-unlimited/releases/download/v0.2.0/kubectl-unlimited_v0.2.0_darwin_amd64.tar.gz"
+      sha256: "21c85969e45ac38703867797d8448b08715e8d7fa2cb0a74228ea902407e7d11"
+      bin: kubectl-unlimited
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: "https://github.com/nilic/kubectl-unlimited/releases/download/v0.2.0/kubectl-unlimited_v0.2.0_darwin_arm64.tar.gz"
+      sha256: "0a55b28dfa6287664402a711f89ab2b428ed162bd0854f15323bde702a955e1e"
+      bin: kubectl-unlimited
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: "https://github.com/nilic/kubectl-unlimited/releases/download/v0.2.0/kubectl-unlimited_v0.2.0_linux_amd64.tar.gz"
+      sha256: "a0633cc46b777976a9acf0539d54feb9e994ecb15f978609e417b6c98a6aed77"
+      bin: kubectl-unlimited
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: "https://github.com/nilic/kubectl-unlimited/releases/download/v0.2.0/kubectl-unlimited_v0.2.0_linux_arm64.tar.gz"
+      sha256: "eb1e3b8072da2c7630698876c37cfc8434be12780adbdc13d5cbe7d336a1a1c3"
+      bin: kubectl-unlimited
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: "https://github.com/nilic/kubectl-unlimited/releases/download/v0.2.0/kubectl-unlimited_v0.2.0_windows_amd64.zip"
+      sha256: "21438c0d66186ba19f2e3895a1a443f01e8a994f8f420bcd0fd5b5b41efebee8"
+      bin: kubectl-unlimited.exe

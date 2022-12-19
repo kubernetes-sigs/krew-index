@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: nsenter
 spec:
-  version: v0.2.2
+  version: v0.2.3
   homepage: https://github.com/pabateman/kubectl-nsenter
   shortDescription: "Run shell command in Pod's namespace on the node over SSH connection"
   description: |
@@ -19,8 +19,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/pabateman/kubectl-nsenter/releases/download/v0.2.2/kubectl-nsenter-linux-amd64.tar.gz
-    sha256: 766fa1c1556be4528bf99884e87ca01fc16d87e1dc9f0b9f79e7c88d4874ab69
+    uri: https://github.com/pabateman/kubectl-nsenter/releases/download/v0.2.3/kubectl-nsenter-linux-amd64.tar.gz
+    sha256: 356d5c7974a870bf692bbfb065fcc27220b48df371712574aff5fe175b84e9a0
     bin: kubectl-nsenter
     files:
       - from: kubectl-nsenter-linux-amd64
@@ -31,8 +31,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/pabateman/kubectl-nsenter/releases/download/v0.2.2/kubectl-nsenter-darwin-amd64.tar.gz
-    sha256: 5742d2639afdd780052431b94fdcea3bfe73d1d8ceb6e5144a7369cbb562eefe
+    uri: https://github.com/pabateman/kubectl-nsenter/releases/download/v0.2.3/kubectl-nsenter-darwin-amd64.tar.gz
+    sha256: c2eccc2729812668cc7a30960363f31c6b9595b11db6e7ac8965d8e586cbeff1
     bin: kubectl-nsenter
     files:
       - from: kubectl-nsenter-darwin-amd64
@@ -43,8 +43,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/pabateman/kubectl-nsenter/releases/download/v0.2.2/kubectl-nsenter-darwin-arm64.tar.gz
-    sha256: c8bbfe6756f698826a2f6af6e4a96304b83b2ca1466ae1c3004b3a66e1087272
+    uri: https://github.com/pabateman/kubectl-nsenter/releases/download/v0.2.3/kubectl-nsenter-darwin-arm64.tar.gz
+    sha256: f55d9738370cb1b8bb3deda4e3cfd37cf50c3bf0f88f0ea3fd12b3a78f2883cb
     bin: kubectl-nsenter
     files:
       - from: kubectl-nsenter-darwin-arm64

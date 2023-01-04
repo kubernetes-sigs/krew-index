@@ -1,0 +1,55 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: nodepools
+spec:
+  version: v0.0.1
+  homepage: https://github.com/grafana/kubectl-nodepools
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/grafana/kubectl-nodepools/releases/download/v0.0.1/kubectl-nodepools_v0.0.1_darwin_amd64.tar.gz
+    sha256: 039d171ac903d909d4c7ec8c55955d64d26ac15dd4955a76e3a8661ff293cc4c
+    bin: kubectl-nodepools
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/grafana/kubectl-nodepools/releases/download/v0.0.1/kubectl-nodepools_v0.0.1_darwin_arm64.tar.gz
+    sha256: c03dfebf358ffbe031595d5ec3d55655f5ef98f906d6a9af57dc95746e772190
+    bin: kubectl-nodepools
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/grafana/kubectl-nodepools/releases/download/v0.0.1/kubectl-nodepools_v0.0.1_linux_amd64.tar.gz
+    sha256: 1c9e710999fcd6f37932c0480f5c0a9870bff968fe5d5d6b2fec932af9141956
+    bin: kubectl-nodepools
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/grafana/kubectl-nodepools/releases/download/v0.0.1/kubectl-nodepools_v0.0.1_linux_arm64.tar.gz
+    sha256: 4160b95d11a82ee44956b1eacf65d758b0ef89f08668321746f31e1d66ee901a
+    bin: kubectl-nodepools
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/grafana/kubectl-nodepools/releases/download/v0.0.1/kubectl-nodepools_v0.0.1_windows_amd64.zip
+    sha256: ebacb232dfd97ddb6ad5e4b710b72e3440e918a5ac1b8836341af75b87e62435
+    bin: kubectl-nodepools
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/grafana/kubectl-nodepools/releases/download/v0.0.1/kubectl-nodepools_v0.0.1_windows_arm64.zip
+    sha256: eeca0e865046bab307364fb303edc096f1e708a7fd4be63f40f736547dfa5bf7
+    bin: kubectl-nodepools
+  shortDescription: A kubectl plugin for listing node pools/groups
+  description: |
+    Usage:
+      kubectl nodepools [list]
+      List all the nodepools in the current cluster.

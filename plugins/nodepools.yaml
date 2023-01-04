@@ -50,6 +50,18 @@ spec:
     bin: kubectl-nodepools
   shortDescription: List node pools/groups.
   description: |
-    Usage:
-      kubectl nodepools [list]
-      List all the nodepools in the current cluster.
+    List node pools/groups in the current cluster, alongside a count of how
+    many nodes there are in each pool/group and their type.
+
+    You can also list nodes for a given node pool/group by name.
+
+    This plugin supports the standard kubectl flags for environment selection
+    and authentication.
+
+    Example usage:
+      List node pools/groups in cluster:
+        kubectl nodepools
+      List nodes in a node pool/group:
+        kubectl nodepools nodes $nodepool
+
+    More information at https://github.com/grafana/kubectl-nodepools

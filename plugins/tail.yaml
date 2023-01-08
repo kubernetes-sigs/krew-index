@@ -3,10 +3,22 @@ kind: Plugin
 metadata:
   name: tail
 spec:
-  version: "v0.15.0"
+  version: "v0.16.1"
   platforms:
-  - uri: https://github.com/boz/kail/releases/download/v0.15.0/kail_0.15.0_darwin_amd64.tar.gz
-    sha256: 976c22cb56ebbe496a29ebf1e271637095eaa95bf345df6d1a34efbe1e963ee4
+  - uri: https://github.com/boz/kail/releases/download/v0.16.1/kail_v0.16.1_darwin_arm64.tar.gz
+    sha256: 53bd81efe1c85d51d3688d7b0575fba458d75954895ca50d211ff31e5ca9f5a0
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    bin: kail
+    files:
+    - from: "kail"
+      to: "."
+    - from: LICENSE.txt
+      to: .
+  - uri: https://github.com/boz/kail/releases/download/v0.16.1/kail_v0.16.1_darwin_amd64v2.tar.gz
+    sha256: ae27bdcdeaa665dc8eec4cf7a43e5b7626ed6b1a3b731af7200a39b71a8a3702
     selector:
       matchLabels:
         os: darwin
@@ -17,8 +29,20 @@ spec:
       to: "."
     - from: LICENSE.txt
       to: .
-  - uri: https://github.com/boz/kail/releases/download/v0.15.0/kail_0.15.0_linux_amd64.tar.gz
-    sha256: e37862bf4547329a3299aece4ae62bc7d3a277cafeadc81304c262a016816ce2
+  - uri: https://github.com/boz/kail/releases/download/v0.16.1/kail_v0.16.1_linux_arm64.tar.gz
+    sha256: 94cb35d36df996dacc4b97de24fa3513674c73e6b46fb92f9ebdb7d0271a76f1
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    bin: kail
+    files:
+    - from: "kail"
+      to: "."
+    - from: LICENSE.txt
+      to: .
+  - uri: https://github.com/boz/kail/releases/download/v0.16.1/kail_v0.16.1_linux_amd64v2.tar.gz
+    sha256: 0f71b59b7eb9df05694e0e3ada17609f9d6276cbc4de197df3e200c9cab47842
     selector:
       matchLabels:
         os: linux

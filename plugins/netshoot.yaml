@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: netshoot
+spec:
+  version: v0.1.0
+  homepage: https://github.com/nilic/kubectl-netshoot
+  shortDescription: Spin up netshoot container for troubleshooting
+  description: |
+    Spin up a throwaway netshoot container for network troubleshooting and attach to
+    it or run a one-time command. nicolaka/netshoot is a Swiss-army knife network 
+    troubleshooting container which allows you to perform Kubernetes troubleshooting
+    without installing any new packages in your containers or cluster nodes.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/nilic/kubectl-netshoot/releases/download/v0.1.0/kubectl-netshoot_v0.1.0_darwin_amd64.tar.gz
+      sha256: c155765fedf68c194aac92f48b52daec8792138ec1f2e2848f9cf49e764d181f
+      bin: kubectl-netshoot
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/nilic/kubectl-netshoot/releases/download/v0.1.0/kubectl-netshoot_v0.1.0_darwin_arm64.tar.gz
+      sha256: c819d0edcd3195629ee1efc64f5def86e0d846169ab65c01f4efb5c9dabd2690
+      bin: kubectl-netshoot
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/nilic/kubectl-netshoot/releases/download/v0.1.0/kubectl-netshoot_v0.1.0_linux_amd64.tar.gz
+      sha256: d67bb782630e1102d1598ff5ef7c6c846143e5c8e676d604847c1e14a083100f
+      bin: kubectl-netshoot
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/nilic/kubectl-netshoot/releases/download/v0.1.0/kubectl-netshoot_v0.1.0_linux_arm64.tar.gz
+      sha256: ca5c3ebcf5bbb8bcce623f64770d76d1b3e2505d14cc42cd9add6d5be29a5420
+      bin: kubectl-netshoot
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/nilic/kubectl-netshoot/releases/download/v0.1.0/kubectl-netshoot_v0.1.0_windows_amd64.zip
+      sha256: b3d76602efdf60a263ab1c1d2f8d1e35baffae63cb8f0c5e9cb8e6a6ba6c19e4
+      bin: kubectl-netshoot.exe

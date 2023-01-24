@@ -1,0 +1,62 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: helm
+spec:
+  version: "v0.0.2"
+  homepage: https://github.com/sandipchitale/kubectl-helm
+  shortDescription: "Kubectl plugin to run helm commands including custom commands"
+  description: |
+    Kubectl plugin to run helm commands including custom commands like
+    get templates RELEASENAME [--revision N]
+    Other commands are passed thru to helm.
+  platforms:
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    # 'uri' specifies .zip or .tar.gz archive URL of a plugin
+    uri: https://github.com/sandipchitale/kubectl-helm/releases/download/v0.0.25/kubectl-helm_v0.0.25_windows_amd64.tar.gz
+    # 'sha256' is the sha256sum of the url (archive file) above
+    sha256: fee27184bcc644dd77092691683c07a1bd5bfbcd11668b7e312a0f19528182aa
+    # 'files' lists which files should be extracted out from downloaded archive
+    files:
+    - from: "kubectl-helm.exe"
+      to: "."
+    - from: "LICENSE"
+      to: "."
+    # 'bin' specifies the path to the the plugin executable among extracted files
+    bin: kubectl-helm.exe
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    # 'uri' specifies .zip or .tar.gz archive URL of a plugin
+    uri: https://github.com/sandipchitale/kubectl-helm/releases/download/v0.0.25/kubectl-helm_v0.0.25_linux_amd64.tar.gz
+    # 'sha256' is the sha256sum of the url (archive file) above
+    sha256: 08b94ebbe2af42a6b4b52e86f4d8c0be000af23d7047e2a8e05d3967e6842672
+    # 'files' lists which files should be extracted out from downloaded archive
+    files:
+    - from: "kubectl-helm"
+      to: "."
+    - from: "LICENSE"
+      to: "."
+    # 'bin' specifies the path to the the plugin executable among extracted files
+    bin: kubectl-helm
+  - selector:
+      matchLabels:
+        os: macos
+        arch: amd64
+    # 'uri' specifies .zip or .tar.gz archive URL of a plugin
+    uri: https://github.com/sandipchitale/kubectl-helm/releases/download/v0.0.25/kubectl-helm_v0.0.25_darwin_amd64.tar.gz
+    # 'sha256' is the sha256sum of the url (archive file) above
+    sha256: 36c0b651113a66a087055ada454e81886cd4078d0af1f28592b124d0fb6d2b48
+    # 'files' lists which files should be extracted out from downloaded archive
+    files:
+    - from: "kubectl-helm"
+      to: "."
+    - from: "LICENSE"
+      to: "."
+    # 'bin' specifies the path to the the plugin executable among extracted files
+    bin: kubectl-helm
+    

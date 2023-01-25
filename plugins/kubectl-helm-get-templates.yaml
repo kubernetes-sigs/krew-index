@@ -1,0 +1,62 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: helm-get-templates
+spec:
+  version: "v0.0.3"
+  homepage: https://github.com/sandipchitale/kubectl-helm-get-templates
+  shortDescription: "Kubectl plugin to run helm commands including custom commands"
+  description: |
+    Kubectl plugin to run helm commands including custom commands like
+    get templates RELEASENAME [--revision N]
+    Other commands are passed thru to helm.
+  platforms:
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    # 'uri' specifies .zip or .tar.gz archive URL of a plugin
+    uri: https://github.com/sandipchitale/kubectl-helm-get-templates/releases/download/v0.0.3/kubectl-helm-get-templates_v0.0.3_windows_amd64.tar.gz
+    # 'sha256' is the sha256sum of the url (archive file) above
+    sha256: 2d699a32f9c8b552131d715d79b7ffc0f9f5052ded02b30f50db8f456665ca41
+    # 'files' lists which files should be extracted out from downloaded archive
+    files:
+    - from: "kubectl-helm_get_templates.exe"
+      to: "."
+    - from: "LICENSE"
+      to: "."
+    # 'bin' specifies the path to the the plugin executable among extracted files
+    bin: kubectl-helm_get_templates.exe
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    # 'uri' specifies .zip or .tar.gz archive URL of a plugin
+    uri: https://github.com/sandipchitale/kubectl-helm-get-templates/releases/download/v0.0.3/kubectl-helm-get-templates_v0.0.3_linux_amd64.tar.gz
+    # 'sha256' is the sha256sum of the url (archive file) above
+    sha256: 1c3eed9285edc5b81268bce3670691914faa7b7e9d80f6a4a562d8b1418e4fa6
+    # 'files' lists which files should be extracted out from downloaded archive
+    files:
+    - from: "kubectl-helm_get_templates"
+      to: "."
+    - from: "LICENSE"
+      to: "."
+    # 'bin' specifies the path to the the plugin executable among extracted files
+    bin: kubectl-helm_get_templates
+  - selector:
+      matchLabels:
+        os: macos
+        arch: amd64
+    # 'uri' specifies .zip or .tar.gz archive URL of a plugin
+    uri: https://github.com/sandipchitale/kubectl-helm-get-templates/releases/download/v0.0.3/kubectl-helm-get-templates_v0.0.3_darwin_amd64.tar.gz
+    # 'sha256' is the sha256sum of the url (archive file) above
+    sha256: 3d74219f4998f94d91b9fd20f73ad7d7b9ab48ab115cab6e80fe0b4040dc902a
+    # 'files' lists which files should be extracted out from downloaded archive
+    files:
+    - from: "kubectl-helm_get_templates"
+      to: "."
+    - from: "LICENSE"
+      to: "."
+    # 'bin' specifies the path to the the plugin executable among extracted files
+    bin: kubectl-helm_get_templates
+    

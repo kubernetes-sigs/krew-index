@@ -1,0 +1,44 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: diagnose
+spec:
+  version: v0.1.0
+  homepage: https://github.com/xcoulon/kubectl-diagnose
+  shortDescription: Diagnose the resource to find the cause of the 503 error
+  description: |
+    This tool attempts to find which of the `ingress`, `route`, `service`, `deployment`, 
+    `replicaset`, `statefulset`, `persistentvolumeclaim` or `pod` is misconfigured or failing.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/xcoulon/kubectl-diagnose/releases/download/v0.1.0/kubectl-diagnose_Darwin_x86_64.tar.gz
+    sha256: e0ca288305809153863036933059a886a55dcc0763e71de6c39c84ac8f7ce0f3
+    bin: kubectl-diagnose
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/xcoulon/kubectl-diagnose/releases/download/v0.1.0/kubectl-diagnose_Darwin_arm64.tar.gz
+    sha256: d05ea7576ef00840418b7996d066968cbabfc3c862b003150556e2e54ad35692
+    bin: kubectl-diagnose
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/xcoulon/kubectl-diagnose/releases/download/v0.1.0/kubectl-diagnose_Linux_x86_64.tar.gz
+    sha256: f8cb17f65f3af59426404051f25ecf594bd77ef7716ceda94a6ac208af78cdcf
+    bin: kubectl-diagnose
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/xcoulon/kubectl-diagnose/releases/download/v0.1.0/kubectl-diagnose_Windows_x86_64.zip
+    sha256: 5a538c1ad59852b22468b694b6dd5fbd244f45548e3cab4b4cabf3c1cd2db943
+    bin: kubectl-diagnose.exe
+
+
+
+

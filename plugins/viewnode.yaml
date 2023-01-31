@@ -3,33 +3,41 @@ kind: Plugin
 metadata:
   name: viewnode
 spec:
-  version: v0.7.0
+  version: v0.8.4
   homepage: https://github.com/NTTDATA-DACH/viewnode
-  shortDescription: Displays nodes with their pods and containers
+  shortDescription: Displays nodes with their pods and containers and provides metrics for resources
   description: |
     This plugin displays nodes with their pods and containers.
-    It support filtering of nodes and pods. It is very useful when you need
-    to monitor multiple resources such as nodes, pods or containers
-    in a dynamic environment like a CI/CD platform.
+    It provides information about requested and used resources, e.g. memory.
+    It supports filtering of nodes and pods.
+    It is very useful when you need to monitor multiple resources like nodes, pods or containers
+    in a dynamic environment like a CI/CD platform where pods live and die frequently.
   platforms:
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v0.7.0/viewnode_0.7.0_darwin_amd64.tar.gz
-      sha256: c334735bc117cb807fdb675bc36316ccee3592bcaf1f153bc3c728f79b10277d
+      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v0.8.4/viewnode_v0.8.4_darwin_amd64.tar.gz
+      sha256: ef9569a1b8ae94287e96c9a4c0e1ac258d6d2612f58d894bba00c06bae4be923
+      bin: viewnode
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v0.8.4/viewnode_v0.8.4_darwin_arm64.tar.gz
+      sha256: 701460b528dd8ca2bf9f69959624ec9866d7b688a177a8b52f20444b9b6a13f8
       bin: viewnode
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v0.7.0/viewnode_0.7.0_linux_amd64.tar.gz
-      sha256: 9b57aa0eaa467e3b3b6a402906d59104efd4b9870ae90f4c8dd3f5697e1f6e2c
+      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v0.8.4/viewnode_v0.8.4_linux_amd64.tar.gz
+      sha256: 9f0d861654fc6e6ce8cf9a51d34c1d03bf0dc3935142d55cc5119629f6f68e2a
       bin: viewnode
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v0.7.0/viewnode_0.7.0_windows_amd64.tar.gz
-      sha256: 5400c6c0b258a2dcb4f09c320a5af9ea5d8e7ebcb03cc2890d3ea09a24a3f8dc
+      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v0.8.4/viewnode_v0.8.4_windows_amd64.tar.gz
+      sha256: cd43643272c3e56f8d593ed7d0b316d83adb6d740e712d8dc162340c83918bcb
       bin: viewnode.exe

@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: rook-ceph
 spec:
-  version: "v0.0.1"
+  version: "v0.4.0"
   homepage: https://github.com/rook/kubectl-rook-ceph
   shortDescription: "Rook plugin for Ceph management"
   description: |
@@ -17,11 +17,11 @@ spec:
         - darwin
         - linux
         - windows
-    uri: https://github.com/rook/kubectl-rook-ceph/archive/v0.0.1.zip
-    sha256: 2ca817372441097235c0b7e8dff87c0e99153b154dc83a6a47fc5d691a966209
+    uri: https://github.com/rook/kubectl-rook-ceph/archive/v0.4.0.zip
+    sha256: 62798ee19836d3f78bb829f1b8910c0ff23336d27733c896beded5b6c0e37a47
     files:
-    - from: "kubectl-rook-ceph-0.0.1/kubectl-rook-ceph.sh"
-      to: "kubect-rook-ceph.sh"
-    - from: "kubectl-rook-ceph-0.0.1/LICENSE"
+    - from: "kubectl-rook-ceph-*/kubectl-rook-ceph.sh"
       to: "."
-    bin: kubect-rook-ceph.sh
+    - from: "kubectl-rook-ceph-*/LICENSE"
+      to: "."
+    bin: kubectl-rook-ceph.sh

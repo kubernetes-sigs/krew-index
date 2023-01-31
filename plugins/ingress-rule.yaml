@@ -1,0 +1,64 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ingress-rule
+spec:
+  version: v0.4.0
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/pragaonj/ingress-rule-updater/releases/download/v0.4.0/ingress-rule_v0.4.0_linux_amd64.tar.gz
+      sha256: 1afccf5f7f1a91e882fd7fb2c541522ef2d9f4880b89bcd02119da59342f428d
+      files:
+        - from: "./ingress-rule"
+          to: "."
+        - from: LICENSE
+          to: "."
+      bin: "ingress-rule"
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/pragaonj/ingress-rule-updater/releases/download/v0.4.0/ingress-rule_v0.4.0_darwin_amd64.tar.gz
+      sha256: e489c9fc850ce385bccbcc4d4535801a9a20a1e9cfb78b5b4a6e667c076b492f
+      files:
+        - from: "./ingress-rule"
+          to: "."
+        - from: LICENSE
+          to: "."
+      bin: "ingress-rule"
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/pragaonj/ingress-rule-updater/releases/download/v0.4.0/ingress-rule_v0.4.0_darwin_arm64.tar.gz
+      sha256: 2f54eabd7174faffa5f7ef0f2d2074c148f7714c74f71fbc5b9efc1acd0d3d21
+      files:
+        - from: "./ingress-rule"
+          to: "."
+        - from: LICENSE
+          to: "."
+      bin: "ingress-rule"
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/pragaonj/ingress-rule-updater/releases/download/v0.4.0/ingress-rule_v0.4.0_windows_amd64.zip
+      sha256: f6ba6f129b6bd138ecafe4dfd93b640082471cf69a941fb98994617b4ed79958
+      files:
+        - from: "/ingress-rule.exe"
+          to: "."
+        - from: LICENSE
+          to: "."
+      bin: "ingress-rule.exe"
+  shortDescription: Update Ingress rules via command line
+  homepage: https://github.com/pragaonj/ingress-rule-updater
+  description: |
+    Add/remove rules to/from a Kubernetes Ingress via command line.
+    This plugin allows the configuration of an Ingress resource with command line arguments.
+    
+    When adding/deleting a backend rule the Ingress will be updated.
+    On creation of a rule for a non-existing Ingress name a new Ingress will be created.
+    If the last rule is deleted the Ingress will be deleted as well.

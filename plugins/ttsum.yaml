@@ -1,0 +1,46 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ttsum
+spec:
+  version: v0.1.4
+  homepage: https://github.com/eytan-avisror/ttsum
+  shortDescription: Visualize taints and tolerations
+  description: |
+    This plugin makes viewing taints/tolerations across cluster resources easier
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/eytan-avisror/ttsum/releases/download/v0.1.4/ttsum_v0.1.4_darwin_amd64.tar.gz
+    sha256: 614223cf0a951195c1fc437c5dda546866328b7732b348bd0199342bb5b868f4
+    bin: ttsum
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/eytan-avisror/ttsum/releases/download/v0.1.4/ttsum_v0.1.4_darwin_arm64.tar.gz
+    sha256: 6437332d51cf731fc88aafe433d0943a427bd5e3bb59e91ce06d32780a37c117
+    bin: ttsum
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/eytan-avisror/ttsum/releases/download/v0.1.4/ttsum_v0.1.4_linux_amd64.tar.gz
+    sha256: 6d285535652ce1e28e79cdd7a0c45ea31966af302a635ec62f2405c7b4f4f9a8
+    bin: ttsum
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/eytan-avisror/ttsum/releases/download/v0.1.4/ttsum_v0.1.4_linux_arm64.tar.gz
+    sha256: 93925fbdf73154d1eb4c362bd08f018e0220a9b9a6f8e9f5d93fc48db46bd258
+    bin: ttsum
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/eytan-avisror/ttsum/releases/download/v0.1.4/ttsum_v0.1.4_windows_amd64.tar.gz
+    sha256: 2766842f9a7a73b70ccbd12e13dbe0eb0c29259ac22677d008a523921ca5afaf
+    bin: ttsum.exe

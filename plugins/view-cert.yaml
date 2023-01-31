@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: view-cert
 spec:
-  version: v0.0.3
+  version: v0.0.4
   homepage: https://github.com/lmolas/kubectl-view-cert
   shortDescription: View certificate information stored in secrets
   description: |
@@ -16,27 +16,34 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.3/kubectl-view-cert_v0.0.3_darwin_amd64.tar.gz
-    sha256: 2b8f80feaf9d3de8a7e1dd8a963fb781b29f4934df9c079b93c1e709f42752a2
+    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.4/kubectl-view-cert_v0.0.4_darwin_amd64.tar.gz
+    sha256: 6cc4fe2c3f9cc37e4682cfaf31a9c78c3676e5e35de04a9cb1d588a495b6bb55
+    bin: kubectl-view-cert
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.4/kubectl-view-cert_v0.0.4_darwin_arm64.tar.gz
+    sha256: 27d2cd39c53145e0fbb8fe4e3d40831588c89c71b4687ca031ad6239f0dfcf96
     bin: kubectl-view-cert
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.3/kubectl-view-cert_v0.0.3_linux_amd64.tar.gz
-    sha256: 16c2868e30b8d6c8f9677d2e8b8cf30cf6df015faf9c4fede87f1944ea31fa7d
+    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.4/kubectl-view-cert_v0.0.4_linux_amd64.tar.gz
+    sha256: 9612023bc85ba2b571e8a078dd6a955c60e6782a5362e9d6d9038dd8f58af0f8
     bin: kubectl-view-cert
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.3/kubectl-view-cert_v0.0.3_linux_arm64.tar.gz
-    sha256: e8120731a6660b9331343cfba9ed712c6db4dc5ae6b895bf4d80a843bb0aeb89
+    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.4/kubectl-view-cert_v0.0.4_linux_arm64.tar.gz
+    sha256: aa41ff0496e4945139e41c169ca5b4eac6dba05c884bc758636a8d9928b250fd
     bin: kubectl-view-cert
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.3/kubectl-view-cert_v0.0.3_windows_amd64.tar.gz
-    sha256: bb876e2005dedd2f1a9dc2d1d634c8d1621914ad75ae16f0b872d7d3cd80e3fa
+    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.4/kubectl-view-cert_v0.0.4_windows_amd64.tar.gz
+    sha256: a5fc75f248a9b1048ec28ad4ceb2d58c679be55ce3d042a4b466d374967760cb
     bin: kubectl-view-cert.exe

@@ -3,54 +3,53 @@ kind: Plugin
 metadata:
   name: cert-manager
 spec:
-  version: v1.6.1
-  homepage: https://github.com/jetstack/cert-manager
+  version: v1.11.0
+  homepage: https://github.com/cert-manager/cert-manager
   shortDescription: Manage cert-manager resources inside your cluster
   description: |
-    The official plugin accompanying cert-manger, a Kubernetes add-on to
-    automate the management and issuance of TLS certificates. Allows for
-    direct interaction with cert-manager resources e.g. manual renewal of
-    Certificate resources.
+    cert-manager is the easiest way to automatically manage certificates
+    in Kubernetes and OpenShift clusters. The kubectl plugin helps with
+    managing cert-manager resources e.g. manual renewal of Certificates.
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/jetstack/cert-manager/releases/download/v1.6.1/kubectl-cert_manager-darwin-amd64.tar.gz
-    sha256: 52014c55de5728f3d107dd80b6319e4dc72b6a7700643bcd3e4a89c7f3eb0d98
+    uri: https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/kubectl-cert_manager-darwin-amd64.tar.gz
+    sha256: 796c4405e62a619fcbe9273c088564e657f959836d18f1fa9d9cfb913b028e30
     bin: kubectl-cert_manager
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/jetstack/cert-manager/releases/download/v1.6.1/kubectl-cert_manager-darwin-arm64.tar.gz
-    sha256: 3d98377471d8625235dfa41a05f762a4888944f40734b37b405b894244d4c149
+    uri: https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/kubectl-cert_manager-darwin-arm64.tar.gz
+    sha256: a77a9ad4fd57ccf3762159f19bdf515fbb4d9e451d6530b9bf0388024a9b15cb
     bin: kubectl-cert_manager
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/jetstack/cert-manager/releases/download/v1.6.1/kubectl-cert_manager-linux-amd64.tar.gz
-    sha256: cf9cb0b1020cc437d431805be4baf2bc9de6de0b06e7821b0dd7d5d598cc1f36
+    uri: https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/kubectl-cert_manager-linux-amd64.tar.gz
+    sha256: e3c53e3e69a11988707422825b1d091d8bc4c697b78c50194764bbc5ef46e6af
     bin: kubectl-cert_manager
   - selector:
       matchLabels:
         os: linux
         arch: arm
-    uri: https://github.com/jetstack/cert-manager/releases/download/v1.6.1/kubectl-cert_manager-linux-arm.tar.gz
-    sha256: 9b7835fc52c106ba6d740d9f73a60ffdd2ccf108de3a73d1c7cba32576bba6c2
+    uri: https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/kubectl-cert_manager-linux-arm.tar.gz
+    sha256: cc3d2533cc68d0c6a6560ad0b956db057e4aca8b47b6736c74cb185a3637f813
     bin: kubectl-cert_manager
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/jetstack/cert-manager/releases/download/v1.6.1/kubectl-cert_manager-linux-arm64.tar.gz
-    sha256: 4c69a8f41135c89c09f5d151ffb1cd6bb30412e8e9681327acad03070cf95164
+    uri: https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/kubectl-cert_manager-linux-arm64.tar.gz
+    sha256: 86957e2cec8d5b066c8f73967e760f1083418e92a0ebfa6432e96111a032cb06
     bin: kubectl-cert_manager
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/jetstack/cert-manager/releases/download/v1.6.1/kubectl-cert_manager-windows-amd64.tar.gz
-    sha256: 7f2f3359e1b0c9ff49d41cf5454ffc3237df36fb451a7ca16dd67db38973af96
-    bin: kubectl-cert_manager
+    uri: https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/kubectl-cert_manager-windows-amd64.zip
+    sha256: ba0706dac62c68b0dd6651d575a1c87d42dffe70098060e3bebb28a03bea59ec
+    bin: kubectl-cert_manager.exe

@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: permissions
+spec:
+  version: v0.1.0
+  homepage: https://github.com/garethjevans/kubectl-permissions
+  shortDescription: Displays and traces service account permissions
+  description: |
+    This plugin lets you trace ServiceAccounts to Roles, RoleBindings and permissions 
+    to troubleshoot the bindings and transitive permission assignments.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/garethjevans/kubectl-permissions/releases/download/v0.1.0/kubectl-permissions_v0.1.0_darwin_amd64.tar.gz
+    sha256: 265faad0ade89e6d5d0faf0cfd9d205c0d7ca81d2cc9faca3153a9c275f2f0d7
+    bin: kubectl-permissions
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/garethjevans/kubectl-permissions/releases/download/v0.1.0/kubectl-permissions_v0.1.0_darwin_arm64.tar.gz
+    sha256: 7f4d0cd3f4f92e3c50e203d40367768192ba5fc6746a543949d1778072f2fd78
+    bin: kubectl-permissions
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/garethjevans/kubectl-permissions/releases/download/v0.1.0/kubectl-permissions_v0.1.0_linux_amd64.tar.gz
+    sha256: 8a47118330c9d28ecb9ab95e1ee9f8fdc999eb8a6d613fb1a95bc73308932f42
+    bin: kubectl-permissions
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/garethjevans/kubectl-permissions/releases/download/v0.1.0/kubectl-permissions_v0.1.0_windows_amd64.tar.gz
+    sha256: e18f9bc38707a65a162dbc02abde278f3331ba6391749166bdfcc4569db8c960
+    bin: kubectl-permissions.exe

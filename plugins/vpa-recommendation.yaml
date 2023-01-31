@@ -1,0 +1,60 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: vpa-recommendation
+spec:
+  version: v0.6.0
+  homepage: https://github.com/wI2L/kubectl-vpa-recommendation
+  shortDescription: Compare VPA recommendations to actual resources requests
+  description: |
+    This plugin prints a table that show the percentage increase/decrease
+    of the selected VerticalPodAutoscaler recommendations compared to the
+    targeted controller's pod resource requests.
+  caveats: |
+    The plugin recognizes only some well-known controllers such as:
+      - CronJob
+      - DaemonSet
+      - Deployment
+      - Job
+      - ReplicaSet
+      - ReplicationController
+      - StatefulSet
+
+    The autoscaling.k8s.io/v1 API is required for the plugin to work:
+    https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/wI2L/kubectl-vpa-recommendation/releases/download/v0.6.0/kubectl-vpa-recommendation_v0.6.0_darwin_amd64.tar.gz
+    sha256: 638ecb0c32813fadcadf1107dfdc1b86763186e73f73e76daca41e526e5bf8a4
+    bin: kubectl-vpa-recommendation
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/wI2L/kubectl-vpa-recommendation/releases/download/v0.6.0/kubectl-vpa-recommendation_v0.6.0_darwin_arm64.tar.gz
+    sha256: 2fc368e837af32d2a0c6104553319661fe28baa0b8a3102b19820e932903476b
+    bin: kubectl-vpa-recommendation
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/wI2L/kubectl-vpa-recommendation/releases/download/v0.6.0/kubectl-vpa-recommendation_v0.6.0_linux_amd64.tar.gz
+    sha256: a574a6bb2fe8c184d26693a0cfe47b46f5408033fe5635a70ac076b0c6186363
+    bin: kubectl-vpa-recommendation
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/wI2L/kubectl-vpa-recommendation/releases/download/v0.6.0/kubectl-vpa-recommendation_v0.6.0_linux_arm64.tar.gz
+    sha256: 055bb5143c59d082adfefe0e1aa787c12684ca3021b5b7bada938bd234e88f8d
+    bin: kubectl-vpa-recommendation
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/wI2L/kubectl-vpa-recommendation/releases/download/v0.6.0/kubectl-vpa-recommendation_v0.6.0_windows_amd64.zip
+    sha256: 8cd45eeb27bdfea665e01b797c85dba9c8ae47c3abe27600c8d63c956ff282f4
+    bin: kubectl-vpa-recommendation.exe

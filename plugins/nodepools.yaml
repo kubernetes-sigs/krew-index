@@ -48,20 +48,14 @@ spec:
     uri: https://github.com/grafana/kubectl-nodepools/releases/download/v0.0.1/kubectl-nodepools_v0.0.1_windows_arm64.zip
     sha256: eeca0e865046bab307364fb303edc096f1e708a7fd4be63f40f736547dfa5bf7
     bin: kubectl-nodepools.exe
-  shortDescription: List node pools/groups.
+  shortDescription: List node pools/groups
   description: |
-    List node pools/groups in the current cluster, alongside a count of how
-    many nodes there are in each pool/group and their type.
+    Some cloud providers allow to manage your cluster nodes in pools/groups
+    where all their nodes share base settings. This plugin allows you to
+    list node pools/groups in the current cluster, alongside a count of how
+    many nodes there are in each pool/group and their instance type. In
+    addition to this you can also list nodes for a given node pool/group by
+    name.
 
-    You can also list nodes for a given node pool/group by name.
-
-    This plugin supports the standard kubectl flags for environment selection
-    and authentication.
-
-    Example usage:
-      List node pools/groups in cluster:
-        kubectl nodepools
-      List nodes in a node pool/group:
-        kubectl nodepools nodes $nodepool
-
-    More information at https://github.com/grafana/kubectl-nodepools
+    This plugin supports the standard kubectl flags for environment and
+    cluster selection and authentication.

@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: kubesec-scan
 spec:
-  version: v1.0.2
+  version: v1.1.0
   homepage: https://github.com/controlplaneio/kubectl-kubesec
   shortDescription: Scan Kubernetes resources with kubesec.io.
   description: |
@@ -14,8 +14,32 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/controlplaneio/kubectl-kubesec/releases/download/1.0.2/kubectl-kubesec_darwin_amd64.tar.gz
-    sha256: db645dbc4ed60cda333746c37165ea633ae4fc6eaf21ee87c9426a494a026042
+    uri: https://github.com/controlplaneio/kubectl-kubesec/releases/download/v1.1.0/kubectl-kubesec_darwin_amd64.tar.gz
+    sha256: f7348318e1b8dd8a62bc4afba63548bd9da4e1647a21666f13339f94528bbd78
+    files:
+    - from: kubectl-scan
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-scan
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/controlplaneio/kubectl-kubesec/releases/download/v1.1.0/kubectl-kubesec_darwin_arm64.tar.gz
+    sha256: 2e17627f047cd3a12d462c40fc7c2d4ab8cff2cfd745c28ae2e0c75022467382
+    files:
+    - from: kubectl-scan
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-scan
+  - selector:
+      matchLabels:
+        os: linux
+        arch: "386"
+    uri: https://github.com/controlplaneio/kubectl-kubesec/releases/download/v1.1.0/kubectl-kubesec_linux_386.tar.gz
+    sha256: 39e6fd527f2da674cbdfa596f58e8cdee78ae786da29b2e90c82201b5fda594c
     files:
     - from: kubectl-scan
       to: .
@@ -26,8 +50,32 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/controlplaneio/kubectl-kubesec/releases/download/1.0.2/kubectl-kubesec_linux_amd64.tar.gz
-    sha256: c255f578036576972110d9954a0c2abb9ee11d9829e2a0b72380b658997f526e
+    uri: https://github.com/controlplaneio/kubectl-kubesec/releases/download/v1.1.0/kubectl-kubesec_linux_amd64.tar.gz
+    sha256: 0215ec173d9a20dbd05bebed36c75111f718ee4661b73da81c7a30439fe1bb8d
+    files:
+    - from: kubectl-scan
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-scan
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm
+    uri: https://github.com/controlplaneio/kubectl-kubesec/releases/download/v1.1.0/kubectl-kubesec_linux_armv7.tar.gz
+    sha256: c5cb99d6196f07f6f56b9a47628ec271aac9423eeb3bcfad01546ee90c428291
+    files:
+    - from: kubectl-scan
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-scan
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/controlplaneio/kubectl-kubesec/releases/download/v1.1.0/kubectl-kubesec_linux_arm64.tar.gz
+    sha256: f4416c0b2bcafc13f15818ba44e8953a648e234fc07b3cd32dfe994014b1d255
     files:
     - from: kubectl-scan
       to: .
@@ -37,9 +85,33 @@ spec:
   - selector:
       matchLabels:
         os: windows
+        arch: "386"
+    uri: https://github.com/controlplaneio/kubectl-kubesec/releases/download/v1.1.0/kubectl-kubesec_windows_386.tar.gz
+    sha256: ae3e4620aa42497ea4192b483ace46db48b10c17dda302e4fe193257f3133d35
+    files:
+    - from: kubectl-scan.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-scan.exe
+  - selector:
+      matchLabels:
+        os: windows
         arch: amd64
-    uri: https://github.com/controlplaneio/kubectl-kubesec/releases/download/1.0.2/kubectl-kubesec_windows_amd64.tar.gz
-    sha256: b0576fdc85964f20ffd1a0b9caa2093250c27175587cc2332e1235afc1227f3c
+    uri: https://github.com/controlplaneio/kubectl-kubesec/releases/download/v1.1.0/kubectl-kubesec_windows_amd64.tar.gz
+    sha256: 4a97b8e17d73576e4fc3f53ff5384e0216041c286069d63bb9907a8981872034
+    files:
+    - from: kubectl-scan.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-scan.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/controlplaneio/kubectl-kubesec/releases/download/v1.1.0/kubectl-kubesec_windows_arm64.tar.gz
+    sha256: d23dcd3ee7caee1b2c80f4239914f941039a800ccd9c892b250ec95d209874db
     files:
     - from: kubectl-scan.exe
       to: .

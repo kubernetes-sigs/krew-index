@@ -1,0 +1,33 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kubescape
+spec:
+  homepage: https://github.com/kubescape/kubescape/
+  shortDescription: Scan resources and cluster configs against security frameworks.
+  version: v2.1.3
+  description: |
+    It includes risk analysis, security compliance, and misconfiguration scanning
+    with an easy-to-use CLI interface, flexible output formats, and automated scanning capabilities.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/kubescape/kubescape/releases/download/v2.1.3/kubescape-macos-latest.tar.gz
+    sha256: b1f02977ebadc7c626843d171e53d40ddd11a98d1c00aa8664f4f058d5df24e4
+    bin: kubescape
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/kubescape/kubescape/releases/download/v2.1.3/kubescape-ubuntu-latest.tar.gz
+    sha256: 3d41997c6d1a6b694c5fa1bf8c1cedf2a80ef3357cef0d08075fdc7e906a4cb6
+    bin: kubescape
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/kubescape/kubescape/releases/download/v2.1.3/kubescape-windows-latest.tar.gz
+    sha256: 00127cd9eaf8dc0578db76b7548eea28578729f0ecdecdfe397a2f402b3dbd20
+    bin: kubescape

@@ -1,0 +1,34 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: capsh
+spec:
+  shortDescription: check the capabilities(7) of a running Pod.
+  homepage: https://github.com/appdevgbb/utils-capsh
+  description: |
+    check the capabilities(7) of a running Pod.
+  caveats: |
+    kubectl-capsh needs capsh to run, so when executed for the first time it 
+    will download that file from this repository and install it under .kube/capsh 
+
+    Usage:
+      kubectl capsh <pod>
+  version: v0.1.1
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/appdevgbb/utils-capsh/releases/download/v0.1.1/capsh-0.1.1.tar.gz
+    sha256: 592b689b9eb3069530895bd485c313df97184f49ad0777a4b85bd3eaeeb51094
+    bin: kubectl-capsh
+    files: 
+    - from: ./kubectl-capsh
+      to: .
+    - from: LICENSE
+      to: .
+    - from: bin/libcap2-2.25-capsh-STATIC
+      to: .

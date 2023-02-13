@@ -1,0 +1,92 @@
+
+
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kubeaudit
+spec:
+  version: "v0.21.0"
+  homepage: https://github.com/Shopify/kubeaudit
+  shortDescription: Command line tool to audit Kubernetes clusters
+  description: |
+    kubeaudit is a command line tool and a Go package 
+    to audit Kubernetes clusters for various different security concerns,
+    such as:
+    run as non-root
+    use a read-only root filesystem
+    drop scary capabilities, don't add new ones
+    don't run privileged
+    and more!
+  platforms:
+  - uri: https://github.com/Shopify/kubeaudit/releases/download/v0.21.0/kubeaudit_0.21.0_darwin_amd64.tar.gz
+    sha256: 2590bf20812622192f696d782e3b586ccf09c66a1492f4492f5308009e66fc4a
+    bin: kubeaudit
+    files:
+    - from: ./kubeaudit
+      to: kubeaudit
+    - from: ./README.md
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/Shopify/kubeaudit/releases/download/v0.21.0/kubeaudit_0.21.0_darwin_arm64.tar.gz
+    sha256: 239d12ab98aa5f399a70acef4d0c27d9751175dbe598070bb58a61c68b0a25c1
+    bin: kubeaudit
+    files:
+    - from: ./kubeaudit
+      to: kubeaudit
+    - from: ./README.md
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - uri: https://github.com/Shopify/kubeaudit/releases/download/v0.21.0/kubeaudit_0.21.0_linux_amd64.tar.gz
+    sha256: 4b7222adf273f8c7cb37d0207ca54143a571e953613a5bfb7e3f7d1988d23d00
+    bin: kubeaudit
+    files:
+    - from: ./kubeaudit
+      to: kubeaudit
+    - from: ./README.md
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/Shopify/kubeaudit/releases/download/v0.21.0/kubeaudit_0.21.0_linux_386.tar.gz
+    sha256: 6422b0893d9d1894e6cc38e8158e6700d218098d4af32fb4bab1a8b955efe679
+    bin: kubeaudit
+    files:
+    - from: ./kubeaudit
+      to: kubeaudit
+    - from: ./README.md
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm
+  - uri: https://github.com/Shopify/kubeaudit/releases/download/v0.21.0/kubeaudit_0.21.0_linux_amd64.tar.gz
+    sha256: 4b7222adf273f8c7cb37d0207ca54143a571e953613a5bfb7e3f7d1988d23d00
+    bin: kubeaudit
+    files:
+    - from: ./kubeaudit
+      to: kubeaudit
+    - from: ./README.md
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - uri: https://github.com/Shopify/kubeaudit/releases/download/v0.21.0/kubeaudit_0.21.0_windows_amd64.tar.gz
+    sha256: 2caf1063efe68b53b84c93b7e59cd6e4045d398dce6831080db37a8aae51dca6
+    bin: kubeaudit
+    files:
+    - from: ./kubeaudit
+      to: kubeaudit
+    - from: ./README.md
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

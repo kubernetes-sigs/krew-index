@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: pvmigrate
 spec:
-  version: v0.7.0
+  version: v0.8.0
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/replicatedhq/pvmigrate/releases/download/v0.7.0/pvmigrate_linux_amd64.tar.gz
-    sha256: 9fce7cddd628b25dd5ffc2613984200a86dbc76e8a370ac01bac2cf91ff747bb
+    uri: https://github.com/replicatedhq/pvmigrate/releases/download/v0.8.0/pvmigrate_linux_amd64.tar.gz
+    sha256: 4e7887b0515fd493034fe3fe7e7a21ef34925254ec851d77af4e092d5b130520
     files:
     - from: pvmigrate
       to: .
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/replicatedhq/pvmigrate/releases/download/v0.7.0/pvmigrate_darwin_amd64.tar.gz
-    sha256: 777e80fd800a62b3e97959ed43b5a658f1b79bec040cc2f61f126c7707de4fbe
+    uri: https://github.com/replicatedhq/pvmigrate/releases/download/v0.8.0/pvmigrate_darwin_amd64.tar.gz
+    sha256: dc83e9b4b8858cfed4630745e40f8e105ecaee6c722b1ca73269f0729a74b0f5
     files:
     - from: pvmigrate
       to: .
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/replicatedhq/pvmigrate/releases/download/v0.7.0/pvmigrate_windows_amd64.zip
-    sha256: ac1158c62ec0cb4ca7cbd331b79f5decef0fe93c1f28e7bc4fb785ea7b40bf6c
+    uri: https://github.com/replicatedhq/pvmigrate/releases/download/v0.8.0/pvmigrate_windows_amd64.zip
+    sha256: db100dea18d3c0e897aa0b283df9cf1f10e0beb6ad4e07c2fb13dee1fe3d04c4
     files:
     - from: pvmigrate.exe
       to: .

@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: gadget
 spec:
-  version: v0.13.0
+  version: v0.13.1
   homepage: https://github.com/inspektor-gadget/inspektor-gadget
   shortDescription: Gadgets for debugging and introspecting apps
   description: |
@@ -35,38 +35,38 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.13.0/kubectl-gadget-linux-amd64-v0.13.0.tar.gz
-    sha256: 29062624e66b2ca9c827736d5c67f7bde4315cde871bfa682c3314b927f6cbe8
+    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.13.1/kubectl-gadget-linux-amd64-v0.13.1.tar.gz
+    sha256: 64e4e4beaa5e8dbfe98ff709b4f82b168621b9051941345e1c32f2ec99800890
     bin: kubectl-gadget
 
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.13.0/kubectl-gadget-linux-arm64-v0.13.0.tar.gz
-    sha256: 7f1f6b6cf2ed008f1592d37ceb1997714ff6c5e2e996c54cf8a601c1d2888f33
+    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.13.1/kubectl-gadget-linux-arm64-v0.13.1.tar.gz
+    sha256: 98e990e5da0fa135d70f0c92e0b83d71b531d17ce4bc7d934dbaaa92ba8c388f
     bin: kubectl-gadget
 
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.13.0/kubectl-gadget-darwin-amd64-v0.13.0.tar.gz
-    sha256: c997708cebdc91d232b94770ba211d819f9f833d07f0be9d6688655f530625f2
+    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.13.1/kubectl-gadget-darwin-amd64-v0.13.1.tar.gz
+    sha256: 58a6e0c6898df7d7d94371ce3aab360d5b36417734479a635eee3bf75d0b99ae
     bin: kubectl-gadget
 
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.13.0/kubectl-gadget-darwin-arm64-v0.13.0.tar.gz
-    sha256: e238198746b9349b09583edd8e233ee227cc0491ba7697717c67044fa1f1b524
+    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.13.1/kubectl-gadget-darwin-arm64-v0.13.1.tar.gz
+    sha256: 864ce5db9556eb3315edcc51e2e1575ef82c77553c84ab9712f28a3699fb1c06
     bin: kubectl-gadget
 
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.13.0/kubectl-gadget-windows-amd64-v0.13.0.tar.gz
-    sha256: f74a18c672f9819279c7321ff7084dde4db406ff6e239308e272c3b99163f02b
+    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.13.1/kubectl-gadget-windows-amd64-v0.13.1.tar.gz
+    sha256: 58b17005ccfe940d90791b88d74240ed1f9b9f20a1e1f1dedf8518708c701240
     bin: kubectl-gadget

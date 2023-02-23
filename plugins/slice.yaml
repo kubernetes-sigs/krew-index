@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: slice
 spec:
-  version: v1.2.4
+  version: v1.2.5
   homepage: https://github.com/patrickdappollonio/kubectl-slice
   shortDescription: Split a multi-YAML file into individual files.
   description: |
@@ -15,41 +15,55 @@ spec:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.4/kubectl-slice_1.2.4_darwin_arm64.tar.gz
-      sha256: 56f1e5e5fc9f47e2ef433c0451b52816930ec7de05d02c25cc135ea2a434b7fc
+      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.5/kubectl-slice_darwin_arm64.tar.gz
+      sha256: f3350aaf7b6b64f8c0f4fa84d116c10d87f4040c95f02ff11f7e6d7d7593f846
       bin: kubectl-slice
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.4/kubectl-slice_1.2.4_darwin_x86_64.tar.gz
-      sha256: 381ac0e71bd404868a7aeb70728696ea19b7172d14b9912e2fca9f801f695c6d
+      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.5/kubectl-slice_darwin_x86_64.tar.gz
+      sha256: c2461b77b792e2ae74b3f8560dc7919778366962e09b922849571259ab578e9d
       bin: kubectl-slice
     - selector:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.4/kubectl-slice_1.2.4_linux_arm64.tar.gz
-      sha256: e1ad9aaca226dfc53fc63ee456efabc7b753b40a0156048039dd4cfdfe4099ed
+      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.5/kubectl-slice_linux_arm64.tar.gz
+      sha256: ec13ea866806359c00fd481232a4ce0928afcce3e51a966a592b3cf987d874e5
       bin: kubectl-slice
     - selector:
         matchLabels:
           os: linux
           arch: arm
-      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.4/kubectl-slice_1.2.4_linux_armv6.tar.gz
-      sha256: 926e1ab4b640c07117536c083902bf69475765f7074a3abc6cb3504e1ceba944
+      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.5/kubectl-slice_linux_arm.tar.gz
+      sha256: 357c9bf0dd5e666b5f079c24a5738e0c730fb76310db36074950bac33e910582
       bin: kubectl-slice
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.4/kubectl-slice_1.2.4_linux_x86_64.tar.gz
-      sha256: e547b677a4c48789d3a62ce71c6b36b5328063238404a9abc3e99f276f32d735
+      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.5/kubectl-slice_linux_x86_64.tar.gz
+      sha256: 86b342b4804cea54c5c8e6bc90efc2d18e54d6addf85fd8600916b0d64c516a6
       bin: kubectl-slice
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.4/kubectl-slice_1.2.4_windows_x86_64.tar.gz
-      sha256: 9d923932fc3825e7eedd27a902a900f893cd01052cdec073e63d1c279eb81f16
+      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.5/kubectl-slice_windows_x86_64.tar.gz
+      sha256: 5a29c2547b2b1aff112ba8da6992cc80e8a90ab302395ee5981f8902df5e6f01
+      bin: kubectl-slice.exe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm
+      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.5/kubectl-slice_windows_arm.tar.gz
+      sha256: f87484430b17d9f936d54119b6d67df51420c0c12af6f6a615d3ba5a42bdb04b
+      bin: kubectl-slice.exe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/patrickdappollonio/kubectl-slice/releases/download/v1.2.5/kubectl-slice_windows_arm64.tar.gz
+      sha256: d40d9cc348da043cce17fd65d13477473bf1116e7795b2913ac2e7ec87238806
       bin: kubectl-slice.exe

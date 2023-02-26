@@ -1,0 +1,111 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kubevpn
+spec:
+  version: v1.1.22
+  homepage: https://github.com/wencaiwulue/kubevpn
+  shortDescription: "A vpn tunnel tools which can connect to kubernetes cluster network"
+  description: |
+    KubeVPN is Cloud Native Dev Environment, connect to kubernetes cluster network, you can access remote kubernetes
+    cluster network, remote
+    kubernetes cluster service can also access your local service. and more, you can run your kubernetes pod on local Docker
+    container with same environment、volume、and network. you can develop your application on local PC totally.
+
+  platforms:
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/wencaiwulue/kubevpn/releases/download/v1.1.22/kubevpn_v1.1.22_windows_amd64.zip
+    sha256: e8a45d19f911e34da7a5eb9f11579a3bfadb79c3f16ec62d3d72b00a7a60fee3
+    files:
+      - from: ./bin/kubevpn.exe
+        to: .
+      - from: LICENSE
+        to: .
+    bin: kubevpn.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/wencaiwulue/kubevpn/releases/download/v1.1.22/kubevpn_v1.1.22_windows_arm64.zip
+    sha256: 7358a18a6e1ec7d73dd42ed67a479975628deff4827980ddd5788a0cc68e5928
+    files:
+      - from: ./bin/kubevpn.exe
+        to: .
+      - from: LICENSE
+        to: .
+    bin: kubevpn.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: 386
+    uri: https://github.com/wencaiwulue/kubevpn/releases/download/v1.1.22/kubevpn_v1.1.22_windows_386.zip
+    sha256: 883dc04bcfb538fe17c1f949a2043b524373a80644e00486f6395e671e7836e3
+    files:
+      - from: ./bin/kubevpn.exe
+        to: .
+      - from: LICENSE
+        to: .
+    bin: kubevpn.exe
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/wencaiwulue/kubevpn/releases/download/v1.1.22/kubevpn_v1.1.22_linux_amd64.zip
+    sha256: bbb62f6687199127d8a077e95cb343351815518140845c2059ce0fae59df7024
+    files:
+      - from: ./bin/kubevpn
+        to: .
+      - from: LICENSE
+        to: .
+    bin: kubevpn
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/wencaiwulue/kubevpn/releases/download/v1.1.22/kubevpn_v1.1.22_linux_arm64.zip
+    sha256: a961a576bfd2ea45b51a61466854756eddb6ac39154cabf41f744f10e37e3906
+    files:
+      - from: ./bin/kubevpn
+        to: .
+      - from: LICENSE
+        to: .
+    bin: kubevpn
+  - selector:
+      matchLabels:
+        os: linux
+        arch: 386
+    uri: https://github.com/wencaiwulue/kubevpn/releases/download/v1.1.22/kubevpn_v1.1.22_linux_386.zip
+    sha256: 4ebc1c0984a75a322692889de77c20eb5744a1269e2c4c532a0575fb965d024f
+    files:
+      - from: ./bin/kubevpn
+        to: .
+      - from: LICENSE
+        to: .
+    bin: kubevpn
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/wencaiwulue/kubevpn/releases/download/v1.1.22/kubevpn_v1.1.22_darwin_amd64.zip
+    sha256: 63a6f3abc8175c575267cab53a2561be39ed6f79babcf742be9ba4031eb60632
+    files:
+      - from: ./bin/kubevpn
+        to: .
+      - from: LICENSE
+        to: .
+    bin: kubevpn
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/wencaiwulue/kubevpn/releases/download/v1.1.22/kubevpn_v1.1.22_darwin_arm64.zip
+    sha256: 526ca2aa026f32df687eedae5246bff9a42a1d56808c758bfb8ac543da3723bf
+    files:
+      - from: ./bin/kubevpn
+        to: .
+      - from: LICENSE
+        to: .
+    bin: kubevpn

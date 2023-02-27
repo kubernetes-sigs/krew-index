@@ -1,0 +1,87 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: sae
+spec:
+  version: "v1.0.2"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/devsapp/saectl/releases/download/v1.0.2/kubectl-sae-v1.0.2-linux-amd64.tar.gz
+    sha256: 7a1f4a7d62c59a182d005c4862f15e3acedfc40571d5c3050b21be46ef9172f9
+    files:
+    - from: "*/kubectl-sae"
+      to: "."
+    - from: "*/LICENSE"
+      to: "."
+    bin: "kubectl-sae"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/devsapp/saectl/releases/download/v1.0.2/kubectl-sae-v1.0.2-linux-arm64.tar.gz
+    sha256: 76ca66bdc374ee7d580ab398aeaa742f344ac958b81484c5838de1d8bd6f07a1
+    files:
+    - from: "*/kubectl-sae"
+      to: "."
+    - from: "*/LICENSE"
+      to: "."
+    bin: "kubectl-sae"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/devsapp/saectl/releases/download/v1.0.2/kubectl-sae-v1.0.2-darwin-amd64.tar.gz
+    sha256: 7bbe49dbacb672ce3216a67481cc4f206ee3a8316103f53594e663559bb972da
+    files:
+    - from: "*/kubectl-sae"
+      to: "."
+    - from: "*/LICENSE"
+      to: "."
+    bin: "kubectl-sae"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/devsapp/saectl/releases/download/v1.0.2/kubectl-sae-v1.0.2-darwin-arm64.tar.gz
+    sha256: 07b86ed962cb621afc98007f231ed6fc523a37f9ea530dbe6a24dc16e2e2b288
+    files:
+    - from: "*/kubectl-sae"
+      to: "."
+    - from: "*/LICENSE"
+      to: "."
+    bin: "kubectl-sae"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/devsapp/saectl/releases/download/v1.0.2/kubectl-sae-v1.0.2-windows-amd64.tar.gz
+    sha256: 44fe6b9a74f590da4ae4e3315ca929d37a0e3e9d92aa39f9a855c0308066d985
+    files:
+    - from: "*/kubectl-sae.exe"
+      to: "."
+    - from: "*/LICENSE"
+      to: "."
+    bin: "kubectl-sae.exe"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/devsapp/saectl/releases/download/v1.0.2/kubectl-sae-v1.0.2-windows-arm64.tar.gz
+    sha256: d4a881c8967f9478f7d276f5def0913c0597ff5c79cca7decffb69f727e604fd
+    files:
+    - from: "*/kubectl-sae.exe"
+      to: "."
+    - from: "*/LICENSE"
+      to: "."
+    bin: "kubectl-sae.exe"
+  shortDescription: Easily interact with SAE
+  homepage: https://github.com/devsapp/saectl/gomod
+  description: |
+    kubectl sae is a kubectl plugin from the Serverless Devs project. SAE is 
+    the application-oriented serverless PaaS, providing a cost-effective and 
+    highly efficient one-stop application hosting solution. SAE provides a 
+    fully managed infrastructure(Kubernetes). This plugin allows you to 
+    better view, manage and maintain SAE applications in a more kubectl-like way.

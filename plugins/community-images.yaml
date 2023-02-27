@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: community-images
 spec:
-  version: v0.1.4
+  version: v0.1.5
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/dims/community-images/releases/download/v0.1.4/community-images_linux_amd64.tar.gz
-    sha256: 9aa5c637fa4feed0396b6644ee36da4a731870525c48e7df163df9ecc2947e79
+    uri: https://github.com/dims/community-images/releases/download/v0.1.5/community-images_linux_amd64.tar.gz
+    sha256: ae8a3e997eddcb9c8f6f150e4c8497f66f5cc7b551a69b87a3aac8c3f2fabf15
     files:
     - from: community-images
       to: .
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/dims/community-images/releases/download/v0.1.4/community-images_linux_arm64.tar.gz
-    sha256: 57e048b12e804d5dba14221412353876812d4841785d69b058756221011b5866
+    uri: https://github.com/dims/community-images/releases/download/v0.1.5/community-images_linux_arm64.tar.gz
+    sha256: a680e9b5b555cbaee6e31af29b2d6f64ee02596e3bf4f5e142febb3038073a41
     files:
     - from: community-images
       to: .
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/dims/community-images/releases/download/v0.1.4/community-images_darwin_amd64.tar.gz
-    sha256: d6d0f800bccd76c08067e24f4b4fdec784921d30d29d2d41119a6f1bad5d0058
+    uri: https://github.com/dims/community-images/releases/download/v0.1.5/community-images_darwin_amd64.tar.gz
+    sha256: 416129b73c726402cca95c20556c45338760b361a94d9907960747257fda48eb
     files:
     - from: community-images
       to: .
@@ -45,8 +45,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/dims/community-images/releases/download/v0.1.4/community-images_darwin_arm64.tar.gz
-    sha256: 70880a65352f00536ca59728260c7f24515a2d3dc058c6509f7b33d0d5337fd0
+    uri: https://github.com/dims/community-images/releases/download/v0.1.5/community-images_darwin_arm64.tar.gz
+    sha256: c131fda4810ce52269c3f64d0eded75a927738488f10619d6f21687930c2e35e
     files:
     - from: community-images
       to: .
@@ -57,21 +57,24 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/dims/community-images/releases/download/v0.1.4/community-images_windows_amd64.zip
-    sha256: 13ee8fdcaf3c10c0da80683c9ace0b5bb50c8cad5f2373fd860bcd5d51b0e44b
+    uri: https://github.com/dims/community-images/releases/download/v0.1.5/community-images_windows_amd64.zip
+    sha256: 91b3b874f6bc0998171d8bcf226cc15b9750e91ba806f73c5c1ce12c7d386071
     files:
     - from: community-images.exe
       to: .
     - from: LICENSE
       to: .
     bin: community-images.exe
-  shortDescription: List community owned container images running
+  shortDescription: Finds community-images container images running in a cluster
   homepage: https://github.com/dims/community-images
   description: |
     The plugin will scan for all pods in all namespaces that you have at least
-    read access to. The output is a list of all images, with the community
-    owned images in red, and the rest of the images in green. It also prints
-    some tips to ensure you are using the correct official repository.
+    read access to. It will then connect to the registry that hosts the image,
+    and (if there's permission), it will analyze your tag to the list of
+    current tags.
+
+    The output is a list of all images, with the most out-of-date images in red,
+    slightly outdated in yellow, and up-to-date in green.
 
     For additional options:
       $ kubectl community-images --help

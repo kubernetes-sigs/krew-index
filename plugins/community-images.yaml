@@ -9,7 +9,7 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/dims/community-images/releases/download/v0.2.0/community-images_linux_amd64.tar.gz
+    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.2.0/community-images_linux_amd64.tar.gz
     sha256: e286ccc3ca11b955d2ae7ac3ec70f4ce10a9f5f3416d5bfa40a0205dafacefcc
     files:
     - from: community-images
@@ -21,7 +21,7 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/dims/community-images/releases/download/v0.2.0/community-images_linux_arm64.tar.gz
+    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.2.0/community-images_linux_arm64.tar.gz
     sha256: 5a427cbafb8c3a4c7e5205a292e7410045e667c52531b1011c89f8854ca9c255
     files:
     - from: community-images
@@ -33,7 +33,7 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/dims/community-images/releases/download/v0.2.0/community-images_darwin_amd64.tar.gz
+    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.2.0/community-images_darwin_amd64.tar.gz
     sha256: 09673f56d4d9855e1270b75dbfc4dd6ed485939e69fbb00573c5223d072a9f56
     files:
     - from: community-images
@@ -45,7 +45,7 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/dims/community-images/releases/download/v0.2.0/community-images_darwin_arm64.tar.gz
+    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.2.0/community-images_darwin_arm64.tar.gz
     sha256: e1564010f64eaa777a2e1c68e3153feea9d46cefe2ce9709b9534e405f87e920
     files:
     - from: community-images
@@ -57,7 +57,7 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/dims/community-images/releases/download/v0.2.0/community-images_windows_amd64.zip
+    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.2.0/community-images_windows_amd64.zip
     sha256: 64e3844076ffb28e73a7c72938d4ab2acd43d0faab3f3a77f42a8825d6c93ffc
     files:
     - from: community-images.exe
@@ -66,7 +66,7 @@ spec:
       to: .
     bin: community-images.exe
   shortDescription: List community owned container images running
-  homepage: https://github.com/dims/community-images
+  homepage: https://github.com/kubernetes-sigs/community-images
   description: |
     The plugin will scan for all pods in all namespaces that you have at least
     read access to. The output is a list of all images, with the community
@@ -75,4 +75,4 @@ spec:
 
     For additional options:
       $ kubectl community-images --help
-      or https://github.com/dims/community-images/blob/master/doc/USAGE.md
+      or https://github.com/kubernetes-sigs/community-images/blob/master/doc/USAGE.md

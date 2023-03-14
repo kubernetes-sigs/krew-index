@@ -1,0 +1,39 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kluster-capacity
+spec:
+  version: v0.1.1
+  homepage: https://github.com/k-cloud-labs/kluster-capacity
+  shortDescription: Scheduler simulation for capacity analysis.
+  description: |
+    A simple CLI provide cluster capacity analysis with scheduler simulation.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      bin: kluster-capacity
+      uri: https://github.com/k-cloud-labs/kluster-capacity/releases/download/v0.1.1/kluster-capacity_v0.1.1_darwin_x86_64.tar.gz
+      sha256: 3b7255131ca585b2d1ee3df33bea1107ab17c3c56e5b73b0e3b2ffd227e5f7f1
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      bin: kluster-capacity
+      uri: https://github.com/k-cloud-labs/kluster-capacity/releases/download/v0.1.1/kluster-capacity_v0.1.1_darwin_arm64.tar.gz
+      sha256: 58bc147bcb48caba86ac6c6e2eb935cf67931062384c68f17cbb534f03292455
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      bin: kluster-capacity
+      uri: https://github.com/k-cloud-labs/kluster-capacity/releases/download/v0.1.1/kluster-capacity_v0.1.1_linux_x86_64.tar.gz
+      sha256: b7f1a38e13fbd00d3ee4117ffdaf0d8b49d85b7d32fe32bec7d32f790d2ffb7b
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      bin: kluster-capacity
+      uri: https://github.com/k-cloud-labs/kluster-capacity/releases/download/v0.1.1/kluster-capacity_v0.1.1_linux_arm64.tar.gz
+      sha256: 99eaf73fcbfebffbcc37a7fd0ed799fe0729e5fecb592b045f10be0cc55d56b5

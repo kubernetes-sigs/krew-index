@@ -1,0 +1,51 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kluster-capacity
+spec:
+  version: v0.1.0
+  homepage: https://github.com/k-cloud-labs/kluster-capacity
+  shortDescription: Cluster capacity analysis tool support capacity estimation, cluster compression, scheduler simulation, fragmentation analysis and resource overview.
+  description: |
+    A simple CLI that support capacity estimation, cluster compression, scheduler simulation, fragmentation analysis and resource overview.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    bin: kluster-capacity
+    files:
+    - from: "*"
+      to: "."
+    uri: https://github.com/k-cloud-labs/kluster-capacity/releases/download/v0.1.0/kluster-capacity_v0.1.0_darwin_x86_64.tar.gz
+    sha256: 2c2db2a72fab450e9505a3e276c9e3ba51b602f7dad211c9e6f9c82efc1e4462
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    bin: kluster-capacity
+    files:
+    - from: "*"
+      to: "."
+    uri: https://github.com/k-cloud-labs/kluster-capacity/releases/download/v0.1.0/kluster-capacity_v0.1.0_darwin_arm64.tar.gz
+    sha256: 5171e05d9bce83156831c6eea697e6e6844412b661b4ab25182881b39c24a13c
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    bin: kluster-capacity
+    files:
+    - from: "*"
+      to: "."
+    uri: https://github.com/k-cloud-labs/kluster-capacity/releases/download/v0.1.0/kluster-capacity_v0.1.0_linux_x86_64.tar.gz
+    sha256: 3406fdcc9f4086e2d7405320f90dcfef0352f81d118fcd996ac343852ad487eb
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    bin: kluster-capacity
+    files:
+    - from: "*"
+      to: "."
+    uri: https://github.com/k-cloud-labs/kluster-capacity/releases/download/v0.1.0/kluster-capacity_v0.1.0_linux_arm64.tar.gz
+    sha256: 9e52c8ec2bb36015bc63fc690d6467d159a70e2c1cdb3135f54e4fee2f9f92a1

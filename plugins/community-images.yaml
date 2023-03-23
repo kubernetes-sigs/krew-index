@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: community-images
 spec:
-  version: v0.2.0
+  version: v0.4.3
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.2.0/community-images_linux_amd64.tar.gz
-    sha256: e286ccc3ca11b955d2ae7ac3ec70f4ce10a9f5f3416d5bfa40a0205dafacefcc
+    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.4.3/community-images_linux_amd64.tar.gz
+    sha256: fa534d6a227f978e734a52d6ede8d82d383d9d2eefa9b35bd4bdd5d374445f7e
     files:
     - from: community-images
       to: .
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.2.0/community-images_linux_arm64.tar.gz
-    sha256: 5a427cbafb8c3a4c7e5205a292e7410045e667c52531b1011c89f8854ca9c255
+    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.4.3/community-images_linux_arm64.tar.gz
+    sha256: e86036f813df421870cf16b879ec7b7ffba9fa6cb6be1e973f0424fbdc9015d6
     files:
     - from: community-images
       to: .
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.2.0/community-images_darwin_amd64.tar.gz
-    sha256: 09673f56d4d9855e1270b75dbfc4dd6ed485939e69fbb00573c5223d072a9f56
+    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.4.3/community-images_darwin_amd64.tar.gz
+    sha256: f55e0051aff86a8d0d94c39a6c8e01230b2edb0e69fd3dbd5ad870910bb9e5f7
     files:
     - from: community-images
       to: .
@@ -45,8 +45,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.2.0/community-images_darwin_arm64.tar.gz
-    sha256: e1564010f64eaa777a2e1c68e3153feea9d46cefe2ce9709b9534e405f87e920
+    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.4.3/community-images_darwin_arm64.tar.gz
+    sha256: 148f4b762ab45cb47136d702090dbc0a4b7be53e2c75d092eb8c8f9614df9d7d
     files:
     - from: community-images
       to: .
@@ -57,8 +57,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.2.0/community-images_windows_amd64.zip
-    sha256: 64e3844076ffb28e73a7c72938d4ab2acd43d0faab3f3a77f42a8825d6c93ffc
+    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.4.3/community-images_windows_amd64.zip
+    sha256: 34ff4da71ecb67c10d2603cf793386965b2212473b6b7ec1d6f614affd9455c6
     files:
     - from: community-images.exe
       to: .

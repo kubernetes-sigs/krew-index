@@ -1,0 +1,39 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: redis
+spec:
+  version: v0.0.1
+  homepage: TODO
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/artificialinc/artificial-kubectl-plugins/releases/download/v0.0.1/kubectl-redis-v0.0.1-darwin-amd64.tar.gz
+    sha256: 21d73ec2f7bbf6292bd0f601bab38a12683f36b314c161e28e68078e2125a24c
+    bin: kubectl-redis
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/artificialinc/artificial-kubectl-plugins/releases/download/v0.0.1/kubectl-redis-v0.0.1-darwin-arm64.tar.gz
+    sha256: 57cdd4800ed8a532bdcc501c89f06778de4dd37978f018ae05b69a42edcbe9c3
+    bin: kubectl-redis
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/artificialinc/artificial-kubectl-plugins/releases/download/v0.0.1/kubectl-redis-v0.0.1-linux-amd64.tar.gz
+    sha256: e0f079dd0b5fada3fce7115a086b871833e09ecc6f32ea8dc43ccf591aad7e4f
+    bin: kubectl-redis
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/artificialinc/artificial-kubectl-plugins/releases/download/v0.0.1/kubectl-redis-v0.0.1-windows-amd64.zip
+    sha256: 2047edfdc5b04025400ee95f4bf49b3e8fae92622844bb50fe778dc5f13d64e0
+    bin: kubectl-redis.exe
+  shortDescription: TODO
+  description: |
+    TODO

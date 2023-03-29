@@ -1,0 +1,39 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ai
+spec:
+  version: v0.0.6
+  homepage: https://github.com/sozercan/kubectl-ai
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/sozercan/kubectl-ai/releases/download/v0.0.6/kubectl-ai_darwin_amd64.tar.gz
+    sha256: 565777409b9dbffdc3486a2221f0c7b119b26b3da0cdc22d1c189873aabe71f4
+    bin: kubectl-ai
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/sozercan/kubectl-ai/releases/download/v0.0.6/kubectl-ai_darwin_arm64.tar.gz
+    sha256: fb5fd61bac86858c17ccb8fc44bb810c56bc8022c6b8ef4a5e005b3e4a4577ac
+    bin: kubectl-ai
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/sozercan/kubectl-ai/releases/download/v0.0.6/kubectl-ai_linux_amd64.tar.gz
+    sha256: b7f04e4b94bfd03de741f4ba47222bfeb8f45e637ec518dacd2a484b3e570b85
+    bin: kubectl-ai
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/sozercan/kubectl-ai/releases/download/v0.0.6/kubectl-ai_linux_arm64.tar.gz
+    sha256: d16d3e16d2781678592631b6aa829f2203c225ec13c1db97f33486bf0183d97d
+    bin: kubectl-ai
+  shortDescription: Generate and apply manifests using OpenAI GPT
+  description: |
+    kubectl-ai is a kubectl plugin to generate and apply Kubernetes manifests using OpenAI GPT.

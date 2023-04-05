@@ -1,0 +1,38 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: az
+spec:
+  version: v0.1.0
+  homepage: https://github.com/Azure/kubectl-az
+  shortDescription: Interact with an AKS cluster
+  description: |
+    This plugin provides a set of commands that can be used to debug an AKS
+    cluster even when the cluster's control plane is not working correctly. For
+    instance, when the API server is having problems.
+
+    This plugin is not meant to replace az, but to complement it by providing
+    additional commands and, mainly, allowing users to have a kubectl-like
+    experience when working with an AKS cluster.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/Azure/kubectl-az/releases/download/v0.1.0/kubectl-az-linux-amd64-v0.1.0.tar.gz
+    sha256: 62b25188e350372c58211c6a0372b0268597ef16cf473679bbd07db40dcc948d
+    bin: kubectl-az
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/Azure/kubectl-az/releases/download/v0.1.0/kubectl-az-darwin-amd64-v0.1.0.tar.gz
+    sha256: 373d9b414055392d48e1acafe1d3b429ea01398731924ebe5f27226b9fdaaaa1
+    bin: kubectl-az
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/Azure/kubectl-az/releases/download/v0.1.0/kubectl-az-windows-amd64-v0.1.0.tar.gz
+    sha256: fdc19d5963e1efd6a33692972e7882c28e32bdf5fdceabd9eb48a7789fb13cdb
+    bin: kubectl-az

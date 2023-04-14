@@ -1,0 +1,103 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: node-ssm
+spec:
+  version: v0.0.1
+  homepage: https://github.com/VioletCranberry/kubectl-node-ssm
+  shortDescription: start aws ssm session to SSM managed EKS node
+  description: |
+    Start an SSM session with AWS SSM managed EKS node using
+    local AWS CLI and ssm-plugin. EKS node name (private-dns-name)
+    will be resolved to instance ID using AWS API and AWS profile
+    with region parsed from current kubeconfig.
+  caveats: |
+      AWS SSM manager requires setup before you can connect to managed nodes.
+      This plugin requires:
+      * AWS CLI
+      * session-manager-plugin 
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/VioletCranberry/kubectl-node-ssm/releases/download/v0.0.1/kubectl-node_ssm-v0.0.1-darwin-amd64.tar.gz
+    sha256: 9da81f8bcdc77f42f28fe61614be774a05f99ede5135f3cc9819b2a2b62f22c8
+    bin: node-ssm
+    files:
+      - from: LICENSE
+        to: .
+      - from: README.md
+        to: .
+      - from: ./kubectl-node_ssm
+        to: node-ssm
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/VioletCranberry/kubectl-node-ssm/releases/download/v0.0.1/kubectl-node_ssm-v0.0.1-darwin-arm64.tar.gz
+    sha256: b27910b706065126a0e25cd8821241a7c26697c0cd0d2e91d79b8e564746c971
+    bin: node-ssm
+    files:
+      - from: LICENSE
+        to: .
+      - from: README.md
+        to: .
+      - from: ./kubectl-node_ssm
+        to: node-ssm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/VioletCranberry/kubectl-node-ssm/releases/download/v0.0.1/kubectl-node_ssm-v0.0.1-linux-amd64.tar.gz
+    sha256: 9921dfb962b3159bf113360b5587106dec361110c5f39c94ccae66c567a853c9
+    bin: node-ssm
+    files:
+      - from: LICENSE
+        to: .
+      - from: README.md
+        to: .
+      - from: ./kubectl-node_ssm
+        to: node-ssm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/VioletCranberry/kubectl-node-ssm/releases/download/v0.0.1/kubectl-node_ssm-v0.0.1-linux-arm64.tar.gz
+    sha256: 7539890f173cb272ef681f47e494d6327ed598c4d04cd9e5d9cbeb824257ba88
+    bin: node-ssm
+    files:
+      - from: LICENSE
+        to: .
+      - from: README.md
+        to: .
+      - from: ./kubectl-node_ssm
+        to: node-ssm
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/VioletCranberry/kubectl-node-ssm/releases/download/v0.0.1/kubectl-node_ssm-v0.0.1-windows-amd64.zip
+    sha256: 9c6c4cc038218935dff372dbd83ce2f9876560fb16044f3c1e7b8dfbdc122c77
+    bin: node-ssm.exe
+    files:
+      - from: LICENSE
+        to: .
+      - from: README.md
+        to: .
+      - from: ./kubectl-node_ssm.exe
+        to: node-ssm.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/VioletCranberry/kubectl-node-ssm/releases/download/v0.0.1/kubectl-node_ssm-v0.0.1-windows-arm64.zip
+    sha256: cf6091ea994aed713b63f83c51fb925d6add388bbcca83f3fa9e5c89b1885ec0
+    bin: node-ssm.exe
+    files:
+      - from: LICENSE
+        to: .
+      - from: README.md
+        to: .
+      - from: ./kubectl-node_ssm.exe
+        to: node-ssm.exe

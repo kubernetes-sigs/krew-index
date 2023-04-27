@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: blame
 spec:
-  version: v0.0.10
+  version: v0.0.11
   homepage: https://github.com/knight42/kubectl-blame
   shortDescription: Show who edited resource fields.
   description: |
@@ -14,27 +14,34 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/knight42/kubectl-blame/releases/download/v0.0.10/kubectl-blame-v0.0.10-darwin-amd64.tar.gz
-    sha256: 419044052a20168c17afd962e666692da1aaefd7e18e5b7066629108f3f86174
+    uri: https://github.com/knight42/kubectl-blame/releases/download/v0.0.11/kubectl-blame-v0.0.11-darwin-amd64.tar.gz
+    sha256: 73f9b775414b54f8bb9c68bca69134abd1ea0f9e0ccd8a5ae55acf0bb7ecf78f
     bin: kubectl-blame
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/knight42/kubectl-blame/releases/download/v0.0.10/kubectl-blame-v0.0.10-darwin-arm64.tar.gz
-    sha256: 1d6e2a247655a23ecfdc8d891a24516b93a9ab59e9ede884af8f959527ca66ce
+    uri: https://github.com/knight42/kubectl-blame/releases/download/v0.0.11/kubectl-blame-v0.0.11-darwin-arm64.tar.gz
+    sha256: 238427bdf6ef64ef4f072616f3c4ff960f9807767f69cf55a34d329b46402c16
     bin: kubectl-blame
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/knight42/kubectl-blame/releases/download/v0.0.10/kubectl-blame-v0.0.10-linux-amd64.tar.gz
-    sha256: 3b10777577db72a442c24109125ad0605907a50c8c623d74638c4ab911f85924
+    uri: https://github.com/knight42/kubectl-blame/releases/download/v0.0.11/kubectl-blame-v0.0.11-linux-amd64.tar.gz
+    sha256: 0191d86af41d8958a69ef2662b8681e26a81384c43f4ce28594749dd9aa749c8
     bin: kubectl-blame
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/knight42/kubectl-blame/releases/download/v0.0.10/kubectl-blame-v0.0.10-linux-arm64.tar.gz
-    sha256: de6b61f8c7dae893570a5adda90e645c792e7fd6aa4eaceb7897fa5b2e95616e
+    uri: https://github.com/knight42/kubectl-blame/releases/download/v0.0.11/kubectl-blame-v0.0.11-linux-arm64.tar.gz
+    sha256: 81ea7e0d8b98b864b1f11a70a04de0db32a0c245baf89c29dc7b997c5f0d8c43
     bin: kubectl-blame
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/knight42/kubectl-blame/releases/download/v0.0.11/kubectl-blame-v0.0.11-windows-amd64.tar.gz
+    sha256: 58a11fa5fcf04e3670ab325cee4f257c91df742cdcb00ebd62b5606785fa01a4
+    bin: kubectl-blame.exe

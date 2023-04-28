@@ -7,15 +7,15 @@ kind: Plugin
 metadata:
   name: klock
 spec:
-  version: v0.1.1
+  version: v0.2.0
   homepage: https://github.com/jilleJr/kubectl-klock
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.1.1/klock_linux_amd64.tar.gz
-    sha256: 58ef45cf23841a21d0ae58c317fce979ba6ab6d29bee8ee0f1ed0d156b7f620e
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.2.0/klock_linux_amd64.tar.gz
+    sha256: 5e5c8abf993c4e24b1969dd1acd2a079584a04932a52e2f2a8b7225c971e0981
     files:
     - from: "./klock"
       to: "."
@@ -27,8 +27,21 @@ spec:
       matchLabels:
         os: linux
         arch: "386"
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.1.1/klock_linux_386.tar.gz
-    sha256: bb4f8ee3d1ad678413b1759aa3127594f5a2a247c500f807d1fc55f0b48081ec
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.2.0/klock_linux_386.tar.gz
+    sha256: f804fb53d169d66268ba82eaab395923215031d7ca046234e15a0992c484878f
+    files:
+    - from: "./klock"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "klock"
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: "arm64"
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.2.0/klock_linux_arm64.tar.gz
+    sha256: e32312d3540060d5ed368cc318289b4c0e611c8e6fc444880bc1c7b8e47d09f6
     files:
     - from: "./klock"
       to: "."
@@ -40,8 +53,21 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.1.1/klock_darwin_amd64.tar.gz
-    sha256: 45702c32f2ad0660feff409b4b60b22cd5d3072199a9844e8e88669fed0a62cd
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.2.0/klock_darwin_amd64.tar.gz
+    sha256: 7b64bb8d77b2c54b00a3c344f9ad5b2d457d0240c8990e7f3d1c120ef12ef6aa
+    files:
+    - from: "./klock"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "klock"
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.2.0/klock_darwin_arm64.tar.gz
+    sha256: 4a53967b819f4326107eac897501925d5a5d0504548493191321dc7ee6f767fc
     files:
     - from: "./klock"
       to: "."
@@ -53,8 +79,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.1.1/klock_windows_amd64.zip
-    sha256: ebc5fca47a3cba71bc9fb839a6b6e9e793c758352b4c0de7bc6d54f605be93d5
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.2.0/klock_windows_amd64.zip
+    sha256: 1c936724d215d99ae365b2f3e4b0b1fc28ff4dab8e3513f743f32e0391886400
     files:
     - from: "/klock.exe"
       to: "."
@@ -66,8 +92,21 @@ spec:
       matchLabels:
         os: windows
         arch: "386"
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.1.1/klock_windows_386.zip
-    sha256: e3c2417f70f0eed83c158fda785fd6964d017d812d37a74be7f6cec98e732a6b
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.2.0/klock_windows_386.zip
+    sha256: 7a973288d2621450b3e7c40eb0cfccc20945f3d4c0bfe400929a168faaca088e
+    files:
+    - from: "/klock.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "klock.exe"
+
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.2.0/klock_windows_arm64.zip
+    sha256: 942b976469ad894419f97a901028ebc7f90dcf00ac828d340c64a1727abe000a
     files:
     - from: "/klock.exe"
       to: "."
@@ -77,5 +116,7 @@ spec:
 
   shortDescription: Watches resources
   description: |
-    Watches resources and prints them in a human-readable manner.
-    Very similar to `kubectl get`, but with live updates.
+    Usage:
+      $ kubectl klock <resource> [name]
+      This plugin watches resources and prints them in a human-readable manner. Very similar to `kubectl get`, but with live updates.
+      Read more documentation at: https://github.com/jilleJr/kubectl-klock

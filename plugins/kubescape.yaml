@@ -5,7 +5,7 @@ metadata:
 spec:
   homepage: https://github.com/kubescape/kubescape/
   shortDescription: Scan resources and cluster configs against security frameworks.
-  version: v2.2.6
+  version: v2.3.0
   description: |
     It includes risk analysis, security compliance, and misconfiguration scanning
     with an easy-to-use CLI interface, flexible output formats, and automated scanning capabilities.
@@ -14,20 +14,34 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/kubescape/kubescape/releases/download/v2.2.6/kubescape-macos-latest.tar.gz
-    sha256: b481d968493874298d33465be3c5026c77741709b90cd3d472429dcff24aaab6
+    uri: https://github.com/kubescape/kubescape/releases/download/v2.3.0/kubescape-macos-latest.tar.gz
+    sha256: 98ed95ffa14bb3478f03f25f8be4b75f4c1fb9b369d7d890df2fa826d47c876d
+    bin: kubescape
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/kubescape/kubescape/releases/download/v2.3.0/kubescape-arm64-macos-latest.tar.gz
+    sha256: 3d8e00e76bda012bbaf7eabeddc8b747ee2e15a4cd43905a8a9b6e586b735cc7
     bin: kubescape
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/kubescape/kubescape/releases/download/v2.2.6/kubescape-ubuntu-latest.tar.gz
-    sha256: 5c2b2d5a1733337e3a96583ae9d7ba760a3190da87c2b2cd83fb7bf0e1d52305
+    uri: https://github.com/kubescape/kubescape/releases/download/v2.3.0/kubescape-ubuntu-latest.tar.gz
+    sha256: af00078fc190c956de6d150a90585adb5aae3a108135b4d35ae00cabcea0b838
+    bin: kubescape
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/kubescape/kubescape/releases/download/v2.3.0/kubescape-arm64-ubuntu-latest.tar.gz
+    sha256: 5f57575790f7edbb67e6fc3adfeade8129ed7ab5f71ac1ce64700f832c34e931
     bin: kubescape
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/kubescape/kubescape/releases/download/v2.2.6/kubescape-windows-latest.tar.gz
-    sha256: 76573f85580180154c0127ffaa8a694aece0094784ff524b22213d697ca3d301
+    uri: https://github.com/kubescape/kubescape/releases/download/v2.3.0/kubescape-windows-latest.tar.gz
+    sha256: cda75620d984e6e55566d0a7586a3b957245823b9036f4955cb24c7d45849f1c
     bin: kubescape.exe

@@ -1,0 +1,44 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: gateway
+spec:
+  version: v0.0.1
+  homepage: https://github.com/tafkam/kubectl-gateway
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/tafkam/kubectl-gateway/releases/download/v0.0.1/kubectl-gateway_darwin_amd64.tar.gz
+    sha256: 9896b258d047afa818d82ee7433962c9707e8a601f656e8b38a99aed9f7f2db7
+    bin: kubectl-gateway
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/tafkam/kubectl-gateway/releases/download/v0.0.1/kubectl-gateway_darwin_arm64.tar.gz
+    sha256: cde92a6cdd493a6c9d0b9cbe82325e74f2710031f8c92a847234fefeb4eefedb
+    bin: kubectl-gateway
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/tafkam/kubectl-gateway/releases/download/v0.0.1/kubectl-gateway_linux_amd64.tar.gz
+    sha256: 6856e55de1abfe5bebc788cb6764c89fc13f2144feadbbdb39c8d7514e763217
+    bin: kubectl-gateway
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/tafkam/kubectl-gateway/releases/download/v0.0.1/kubectl-gateway_windows_amd64.zip
+    sha256: 8d02ec1c028507116afe5ce3bc76ae93526b4da574fcdc45adf46a99797b346b
+    bin: kubectl-gateway
+  shortDescription: Install and manage Gateway API objects
+  description: |
+    Usage:
+      kubectl gateway install
+      kubectl gateway create -n <namespace> <gateway name> -c <gateway class> -H "host1,host2,host3" -p "80,443"
+      kubectl gateway http create -n <namespace> <httproute name> -g <gateway name> -H "host1,host2,host3" -S backend-app.default.svc.cluster.local:8080
+      This plugin installs the Gateway API CRDs and manages Gateway API objects.
+      Read more documentation at: https://github.com/tafkam/kubectl-gateway/tree/main/docs

@@ -33,6 +33,13 @@ spec:
       uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.16.3/kubectl-view-allocations_0.16.3-aarch64-unknown-linux-musl.tar.gz
       sha256: "8aa1e43a223bc39eed87b4fe182ced37e57af6f018e8c839e0f45c4c8ed5a73c"
       bin: "./kubectl-view-allocations"
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.16.3/kubectl-view-allocations_0.16.3-x86_64-pc-windows-msvc.zip
+      sha256: "e35a727caa3108e2c4000b1a84bc86bf5d1db04c56be60d00c7a5df35bf13c99"
+      bin: "./kubectl-view-allocations.exe"
   shortDescription: List allocations per resources, nodes, pods.
   homepage: https://github.com/davidB/kubectl-view-allocations
   description: |

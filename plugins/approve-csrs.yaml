@@ -1,0 +1,45 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: approve-csrs
+spec:
+  homepage: https://github.com/RyanMillerC/oc-approve-csrs
+  shortDescription: Approve all pending OpenShift CertificatSigningRequests (CSRs) in a single command.
+  version: v0.0.2
+  description: |
+    How many times has this happened to you?
+
+    * You have an OpenShift cluster in a lab (or something like that) 👍
+    * You power it off (because why run a lab OpenShift cluster 24/7) 😅
+    * You power it back on a few days later 🔌
+    * The web console doesn't come up 😬
+    * You start digging around 🕵️
+    * You notice some pending CertificateSigningRequests (CSRs) 🤦
+    * You dig through your old notes or links to find the support article with the
+      command approve all pending CSRs 🔎
+    * You run the command to approve them 💻
+    * You wait 10 minutes and the web console comes up! 😃
+
+    This OpenShift CLI (oc) plugin will approve all pending CSRs in a single
+    command, without the need to dig through your notes, search the web, or
+    memorize a monster command! 😈
+  caveats: |
+    This plugin requires `oc` (OpenShift CLI) instead of `kubectl` because it
+    depends on the `oc adm certificates` subcommand. The plugin will error if
+    you try to run it without `oc` installed.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/RyanMillerC/oc-approve-csrs/archive/refs/tags/v0.0.2.tar.gz
+    sha256: bef5233d20139a6e206e179ec22b80c01c48f811820824e66715613eab725a8c
+    bin: oc-approve_csrs
+    files:
+    - from: oc-approve-csrs-*/oc-approve_csrs
+      to: .
+    - from: oc-approve-csrs-*/LICENSE
+      to: .

@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: forward-exec
+spec:
+  version: "v0.2.0"
+  homepage: https://github.com/tgunsch/kubectl-forward-exec
+  shortDescription: "Forward a port to a pod, run a command on local machine and finally stop the port forward."
+  description: |
+    This plugin forwards a port to a pod, run a command (e.g. curl) on local machine and finally stop the port forward.
+    The preferred use case is doing smoke tests in integration tests; i.e. execute a request with curl to an forwarded port on pod, which don't have a shell inside.
+  platforms:
+    - bin: kubectl-forward-exec
+      uri: https://github.com/tgunsch/kubectl-forward-exec/releases/download/v0.2.0/kubectl-forward-exec_v0.2.0_linux_arm64.tar.gz
+      sha256: "372daa5705bca78fe6ba8e8225a287bb18b9c5e1e5a1fcfbc036e3f20988b55f"
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+    - bin: kubectl-forward-exec
+      uri: https://github.com/tgunsch/kubectl-forward-exec/releases/download/v0.2.0/kubectl-forward-exec_v0.2.0_linux_amd64.tar.gz
+      sha256: "0a9dfe45dc46747059aa921b72526ba88f89551eb0f93284db7155912aaa5d63"
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - bin: kubectl-forward-exec
+      uri: https://github.com/tgunsch/kubectl-forward-exec/releases/download/v0.2.0/kubectl-forward-exec_v0.2.0_darwin_arm64.tar.gz
+      sha256: "83f06e9e4099577a42406765b530142a28e31ad221f6bf3ce31f91c53c4076b2"
+      selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+    - bin: kubectl-forward-exec
+      uri: https://github.com/tgunsch/kubectl-forward-exec/releases/download/v0.2.0/kubectl-forward-exec_v0.2.0_darwin_amd64.tar.gz
+      sha256: "eb9164e1a023fc0373787ef5fed62c4face82ee1cc947e29e9b84e1ca6c1febf"
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64 

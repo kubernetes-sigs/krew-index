@@ -42,7 +42,7 @@ jobs:
     - name: Install kubectl
       run: |
         set -euo pipefail
-        sudo curl -fsSL -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.18.8/bin/linux/amd64/kubectl
+        sudo curl -fsSL -o /usr/bin/kubectl https://dl.k8s.io/release/v1.18.8/bin/linux/amd64/kubectl
         sudo chmod +x /usr/bin/kubectl
 
     - name: Install krew

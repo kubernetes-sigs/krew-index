@@ -6,14 +6,13 @@ spec:
   shortDescription: print the total amount of Cpu and Memory Request
   description: |
     This plugin print the total amount of Cpu and Memory Request on kubernetes nodes
-  version: "v0.1.0"
+  version: "v0.2.0"
   platforms:
   - selector:
       matchExpressions:
       - key: "os"
         operator: "In"
         values:
-        - darwin
         - linux
     uri: "https://github.com/SamuelBECK1/kubectl-nodes_allocation/releases/download/v0.1.0/kubectl-nodes-allocation-v0.1.0.tar"
     sha256: 1f983794ea0384e5461466a3f751953a5a5b0ae13ed67e192f2bb6abbec92cd8

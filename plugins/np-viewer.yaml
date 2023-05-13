@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: np-viewer
 spec:
-  version: "v1.0.6"
+  version: "v1.0.7"
   platforms:
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/runoncloud/kubectl-np-viewer/releases/download/v1.0.6/kubectl-np-viewer_linux_amd64.tar.gz
-      sha256: 138a5ae5f79f067b7825aa6bec3fc2c7d8454affc99a57ef69609851656b1e02
+      uri: https://github.com/runoncloud/kubectl-np-viewer/releases/download/v1.0.7/kubectl-np-viewer_linux_amd64.tar.gz
+      sha256: 4bcf9a81062517ef22d20a0edcd642fb9cf16e231bab0c5e7370e5472a92809b
       files:
         - from: "./kubectl-np-viewer"
           to: "np-viewer"
@@ -21,8 +21,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/runoncloud/kubectl-np-viewer/releases/download/v1.0.6/kubectl-np-viewer_darwin_amd64.tar.gz
-      sha256: 5562b6b31373191b9ebcb58a63580ce4a0b78a8d79eaec4ae47ec43123e9754a
+      uri: https://github.com/runoncloud/kubectl-np-viewer/releases/download/v1.0.7/kubectl-np-viewer_darwin_amd64.tar.gz
+      sha256: 5c16a4096425d385905c3ca1b60d92c72090877f524587594b37b30904ebbb8b
       files:
         - from: "./kubectl-np-viewer"
           to: "np-viewer"
@@ -33,14 +33,38 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/runoncloud/kubectl-np-viewer/releases/download/v1.0.6/kubectl-np-viewer_windows_amd64.zip
-      sha256: 2e1a656306467ef9ac1ae8d8cb602d73de3dacbe7705aa6862b3c620f41d0c4f
+      uri: https://github.com/runoncloud/kubectl-np-viewer/releases/download/v1.0.7/kubectl-np-viewer_windows_amd64.zip
+      sha256: 4b5d5ee4bf5d0ce7b549bcaa0df9097a272ece0289cd5c62a452488aa0c5ed7f
       files:
         - from: "/kubectl-np-viewer.exe"
           to: "np-viewer.exe"
         - from: LICENSE
           to: "."
       bin: "np-viewer.exe"
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/runoncloud/kubectl-np-viewer/releases/download/v1.0.7/kubectl-np-viewer_linux_arm64.tar.gz
+      sha256: a46f89e39c457cfe3b9eedfb3019e16706df31c729fa4162a91d43485622ca73
+      files:
+        - from: "./kubectl-np-viewer"
+          to: "np-viewer"
+        - from: LICENSE
+          to: "."
+      bin: "np-viewer"
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/runoncloud/kubectl-np-viewer/releases/download/v1.0.7/kubectl-np-viewer_darwin_arm64.tar.gz
+      sha256: b6e8846550fc85dfd61ad5136e635e821668ff104e32de944ac5d0ff5005d1a4
+      files:
+        - from: "./kubectl-np-viewer"
+          to: "np-viewer"
+        - from: LICENSE
+          to: "."
+      bin: "np-viewer"
   shortDescription: Network Policies rules viewer
   homepage: https://github.com/runoncloud/kubectl-np-viewer
   caveats: |

@@ -5,10 +5,11 @@ metadata:
 spec:
   version: "v0.2.0"
   homepage: https://github.com/tgunsch/kubectl-forward-exec
-  shortDescription: "Forward a port to a pod, run a command on local machine and finally stop the port forward."
-  description: |
+  shortDescription: "Run a command after port forward is established."
+description: |
     This plugin forwards a port to a pod, run a command (e.g. curl) on local machine and finally stop the port forward.
-    The preferred use case is doing smoke tests in integration tests; i.e. execute a request with curl to an forwarded port on pod, which don't have a shell inside.
+    The preferred use case is doing smoke tests in integration tests; i.e. execute a request with curl to an forwarded 
+    port on pod, which don't have a shell inside.
   platforms:
     - bin: kubectl-forward-exec
       uri: https://github.com/tgunsch/kubectl-forward-exec/releases/download/v0.2.0/kubectl-forward-exec_v0.2.0_linux_arm64.tar.gz

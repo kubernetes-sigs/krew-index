@@ -1,0 +1,47 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kopy
+spec:
+  version: "v0.0.0-pre"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/websi96/kubectl-kopy/releases/download/v0.0.0-pre/kubectl-kopy_linux_amd64.tar.gz
+    sha256: ba8890c066b1360ea9c62f8fe460a527166cce59e68f49c362c25703892773c9
+    files:
+    - from: "./kopy"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kopy"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/websi96/kubectl-kopy/releases/download/v0.0.0-pre/kubectl-kopy_darwin_amd64.tar.gz
+    sha256: 5111fe7017086614c4d722208068ac6de5a8e3a6411e518c3b7652bf209414db
+    files:
+    - from: "./kopy"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kopy"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/websi96/kubectl-kopy/releases/download/v0.0.0-pre/kubectl-kopy_windows_amd64.zip
+    sha256: dc9ae37e856591334df6ce6466e7ffd4a25e306954b9b9a53bd4256cce1e2f4a
+    files:
+    - from: "/kopy.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kopy.exe"
+  shortDescription: Copy Contents from PVs
+  homepage: https://github.com/websi96/kubectl-kopy
+  description: |
+    Kubectl plugins to download contents from a PV.

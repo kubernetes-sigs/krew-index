@@ -1,0 +1,21 @@
+apiversion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:  
+  name: "sort"
+spec:  
+  platforms:  
+  - uri: https://github.com/seifrajhi/kubectl-sort/archive/v1.0.0.zip   
+    sha256: 36e49e74f2753059be3e4ef86340bb857741d5627945091825e974fd7d4c96cf    
+    bin: sort.py    
+    files:    
+    - from: "*/sort.py"      
+      to: "."    
+    selector:      
+      matchExpressions:      
+      - {key: os, operator: In, values: [darwin, linux]}  
+  version: "v1.0.0"  
+  homepage: https://github.com/seifrajh/kubectl-sort  
+  shortDescription: "Simplified sorting for kubectl get output"  
+  description: |      
+      This plugin that will help you forget the kubectl's default, difficult to remember, sorting feature by making it simpler.
+      kubectl has its own --sort-by=json-path feature for sorting but kubectl-sort will makes the sorting easier.

@@ -1,0 +1,53 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: resource-report
+spec:
+  version: v1.0.4
+  homepage: https://github.com/stenic/kubectl-resource_report
+  shortDescription: Generate a report of Kubernetes resources
+  description: |
+    Generate a report of Kubernetes resources
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/stenic/kubectl-resource_report/releases/download/1.0.4/kubectl-resource_report_darwin_amd64.tar.gz
+    sha256: 4d76edcb22fd475cd3ae6351606b42263bac676711d41df8b06d24042326db9b
+    bin: kubectl-resource_report
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/stenic/kubectl-resource_report/releases/download/1.0.4/kubectl-resource_report_darwin_arm64.tar.gz
+    sha256: 78ba21eaf9b05b3f40b20f5f72524231d76ce7b31702a83716be202cdc615d84
+    bin: kubectl-resource_report
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/stenic/kubectl-resource_report/releases/download/1.0.4/kubectl-resource_report_linux_amd64.tar.gz
+    sha256: 1e8c6ffd89607bc53f495a563b140a16bb2c10bb80bdd376adda27c6afbee05d
+    bin: kubectl-resource_report
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm
+    uri: https://github.com/stenic/kubectl-resource_report/releases/download/1.0.4/kubectl-resource_report_linux_armv7.tar.gz
+    sha256: e417b51c565d264516e635404ae7b30c561d043dd4d800b1f08bcdca92dfba8d
+    bin: kubectl-resource_report
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/stenic/kubectl-resource_report/releases/download/1.0.4/kubectl-resource_report_linux_arm64.tar.gz
+    sha256: 5cc0065df81e2c33056583e24a4d5643be61c0e3bc1ebf713b4af77b4be18ab9
+    bin: kubectl-resource_report
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/stenic/kubectl-resource_report/releases/download/1.0.4/kubectl-resource_report_windows_amd64.zip
+    sha256: c1b7f7a996e61fc80409be6a2d4115a6259215aebfcd2f3c9c85eee5d531f347
+    bin: kubectl-resource_report

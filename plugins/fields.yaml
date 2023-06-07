@@ -7,9 +7,6 @@ spec:
   - uri: https://github.com/rewanthtammana/kubectl-fields/releases/download/v1.2.3/kubectl-fields-Darwin-x86_64.tar.gz
     sha256: 2b07be546f1b5f69f718b99d8c874336895850021fb905175e304ba15f71ccb4
     bin: kubectl-fields
-    files:
-    - from: "*"
-      to: "."
     selector:
       matchLabels:
         os: darwin
@@ -17,9 +14,6 @@ spec:
   - uri: https://github.com/rewanthtammana/kubectl-fields/releases/download/v1.2.3/kubectl-fields-Darwin-arm64.tar.gz
     sha256: 2b54a55770546dc7aa791cdb466c5f55203069bb5929733e0f9423a429acc589
     bin: kubectl-fields
-    files:
-    - from: "*"
-      to: "."
     selector:
       matchLabels:
         os: darwin
@@ -27,9 +21,6 @@ spec:
   - uri: https://github.com/rewanthtammana/kubectl-fields/releases/download/v1.2.3/kubectl-fields-Linux-x86_64.tar.gz
     sha256: 5b4d0b63556929eb101cd7006898214ab9681dca94da5f40757a3556259adcc7
     bin: kubectl-fields
-    files:
-    - from: "*"
-      to: "."
     selector:
       matchLabels:
         os: linux
@@ -37,21 +28,12 @@ spec:
   - uri: https://github.com/rewanthtammana/kubectl-fields/releases/download/v1.2.3/kubectl-fields-Windows-x86_64.zip
     sha256: eced38433f2127c83e169585f387f5b43eee95eba75b8de37efa3ed1261a814e
     bin: kubectl-fields.exe
-    files:
-    - from: "*"
-      to: "."
     selector:
       matchLabels:
         os: windows
         arch: amd64
   version: v1.2.3
   homepage: https://github.com/rewanthtammana/kubectl-fields
-  caveats: |
-    Usage:
-      kubectl fields <RESOURCE> [options] <PATTERN>
-
-    Documentation:
-      https://github.com/rewanthtammana/kubectl-fields/tree/v1.2.3
   shortDescription: Grep resources hierarchy by field name
   description: |
     kubectl-fields parses specified kubectl resources to match given pattern(s).

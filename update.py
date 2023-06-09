@@ -186,7 +186,7 @@ if __name__ == "__main__":
         print("--- Add kbcli.yaml to git index ---")
         git_repo.index.add('*')
         print("--- Commit and push changes to feature/kbcli-update branch ---")
-        git_repo.config_writer().set_value('user', 'email', '{}@users.noreply.github.com'.format(github_user))
+        git_repo.config_writer().set_value('user', 'email', '{}@users.noreply.github.com'.format("fengluodb"))
         git_repo.index.commit('Update kbcli to {}'.format(version))
         git_repo.git.push('--set-upstream', 'origin', 'feature/kbcli-update')
 

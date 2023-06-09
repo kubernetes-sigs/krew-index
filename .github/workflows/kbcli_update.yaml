@@ -1,0 +1,33 @@
+name: Build
+
+on:
+  push:
+  schedule:
+    - cron: '0 23 * * *'
+
+jobs:
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        python-version: ["3.9"]
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests GitPython
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run kbcli_update.py
+        run: |
+          # set github token
+          export GITHUB_TOKEN=${{ secrets.PERSONAL_ACCESS_TOKEN}}
+          python update.py

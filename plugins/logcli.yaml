@@ -5,9 +5,12 @@ metadata:
 spec:
   version: v2.8.2
   homepage: https://github.com/grafana/loki
-  shortDescription: LogCLI is the command-line interface to Grafana Loki
+  caveats: |
+    This plugin needs config LOKI_ADDR environment variable which points to a local instance directly
+  shortDescription: LogCLI provides a command-line interface for querying logs against Loki.
   description: |
-    LogCLI is the command-line interface to Grafana Loki. It facilitates running LogQL queries against a Loki instance.
+    LogCLI is the command-line interface to Grafana Loki.
+    It facilitates running LogQL queries against a Loki instance.
   platforms:
   - selector:
       matchLabels:
@@ -21,12 +24,12 @@ spec:
         os: darwin
         arch: arm64
     uri: https://github.com/grafana/loki/releases/download/v2.8.2/logcli-darwin-arm64.zip
-    # sha256: 3e835a032bbba01569f820473d6a6b3680fd65a9e1488000a7efbe8b17be1464
+    sha256: bb3331e3d2b4a4925565d0f66ce579bdd4e6d183808444bf05afea2f1b814641
     bin: logcli-darwin-arm64
   - selector:
       matchLabels:
         os: windows
         arch: amd64
     uri: https://github.com/grafana/loki/releases/download/v2.8.2/logcli-windows-amd64.exe.zip
-    # sha256: d4d6ecdb455e24693c58309447d825dc8a6db49ab9198d1eab171cedbb9bd690
+    sha256: fa900e4d9b77bf5f349cefdadadd4ad921d940dd58d4c74befcba07a133bdf11
     bin: logcli-windows-amd64.exe

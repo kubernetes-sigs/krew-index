@@ -3,25 +3,45 @@ kind: Plugin
 metadata:
   name: rook-ceph
 spec:
-  version: "v0.4.0"
+  version: v0.5.0
   homepage: https://github.com/rook/kubectl-rook-ceph
-  shortDescription: "Rook plugin for Ceph management"
+  shortDescription: Rook plugin for Ceph management
   description: |
-     Krew plugin to provide insight to Rook configuration of the Ceph storage provider.
+    The kubectl-rook-ceph is a Krew plugin designed for Rook-Ceph. It simplifies the management, debugging, and
+    troubleshooting processes, while also offering valuable insights into the configuration of the Rook-Ceph clusters.
   platforms:
   - selector:
-      matchExpressions:
-      - key: "os"
-        operator: "In"
-        values:
-        - darwin
-        - linux
-        - windows
-    uri: https://github.com/rook/kubectl-rook-ceph/archive/v0.4.0.zip
-    sha256: 62798ee19836d3f78bb829f1b8910c0ff23336d27733c896beded5b6c0e37a47
-    files:
-    - from: "kubectl-rook-ceph-*/kubectl-rook-ceph.sh"
-      to: "."
-    - from: "kubectl-rook-ceph-*/LICENSE"
-      to: "."
-    bin: kubectl-rook-ceph.sh
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/rook/kubectl-rook-ceph/releases/download/v0.5.0/kubectl-rook-ceph_v0.5.0_darwin_amd64.tar.gz
+    sha256: 4ca56c95066459121005fe8fcee7e9d194d6f541b63f5a5f97acde66ce436dec
+    bin: kubectl-rook-ceph
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/rook/kubectl-rook-ceph/releases/download/v0.5.0/kubectl-rook-ceph_v0.5.0_darwin_arm64.tar.gz
+    sha256: 78429e16afbfd10cb094b3c97b66da03a33951b39337375f647a3135fecf0db7
+    bin: kubectl-rook-ceph
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/rook/kubectl-rook-ceph/releases/download/v0.5.0/kubectl-rook-ceph_v0.5.0_linux_amd64.tar.gz
+    sha256: a304f9447539ab025adc407c8844ebc77c238de4145297f4b07580c9ae59198c
+    bin: kubectl-rook-ceph
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/rook/kubectl-rook-ceph/releases/download/v0.5.0/kubectl-rook-ceph_v0.5.0_linux_arm64.tar.gz
+    sha256: a347ff09644341ec3e60ac0f3cc4da2a3390a40a31d00d07c4d378c62835fb23
+    bin: kubectl-rook-ceph
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/rook/kubectl-rook-ceph/releases/download/v0.5.0/kubectl-rook-ceph_v0.5.0_windows_amd64.tar.gz
+    sha256: ecfbc55e655baab6bde182016a4ee7738973527ee84e7bef3618608fb9869927
+    bin: kubectl-rook-ceph.exe

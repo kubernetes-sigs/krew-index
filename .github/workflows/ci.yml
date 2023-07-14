@@ -58,7 +58,7 @@ jobs:
       run : |
         set -euo pipefail
         export GOBIN=$HOME/bin
-        go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
+        go install sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
 
     - name: Validate updated plugin manifests
       if: github.event_name == 'pull_request'

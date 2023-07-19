@@ -1,0 +1,41 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: netscaler-k8s
+spec:
+  shortDescription: A Kubernetes plugin for inspecting Ingress Controller and associated NetScaler deployments
+  description: |
+    The official kubectl plugin for netscaler-k8s.
+  version: v1.0.0
+  homepage: https://github.com/netscaler/modern-apps-toolkit/tree/main/netscaler-k8s-plugin#readme
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: "https://github.com/netscaler/modern-apps-toolkit/releases/download/v1.0.0-netscaler-k8s-plugin/netscaler-k8s-plugin_v1.0.0-netscaler-k8s-plugin_Darwin_x86_64.tar.gz"
+    sha256: 0d374bd0073c067055369b842ab56a2b96af16cc71513e92a846b71eec1ec93e
+    bin: ./kubectl-netscaler_k8s
+    files:
+    - from: "*"
+      to: "."
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: "https://github.com/netscaler/modern-apps-toolkit/releases/download/v1.0.0-netscaler-k8s-plugin/netscaler-k8s-plugin_v1.0.0-netscaler-k8s-plugin_Linux_x86_64.tar.gz"
+    sha256: f0b232b63c460101ec0a53287e795dafb074edc778406aadb786bf6b6921765e
+    bin: ./kubectl-netscaler_k8s
+    files:
+    - from: "*"
+      to: "."
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: "https://github.com/netscaler/modern-apps-toolkit/releases/download/v1.0.0-netscaler-k8s-plugin/netscaler-k8s-plugin_v1.0.0-netscaler-k8s-plugin_Windows_x86_64.zip"
+    sha256: 51f061289b4bd751370267d870e7f4e5c9dac3a6d51000318f7daef5767fffab
+    bin: ./kubectl-netscaler_k8s.exe
+    files:
+    - from: "*"
+      to: "."

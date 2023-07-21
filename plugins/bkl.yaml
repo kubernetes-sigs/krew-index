@@ -1,0 +1,42 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: bkl
+spec:
+  version: "v1.0.11"
+  homepage: https://github.com/gopatchy/bkl/
+  shortDescription: "Evaluates bkl configuration layer files"
+  description: |
+    Evaluates bkl configuration layer files passed as kubectl arguments.
+    Proxies all remaining arguments back to kubectl.
+
+    Full documentation: https://bkl.gopatchy.io/
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/gopatchy/bkl/releases/download/v1.0.11/bkl-darwin-amd64.tar.gz
+    sha256: a150783aff7519a90615a7178b56dff9db97fe1d77967f41fa94c06eac91e857
+    bin: kubectl-bkl
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/gopatchy/bkl/releases/download/v1.0.11/bkl-darwin-arm64.tar.gz
+    sha256: 49034ccd3b2c5ed2d647d2896e7da565be58971fe71cf11d3541ee9330d6c748
+    bin: kubectl-bkl
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/gopatchy/bkl/releases/download/v1.0.11/bkl-linux-amd64.tar.gz
+    sha256: 9ab9b89d050db1effa66388dd3fddd683ad96e1515bd424db72b0d92a8d3bb07
+    bin: kubectl-bkl
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/gopatchy/bkl/releases/download/v1.0.11/bkl-linux-arm64.tar.gz
+    sha256: 4b9c07940253cfdf4f5057fc45c033289c56638ca058ef897c9e3158d1298b60
+    bin: kubectl-bkl

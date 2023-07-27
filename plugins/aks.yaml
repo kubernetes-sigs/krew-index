@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: aks
 spec:
-  version: v0.2.1
+  version: v0.2.2
   homepage: https://github.com/Azure/kubectl-aks
   shortDescription: Interact with and debug AKS clusters
   description: |
@@ -26,20 +26,20 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.2.1/kubectl-aks-linux-amd64-v0.2.1.tar.gz
-    sha256: c9383d8139de05075e66273bff63dae972ec80e7c76e68bcead466b6fc118ca6
+    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.2.2/kubectl-aks-linux-amd64-v0.2.2.tar.gz
+    sha256: c74c1a396f4405205373af740b10ae77bf5fdada1be80d8fba9303e03b5d50d7
     bin: kubectl-aks
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.2.1/kubectl-aks-darwin-amd64-v0.2.1.tar.gz
-    sha256: 3e835a032bbba01569f820473d6a6b3680fd65a9e1488000a7efbe8b17be1464
+    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.2.2/kubectl-aks-darwin-amd64-v0.2.2.tar.gz
+    sha256: cb471164ff1f9e5acda0df5665a1fca9d24194930be8460a1df39ddc83c9a519
     bin: kubectl-aks
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.2.1/kubectl-aks-windows-amd64-v0.2.1.tar.gz
-    sha256: d4d6ecdb455e24693c58309447d825dc8a6db49ab9198d1eab171cedbb9bd690
+    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.2.2/kubectl-aks-windows-amd64-v0.2.2.tar.gz
+    sha256: e7a9d11db10aa45b8e7eec8d8dd0807a5992a50667376d0c8afc299e510f39d2
     bin: kubectl-aks.exe

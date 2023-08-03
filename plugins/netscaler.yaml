@@ -1,0 +1,33 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: netscaler
+spec:
+  shortDescription: Inspect NetScaler Ingresses
+  description: |
+    The official kubectl plugin for netscaler. 
+    This plugin is used for inspecting Ingress Controller and associated NetScaler deployments.
+  version: v2.0.0
+  homepage: https://github.com/netscaler/modern-apps-toolkit/tree/main/netscaler-plugin#readme
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: "https://github.com/netscaler/modern-apps-toolkit/releases/download/v2.0.0-netscaler-plugin/netscaler-plugin_v2.0.0-netscaler-plugin_Darwin_x86_64.tar.gz"
+    sha256: b5c85b7ec2ac912d46ad8316f80dc3ff3f397c28c7f3b166f5f3295d9980494b
+    bin: ./kubectl-netscaler
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: "https://github.com/netscaler/modern-apps-toolkit/releases/download/v2.0.0-netscaler-plugin/netscaler-plugin_v2.0.0-netscaler-plugin_Linux_x86_64.tar.gz"
+    sha256: c6de7d00f0b546c5da1d36952c836ad3ebe6d850d6985fe46f68dba5243e74fd
+    bin: ./kubectl-netscaler
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: "https://github.com/netscaler/modern-apps-toolkit/releases/download/v2.0.0-netscaler-plugin/netscaler-plugin_v2.0.0-netscaler-plugin_Windows_x86_64.zip"
+    sha256: 3147fe1d5430b13924704c803a98d585a059a742128b565b3588616b4f41bbd1
+    bin: ./kubectl-netscaler.exe

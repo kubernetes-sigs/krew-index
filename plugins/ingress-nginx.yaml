@@ -6,36 +6,41 @@ spec:
   shortDescription: Interact with ingress-nginx
   description: |
     The official kubectl plugin for ingress-nginx.
-  version: v0.31.0
+  version: v0.31.4-plugin
   homepage: https://kubernetes.github.io/ingress-nginx/kubectl-plugin/
   platforms:
-  - uri: https://github.com/kubernetes/ingress-nginx/releases/download/controller-0.31.0/kubectl-ingress_nginx-darwin-amd64.tar.gz
-    sha256: 2313629519b17f7c2a770b23f86050d25bc270aa3371b1f134549729e40b2758
-    files:
-    - from: "*"
-      to: "."
-    bin: "./kubectl-ingress_nginx"
-    selector:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/sonbui00/ingress-nginx/releases/download/v0.31.4-plugin/kubectl-ingress-nginx_darwin_arm64.tar.gz
+    sha256: 48cff094f63d69f77e82f25d59e9755fabefe7c6b7d3809de8b38be407f93bb7
+    bin: kubectl-ingress-nginx
+  - selector:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/kubernetes/ingress-nginx/releases/download/controller-0.31.0/kubectl-ingress_nginx-linux-amd64.tar.gz
-    sha256: f9555f2a3f60bba86fe3d567f10bacdd6a84cde15ac98c377ee68fa5c44957ff
-    files:
-    - from: "*"
-      to: "."
-    bin: "./kubectl-ingress_nginx"
+    uri: https://github.com/sonbui00/ingress-nginx/releases/download/v0.31.4-plugin/kubectl-ingress-nginx_darwin_amd64.tar.gz
+    sha256: bbbf82224d8c668c09d68880c9088d79d5c2d412ae793dd22334ee7fadd4ea56
+    bin: kubectl-ingress-nginx
     selector:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/kubernetes/ingress-nginx/releases/download/controller-0.31.0/kubectl-ingress_nginx-windows-amd64.tar.gz
-    sha256: c05f73ed423ce45583d8f16b47c15414ce2d818be46f28889ee50e80006dfbb2
-    files:
-    - from: "*"
-      to: "."
-    bin: "./kubectl-ingress_nginx.exe"
-    selector:
+    uri: https://github.com/sonbui00/ingress-nginx/releases/download/v0.31.4-plugin/kubectl-ingress-nginx_linux_amd64.tar.gz
+    sha256: c447560b95ff65916697ad4e385ff8296ce8a1e866295dd1fdfe882be49d96ad
+    bin: kubectl-ingress-nginx
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/sonbui00/ingress-nginx/releases/download/v0.31.4-plugin/kubectl-ingress-nginx_linux_arm64.tar.gz
+    sha256: e6faff8708feec6b3eea6645839dc076d9af3c178a5ae7af7834a90c53f3d50d
+    bin: kubectl-ingress-nginx
+  - selector:
       matchLabels:
         os: windows
         arch: amd64
+    uri: https://github.com/sonbui00/ingress-nginx/releases/download/v0.31.4-plugin/kubectl-ingress-nginx_windows_amd64.tar.gz
+    sha256: 7f160fc3074464f14a7115791000e74528fd90d4895433e02752790af60de3ba
+    bin: kubectl-ingress-nginx.exe

@@ -7,15 +7,15 @@ kind: Plugin
 metadata:
   name: klock
 spec:
-  version: v0.3.1
+  version: v0.3.2
   homepage: https://github.com/jilleJr/kubectl-klock
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.3.1/klock_linux_amd64.tar.gz
-    sha256: c389c3d6ff112a06ed8ea17d24260c2edad276e960e4b6896a63b080f47c38d4
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.3.2/klock_linux_amd64.tar.gz
+    sha256: 94d8ac03304cbe0920e5a780d4ab5004239945356e77c6c228b949dae6d4dc14
     files:
     - from: "./klock"
       to: "."
@@ -27,8 +27,8 @@ spec:
       matchLabels:
         os: linux
         arch: "386"
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.3.1/klock_linux_386.tar.gz
-    sha256: db63b2ae3d7a548d6d44423d52a2616a0043b190e6e9d06cce38001683a79329
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.3.2/klock_linux_386.tar.gz
+    sha256: 2a5f4dffd28bfcb9cec57dca233c8b8d9541aa1cd6f0f4e7ec6257623d255791
     files:
     - from: "./klock"
       to: "."
@@ -40,8 +40,8 @@ spec:
       matchLabels:
         os: linux
         arch: "arm64"
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.3.1/klock_linux_arm64.tar.gz
-    sha256: 67c8d4869475c641434ef217e7b3febb687466964e33e2d173067035a735d097
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.3.2/klock_linux_arm64.tar.gz
+    sha256: b136f8f93a7e5aa562cb0aa1d8e67286e4fe65175002471af50cceefb2864d06
     files:
     - from: "./klock"
       to: "."
@@ -53,8 +53,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.3.1/klock_darwin_amd64.tar.gz
-    sha256: 786ad7acd579c38085ee65fb8572dbf9d03723a057c937896f6ed3ee190d4631
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.3.2/klock_darwin_amd64.tar.gz
+    sha256: 3e865cf606ef45f793af118ddd93ab5a764b15c4b33c51d3d794814bcd992376
     files:
     - from: "./klock"
       to: "."
@@ -66,8 +66,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.3.1/klock_darwin_arm64.tar.gz
-    sha256: 0e70a4539583eedd6348b1947b1b98ad0fb414ea2d10e01759a33ebb95121fa1
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.3.2/klock_darwin_arm64.tar.gz
+    sha256: 00d177de6a0176d9b3d1b0a098719ed9571ae461fe16c2e4dbddbe5b6c9bf73e
     files:
     - from: "./klock"
       to: "."
@@ -79,8 +79,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.3.1/klock_windows_amd64.zip
-    sha256: 61a93c506cb2229f0d6578cb2caee7e560596db3d89b2dc3af4350b5bd29023c
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.3.2/klock_windows_amd64.zip
+    sha256: ef2c6383538eb2b5f50c665b9c3e7bba3ecaeb139e22ba0c6bb47b2b4e65d9bb
     files:
     - from: "/klock.exe"
       to: "."
@@ -92,8 +92,8 @@ spec:
       matchLabels:
         os: windows
         arch: "386"
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.3.1/klock_windows_386.zip
-    sha256: 14deeb9df6d6cbed1f538e65ff916247476644bd5654c71a898bb0a792050b4d
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.3.2/klock_windows_386.zip
+    sha256: ef4280e1dc71b3d7f913b60e2b8e5aa50edfa346f85b41e65ff7602f49f69a38
     files:
     - from: "/klock.exe"
       to: "."
@@ -105,8 +105,8 @@ spec:
       matchLabels:
         os: windows
         arch: arm64
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.3.1/klock_windows_arm64.zip
-    sha256: 0fed829f9ab6d4a69350a92f86bb2221dc3b997bd599166a0efb1faa8c67ff87
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.3.2/klock_windows_arm64.zip
+    sha256: 2b63eb4b42ea41bbfeb0a74a17b114c2df1f5ee305cad78c02bab04d3a4f661b
     files:
     - from: "/klock.exe"
       to: "."

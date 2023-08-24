@@ -7,8 +7,11 @@ spec:
   homepage: https://github.com/glemsom/shell-ctx
   shortDescription: "Kubernetes shell isolated context switcher"
   description: |
-    Enabled each instance of a shell to operate in its own isolated Kubernetes context
+    Enabled each instance of a shell to operate in its own isolated Kubernetes context.
+    Supported shells: bash, zsh and fish.
   caveats: |
+    Requirements: bash, awk, sed, fzf and kubectl
+    
     To setup this plugin, please install the required shell-hook.
     For details see:
     kubectl shell-ctx -h

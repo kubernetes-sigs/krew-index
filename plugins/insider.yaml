@@ -1,0 +1,28 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: insider
+spec:
+  homepage: https://github.com/truegoric/k8s-insider
+  shortDescription: Access cluster network through WireGuard
+  description: |
+    Connect to and access your cluster's network directly through
+    a WireGuard tunnel. This plugin allows you to define multiple
+    networks per cluster, dynamically manages IP allocations and handles
+    DNS resolver patching for local clusters.
+  version: v0.4.0
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/truegoric/k8s-insider/releases/download/v0.4.0/k8s-insider-v0.4.0-x86_64-unknown-linux-gnu.tar.gz
+    sha256: fb0e59d53880cf5aed14628394a1faa4006fc31ba51847b6186702e0ad97cd2d
+    bin: "./k8s-insider"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/truegoric/k8s-insider/releases/download/v0.4.0/k8s-insider-v0.4.0-x86_64-pc-windows-msvc.zip
+    sha256: 8e26586c14dec12ee37c9e71b9fb26b51de198439b993fd7624257c4d6fd1d0c
+    bin: "./k8s-insider.exe"

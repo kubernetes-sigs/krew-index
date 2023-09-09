@@ -1,0 +1,41 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: nodegizmo
+spec:
+  version: v0.1.0
+  homepage: https://github.com/Kavinraja-G/node-gizmo
+  shortDescription: A CLI utility for your kubernetes nodes
+  description: |
+    Nodegizmo is a bundle of CLI commands that helps you in displaying more
+    information about your kubernetes nodes, nodepool/nodegroup and it also
+    provides exec feature to your nodes using nsenter pods.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/Kavinraja-G/node-gizmo/releases/download/v0.1.0/nodegizmo_v0.1.0_darwin_amd64.tar.gz
+    sha256: 96e8fc6b6e3dc270ecfc9c5c586875641bdc4ee7c88c3a4d7aedbb633019d8f1
+    bin: nodegizmo
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/Kavinraja-G/node-gizmo/releases/download/v0.1.0/nodegizmo_v0.1.0_darwin_arm64.tar.gz
+    sha256: 0842ed6ee926d0c3ea2a15ec4a4d9a3ae6ce3be573a70a8b34d78ec2192b3bd6
+    bin: nodegizmo
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/Kavinraja-G/node-gizmo/releases/download/v0.1.0/nodegizmo_v0.1.0_linux_amd64.tar.gz
+    sha256: 5c1c312210d5fecefa26baf7cca9eef9c138c3f068ee9072520fdb9e4d0d4d9d
+    bin: nodegizmo
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/Kavinraja-G/node-gizmo/releases/download/v0.4.3/kubectl-tree_v0.4.3_windows_amd64.tar.gz
+    sha256: d4e453b2cfeb6f12cb63e10cdb352ac01c6ca02a560788b31d70015d5576bd89
+    bin: nodegizmo.exe

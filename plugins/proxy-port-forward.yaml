@@ -1,0 +1,34 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: proxy-port-forward
+spec:
+  version: v1.0.0
+  homepage: https://github.com/kvaps/kubectl-proxy-port-forward
+  shortDescription: Proxy to remote host via Kubernetes
+  description: |
+    Start socat with proxy to remote host in Kubernetes and forward one or more local ports to it.
+
+    Usage:
+        $ kubectl proxy-port-forward <local_port>:<remote_host>:<remote_port> [<local_port>:<remote_host>:<remote_port>]
+
+    Example:
+        $ kubectl proxy-port-forward 8443:google.com:443 6443:kubernetes.default.svc:443
+        $ curl -k https://localhost:6443
+
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/kvaps/kubectl-proxy-port-forward/archive/v1.0.0.tar.gz
+    sha256: ebb6d3613e0df64eba71644313f14f5431334317caa79f5ff125afafbd330bca
+    files:
+    - from: kubectl-proxy-port-forward-*/kubectl-proxy_port_forward
+      to: .
+    - from: kubectl-proxy-port-forward-*/LICENSE
+      to: .
+    bin: "kubectl-proxy_port_forward"

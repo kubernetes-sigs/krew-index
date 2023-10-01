@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ctr
+spec:
+  version: v0.0.1
+  homepage: https://github.com/cfanbo/kubectr
+  shortDescription: list all containers in a pod quickly
+  description: |
+    kubectr is a utility that displays all containers in a pod, supporting 
+    both initContainers and ephemeralContainers.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/cfanbo/kubectr/releases/download/v0.0.1/kubectr_darwin_amd64.tar.gz
+    sha256: 014a0db96db9bb0d7c218205e7ab72509c1988d2b33eb3eabe2f400b5fb3a5ea
+    bin: kubectr
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/cfanbo/kubectr/releases/download/v0.0.1/kubectr_darwin_arm64.tar.gz
+    sha256: 68abc38ae325615abc4942e955338598963b09a7a8327f7a31635df09dbdab8e
+    bin: kubectr
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/cfanbo/kubectr/releases/download/v0.0.1/kubectr_linux_amd64.tar.gz
+    sha256: a9a3b6ea867598927d5f477db112685b51337d57d96726d1230428cc5a000a6d
+    bin: kubectr
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/cfanbo/kubectr/releases/download/v0.0.1/kubectr_linux_arm64.tar.gz
+    sha256: 34aa4bf4b764e6fd41fb33a8984f478787486146e7b3c043d1b5b62e6b2b20af
+    bin: kubectr

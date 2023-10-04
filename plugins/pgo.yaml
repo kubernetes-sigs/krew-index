@@ -1,0 +1,47 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pgo
+spec:
+  version: v0.3.0
+  homepage: https://github.com/CrunchyData/postgres-operator-client
+  shortDescription: Crunchy Postgres Operator CLI
+  description: |
+    Command Line Interface (CLI) for the Crunchy Postgres Operator.
+    The pgo CLI facilitates the creation and management of PostgreSQL
+    clusters created using the Crunchy Postgres Operator
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/CrunchyData/postgres-operator-client/releases/download/v0.3.0/kubectl-pgo-darwin-amd64
+      sha256: 3b319f3a5850ff1b2ac5980fa2cbce2612846256b077e2b2f3d4fafeac6e2ab7
+      bin: kubectl-pgo
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/CrunchyData/postgres-operator-client/releases/download/v0.3.0/kubectl-pgo-darwin-arm64
+      sha256: 21e2b17e71a561031ffa3c065b8b26c1ec21bc6ade7fb305ff5f1f252c122e47
+      bin: kubectl-pgo
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/CrunchyData/postgres-operator-client/releases/download/v0.3.0/kubectl-pgo-linux-amd64
+      sha256: 12e515060f096fc251b301ac68e9e1a1b615aca748df66a884bfb46158fd1e22
+      bin: kubectl-pgo
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/CrunchyData/postgres-operator-client/releases/download/v0.3.0/kubectl-pgo-linux-arm64
+      sha256: bd519745d9ea71179387973d95fb8621d178e04e952d426a3804bf2827bbef10
+      bin: kubectl-pgo
+    - selector:
+        matchLabels:
+          os: windows
+      uri: https://github.com/CrunchyData/postgres-operator-client/releases/download/v0.3.0/kubectl-pgo-windows-386
+      sha256: 76dad08a7c4c215ff27aed951f029f7bdb3609f55887490e432ecec960e7bd88
+      bin: kubectl-pgo.exe

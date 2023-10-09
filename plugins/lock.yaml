@@ -1,0 +1,42 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: lock
+spec:
+  version: v0.0.3
+  homepage: https://github.com/chaosinthecrd/kube-lock
+  shortDescription: A pane of glass between you and your Kubernetes clusters
+  description: |
+    Sits as an intermediary between you and kubectl, allowing you to lock and unlock contexts.
+    Prevents misfires to production / high-value Kubernetes clusters that you might have strong IAM privileges on.
+    Supports custom 'Profiles', allowing you to restrict certain verbs from being passed to high-value clusters.
+  caveats: must alias `kubectl` to kubectl-lock kubectl in `.bashrc`/`.zshrc` (e.g., alias kubectl='kubectl-lock kubectl')
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/chaosinthecrd/kube-lock/releases/download/v0.0.3/kube-lock_v0.0.3_darwin_amd64.tar.gz
+    sha256: e6ea58c280e8adf2703327476666b082d660938c1a29897e57869a1ef4fc473f
+    bin: kubectl-lock
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/chaosinthecrd/kube-lock/releases/download/v0.0.3/kube-lock_v0.0.3_darwin_arm64.tar.gz
+    sha256: 7102a95b8c353a80bf9acebff955a41ed9ce63ca87f73d72cbbacb1a986f2c7a
+    bin: kubectl-lock
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/chaosinthecrd/kube-lock/releases/download/v0.0.3/kube-lock_v0.0.3_linux_amd64.tar.gz
+    sha256: fa180af9b55c19014926151ce67640acd53c9be0d8463a30657f95d245674d79
+    bin: kubectl-lock
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/chaosinthecrd/kube-lock/releases/download/v0.0.3/kube-lock_v0.0.3_windows_amd64.tar.gz
+    sha256: ff43f8f9d166efee286e4ff8c2fe4214ad7ba4141bfa1327fde7adad87b28a80
+    bin: kubectl-lock.exe

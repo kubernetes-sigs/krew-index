@@ -7,8 +7,11 @@ spec:
   homepage: https://github.com/chaosinthecrd/kube-lock
   shortDescription: A client-side lock for kubernetes contexts to prevent kubectl misfires.
   description: |
-    This tool allows you to `lock` and `unlock` contexts to prevent accidentally issuing destructive commands to the wrong contexts.
-    You can also set `profiles`, which let you lock the context while keeping certain verb/resource combinations available.
+    This tool allows you to `lock` and `unlock` contexts to prevent accidentally 
+    issuing destructive commands to the wrong contexts. You can also set `profiles`, 
+    which let you lock the context while keeping certain verb/resource combinations 
+    available. It achieves by acting as a wrapper around `kubectl` and assessing 
+    the command executed against a configuration file (at `~./kube-lock.yaml`).
   caveats: must alias `kubectl` to kubectl-lock kubectl in `.bashrc`/`.zshrc` (e.g., alias kubectl='kubectl-lock kubectl --')
   platforms:
   - selector:

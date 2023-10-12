@@ -3,57 +3,84 @@ kind: Plugin
 metadata:
   name: linstor
 spec:
-  version: v0.1.2
+  version: v0.2.5
   homepage: https://github.com/piraeusdatastore/kubectl-linstor
-  shortDescription: View and manage LINSTOR storage resources
-  description: |
-    LINSTOR is an open-source software designed to manage block storage devices for large Linux server clusters.
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/piraeusdatastore/kubectl-linstor/releases/download/v0.1.2/kubectl-linstor-v0.1.2-darwin-amd64.tar.gz
-    sha256: 2ea22a9d83537b7cf3885f5748cc899a28396e6e4b872daacf6e73e183bf486d
+    uri: https://github.com/piraeusdatastore/kubectl-linstor/releases/download/v0.2.5/kubectl-linstor_v0.2.5_darwin_amd64.tar.gz
+    sha256: 33f4049ac0e1c67934ddf878bfb2a05dbe9e3ff03fa52930f879231ea7c798f0
     files:
-    - from: kubectl-linstor
-      to: .
-    - from: LICENSE
-      to: .
+      - from: ./kubectl-linstor
+        to: .
+      - from: ./LICENSE
+        to: .
     bin: kubectl-linstor
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/piraeusdatastore/kubectl-linstor/releases/download/v0.1.2/kubectl-linstor-v0.1.2-darwin-arm64.tar.gz
-    sha256: 66e9935ba2ef5a2553309c987f83fbd94f1233ef147046d66e4d9526fa51ee41
+    uri: https://github.com/piraeusdatastore/kubectl-linstor/releases/download/v0.2.5/kubectl-linstor_v0.2.5_darwin_arm64.tar.gz
+    sha256: bd2bdbbbfa9c8f1b3661787e575c4f1432a7c6477cdd6a04fda25995baf9bb76
     files:
-    - from: kubectl-linstor
-      to: .
-    - from: LICENSE
-      to: .
+      - from: ./kubectl-linstor
+        to: .
+      - from: ./LICENSE
+        to: .
     bin: kubectl-linstor
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/piraeusdatastore/kubectl-linstor/releases/download/v0.1.2/kubectl-linstor-v0.1.2-linux-amd64.tar.gz
-    sha256: 24ced2493b34182814dcc834cb0e5a2b894938b7351e54c212c02ef1b8b62717
+    uri: https://github.com/piraeusdatastore/kubectl-linstor/releases/download/v0.2.5/kubectl-linstor_v0.2.5_linux_amd64.tar.gz
+    sha256: 60325c0b103edf26892bfc0c8f4b1d747a9dc8b15fb2fce9b865c351473f7174
     files:
-    - from: kubectl-linstor
-      to: .
-    - from: LICENSE
-      to: .
+      - from: ./kubectl-linstor
+        to: .
+      - from: ./LICENSE
+        to: .
     bin: kubectl-linstor
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/piraeusdatastore/kubectl-linstor/releases/download/v0.1.2/kubectl-linstor-v0.1.2-linux-arm64.tar.gz
-    sha256: 047975e489276202e572066b60bc3804fda0a4959abb2e37c6e905b027dc0346
+    uri: https://github.com/piraeusdatastore/kubectl-linstor/releases/download/v0.2.5/kubectl-linstor_v0.2.5_linux_arm64.tar.gz
+    sha256: 0ace341d07544a2d8db81020085dde30415f3c2a26244987d4d55bfe8c9c3c3a
     files:
-    - from: kubectl-linstor
-      to: .
-    - from: LICENSE
-      to: .
+      - from: ./kubectl-linstor
+        to: .
+      - from: ./LICENSE
+        to: .
     bin: kubectl-linstor
+  - selector:
+      matchLabels:
+        os: linux
+        arch: s390x
+    uri: https://github.com/piraeusdatastore/kubectl-linstor/releases/download/v0.2.5/kubectl-linstor_v0.2.5_linux_s390x.tar.gz
+    sha256: c9c0b89f03d104b9d4fa7b73d7fdb1ae4d32c302da3dba45290daa3fad44245f
+    files:
+      - from: ./kubectl-linstor
+        to: .
+      - from: ./LICENSE
+        to: .
+    bin: kubectl-linstor
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/piraeusdatastore/kubectl-linstor/releases/download/v0.2.5/kubectl-linstor_v0.2.5_windows_amd64.zip
+    sha256: 6e51758c28086a918986e4aaf6cfa3703bf8fc1b3dcf2175f2f993909bb995da
+    files:
+      - from: ./kubectl-linstor
+        to: .
+      - from: ./LICENSE
+        to: .
+    bin: kubectl-linstor
+  shortDescription: View and manage LINSTOR storage resources
+  description: |
+    Usage:
+      kubectl linstor ...
+      Executes control commands for the LINSTOR storage system directly via kubectl.
+      Read more documentation at: https://github.com/piraeusdatastore/kubectl-linstor

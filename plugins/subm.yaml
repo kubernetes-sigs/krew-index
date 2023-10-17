@@ -1,0 +1,95 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: subm
+spec:
+  version: "v0.16.2"
+  homepage: https://github.com/submariner-io/subctl
+  shortDescription: "Manages Submariner and its services"
+  description: |
+    CLI to install, uninstall and troubleshoot Submariner on a Kubernetes cluster.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/submariner-io/releases/releases/download/v0.16.2/subctl-v0.16.2-linux-amd64.tar.gz
+      sha256: "549e290e01ab67cf4ed6f5226dddd213c07993b6063921659fe5c8258828aa47"
+      files:
+        - from: subctl*/subctl
+          to: .
+        - from: LICENSE
+          to: .
+      bin: subctl
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/submariner-io/releases/releases/download/v0.16.2/subctl-v0.16.2-linux-arm64.tar.gz
+      sha256: "2dc1ab4a1c7e3c286cf24b301dba6248c64f77dc5312671716d7937bd00e8ad2"
+      files:
+        - from: subctl*/subctl
+          to: .
+        - from: LICENSE
+          to: .
+      bin: subctl
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm
+      uri: https://github.com/submariner-io/releases/releases/download/v0.16.2/subctl-v0.16.2-linux-arm.tar.gz
+      sha256: "1056a2e63f6da66bafb876172c1a4484181cce309c53f44bd6ee43f34e99e644"
+      files:
+        - from: subctl*/subctl
+          to: .
+        - from: LICENSE
+          to: .
+      bin: subctl
+    - selector:
+        matchLabels:
+          os: linux
+          arch: ppc64le
+      uri: https://github.com/submariner-io/releases/releases/download/v0.16.2/subctl-v0.16.2-linux-ppc64le.tar.gz
+      sha256: "c8afb05858bbead3659d0a3f10a6a478bfeaf5c847604ee342f4d3c2bf521557"
+      files:
+        - from: subctl*/subctl
+          to: .
+        - from: LICENSE
+          to: .
+      bin: subctl
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/submariner-io/releases/releases/download/v0.16.2/subctl-v0.16.2-windows-amd64.exe.tar.gz
+      sha256: "033b8c58a5759a3101e9ed4faae8cb5752a9e58545f7d76c20a64f30e8d10869"
+      files:
+        - from: subctl*/subctl
+          to: .
+        - from: LICENSE
+          to: .
+      bin: subctl
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/submariner-io/releases/releases/download/v0.16.2/subctl-v0.16.2-darwin-amd64.tar.gz
+      sha256: "ba63a05cf546870a58fcf3202878f60e500245c09e09fbc092dfdb7f5d30cd4b"
+      files:
+        - from: subctl*/subctl
+          to: .
+        - from: LICENSE
+          to: .
+      bin: subctl
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/submariner-io/releases/releases/download/v0.16.2/subctl-v0.16.2-darwin-arm64.tar.gz
+      sha256: "a5bfca2d3b606cef15d7cc89fedee1b67bcbea7c7cc8859d9647dc7de31576ac"
+      files:
+        - from: subctl*/subctl
+          to: .
+        - from: LICENSE
+          to: .
+      bin: subctl

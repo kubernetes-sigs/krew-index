@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: pod-lens
 spec:
-  version: "v0.2.2"
+  version: "v0.3.1"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.2.2/pod-lens_linux_amd64.tar.gz
-    sha256: 59ca73e40b59bc880de8b333f894118a2fb7e1d74bcc2970cede99d063465847
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.3.1/pod-lens_linux_amd64.tar.gz
+    sha256: dc6a6545421c750d3b63f15b7229411d43f83ab5c5f0336c5b1c53be931d6b2c
     files:
     - from: "./pod-lens"
       to: "."
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.2.2/pod-lens_darwin_amd64.tar.gz
-    sha256: aab291795d6729dd90103a8230344bb9fe12359bd4ad1cae297cb58fa9a54a6f
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.3.1/pod-lens_darwin_amd64.tar.gz
+    sha256: 3e95f78bfff4307c9fc6d89706907c8079e4a38ff29d424e89879475e99e0ef6
     files:
     - from: "./pod-lens"
       to: "."
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.2.2/pod-lens_darwin_arm64.tar.gz
-    sha256: 3993d37a9e93f8840708d5c403dc767f2a4e239c1d31caa92b56a9f05241e6c5
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.3.1/pod-lens_darwin_arm64.tar.gz
+    sha256: 09cea87a8faf6ea0e6bc7372618946aa766bea93bb46ab2f700de5bdbf8be1a5
     files:
     - from: "./pod-lens"
       to: "."
@@ -45,8 +45,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.2.2/pod-lens_windows_amd64.zip
-    sha256: 3a15e2821507354444f4e99a729dee52c4fc5f748d3b17ec12d6fc0e4aaa85f5
+    uri: https://github.com/sunny0826/kubectl-pod-lens/releases/download/v0.3.1/pod-lens_windows_amd64.zip
+    sha256: dfa68c3adcd4a73bd0711b730830b3dae72d21b97589e8c73390c4ac41cbf886
     files:
     - from: "/pod-lens.exe"
       to: "."

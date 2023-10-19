@@ -1,0 +1,111 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: discover
+spec:
+  version: v0.1.7
+  homepage: https://github.com/mateimicu/kdiscover
+  shortDescription: "Find/export kubeconfigs for cloud clusters"
+  description: |
+    Discover all the cluster from a provider (AWS, GCP, Azure, etc)
+    and export the kubeconfig credentials.
+  platforms:
+  # MacOs
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.7/kdiscover_v0.1.7_darwin_arm64.tar.gz
+    sha256: 8e3f1f6543039299943fef689d9573c724a15c79f356133f4bd7bbc4cea9edf0
+    bin: kubectl-discover
+    files:
+    - from: "kdiscover"
+      to: "kubectl-discover"
+    - from: "LICENSE"
+      to: "."
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.7/kdiscover_v0.1.7_darwin_amd64.tar.gz
+    sha256: 98be56b2bbeb1099974c6657c555a41dfdeb408a97e0b4a535906d751ebaa271
+    bin: kubectl-discover
+    files:
+    - from: "kdiscover"
+      to: "kubectl-discover"
+    - from: "LICENSE"
+      to: "."
+  # Linux
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.7/kdiscover_v0.1.7_linux_amd64.tar.gz
+    sha256: 64ce6eca26aa168b60612f98d22115ddb7ad3a6212891f6b5f235b18627971ae
+    bin: kubectl-discover
+    files:
+    - from: "kdiscover"
+      to: "kubectl-discover"
+    - from: "LICENSE"
+      to: "."
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.7/kdiscover_v0.1.7_linux_arm64.tar.gz
+    sha256: 5dd4cc5ce6c3dd79c6fd6cb55c4559e236ac16280a0bf258da56f5032cb1adc6
+    bin: kubectl-discover
+    files:
+    - from: "kdiscover"
+      to: "kubectl-discover"
+    - from: "LICENSE"
+      to: "."
+  - selector:
+      matchLabels:
+        os: linux
+        arch: 386
+    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.7/kdiscover_v0.1.7_linux_386.tar.gz
+    sha256: 3acd54f5b06ae8454231f9c27e93d8a1a56569f8ded37fe1820eedbfeb14d2b1
+    bin: kubectl-discover
+    files:
+    - from: "kdiscover"
+      to: "kubectl-discover"
+    - from: "LICENSE"
+      to: "."
+  # Windows
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.7/kdiscover_v0.1.7_windows_amd64.zip
+    sha256: 9b47784d1be0198e78713301545e6491a1d5ae1661d5cb8a158255f1ee85e213
+    bin: kubectl-discover.exe
+    files:
+    - from: "kdiscover.exe"
+      to: "kubectl-discover.exe"
+    - from: "LICENSE"
+      to: "."
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.7/kdiscover_v0.1.7_windows_arm64.zip
+    sha256: acda0515364d5cb5cdc513ad83b2e5c6e369d283717cc77cc9c65fe009f92384
+    bin: kubectl-discover.exe
+    files:
+    - from: "kdiscover.exe"
+      to: "kubectl-discover.exe"
+    - from: "LICENSE"
+      to: "."
+  - selector:
+      matchLabels:
+        os: windows
+        arch: 386
+    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.7/kdiscover_v0.1.7_windows_386.zip
+    sha256: e7d008ed371eca59bd4c11cb8015d5ae9d72ba8e8d609d153b4d67ccde85a598
+    bin: kubectl-discover.exe
+    files:
+    - from: "kdiscover.exe"
+      to: "kubectl-discover.exe"
+    - from: "LICENSE"
+      to: "."

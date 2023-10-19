@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: colorize-applied
+spec:
+  version: v0.0.7
+  homepage: https://github.com/cappyzawa/kubectl-colorize-applied
+  shortDescription: "Colorize results of apply/dry-run"
+  description: |
+    This plugin colorizes the results of apply/dry-run.
+    Each line containing the following strings is colored:
+    "pruned", "configured", "created", and "unchanged".
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/cappyzawa/kubectl-colorize-applied/releases/download/v0.0.7/kubectl-colorize-applied-darwin-amd64.tar.gz
+    sha256: a8db3c7e9fe235455aa4ebc9ccf9723939dbfcd51efdcd9b6fd431746934a0dd
+    bin: kubectl-colorize_applied
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/cappyzawa/kubectl-colorize-applied/releases/download/v0.0.7/kubectl-colorize-applied-darwin-arm64.tar.gz
+    sha256: a61fa03defdf52503f90b8bea847fd05a31882957762dc8152f36c9eebf65dce
+    bin: kubectl-colorize_applied
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/cappyzawa/kubectl-colorize-applied/releases/download/v0.0.7/kubectl-colorize-applied-linux-amd64.tar.gz
+    sha256: 0f01770a27258003a6605cda44f013f649c232ad2a2bd127d8112815fc13dcc6
+    bin: kubectl-colorize_applied
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/cappyzawa/kubectl-colorize-applied/releases/download/v0.0.7/kubectl-colorize-applied-linux-arm64.tar.gz
+    sha256: 05cb7e5ee17b521def0fc3c7ff60aee994343883a248cf0916cac0357533e2d0
+    bin: kubectl-colorize_applied
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/cappyzawa/kubectl-colorize-applied/releases/download/v0.0.7/kubectl-colorize-applied-windows-amd64.tar.gz
+    sha256: e9705c7bf8d7e95b3f508765961b14e1c1f2dfd6faf00212f638cb99a13d3500
+    bin: kubectl-colorize_applied.exe

@@ -1,0 +1,120 @@
+# SPDX-FileCopyrightText: 2023 Kalle Fagerberg
+#
+# SPDX-License-Identifier: CC0-1.0
+
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: klock
+spec:
+  version: v0.4.0
+  homepage: https://github.com/jilleJr/kubectl-klock
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.4.0/klock_linux_amd64.tar.gz
+    sha256: c0925c171c9022b3e37e68af27ae50ed027ecea7eba3d28fbaf1469eafe70dc5
+    files:
+    - from: "./klock"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "klock"
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: "386"
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.4.0/klock_linux_386.tar.gz
+    sha256: 890b8e6bc48dcd2715c4d1acdfaa5d5481640a5d2ae2166e8e7a2941dc3cb8cb
+    files:
+    - from: "./klock"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "klock"
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: "arm64"
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.4.0/klock_linux_arm64.tar.gz
+    sha256: 10a2ac0845c8a3a928ec202974d387810380ea2803ffee78b16f680651ba3dbb
+    files:
+    - from: "./klock"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "klock"
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.4.0/klock_darwin_amd64.tar.gz
+    sha256: 70bc47a5ccc474533b7f457872ebe1d9e2a26f56c68d192ca9cf9e5629963786
+    files:
+    - from: "./klock"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "klock"
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.4.0/klock_darwin_arm64.tar.gz
+    sha256: 4351fe780199420d4232882a5e889865711565c1137cc1bfb5bd8c5e9a78e70f
+    files:
+    - from: "./klock"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "klock"
+
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.4.0/klock_windows_amd64.zip
+    sha256: 6db0fd5c09ba64001259e34d87ce65f5da23a4e00c4421f7d8814c1b2ae7bde7
+    files:
+    - from: "/klock.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "klock.exe"
+
+  - selector:
+      matchLabels:
+        os: windows
+        arch: "386"
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.4.0/klock_windows_386.zip
+    sha256: a936f2f1f478057e83846bcf336e543d05f52197481cffd7358c8e2b5616e00b
+    files:
+    - from: "/klock.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "klock.exe"
+
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.4.0/klock_windows_arm64.zip
+    sha256: 0c189ee068281e94c7274df6aa70511fd2ef3da348500486ad067e84aa65c377
+    files:
+    - from: "/klock.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "klock.exe"
+
+  shortDescription: Watches resources
+  description: |
+    Watches resources and prints them in a human-readable manner.
+    Very similar to `kubectl get`, but with live updates.

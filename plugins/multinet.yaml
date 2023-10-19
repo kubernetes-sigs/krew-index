@@ -3,33 +3,31 @@ kind: Plugin
 metadata:
   name: multinet
 spec:
-  version: v0.2.2
+  version: v0.2.4
   homepage: https://github.com/k8snetworkplumbingwg/kubectl-multinet
   shortDescription: "Shows pods' network-status of multi-net-spec"
   description: |
     Shows pods' network-status annotation, defined in NPWG multi-net-spec,
     https://github.com/k8snetworkplumbingwg/multi-net-spec.
-    Usage:
-      kubectl multinet -n <namespace-name>
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/k8snetworkplumbingwg/kubectl-multinet/releases/download/v0.2.2/kubectl-multinet_v0.2.2_linux_amd64.tar.gz
-    sha256: 842425cd3e8f7cac85a0e0829907829b4bdbf2c11cd2eadf841d5c58ff85fa17
+    uri: https://github.com/k8snetworkplumbingwg/kubectl-multinet/releases/download/v0.2.4/kubectl-multinet_v0.2.4_linux_amd64.tar.gz
+    sha256: 1bcbe541f920bc814577e9fecf8ddf556ef8932cffe4c4d44f67aedd340ddd5b
     bin: kubectl-multinet
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/k8snetworkplumbingwg/kubectl-multinet/releases/download/v0.2.2/kubectl-multinet_v0.2.2_linux_arm64.tar.gz
-    sha256: 7ec6e31a7c93617588d9f3fb70ae2b1be92721ca1f235fc8c8243ac4dc689981
+    uri: https://github.com/k8snetworkplumbingwg/kubectl-multinet/releases/download/v0.2.4/kubectl-multinet_v0.2.4_linux_arm64.tar.gz
+    sha256: 072e3fb0e5e5bbbc803d7bf63a2fa40a8142406f09e67ee66ccee4e0a63049bb
     bin: kubectl-multinet
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/k8snetworkplumbingwg/kubectl-multinet/releases/download/v0.2.2/kubectl-multinet_v0.2.2_darwin_amd64.tar.gz
-    sha256: 963644e328bcfa6d500e2d7dc7e044c0639f0bb997a5c42c8e246b3299f71354
+    uri: https://github.com/k8snetworkplumbingwg/kubectl-multinet/releases/download/v0.2.4/kubectl-multinet_v0.2.4_darwin_amd64.tar.gz
+    sha256: 8f81c79d63a42a9698617283d899c87ba7fb16d0d525fc0cc86c72b413d34a14
     bin: kubectl-multinet

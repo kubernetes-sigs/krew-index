@@ -1,0 +1,61 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kc
+spec:
+  version: v0.25.0
+  homepage: https://github.com/sunny0826/kubecm
+  shortDescription: "Interactive CRUD operations to manage kubeconfig"
+  description: |
+    List, switch, add, delete and more interactive operations to manage kubeconfig.
+    It also supports kubeconfig management from cloud.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/sunny0826/kubecm/releases/download/v0.25.0/kubecm_v0.25.0_Darwin_x86_64.tar.gz
+    sha256: 099b9c8e7ba2f898c4345918267d67df4f3c9c98283cfca447e1351275cf1fc1
+    bin: kubecm
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/sunny0826/kubecm/releases/download/v0.25.0/kubecm_v0.25.0_Darwin_arm64.tar.gz
+    sha256: 7dd8cf69475ce3651a7aad5df77e98a835f67739151023af39a7fe3984d4009b
+    bin: kubecm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/sunny0826/kubecm/releases/download/v0.25.0/kubecm_v0.25.0_Linux_x86_64.tar.gz
+    sha256: 829373503bdc3061093a0f8b4c928d15b18d720a9ba6b47416ccbefb0a24bec6
+    bin: kubecm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/sunny0826/kubecm/releases/download/v0.25.0/kubecm_v0.25.0_Linux_arm64.tar.gz
+    sha256: ae5e235113e049ad48af695d7f528115be41e6541a8fcf5adb08b429f1973b92
+    bin: kubecm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: 386
+    uri: https://github.com/sunny0826/kubecm/releases/download/v0.25.0/kubecm_v0.25.0_Linux_i386.tar.gz
+    sha256: a83fdd01580836fa99467e3ec71aab1e77564f5ac09aa48920c9c4ac90544dd4
+    bin: kubecm
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/sunny0826/kubecm/releases/download/v0.25.0/kubecm_v0.25.0_Windows_x86_64.tar.gz
+    sha256: bcd2ea708a49a71f348502e24e1de291f84396247f4e77e12d48a9ac1ba95c17
+    bin: kubecm.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: 386
+    uri: https://github.com/sunny0826/kubecm/releases/download/v0.25.0/kubecm_v0.25.0_Windows_i386.tar.gz
+    sha256: 1fdd44327cf6a7a5d39f4c12862e808a7a1fbe638e47609946d8f604e277d037
+    bin: kubecm.exe

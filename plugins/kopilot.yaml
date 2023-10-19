@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kopilot
+spec:
+  version: v0.0.3
+  homepage: https://github.com/knight42/kopilot
+  shortDescription: Diagnose/audit resources with AI
+  description: |
+    Kopilot will send the yaml of target resource to AI services to help you troubleshoot the Kubernetes clusters
+    by diagnosing unhealthy workload or nodes, and audit Kubernetes resource to find the security misconfigurations.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/knight42/kopilot/releases/download/v0.0.3/kopilot_v0.0.3_darwin_amd64.tar.gz
+    sha256: 53be3c02ff0d6b2e935d79d51a3ecf7ddbf1f0a942d57c1cff7e60defd866006
+    bin: kopilot
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/knight42/kopilot/releases/download/v0.0.3/kopilot_v0.0.3_darwin_arm64.tar.gz
+    sha256: f02c827f167d393770829361290cdbdd582cf2b5c84d3ef17dd622bf369e7976
+    bin: kopilot
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/knight42/kopilot/releases/download/v0.0.3/kopilot_v0.0.3_linux_amd64.tar.gz
+    sha256: fd2eb4d71b41876c5b820eedf95b5b63aa53db6cf7926c33a7ef4bfb5b102624
+    bin: kopilot
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/knight42/kopilot/releases/download/v0.0.3/kopilot_v0.0.3_linux_arm64.tar.gz
+    sha256: 9f861525b85c652151b1ded5a74ae7882724e1cc08cba36919bf5eae13aa5461
+    bin: kopilot

@@ -3,52 +3,28 @@ kind: Plugin
 metadata:
   name: oulogin
 spec:
-  version: "v0.0.7"
+  version: v0.0.8
   homepage: https://github.com/TremoloSecurity/kubectl-login
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+    uri: https://nexus.tremolo.io/repository/oulogin/oulogin-v0.0.8-macos.zip
+    sha256: 0b1e93ae80b86dd96fd33374f79151b4daaafbacab67915017086d43df0f8f03
+    bin: oulogin
+  - selector:
+      matchLabels:
+        os: linux
+    uri: https://nexus.tremolo.io/repository/oulogin/oulogin-v0.0.8-linux.zip
+    sha256: 3894a9d7e6006dca82b99beb7d6a8ca215f5b060a07fed9d104baf743d07e66b
+    bin: oulogin
+  - selector:
+      matchLabels:
+        os: windows
+    uri: https://nexus.tremolo.io/repository/oulogin/oulogin-v0.0.8-win.zip
+    sha256: fecd27fb1bece1bc445bded10da0cd9baa61d8848350bd24e8e3854a73c8137e
+    bin: oulogin
   shortDescription: "Login to a cluster via OpenUnison"
   description: |
     Launches a browser to login to the cluster via OpenUnison.  OpenUnison's 
     certificate MUST be trusted by the local system.  
-  platforms:
-  - selector:
-      matchExpressions:
-      - key: "os"
-        operator: "In"
-        values:
-        - darwin
-    uri: https://nexus.tremolo.io/repository/oulogin/oulogin-0.0.7-macos.zip
-    sha256: e9221c5b50e7d388f8bf73738a523f78f40e5c1c67ad687c65ab8fe8aa79849e
-    files:
-    - from: "oulogin"
-      to: "oulogin"
-    - from: "LICENSE"
-      to: "LICENSE"
-    bin: oulogin
-  - selector:
-      matchExpressions:
-      - key: "os"
-        operator: "In"
-        values:
-        - linux
-    uri: https://nexus.tremolo.io/repository/oulogin/oulogin-0.0.7-linux.zip
-    sha256: 2b6644bc914ad447785c4dc5cdb14bbcf2409b468a15dd2c746cfd8dc19c58a9
-    files:
-    - from: "oulogin"
-      to: "oulogin"
-    - from: "LICENSE"
-      to: "LICENSE"
-    bin: oulogin
-  - selector:
-      matchExpressions:
-      - key: "os"
-        operator: "In"
-        values:
-        - windows
-    uri: https://nexus.tremolo.io/repository/oulogin/oulogin-0.0.7-win.zip
-    sha256: 7607eee50d60895292b6531528d36af1aceb82c96fcbd8fd4d930b6528c71d0e
-    files:
-    - from: "oulogin.exe"
-      to: "oulogin.exe"
-    - from: "LICENSE"
-      to: "LICENSE"
-    bin: oulogin.exe

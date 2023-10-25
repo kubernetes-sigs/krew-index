@@ -18,13 +18,6 @@ spec:
       selector:
         matchLabels:
           os: linux
-          arch: 386
-      uri: https://github.com/google/gke-policy-automation/releases/download/v1.3.2/gke-policy-automation_1.3.2_linux_386.zip
-      sha256: 777f8767744f2ac18764e8dd6a90d65906375da3a03941219d3bbc8d656269c7
-    - bin: gke-policy
-      selector:
-        matchLabels:
-          os: linux
           arch: arm
       uri: https://github.com/google/gke-policy-automation/releases/download/v1.3.2/gke-policy-automation_1.3.2_linux_arm.zip
       sha256: 10306fd19cd963c55347dd650299e204b82268db0e49fa94683d662a45113dd3
@@ -53,51 +46,9 @@ spec:
       selector:
         matchLabels:
           os: windows
-          arch: arm
-      uri: https://github.com/google/gke-policy-automation/releases/download/v1.3.2/gke-policy-automation_1.3.2_windows_arm.zip
-      sha256: a0ce0c9458d46fe54d2523d15eadcc5a788bc3a8935e4092de35d8396f45ed54
-    - bin: gke-policy.exe
-      selector:
-        matchLabels:
-          os: windows
           arch: amd64
       uri: https://github.com/google/gke-policy-automation/releases/download/v1.3.2/gke-policy-automation_1.3.2_windows_amd64.zip
       sha256: 100c5ba1bb8affb9f82355066aef0476af86fe8d49d1e54b927aedc919658a46
-    - bin: gke-policy.exe
-      selector:
-        matchLabels:
-          os: windows
-          arch: arm64
-      uri: https://github.com/google/gke-policy-automation/releases/download/v1.3.2/gke-policy-automation_1.3.2_windows_arm64.zip
-      sha256: 33b5261cbeb05278c886fb2f314f4145fcbbace75fd50a36e99a0e692f162f60
-    - bin: gke-policy
-      selector:
-        matchLabels:
-          os: freebsd
-          arch: 386
-      uri: https://github.com/google/gke-policy-automation/releases/download/v1.3.2/gke-policy-automation_1.3.2_freebsd_386.zip
-      sha256: fefb000928560e1203fa0cb630427d7a7fbbef8ef09082e17171004cc4048070
-    - bin: gke-policy
-      selector:
-        matchLabels:
-          os: freebsd
-          arch: arm
-      uri: https://github.com/google/gke-policy-automation/releases/download/v1.3.2/gke-policy-automation_1.3.2_freebsd_arm.zip
-      sha256: ef3514b68e91f2aaf41160e0f5b06c4449a94e1d445400d0c7c85a5ff60ec10a
-    - bin: gke-policy
-      selector:
-        matchLabels:
-          os: freebsd
-          arch: amd64
-      uri: https://github.com/google/gke-policy-automation/releases/download/v1.3.2/gke-policy-automation_1.3.2_freebsd_amd64.zip
-      sha256: c8952e36728c24f9ec5c789218abbdd3d1dd5eeb344d4590dec9d0f4bc2b5b7b
-    - bin: gke-policy
-      selector:
-        matchLabels:
-          os: freebsd
-          arch: arm64
-      uri: https://github.com/google/gke-policy-automation/releases/download/v1.3.2/gke-policy-automation_1.3.2_freebsd_arm64.zip
-      sha256: c5a30a47c723ca251ebb88195f1f2c2a84fb22a9c4462b42dac895080da8f4df
     - bin: gke-policy
       selector:
         matchLabels:

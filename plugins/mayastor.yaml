@@ -1,0 +1,32 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: mayastor
+spec:
+  version: v2.4.0
+  homepage: https://mayastor.gitbook.io/
+  shortDescription: Provides commands for OpenEBS Mayastor.
+  description: |
+    This plugin allows you to manage Mayastor volumes and upgrades.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/openebs/mayastor-extensions/releases/download/v2.4.0/kubectl-mayastor-x86_64-apple-darwin.zip
+    sha256: 60b0c65590f67740f051bef3e1d9be9e49f07bf741c6bfb9667e2cbc0c796a73
+    bin: kubectl-mayastor
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/openebs/mayastor-extensions/releases/download/v2.4.0/kubectl-mayastor-x86_64-linux-musl.zip
+    sha256: 0b37c7aceedc1f7681c48a0c294d92feb5d4a10abe9ede952b64d509b29ce42f
+    bin: kubectl-mayastor
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/openebs/mayastor-extensions/releases/download/v2.4.0/kubectl-mayastor-x86_64-windows-gnu.zip
+    sha256: be3ff12c7ffa8d6f002caf0813bcc70ca8559bac071ee7a633955e15072fca55
+    bin: kubectl-mayastor.exe

@@ -7,112 +7,112 @@ kind: Plugin
 metadata:
   name: klock
 spec:
-  version: v0.4.0
-  homepage: https://github.com/jilleJr/kubectl-klock
+  version: v0.5.0-rc.1
+  homepage: https://github.com/applejag/kubectl-klock
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.4.0/klock_linux_amd64.tar.gz
-    sha256: c0925c171c9022b3e37e68af27ae50ed027ecea7eba3d28fbaf1469eafe70dc5
+    uri: https://github.com/applejag/kubectl-klock/releases/download/v0.5.0-rc.1/kubectl-klock_linux_amd64.tar.gz
+    sha256: ed9b89f496d667a8c14d7718a7dfd2a5fdf6fd9fd4dbb89520bfa445fb6acdca
     files:
-    - from: "./klock"
+    - from: "./kubectl-klock"
       to: "."
     - from: LICENSE
       to: "."
-    bin: "klock"
+    bin: "kubectl-klock"
 
   - selector:
       matchLabels:
         os: linux
         arch: "386"
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.4.0/klock_linux_386.tar.gz
-    sha256: 890b8e6bc48dcd2715c4d1acdfaa5d5481640a5d2ae2166e8e7a2941dc3cb8cb
+    uri: https://github.com/applejag/kubectl-klock/releases/download/v0.5.0-rc.1/kubectl-klock_linux_386.tar.gz
+    sha256: 2bc9e61c1d3bef413a594988c8a6974cf8ca7825121cc03e6c620016b9dbdc3e
     files:
-    - from: "./klock"
+    - from: "./kubectl-klock"
       to: "."
     - from: LICENSE
       to: "."
-    bin: "klock"
+    bin: "kubectl-klock"
 
   - selector:
       matchLabels:
         os: linux
         arch: "arm64"
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.4.0/klock_linux_arm64.tar.gz
-    sha256: 10a2ac0845c8a3a928ec202974d387810380ea2803ffee78b16f680651ba3dbb
+    uri: https://github.com/applejag/kubectl-klock/releases/download/v0.5.0-rc.1/kubectl-klock_linux_arm64.tar.gz
+    sha256: 1c50e8e61d270dbb85a0f2ce9c1a3c70911a8c2573bc466380b005026a2e23cf
     files:
-    - from: "./klock"
+    - from: "./kubectl-klock"
       to: "."
     - from: LICENSE
       to: "."
-    bin: "klock"
+    bin: "kubectl-klock"
 
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.4.0/klock_darwin_amd64.tar.gz
-    sha256: 70bc47a5ccc474533b7f457872ebe1d9e2a26f56c68d192ca9cf9e5629963786
+    uri: https://github.com/applejag/kubectl-klock/releases/download/v0.5.0-rc.1/kubectl-klock_darwin_amd64.tar.gz
+    sha256: db83bb4a948072656c4b2277f99520e4d160b1a1ca54dc9dcdda345ec4b1b99e
     files:
-    - from: "./klock"
+    - from: "./kubectl-klock"
       to: "."
     - from: LICENSE
       to: "."
-    bin: "klock"
+    bin: "kubectl-klock"
 
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.4.0/klock_darwin_arm64.tar.gz
-    sha256: 4351fe780199420d4232882a5e889865711565c1137cc1bfb5bd8c5e9a78e70f
+    uri: https://github.com/applejag/kubectl-klock/releases/download/v0.5.0-rc.1/kubectl-klock_darwin_arm64.tar.gz
+    sha256: 6f72378470935b90f2757c6c084d098c0d615320362acae826327c10efd81136
     files:
-    - from: "./klock"
+    - from: "./kubectl-klock"
       to: "."
     - from: LICENSE
       to: "."
-    bin: "klock"
+    bin: "kubectl-klock"
 
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.4.0/klock_windows_amd64.zip
-    sha256: 6db0fd5c09ba64001259e34d87ce65f5da23a4e00c4421f7d8814c1b2ae7bde7
+    uri: https://github.com/applejag/kubectl-klock/releases/download/v0.5.0-rc.1/kubectl-klock_windows_amd64.zip
+    sha256: 3f0e2a27be1528027c8fc993cee89eb0731cf1fd0558da4fe4f8c17fa9f1d4da
     files:
-    - from: "/klock.exe"
+    - from: "/kubectl-klock.exe"
       to: "."
     - from: LICENSE
       to: "."
-    bin: "klock.exe"
+    bin: "kubectl-klock.exe"
 
   - selector:
       matchLabels:
         os: windows
         arch: "386"
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.4.0/klock_windows_386.zip
-    sha256: a936f2f1f478057e83846bcf336e543d05f52197481cffd7358c8e2b5616e00b
+    uri: https://github.com/applejag/kubectl-klock/releases/download/v0.5.0-rc.1/kubectl-klock_windows_386.zip
+    sha256: b9897a9769b828771dfe5fbedf394522fb50852606257962aa4f80a26003f4d3
     files:
-    - from: "/klock.exe"
+    - from: "/kubectl-klock.exe"
       to: "."
     - from: LICENSE
       to: "."
-    bin: "klock.exe"
+    bin: "kubectl-klock.exe"
 
   - selector:
       matchLabels:
         os: windows
         arch: arm64
-    uri: https://github.com/jilleJr/kubectl-klock/releases/download/v0.4.0/klock_windows_arm64.zip
-    sha256: 0c189ee068281e94c7274df6aa70511fd2ef3da348500486ad067e84aa65c377
+    uri: https://github.com/applejag/kubectl-klock/releases/download/v0.5.0-rc.1/kubectl-klock_windows_arm64.zip
+    sha256: a12b1ef1aeef248cdfc4e25ad35c7e75fcede790b75e91180763380624af61ef
     files:
-    - from: "/klock.exe"
+    - from: "/kubectl-klock.exe"
       to: "."
     - from: LICENSE
       to: "."
-    bin: "klock.exe"
+    bin: "kubectl-klock.exe"
 
   shortDescription: Watches resources
   description: |

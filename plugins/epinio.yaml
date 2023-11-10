@@ -1,0 +1,69 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: epinio
+spec:
+  version: v0.0.1
+  homepage: https://github.com/enrichman/kubectl-epinio
+  shortDescription: Manage Epinio resources in your cluster
+  description: |
+    The kubectl-epinio plugin can be used to perform some administrative task
+    in a simpler way, dealing directly with Kubernetes resources.
+    For example you can create roles, users and assign namespaces. 
+  platforms:
+    - bin: kubectl-epinio.exe
+      uri: https://github.com/enrichman/kubectl-epinio/releases/download/v0.0.1/kubectl-epinio_windows_arm64.zip
+      sha256: 27aacc04f60555334a306e0697561381347083762177cf1f851d6a890205fe0e
+      selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+    - bin: kubectl-epinio.exe
+      uri: https://github.com/enrichman/kubectl-epinio/releases/download/v0.0.1/kubectl-epinio_windows_armv7.zip
+      sha256: 4c9175ae383b04638f88bab609094fa75eb27c675c1a634b4ef0613c89ce600f
+      selector:
+        matchLabels:
+          os: windows
+          arch: arm
+    - bin: kubectl-epinio.exe
+      uri: https://github.com/enrichman/kubectl-epinio/releases/download/v0.0.1/kubectl-epinio_windows_x86_64.zip
+      sha256: 68175c71b6fbb1e6b7b2675153b6fba83b7ac474b44c019dd9135cc7b21c2531
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+    - bin: kubectl-epinio
+      uri: https://github.com/enrichman/kubectl-epinio/releases/download/v0.0.1/kubectl-epinio_linux_arm64.tar.gz
+      sha256: 8f061d3517a8ce60748ed69238d0221573b79098f0e366d0aa03f97da5e6af9f
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+    - bin: kubectl-epinio
+      uri: https://github.com/enrichman/kubectl-epinio/releases/download/v0.0.1/kubectl-epinio_linux_armv7.tar.gz
+      sha256: fc03471c98b7f869d7f8c7ee2cc7bd4b097a54538c686aece5fe96562384f56d
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm
+    - bin: kubectl-epinio
+      uri: https://github.com/enrichman/kubectl-epinio/releases/download/v0.0.1/kubectl-epinio_linux_x86_64.tar.gz
+      sha256: 9d6f697fffdef2c455527cd0ac1939740b180d8c594375321b2eb85d2f839fbe
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - bin: kubectl-epinio
+      uri: https://github.com/enrichman/kubectl-epinio/releases/download/v0.0.1/kubectl-epinio_darwin_arm64.tar.gz
+      sha256: 2a46533cc95bff2fc9208d8627259573993d2e3dd60137cebf6fc6f2450e69d4
+      selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+    - bin: kubectl-epinio
+      uri: https://github.com/enrichman/kubectl-epinio/releases/download/v0.0.1/kubectl-epinio_darwin_x86_64.tar.gz
+      sha256: 48a0db46746b1347f74f3eff16e69ff2e0446275bc434e47d0896a507f37141a
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64

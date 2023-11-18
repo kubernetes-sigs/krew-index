@@ -5,11 +5,9 @@ metadata:
 spec:
   version: v0.2.2
   homepage: https://github.com/ragrag/kubectl-autons
-  shortDescription: Automatic namespace detection for kubectl commands
+  shortDescription: Automatic namespace detection
   description: |
-    Automatically detect namespaces for resources in kubectl commands and adding the --namespace flag
-  caveats: |
-    * In cases where a resource is found in multiple namespaces, an error is expected and you will have to specify the desired namespace manually
+    Automatically detect namespaces for resources and adding the --namespace flag
   platforms:
     - selector:
         matchLabels:

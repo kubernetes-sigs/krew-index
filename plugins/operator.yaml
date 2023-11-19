@@ -3,55 +3,45 @@ kind: Plugin
 metadata:
   name: operator
 spec:
-  version: v0.5.0
-  homepage: https://github.com/operator-framework/kubectl-operator
-  shortDescription: Manage operators with Operator Lifecycle Manager
+  version: v0.7.11
+  homepage: https://github.com/Danil-Grigorev/cluster-api-operator
+  shortDescription: Use this clusterctl plugin to bootstrap a management cluster for Cluster API with the Cluster API Operator.
   description: |
-    This plugin is a package manager for operators in your cluster. It
-    simplifies adding and removing operator catalogs, and it has familiar
-    commands for installing, uninstalling, and listing available and
-    installed operators.
-
-    One example of a catalog is the public operatorhub.io index, which
-    is installed by default with Operator Lifecycle Manager.
-  caveats: |
-    * This plugin requires Operator Lifecycle Manager to be installed in your
-      cluster. See the installation instructions at
-      https://olm.operatorframework.io/docs/getting-started/
+    Use this clusterctl plugin to bootstrap a management cluster for Cluster API with the Cluster API Operator.
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.5.0/kubectl-operator_v0.5.0_darwin_amd64.tar.gz
-    sha256: 3ac890aa2d50a48550e29b2f044ccc0302ede007cf0c89f3c289520a6ae6c842
-    bin: kubectl-operator
+    uri: https://github.com/Danil-Grigorev/cluster-api-operator/releases/download/v0.7.11/clusterctl-operator_v0.7.11_darwin_amd64.tar.gz
+    sha256: 33590a0b804c12d05c6db62542fabf568c004e90dc59971a6bd2de04feaadfd0
+    bin: clusterctl-operator
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.5.0/kubectl-operator_v0.5.0_darwin_arm64.tar.gz
-    sha256: 5e0cf8429b2ef11784f962fd918fe8b9c08c4ae73c29d0cf21af662abcd2041a
-    bin: kubectl-operator
+    uri: https://github.com/Danil-Grigorev/cluster-api-operator/releases/download/v0.7.11/clusterctl-operator_v0.7.11_darwin_arm64.tar.gz
+    sha256: 2f0a8bf56fd928cf6f076f2654ccab19fcb4b500ceb5fe86512a338dc1f75f32
+    bin: clusterctl-operator
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.5.0/kubectl-operator_v0.5.0_linux_amd64.tar.gz
-    sha256: 5feea7e94d6de38f3ab4f9246188cffe4817c334b7a20982b480ec576acd9802
-    bin: kubectl-operator
+    uri: https://github.com/Danil-Grigorev/cluster-api-operator/releases/download/v0.7.11/clusterctl-operator_v0.7.11_linux_amd64.tar.gz
+    sha256: 752bd66ef1eb8e1d81a5a700f0d580eb0dad9cea730f2de091aeeca14704ca94
+    bin: clusterctl-operator
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.5.0/kubectl-operator_v0.5.0_linux_arm64.tar.gz
-    sha256: def93b143949f0776e75efc739f7ad34fed152c7b65ac3d5b80503aa51df4042
-    bin: kubectl-operator
+    uri: https://github.com/Danil-Grigorev/cluster-api-operator/releases/download/v0.7.11/clusterctl-operator_v0.7.11_linux_arm64.tar.gz
+    sha256: 999202e18ec2a468b82914785e68f84967029e30760b95073959432d1e447905
+    bin: clusterctl-operator
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.5.0/kubectl-operator_v0.5.0_windows_amd64.tar.gz
-    sha256: 9106da2effba50d8500c3bd5fbc3bdb3727b771afa1e6319d3be559a450fbf79
-    bin: kubectl-operator.exe
+    uri: https://github.com/Danil-Grigorev/cluster-api-operator/releases/download/v0.7.11/clusterctl-operator_v0.7.11_windows_amd64.tar.gz
+    sha256: ec8887f5c284c883ae5bc8201c0058c88218cb236677e7382814915e53a9c7ec
+    bin: clusterctl-operator.exe
 

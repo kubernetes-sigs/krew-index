@@ -1,0 +1,65 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: gke-policy
+spec:
+  shortDescription: Validates GKE clusters configuration
+  homepage: https://github.com/google/gke-policy-automation
+  description: |
+    Tool and policy library for validating Google Kubernetes Engine clusters
+    against the configuration best practices and scalability limits.
+  caveats: |
+    The plugin requires Google Cloud credentials to work.
+    Use "gcloud auth application-default login" command to authenticate or
+    specify credentials file as an argument.
+  version: v1.3.3
+  platforms:
+    - bin: gke-policy
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm
+      uri: https://github.com/google/gke-policy-automation/releases/download/v1.3.3/gke-policy-automation_v1.3.3_linux_arm.zip
+      sha256: e1a6e7aa00545f9870cc8710b5e964a8e7684e38fbbfecc662a44f5aec292d26
+    - bin: gke-policy
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/google/gke-policy-automation/releases/download/v1.3.3/gke-policy-automation_v1.3.3_linux_amd64.zip
+      sha256: c70ba40239348bfb457cb1d6bbca7b0c0abd771651ee057eef06082a692a64bf
+    - bin: gke-policy
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/google/gke-policy-automation/releases/download/v1.3.3/gke-policy-automation_v1.3.3_linux_arm64.zip
+      sha256: 904c104d49b45c664480521f95d558c890a544ad5acf8b810c196bb253766064
+    - bin: gke-policy.exe
+      selector:
+        matchLabels:
+          os: windows
+          arch: 386
+      uri: https://github.com/google/gke-policy-automation/releases/download/v1.3.3/gke-policy-automation_v1.3.3_windows_386.zip
+      sha256: 48ec751cde3ce2e6eeb2a18949d082efe9b2652e48c7d2ff8c9acbe64de63096
+    - bin: gke-policy.exe
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/google/gke-policy-automation/releases/download/v1.3.3/gke-policy-automation_v1.3.3_windows_amd64.zip
+      sha256: 18919dddcae54e83b710b2bad0d037da773c20a0d191e9e0f790340b9a8828cf
+    - bin: gke-policy
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/google/gke-policy-automation/releases/download/v1.3.3/gke-policy-automation_v1.3.3_darwin_amd64.zip
+      sha256: 39c4b2be433ffa541129e0f3d7ef8de157e046eacd2d20fd525f427f5fb4902b
+    - bin: gke-policy
+      selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/google/gke-policy-automation/releases/download/v1.3.3/gke-policy-automation_v1.3.3_darwin_arm64.zip
+      sha256: 98a153572f7eee3d35658c50732249efcd41d98c0b29f5664d6deb267f044840

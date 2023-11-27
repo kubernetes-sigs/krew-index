@@ -1,0 +1,46 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pvc-explorer
+spec:
+  version: v0.0.9
+  homepage: https://github.com/stiliajohny/pvc-explorer
+  shortDescription: Explore the PVC files
+  description: |
+    pvc-explorer is a kubectl plugin to explore the PVC files.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/stiliajohny/pvc-explorer/releases/download/v0.0.9/pvc-explorer_darwin_amd64.tar.gz
+    sha256: 4f5f01623158453e9396de91b306d079ae8c40462f032c3a1de6913bcea288f0
+    bin: pvc-explorer
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/stiliajohny/pvc-explorer/releases/download/v0.0.9/pvc-explorer_darwin_arm64.tar.gz
+    sha256: d0852392dd7aa91e06402a4caa9a06c3405615c6eb3b840fb93e0dd7b72cba2a
+    bin: pvc-explorer
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/stiliajohny/pvc-explorer/releases/download/v0.0.9/pvc-explorer_linux_amd64.tar.gz
+    sha256: 79107a799bcd66267a18c4e13b44bd2e10f6340b950c9decd8442eebcfe5398b
+    bin: pvc-explorer
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/stiliajohny/pvc-explorer/releases/download/v0.0.9/pvc-explorer_linux_arm64.tar.gz
+    sha256: 6c5871335cac1d1d6d9c08dd4ab90a590207cb21933a81a0f81d824b043f6aa8
+    bin: pvc-explorer
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/stiliajohny/pvc-explorer/releases/download/v0.0.9/pvc-explorer_windows_amd64.zip
+    sha256: 3f4188b28501338ddb379d360b3646703c3ba9a515b7febf75575f60fad34984
+    bin: pvc-explorer.exe

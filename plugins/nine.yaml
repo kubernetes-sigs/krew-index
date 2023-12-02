@@ -1,0 +1,25 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: nine
+spec:
+  version: "v0.4.4"
+  shortDescription: Manage the cloudnative data platform NineInfra and the NineClusters on the k8s.
+  description: |
+    The Nineinfra is a cloudnative data platform that includes data warehouse, datalake and lakehouse. 
+    The essential architecture of the Nineinfra is an operator of the operators to manage 
+    the lifecycle of the data platforms.
+  homepage: https://github.com/nineinfra/kubectl-nine
+  platforms:
+    - uri: https://github.com/nineinfra/kubectl-nine/releases/download/v0.4.4/kubectl-nine_0.4.4_linux_amd64.zip
+      sha256: "e126789fc1c8582f36bc4d60cf66ee4ab43ecdb9c0258d01bbc968560668e164"
+      bin: kubectl-nine
+      files:
+        - from: kubectl-nine
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64

@@ -1,0 +1,95 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: clog
+spec:
+  version: "v0.1.1"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    {{addURIAndSha "https://github.com/orangetangerine/kubectl-clog/releases/download/{{ .TagName }}/clog_linux_amd64.tar.gz" .TagName }}
+    files:
+    - from: "./clog"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "clog"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    {{addURIAndSha "https://github.com/orangetangerine/kubectl-clog/releases/download/{{ .TagName }}/clog_linux_arm64.tar.gz" .TagName }}
+    files:
+    - from: "./clog"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "clog"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    {{addURIAndSha "https://github.com/orangetangerine/kubectl-clog/releases/download/{{ .TagName }}/clog_darwin_amd64.tar.gz" .TagName }}
+    files:
+    - from: "./clog"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "clog"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    {{addURIAndSha "https://github.com/orangetangerine/kubectl-clog/releases/download/{{ .TagName }}/clog_darwin_arm64.tar.gz" .TagName }}
+    files:
+    - from: "./clog"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "clog"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    {{addURIAndSha "https://github.com/orangetangerine/kubectl-clog/releases/download/{{ .TagName }}/clog_windows_amd64.zip" .TagName }}
+    files:
+    - from: "/clog.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "clog.exe"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    {{addURIAndSha "https://github.com/orangetangerine/kubectl-clog/releases/download/{{ .TagName }}/clog_windows_arm64.zip" .TagName }}
+    files:
+    - from: "/clog.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "clog.exe"
+  shortDescription: A kubectl plugin to colorize logs.
+  homepage: https://github.com/orangetangerine/kubectl-clog
+  caveats: |
+    Usage:
+      # just like kubectl logs ...
+      $ kubectl clog ... 
+
+    For additional options:
+      $ kubectl clog --help
+      or https://github.com/orangetangerine/kubectl-clog/blob/v0.1.1/doc/USAGE.md
+
+  description: |
+    This is a new plugin to colorize your kubectl logs. 
+    clog is just a wrapper of built-in kubectl logs, with same command usage,
+    just replace `kubectl logs` with `kubectl clog`. 
+    
+    Some frequent log content is detected to colorizing.
+    * json format log with level field. e.g. `{"level":"debug"}`
+    * envoy format log via istio-proxy. e.g. `2023-12-26T07:01:24.212130Z     debug   envoy upstream`
+    * istio access log. e.g. `[2023-12-26T05:45:58.421Z] "POST /package.service/method HTTP/2" 200 ...` 
+    
+

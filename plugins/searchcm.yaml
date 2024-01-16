@@ -1,0 +1,26 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: searchcm
+spec:
+  homepage: https://github.com/pbletard/searchcm
+  shortDescription: Search for a value in all ConfigMaps from all namespaces
+  version: v0.0.1
+  description: |
+    Search for a value in all ConfigMaps from all namespaces
+    Similar to a "grep" in all ConfigMaps in all namespaces
+
+  caveats: |
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/pbletard/searchcm/releases/tag/v0.0.1/searchcm.tar.gz
+    sha256: 3e024564122feead30f22b471afdc2c16a578d0774dc69916be54f6dfc799c4d
+    files:
+    - from: "searchcm"
+      to: "searchcm"
+    - from: "LICENSE"
+      to: "."
+    bin: searchcm

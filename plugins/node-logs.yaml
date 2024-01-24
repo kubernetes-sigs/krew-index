@@ -1,0 +1,44 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: node-logs
+spec:
+  version: v0.0.1
+  homepage: https://github.com/aravindhp/kubectl-node-logs
+  shortDescription: View and filter node service logs
+  description: |
+    This plugin allows viewing logs of services running on the node. Supports
+    viewing Windows application provider and Linux journal logs with filtering
+    capabilities. In addition you can view files from the /var/log/ directory.
+  caveats: |
+    * NodeLogQuery feature gate, enableSystemLogHandler and enableSystemLogQuery
+      kubelet options need to be enabled on the node for this plugin to work.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/aravindhp/kubectl-node-logs/releases/download/v0.0.1/nodelogs_linux_amd64.zip
+      sha256: 2b95a406e48560567bbfd3dc0367befaf224fe674415197d44bd11a8e6076fd1
+      bin: kubectl-node_logs
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/aravindhp/kubectl-node-logs/releases/download/v0.0.1/nodelogs_windows_amd64.zip
+      sha256: 2633cd802e2bf9f0db8db79c6644a9b18e964423944259144beb0776cefd516a
+      bin: kubectl-node_logs.exe
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/aravindhp/kubectl-node-logs/releases/download/v0.0.1/nodelogs_darwin_amd64.zip
+      sha256: be91ce886bd76afff28a49f3e958848dc6b884fa4bf1b07142e32e1f7031a523
+      bin: kubectl-node_logs
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/aravindhp/kubectl-node-logs/releases/download/v0.0.1/nodelogs_darwin_arm64.zip
+      sha256: 257565f0e6e2443f64edf104f0dddbf5e8f42b6daf0d511f0dce13752828dc8c
+      bin: kubectl-node_logs

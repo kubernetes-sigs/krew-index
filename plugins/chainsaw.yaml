@@ -1,0 +1,56 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: chainsaw
+spec:
+  version: v0.1.2
+  homepage: https://github.com/kyverno/chainsaw
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/kyverno/chainsaw/releases/download/v0.1.2/chainsaw_darwin_amd64.tar.gz
+    sha256: e1cd3a4dbd41381d4d4d22d349a69f6fba488b9a5fd895122531195d4e3c8c59
+    bin: chainsaw
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/kyverno/chainsaw/releases/download/v0.1.2/chainsaw_darwin_arm64.tar.gz
+    sha256: 3e6a2fb28178641bfdb3a831da06943dac5d8c8fd0b664176f6f47e953a7efab
+    bin: chainsaw
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/kyverno/chainsaw/releases/download/v0.1.2/chainsaw_linux_amd64.tar.gz
+    sha256: 3e8edd08c27ee9c18749d2c524af772f79d4fca6792f62597902bf3e82013ca1
+    bin: chainsaw
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/kyverno/chainsaw/releases/download/v0.1.2/chainsaw_linux_arm64.tar.gz
+    sha256: 742cc3ab6e1d8160832ab5fd71679b752f0bd9333e7b92f34a25169bc7518373
+    bin: chainsaw
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/kyverno/chainsaw/releases/download/v0.1.2/chainsaw_windows_amd64.tar.gz
+    sha256: 70dfe80d0c35a430f6b3b53180510c380f86daa8028d0aabefaddd2bf130be5a
+    bin: chainsaw.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/kyverno/chainsaw/releases/download/v0.1.2/chainsaw_windows_arm64.tar.gz
+    sha256: 38c6f4a85a5e356d05d2382d5b6adf8ca82489d3bcd3a2f942ca9adde6bbe8ea
+    bin: chainsaw.exe
+  shortDescription: Declarative K8s e2e testing
+  description: |
+    Usage:
+      kubectl chainsaw test --test-dir <tests folder>
+      Run tests.
+      Read more documentation at: https://kyverno.github.io/chainsaw

@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: kruise
 spec:
-  version: "v1.1.1"
+  version: "v1.1.2"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/openkruise/kruise-tools/releases/download/v1.1.1/kubectl-kruise-linux-amd64.tar.gz
-    sha256: 99d082851cd6c308fa6bd984b27e95a66141feef95544d94b58268b962d867b8
+    uri: https://github.com/openkruise/kruise-tools/releases/download/v1.1.2/kubectl-kruise-linux-amd64.tar.gz
+    sha256: 233b830f3b8db6a6ab92b971c3d95b470955857b739d1a39c75925424930a243
     files:
       - from: "*/kubectl-kruise"
         to: "."
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/openkruise/kruise-tools/releases/download/v1.1.1/kubectl-kruise-linux-arm64.tar.gz
-    sha256: 63d3168e3406ed9be99738016b9feb1e7b6d2f340cd4da28b1ba5793ecf588c0
+    uri: https://github.com/openkruise/kruise-tools/releases/download/v1.1.2/kubectl-kruise-linux-arm64.tar.gz
+    sha256: 20bcf95e17a53e816c83457a4012050e11ed96cf9496a12f6b0ae2dbafcdafb5
     files:
       - from: "*/kubectl-kruise"
         to: "."
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/openkruise/kruise-tools/releases/download/v1.1.1/kubectl-kruise-darwin-amd64.tar.gz
-    sha256: b4b63d218ab16350bd8f1caab589200e24ffc9e59aed4b378bbe43a9db9745d9
+    uri: https://github.com/openkruise/kruise-tools/releases/download/v1.1.2/kubectl-kruise-darwin-amd64.tar.gz
+    sha256: 4b4ff3b8e08d7392720d71f4ea6ecd5f2f63bd15a61de474c0408b90d8eb95a1
     files:
       - from: "*/kubectl-kruise"
         to: "."
@@ -45,8 +45,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/openkruise/kruise-tools/releases/download/v1.1.1/kubectl-kruise-darwin-arm64.tar.gz
-    sha256: 3b0af360c882fb5b2b19b8d3c99d643410dff7d726eb9d1501bfdebbb6dd8386
+    uri: https://github.com/openkruise/kruise-tools/releases/download/v1.1.2/kubectl-kruise-darwin-arm64.tar.gz
+    sha256: 29cacc482c48c33b4eef8c72499f27ae68b927ac0665ecf4daaa4f55f8c2a68c
     files:
       - from: "*/kubectl-kruise"
         to: "."
@@ -57,8 +57,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/openkruise/kruise-tools/releases/download/v1.1.1/kubectl-kruise-windows-amd64.tar.gz
-    sha256: 4b57f74a728cd7016d23d1df377eaf8d95d39fef1aff672dae1f15f055f12acc
+    uri: https://github.com/openkruise/kruise-tools/releases/download/v1.1.2/kubectl-kruise-windows-amd64.tar.gz
+    sha256: 8e8fb62a0978d169220729ba9958fa5e90b8420bdc155fb2a92ad081923a47c8
     files:
       - from: "*/kubectl-kruise"
         to: "."

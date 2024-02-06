@@ -1,0 +1,36 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: armadactl
+spec:
+  version: v0.3.8655
+  homepage: https://github.com/armadaproject/armada
+  shortDescription: Command line utility to submit many jobs to armada
+  description: |
+    armadactl is a command-line tool used for managing jobs in the Armada workload orchestration system.
+    It provides functionality for creating, updating, and deleting jobs, as well as monitoring job status and resource usage.
+  caveats: |
+    Before using the Armada CLI, make sure you have working armada enviornment
+    or a armadactl.yaml file that points to a valid armada cluster.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/armadaproject/armada/releases/download/v0.3.8655/armadactl_0.3.8655_linux_amd64.tar.gz
+    sha256: 0078f43119cd992b5af0c5c6bab5a0780c7449d38a35ea572d959fe500aa766c
+    bin: armadactl
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/armadaproject/armada/releases/download/v0.3.8655/armadactl_0.3.8655_darwin_all.tar.gz
+    sha256: 7f49ea0851dd83303e3e3553834571313b66415f3d4edd99e10f56532849300f
+    bin: armadactl
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/armadaproject/armada/releases/download/v0.3.8655/armadactl_0.3.8655_windows_amd64.zip
+    sha256: 27774e39b8a29603671c21ed9487fbd073eb408535afe5de5f336e84dc13998b
+    bin: armadactl.exe

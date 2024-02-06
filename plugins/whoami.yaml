@@ -3,60 +3,64 @@ kind: Plugin
 metadata:
   name: whoami
 spec:
-  version: v0.0.46
-  homepage: https://github.com/rajatjindal/kubectl-whoami
+  version: v0.4.0
+  homepage: https://github.com/rajatjindal/kubectl-emit-event
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.46/kubectl-whoami_v0.0.46_darwin_amd64.tar.gz
-    sha256: 8892317fe2042abd78934bf871f9872cff7130b1938976cf854552934b9b8c34
+    uri: https://github.com/rajatjindal/kubectl-emit-event/releases/download/v0.4.0/kubectl-emit-event_v0.4.0_darwin_amd64.tar.gz
+    sha256: f1d7962d3afb5c736758eb938802b714be0409a57766dfff0e7aa1cb56ee53bc
     files:
     - from: "*"
       to: "."
-    bin: kubectl-whoami
+    bin: kubectl-emit-event
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.46/kubectl-whoami_v0.0.46_darwin_arm64.tar.gz
-    sha256: 15eae540d7688c03adf9ac3dd5bfb3159179bd08a78b86dbeb4603326b3fd602
+    uri: https://github.com/rajatjindal/kubectl-emit-event/releases/download/v0.4.0/kubectl-emit-event_v0.4.0_darwin_arm64.tar.gz
+    sha256: 2f5a89db19cc2c28c8500edf71141d2dcdd9c4b2f636963e9bcb3b78fd093c82
     files:
     - from: "*"
       to: "."
-    bin: kubectl-whoami
+    bin: kubectl-emit-event
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.46/kubectl-whoami_v0.0.46_linux_amd64.tar.gz
-    sha256: 37fe60a8b799896714d72442dd3df154fc4f286aec225206f423ec71295b25cc
+    uri: https://github.com/rajatjindal/kubectl-emit-event/releases/download/v0.4.0/kubectl-emit-event_v0.4.0_linux_amd64.tar.gz
+    sha256: 2626266950bfed0f948f4ede39118098802aad71fd7776f5edd2920421662469
     files:
     - from: "*"
       to: "."
-    bin: kubectl-whoami
+    bin: kubectl-emit-event
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.46/kubectl-whoami_v0.0.46_linux_arm64.tar.gz
-    sha256: 214b099f628949a92c0ebc5535139c306e69f9fb5c4e2e980d2c29ad2e40ab1e
+    uri: https://github.com/rajatjindal/kubectl-emit-event/releases/download/v0.4.0/kubectl-emit-event_v0.4.0_linux_arm64.tar.gz
+    sha256: 63f547c2a30c25b96a368c2528a7bfaf420572f347d07ea55f00b3a2745f9fe7
     files:
     - from: "*"
       to: "."
-    bin: kubectl-whoami
+    bin: kubectl-emit-event
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/rajatjindal/kubectl-whoami/releases/download/v0.0.46/kubectl-whoami_v0.0.46_windows_amd64.tar.gz
-    sha256: 6e4ebb9684c30193b25e9cd2696c71ab2c364f6f0cfca73b403b3935c94b4b34
+    uri: https://github.com/rajatjindal/kubectl-emit-event/releases/download/v0.4.0/kubectl-emit-event_v0.4.0_windows_amd64.tar.gz
+    sha256: b6f5a34401849d326f5a6cc4ee838dde7604ace8ddb1797968a0efab5193bf46
     files:
     - from: "*"
       to: "."
-    bin: kubectl-whoami.exe
-  shortDescription: Show the subject that's currently authenticated as.
+    bin: kubectl-emit-event.exe
+  shortDescription: Emit Kubernetes Events for the requested object
   description: |
-    This plugin show the subject that's currently authenticated as.
+    This plugin emits the Kubernetes Events for the requested object
 
+    Example
+    -------
+
+    kubectl emit-event daemonset/kube-proxy -n kube-system --reason "foo-reason" --message "bar-message"

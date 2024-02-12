@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: dumpy
+spec:
+  homepage: https://github.com/larryTheSlap/dumpy
+  shortDescription: Performs tcpdump captures on containers
+  version: v0.1.0
+  description: |
+    This plugin make capturing network traffic easy on containers for different kubernetes resources (deployments, replicasets, pods...),
+    it does that by running tcpdump on targeted containers.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.1.0/dumpy_Darwin_x86_64.tar.gz
+    sha256: 31078d9a59944f3716342de8316c7c367f6018b367275b890476b2a280179a20
+    bin: kubectl-dumpy
+    files:
+    - from: kubectl-dumpy
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.1.0/dumpy_Linux_x86_64.tar.gz
+    sha256: 2168bc6be117a2a6720e3f59e2fa0b3d66348ba17c79911c6ea3c4143035890e
+    bin: kubectl-dumpy
+    files:
+    - from: kubectl-dumpy
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.1.0/dumpy_Windows_x86_64.zip
+    sha256: 30d4271e66f8033acd285e539e0a09e8dbcc2bc239194f6724f389d965d03d24
+    bin: kubectl-dumpy.exe
+    files:
+    - from: kubectl-dumpy.exe
+      to: .
+    - from: LICENSE
+      to: .

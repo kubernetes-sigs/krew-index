@@ -1,0 +1,62 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: reverse-proxy
+spec:
+  version: v0.2.2
+  homepage: https://github.com/rajatjindal/kubectl-reverse-proxy
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.2.2/kubectl-reverse-proxy_v0.2.2_darwin_amd64.tar.gz
+    sha256: dac7b65bba0da88215410a784fe27597631bdbac651d35f1bf046da365371ec6
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-reverse_proxy
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.2.2/kubectl-reverse-proxy_v0.2.2_darwin_arm64.tar.gz
+    sha256: 89defe4e741624583db23e2a81367e0de7b9d64f82bd5f16d82d3b825f0d681f
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-reverse_proxy
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.2.2/kubectl-reverse-proxy_v0.2.2_linux_amd64.tar.gz
+    sha256: cc143c6f6cfaf32bca8668ea8064611e1c6a8dbcd554c9b00fd6b9b55973927e
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-reverse_proxy
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.2.2/kubectl-reverse-proxy_v0.2.2_linux_arm64.tar.gz
+    sha256: c9c4abdbc3e8738d0c1ebb95ea35d1fd36c9f86c26ef3e24f565eca02fed255c
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-reverse_proxy
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.2.2/kubectl-reverse-proxy_v0.2.2_windows_amd64.tar.gz
+    sha256: 27ab6a74ad87f82929d4d9d76dd737202577eafff3a8829d1c927f906ff0dff4
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-reverse_proxy.exe
+  shortDescription: Runs the reverse proxy locally and route traffic to all pods behind the given service object.
+  description: |
+    Runs the reverse proxy locally and route traffic to all pods behind the given service object.
+

@@ -5,7 +5,7 @@ metadata:
 spec:
   homepage: https://popeyecli.io
   shortDescription: Scans your clusters for potential resource issues
-  version: v0.11.1
+  version: v0.11.3
   description: |
     Popeye is a utility that scans live Kubernetes clusters and reports
     potential issues with deployed resources and configurations.
@@ -25,8 +25,20 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/derailed/popeye/releases/download/v0.11.1/popeye_Darwin_x86_64.tar.gz
-      sha256: 80e7012d5b99ce3c0062fae2f2f2097019532565c091001ce933a6f954f4479b
+      uri: https://github.com/derailed/popeye/releases/download/v0.11.3/popeye_Darwin_amd64.tar.gz
+      sha256: 50f2987ccb4d3839da0475baac9c3c4e67497487335f2ff2c5ac3901b81d2f04
+      files:
+        - from: popeye
+          to: kubectl-popeye
+        - from: LICENSE
+          to: "."
+      bin: kubectl-popeye
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/derailed/popeye/releases/download/v0.11.3/popeye_Darwin_arm64.tar.gz
+      sha256: 0f3e738f3c08c9083d50cb8a741d0336b9c33faa0c036fced8dd50e6574c17e8
       files:
         - from: popeye
           to: kubectl-popeye
@@ -37,8 +49,32 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/derailed/popeye/releases/download/v0.11.1/popeye_Linux_x86_64.tar.gz
-      sha256: d4471c3f5a3636ce9effc7e5c5d1ebeab44f11e828e4677e31a925cab90b66ae
+      uri: https://github.com/derailed/popeye/releases/download/v0.11.3/popeye_Linux_amd64.tar.gz
+      sha256: 6882172daee805e3844d145f76f1425604baf73bbc2755e4cc315a134b055f55
+      files:
+        - from: popeye
+          to: kubectl-popeye
+        - from: LICENSE
+          to: "."
+      bin: kubectl-popeye
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/derailed/popeye/releases/download/v0.11.3/popeye_Linux_arm64.tar.gz
+      sha256: b6938744f61d9dc0320e83fb636c710c844de25f30fdec77a15dfb90c63595bb
+      files:
+        - from: popeye
+          to: kubectl-popeye
+        - from: LICENSE
+          to: "."
+      bin: kubectl-popeye
+    - selector:
+        matchLabels:
+          os: linux
+          arch: armv7
+      uri: https://github.com/derailed/popeye/releases/download/v0.11.3/popeye_Linux_armv7.tar.gz
+      sha256: edb68a2dcd2e449ee36d278663ca0c91e9fc51014e23b50d16154b8885068210
       files:
         - from: popeye
           to: kubectl-popeye
@@ -49,8 +85,32 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/derailed/popeye/releases/download/v0.11.1/popeye_Windows_x86_64.tar.gz
-      sha256: bd13f02fa4a6b7861baca7d38242e0a5d6b52a4073d5b4d6288db882f287f66b
+      uri: https://github.com/derailed/popeye/releases/download/v0.11.3/popeye_Windows_amd64.tar.gz
+      sha256: bb73c79dc5c79476de14eb23d8f5ef9f85d88630793a8a343725a43b0a2326b6
+      files:
+        - from: popeye.exe
+          to: kubectl-popeye.exe
+        - from: LICENSE
+          to: "."
+      bin: kubectl-popeye.exe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/derailed/popeye/releases/download/v0.11.3/popeye_Windows_arm64.tar.gz
+      sha256: a39cf51a3f6e0bef1839ef85d360d8f69777a078c98e5c83723b87cad523343c
+      files:
+        - from: popeye.exe
+          to: kubectl-popeye.exe
+        - from: LICENSE
+          to: "."
+      bin: kubectl-popeye.exe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: armv7
+      uri: https://github.com/derailed/popeye/releases/download/v0.11.3/popeye_Windows_armv7.tar.gz
+      sha256: 2b2643df42e530b8b4f54768f91908f5c0bcab9e9068e171ae103d322c21db60
       files:
         - from: popeye.exe
           to: kubectl-popeye.exe

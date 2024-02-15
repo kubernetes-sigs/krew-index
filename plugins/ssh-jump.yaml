@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: ssh-jump
 spec:
-  version: "v0.8.1"
+  version: "v0.9.0"
   homepage: https://github.com/yokawasa/kubectl-plugin-ssh-jump
   platforms:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-    uri: https://github.com/yokawasa/kubectl-plugin-ssh-jump/archive/0.8.1.zip
-    sha256: "f75b1dfe151d3413c579e7a9f1c1479e8860a9c2a5c31b6efffb21e0135a5372"
+    uri: https://github.com/yokawasa/kubectl-plugin-ssh-jump/archive/0.9.0.zip
+    sha256: "a78faf87b370c619276976310aab0567a04896ec0f79703feb30d53cb7af7143"
     files:
     - from: "./*/kubectl-ssh-jump"
       to: .

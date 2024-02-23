@@ -3,50 +3,47 @@ kind: Plugin
 metadata:
   name: reverse-proxy
 spec:
-  version: v0.2.2
+  version: v0.2.3
   homepage: https://github.com/rajatjindal/kubectl-reverse-proxy
-  shortDescription: Start reverse proxy for the Service Pods.
+  shortDescription: Starts reverse proxy for the k8s service pods.
   description: |
-    Runs the reverse proxy locally and route traffic to all Pods behind 
-    the given Service object. 
+    Runs the reverse proxy locally and route traffic to all pods behind the given service object. 
     
-    It is different from the existing proxy plugins in that it start a reverse proxy 
-    locally (instead of e.g. starting a socat proxy Pod in the cluster) and updates the 
-    backend config of that reverse proxy (currently using Caddy) by doing port-forwarding 
-    and adding those listeners as backends.
+    It is different from the existing proxy plugins in that it starts a reverse proxy locally (instead of e.g. starting a socat proxy pod in the cluster) and 
+    updates the backend config of that reverse proxy (currently using caddy) by doing port-forwarding and adding those listeners as backends.
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.2.2/kubectl-reverse-proxy_v0.2.2_darwin_amd64.tar.gz
-    sha256: dac7b65bba0da88215410a784fe27597631bdbac651d35f1bf046da365371ec6
+    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.2.3/kubectl-reverse-proxy_v0.2.3_darwin_amd64.tar.gz
+    sha256: 5687782f66b50488631eb7784b90c983f1fb3bee59bca6690253cbbf31e520da
     bin: kubectl-reverse_proxy
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.2.2/kubectl-reverse-proxy_v0.2.2_darwin_arm64.tar.gz
-    sha256: 89defe4e741624583db23e2a81367e0de7b9d64f82bd5f16d82d3b825f0d681f
+    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.2.3/kubectl-reverse-proxy_v0.2.3_darwin_arm64.tar.gz
+    sha256: 1969e7b7326b08a126b8a3409927c22124b05f17119cb4b943ca4fdce04b6103
     bin: kubectl-reverse_proxy
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.2.2/kubectl-reverse-proxy_v0.2.2_linux_amd64.tar.gz
-    sha256: cc143c6f6cfaf32bca8668ea8064611e1c6a8dbcd554c9b00fd6b9b55973927e
+    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.2.3/kubectl-reverse-proxy_v0.2.3_linux_amd64.tar.gz
+    sha256: 4e8b9d825fe2a2a48b999e704fc4b83891cbc7f4fbfa143ea3c9705b05fb4c13
     bin: kubectl-reverse_proxy
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.2.2/kubectl-reverse-proxy_v0.2.2_linux_arm64.tar.gz
-    sha256: c9c4abdbc3e8738d0c1ebb95ea35d1fd36c9f86c26ef3e24f565eca02fed255c
+    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.2.3/kubectl-reverse-proxy_v0.2.3_linux_arm64.tar.gz
+    sha256: ea9257eecae5d778fdcf02e605ae6ab8d0f635a86f00f82a195d606d2ea38ef3
     bin: kubectl-reverse_proxy
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.2.2/kubectl-reverse-proxy_v0.2.2_windows_amd64.tar.gz
-    sha256: 27ab6a74ad87f82929d4d9d76dd737202577eafff3a8829d1c927f906ff0dff4
+    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.2.3/kubectl-reverse-proxy_v0.2.3_windows_amd64.tar.gz
+    sha256: f268ad8832d6990a13658a2867085976736a46564510b0072e0229ab51baa344
     bin: kubectl-reverse_proxy.exe

@@ -24,6 +24,18 @@ spec:
       to: .
   - selector:
       matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.1.0/dumpy_Darwin_arm64.tar.gz
+    sha256: fd1bac124761f81718b212f087ff4d144fc9b3a524eaa7364e38f1afb01e0f6b
+    bin: kubectl-dumpy
+    files:
+    - from: kubectl-dumpy
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
         os: linux
         arch: amd64
     uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.1.0/dumpy_Linux_x86_64.tar.gz

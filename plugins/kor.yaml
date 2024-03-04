@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kor
+spec:
+  version: v0.3.6
+  homepage: https://github.com/yonahd/kor
+  shortDescription: Kor is a tool to discover unused K8s resources.
+  description: |
+    This plugin shows unused Kubernetes resources (namespaced or cluster-scoped).
+    It provides additional capabilities such as exporting Prometheus metrics,
+    deleting unused resources, and more!
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/yonahd/kor/releases/download/v0.3.6/kor_Linux_x86_64.tar.gz
+    sha256: cbc3bb6dd041624b8640d129434abd5e5c505e809f88c9b6fe8a1177ec76da4c
+    bin: kor
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/yonahd/kor/releases/download/v0.3.6/kor_Linux_arm64.tar.gz
+    sha256: 6030a5598754a96f1e19378ced01268b84766fe3706d04002d20791c513407fa
+    bin: kor
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/yonahd/kor/releases/download/v0.3.6/kor_Darwin_x86_64.tar.gz
+    sha256: dac329fdec10f0baf45448ec5a97e1c468f9bf8950463ff303c1b639eea43843
+    bin: kor
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/yonahd/kor/releases/download/v0.3.6/kor_Darwin_arm64.tar.gz
+    sha256: d05f14cd10fefa4389447d182f448ac5e7b03029da499de77cd32d3abc279a1c
+    bin: kor
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/yonahd/kor/releases/download/v0.3.6/kor_Windows_x86_64.zip
+    sha256: f8b423d748bd164dbb75d82cb43dec98e03972751ca79958330d631eff70ceba
+    bin: kor.exe

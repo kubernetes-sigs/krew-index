@@ -2,8 +2,55 @@ apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
   name: gadget
+  annotations:
+    # List of annotations for Artifact Hub
+    # https://artifacthub.io/docs/topics/annotations/krew/
+    # https://artifacthub.io/packages/krew/krew-index/gadget
+    artifacthub.io/category: monitoring-logging
+    artifacthub.io/displayName: Inspektor Gadget kubectl plugin
+    artifacthub.io/keywords: |
+      - ebpf
+      - tracing
+      - networking
+      - security
+    artifacthub.io/license: Apache-2.0
+    artifacthub.io/links: |
+      - name: homepage
+        url: https://inspektor-gadget.io/
+      - name: repository
+        url: https://github.com/inspektor-gadget/inspektor-gadget/
+      - name: support
+        url: https://github.com/inspektor-gadget/inspektor-gadget/issues
+    artifacthub.io/readme: |
+      Inspektor Gadget is a collection of tools (or gadgets) to debug and
+      inspect Kubernetes resources and applications.
+
+      ## Install
+
+      ```bash
+      $ kubectl krew install gadget
+      $ kubectl gadget deploy
+      ```
+
+      ## Run built-in gadgets
+
+      ```bash
+      $ kubectl gadget trace exec
+      ```
+
+      ## Run image-based gadgets
+
+      ```bash
+      $ kubectl gadget deploy --experimental
+      $ kubectl gadget run ghcr.io/inspektor-gadget/gadget/trace_open:latest
+      ```
+    # artifacthub.io/changes:
+    # artifacthub.io/maintainers:
+    # artifacthub.io/provider:
+    # artifacthub.io/recommendations:
+    # artifacthub.io/screenshots:
 spec:
-  version: v0.25.1
+  version: v0.26.0
   homepage: https://github.com/inspektor-gadget/inspektor-gadget
   shortDescription: Gadgets for debugging and introspecting apps
   description: |
@@ -35,38 +82,38 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.25.1/kubectl-gadget-linux-amd64-v0.25.1.tar.gz
-    sha256: 2d41846c4c6e87d4db0f68ab123dac531c65ff23be7bd280e302390655f3154a
+    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.26.0/kubectl-gadget-linux-amd64-v0.26.0.tar.gz
+    sha256: c582f122d44f5f84589c2f96cea47e4384845a20e02d218aaa7dcbcd3805cd6e
     bin: kubectl-gadget
 
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.25.1/kubectl-gadget-linux-arm64-v0.25.1.tar.gz
-    sha256: 253f22afd30db240d287ec22cb21c3e6fd917fa36799cac6a8c934148db15ecc
+    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.26.0/kubectl-gadget-linux-arm64-v0.26.0.tar.gz
+    sha256: 961802d532da308d8071d39b5b617b2c3c28cb82203cb73b32861f1f36c5cab0
     bin: kubectl-gadget
 
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.25.1/kubectl-gadget-darwin-amd64-v0.25.1.tar.gz
-    sha256: 01406bb8ff49480d4a88f2977077ef0d4087d1589a6a3c12640c57bbc30aa25a
+    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.26.0/kubectl-gadget-darwin-amd64-v0.26.0.tar.gz
+    sha256: ade17650495b5ce479c636febf5e9a490648a0470427999917bd81b850a1b4f8
     bin: kubectl-gadget
 
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.25.1/kubectl-gadget-darwin-arm64-v0.25.1.tar.gz
-    sha256: f40bdc3e121c36878dbf20f01ee67f9de15e803a2abcc0afef8e7324d1904759
+    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.26.0/kubectl-gadget-darwin-arm64-v0.26.0.tar.gz
+    sha256: 4eb58e64c3337bfbe5bbba32fe523622ab03780ebef25423fcbef495667cfbe8
     bin: kubectl-gadget
 
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.25.1/kubectl-gadget-windows-amd64-v0.25.1.tar.gz
-    sha256: a78963e2b4226d0324b7ce02ae7914424e5f88d610a380f98a8cd4b2987fae65
+    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.26.0/kubectl-gadget-windows-amd64-v0.26.0.tar.gz
+    sha256: 892b9e577d84cb2500479809bf4e2109a735c437c6da6ea26e56e5833864f945
     bin: kubectl-gadget.exe

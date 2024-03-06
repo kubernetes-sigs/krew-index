@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: d
+spec:
+  version: v0.0.2
+  homepage: https://github.com/jaymzh/kubectl-daemons
+  shortDescription: Helpers for managing daemonsets
+  description: |
+    This plugin enables working with daemonset pods by daemonset and nodename
+    instead of podnames.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/jaymzh/kubectl-daemons/releases/download/v0.0.2/kubectl-daemons_0.0.2_darwin_amd64.tar.gz
+    sha256: af7b71b097d22bae112e249b6e5c68ca0b70f479dea404dc23fd864a14628f1b
+    bin: kubectl-d
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/jaymzh/kubectl-daemons/releases/download/v0.0.2/kubectl-daemons_0.0.2_darwin_arm64.tar.gz
+    sha256: cbec50453e41446a7a306b4ca542529f53127fafb793c5cc907c884edf2966fc
+    bin: kubectl-d
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/jaymzh/kubectl-daemons/releases/download/v0.0.2/kubectl-daemons_0.0.2_linux_amd64.tar.gz
+    sha256: 1b6a48e783b12294e6d53fe2eead9d1d5ad7b76a0cc5a7e44f06ee122137e981
+    bin: kubectl-d
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/jaymzh/kubectl-daemons/releases/download/v0.0.2/kubectl-daemons_0.0.2_windows_amd64.zip
+    sha256: cfc46ff85176b200030928a97199449929c08db764a2f3153513282466754203
+    bin: kubectl-d.exe

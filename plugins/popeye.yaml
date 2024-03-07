@@ -71,18 +71,6 @@ spec:
       bin: kubectl-popeye
     - selector:
         matchLabels:
-          os: linux
-          arch: armv7
-      uri: https://github.com/derailed/popeye/releases/download/v0.20.5/popeye_Linux_armv7.tar.gz
-      sha256: 0f908acf66f3d1882068b4d31ce8381c0c8fdee9744b06ba315b645908541a26
-      files:
-        - from: popeye
-          to: kubectl-popeye
-        - from: LICENSE
-          to: "."
-      bin: kubectl-popeye
-    - selector:
-        matchLabels:
           os: windows
           arch: amd64
       uri: https://github.com/derailed/popeye/releases/download/v0.20.5/popeye_Windows_amd64.tar.gz
@@ -99,18 +87,6 @@ spec:
           arch: arm64
       uri: https://github.com/derailed/popeye/releases/download/v0.20.5/popeye_Windows_arm64.tar.gz
       sha256: a5d857d767432c1f9fd1cad4defcdbef10160da8d8632fd5b0635fa5db978fd1
-      files:
-        - from: popeye.exe
-          to: kubectl-popeye.exe
-        - from: LICENSE
-          to: "."
-      bin: kubectl-popeye.exe
-    - selector:
-        matchLabels:
-          os: windows
-          arch: armv7
-      uri: https://github.com/derailed/popeye/releases/download/v0.20.5/popeye_Windows_armv7.tar.gz
-      sha256: d1842c91e7c21081cfa3e82919420dd6efa9e03dbf551addad277ea3bcc2e56b
       files:
         - from: popeye.exe
           to: kubectl-popeye.exe

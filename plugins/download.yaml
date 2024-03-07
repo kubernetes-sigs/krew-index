@@ -1,0 +1,41 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: download
+spec:
+  version: v0.0.4
+  homepage: https://github.com/Anddd7/kubectl-download
+  shortDescription: Output and download any kubernetes resources in to named files.
+  description: |
+    It simplifies the process of `kubectl get pod nginx -oyaml > nginx.yaml`, 
+    you don't need pipe and name a file manually. Just `kubectl download pod nginx`.
+  caveats: ""
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/Anddd7/kubectl-download/releases/download/v0.0.4/kubectl-download_v0.0.4_darwin_amd64.tar.gz
+    sha256: 68738e7c2773c882081ca3142d91e47ecb62f9ba8a9cf894fb30a2d4e9d3d68c
+    bin: kubectl-download
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/Anddd7/kubectl-download/releases/download/v0.0.4/kubectl-download_v0.0.4_darwin_arm64.tar.gz
+    sha256: dbed5211cc4678ac2e43307f628528b44ea02edda88e34486141fd2ddd6da9d4
+    bin: kubectl-download
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/Anddd7/kubectl-download/releases/download/v0.0.4/kubectl-download_v0.0.4_linux_amd64.tar.gz
+    sha256: 7dc319eaf100666d92358bb6d12f072d54353edd94cd2ae7b6fbd4f4e4020abf
+    bin: kubectl-download
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/Anddd7/kubectl-download/releases/download/v0.0.4/kubectl-download_v0.0.4_windows_amd64.tar.gz
+    sha256: a73a52c4d51309e0fddac1104e49043746afeee8479dcf58ed8187a365493fbc
+    bin: kubectl-download.exe

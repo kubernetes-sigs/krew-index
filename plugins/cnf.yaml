@@ -1,0 +1,29 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cnf
+spec:
+  version: v0.0.1
+  homepage: https://github.com/hedgieinsocks/kubectl-cnf
+  shortDescription: Switch between k8s configs within the scope of a terminal tab
+  description: |
+    The plugin facilitates convenient kubeconfig selection and launches a subshell with the chosen KUBECONFIG
+    This way you can multitask by dedicating each cluster its own terminal tab
+  caveats: |
+    Dependencies: fzf
+    Configuration: create ~/.kube/configs directory and put there your kubeconfigs (or symlinks)
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - linux
+    uri: https://github.com/hedgieinsocks/kubectl-cnf/archive/refs/tags/0.0.1.tar.gz
+    sha256: 41ca3eb8239a7f7cd8682f91708718546b872dc4fcbf65826a89a20be041a2d9
+    files:
+    - from: kubectl-cnf-*/kubectl-cnf
+      to: .
+    - from: kubectl-cnf-*/LICENSE
+      to: .
+    bin: "./kubectl-cnf"

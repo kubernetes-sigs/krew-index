@@ -5,13 +5,14 @@ metadata:
 spec:
   version: v0.0.1
   homepage: https://github.com/hedgieinsocks/kubectl-cnf
-  shortDescription: Switch between k8s configs within the scope of a terminal tab
+  shortDescription: Switch between k8s configs within a terminal tab
   description: |
-    The plugin facilitates convenient kubeconfig selection and launches a subshell with the chosen KUBECONFIG
+    The plugin facilitates convenient kubeconfig selection
+    It launches a subshell with the chosen KUBECONFIG
     This way you can multitask by dedicating each cluster its own terminal tab
   caveats: |
     Dependencies: fzf
-    Configuration: create ~/.kube/configs directory and put there your kubeconfigs (or symlinks)
+    Prepare: create ~/.kube/configs directory and put there your kubeconfigs
   platforms:
   - selector:
       matchExpressions:

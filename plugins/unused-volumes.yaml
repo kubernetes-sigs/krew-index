@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: unused-volumes
 spec:
-  version: "v0.1.2"
+  version: "v0.2.3"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/dirathea/kubectl-unused-volumes/releases/download/v0.1.2/kubectl-unused-volumes_linux_amd64.tar.gz
-    sha256: 30937fafb91ae193d97443855c0a8ca657428b75a130cfd5ccbebef3bc4429d2
+    uri: https://github.com/ava-labs/kubectl-unused-volumes/releases/download/v0.2.3/kubectl-unused-volumes_linux_amd64.tar.gz
+    sha256: a41f0aebb0ef6ce790dfddd0d1e0c6fa5d7b1ac16cdb08e4be4e9b55995422c4
     files:
     - from: "./unused-volumes"
       to: "."
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/dirathea/kubectl-unused-volumes/releases/download/v0.1.2/kubectl-unused-volumes_darwin_amd64.tar.gz
-    sha256: 30cc45f94ff9e6e5829bb32d8a9e6c40371aba7e81502eec43663bb245fec4af
+    uri: https://github.com/ava-labs/kubectl-unused-volumes/releases/download/v0.2.3/kubectl-unused-volumes_darwin_amd64.tar.gz
+    sha256: 7215849dbf8586e8c9b29f4087d7fb858e0e428e9d18dbeaff22cc22a7dffbd0
     files:
     - from: "./unused-volumes"
       to: "."
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/dirathea/kubectl-unused-volumes/releases/download/v0.1.2/kubectl-unused-volumes_windows_amd64.zip
-    sha256: 442d1e1ba8a82e7001964b808cdbe1b9c722ed98087b47636e9d1ee91a4213ea
+    uri: https://github.com/ava-labs/kubectl-unused-volumes/releases/download/v0.2.3/kubectl-unused-volumes_windows_amd64.zip
+    sha256: 060c72bdfe6698fe705ec27c99a288a2530197ddf40dbcfa38030287ad2f3b15
     files:
     - from: "/unused-volumes.exe"
       to: "."
@@ -42,7 +42,7 @@ spec:
       to: "."
     bin: "unused-volumes.exe"
   shortDescription: List unused PVCs
-  homepage: https://github.com/dirathea/kubectl-unused-volumes
+  homepage: https://github.com/ava-labs/kubectl-unused-volumes
   description: |
     Kubectl plugins to gather all PVC and check whether it used in any workloads on cluster or not.
     This plugin lists all PVCs that are not used by any

@@ -3,47 +3,48 @@ kind: Plugin
 metadata:
   name: relay
 spec:
-  version: v0.0.8
+  version: v0.0.9
   homepage: https://github.com/knight42/krelay
   shortDescription: Drop-in "port-forward" replacement with UDP and hostname resolution.
   description: |
     This kubectl plugin is a drop-in replacement for `kubectl port-forward` with some enhanced features:
     * Supports UDP port forwarding
-    * Forwarding data to the given IP or hostname that is accessible within the kubernetes cluster
+    * Supports simultaneous forwarding of data to multiple targets
     * Forwarding session will not be interfered after performing rolling updates
+    * Forwarding data to the given IP or hostname that is accessible within the kubernetes cluster
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/knight42/krelay/releases/download/v0.0.8/kubectl-relay_v0.0.8_darwin-amd64.tar.gz
-    sha256: 6f78570bc962abcf4e062f0672caf986b6afc34e75608eefb7a69fb8fb2546de
+    uri: https://github.com/knight42/krelay/releases/download/v0.0.9/kubectl-relay_v0.0.9_darwin-amd64.tar.gz
+    sha256: 0523881279c3a6759036b95c4695e22253a6a18a35f74c09cd88bdcdeb45a5c7
     bin: kubectl-relay
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/knight42/krelay/releases/download/v0.0.8/kubectl-relay_v0.0.8_darwin-arm64.tar.gz
-    sha256: 5d619448588158450b5d429013f84de8f55af70e1fe8e3f57e198eb470097b37
+    uri: https://github.com/knight42/krelay/releases/download/v0.0.9/kubectl-relay_v0.0.9_darwin-arm64.tar.gz
+    sha256: b105a066634bf9d027a4f64869c5be81bbed0eca022cd6f2060a0e08cdf9fb91
     bin: kubectl-relay
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/knight42/krelay/releases/download/v0.0.8/kubectl-relay_v0.0.8_linux-amd64.tar.gz
-    sha256: 8ff24aa8f562db745d7e8368dde44d1fbe11b8d348bb16653f8415f5032d171b
+    uri: https://github.com/knight42/krelay/releases/download/v0.0.9/kubectl-relay_v0.0.9_linux-amd64.tar.gz
+    sha256: 4343ed080787b11cbe1acb6bf1d247ddae4cae7242cbd3ba8e1239b1b6310c54
     bin: kubectl-relay
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/knight42/krelay/releases/download/v0.0.8/kubectl-relay_v0.0.8_linux-arm64.tar.gz
-    sha256: 826ce13e65d1132a8ba1b3871f36cd92be082c11adacdbf4f3a291a799e1fc6f
+    uri: https://github.com/knight42/krelay/releases/download/v0.0.9/kubectl-relay_v0.0.9_linux-arm64.tar.gz
+    sha256: dd4614a312115cfd104f8bbfdf4d9660f9784f531beaa7a52ba55959708b7de3
     bin: kubectl-relay
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/knight42/krelay/releases/download/v0.0.8/kubectl-relay_v0.0.8_windows-amd64.tar.gz
-    sha256: d3962fdd559d2d81e16aecaeba0276606a02dbb66d4a22f8c9a3ed8c9284bcce
+    uri: https://github.com/knight42/krelay/releases/download/v0.0.9/kubectl-relay_v0.0.9_windows-amd64.tar.gz
+    sha256: 4c5b6b03de3b64d7fb7a7cb1b649b1caa74928ea1dedc8b270f3d901cb603b04
     bin: kubectl-relay.exe

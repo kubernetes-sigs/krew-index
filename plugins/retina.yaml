@@ -4,13 +4,15 @@ metadata:
   name: retina
 spec:
   version: v0.0.2
-  homepage: retina.sh
+  homepage: https://github.com/microsoft/retina
   shortDescription: Distributed network captures and telemetry
   description: |
-    Retina is a cloud-agnostic, open-source Kubernetes network observability platform that provides a centralized hub for monitoring application health, network health, and security. 
-    It provides actionable insights to cluster network administrators, cluster security administrators, and DevOps engineers navigating DevOps, SecOps, and compliance use cases.
-    Retina collects customizable telemetry, which can be exported to multiple storage options (such as Prometheus, Azure Monitor, and other vendors) and visualized in a variety of ways 
-    (like Grafana, Azure Log Analytics, and other vendors). This CLI is a part of the Retina project, which allows the user to capture network traffic and metadata for the capture target.
+    The Retina CLI plugin enables users to collect distributed network captures in an
+    OS and vendor-agnostic way. Capture jobs can be created via the CLI to target specific
+    nodes or pods in a time-limited or size limited way. Capture jobs can also filter specific
+    network traffic based on the given configurations; more info on the configurations can be 
+    found on the official docs. The captures are collected in formats like pcap, etl and 
+    text files, and can then be stored at remote storage destinations.
   platforms:
   - selector:
       matchLabels:

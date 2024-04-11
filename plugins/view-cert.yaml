@@ -3,12 +3,12 @@ kind: Plugin
 metadata:
   name: view-cert
 spec:
-  version: v0.0.4
-  homepage: https://github.com/lmolas/kubectl-view-cert
+  version: v0.0.5
+  homepage: https://github.com/mlorenzo-stratio/kubectl-view-cert
   shortDescription: View certificate information stored in secrets
   description: |
-    View certificate information (version, serial number, issuer, subject 
-    and validity) stored in secrets. 
+    View certificate information (version, serial number, issuer, subject
+    and validity) stored in secrets.
     Supported secret types are kubernetes.io/tls. But you can parse any
     type of secret by specifying secret name and secret key to read.
   platforms:
@@ -16,34 +16,34 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.4/kubectl-view-cert_v0.0.4_darwin_amd64.tar.gz
-    sha256: 6cc4fe2c3f9cc37e4682cfaf31a9c78c3676e5e35de04a9cb1d588a495b6bb55
+    uri: https://github.com/mlorenzo-stratio/kubectl-view-cert/releases/download/v0.0.5/kubectl-view-cert_v0.0.5_darwin_amd64.tar.gz
+    sha256: dab61d39f2ed992f441efafd00f06d1ae531c0ef66c95c8d8924ed8a0c68ba38
     bin: kubectl-view-cert
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.4/kubectl-view-cert_v0.0.4_darwin_arm64.tar.gz
-    sha256: 27d2cd39c53145e0fbb8fe4e3d40831588c89c71b4687ca031ad6239f0dfcf96
+    uri: https://github.com/mlorenzo-stratio/kubectl-view-cert/releases/download/v0.0.5/kubectl-view-cert_v0.0.5_darwin_arm64.tar.gz
+    sha256: a94a3ef959b9ba6ddb74fbed25a24c80814540cfcc2a78514e8690f8bae03342
     bin: kubectl-view-cert
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.4/kubectl-view-cert_v0.0.4_linux_amd64.tar.gz
-    sha256: 9612023bc85ba2b571e8a078dd6a955c60e6782a5362e9d6d9038dd8f58af0f8
+    uri: https://github.com/mlorenzo-stratio/kubectl-view-cert/releases/download/v0.0.5/kubectl-view-cert_v0.0.5_linux_amd64.tar.gz
+    sha256: 96732421e0cfaf7cea7b42fb3545ceabc218fd1b5c2f3a5c680fe80204654038
     bin: kubectl-view-cert
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.4/kubectl-view-cert_v0.0.4_linux_arm64.tar.gz
-    sha256: aa41ff0496e4945139e41c169ca5b4eac6dba05c884bc758636a8d9928b250fd
+    uri: https://github.com/mlorenzo-stratio/kubectl-view-cert/releases/download/v0.0.5/kubectl-view-cert_v0.0.5_linux_arm64.tar.gz
+    sha256: a396bc462cb377b5bc43d402c12a68d8ffac3de155a39f49b5fab45d9e5e42a3
     bin: kubectl-view-cert
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/lmolas/kubectl-view-cert/releases/download/v0.0.4/kubectl-view-cert_v0.0.4_windows_amd64.tar.gz
-    sha256: a5fc75f248a9b1048ec28ad4ceb2d58c679be55ce3d042a4b466d374967760cb
+    uri: https://github.com/mlorenzo-stratio/kubectl-view-cert/releases/download/v0.0.5/kubectl-view-cert_v0.0.5_windows_amd64.tar.gz
+    sha256: 7c28edf7bfe4f9b5d9146730cc5c60cfd5aa2f5853d2e71340b9ae2435e0b181
     bin: kubectl-view-cert.exe

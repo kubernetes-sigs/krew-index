@@ -3,8 +3,8 @@ kind: Plugin
 metadata:
   name: mayastor
 spec:
-  version: v2.5.0
-  homepage: https://mayastor.gitbook.io/
+  version: v2.6.0
+  homepage: https://openebs.io/docs/
   shortDescription: Provides commands for OpenEBS Mayastor.
   description: |
     This plugin allows you to manage Mayastor volumes and upgrades.
@@ -13,27 +13,34 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/openebs/mayastor-extensions/releases/download/v2.5.0/kubectl-mayastor-x86_64-apple-darwin.tar.gz
-    sha256: a3a0578288c0e5e9862b281596886b4ccbbd172f04893c2e849f305831af5478
+    uri: https://github.com/openebs/mayastor-extensions/releases/download/v2.6.0/kubectl-mayastor-x86_64-apple-darwin.tar.gz
+    sha256: 3f4010463e2c11bd02b3b84970d304f28f97075f3184124a7ba48a6129102410
+    bin: kubectl-mayastor
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/openebs/mayastor-extensions/releases/download/v2.6.0/kubectl-mayastor-aarch64-apple-darwin.tar.gz
+    sha256: 87d318d44cb58d67993fdd4b721b2ed44810fe1531f21b6d766ed880ece8b61b
     bin: kubectl-mayastor
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/openebs/mayastor-extensions/releases/download/v2.5.0/kubectl-mayastor-x86_64-linux-musl.tar.gz
-    sha256: 62ab29071af06f063645f4b23e0df4eb78f318aaceb8440c255309b2b6d1c572
+    uri: https://github.com/openebs/mayastor-extensions/releases/download/v2.6.0/kubectl-mayastor-x86_64-linux-musl.tar.gz
+    sha256: dc2d4e649f75a7baada06b6961803362676e878b88a42687385c5f181be0d1f7
     bin: kubectl-mayastor
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/openebs/mayastor-extensions/releases/download/v2.5.0/kubectl-mayastor-aarch64-linux-musl.tar.gz
-    sha256: 00d55d5fa12d9b66fbe067856eeb6c9e3af7c1551d9e66de8d6b09f3bd46b2f4
+    uri: https://github.com/openebs/mayastor-extensions/releases/download/v2.6.0/kubectl-mayastor-aarch64-linux-musl.tar.gz
+    sha256: 5273505052b7425db195524963e7e2fb448da82befbac7ca5a7a4a990f47cac5
     bin: kubectl-mayastor
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/openebs/mayastor-extensions/releases/download/v2.5.0/kubectl-mayastor-x86_64-windows-gnu.tar.gz
-    sha256: 07e9ed02443cf8c39b21528c0c9c18ce46810d545cd1865a1062a29ddfe79316
+    uri: https://github.com/openebs/mayastor-extensions/releases/download/v2.6.0/kubectl-mayastor-x86_64-windows-gnu.tar.gz
+    sha256: 9dba757f211cef2858dab39cf47a26c973f5df1336db8f0d11333c63d70f1e52
     bin: kubectl-mayastor.exe

@@ -1,0 +1,28 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: netobserv
+spec:
+  version: "v0.0.1"
+  homepage: https://github.com/netobserv/network-observability-cli
+  shortDescription: "Lightweight Flow and Packet visualization tool"
+  description: |
+    Deploys NetObserv eBPF agent on your k8s cluster to collect flows 
+    or packets from nodes network interfaces and streams data to a local 
+    collector for analysis and visualization. 
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+        - linux
+    uri: "https://github.com/netobserv/network-observability-cli/releases/download/v0.0.1/netobserv-cli.tar.gz"
+    sha256: "18ec3c3861d319179b04fc3c5a5e4834a36911997f39461b1d8316b73fc0419b"
+    files:
+    - from: "build/netobserv"
+      to: "netobserv"
+    - from: "LICENSE"
+      to: "."
+    bin: netobserv

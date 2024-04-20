@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ollama
+spec:
+  version: v0.4.0
+  homepage: https://github.com/nekomeowww/ollama-operator
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/nekomeowww/ollama-operator/releases/download/v0.4.0/kollama_v0.4.0_darwin_amd64.tar.gz
+    sha256: 842410db6246c560f9880756941c37af7ea03fd1093e4ebb519d0f84ee683f11
+    bin: kollama
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/nekomeowww/ollama-operator/releases/download/v0.4.0/kollama_v0.4.0_darwin_arm64.tar.gz
+    sha256: 31cddd46b956100868827cbca360df9dde1592da8e6c14be9ff65106172f8dfb
+    bin: kollama
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/nekomeowww/ollama-operator/releases/download/v0.4.0/kollama_v0.4.0_linux_amd64.tar.gz
+    sha256: 23cec1cc5a90a4a2e73d67aa408e5536f746da60fb46f7f2fe3b76c7597f7f59
+    bin: kollama
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/nekomeowww/ollama-operator/releases/download/v0.4.0/kollama_v0.4.0_linux_arm64.tar.gz
+    sha256: c8daa2b240e7d4015cc74b631b189d6ec12711b81776e6c6473c8d21e07fca1e
+    bin: kollama
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/nekomeowww/ollama-operator/releases/download/v0.4.0/kollama_v0.4.0_windows_amd64.zip
+    sha256: 62a3190f3798db12f6a5d595e1ffef74fe6efe5347cb6efa9608e16fa467347f
+    bin: kollama
+  shortDescription: Interact with the Ollama Operator
+  description: |
+    Usage:
+      kubectl ollama deploy llama2
+      This plugin will help you to interact with the Ollama Operator to deploy any LLM (Llama Language Model) to your Kubernetes cluster.
+      Read more documentation at: https://github.com/nekomeowww/ollama-operator

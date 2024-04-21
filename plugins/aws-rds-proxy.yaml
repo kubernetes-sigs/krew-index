@@ -1,0 +1,34 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: aws-rds-proxy
+spec:
+  version: v2.0.0
+  homepage: https://github.com/wojtekk/aws-rds-proxy
+  shortDescription: Proxy to AWS RDS Cluster or Instance via Kubernetes
+  description: |
+    Start socat with proxy in Kubernetes and forward local port to AWS RDS Cluster or Instance.
+
+    Usage:
+        $ kubectl aws-rds-proxy local_port:rds_cluster_or_instance_name
+
+    Example:
+        $ kubectl aws-rds-proxy 33061:my-rds-cluster-name
+        $ kubectl aws-rds-proxy 33062:my-rds-instance-name
+
+  platforms:
+    - selector:
+        matchExpressions:
+          - key: os
+            operator: In
+            values:
+              - darwin
+              - linux
+      uri: https://github.com/wojtekk/kubectl-aws-rds-proxy/archive/v2.0.0.tar.gz
+      sha256: df0d4a26c426e8a7fb42d5c02b10bdb7ce73d726f1f48059d836c1377601ea25
+      files:
+        - from: kubectl-aws-rds-proxy-*/kubectl-aws_rds_proxy
+          to: .
+        - from: kubectl-aws-rds-proxy-*/LICENSE
+          to: .
+      bin: "kubectl-aws_rds_proxy"

@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: status
 spec:
-  version: v0.7.9
+  version: v0.7.11
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.9/status_linux_amd64.tar.gz
-    sha256: a1b7baa07cbd74aae0fe0d3aa9873b50e4113f49692488d4a083b3cb16987334
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.11/status_linux_amd64.tar.gz
+    sha256: 52184e6622c2ff55234ed01a8542aaea08155ee48b95c60b2c1bdb7c0f6ef900
     files:
     - from: "./status"
       to: "."
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.9/status_linux_arm64.tar.gz
-    sha256: 173c7b63a0756f7089010a9d9f8c454956ac1422e3a4a027f75441272ca19d70
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.11/status_linux_arm64.tar.gz
+    sha256: fdb042e5cf0b4b752e26acac7b8d35732d863239afd807d8944b5a89769206cc
     files:
     - from: "./status"
       to: "."
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.9/status_darwin_amd64.tar.gz
-    sha256: 74b6826445649d46f378b9b833cf35c85b84ea1cf3f3708674dabdff962ade0d
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.11/status_darwin_amd64.tar.gz
+    sha256: 636fb9e7ec009b75732496a5024cd27bbf99a23c6003a14715c61d251f4dc4cb
     files:
     - from: "./status"
       to: "."
@@ -45,8 +45,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.9/status_darwin_arm64.tar.gz
-    sha256: 095577e3244175f717c4b606c6ec6fa35ee3fa1ff8d956a352746cc9ac1d81d8
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.11/status_darwin_arm64.tar.gz
+    sha256: 8c1ea432752ed41b59b3d78dc08add18b36ef36996ccda8825a08ebd085a799b
     files:
     - from: "./status"
       to: "."
@@ -57,8 +57,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.9/status_windows_amd64.zip
-    sha256: 92b2193391cad20f47d7fca42fafed43b6765a213c7e94ba8690b46c3d0f5ddc
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.11/status_windows_amd64.zip
+    sha256: ae29f28ed142fdbe2f8ebce58d1c3f2bc925bdac134d4ce8a72655e36fbd943e
     files:
     - from: "/status.exe"
       to: "."

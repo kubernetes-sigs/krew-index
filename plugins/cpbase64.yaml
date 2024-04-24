@@ -1,0 +1,28 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cpbase64
+spec:
+  version: "v0.1.7"
+  homepage: https://github.com/freeella/kubectl-cpbase64
+  shortDescription: "Alternative to 'cp' using base64 instead of tar"
+  description: |
+    Not busybox based Docker images often do not ship 'tar' by default.
+    This command 'kubectl cpbase64' uses 'base64' instead.
+    The goal is to be in sync with command line syntax of 'kubectl cp'.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/freeella/kubectl-cpbase64/releases/download/v0.1.7/kubectl-cpbase64.release-v0.1.7.zip
+    sha256: 924b96ff5b642e859c942beeb6f9d4bbb2a03a11ca1b806ffee7ba6159719b43
+    files:
+    - from: "kubectl-cpbase64"
+      to: "cpbase64.bash"
+    - from: "LICENSE"
+      to: "."
+    bin: cpbase64.bash

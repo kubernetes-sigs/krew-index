@@ -1,0 +1,105 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: atlas
+spec:
+  version: v0.0.1
+  homepage: https://github.com/s-urbaniak/kube-atlas-cli
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/s-urbaniak/kube-atlas-cli/releases/download/v0.0.1/atlas_darwin_amd64.tar.gz
+    sha256: bdfdcb4880ba0cb245540199acd6fc86682ec939733dfc21bf2953051978e036
+    files:
+      - from: "./atlas"
+        to: "."
+      - from: LICENSE
+        to: "."
+    bin: "atlas"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/s-urbaniak/kube-atlas-cli/releases/download/v0.0.1/atlas_darwin_arm64.tar.gz
+    sha256: 36ed9ac2306ec7da4cc710c65897546c72a17e6f9c14ae54f05117386f89f25b
+    files:
+      - from: "./atlas"
+        to: "."
+      - from: LICENSE
+        to: "."
+    bin: "atlas"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/s-urbaniak/kube-atlas-cli/releases/download/v0.0.1/atlas_linux_amd64.tar.gz
+    sha256: 5bd8668bde3f27fd410beb73f52d682592ab85a095d5e51a375180052f1b42ed
+    files:
+      - from: "./atlas"
+        to: "."
+      - from: LICENSE
+        to: "."
+    bin: "atlas"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm
+    uri: https://github.com/s-urbaniak/kube-atlas-cli/releases/download/v0.0.1/atlas_linux_arm.tar.gz
+    sha256: 582ec75ad6eeb26b6e4065928f8e242a0abcff0d2f82a16f136ef6b3511a98e4
+    files:
+      - from: "./atlas"
+        to: "."
+      - from: LICENSE
+        to: "."
+    bin: "atlas"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/s-urbaniak/kube-atlas-cli/releases/download/v0.0.1/atlas_linux_arm64.tar.gz
+    sha256: 030a8e044394c09f9ec5c26e6ebf667168ba240dbea9c162854f2404b37c904c
+    files:
+      - from: "./atlas"
+        to: "."
+      - from: LICENSE
+        to: "."
+    bin: "atlas"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/s-urbaniak/kube-atlas-cli/releases/download/v0.0.1/atlas_windows_arm64.zip
+    sha256: 7540bb74a5033ff61abb7bc72ce8a0cd67302a19df134e666fdc46049946776f
+    files:
+      - from: "/atlas.exe"
+        to: "."
+      - from: LICENSE
+        to: "."
+    bin: "atlas.exe"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/s-urbaniak/kube-atlas-cli/releases/download/v0.0.1/atlas_windows_amd64.zip
+    sha256: 5f5d8ff4905f7e98b71c163f81b9c4cb96ce56996c19c4579af1d806bf57b380
+    files:
+      - from: "/atlas.exe"
+        to: "."
+      - from: LICENSE
+        to: "."
+    bin: "atlas.exe"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm
+    uri: https://github.com/s-urbaniak/kube-atlas-cli/releases/download/v0.0.1/atlas_windows_arm.zip
+    sha256: 0f4cb3c40fbe29e82c7f0ee0eeb52c7bc7a42d57d25993b633d6a60001a51b73
+    files:
+      - from: "/atlas.exe"
+        to: "."
+      - from: LICENSE
+        to: "."
+    bin: "atlas.exe"
+  shortDescription: A kubectl plugin to interact with MongoDB Atlas leveraging the MongoDB Atlas Operator.

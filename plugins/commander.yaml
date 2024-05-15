@@ -1,0 +1,36 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: commander
+spec:
+  homepage: https://github.com/schabrolles/kubectl-commander
+  shortDescription: Interactively manage Kubernetes resources
+  version: "v0.4.0"
+  description: |
+    kube-commander is an interactive menu (based on fzf) that allows you
+    to navigate and interact with objects of your Kubernetes cluster.
+    It is possible to quickly preview object configuration in YAML,
+    logs, events but also edite or delete object or enter into pods.
+
+    [ctrl-h] inside the plugin to get the list of available key bindings.
+  caveats: |
+    For optimal experience, be sure to have the following binaries
+    installed on your machine:
+    * fzf:  https://github.com/junegunn/fzf/releases
+    * yq:  https://github.com/mikefarah/yq/releases
+  platforms:
+    - selector:
+        matchExpressions:
+          - key: os
+            operator: In
+            values:
+              - darwin
+              - linux
+      uri: https://github.com/schabrolles/kubectl-commander/archive/refs/tags/V0.4.0.tar.gz
+      sha256: b8a6b430d88fdeb02008d1c153eb2af47b6a04e00fa54554eef6cb879145e565
+      bin: kubectl-commander
+      files:
+        - from: kubectl-commander-*/kubectl-commander
+          to: .
+        - from: kubectl-commander-*/LICENSE
+          to: .

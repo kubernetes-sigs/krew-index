@@ -55,14 +55,7 @@ spec:
       to: "."
     bin: "pv-mounter"
 
-  shortDescription: mount PVC locally using sshfs
+  shortDescription: Mount PVC locally using sshfs
   homepage: https://github.com/fenio/pv-mounter
-  caveats: |
-    Usage:
-      $ kubectl pv-mounter mount <namespace> <pvc-name> <local-mountpoint>
-
-    For additional options:
-      $ kubectl pv-mounter --help
-
   description: |
     Plugin that allows to mount PVC locally using sshfs

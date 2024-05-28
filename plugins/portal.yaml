@@ -1,0 +1,47 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: portal
+spec:
+  version: v1.0.1
+  homepage: https://github.com/federicotdn/kubectl-portal
+  shortDescription: An HTTP proxy for connecting to stuff inside your cluster.
+  description: |
+    A kubectl plugin that launches an HTTP proxy, enabling you to make requests
+    to Services, Pods and any other host reachable from within your cluster.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    bin: kubectl-portal
+    uri: https://github.com/federicotdn/kubectl-portal/releases/download/v1.0.1/kubectl-portal_1.0.1_darwin_amd64.tar.gz
+    sha256: d54e42a219eeb85590cb09968882de7d09345d0a341f1ad6ce2ba8cde2c9a102
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    bin: kubectl-portal
+    uri: https://github.com/federicotdn/kubectl-portal/releases/download/v1.0.1/kubectl-portal_1.0.1_darwin_arm64.tar.gz
+    sha256: ddd3bc524c4b3f5c17084493268202a45ac652cfd591155c150017e46f33504b
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    bin: kubectl-portal
+    uri: https://github.com/federicotdn/kubectl-portal/releases/download/v1.0.1/kubectl-portal_1.0.1_linux_amd64.tar.gz
+    sha256: 344a956e5db0eeb49dd0b0c5974329c1cabae753c98ba7d35ad84b6f128eb15f
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    bin: kubectl-portal
+    uri: https://github.com/federicotdn/kubectl-portal/releases/download/v1.0.1/kubectl-portal_1.0.1_linux_arm64.tar.gz
+    sha256: 5095d574bca0157fa7624e3e215406454046dce7fcc05b9d172b5fdeb71729b2
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    bin: kubectl-portal.exe
+    uri: https://github.com/federicotdn/kubectl-portal/releases/download/v1.0.1/kubectl-portal_1.0.1_windows_amd64.zip
+    sha256: a4d93bc54defe4bd4fef83d7ae1a905d2e8a36023a09f0aca66e27f5c998f478

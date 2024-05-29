@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: virt
 spec:
-  version: "v1.2.0"
+  version: "v1.2.1"
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v1.2.0/virtctl-darwin-amd64.tar.gz
-    sha256: ef6f25265edbf519670b8ee0f44bd85dddb5cfc5c2595185473f2224a1a4e81b
+    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v1.2.1/virtctl-darwin-amd64.tar.gz
+    sha256: 6a1ec00279443d3437158cc7561e0e9677281955443c2c0a29045904510a12cc
     files:
     - from: "/virtctl/virtctl-darwin-amd64"
       to: "virtctl"
@@ -19,10 +19,22 @@ spec:
     bin: "virtctl"
   - selector:
       matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v1.2.1/virtctl-darwin-arm64.tar.gz
+    sha256: eb6fc2ca2204abf7b85abb18be6aa2e4bc18f1dd7b27e7aa19b50a78a684a58c
+    files:
+    - from: "/virtctl/virtctl-darwin-arm64"
+      to: "virtctl"
+    - from: virtctl/LICENSE
+      to: .
+    bin: "virtctl"
+  - selector:
+      matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v1.2.0/virtctl-linux-amd64.tar.gz
-    sha256: 374d5ae1579e372a2b9ee330a921c8a611576fe9e923963943e23aae0138581f
+    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v1.2.1/virtctl-linux-amd64.tar.gz
+    sha256: bbfbbb0690a8ea2617d20be2a06a380a6a0dfff9086fed14f235f1925e488e04
     files:
     - from: "/virtctl/virtctl-linux-amd64"
       to: "virtctl"
@@ -31,10 +43,22 @@ spec:
     bin: "virtctl"
   - selector:
       matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v1.2.1/virtctl-linux-arm64.tar.gz
+    sha256: cfcf6de584d7bda3cd9dd731e5803e4ca01033e227d83825fec4640cb3a41469
+    files:
+    - from: "/virtctl/virtctl-linux-arm64"
+      to: "virtctl"
+    - from: virtctl/LICENSE
+      to: .
+    bin: "virtctl"
+  - selector:
+      matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v1.2.0/virtctl-windows-amd64.exe.tar.gz
-    sha256: c57948a12aa4e1587e935a3eddf514e4a91d70a8537692f4fb1905c6c72a33a3
+    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v1.2.1/virtctl-windows-amd64.exe.tar.gz
+    sha256: 5c92d847522ab427d21bd2c338757a0ab81c0d6a677b553e9501c4a63a1f8528
     files:
     - from: "/virtctl/virtctl-windows-amd64.exe"
       to: "virtctl.exe"
@@ -49,7 +73,7 @@ spec:
 
     See
 
-      https://kubevirt.io/user-guide/docs/latest/using-virtual-machines/graphical-and-console-access.html
+      https://kubevirt.io/user-guide/virtual_machines/accessing_virtual_machines/#graphical-and-serial-console-access
 
     for a usage example
   description: |
@@ -59,12 +83,12 @@ spec:
 
     Kubevirt documentation:
       Installation:
-        https://kubevirt.io/user-guide/docs/latest/administration/intro.html
+        https://kubevirt.io/user-guide/operations/installation/
       User Guide:
-        https://kubevirt.io/user-guide/docs/latest/welcome/index.html
+        https://kubevirt.io/user-guide/
       Minikube Quickstart:
         https://kubevirt.io/quickstart_minikube/
       Virtctl usage examples:
-        https://kubevirt.io/user-guide/docs/latest/using-virtual-machines/graphical-and-console-access.html
-        https://kubevirt.io/user-guide/docs/latest/using-virtual-machines/expose-service.html
-        https://kubevirt.io/user-guide/docs/latest/using-virtual-machines/virtual-machine-replica-set.html
+        https://kubevirt.io/user-guide/virtual_machines/accessing_virtual_machines/#graphical-and-serial-console-access
+        https://kubevirt.io/user-guide/virtual_machines/service_objects/#expose-virtualmachineinstance-as-a-loadbalancer-service
+        https://kubevirt.io/user-guide/virtual_machines/replicaset/

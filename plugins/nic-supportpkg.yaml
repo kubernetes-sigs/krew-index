@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: nic-supportpkg
+spec:
+  version: v0.1.0
+  platforms:
+    - bin: kubectl-nic-supportpkg
+      uri: https://github.com/nginxinc/nginx-supportpkg-for-k8s/releases/download/v0.1.0/kubectl-nic-supportpkg_v0.1.0_linux_arm64.tar.gz
+      sha256: cd5f43a8d8e23408c18e7f65e14d47150dc71d8c89ec6da2cd28cbaeb7d76b36
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+    - bin: kubectl-nic-supportpkg
+      uri: https://github.com/nginxinc/nginx-supportpkg-for-k8s/releases/download/v0.1.0/kubectl-nic-supportpkg_v0.1.0_linux_amd64.tar.gz
+      sha256: 27ad582a58b84f12c4b3f2ab7944ebc4d340be4860c22bc079b47c03cbb44e50
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - bin: kubectl-nic-supportpkg
+      uri: https://github.com/nginxinc/nginx-supportpkg-for-k8s/releases/download/v0.1.0/kubectl-nic-supportpkg_v0.1.0_darwin_arm64.tar.gz
+      sha256: aa0f7a42f3ece04f3262475aaed19fb9db1e0d6b040010d915aa5fd26bf106b9
+      selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+    - bin: kubectl-nic-supportpkg
+      uri: https://github.com/nginxinc/nginx-supportpkg-for-k8s/releases/download/v0.1.0/kubectl-nic-supportpkg_v0.1.0_darwin_amd64.tar.gz
+      sha256: 18e4ac2363a9bff915fe65ce373f63b6a6bc602232cc12d86306526dac9fd7c6
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+  shortDescription: Collect support packages for NIC
+  homepage: https://github.com/nginxinc/nginx-supportpkg-for-k8s
+  description: |
+    Provides a single command to collect troubleshooting information
+    for Nginx Ingress Controller (NIC).

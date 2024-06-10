@@ -3,53 +3,56 @@ kind: Plugin
 metadata:
   name: cert-manager
 spec:
-  version: v1.14.1
+  version: v2.1.0-alpha.0
   homepage: https://github.com/cert-manager/cert-manager
   shortDescription: Manage cert-manager resources inside your cluster
   description: |
     cert-manager is the easiest way to automatically manage certificates
     in Kubernetes and OpenShift clusters. The kubectl plugin helps with
     managing cert-manager resources e.g. manual renewal of Certificates.
+  caveats: |
+    See "kubectl cert-manager completion kubectl --help" for instructions on how
+    to setup auto-completion for kubectl cert-manager.
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/cert-manager/cert-manager/releases/download/v1.14.1/kubectl-cert_manager-darwin-amd64.tar.gz
-    sha256: c958543f0453938e99114a2a097d42be04f14c4fea7f84e7ac1c212f2161db2d
-    bin: kubectl-cert_manager
+    uri: https://github.com/cert-manager/cmctl/releases/download/v2.1.0-alpha.0/cmctl_darwin_amd64.tar.gz
+    sha256: e645c980d3841a3afc5931a180cd5fe764f9986a7c9826e7d96d3d7091f446c1
+    bin: cmctl
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/cert-manager/cert-manager/releases/download/v1.14.1/kubectl-cert_manager-darwin-arm64.tar.gz
-    sha256: d891fcd5698ab1473fdb8ff6602c6621f66fdfa93660edc81b61cff5887889dd
-    bin: kubectl-cert_manager
+    uri: https://github.com/cert-manager/cmctl/releases/download/v2.1.0-alpha.0/cmctl_darwin_arm64.tar.gz
+    sha256: 4f91b182080ed9946df7e4ee1d4057ba7b95b5c71a968e6177a9af80e28a979b
+    bin: cmctl
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/cert-manager/cert-manager/releases/download/v1.14.1/kubectl-cert_manager-linux-amd64.tar.gz
-    sha256: 84817ac2e562a2b2ab04a5105e5e5a0e53ae1e7338c3c7e174e23cbc320c280f
-    bin: kubectl-cert_manager
+    uri: https://github.com/cert-manager/cmctl/releases/download/v2.1.0-alpha.0/cmctl_linux_amd64.tar.gz
+    sha256: 0d58a879e11bc76fbdc81551f344f004d5991264da05cadfdee0b4762be43446
+    bin: cmctl
   - selector:
       matchLabels:
         os: linux
         arch: arm
-    uri: https://github.com/cert-manager/cert-manager/releases/download/v1.14.1/kubectl-cert_manager-linux-arm.tar.gz
-    sha256: 9372f23c521e71d089884de5a139cff9fd581362cd4e099eafcf323d15c4822f
-    bin: kubectl-cert_manager
+    uri: https://github.com/cert-manager/cmctl/releases/download/v2.1.0-alpha.0/cmctl_linux_arm.tar.gz
+    sha256: 689e929467d329b574d08c0c42a8c657b573f4ee088cfbde3b66680eab21d5c8
+    bin: cmctl
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/cert-manager/cert-manager/releases/download/v1.14.1/kubectl-cert_manager-linux-arm64.tar.gz
-    sha256: d947f6e3ea94f282dae9308874e6c44b3379e7523fa735e29f72550f1cc83c7a
-    bin: kubectl-cert_manager
+    uri: https://github.com/cert-manager/cmctl/releases/download/v2.1.0-alpha.0/cmctl_linux_arm64.tar.gz
+    sha256: 2144d659553ab8a72e3fa6f037c552f659bfef428864d109ad32d4a180fc273e
+    bin: cmctl
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/cert-manager/cert-manager/releases/download/v1.14.1/kubectl-cert_manager-windows-amd64.zip
-    sha256: 22c23a2c331a34b4ba2f5f0f1adbb5cd369d2163b55ed74559b8a2c45f519249
-    bin: kubectl-cert_manager.exe
+    uri: https://github.com/cert-manager/cmctl/releases/download/v2.1.0-alpha.0/cmctl_windows_arm64.tar.gz
+    sha256: d3390e37b2432683c9d3172a308ee00a9374bb4bf46bd9123fb67ba7e9bb7fe2
+    bin: cmctl.exe

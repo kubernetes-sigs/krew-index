@@ -3,15 +3,15 @@ kind: Plugin
 metadata:
   name: datadog
 spec:
-  version: "v1.6.0"
+  version: "v1.7.0"
   shortDescription: Manage the Datadog Operator
   description: |
     The datadog kubectl plugin provides useful utilities to operate datadog-agent components
     via the Datadog Operator and the DatadogAgent CRD.
   homepage: https://github.com/DataDog/datadog-operator
   platforms:
-  - uri: https://github.com/DataDog/datadog-operator/releases/download/v1.6.0/kubectl-datadog_1.6.0_darwin_amd64.zip
-    sha256: "cd3412a1e1ab066994c68c943d81a8e314071bdf5813845d3070bf423fc23af9"
+  - uri: https://github.com/DataDog/datadog-operator/releases/download/v1.7.0/kubectl-datadog_1.7.0_darwin_amd64.zip
+    sha256: "151be34b328638960a957f20931d243e4cfd36bd4c77c30228c8fb7958dab20f"
     bin: kubectl-datadog
     files:
     - from: kubectl-datadog
@@ -22,8 +22,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/DataDog/datadog-operator/releases/download/v1.6.0/kubectl-datadog_1.6.0_linux_amd64.zip
-    sha256: "36ce24a4781f82321949405aa0466f1d6a993f746e4d6edd0e431bd794c183cc"
+  - uri: https://github.com/DataDog/datadog-operator/releases/download/v1.7.0/kubectl-datadog_1.7.0_linux_amd64.zip
+    sha256: "aa515f6df6cf452c5ec5c9b20b2bbd86b05c8b8f8ba391837ef0909429491291"
     bin: kubectl-datadog
     files:
     - from: kubectl-datadog
@@ -34,8 +34,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/DataDog/datadog-operator/releases/download/v1.6.0/kubectl-datadog_1.6.0_windows_amd64.zip
-    sha256: "2ad6c0aabbcd17c001e2c40c60c629130333ef5e7426754489aeca64ea70be0d"
+  - uri: https://github.com/DataDog/datadog-operator/releases/download/v1.7.0/kubectl-datadog_1.7.0_windows_amd64.zip
+    sha256: "9ac2c5f8212c5521dfc656d50bee8de4f129afd0b990e5b4831fe68082cbae5c"
     bin: kubectl-datadog.exe
     files:
     - from: kubectl-datadog.exe
@@ -46,8 +46,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-  - uri: https://github.com/DataDog/datadog-operator/releases/download/v1.6.0/kubectl-datadog_1.6.0_darwin_arm64.zip
-    sha256: "63fb880480250d0010905901b67f2837df2d06c5690494dbae3a0fd308bb42b3"
+  - uri: https://github.com/DataDog/datadog-operator/releases/download/v1.7.0/kubectl-datadog_1.7.0_darwin_arm64.zip
+    sha256: "fb42f962c4688229b651e875facad0dd0a5718f95812a8f47600729b4cb8ca77"
     bin: kubectl-datadog
     files:
     - from: kubectl-datadog
@@ -58,8 +58,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-  - uri: https://github.com/DataDog/datadog-operator/releases/download/v1.6.0/kubectl-datadog_1.6.0_linux_arm64.zip
-    sha256: "2df12c0f94db2af7f303d1793a7e6c0ed63604f9edd896454d5f99f15367285a"
+  - uri: https://github.com/DataDog/datadog-operator/releases/download/v1.7.0/kubectl-datadog_1.7.0_linux_arm64.zip
+    sha256: "30c6f9493f6fa2aec5e9b3521dc6b455bc45d1f9d56e656407ae7543355850da"
     bin: kubectl-datadog
     files:
     - from: kubectl-datadog
@@ -70,8 +70,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-  - uri: https://github.com/DataDog/datadog-operator/releases/download/v1.6.0/kubectl-datadog_1.6.0_windows_arm64.zip
-    sha256: "3d606197a2ff346bed2394e002d34ae32929fe86e0c475fc41350eb3982c4f97"
+  - uri: https://github.com/DataDog/datadog-operator/releases/download/v1.7.0/kubectl-datadog_1.7.0_windows_arm64.zip
+    sha256: "c791dc7b2c2cd9bc58cccfd48b9b2cd03e1ac9f33065dd7f105c94aaabb6d17b"
     bin: kubectl-datadog.exe
     files:
     - from: kubectl-datadog.exe

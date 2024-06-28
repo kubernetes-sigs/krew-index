@@ -1,0 +1,26 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kswitch
+spec:
+  version: v1.0.0
+  homepage: https://github.com/AmitGujar/kLine
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/AmitGujar/kLine/releases/download/v1.0.0/kubectl-kswitch_v1.0.0_linux_amd64.tar.gz
+      sha256: b2e06e31730f9d24eca528ce853c2ee94dc610f06169a6c5ebd3f338fbffce8b
+      bin: kubectl-kswitch
+      files:
+        - from: kubectl-kswitch
+          to: .
+        - from: LICENSE
+          to: .
+  shortDescription: Switch AKS cluster on & off
+  description: |
+    kswitch lets you to turn AKS cluster on & off, Switch between multiple namespaces with use command.
+    Additonally, it also provides the ability to create and delete namespaces.
+  caveats: |
+    kswitch requires az cli to be installed and logged in.

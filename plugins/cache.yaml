@@ -3,54 +3,54 @@ kind: Plugin
 metadata:
   name: cache
 spec:
-  version: v0.1.2
-  homepage: https://github.com/yhlooo/kubectl-cache
-  shortDescription: Get or list Kubernetes resources with local cache
+  version: "v0.2.0"
+  homepage: "https://github.com/yhlooo/kubectl-cache"
+  shortDescription: "Get or list Kubernetes resources with local cache"
   description: |
-    This plugin provides the `get` and `proxy` subcommands, similar to `kubectl get`
-    and `kubectl proxy`. However, getting or listing Kubernetes resources using this
-    plugin is implemented through local cache, which can reduce the pressure on
-    Kubernetes APIServer and etcd and improve response speed.
+    This plugin provides the `get`, `describe` and `proxy` subcommands, similar to
+    `kubectl get/describe/proxy ...`. However, getting or listing Kubernetes
+    resources using this plugin is implemented through local cache, which can reduce
+    the pressure on Kubernetes APIServer and etcd and improve response speed.
   platforms:
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.1.2/kubectl-cache-0.1.2-linux-amd64.tar.gz
-      sha256: 4bee186ac876c0aa47fafe77363711d5b09e8d32159ae38a7f851f34df1c8f5a
+      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.2.0/kubectl-cache-v0.2.0-linux-amd64.tar.gz
+      sha256: 30f0f3be21d1d5cf5854db21b8ff4fc6181f5d540f0e43878498be69a9cdaeb1
       bin: kubectl-cache
     - selector:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.1.2/kubectl-cache-0.1.2-linux-arm64.tar.gz
-      sha256: 03b374ff9d1c2b458b602fab3ca88c4962466c1f40a1227f0547e885aa5b1481
+      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.2.0/kubectl-cache-v0.2.0-linux-arm64.tar.gz
+      sha256: eb8bae7019934262d7d4363b6872ae6dc711e25f6515d0e5463eb0d41ee5187a
       bin: kubectl-cache
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.1.2/kubectl-cache-0.1.2-darwin-amd64.tar.gz
-      sha256: 897879b8b67f314e45af121439912d480114c2c35aa52b283520af9a6485f13e
+      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.2.0/kubectl-cache-v0.2.0-darwin-amd64.tar.gz
+      sha256: a58f42d6d4c4af3ea07768724219114b526a804d97ffc3957d8dcc8e841685fc
       bin: kubectl-cache
     - selector:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.1.2/kubectl-cache-0.1.2-darwin-arm64.tar.gz
-      sha256: e3b6050529edaae3c8d9b7db84e11346abc3647e31e838659fafe4e2f7674da7
+      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.2.0/kubectl-cache-v0.2.0-darwin-arm64.tar.gz
+      sha256: 72227d84827138a29f7de4b90d0351935212f96e946174a186f3898af6dc64ff
       bin: kubectl-cache
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.1.2/kubectl-cache-0.1.2-windows-amd64.tar.gz
-      sha256: 903e8f4c265e3c02563f0c335ecf959b480e4c395f674cd0a4b10629a556a972
+      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.2.0/kubectl-cache-v0.2.0-windows-amd64.tar.gz
+      sha256: 3bd5946dffc3e4c82d58c2237e1414c8cdd644bf0f61cd620aed6d7c0d5aeac9
       bin: kubectl-cache.exe
     - selector:
         matchLabels:
           os: windows
           arch: arm64
-      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.1.2/kubectl-cache-0.1.2-windows-arm64.tar.gz
-      sha256: ab0c643a515be216768437898e399bf978b209fa4b9cc90e8104e1022e28655f
+      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.2.0/kubectl-cache-v0.2.0-windows-arm64.tar.gz
+      sha256: c7f41c8bfae7a5ab622818b46bef4e4fa240dd14256bfb76096a3bb9fffb4bf1
       bin: kubectl-cache.exe

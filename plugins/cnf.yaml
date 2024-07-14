@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: cnf
 spec:
-  version: v0.0.2
+  version: v0.0.3
   homepage: https://github.com/hedgieinsocks/kubectl-cnf
   shortDescription: Switch between k8s configs within a terminal tab
   description: |
@@ -11,7 +11,7 @@ spec:
     It optionally launches a subshell with the chosen KUBECONFIG
     This way you can multitask by dedicating each cluster its own terminal tab
   caveats: |
-    Dependencies: fzf
+    Dependencies: fzf, bat
     Prepare: create ~/.kube/configs directory and put there your kubeconfigs
   platforms:
   - selector:
@@ -20,8 +20,8 @@ spec:
         operator: In
         values:
         - linux
-    uri: https://github.com/hedgieinsocks/kubectl-cnf/archive/refs/tags/0.0.2.tar.gz
-    sha256: 6710d97c8bfbc00ad810ebb11e733d0c7cb5269ebc21228e84d1037e213cb771
+    uri: https://github.com/hedgieinsocks/kubectl-cnf/archive/refs/tags/v0.0.3.tar.gz
+    sha256: f255c5b54eeb328be24404b079a5a5a3943a8d72e5a7d7933d3f8cc8b581f5a2
     files:
     - from: kubectl-cnf-*/kubectl-cnf
       to: .

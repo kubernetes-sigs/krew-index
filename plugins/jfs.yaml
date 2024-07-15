@@ -1,0 +1,60 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: jfs
+spec:
+  homepage: https://juicefs.com
+  shortDescription: Easily debug juicefs issues in kubernetes
+  version: v0.1.2
+  description: |
+    JuiceFS is an open-source, high-performance distributed file system designed for the cloud.
+    This plugin is for debug when using juicefs csi driver. Easily print out pods/pvc/pv which is using JuiceFS and give the brief debug info for users.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/juicedata/kubectl-jfs-plugin/releases/download/v0.1.2/kubectl-jfs-plugin-0.1.2-darwin-arm64.tar.gz
+      sha256: "080608ef8ce8d39f5a280b81d01f80a0ecfb6ed20a9b79282d29659d21849e79"
+      bin: "./kubectl-jfs"
+      files:
+        - from: kubectl-jfs-plugin
+          to: kubectl-jfs
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/juicedata/kubectl-jfs-plugin/releases/download/v0.1.2/kubectl-jfs-plugin-0.1.2-darwin-amd64.tar.gz
+      sha256: "3ae9f8623da0c4d26d8adc6e8e92fe8bec3b3b1a6b72c6ca2330508870b96748"
+      bin: "./kubectl-jfs"
+      files:
+        - from: kubectl-jfs-plugin
+          to: kubectl-jfs
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/juicedata/kubectl-jfs-plugin/releases/download/v0.1.2/kubectl-jfs-plugin-0.1.2-linux-arm64.tar.gz
+      sha256: "beec451cbca8c7bdf281379f2c8abd1b2bc21f5791b42a0d5e2c06c61765d370"
+      bin: "./kubectl-jfs"
+      files:
+        - from: kubectl-jfs-plugin
+          to: kubectl-jfs
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/juicedata/kubectl-jfs-plugin/releases/download/v0.1.2/kubectl-jfs-plugin-0.1.2-linux-amd64.tar.gz
+      sha256: "d0e6790e06a57e967b3a4662cfc5a12c497f33e9194222e0a0cabc850ae5a24d"
+      bin: "./kubectl-jfs"
+      files:
+        - from: kubectl-jfs-plugin
+          to: kubectl-jfs
+        - from: LICENSE
+          to: .

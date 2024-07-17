@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: dpm
+spec:
+  version: "v0.1.0"
+  homepage: https://github.com/bavarianbidi/kubectl-dpm
+  shortDescription: "Manages custom debug profiles for pods"
+  description: |
+    Wraps the custom debug profile subcommand to make it easier 
+    to switch between different debug profiles for pods.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/bavarianbidi/kubectl-dpm/releases/download/v0.1.0/kubectl-dpm_0.1.0_darwin_amd64.tar.gz
+      sha256: 5d5cc0e1c762fb4bcd18428329d199393796a4b070e11511115578fdf9103f88
+      bin: kubectl-dpm
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/bavarianbidi/kubectl-dpm/releases/download/v0.1.0/kubectl-dpm_0.1.0_darwin_arm64.tar.gz
+      sha256: 1e5d3d8ef3ac8d8aa134e7d98041ca1dc245e59f1de8282ec621fe25fcd7622b
+      bin: kubectl-dpm
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/bavarianbidi/kubectl-dpm/releases/download/v0.1.0/kubectl-dpm_0.1.0_linux_amd64.tar.gz
+      sha256: 9260d9261b7ff8591fc6351532c43fa4292d296bb9be30280d575cf0d12537aa
+      bin: kubectl-dpm
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/bavarianbidi/kubectl-dpm/releases/download/v0.1.0/kubectl-dpm_0.1.0_linux_arm64.tar.gz
+      sha256: b35bfc181b63683436ead08ef71165deb705de55d109bbc5480d195ca00498a6
+      bin: kubectl-dpm

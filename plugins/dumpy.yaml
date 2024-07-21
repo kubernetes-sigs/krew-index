@@ -4,18 +4,18 @@ metadata:
   name: dumpy
 spec:
   homepage: https://github.com/larryTheSlap/dumpy
-  shortDescription: Performs tcpdump captures on containers
-  version: v0.1.0
+  shortDescription: Performs tcpdump captures on resources
+  version: v0.2.0
   description: |
-    This plugin make capturing network traffic easy on containers for different kubernetes resources (deployments, replicasets, pods...),
-    it does that by running tcpdump on targeted containers.
+    This plugin make capturing network traffic easy on different kubernetes resources (deployments, pods, nodes...),
+    it does that by running tcpdump directly on targeted resource.
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.1.0/dumpy_Darwin_x86_64.tar.gz
-    sha256: 31078d9a59944f3716342de8316c7c367f6018b367275b890476b2a280179a20
+    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.2.0/dumpy_Darwin_x86_64.tar.gz
+    sha256: 1737191e90c6850d30b506217e4969d43fc83474cf2bf1373de8bc8781635cf3
     bin: kubectl-dumpy
     files:
     - from: kubectl-dumpy
@@ -26,8 +26,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.1.0/dumpy_Darwin_arm64.tar.gz
-    sha256: fd1bac124761f81718b212f087ff4d144fc9b3a524eaa7364e38f1afb01e0f6b
+    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.2.0/dumpy_Darwin_arm64.tar.gz
+    sha256: 0b7292c67aa62144cd8db666f3378330e126b2c154fd3315cf42218ff378af7f
     bin: kubectl-dumpy
     files:
     - from: kubectl-dumpy
@@ -38,8 +38,20 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.1.0/dumpy_Linux_x86_64.tar.gz
-    sha256: 2168bc6be117a2a6720e3f59e2fa0b3d66348ba17c79911c6ea3c4143035890e
+    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.2.0/dumpy_Linux_x86_64.tar.gz
+    sha256: 6d16ed29a6b382020914236ccbadd8608a73ae8bd9aef83526b143cc99116737
+    bin: kubectl-dumpy
+    files:
+    - from: kubectl-dumpy
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.2.0/dumpy_Linux_arm64.tar.gz
+    sha256: 13a74404d51c5c3ef4e2e910bbb28ba857175b7ba86478d43781582d7aab01ec
     bin: kubectl-dumpy
     files:
     - from: kubectl-dumpy
@@ -50,8 +62,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.1.0/dumpy_Windows_x86_64.zip
-    sha256: 30d4271e66f8033acd285e539e0a09e8dbcc2bc239194f6724f389d965d03d24
+    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.2.0/dumpy_Windows_x86_64.zip
+    sha256: efc87d62e28871c7ea783ebb554aedb06d043b0dbc67fabc4ebaca143882aedf
     bin: kubectl-dumpy.exe
     files:
     - from: kubectl-dumpy.exe

@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cautious
+spec:
+  shortDescription: Prevents accidental kubectl commands for contexts
+  homepage: https://github.com/fedeztk/kubectl-cautious
+  description: |
+    Cautiously run kubectl commands, no more accidental deletions!
+    Supports regexes and is configured via a yaml file under ~/.kube
+  version: v0.0.4
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/fedeztk/kubectl-cautious/releases/download/v0.0.4/cautious_linux_amd64.tar.gz
+    sha256: db609567fe023e822ab549c40bdcf999201dba593cc442e7e04b3f8c91ea501b
+    bin: "cautious"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    sha256: db609567fe023e822ab549c40bdcf999201dba593cc442e7e04b3f8c91ea501b
+    uri: https://github.com/fedeztk/kubectl-cautious/releases/download/v0.0.4/cautious_darwin_amd64.tar.gz
+    bin: "cautious"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    sha256: 8c9a202fdba194998d4312b0a154c362b08abbd4f9a91abf947d4e8b4acf7c26
+    uri: https://github.com/fedeztk/kubectl-cautious/releases/download/v0.0.4/cautious_darwin_arm64.tar.gz
+    bin: "cautious"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/fedeztk/kubectl-cautious/releases/download/v0.0.4/cautious_windows_amd64.zip
+    sha256: 7009611ffa1fd9a080ddc5783107f7c1946b13bde17bd4749e8837e04ac327c2
+    bin: "cautious.exe"

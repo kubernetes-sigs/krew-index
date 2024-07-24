@@ -4,11 +4,12 @@ metadata:
   name: jfs
 spec:
   homepage: https://juicefs.com
-  shortDescription: Easily debug juicefs issues in kubernetes
+  shortDescription: Debug JuiceFS issues in Kubernetes
   version: v0.1.2
   description: |
     JuiceFS is an open-source, high-performance distributed file system designed for the cloud.
-    This plugin is for debug when using juicefs csi driver. Easily print out pods/pvc/pv which is using JuiceFS and give the brief debug info for users.
+    This plugin helps debugging issues with the JuiceFS CSI driver.
+    It shows Pods/PVCs/PVs which is using JuiceFS and details for debugging.
   platforms:
     - selector:
         matchLabels:

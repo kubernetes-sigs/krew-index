@@ -3,9 +3,9 @@ kind: Plugin
 metadata:
   name: dup
 spec:
-  version: v0.2.0
+  version: v0.3.1
   homepage: https://github.com/vash/dup
-  shortDescription: Duplicate existing Kubernetes resources
+  shortDescription: Duplicate all existing Kubernetes resources
   description: |
     This plugin is designed for on-the-fly duplication of Kubernetes resources.
     It focuses on providing a convenient way to edit resources before duplication,
@@ -13,38 +13,31 @@ spec:
     This tool can be used for debugging running containers without them crashing,
     and simplifying the administration and general interaction with Kubernetes clusters.
   platforms:
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: amd64
-      uri: https://github.com/vash/dup/releases/download/v0.2.0/dup_v0.2.0_darwin_amd64.tar.gz
-      sha256: 2a8a04b3f4023e87c2a44438ad04c815fb784fe9faa93cb6fedf4dc9d7986803
-      bin: kubectl-dup
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: arm64
-      uri: https://github.com/vash/dup/releases/download/v0.2.0/dup_v0.2.0_darwin_arm64.tar.gz
-      sha256: aafaa38f9f233a65e646addebaa258cec1d0ba0192e33d79a38530be26ed91a9
-      bin: kubectl-dup
-    - selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-      uri: https://github.com/vash/dup/releases/download/v0.2.0/dup_v0.2.0_linux_amd64.tar.gz
-      sha256: 5aba56834cffe134ff2c39bebe5049e5f2d76f18631921d2caaf92c6d0f55fcd
-      bin: kubectl-dup
-    - selector:
-        matchLabels:
-          os: linux
-          arch: arm64
-      uri: https://github.com/vash/dup/releases/download/v0.2.0/dup_v0.2.0_linux_arm64.tar.gz
-      sha256: aaf21feee7c31b58ba1eec8c79ec0eaf00924ac87ffa34e32aaac3c54c4782cf
-      bin: kubectl-dup
-    - selector:
-        matchLabels:
-          os: windows
-          arch: amd64
-      uri: https://github.com/vash/dup/releases/download/v0.2.0/dup_v0.2.0_windows_amd64.tar.gz
-      sha256: ff11b1dd8c771f4fb75e6bfd5f340c50e1813a7b5f60ec3f37a4bd31b9e16f79
-      bin: kubectl-dup.exe
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/vash/dup/releases/download/v0.3.1/dup_v0.3.1_darwin_amd64.tar.gz
+    sha256: f91f3745918859203500a03a9a1ebe7ea5f5deaf93684f1d41434c9937bdbc6b
+    bin: kubectl-dup
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/vash/dup/releases/download/v0.3.1/dup_v0.3.1_darwin_arm64.tar.gz
+    sha256: 6f7d6d4e6f0e35edc61c957eba9daee54c1b5f592a2a5ba307195e0e681469d2
+    bin: kubectl-dup
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/vash/dup/releases/download/v0.3.1/dup_v0.3.1_linux_amd64.tar.gz
+    sha256: 6889417e6c8bc57f630efd790f13ff833226a5ea61a70677688ae2fc2171d6e1
+    bin: kubectl-dup
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/vash/dup/releases/download/v0.3.1/dup_v0.3.1_windows_amd64.zip
+    sha256: 1f8371875d14913fb5a80e14b83000959c33b8f8c4bee40511ad0e9f90870540
+    bin: kubectl-dup.exe

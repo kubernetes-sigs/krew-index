@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: cnf
 spec:
-  version: v0.0.3
+  version: v0.0.4
   homepage: https://github.com/hedgieinsocks/kubectl-cnf
   shortDescription: Switch between k8s configs within a terminal tab
   description: |
@@ -20,8 +20,9 @@ spec:
         operator: In
         values:
         - linux
-    uri: https://github.com/hedgieinsocks/kubectl-cnf/archive/refs/tags/v0.0.3.tar.gz
-    sha256: f255c5b54eeb328be24404b079a5a5a3943a8d72e5a7d7933d3f8cc8b581f5a2
+        - darwin
+    uri: https://github.com/hedgieinsocks/kubectl-cnf/archive/refs/tags/v0.0.4.tar.gz
+    sha256: de893b04a1a5efe2d558b52c7767f72bb9d2f5bbba46ddb0709788c2a82b5d6c
     files:
     - from: kubectl-cnf-*/kubectl-cnf
       to: .

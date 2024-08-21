@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cluster-compare
+spec:
+  version: v0.0.1
+  homepage: https://github.com/openshift/kube-compare
+  shortDescription: Diff cluster resources against manifests.
+  description: |
+    The cluster-compare plugin is capable of performing an intelligent diff between a reference configuration and the specific configuration applied to a cluster.
+    The comparison is capable of suppressing diffs of content which is expected to be user variable, validating required and optional configuration, and ignoring known runtime variable fields.
+    With these capabilities, a cluster administrator, solutions architect, support engineers, and others can validate a cluster’s configuration against a baseline reference configuration.
+
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/openshift/kube-compare/releases/download/v0.0.1/kube-compare_darwin_amd64.tar.gz
+    sha256: 5d0bd1079d70d89c5ab99fca3b10756dfd1b244f089cf75e0e5a9d6b5ddb17d4
+    bin: kubectl-cluster_compare
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/openshift/kube-compare/releases/download/v0.0.1/kube-compare_linux_amd64.tar.gz
+    sha256: 174c6dfc407718deaa9f1316cf2830099dbffbbbbe3dd0ec5fcb141c2972bc72
+    bin: kubectl-cluster_compare
+  - selector:
+      matchLabels:
+        os: linux
+        arch: 386
+    uri: https://github.com/openshift/kube-compare/releases/download/v0.0.1/kube-compare_linux_386.tar.gz
+    sha256: 93aedd977322cd04d002c5512da9472d449ddcd2be3eba10eca5a041bd17cdb2
+    bin: kubectl-cluster_compare
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/openshift/kube-compare/releases/download/v0.0.1/kube-compare_windows_amd64.zip
+    sha256: ef0c6885aebc269e5b3c68b0c1ad86dd581dddcc6f2562d8e7f82311fe7a4f20
+    bin: kubectl-cluster_compare.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: 386
+    uri: https://github.com/openshift/kube-compare/releases/download/v0.0.1/kube-compare_windows_386.zip
+    sha256: 7bbe0f03786b5075ed4a325c86a04494e92cfbeaa9b2a98cb9561165ae2b72c1
+    bin: kubectl-cluster_compare.exe

@@ -1,0 +1,63 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: alfred
+spec:
+  version: "v0.1.0"
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Linux_x86_64.tar.gz
+      sha256: 8dcb8eda64534b6b4d8cbb14e1b333e4e9a7eb61288264ead8f8d8c850d4463b
+      files:
+        - from: "kube-alfred"
+          to: "."
+      bin: "kube-alfred"
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Linux_arm64.tar.gz
+      sha256: 0f61ef40be6479fe89745f85af66c781005c092f9dc0f2ed9a6842a912996bac
+      files:
+        - from: "kube-alfred"
+          to: "."
+      bin: "kube-alfred"
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Darwin_x86_64.tar.gz
+      sha256: f04f9fb09e149012a5f844fc054f5ae7ee66093bb890f1b3916f90e44ed4b4fd
+      files:
+        - from: "kube-alfred"
+          to: "."
+      bin: "kube-alfred"
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Darwin_arm64.tar.gz
+      sha256: 7724cdc8cc1aed237d037be1b4cc9bf858f8df913df5601fc2fdcd832cbe25e4
+      files:
+        - from: "kube-alfred"
+          to: "."
+      bin: "kube-alfred"
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/kemalcanbora/kube-alfred/releases/download/v0.1.0/kube-alfred_Windows_x86_64.zip
+      sha256: 33186710597e53b53742d9f296b49d0d211b94b4eab2dd047b9360d26793bba5
+      files:
+        - from: "kube-alfred.exe"
+          to: "."
+      bin: "kube-alfred.exe"
+  shortDescription: AI-powered Kubernetes assistant
+  description: |
+    Alfred is an AI-powered assistant for Kubernetes. It allows you to ask
+    questions about Kubernetes directly from kubectl, providing intelligent
+    responses using the Anthropic API.
+  homepage: https://github.com/kemalcanbora/kube-alfred

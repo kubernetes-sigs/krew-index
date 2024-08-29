@@ -1,0 +1,50 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: olly
+spec:
+  version: "v1.0.0"
+  homepage: https://github.com/cloudraftio/kubectl-olly
+  shortDescription: "Olly is AI-powered Kubernetes observability assistant"
+  description: |
+    Olly is an AI-powered observability chatbot and kubectl plugin that
+    provides instant expert assistance for Kubernetes observability stacks.
+    It offers knowledge and coding help for tools like Thanos, Prometheus,
+    OpenTelemetry, Grafana, and Grafana Mimir, enhancing your Kubernetes monitoring
+    and troubleshooting capabilities directly from the command line.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/cloudraftio/kubectl-olly/releases/download/v1.0.0/kubectl-olly_v1.0.0_darwin_amd64.tar.gz
+      sha256: 06f2387310fa77ee1650634cc27ea51cd378ae9c1cbbb0dba144d9c9bb7a6f3c
+      bin: kubectl-olly
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/cloudraftio/kubectl-olly/releases/download/v1.0.0/kubectl-olly_v1.0.0_darwin_arm64.tar.gz
+      sha256: 7f881005eb32dd6dd9a8cc9b70d613eadf21f5fdeefbdb893cae0585ba6c12df
+      bin: kubectl-olly
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/cloudraftio/kubectl-olly/releases/download/v1.0.0/kubectl-olly_v1.0.0_linux_amd64.tar.gz
+      sha256: 3267e94c0c490d1f8875031c63bed987c81c49ac09576e0ba020b475b6561532
+      bin: kubectl-olly
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/cloudraftio/kubectl-olly/releases/download/v1.0.0/kubectl-olly_v1.0.0_linux_arm64.tar.gz
+      sha256: 5a5042db8669b4702abc536a1b1e4c5f60f38190b5047349b13d1a550cae1795
+      bin: kubectl-olly
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/cloudraftio/kubectl-olly/releases/download/v1.0.0/kubectl-olly_v1.0.0_windows_amd64.tar.gz
+      sha256: 0033b22c483f2e9e5c31c0e42761f8e9b51003e0fd24333b5f19ca2ed86b4198
+      bin: kubectl-olly.exe

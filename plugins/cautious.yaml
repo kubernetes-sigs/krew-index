@@ -8,33 +8,33 @@ spec:
   description: |
     Cautiously run kubectl commands, no more accidental deletions!
     Supports regexes and is configured via a yaml file under ~/.kube
-  version: v0.0.4
+  version: v0.0.5
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/fedeztk/kubectl-cautious/releases/download/v0.0.4/cautious_linux_amd64.tar.gz
-    sha256: db609567fe023e822ab549c40bdcf999201dba593cc442e7e04b3f8c91ea501b
+    uri: https://github.com/fedeztk/kubectl-cautious/releases/download/v0.0.5/cautious_linux_amd64.tar.gz
+    sha256: e5c4268e0875be242ce9f8085b3b2d7ee95434ff879270b0fceac31d29028c85
     bin: "cautious"
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    sha256: b9da3da96ea59aab110adf87d4b6cc346741a84f5603038544de56736e85ecd5
-    uri: https://github.com/fedeztk/kubectl-cautious/releases/download/v0.0.4/cautious_darwin_amd64.tar.gz
+    uri: https://github.com/fedeztk/kubectl-cautious/releases/download/v0.0.5/cautious_darwin_amd64.tar.gz
+    sha256: 98dece4a63dd36f81ba4c749da99b82e1a580b660ca75bf065633bfe2042a116
     bin: "cautious"
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    sha256: 8c9a202fdba194998d4312b0a154c362b08abbd4f9a91abf947d4e8b4acf7c26
-    uri: https://github.com/fedeztk/kubectl-cautious/releases/download/v0.0.4/cautious_darwin_arm64.tar.gz
+    uri: https://github.com/fedeztk/kubectl-cautious/releases/download/v0.0.5/cautious_darwin_arm64.tar.gz
+    sha256: abec22bc70b2930d79a7b87029af5ef7a07501a02e655040fd25a143f2fbb49f
     bin: "cautious"
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/fedeztk/kubectl-cautious/releases/download/v0.0.4/cautious_windows_amd64.zip
-    sha256: 7009611ffa1fd9a080ddc5783107f7c1946b13bde17bd4749e8837e04ac327c2
+    uri: https://github.com/fedeztk/kubectl-cautious/releases/download/v0.0.5/cautious_windows_amd64.zip
+    sha256: ea52e39b2f66884690ee365bd24750c3eecf9e1695339c386a10db2b6dff2988
     bin: "cautious.exe"

@@ -1,0 +1,27 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: inject-shell
+spec:
+  version: "v0.0.5"
+  homepage: https://github.com/inerplat/kubectl-inject-shell
+  shortDescription: "Injects a BusyBox environment into running Kubernetes containers for debugging."
+  description: |
+    kubectl-inject-shell injects a BusyBox environment into a running Kubernetes container, 
+    enabling debugging and filesystem access, even in shell-less environments like distroless images.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/inerplat/kubectl-inject-shell/releases/download/v0.0.5/kubectl-inject-shell.tar.gz
+    sha256: 9961bf83ab060b96b5b1af1b1cf801b36d3c4bb2d206c0163d472c4f07ccd92c
+    files:
+    - from: "kubectl-inject-shell"
+      to: "inject-shell.bash"
+    - from: "LICENSE"
+      to: "."
+    bin: inject-shell.bash

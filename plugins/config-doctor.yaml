@@ -1,0 +1,41 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: config-doctor
+  shortDescription: Validate and test kubeconfigs 
+  homepage: https://github.com/aptakube/kubectl-config-doctor
+  description: This plugin validates and test different kubeconfigs settings 
+spec:
+  version: v0.3.2
+  shortDescription: Add, update, or remove conditions on Kubernetes nodes
+  homepage: https://github.com/aptakube/kubectl-config-doctor
+  description: 
+  platforms:
+    - bin: ./kubectl-config-doctor.exe
+      uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.2/kubectl-config-doctor-windows-amd64.zip
+      sha256: 7ffbe4fa65dea8db8be07987142c418be7938d1e46c00d87d34a1a9a802110d9
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+    - bin: ./kubectl-config-doctor
+      uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.2/kubectl-config-doctor-linux-amd64.tar.gz
+      sha256: 02003fd3497f356df774a9e63b641d2201c0495c0787cf16b6d101232c5ec551
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - bin: ./kubectl-config-doctor
+      uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.2/kubectl-config-doctor-darwin-amd64.tar.gz
+      sha256: 324751f42993a4149a8d0756e946c2ab04599a0dc902e022fdd9bad0c039ff18
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+    - bin: ./kubectl-config-doctor
+      uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.2/kubectl-config-doctor-darwin-arm64.tar.gz
+      sha256: 62334188b2f586180f998395488cb574a98ce167ce6ed22dc9985f2f565fb879
+      selector:
+        matchLabels:
+          os: darwin
+          arch: arm64

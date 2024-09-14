@@ -1,0 +1,85 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: output
+spec:
+  version: v0.1.4
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/GrigoriyMikhalkin/kubectl-output/releases/download/v0.1.4/output_linux_amd64.tar.gz
+    sha256: 4955f6f3caded3a343bc69929152ec5c7c065d9b08b3c3ec4cf48c67f667c93e
+    files:
+    - from: "./output"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "output"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/GrigoriyMikhalkin/kubectl-output/releases/download/v0.1.4/output_linux_arm64.tar.gz
+    sha256: 140f719a6b3d5a128d69d351976ef0e8fefaccdf6356b6bddb91f465a9b7a314
+    files:
+    - from: "./output"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "output"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/GrigoriyMikhalkin/kubectl-output/releases/download/v0.1.4/output_darwin_amd64.tar.gz
+    sha256: 6f219ea947be5500e1229f92ac6b19b831d53255caa90590432ea1c90342ed74
+    files:
+    - from: "./output"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "output"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/GrigoriyMikhalkin/kubectl-output/releases/download/v0.1.4/output_darwin_arm64.tar.gz
+    sha256: 5e59cab04cf3be3e8a0dcd5ce247d0a2ee48b7783a18a9175799b37be20c647d
+    files:
+    - from: "./output"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "output"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/GrigoriyMikhalkin/kubectl-output/releases/download/v0.1.4/output_windows_amd64.zip
+    sha256: 43167c1872af5aa33059de66f1b2179cc6fc441c34c451a665b8bc4725fdd43a
+    files:
+    - from: "/output.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "output.exe"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/GrigoriyMikhalkin/kubectl-output/releases/download/v0.1.4/output_windows_arm64.zip
+    sha256: 4d0eed5c64eda5bedc7f4bcf3501652dc4feb222ff6a57cc6557316aec787aae
+    files:
+    - from: "/output.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "output.exe"
+  shortDescription: Set custom output format for specific resources/namespaces.
+  homepage: https://github.com/GrigoriyMikhalkin/kubectl-output
+  description: |
+    This plugin allows you to set custom outputs for specific resources/namespaces. 
+    Fo that to work you'll need to use kubectl-output as a wrapper for `kubectl get ...` command.
+    Either by running `kubectl output get ...` or using alias `ko="kubectl output"; ko get ...`.  

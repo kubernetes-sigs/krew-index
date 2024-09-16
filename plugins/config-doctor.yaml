@@ -2,40 +2,37 @@ apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
   name: config-doctor
-  shortDescription: Validate and test kubeconfigs 
-  homepage: https://github.com/aptakube/kubectl-config-doctor
-  description: This plugin validates and test different kubeconfigs settings 
 spec:
-  version: v0.3.3
-  shortDescription: Add, update, or remove conditions on Kubernetes nodes
-  homepage: https://github.com/aptakube/kubectl-config-doctor
-  description: 
+  version: v0.3.4
+  shortDescription: Validate and test kubeconfigs 
+  homepage: https://github.com/aptakube/kubeclt-config-doctor
+  description: This plugin validates and test different kubeconfigs settings 
   platforms:
-    - bin: ./kubectl-config-doctor.exe
-      uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.3/kubectl-config-doctor-windows-amd64.zip
-      sha256: 3a4d594462f88fc4ec3a287a5ef425a88a4a2bf33e2ac7d2c195a1f5d240adaf
-      selector:
-        matchLabels:
-          os: windows
-          arch: amd64
-    - bin: ./kubectl-config-doctor
-      uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.3/kubectl-config-doctor-linux-amd64.tar.gz
-      sha256: f5ad1faef3a1a814336d86fc2615de98eb713c15e749e52b78ff1c9dc936e342
-      selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-    - bin: ./kubectl-config-doctor
-      uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.3/kubectl-config-doctor-darwin-amd64.tar.gz
-      sha256: 62182a4d5b6f9a6eb6c49868478ac4cb45eb70ac2f9e4a598b7252f806816e3b
-      selector:
-        matchLabels:
-          os: darwin
-          arch: amd64
-    - bin: ./kubectl-config-doctor
-      uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.3/kubectl-config-doctor-darwin-arm64.tar.gz
-      sha256: b2cce8179217e8bbf9b88a9b13f9a8a370a169ae714735c60204d13ef88b7a57
-      selector:
-        matchLabels:
-          os: darwin
-          arch: arm64
+  - bin: ./kubectl-config-doctor.exe
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.4/kubectl-config-doctor-windows-amd64.zip
+    sha256: 9965802e1f67478f29fb79af75a9a6b9afdaf2a40ac51c6f53ccbd75da2c3dcc
+  - bin: ./kubectl-config-doctor
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.4/kubectl-config-doctor-linux-amd64.tar.gz
+    sha256: e95a7677f3c610602cedc77c831a416d4140f42b03532252adc126cea328e111
+  - bin: ./kubectl-config-doctor
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.4/kubectl-config-doctor-darwin-amd64.tar.gz
+    sha256: 06617ec27665a4838cc9172b47535d6a7cee66b2c6fe2815b18eb9901728f84a
+  - bin: ./kubectl-config-doctor
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.4/kubectl-config-doctor-darwin-arm64.tar.gz
+    sha256: 3a9213dfbcb7882eb27e7bc9b138ec73a55855f2b67ee1858ed76a78904159f6

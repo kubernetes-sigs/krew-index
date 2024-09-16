@@ -10,50 +10,60 @@ spec:
           os: linux
           arch: amd64
       uri: https://github.com/ranching-farm/kubectl-addon/releases/download/v0.1.0/kubectl-ranching.farm_linux_amd64.zip
-      sha256: d4f6ee38dfe04dcb395cb88ec557de3615ed49bda5a5f44254be418f8989e824
+      sha256: 2b9d0f3b0cea034b146ff0f17b540ad58240357434731df2198a835e6e1aef18
       files:
       - from: kubectl-ranching.farm_linux_amd64
         to: kubectl-ranching_farm
+      - from: LICENSE
+        to: .
       bin: kubectl-ranching_farm
     - selector:
         matchLabels:
           os: linux
           arch: arm64
       uri: https://github.com/ranching-farm/kubectl-addon/releases/download/v0.1.0/kubectl-ranching.farm_linux_arm64.zip
-      sha256: 1c5b47a871b7505536f6b636d34ce6f5ec8d41fe2efdb26098ac40611e463cc4
+      sha256: bc362478bb66ff01e8208b0f35df4394e42dea33f558e428f01f112b73a2092f
       files:
       - from: kubectl-ranching.farm_linux_arm64
         to: kubectl-ranching_farm
+      - from: LICENSE
+        to: .
       bin: kubectl-ranching_farm
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
       uri: https://github.com/ranching-farm/kubectl-addon/releases/download/v0.1.0/kubectl-ranching.farm_darwin_amd64.zip
-      sha256: 4142c18c56141a5eff19d9a53a48f0559700ef86f312fa60c503a32a5cfd7364
+      sha256: 2b9d0f3b0cea034b146ff0f17b540ad58240357434731df2198a835e6e1aef18
       files:
       - from: kubectl-ranching.farm_darwin_amd64
         to: kubectl-ranching_farm
+      - from: LICENSE
+        to: .
       bin: kubectl-ranching_farm
     - selector:
         matchLabels:
           os: darwin
           arch: arm64
       uri: https://github.com/ranching-farm/kubectl-addon/releases/download/v0.1.0/kubectl-ranching.farm_darwin_arm64.zip
-      sha256: 924a8b3cb15f847d05119d45ba333e7e2c4a90bb611aa510d5ff4e3989dd503f
+      sha256: bc362478bb66ff01e8208b0f35df4394e42dea33f558e428f01f112b73a2092f
       files:
       - from: kubectl-ranching.farm_darwin_arm64
         to: kubectl-ranching_farm
+      - from: LICENSE
+        to: .
       bin: kubectl-ranching_farm
     - selector:
         matchLabels:
           os: windows
           arch: amd64
       uri: https://github.com/ranching-farm/kubectl-addon/releases/download/v0.1.0/kubectl-ranching.farm_windows_amd64.exe.zip
-      sha256: e82efa42d24249548951858e08db14c98cfcacd55532d85c4ce8d4c8c89d8d22
+      sha256: 258f8f0c86c3f5aee25a08163b320895f92d56b2c6de4feff20fc71702f1f6cc
       files:
       - from: kubectl-ranching.farm_windows_amd64.exe
         to: kubectl-ranching_farm
+      - from: LICENSE
+        to: .
       bin: kubectl-ranching_farm
   shortDescription: AI-powered Kubernetes assistant
   description: |

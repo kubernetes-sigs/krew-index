@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: inject-shell
 spec:
-  version: "v0.0.5"
+  version: "v0.0.6"
   homepage: https://github.com/inerplat/kubectl-inject-shell
   shortDescription: "Injects a BusyBox environment into running Kubernetes containers for debugging."
   description: |
@@ -17,8 +17,8 @@ spec:
         values:
         - darwin
         - linux
-    uri: https://github.com/inerplat/kubectl-inject-shell/releases/download/v0.0.5/kubectl-inject-shell.tar.gz
-    sha256: 9961bf83ab060b96b5b1af1b1cf801b36d3c4bb2d206c0163d472c4f07ccd92c
+    uri: https://github.com/inerplat/kubectl-inject-shell/releases/download/v0.0.6/kubectl-inject-shell.tar.gz
+    sha256: 9ccfbfd63cd2ffe10b8c71f4e199aea5fa95797d64813b9d9bf13c363530093b
     files:
     - from: "kubectl-inject-shell"
       to: "inject-shell.bash"

@@ -3,13 +3,13 @@ kind: Plugin
 metadata:
   name: crashwatch
 spec:
-  version: "v1.0.3"
+  version: "v1.0.6" 
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/bedirhangull/kubectl-crashwatch/releases/download/v0.1.0/kubectl-crashwatch_linux_amd64.tar.gz
+    uri: https://github.com/bedirhangull/kubectl-crashwatch/releases/download/v1.0.6/kubectl-crashwatch_linux_amd64.tar.gz
     sha256: "b29aa255a7f176284b7ddd07f3195accf3c3aeed567ac20304d674f312ff1e1c"
     files:
     - from: "kubectl-crashwatch"
@@ -22,7 +22,7 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/bedirhangull/kubectl-crashwatch/releases/download/v0.1.0/kubectl-crashwatch_darwin_amd64.tar.gz
+    uri: https://github.com/bedirhangull/kubectl-crashwatch/releases/download/v1.0.6/kubectl-crashwatch_darwin_amd64.tar.gz
     sha256: "2bb7279a12fb5186bf7a06be0528a60ad4e6602f2badf71eed769dc845146af0"
     files:
     - from: "kubectl-crashwatch"
@@ -35,7 +35,7 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/bedirhangull/kubectl-crashwatch/releases/download/v0.1.0/kubectl-crashwatch_windows_amd64.zip
+    uri: https://github.com/bedirhangull/kubectl-crashwatch/releases/download/v1.0.6/kubectl-crashwatch_windows_amd64.zip
     sha256: "2bc757a849d98039a2625ca8ad1e928745c2b27e3516642c4e8a0a0f7926e44b"
     files:
     - from: "kubectl-crashwatch.exe"
@@ -44,7 +44,7 @@ spec:
       to: "."
     bin: "kubectl-crashwatch.exe"
 
-  shortDescription: A kubectl plugin to monitor CrashLoopBackOff pods
+  shortDescription: Monitor CrashLoopBackOff pods
   homepage: https://github.com/bedirhangull/kubectl-crashwatch
   caveats: |
     Usage:
@@ -52,7 +52,9 @@ spec:
 
     For additional options:
       $ kubectl crashwatch --help
-      or visit the documentation at https://github.com/bedirhangull/kubectl-crashwatch/blob/v0.1.0/doc/USAGE.md
+      or visit the documentation at https://github.com/bedirhangull/kubectl-crashwatch/blob/v1.0.6/README.md
 
   description: |
-    Crashwatch is a kubectl plugin designed to help users monitor and log all pods that are in a CrashLoopBackOff state within a Kubernetes cluster. Users can also view these pods in a dashboard for easier monitoring and troubleshooting.
+    Crashwatch is a kubectl plugin designed to help users monitor and log all pods
+    that are in a CrashLoopBackOff state within a Kubernetes cluster. Users can also
+    view these pods in a dashboard for easier monitoring and troubleshooting.

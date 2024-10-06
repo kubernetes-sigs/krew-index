@@ -1,0 +1,31 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kubectl-mssql
+spec:
+  homepage: https://github.com/pmazumda/cloud-native
+  shortDescription: Custom kubectl plugin to interact with MSSQL DB in Kubernetes.
+  version: v0.1.0
+  description: |
+    Custom kubectl plugin that allows you to interact with an 
+	MSSQL server running inside a Kubernetes cluster, create backups, list backups etc.
+  options: |
+    The plugin has a couple of flags available to it which can be used to achieve desired
+	results.
+    See https://github.com/pmazumda/cloud-native for available flags and  usage for each.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/pmazumda/cloud-native/plugins/mssql-backups.zip
+    sha256: 3afd412f36c1b2d655fa2ddf54a58529162d44be645c8819f6305167c4f70d5c
+    bin: kubectl-mssql
+    files:
+    - from: kubectl-*/*
+      to: .
+    - from: kubectl-*/LICENSE
+      to: .

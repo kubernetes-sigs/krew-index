@@ -1,0 +1,66 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cs
+spec:
+  version: v0.1.0
+  homepage: https://github.com/dodevops/kc
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/dodevops/kc/releases/download/v0.1.0/kubectl-cs-darwin-amd64.tar.gz
+      sha256: 2667e155681fd5c433e1d058578ad20715388b71725f0e5691cb2420ede27e44
+      bin: kubectl-cs
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/dodevops/kc/releases/download/v0.1.0/kubectl-cs-darwin-arm64.tar.gz
+      sha256: ec42cc8bfb70be07b905ca6576dfebc13bdfa4dba4343ae31e23afa58e50b243
+      bin: kubectl-cs
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/dodevops/kc/releases/download/v0.1.0/kubectl-cs-windows-amd64.tar.gz
+      sha256: 7f791c32c27960658c9c906a10e628ea28a8f481c19dafa117fbf34529452ac7
+      bin: kubectl-cs
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/dodevops/kc/releases/download/v0.1.0/kubectl-cs-windows-arm64.tar.gz
+      sha256: 1f6050da49c95e209bf459d6b58d3fb7a66e378b530ee924e93b60bb28e5c941
+      bin: kubectl-cs
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/dodevops/kc/releases/download/v0.1.0/kubectl-cs-linux-amd64.tar.gz
+      sha256: 944a5ec7b8b7561abc30a7f27c72a2f4d8b818d826141165fb490a428512abb1
+      bin: kubectl-cs
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/dodevops/kc/releases/download/v0.1.0/kubectl-cs-linux-arm64.tar.gz
+      sha256: 091512aadc099b6483fafd7d29f5482758cbc934acd6c4601f7f8d0deef52203
+      bin: kubectl-cs
+  shortDescription: Quick Kubernetes context switcher
+  description: |
+    Usage:
+      kubectl cs [--only-current-context] [target]
+      Run `kubectl cs` to switch to a Kubernetes context and/or namespace. You can directly specify the context to switch to
+        in the form of `context:namespace`. If you leave either of the two parts empty, it will only change the remaining part.
+      
+      Examples:
+        
+        * `kubectl cs int:` - Switch to the currently active namespace in the `int` context
+        * `kubectl cs :kube-system` - Switch to the namespace `kube-system` in the currently active context
+        * `kubectl cs int:kube-system` - Switch to the namespace `kube-system` in the `int` context
+        
+        If you don't specify anything, `kubectl cs` will present a selection list of all namespaces in all contexts, which can
+        be filtered and selected. If that takes too long, the flag `--only-current-context` can be used, which only enumerates
+        the namespaces of the current context.

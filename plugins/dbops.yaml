@@ -5,7 +5,7 @@ metadata:
 spec:
   homepage: https://github.com/pmazumda/cloud-native/plugins/kubectl-dbops
   shortDescription: Custom kubectl plugin to interact with MSSQL DB in Kubernetes.
-  version: v0.2.0
+  version: v0.2.1
   description: |
     Custom kubectl plugin that allows you to interact with
     MSSQL server running inside a Kubernetes cluster, create backups, list backups etc The plugin has a couple of flags available to it which can be used to achieve desired results.
@@ -17,11 +17,6 @@ spec:
         values:
         - darwin
         - linux
-    uri: https://github.com/pmazumda/cloud-native/releases/download/v0.2.0/kubectl-dbops.tar.gz
-    sha256: 4bc369165d9207640512e8294a19c041edff1dd1c82c8256e2edc6e13b2e5e11
-    bin: dbops.sh
-    files:
-    - from: "kubectl-*/dbops.sh"
-      to: "dbops.sh"
-    - from: "kubectl-*/LICENSE"
-      to: "."
+    uri: https://github.com/pmazumda/cloud-native/releases/download/v0.2.1/kubectl-dbops.tar.gz
+    sha256: 219fdf9dea081649c059603207f3845704d8ed99b5a937f265bd0dd486c16adb
+    bin: kubectl-dbops

@@ -1,0 +1,67 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: modify-release
+spec:
+  version: "v1.0.1-prerelease"
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/ArnaudTA/kubectl-modify-release/releases/download/v1.0.1-prerelease/kubectl-modify-release_v1.0.1-prerelease_darwin_amd64.tar.gz
+    sha256: f528c4ac92391d5b47ab05bc4a0343d9c6e6fb6c3b32fdc3cd9bbdbf2510b0a4
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-modify_release
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/ArnaudTA/kubectl-modify-release/releases/download/v1.0.1-prerelease/kubectl-modify-release_v1.0.1-prerelease_darwin_arm64.tar.gz
+    sha256: e06828a4b56a2e7fcb12ae63d4f8b1e555427f46f097b83d807ab7db05bb4a76
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-modify_release
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/ArnaudTA/kubectl-modify-release/releases/download/v1.0.1-prerelease/kubectl-modify-release_v1.0.1-prerelease_linux_amd64.tar.gz
+    sha256: bd192e8c82ef513c58623be45ceff40bd3f41491604eea2aa09dce6ec17e6d03
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-modify_release
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/ArnaudTA/kubectl-modify-release/releases/download/v1.0.1-prerelease/kubectl-modify-release_v1.0.1-prerelease_linux_arm64.tar.gz
+    sha256: 6711ef8d068be2cd88576640056fadab5f7aa075396ab7106551e001cfc99da7
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-modify_release
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/ArnaudTA/kubectl-modify-release/releases/download/v1.0.1-prerelease/kubectl-modify-release_v1.0.1-prerelease_windows_amd64.tar.gz
+    sha256: 170e98747d393f9f21c31fb713602b2ab610717d9d3d32daa0c76a1690eb0305
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-modify_release.exe
+  shortDescription: modify secret with implicit base64 translations
+  description: |
+    Usage:
+      kubectl modify-release secret-name -n kube-system
+
+      This plugin fetches the given secret manifest from the cluster, decodes 
+      the payload, opens an editor to make changes, and applies the modified 
+      manifest when done.
+  homepage: https://github.com/ArnaudTA/kubectl-modify-release
+

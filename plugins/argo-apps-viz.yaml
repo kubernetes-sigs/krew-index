@@ -3,14 +3,33 @@ kind: Plugin
 metadata:
   name: argo-apps-viz
 spec:
-  version: v0.1.0
+  homepage: https://github.com/syndlex/argo-apps-viz
+  shortDescription: Visualizes ArgoCD for documentation and teaching.
+  description: |
+    Generates visual representations (using go-echarts) to document 
+    and illustrate ArgoCD concepts, such as the 'App of Apps' pattern
+    across multiple clusters and dependency trees, primarily for
+    documentation, learning, and teaching purposes.
+  version: v0.1.2
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.1.0/argo-apps-viz_linux_amd64.tar.gz
-    sha256: f321f594a8bdacdcff5bfef76c8c7f99cd9bc46cd035d962badee70d44489f9e
+    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.1.2/argo-apps-viz_linux_amd64.tar.gz
+    sha256: f0617bd0f6bfff446411b08d69a5628c9c8a1cd53f4169563e4ed0badd2627a1
+    files:
+    - from: "./argo-apps-viz"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "argo-apps-viz"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.1.2/argo-apps-viz_linux_arm64.tar.gz
+    sha256: 018c7edb192fc2fad0f2a8a5cf3344eaf2a92cb0c4161df67a3e0e159107ea2c
     files:
     - from: "./argo-apps-viz"
       to: "."
@@ -21,8 +40,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.1.0/argo-apps-viz_darwin_amd64.tar.gz
-    sha256: c5422a5c1344245e6cb6dc7656143aea1c7b58c7d3b6ce47e348b6b1554ebd97
+    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.1.2/argo-apps-viz_darwin_amd64.tar.gz
+    sha256: d712563872c8406db1007c7b93ecbda206f0473e65a95688e79480f3400abdf2
     files:
     - from: "./argo-apps-viz"
       to: "."
@@ -33,18 +52,11 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.1.0/argo-apps-viz_windows_amd64.zip
-    sha256: ecaedbb3526ea6cff292871b08031a76fba7f7ca863b787de6fd2308ee91fa03
+    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.1.2/argo-apps-viz_windows_amd64.zip
+    sha256: 6b564f8246afddcb3a5c38ea573cfc7bf84a2fe434555fe43e63d1fe7afc30d2
     files:
     - from: "/argo-apps-viz.exe"
       to: "."
     - from: LICENSE
       to: "."
     bin: "argo-apps-viz.exe"
-  homepage: https://github.com/syndlex/argo-apps-viz
-  shortDescription: Visualizes ArgoCD for documentation and teaching.
-  description: |
-    Generates visual representations (using go-echarts) to document 
-    and illustrate ArgoCD concepts, such as the 'App of Apps' pattern
-    across multiple clusters and dependency trees, primarily for
-    documentation, learning, and teaching purposes.

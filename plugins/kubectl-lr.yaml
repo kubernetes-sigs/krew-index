@@ -1,0 +1,35 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: lr
+spec:
+  version: v1.0.0
+  homepage: https://github.com/mfenerich/kubectl-lr
+  shortDescription: "Creates LimitRange resources in Kubernetes"
+  description: |
+    kubectl-limitrange is a kubectl plugin that allows easy creation of
+    LimitRange resources in Kubernetes namespaces with configurable
+    CPU and memory limits.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/mfenerich/kubectl-lr/releases/download/v1.0.0/kubectl-lr-darwin-amd64.tar.gz
+    sha256: 3e7c47e758674ccba81c15eb14dbfb2fa7613fa1f2395ca72dbd09c450019f53
+    bin: kubectl-lr
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/mfenerich/kubectl-lr/releases/download/v1.0.0/kubectl-lr-linux-amd64.tar.gz
+    sha256: 26460079cd751dcafd08c6d009853deffa40d653a0f4086981a48f0bf8d941eb
+    bin: kubectl-lr
+  - selector:
+      matchExpressions:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/mfenerich/kubectl-lr/releases/download/v1.0.0/kubectl-lr-windows-amd64.zip
+    sha256: 80bb1d457f67834348fdc2b98254ecf6186f537a929e087c62d6c306dabe5665
+    bin: kubectl-lr.exe

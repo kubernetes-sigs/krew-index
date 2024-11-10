@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: preflight
 spec:
-  version: v0.108.1
+  version: v0.109.0
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.108.1/preflight_linux_amd64.tar.gz
-    sha256: 6998b8404bb99eade157107cec4884833b25aa3650e9fdf0c0d4f46a9bbee201
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.109.0/preflight_linux_amd64.tar.gz
+    sha256: c3cc2f77735d2f2bc55e35b869b29250fce5efd703e383de56130cddc1369f07
     files:
     - from: preflight
       to: .
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.108.1/preflight_linux_arm64.tar.gz
-    sha256: f7c2ff53a89fa4ff59590692b9ae0788c9f9c780733f7cbe8d2537fda554a4e5
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.109.0/preflight_linux_arm64.tar.gz
+    sha256: acbbd29f1f0ccb50bec766ad102a1699bd1f22307a972c57258c2a8b110081cd
     files:
     - from: preflight
       to: .
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.108.1/preflight_linux_arm.tar.gz
-    sha256: 8f8d548c5d7f2ea5faa5f1361cf8befeb95e78c048b07f99d7e8b373a08b8e05
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.109.0/preflight_linux_arm.tar.gz
+    sha256: 5c8be39237564aaa42ecb1b99df3c81e70db1484f55159f07fc3dbc2fdcae219
     files:
     - from: preflight
       to: .
@@ -45,8 +45,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.108.1/preflight_darwin_amd64.tar.gz
-    sha256: b50ce048f784fa7e787a348d9cf772e3a723ddd3dc2776cdefc08f96431cd062
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.109.0/preflight_darwin_amd64.tar.gz
+    sha256: 63cfa7151e360ccaf49e6beb75d6a550c996441687ce6e619780b0174a378039
     files:
     - from: preflight
       to: .
@@ -57,8 +57,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.108.1/preflight_darwin_arm64.tar.gz
-    sha256: 0c75a04db608fce1dfadd6f0e71bef6cf20fa0812e5cf86aa9e99dc5403a96e9
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.109.0/preflight_darwin_arm64.tar.gz
+    sha256: 157ab90e42c570c0b39996ef1b9c209f95dd1afd4cbaf906b7a8c0829a72ca80
     files:
     - from: preflight
       to: .
@@ -69,8 +69,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.108.1/preflight_windows_amd64.zip
-    sha256: 07d309c46daa3aacf3fad351fdb43d9a71366c6559ead38ea87b14b235160b92
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.109.0/preflight_windows_amd64.zip
+    sha256: 4a324cf910de6cfe658030ac5652b5cdb16e459cb42c4b401c1f5017c31415c0
     files:
     - from: preflight.exe
       to: .

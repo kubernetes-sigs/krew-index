@@ -1,0 +1,43 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  # 'name' must match the filename of the manifest. The name defines how
+  name: snapshot_api_objects
+spec:
+  # 'version' is a valid semantic version string (see semver.org). Note the prefix 'v' is required.
+  version: "v0.0.4"
+  # 'homepage' usually links to the GitHub repository of the plugin
+  homepage: https://github.com/oguzhan-yilmaz/kubectl-snapshot-api-objects
+  # 'shortDescription' explains what the plugin does in only a few words
+  shortDescription: "Snapshot Kubernetes API Objects"
+  description: |
+    Snapshot Kubernetes API Objects and save them as .tar files.
+  caveats: |
+    Requires:
+      - kubectl neat
+      - yq
+
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+        - linux
+    # 'uri' specifies .zip or .tar.gz archive URL of a plugin
+    uri: "https://github.com/oguzhan-yilmaz/kubectl-snapshot-api-objects/archive/v0.0.4.tar.gz"  # https://github.com/achanda/kubectl-restart/archive/v0.0.3.zip
+    # 'sha256' is the sha256sum of the url (archive file) above
+    sha256: a6194b986756e26abeb53a18e9add1e4dde8326bfb6a9dd41cf1b6cdff26ed94
+    
+    # 'files' lists which files should be extracted out from downloaded archive
+    files:
+    - from: "kubectl-snapshot-api-objects-*/snapshot_api_objects"
+      to: "."
+    - from: "kubectl-snapshot-api-objects-*/LICENSE"
+      to: "."
+
+    # 'bin' specifies the path to the the plugin executable among extracted files
+    bin: snapshot_api_objects
+
+    # chmod +x ~/.krew/store/snapshot_api_objects/v0.0.1/source/snapshot-api-objects-script.sh

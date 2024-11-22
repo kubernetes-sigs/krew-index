@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: cluster-compare
 spec:
-  version: v0.5.0
+  version: v0.6.0
   homepage: https://github.com/openshift/kube-compare
   shortDescription: Diff cluster resources against manifests.
   description: |
@@ -15,41 +15,41 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/openshift/kube-compare/releases/download/v0.5.0/kube-compare_darwin_amd64.tar.gz
-      sha256: e8a3b75344137882108e891f1bfcf82083cdee93e578608995f18c2226b47fcf
+      uri: https://github.com/openshift/kube-compare/releases/download/v0.6.0/kube-compare_darwin_amd64.tar.gz
+      sha256: 1582d988b9e70451d03f5aad9f3d2aacf571e46d8710f05ac5dba0b680defe74
       bin: kubectl-cluster_compare
     - selector:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/openshift/kube-compare/releases/download/v0.5.0/kube-compare_darwin_arm64.tar.gz
-      sha256: 41623d23bb65d83a76cfd8a7a5f9405080b7a466575c02ee79ad2cd54bce3113
+      uri: https://github.com/openshift/kube-compare/releases/download/v0.6.0/kube-compare_darwin_arm64.tar.gz
+      sha256: b62fcd6a550bcc3193e3f59ca4d6754005baf70d7d72e86f7c606cfb3f125a7e
       bin: kubectl-cluster_compare
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/openshift/kube-compare/releases/download/v0.5.0/kube-compare_linux_amd64.tar.gz
-      sha256: 43711c543211a5125a2ad4638c4a732f750cfe8dfb6fd6c7cda23415c1c201bf
+      uri: https://github.com/openshift/kube-compare/releases/download/v0.6.0/kube-compare_linux_amd64.tar.gz
+      sha256: 8cd799caf93c623f485d15113569b1b4f93ae6441635fe860530c07ab4c5cdd2
       bin: kubectl-cluster_compare
     - selector:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/openshift/kube-compare/releases/download/v0.5.0/kube-compare_linux_arm64.tar.gz
-      sha256: 5029ef7c6b45f77c9fa074b748af2e7100ffcb50d9d03b336f8e381e1b56b1cb
+      uri: https://github.com/openshift/kube-compare/releases/download/v0.6.0/kube-compare_linux_arm64.tar.gz
+      sha256: e16ca3e68805212fe3689c04bf60133f7f17c8b35d25a29d63f429615df667bd
       bin: kubectl-cluster_compare
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/openshift/kube-compare/releases/download/v0.5.0/kube-compare_windows_amd64.zip
-      sha256: 0c4154df0620d3cbfc28c6fff3e4403316b97d1a489473b080da5513415af98e
+      uri: https://github.com/openshift/kube-compare/releases/download/v0.6.0/kube-compare_windows_amd64.zip
+      sha256: 895c8c4d203ec6e3c715f9ae26edb48c39914f48826d5b60f4f5b95ad356c8cc
       bin: kubectl-cluster_compare.exe
     - selector:
         matchLabels:
           os: windows
           arch: arm64
-      uri: https://github.com/openshift/kube-compare/releases/download/v0.5.0/kube-compare_windows_arm64.zip
-      sha256: 32fd5872a9f204bf73c6c6b60d233c6d5396ea2688f43fdd6f0e3c8150854e4a
+      uri: https://github.com/openshift/kube-compare/releases/download/v0.6.0/kube-compare_windows_arm64.zip
+      sha256: 91bf175a5f7c765278887fb8a32855e042758383ee643058aca4c08d023263e9
       bin: kubectl-cluster_compare.exe

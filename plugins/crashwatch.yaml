@@ -3,57 +3,100 @@ kind: Plugin
 metadata:
   name: crashwatch
 spec:
-  version: "v1.0.6" 
+  version: "v1.1.0"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/bedirhangull/kubectl-crashwatch/releases/download/v1.0.6/kubectl-crashwatch_linux_amd64.tar.gz
-    sha256: "de8490566a1867415f3babccf74ab6f4807e95df6c860e71da9bedb80ed6e965"
+    uri: https://github.com/bedirhangull/kubectl-crashwatch/releases/download/v1.1.0/kubectl-crashwatch_linux_amd64.tar.gz
+    sha256: "71c744b41bdd7027ebd19ee439f2cbda91cfcddaf6da13c3ff280166b9571cda"
     files:
     - from: "kubectl-crashwatch"
       to: "."
     - from: LICENSE
       to: "."
     bin: "kubectl-crashwatch"
-
+  - selector:
+      matchLabels:
+        os: linux
+        arch: "386"
+    uri: https://github.com/bedirhangull/kubectl-crashwatch/releases/download/v1.1.0/kubectl-crashwatch_linux_386.tar.gz
+    sha256: "bb48ec867a83978ae83eef07a91a0ec13983a96dbad3553464313fb8008216fe"
+    files:
+    - from: "kubectl-crashwatch"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-crashwatch"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/bedirhangull/kubectl-crashwatch/releases/download/v1.1.0/kubectl-crashwatch_linux_arm64.tar.gz
+    sha256: "5dd1dcc7a83e92fe6f147687c45bf661a7b1fb31277575abd7eba371dbcda0d9"
+    files:
+    - from: "kubectl-crashwatch"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-crashwatch"
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/bedirhangull/kubectl-crashwatch/releases/download/v1.0.6/kubectl-crashwatch_darwin_amd64.tar.gz
-    sha256: "403934d366ce22833d0c7eed46f4cede9d46e9a24b8268a04ed92f5f196a9114"
+    uri: https://github.com/bedirhangull/kubectl-crashwatch/releases/download/v1.1.0/kubectl-crashwatch_darwin_amd64.tar.gz
+    sha256: "2d766a9779806186069e720a692f00b74939843938e789b409cefaa2e9a97370"
     files:
     - from: "kubectl-crashwatch"
       to: "."
     - from: LICENSE
       to: "."
     bin: "kubectl-crashwatch"
-
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/bedirhangull/kubectl-crashwatch/releases/download/v1.1.0/kubectl-crashwatch_darwin_arm64.tar.gz
+    sha256: "90c1570c374173f65ed72c8ef1bf615c06aa9538f0b899c650f9b9e963537c4f"
+    files:
+    - from: "kubectl-crashwatch"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-crashwatch"
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/bedirhangull/kubectl-crashwatch/releases/download/v1.0.6/kubectl-crashwatch_windows_amd64.zip
-    sha256: "d7977a4f8492c332c951c86515558208acc63fe6a95f3c09eca976f71520f0d4"
+    uri: https://github.com/bedirhangull/kubectl-crashwatch/releases/download/v1.1.0/kubectl-crashwatch_windows_amd64.zip
+    sha256: "da8b545a4168bef24a5fc812c1c71e3cda1fbec3925e7600966167f1ac28117d"
     files:
     - from: "kubectl-crashwatch.exe"
       to: "."
     - from: LICENSE
       to: "."
     bin: "kubectl-crashwatch.exe"
-
+  - selector:
+      matchLabels:
+        os: windows
+        arch: "386"
+    uri: https://github.com/bedirhangull/kubectl-crashwatch/releases/download/v1.1.0/kubectl-crashwatch_windows_386.zip
+    sha256: "0130459a617858eb79674e545884e613d3b606c1737590fe54bcf64888d966f5"
+    files:
+    - from: "kubectl-crashwatch.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-crashwatch.exe"
   shortDescription: Monitor CrashLoopBackOff pods
   homepage: https://github.com/bedirhangull/kubectl-crashwatch
   caveats: |
     Usage:
       $ kubectl crashwatch
-
     For additional options:
       $ kubectl crashwatch --help
-      or visit the documentation at https://github.com/bedirhangull/kubectl-crashwatch/blob/v1.0.6/README.md
-
+      or visit the documentation at https://github.com/bedirhangull/kubectl-crashwatch/blob/v1.1.0/README.md
   description: |
     Crashwatch is a kubectl plugin designed to help users monitor and log all pods
     that are in a CrashLoopBackOff state within a Kubernetes cluster. Users can also

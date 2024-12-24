@@ -1,0 +1,93 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: crd2sample
+spec:
+  version: "v0.0.1"
+  homepage: https://github.com/AGou-ops/kubectl-crd2sample
+  shortDescription: >-
+    Get the sample configuration of the specified crd.
+  description: |+2
+    Get the sample configuration of the specified crd.
+
+    $ kubectl crd2sample tenants.capsule.clastix.io
+    $ kubectl crd2sample tenants.capsule.clastix.io --kubeconfig ./config -o ./tenants-sample.yaml
+
+    For usage or examples, run:
+
+    $ kubectl crd2sample -h
+  caveats: |
+    The plugin requires kubeconfig to access k8s cluster.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/AGou-ops/kubectl-crd2sample/releases/download/v0.0.1/kubectl-crd2sample_darwin_amd64.tar.gz
+      sha256: 0a7b34ede288d02ae7951cb842e1883f82df6c1ade16213712b0b8fe9de39807
+      files:
+        - from: kubectl-crd2sample
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-crd2sample
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/AGou-ops/kubectl-crd2sample/releases/download/v0.0.1/kubectl-crd2sample_darwin_arm64.tar.gz
+      sha256: 55ae6b9c6084c1049f36b45827e109b3f3fc5d074f7b380172a2c58165674ecf
+      files:
+        - from: kubectl-crd2sample
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-crd2sample
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/AGou-ops/kubectl-crd2sample/releases/download/v0.0.1/kubectl-crd2sample_linux_amd64.tar.gz
+      sha256: 731b845c171f2f03cb72b017524ee01cb70fc922f99332a34a665dd96a292ad8
+      files:
+        - from: kubectl-crd2sample
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-crd2sample
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/AGou-ops/kubectl-crd2sample/releases/download/v0.0.1/kubectl-crd2sample_linux_arm64.tar.gz
+      sha256: f1c8e623c814275315df707e46fa9837d41ab8939349ef855cd5cdd39eb30657
+      files:
+        - from: kubectl-crd2sample
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-crd2sample
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/AGou-ops/kubectl-crd2sample/releases/download/v0.0.1/kubectl-crd2sample_windows_amd64.zip
+      sha256: cf7f2ed0679ac683297acc3425ba00eec32e67282dc1e6eb5a310cc641fdf447
+      files:
+        - from: kubectl-crd2sample.exe
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-crd2sample.exe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/AGou-ops/kubectl-crd2sample/releases/download/v0.0.1/kubectl-crd2sample_windows_arm64.zip
+      sha256: cc905e91a202102d71ab44f519d1934947adc963f1661dcb7a8b41c846b5890a
+      files:
+        - from: kubectl-crd2sample.exe
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-crd2sample.exe

@@ -1,0 +1,58 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: validate
+spec:
+  version: v0.0.3
+  homepage: https://github.com/kubernetes-sigs/kubectl-validate
+  shortDescription: Validation of resources for native Kubernetes types and CRDs.
+  description: |
+    kubectl-validate distinguishes itself among other OpenAPI-based validators by
+    to its deep integration with Kubernetes upstream validation. kubectl-validate
+    is written by Kubernetes apiserver authors using the same code as the
+    server-side.
+    This allows kubectl-validate to give the most accurate error messages and
+    support the Kubernetes-specific validations often ignored by other tools.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/kubernetes-sigs/kubectl-validate/releases/download/v0.0.3/kubectl-validate_darwin_amd64.tar.gz
+    sha256: 0242f050b96ccc5bbf7b9bad539384c61a4a69ce39597348700e58eeb5d1a46c
+    bin: kubectl-validate
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/kubernetes-sigs/kubectl-validate/releases/download/v0.0.3/kubectl-validate_darwin_arm64.tar.gz
+    sha256: 5b991eacb4f213acf44881dbca240e829c455a8d76919178081bdeb15c92d457
+    bin: kubectl-validate
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/kubernetes-sigs/kubectl-validate/releases/download/v0.0.3/kubectl-validate_linux_amd64.tar.gz
+    sha256: b5c3c6ebf113a95a4ff80be2aab4e10440139700df75451387c283c532db3297
+    bin: kubectl-validate
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/kubernetes-sigs/kubectl-validate/releases/download/v0.0.3/kubectl-validate_linux_arm64.tar.gz
+    sha256: 04693315aaafbc519110472c3dd977b2bd2effb0ad75eb8e2cd70aa4b765e0a3
+    bin: kubectl-validate
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/kubernetes-sigs/kubectl-validate/releases/download/v0.0.3/kubectl-validate_windows_amd64.tar.gz
+    sha256: 47403d4c97563bc68f3b1fd1eb9023d4aebde1270d72f9159fee84320e6214c5
+    bin: kubectl-validate.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/kubernetes-sigs/kubectl-validate/releases/download/v0.0.3/kubectl-validate_windows_arm64.tar.gz
+    sha256: 3a3d660a3bbef8fb4149fbb566fe1899061d27e425815353beb2551b8c20016a
+    bin: kubectl-validate.exe

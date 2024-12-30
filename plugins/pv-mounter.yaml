@@ -1,0 +1,62 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pv-mounter
+spec:
+  version: v0.7.7
+  shortDescription: Mount PVC locally using SSHFS
+  homepage: https://github.com/fenio/pv-mounter
+  description: |
+    Plugin that allows to mount PVC locally using SSHFS
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/fenio/pv-mounter/releases/download/v0.7.7/pv-mounter_v0.7.7_linux_amd64.tar.gz
+    sha256: 3a2ce1d99ec7182b2120b4fb3b5f7172be1ab0e23efc90707c48600f07b6bd44
+    files:
+    - from: "./pv-mounter"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "pv-mounter"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/fenio/pv-mounter/releases/download/v0.7.7/pv-mounter_v0.7.7_linux_arm64.tar.gz
+    sha256: a794b1c86d179878f09712b252154ff7a5dba8fc9067f41a5213e2caf4225b08
+    files:
+    - from: "./pv-mounter"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "pv-mounter"
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/fenio/pv-mounter/releases/download/v0.7.7/pv-mounter_v0.7.7_darwin_amd64.tar.gz
+    sha256: b0a470b930ac77610206d414dfdf983e7466d0c0b18b274d0023edcf7b966af2
+    files:
+    - from: "./pv-mounter"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "pv-mounter"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/fenio/pv-mounter/releases/download/v0.7.7/pv-mounter_v0.7.7_darwin_arm64.tar.gz
+    sha256: 4276f43e298dc84c55251dda8e4204c237df4784e2caa5173d9f41ae46d81dda
+    files:
+    - from: "./pv-mounter"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "pv-mounter"
+
+

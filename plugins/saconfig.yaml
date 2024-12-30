@@ -1,0 +1,81 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: saconfig
+spec:
+  homepage: https://github.com/larsks/kubectl-saconfig
+  shortDescription: Generate a kubeconfig file for authenticating as a service account
+  version: v0.1.3
+  description: |
+    Request a token using the [TokenRequest] API and generate a kubeconfig file
+    for authenticating as a service account. Outputs the generated
+    configuration to stdout (default) or to a file of your choice (--output).
+
+    [tokenrequest]: https://kubernetes.io/docs/reference/kubernetes-api/authentication-resources/token-request-v1/
+  platforms:
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/larsks/kubectl-saconfig/releases/download/v0.1.3/kubectl-saconfig-darwin-amd64.tar.gz
+      sha256: "d3c1b261a31cf4812c9b41d88891b0cf9b0428915ae1b7e8d165886be9af2b5a"
+      bin: "./kubectl-saconfig"
+      files:
+        - from: kubectl-saconfig
+          to: .
+        - from: LICENSE
+          to: .
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/larsks/kubectl-saconfig/releases/download/v0.1.3/kubectl-saconfig-darwin-arm64.tar.gz
+      sha256: "b193071172fbfdbf760e542c4b20cdf90ddadbd0c9713c9b48c06a8399c77442"
+      bin: "./kubectl-saconfig"
+      files:
+        - from: kubectl-saconfig
+          to: .
+        - from: LICENSE
+          to: .
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/larsks/kubectl-saconfig/releases/download/v0.1.3/kubectl-saconfig-linux-amd64.tar.gz
+      sha256: "3d339dc5fc9a830c4d463b040ea19d975f08ee464640008eda01192bb2c73d2d"
+      bin: "./kubectl-saconfig"
+      files:
+        - from: kubectl-saconfig
+          to: .
+        - from: LICENSE
+          to: .
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm
+      uri: https://github.com/larsks/kubectl-saconfig/releases/download/v0.1.3/kubectl-saconfig-linux-arm.tar.gz
+      sha256: "45443c024cb6aed5a2c2b62cccde4be616796c9c194993bbf910184db1e8fa83"
+      bin: "./kubectl-saconfig"
+      files:
+        - from: kubectl-saconfig
+          to: .
+        - from: LICENSE
+          to: .
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/larsks/kubectl-saconfig/releases/download/v0.1.3/kubectl-saconfig-linux-arm64.tar.gz
+      sha256: "750f5b78dd4da1aabc6362154afa9cf42920e8dc57f43fbe4f1e48a1b399c1ca"
+      bin: "./kubectl-saconfig"
+      files:
+        - from: kubectl-saconfig
+          to: .
+        - from: LICENSE
+          to: .
+

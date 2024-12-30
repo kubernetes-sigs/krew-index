@@ -1,0 +1,44 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: lock
+spec:
+  version: v0.0.4
+  homepage: https://github.com/chaosinthecrd/kube-lock
+  shortDescription: A client-side lock for kubernetes contexts to prevent kubectl misfires.
+  description: |
+    This tool allows you to `lock` and `unlock` contexts to prevent accidentally 
+    issuing destructive commands to the wrong contexts. You can also set `profiles`, 
+    which let you lock the context while keeping certain verb/resource combinations 
+    available. It achieves by acting as a wrapper around `kubectl` and assessing 
+    the command executed against a configuration file (at `~./kube-lock.yaml`).
+  caveats: must alias `kubectl` to kubectl-lock kubectl in `.bashrc`/`.zshrc` (e.g., alias kubectl='kubectl-lock kubectl --')
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/chaosinthecrd/kube-lock/releases/download/v0.0.4/kube-lock_v0.0.4_darwin_amd64.tar.gz
+    sha256: d9e87d41876ea0bbbb33deac37589877c81f17e5dea820c605e6d636a6267e9e
+    bin: kubectl-lock
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/chaosinthecrd/kube-lock/releases/download/v0.0.4/kube-lock_v0.0.4_darwin_arm64.tar.gz
+    sha256: c6498479a52cbfcfb303ea06b9c12fd0e4d05aac2035f505c0db4e8fd54a9e23
+    bin: kubectl-lock
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/chaosinthecrd/kube-lock/releases/download/v0.0.4/kube-lock_v0.0.4_linux_amd64.tar.gz
+    sha256: b8b7c140eff6c983d2d22127ea0617a333bdd88728782647b787e793e95bf346
+    bin: kubectl-lock
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/chaosinthecrd/kube-lock/releases/download/v0.0.4/kube-lock_v0.0.4_windows_amd64.tar.gz
+    sha256: cac8d24f8fe430b59327b98ba0181e2dc0f3a9b6bb8433a29144314501220e20
+    bin: kubectl-lock.exe

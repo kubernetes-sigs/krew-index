@@ -1,0 +1,84 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: image
+spec:
+  version: v1.0.12
+  homepage: https://github.com/pete911/kubectl-image
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/pete911/kubectl-image/releases/download/v1.0.12/kubectl-image_1.0.12_darwin_amd64.tar.gz
+      sha256: 22edb4fb8ad35a6313f44704715404436c508eb632a504bf88d1143f20f1622f
+      bin: kubectl-image
+      files:
+        - from: kubectl-image
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/pete911/kubectl-image/releases/download/v1.0.12/kubectl-image_1.0.12_darwin_arm64.tar.gz
+      sha256: d2a5dc40b85dd1f9808484bcb5a58611ab93c81230fef519294566e48d60b064
+      bin: kubectl-image
+      files:
+        - from: kubectl-image
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/pete911/kubectl-image/releases/download/v1.0.12/kubectl-image_1.0.12_linux_amd64.tar.gz
+      sha256: 4d63db706099afa39fe354b80f2729e4bd3a7fa929856b7f0ddd4acc0138e1bb
+      bin: kubectl-image
+      files:
+        - from: kubectl-image
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/pete911/kubectl-image/releases/download/v1.0.12/kubectl-image_1.0.12_linux_arm64.tar.gz
+      sha256: 715b867710a993b96c00570dfcd6e506a7405e0f845e3c3a97082082475e9425
+      bin: kubectl-image
+      files:
+        - from: kubectl-image
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/pete911/kubectl-image/releases/download/v1.0.12/kubectl-image_1.0.12_windows_amd64.zip
+      sha256: a1e66d7f050931fe9cc799f85c5bd95247166674f7092a5aceb2f09f556fbf60
+      bin: kubectl-image.exe
+      files:
+        - from: kubectl-image.exe
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/pete911/kubectl-image/releases/download/v1.0.12/kubectl-image_1.0.12_windows_arm64.zip
+      sha256: 81b74dd3376239f41b077849d28cb75d53889dfeeed53f6e9e644e977b0976c5
+      bin: kubectl-image.exe
+      files:
+        - from: kubectl-image.exe
+          to: .
+        - from: LICENSE
+          to: .
+  shortDescription: Query container images by namespace/cluster
+  description: |
+    kubectl image is a subcommand to query images in the Kubernetes cluster, their size, id and tag. Output also
+    displays the number of pods (running, failed and restarted) per image.

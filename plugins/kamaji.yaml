@@ -1,0 +1,64 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kamaji
+spec:
+  version: v1.0.0
+  homepage: https://github.com/clastix/kamaji-kubectl-plugin
+  shortDescription: Manage your Kamaji Tenant Control Planes with ease.
+  description: |
+    This plugin allows to perform some actions on the Kamaji resources,
+    such as Tenant Control Planes.
+  caveats: |
+    * All the operations dealing with the Managed Cluster are respecting the kubeconfig flags configured in your terminal.
+      e.g.: if you want to override the Namespace specify -n/--namespace explicitly.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    bin: kubectl-kamaji
+    uri: https://github.com/clastix/kamaji-kubectl-plugin/releases/download/v1.0.0/kubectl-kamaji_Darwin_arm64.tar.gz
+    sha256: e0b7a2b8f5797ac7d0551e30cf039457d3a6277789e2e2dac81827577ffbaa96
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    bin: kubectl-kamaji
+    uri: https://github.com/clastix/kamaji-kubectl-plugin/releases/download/v1.0.0/kubectl-kamaji_Darwin_x86_64.tar.gz
+    sha256: f143aea609383b1db682200c83b578492a71d28fb77ef866f24ac2bc2e8bc4cd
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    bin: kubectl-kamaji
+    uri: https://github.com/clastix/kamaji-kubectl-plugin/releases/download/v1.0.0/kubectl-kamaji_Linux_arm64.tar.gz
+    sha256: 316b60a34b9c2c48f8d6e4ae2f1e1aa64c040a686d8aa5645d9e03d23e711155
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm
+    bin: kubectl-kamaji
+    uri: https://github.com/clastix/kamaji-kubectl-plugin/releases/download/v1.0.0/kubectl-kamaji_Linux_armv6.tar.gz
+    sha256: b74100da4cccc0e7aec02ded6fa7ed0092b112eadb78cf92f22ebcc8501c8517
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    bin: kubectl-kamaji
+    uri: https://github.com/clastix/kamaji-kubectl-plugin/releases/download/v1.0.0/kubectl-kamaji_Linux_x86_64.tar.gz
+    sha256: 11265b3a0f2ef0315dfb25a181999116ea98da8c49d97144b406922a82fea6c4
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    bin: kubectl-kamaji.exe
+    uri: https://github.com/clastix/kamaji-kubectl-plugin/releases/download/v1.0.0/kubectl-kamaji_Windows_arm64.zip
+    sha256: eb3bdf040849e03d9c3d1645575051ee8c9d639b53d2b85e10967a01d2d1d766
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    bin: kubectl-kamaji.exe
+    uri: https://github.com/clastix/kamaji-kubectl-plugin/releases/download/v1.0.0/kubectl-kamaji_Windows_x86_64.zip
+    sha256: dd1ec51c38ae0de46d4e750d4f38658496a4bdb6fd5b6e636e31fcb65032bfcf

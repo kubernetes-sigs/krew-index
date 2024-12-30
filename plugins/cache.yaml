@@ -1,0 +1,56 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cache
+spec:
+  version: "v0.2.0"
+  homepage: "https://github.com/yhlooo/kubectl-cache"
+  shortDescription: "Get or list Kubernetes resources with local cache"
+  description: |
+    This plugin provides the `get`, `describe` and `proxy` subcommands, similar to
+    `kubectl get/describe/proxy ...`. However, getting or listing Kubernetes
+    resources using this plugin is implemented through local cache, which can reduce
+    the pressure on Kubernetes APIServer and etcd and improve response speed.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.2.0/kubectl-cache-v0.2.0-linux-amd64.tar.gz
+      sha256: 30f0f3be21d1d5cf5854db21b8ff4fc6181f5d540f0e43878498be69a9cdaeb1
+      bin: kubectl-cache
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.2.0/kubectl-cache-v0.2.0-linux-arm64.tar.gz
+      sha256: eb8bae7019934262d7d4363b6872ae6dc711e25f6515d0e5463eb0d41ee5187a
+      bin: kubectl-cache
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.2.0/kubectl-cache-v0.2.0-darwin-amd64.tar.gz
+      sha256: a58f42d6d4c4af3ea07768724219114b526a804d97ffc3957d8dcc8e841685fc
+      bin: kubectl-cache
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.2.0/kubectl-cache-v0.2.0-darwin-arm64.tar.gz
+      sha256: 72227d84827138a29f7de4b90d0351935212f96e946174a186f3898af6dc64ff
+      bin: kubectl-cache
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.2.0/kubectl-cache-v0.2.0-windows-amd64.tar.gz
+      sha256: 3bd5946dffc3e4c82d58c2237e1414c8cdd644bf0f61cd620aed6d7c0d5aeac9
+      bin: kubectl-cache.exe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/yhlooo/kubectl-cache/releases/download/v0.2.0/kubectl-cache-v0.2.0-windows-arm64.tar.gz
+      sha256: c7f41c8bfae7a5ab622818b46bef4e4fa240dd14256bfb76096a3bb9fffb4bf1
+      bin: kubectl-cache.exe

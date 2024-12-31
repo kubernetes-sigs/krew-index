@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: envsubst
 spec:
-  version: {{ .TagName }}
+  version: v1.0.3
   homepage: https://github.com/hashmap-kz/kubectl-envsubst
   shortDescription: A strict substitution of env-vars in Kubernetes manifests.
   description: |
@@ -13,33 +13,38 @@ spec:
     Just handles specially two main options from 'kubectl apply': 1) --filename=filename.yaml, 2) --recursive.
     All other options are passed as is.
   platforms:
-  - selector:
-      matchLabels:
-        os: darwin
-        arch: amd64
-    {{addURIAndSha "https://github.com/hashmap-kz/kubectl-envsubst/releases/download/{{ .TagName }}/kubectl-envsubst_{{ .TagName }}_darwin_amd64.tar.gz" .TagName }}
-    bin: kubectl-envsubst
-  - selector:
-      matchLabels:
-        os: darwin
-        arch: arm64
-    {{addURIAndSha "https://github.com/hashmap-kz/kubectl-envsubst/releases/download/{{ .TagName }}/kubectl-envsubst_{{ .TagName }}_darwin_arm64.tar.gz" .TagName }}
-    bin: kubectl-envsubst
-  - selector:
-      matchLabels:
-        os: linux
-        arch: amd64
-    {{addURIAndSha "https://github.com/hashmap-kz/kubectl-envsubst/releases/download/{{ .TagName }}/kubectl-envsubst_{{ .TagName }}_linux_amd64.tar.gz" .TagName }}
-    bin: kubectl-envsubst
-  - selector:
-      matchLabels:
-        os: linux
-        arch: arm64
-    {{addURIAndSha "https://github.com/hashmap-kz/kubectl-envsubst/releases/download/{{ .TagName }}/kubectl-envsubst_{{ .TagName }}_linux_arm64.tar.gz" .TagName }}
-    bin: kubectl-envsubst
-  - selector:
-      matchLabels:
-        os: windows
-        arch: amd64
-    {{addURIAndSha "https://github.com/hashmap-kz/kubectl-envsubst/releases/download/{{ .TagName }}/kubectl-envsubst_{{ .TagName }}_windows_amd64.tar.gz" .TagName }}
-    bin: kubectl-envsubst.exe
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/hashmap-kz/kubectl-envsubst/releases/download/v1.0.3/kubectl-envsubst_1.0.3_darwin_amd64.tar.gz
+      sha256: 03183e57f4d4945e4e8fb416fb6fb37278a082b37d1d1a6b065f8d6e92203083
+      bin: kubectl-envsubst
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/hashmap-kz/kubectl-envsubst/releases/download/v1.0.3/kubectl-envsubst_1.0.3_darwin_arm64.tar.gz
+      sha256: 4c65493169e3ac87e909294ee06e00817889cc89142f62151f8b0a07c9859636
+      bin: kubectl-envsubst
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/hashmap-kz/kubectl-envsubst/releases/download/v1.0.3/kubectl-envsubst_1.0.3_linux_amd64.tar.gz
+      sha256: e6f681001611471467c3782386d0fe3fa71c843cc0a26b4a862ad00519fde1c6
+      bin: kubectl-envsubst
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/hashmap-kz/kubectl-envsubst/releases/download/v1.0.3/kubectl-envsubst_1.0.3_linux_arm64.tar.gz
+      sha256: 0838bf7f920d238dc256766df3a5524d32cca4f0d8b264afbca22651a356a9f0
+      bin: kubectl-envsubst
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/hashmap-kz/kubectl-envsubst/releases/download/v1.0.3/kubectl-envsubst_1.0.3_windows_amd64.tar.gz
+      sha256: 13ded3070349fef0e2ff710f34f8cc70ead2ad178477e8288898d4727a5cd2b4
+      bin: kubectl-envsubst.exe

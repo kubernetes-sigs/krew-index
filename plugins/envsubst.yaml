@@ -1,0 +1,50 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: envsubst
+spec:
+  version: v1.0.5
+  homepage: https://github.com/hashmap-kz/kubectl-envsubst
+  shortDescription: A strict substitution of env-vars in Kubernetes manifests.
+  description: |
+    Expand environment-variables in manifests passed to kubectl, before applying them.
+    Variable expansion is fully predictable and controlled (managed by cli).
+    Supports all other flags passed by kubectl (by just proxying them, without any modification).
+    Just handles specially two main options from 'kubectl apply': 1) --filename=filename.yaml, 2) --recursive.
+    All other options are passed as is.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/hashmap-kz/kubectl-envsubst/releases/download/v1.0.5/kubectl-envsubst_v1.0.5_darwin_amd64.tar.gz
+    sha256: e78b155db42ce6a1bedd87927ada310bc57ff41d2aa09c232ecb21aa4f6ddd4f
+    bin: kubectl-envsubst
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/hashmap-kz/kubectl-envsubst/releases/download/v1.0.5/kubectl-envsubst_v1.0.5_darwin_arm64.tar.gz
+    sha256: c17584015012ae2a951be704ec2eaa019d4c037902d1b6dfa49d510a745bfd5c
+    bin: kubectl-envsubst
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/hashmap-kz/kubectl-envsubst/releases/download/v1.0.5/kubectl-envsubst_v1.0.5_linux_amd64.tar.gz
+    sha256: c6ccf676621df1c31346c72703439e40d8082df96b14dc899ef9a06a2844d702
+    bin: kubectl-envsubst
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/hashmap-kz/kubectl-envsubst/releases/download/v1.0.5/kubectl-envsubst_v1.0.5_linux_arm64.tar.gz
+    sha256: 18dd67d27393c03fd67ad66dabc159facb17219760a02173c579efc9c329628e
+    bin: kubectl-envsubst
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/hashmap-kz/kubectl-envsubst/releases/download/v1.0.5/kubectl-envsubst_v1.0.5_windows_amd64.tar.gz
+    sha256: 48764497a6088d2c3353023821fe806ccfd678f87419135616253b9cea98ae2b
+    bin: kubectl-envsubst.exe

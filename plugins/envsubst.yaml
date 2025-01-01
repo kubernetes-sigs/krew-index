@@ -7,10 +7,11 @@ spec:
   homepage: https://github.com/hashmap-kz/kubectl-envsubst
   shortDescription: A strict substitution of env-vars in Kubernetes manifests.
   description: |
-    Expand environment-variables in manifests passed to kubectl, before applying them.
+    Expand env-vars in manifests passed to kubectl, before applying them.
     Variable expansion is fully predictable and controlled (managed by cli).
-    Supports all other flags passed by kubectl (by just proxying them, without any modification).
-    Just handles specially two main options from 'kubectl apply': 1) --filename=filename.yaml, 2) --recursive.
+    Supports all flags passed by kubectl,
+    by just proxying them, without any modification.
+    Just handles specially two main options --filename and --recursive.
     All other options are passed as is.
   platforms:
     - selector:

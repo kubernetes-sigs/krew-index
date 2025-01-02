@@ -1,0 +1,43 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pvcmount
+spec:
+  version: "v1.0.0"
+  shortDescription: Go binary for mounting persistent volumes.
+  homepage: https://github.com/Stenstromen/kubectl-pvcmount
+  description: |
+    Go binary for temporary mounting of PVCs to a pod. 
+    This is useful for debugging purposes or for copying data from a PVC to another location.
+    The pvc is mounted to /mnt in a pod with a busybox container.
+    Examples:
+    `$ kubectl pvcmount pvc -p pvc-name -n namespace-containing-pvc`
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/Stenstromen/kubectl-pvcmount/releases/download/v1.0.0/kubectl-pvcmount_Darwin_x86_64.tar.gz
+      sha256: 30a280d76193c3d84e69ec83032648461d71e8ff01dd55e2775c64cf6b7ddcd9
+      bin: "./kubectl-pvcmount"
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/Stenstromen/kubectl-pvcmount/releases/download/v1.0.0/kubectl-pvcmount_Darwin_arm64.tar.gz
+      sha256: 0a321e38407cad80316eecf7736b20505970637eddf704ca70b8f90c964c0ed7
+      bin: "./kubectl-pvcmount"
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/Stenstromen/kubectl-pvcmount/releases/download/v1.0.0/kubectl-pvcmount_Linux_x86_64.tar.gz
+      sha256: 906ac87e3fb8b77314b2da6b201886ebaf0619bb8008d5bc7a136f78ed0cfa6f
+      bin: "./kubectl-pvcmount"
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/Stenstromen/kubectl-pvcmount/releases/download/v1.0.0/kubectl-pvcmount_Linux_arm64.tar.gz
+      sha256: 6a0431ef35dfeee699e8e1747524514fc12940de72e095f6cf3d0833df74dfdb
+      bin: "./kubectl-pvcmount"

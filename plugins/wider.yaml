@@ -1,0 +1,30 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: wider
+spec:
+  version: "v0.0.1"
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - windows
+        - darwin
+        - linux
+    uri: https://github.com/boriscosic/wider/releases/download/v0.0.1/v0.0.1.zip
+    sha256: 753d0a7eac6f25e68ec40ba01c86d6bcdeb981a6480c212bfe22b517b52f1385
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-wider
+  shortDescription: >-
+    Get pod and associated node information with one command
+  homepage: https://github.com/boriscosic/wider
+  description: |
+    Get pods and associated node information. Extend the output with custom-columns 
+    by leveraging keys from pod or node specs. 
+    Examples:
+    `$ kubectl wider`
+    `$ kubectl wider -n istio-system -o custom-columns="NAME:.metadata.name,NODE:.node.metadata.name`

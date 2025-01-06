@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: finalize
+spec:
+  version: v0.1.1
+  homepage: https://github.com/teocns/kubectl-finalize
+  shortDescription: Force delete stuck Kubernetes resources
+  description: |
+    A kubectl plugin to force delete Kubernetes resources that are stuck in Terminating state.
+    It removes finalizers and performs a force deletion of the resource.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/teocns/kubectl-finalize/releases/download/v0.1.1/kubectl-finalize-darwin-amd64
+    sha256: b562476da316dd3876b16c33728733f4cd1d47c6dc33a2d14e1ed67199f20b9b
+    bin: kubectl-finalize
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/teocns/kubectl-finalize/releases/download/v0.1.1/kubectl-finalize-darwin-arm64
+    sha256: d140cb320e6ea43e36fa1a9d72e8f7ad74edba411284e53a6b199dc141c1736f
+    bin: kubectl-finalize
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/teocns/kubectl-finalize/releases/download/v0.1.1/kubectl-finalize-linux-amd64
+    sha256: 69974a5b655e71474163fd4d771b9c726c4fe98b7c5ec786981b69109b45898b
+    bin: kubectl-finalize
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/teocns/kubectl-finalize/releases/download/v0.1.1/kubectl-finalize-windows-amd64.exe
+    sha256: 1b547128e08caf4468fbbd63e3392bf81ddbafeba9cace602bc5dea83ed26b05
+    bin: kubectl-finalize.exe 

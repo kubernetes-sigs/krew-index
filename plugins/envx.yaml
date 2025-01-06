@@ -5,11 +5,12 @@ metadata:
 spec:
   version: "v0.2.0"
   homepage: https://github.com/majodev/kubectl-envx
-  shortDescription: "Extract and inject Kubernetes environment variables to local commands"
+  shortDescription: "Run with env vars from Kubernetes resource"
   description: |
-    A kubectl plugin to extract environment variables from Kubernetes resources including
-    those defined in envFrom references (ConfigMaps and Secrets). It can display these
-    variables or use them to run local commands with the extracted environment.
+    A kubectl plugin to extract environment variables from Kubernetes resources
+    including those defined in envFrom references (ConfigMaps and Secrets). It can
+    display these variables or use them to run local commands with the extracted
+    environment.
   platforms:
   - selector:
       matchExpressions:

@@ -20,8 +20,10 @@ spec:
     sha256: f1d71f0a3bdb0eea51649d6f460c3e2058588d6790bc55ae0b6da06a1ca47a4f
     bin: kubectl-finalize-darwin-amd64
     files:
-    - from: "*"
-      to: "."
+    - from: kubectl-finalize-darwin-amd64
+      to: kubectl-finalize
+    - from: LICENSE*
+      to: .
   - selector:
       matchLabels:
         os: darwin
@@ -30,8 +32,10 @@ spec:
     sha256: 47b365de4367720899231223a70ae6f56f523cdd4d397130fe5841164b5351b7
     bin: kubectl-finalize-darwin-arm64
     files:
-    - from: "*"
-      to: "."
+    - from: kubectl-finalize-darwin-arm64
+      to: kubectl-finalize
+    - from: LICENSE*
+      to: .
   - selector:
       matchLabels:
         os: linux
@@ -40,8 +44,10 @@ spec:
     sha256: 179c532704c46d7db792a78b31279b91a0ec167d6ffeaeb6aa902aae92c01655
     bin: kubectl-finalize-linux-amd64
     files:
-    - from: "*"
-      to: "."
+    - from: kubectl-finalize-linux-amd64
+      to: kubectl-finalize
+    - from: LICENSE*
+      to: .
   - selector:
       matchLabels:
         os: windows
@@ -50,5 +56,7 @@ spec:
     sha256: 0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5
     bin: kubectl-finalize-windows-amd64.exe
     files:
-    - from: "*"
-      to: "." 
+    - from: kubectl-finalize-windows-amd64.exe
+      to: kubectl-finalize.exe
+    - from: LICENSE*
+      to: . 

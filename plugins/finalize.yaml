@@ -5,10 +5,12 @@ metadata:
 spec:
   version: v0.1.1
   homepage: https://github.com/teocns/kubectl-finalize
-  shortDescription: Force delete stuck Kubernetes resources
+  shortDescription: Force delete stuck resources
   description: |
-    A kubectl plugin to force delete Kubernetes resources that are stuck in Terminating state.
-    It removes finalizers and performs a force deletion of the resource.
+    This plugin helps remove Kubernetes resources that are stuck in a Terminating
+    state. It safely removes finalizers and performs a force deletion of the
+    resource. The plugin includes safety checks to validate resource state before
+    attempting deletion and supports any resource type including custom resources.
   platforms:
   - selector:
       matchLabels:

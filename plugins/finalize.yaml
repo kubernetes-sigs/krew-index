@@ -18,11 +18,11 @@ spec:
         arch: amd64
     uri: https://github.com/teocns/kubectl-finalize/releases/download/v0.1.1/kubectl-finalize-darwin-amd64.tar.gz
     sha256: 3d0661f6dc1807530093592ec4aac7750cbe4f3187d6b6f95fc3ade5ab57b524
-    bin: kubectl-finalize-darwin-amd64
+    bin: kubectl-finalize
     files:
-    - from: kubectl-finalize-darwin-amd64
+    - from: bin/kubectl-finalize-darwin-amd64
       to: kubectl-finalize
-    - from: LICENSE*
+    - from: LICENSE
       to: .
   - selector:
       matchLabels:
@@ -30,11 +30,11 @@ spec:
         arch: arm64
     uri: https://github.com/teocns/kubectl-finalize/releases/download/v0.1.1/kubectl-finalize-darwin-arm64.tar.gz
     sha256: 3a593af1c2e742dd89945b4a886aee53a39b00e71dde73ebe6da585762d2ac83
-    bin: kubectl-finalize-darwin-arm64
+    bin: kubectl-finalize
     files:
-    - from: kubectl-finalize-darwin-arm64
+    - from: bin/kubectl-finalize-darwin-arm64
       to: kubectl-finalize
-    - from: LICENSE*
+    - from: LICENSE
       to: .
   - selector:
       matchLabels:
@@ -42,11 +42,11 @@ spec:
         arch: amd64
     uri: https://github.com/teocns/kubectl-finalize/releases/download/v0.1.1/kubectl-finalize-linux-amd64.tar.gz
     sha256: 30db042eb5fde9cf84f021511afb085a9e6cff851f186ae03b3dc8cbffde63a6
-    bin: kubectl-finalize-linux-amd64
+    bin: kubectl-finalize
     files:
-    - from: kubectl-finalize-linux-amd64
+    - from: bin/kubectl-finalize-linux-amd64
       to: kubectl-finalize
-    - from: LICENSE*
+    - from: LICENSE
       to: .
   - selector:
       matchLabels:
@@ -54,9 +54,9 @@ spec:
         arch: amd64
     uri: https://github.com/teocns/kubectl-finalize/releases/download/v0.1.1/kubectl-finalize-windows-amd64.tar.gz
     sha256: aa07d5486f915a65bc7691d52403694be234fcbdb34e85921423b7d58ad30529
-    bin: kubectl-finalize-windows-amd64.exe
+    bin: kubectl-finalize
     files:
-    - from: kubectl-finalize-windows-amd64.exe
+    - from: bin/kubectl-finalize-windows-amd64.exe
       to: kubectl-finalize.exe
-    - from: LICENSE*
+    - from: LICENSE
       to: . 

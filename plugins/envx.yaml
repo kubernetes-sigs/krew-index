@@ -1,0 +1,29 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: envx
+spec:
+  version: "v0.2.0"
+  homepage: https://github.com/majodev/kubectl-envx
+  shortDescription: "Run with env vars from Kubernetes resource"
+  description: |
+    A kubectl plugin to extract environment variables from Kubernetes resources
+    including those defined in envFrom references (ConfigMaps and Secrets). It can
+    display these variables or use them to run local commands with the extracted
+    environment.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/majodev/kubectl-envx/releases/download/v0.2.0/kubectl-envx.tar.gz
+    sha256: "fee2b88bba77ff1d3fa00b046513416531aef67898be8f5f4b1159ac5f73e710"
+    files:
+    - from: "kubectl-envx"
+      to: "."
+    - from: "LICENSE"
+      to: "."
+    bin: kubectl-envx

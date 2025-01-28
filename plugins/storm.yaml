@@ -1,0 +1,35 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: storm
+spec:
+  version: v0.0.2-rc3
+  homepage: https://github.com/guilhem/kubectl-storm
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/guilhem/kubectl-storm/releases/download/v0.0.2-rc3/kubectl-storm_v0.0.2-rc3_darwin_amd64.tar.gz
+    sha256: 5bed720bab3f909ced7de2d83e1ef7cbd0ecc5915b25188f8ac0b707c568b561
+    bin: kubectl-storm
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/guilhem/kubectl-storm/releases/download/v0.0.2-rc3/kubectl-storm_v0.0.2-rc3_darwin_arm64.tar.gz
+    sha256: 8f0a189d71df598beb56a7d1aaa42ca274cafa34d99104551ba854f8953cb1c5
+    bin: kubectl-storm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/guilhem/kubectl-storm/releases/download/v0.0.2-rc3/kubectl-storm_v0.0.2-rc3_linux_amd64.tar.gz
+    sha256: 306904e5c3a1180f7bfe1fddd74c0f43b8b7ab9cb59a91685de080138890db7d
+    bin: kubectl-storm
+  shortDescription: Detect update storm
+  description: |
+    Usage:
+      kubectl storm
+      This plugin detect changes on resources.
+      Read more documentation at: https://github.com/guilhem/kubectl-storm

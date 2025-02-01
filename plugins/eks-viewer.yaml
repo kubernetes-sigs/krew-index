@@ -1,0 +1,55 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: eks-viewer
+spec:
+  version: v0.0.1
+  homepage: https://github.com/keidarcy/kubectl-eks-viewer
+  shortDescription: View AWS EKS cluster resources
+  description: |
+    A kubectl plugin that provides a convenient way to view AWS EKS cluster resources.
+    This plugin allows you to quickly inspect various EKS resources like nodegroups,
+    Fargate profiles, addons, and more, directly from your kubectl environment.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.1/kubectl-eks-viewer_v0.0.1_darwin_amd64.tar.gz
+    sha256: 179f2eb3e47aa2b1771cd6c10205c124213636230cfd010a6b905a4c2a148c5a
+    bin: kubectl-eks-viewer
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.1/kubectl-eks-viewer_v0.0.1_darwin_arm64.tar.gz
+    sha256: 4a6c4c6dec934dd45f6824bf5ce0fe2c915b3082dbaeac22e0b28ed031fd1b01
+    bin: kubectl-eks-viewer
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.1/kubectl-eks-viewer_v0.0.1_linux_amd64.tar.gz
+    sha256: 0d6d401063b59bff7b928eb9eb1fa9b695ecb4e62a9b105edb5b7712d3595406
+    bin: kubectl-eks-viewer
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.1/kubectl-eks-viewer_v0.0.1_linux_arm64.tar.gz
+    sha256: d8af45eced01a59aead7070258093ed8d2575548e7379f832c753a993b853663
+    bin: kubectl-eks-viewer
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.1/kubectl-eks-viewer_v0.0.1_windows_amd64.zip
+    sha256: af8a62e1e7195b7609157ff54660d555484033d25be16a16ff99de54568d4d7c
+    bin: kubectl-eks-viewer.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/keidarcy/kubectl-eks-viewer/releases/download/v0.0.1/kubectl-eks-viewer_v0.0.1_windows_arm64.zip
+    sha256: 21d6923207a709102c34d08984002b7f0c6f42c990aac67ace24d7216b089039
+    bin: kubectl-eks-viewer.exe 

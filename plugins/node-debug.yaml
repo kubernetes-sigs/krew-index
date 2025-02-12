@@ -1,0 +1,17 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: node-debug
+spec:
+  version: "{{ .TagName }}"
+  homepage: "https://github.com/tayeh/kubectl-node-debug"
+  shortDescription: "Interactive fzf-based Kubernetes node debugger"
+  description: |
+    Provides a simple CLI to list all Kubernetes nodes and enter a debug shell on a selected node.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      {{addURIAndSha "https://github.com/tayeh/kubectl-node-debug/releases/download/{{ .TagName }}/kubectl-node-debug.tar.gz" .TagName }}
+      bin: "kubectl-node-debug"

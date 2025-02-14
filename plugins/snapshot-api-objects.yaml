@@ -1,0 +1,29 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: snapshot-api-objects
+spec:
+  version: "v0.0.6"
+  homepage: https://github.com/oguzhan-yilmaz/kubectl-snapshot-api-objects
+  shortDescription: "Snapshot Kubernetes API Objects"
+  description: |
+    Snapshot all Kubernetes Objects and save them as yaml files in .tar.gz archive.
+  caveats: |
+    Requires:
+      - kubectl neat
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+        - linux
+    uri: "https://github.com/oguzhan-yilmaz/kubectl-snapshot-api-objects/archive/v0.0.6.tar.gz"  # https://github.com/achanda/kubectl-restart/archive/v0.0.3.zip
+    sha256: 6de572bbbc64378287decbaa54776e593b8a46c082c7dac025b79b86125ea692
+    files:
+    - from: "kubectl-snapshot-api-objects-*/snapshot-api-objects"
+      to: "."
+    - from: "kubectl-snapshot-api-objects-*/LICENSE"
+      to: "."
+    bin: snapshot-api-objects

@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: slowdrain
+spec:
+  version: v0.1.2
+  homepage: https://github.com/cturiel/kubectl-slowdrain
+  shortDescription: Drains a Kubernetes node deleting application pods one by one with a delay
+  description: |
+    This plugin drains a Kubernetes node by removing application pods one by one
+    with a configurable delay between each deletion. This is useful to avoid
+    application downtime when draining a node with a large number of pods.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/cturiel/kubectl-slowdrain/releases/download/v0.1.2/kubectl-slowdrain_v0.1.2_linux_amd64.tar.gz
+    sha256: 0598c9b021705405295cbc810be253234abb3ac90e5d034738471022590cf950
+    bin: kubectl-slowdrain
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/cturiel/kubectl-slowdrain/releases/download/v0.1.2/kubectl-slowdrain_v0.1.2_darwin_arm64.tar.gz
+    sha256: b08945fbd7c7d77d8fa2328c2201eef043988425ac6d909a6fcc540b27c1f720
+    bin: kubectl-slowdrain
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/cturiel/kubectl-slowdrain/releases/download/v0.1.2/kubectl-slowdrain_v0.1.2_darwin_amd64.tar.gz
+    sha256: 7857b0df0ba13c3a080cb5d79b31703dcaa017edf0f74d8b3a1b0ff377a8d9e5
+    bin: kubectl-slowdrain
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/cturiel/kubectl-slowdrain/releases/download/v0.1.2/kubectl-slowdrain_v0.1.2_windows_amd64.zip
+    sha256: 491d58fcbfdce30d9ac4412f617adca0b8a7a2cd49fc1714311262eb1723c4fa
+    bin: kubectl-slowdrain
+  caveats: |
+    Usage:
+      $ kubectl slowdrain <node-name> --delay 30
+
+    For additional options:
+      $ kubectl slowdrain --help
+      or https://github.com/cturiel/kubectl-slowdrain/blob/v0.1.2/doc/USAGE.md

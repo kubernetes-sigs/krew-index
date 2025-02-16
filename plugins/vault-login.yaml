@@ -1,0 +1,33 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: vault-login
+spec:
+  version: v0.0.1
+  homepage: https://github.com/FalcoSuessgott/kubectl-vault-login
+  shortDescription: A kubectl plugin for authenticating to Kubernetes using HashiCorp Vaults Kubernetes Secret Engine
+  description: |
+    By leveraging HashiCorp Vaults Kubernetes Secrets Engine you can create Service Accounts and Service Account tokens 
+    with a tight RBAC and a low TTL - making it incredibly useful for CI/CD Operations, such as kubectl apply commands.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/FalcoSuessgott/kubectl-vault-login/releases/download/v0.0.1/kubectl-vault-login_Darwin_arm64.tar.gz
+    sha256: 09d84acffb5f49343a6adcf8bfbd88d954f98a1425b39a9642c287e5f63b2ab6
+    bin: kubectl-vault-login
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/FalcoSuessgott/kubectl-vault-login/releases/download/v0.0.1/kubectl-vault-login_Darwin_x86_64.tar.gz
+    sha256: a580f276a27c6de6f1a387b481adde6c3f6d5d311592335ceaef7bcb87b3ee56
+    bin: kubectl-vault-login
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/FalcoSuessgott/kubectl-vault-login/releases/download/v0.0.1/kubectl-vault-login_Linux_x86_64.tar.gz
+    sha256: af2bf6ab9d3439858d7594b03c396195cf07bdd236b8d142b4ee2abdcdc54e2f
+    bin: kubectl-vault-login

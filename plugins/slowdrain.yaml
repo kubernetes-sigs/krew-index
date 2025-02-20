@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: slowdrain
 spec:
-  version: v0.1.4
+  version: v0.1.5
   homepage: https://github.com/cturiel/kubectl-slowdrain
   shortDescription: Drains a Kubernetes node deleting application pods one by one with a delay
   description: |
@@ -15,29 +15,29 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/cturiel/kubectl-slowdrain/releases/download/v0.1.4/kubectl-slowdrain_v0.1.4_linux_amd64.tar.gz
-    sha256: 8191d07c0e5e1c6caf050ba93f346dbad7901928b8d73b11958123ed76e85fc5
+    uri: https://github.com/cturiel/kubectl-slowdrain/releases/download/v0.1.5/kubectl-slowdrain_v0.1.5_linux_amd64.tar.gz
+    sha256: e96b3e92a7db3a317f4ec936b7a79b19aa4a7b01fc240d5dc0d640d481f7672e
     bin: kubectl-slowdrain
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/cturiel/kubectl-slowdrain/releases/download/v0.1.4/kubectl-slowdrain_v0.1.4_darwin_amd64.tar.gz
-    sha256: b944cf2a1e7dc24a13d70f37f8c90f299cf31d962cbe888a9bf93f02491fc63f
+    uri: https://github.com/cturiel/kubectl-slowdrain/releases/download/v0.1.5/kubectl-slowdrain_v0.1.5_darwin_amd64.tar.gz
+    sha256: 46497b4432da5c05f28f73cae01bb7403d002546fabceffef8b453c7022f19aa
     bin: kubectl-slowdrain
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/cturiel/kubectl-slowdrain/releases/download/v0.1.4/kubectl-slowdrain_v0.1.4_darwin_arm64.tar.gz
-    sha256: 372764b03a5240edbafc2d08636085bc4fe8b7bb8077e1c26f1dda1bd333dcd6
+    uri: https://github.com/cturiel/kubectl-slowdrain/releases/download/v0.1.5/kubectl-slowdrain_v0.1.5_darwin_arm64.tar.gz
+    sha256: c89359a8c16c5f43d5fcd6dbed5a21fb4202409e979e43f2822d556af3b80bfc
     bin: kubectl-slowdrain
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/cturiel/kubectl-slowdrain/releases/download/v0.1.4/kubectl-slowdrain_v0.1.4_windows_amd64.zip
-    sha256: c4a761ea2d70f51650b7f14f299114aba776b4ac7874ec2cefcd0f572e5ee498
+    uri: https://github.com/cturiel/kubectl-slowdrain/releases/download/v0.1.5/kubectl-slowdrain_v0.1.5_windows_amd64.zip
+    sha256: 75ab886c4a0b5ef8ba2248c08e173356e75a4d28ba8c357fb6b21e9bc386f0ce
     bin: kubectl-slowdrain.exe
   caveats: |
     Usage:
@@ -45,4 +45,4 @@ spec:
 
     For additional options:
       $ kubectl slowdrain --help
-      or https://github.com/cturiel/kubectl-slowdrain/blob/v0.1.4/doc/USAGE.md
+      or https://github.com/cturiel/kubectl-slowdrain/blob/v0.1.5/doc/USAGE.md

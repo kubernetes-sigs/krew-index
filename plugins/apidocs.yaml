@@ -1,0 +1,46 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: apidocs
+spec:
+  version: v1.0.2
+  homepage: https://github.com/hashmap-kz/kubectl-apidocs
+  shortDescription: Research API resources in a tree view format.
+  description: |
+    A tool that displays kubectl API resources in a tree view.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/hashmap-kz/kubectl-apidocs/releases/download/v1.0.2/kubectl-apidocs_v1.0.2_darwin_amd64.tar.gz
+    sha256: 6cf2666dab86c227ed4a0e573c5f4a9db91e8c9fdb4a9a1dd985af40a7fe7fd1
+    bin: kubectl-apidocs
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/hashmap-kz/kubectl-apidocs/releases/download/v1.0.2/kubectl-apidocs_v1.0.2_darwin_arm64.tar.gz
+    sha256: 7f233e57dc871bc8560ac71ed945cd3650fa3c6161f2c627fdc3ad00ac5c6d97
+    bin: kubectl-apidocs
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/hashmap-kz/kubectl-apidocs/releases/download/v1.0.2/kubectl-apidocs_v1.0.2_linux_amd64.tar.gz
+    sha256: c20b18354854e29e793786169c0c7fb64f037fc24c0c8b43a7bd033660849ba5
+    bin: kubectl-apidocs
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/hashmap-kz/kubectl-apidocs/releases/download/v1.0.2/kubectl-apidocs_v1.0.2_linux_arm64.tar.gz
+    sha256: 90251762b319612fc11f4793000a7bb53abfb6d4857e74310a0809f08b85ddaa
+    bin: kubectl-apidocs
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/hashmap-kz/kubectl-apidocs/releases/download/v1.0.2/kubectl-apidocs_v1.0.2_windows_amd64.tar.gz
+    sha256: c0c8163536691565e80ab2c697d32fefb2a3612a959671d210aa52ecaeac330a
+    bin: kubectl-apidocs.exe

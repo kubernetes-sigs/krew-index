@@ -52,7 +52,14 @@ spec:
   - selector:
       matchLabels:
         os: windows
-        arch: amd64
+        arch: arm64
     uri: https://github.com/cert-manager/cmctl/releases/download/v2.1.0/cmctl_windows_arm64.tar.gz
     sha256: 674fb793caf5388147f618f44c04c4d288f5f2bf2bfbda270c043554ff2eabfb
+    bin: cmctl.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/cert-manager/cmctl/releases/download/v2.1.0/cmctl_windows_amd64.tar.gz
+    sha256: 4c80a6afd8a5ad3ab65fc6f39d3ce55a8db5e7836ef4998b105a9d7820dae330
     bin: cmctl.exe

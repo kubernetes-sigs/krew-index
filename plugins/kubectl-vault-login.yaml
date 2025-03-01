@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kubectl-vault-login
+spec:
+  version: v0.1.0
+  homepage: https://github.com/FalcoSuessgott/kubectl-vault-login
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/FalcoSuessgott/kubectl-vault-login/releases/download/v0.1.0/kubectl-vault-login_Darwin_x86_64.tar.gz
+    sha256: 089df992a4d455933e61a5792a6f4f938d4a301df8dd0c93742e8df3db65b9b5
+    bin: kubectl-vault-login
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/FalcoSuessgott/kubectl-vault-login/releases/download/v0.1.0/kubectl-vault-login_Darwin_arm64.tar.gz
+    sha256: 58542336c949123a3ab898cf2c65d16e89e8360333f078f2b138259f8ed7f76f
+    bin: kubectl-vault-login
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/FalcoSuessgott/kubectl-vault-login/releases/download/v0.1.0/kubectl-vault-login_Linux_x86_64.tar.gz
+    sha256: f37cd468e44970ad6821d1b5b7b24aab3fb3ecbbde5b7a92d6a45122333ce9d8
+    bin: kubectl-vault-login
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/FalcoSuessgott/kubectl-vault-login/releases/download/v0.1.0/kubectl-vault-login_Linux_arm64.tar.gz
+    sha256: f0b2a14ee7bbcf3b2a870e36c3fd5e2241e9d2a3e73cbb1305b16a8aaffda1ef
+    bin: kubectl-vault-login
+  shortDescription: Authenticate with Vault Kubernetes Secret Engine
+  description: |
+    By leveraging HashiCorp Vaults Kubernetes Secrets Engine you can create Service Accounts and Service Account tokens
+     with a tight RBAC and a low TTL - making it incredibly useful for CI/CD Operations, such as kubectl apply commands.

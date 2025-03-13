@@ -3,33 +3,31 @@ kind: Plugin
 metadata:
   name: limitrange
 spec:
-  version: v1.0.2
+  version: v1.0.3
   homepage: https://github.com/mfenerich/kubectl-lr
   shortDescription: "Creates limitrange resources in Kubernetes"
   description: |
-    kubectl-limitrange is a kubectl plugin that allows easy creation of
-    LimitRange resources in Kubernetes namespaces with configurable
-    CPU and memory limits.
+    kubectl create-limitrange is a kubectl plugin that extends the standard 'kubectl create' command, allowing easy creation of LimitRange resources in Kubernetes namespaces with configurable CPU and memory limits.
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/mfenerich/kubectl-lr/releases/download/v1.0.2/kubectl-limitrange-darwin-amd64.tar.gz
-    sha256: d01f4e27579e57cc6c66448983a695c788039c900927b7ec9d27fbc1d799cf3d
+    uri: https://github.com/mfenerich/kubectl-lr/releases/download/v1.0.3/kubectl-limitrange-darwin-arm64.tar.gz
+    sha256: 0597e012578fbc08b483fa0cdf73e84bf3e91c807f057f1039b9239397f298b1
     bin: kubectl-limitrange
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/mfenerich/kubectl-lr/releases/download/v1.0.2/kubectl-limitrange-linux-amd64.tar.gz
-    sha256: 614d16cc2ca4d4becd7247da9d40c70114759384d9a10b3820dc8d80b1d2e0db
+    uri: https://github.com/mfenerich/kubectl-lr/releases/download/v1.0.3/kubectl-limitrange-linux-amd64.tar.gz
+    sha256: 97a1792fb9df9ba483dea2c0e82ced8a7740b629c24c912288657563982f22e7
     bin: kubectl-limitrange
   - selector:
       matchExpressions:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/mfenerich/kubectl-lr/releases/download/v1.0.2/kubectl-limitrange-windows-amd64.zip
-    sha256: 0fe51745b27bbe12f81d716a027d6d42d41a0670feb5d5747e741dc0df153968
+    uri: https://github.com/mfenerich/kubectl-lr/releases/download/v1.0.3/kubectl-limitrange-windows-amd64.zip
+    sha256: 78a07428730d9ca66b072ad089ee928f9364c0e87ae97040a383b4cfd4a9a564
     bin: kubectl-limitrange.exe

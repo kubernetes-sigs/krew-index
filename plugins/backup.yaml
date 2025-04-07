@@ -5,19 +5,19 @@ metadata:
 spec:
   version: v0.1.0
   homepage: https://github.com/zak905/kubectl-backup
-  shortDescription: kubectl plugin for backing up resources (like CRDs) to local disk
+  shortDescription: back up K8 resources (like CRDs) to local disk
   description: |
-    kubectl plugin that backs up Kubernetes objects (including CRDs) to the local file system. 
-    Before saving any resource, the plugin does some additional processing to remove:
+    Backs up Kubernetes objects (including CRDs) to the local file system. 
+    Before saving any resource, some additional processing is done to remove:
     - the status stanza if the object has any.
     - the server generated fields from the object metadata. 
     - any field with a null value.
-    The plugin aims to make the saved objects look like the original creation request.
+    The aims is to make the saved objects look like the original creation request.
   caveats: |
-    the plugin does not remove the fields that has a default value (unlike the neat plugin) 
-    because it's not possible to make a distinction between a value set by a creation/update 
-    request and a value set by a controller or a mutating admission webhook.
-    See "kubectl backup --help"
+    The fields that has a default value are not removed (unlike the neat plugin)  
+    because it's not possible to make a distinction between a value set 
+    by a creation/update request and a value set by a controller 
+    or a mutating admission webhook.
   platforms:
   - selector:
       matchLabels:

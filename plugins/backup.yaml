@@ -1,0 +1,64 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: backup
+spec:
+  version: v0.1.0
+  homepage: https://github.com/zak905/kubectl-backup
+  shortDescription: kubectl plugin for backing up resources (like CRDs) to local disk
+  description: |
+    kubectl plugin that backs up Kubernetes objects (including CRDs) to the local file system. 
+    Before saving any resource, the plugin does some additional processing to remove:
+    - the status stanza if the object has any.
+    - the server generated fields from the object metadata. 
+    - any field with a null value.
+    The plugin aims to make the saved objects look like the original creation request.
+  caveats: |
+    the plugin does not remove the fields that has a default value (unlike the neat plugin) 
+    because it's not possible to make a distinction between a value set by a creation/update 
+    request and a value set by a controller or a mutating admission webhook.
+    See "kubectl backup --help"
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/zak905/kubectl-backup/releases/download/v0.1.0/kubectl-backup_darwin_amd64.tar.gz
+    sha256: 9576d0e7a4aa659ed98b74aafd3d26ad81ed4e6a0d939113cea395748c8306fe
+    bin: kubectl-backup
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/zak905/kubectl-backup/releases/download/v0.1.0/kubectl-backup_darwin_arm64.tar.gz
+    sha256: fb8ffd99584f4c531a6f1e16d27c7b9845e5899c620d71734dcc50913af3b37d
+    bin: kubectl-backup
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/zak905/kubectl-backup/releases/download/v0.1.0/kubectl-backup_linux_amd64.tar.gz
+    sha256: 8681e2dc6b09d3b73a8c803fa28178061b11734e21c94aa0be4323d9d73f8b22
+    bin: kubectl-backup
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/zak905/kubectl-backup/releases/download/v0.1.0/kubectl-backup_linux_arm64.tar.gz
+    sha256: cc1133f5e113ac45c88679798b7dc027f2f713d9fc483177d0dc28016fcf2f64
+    bin: kubectl-backup
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/zak905/kubectl-backup/releases/download/v0.1.0/kubectl-backup_windows_amd64.tar.gz
+    sha256: a78eb8828db416a6c987c5389c41460e8ba9318b5653fa6938f86c32dccdcdac
+    bin: kubectl-backup.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/zak905/kubectl-backup/releases/download/v0.1.0/kubectl-backup_windows_arm64.tar.gz
+    sha256: c7dac8668760570c83ea4a456cb3bceb72bf30afd4fa7c2f1cf7986d22cb35bf
+    bin: kubectl-backup.exe
+

@@ -1,0 +1,18 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: mtv
+spec:
+  version: v0.1.8
+  homepage: https://github.com/yaacov/kubectl-mtv
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.8/kubectl-mtv.tar.gz
+    sha256: e737725e2a267c7435811a6d9cb23509588f6085478839843aae35c108e1c290
+    bin: kubectl-mtv
+  shortDescription: Migrate virtualization workloads to KubeVirt
+  description: |
+    This plugin helps users migrate virtualization workloads from oVirt, VMware, OpenStack, and OVA files to KubeVirt on Kubernetes.

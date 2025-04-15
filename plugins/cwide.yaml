@@ -1,0 +1,68 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cwide
+spec:
+  # 'version' is a valid semantic version string (see semver.org). Note the prefix 'v' is required.
+  version: "v0.1.0"
+  # 'homepage' usually links to the GitHub repository of the plugin
+  homepage: https://github.com/reborn1867/kubectl-cwide
+  # 'shortDescription' explains what the plugin does in only a few words
+  shortDescription: "krew plugin for customized wide output of kubectl"
+  description: |
+    kubectl-cwide provide an easy way to automatically store custom column template, you are free to edit, increase, alias the format and even share it with your team members.
+  # 'platforms' specify installation methods for various platforms (os/arch)
+  # See all supported platforms below.
+  platforms:
+  - bin: kubectl-cwide
+    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.1.0/kubectl-cwide_Linux_x86_64.tar.gz
+    sha256: e6bc017e74337fb7c20a538f76a1e7e8d2963bb1a91e2c8c740b948a34916e2b
+    files:
+      - from: LICENSE
+        to: .
+      - from: kubectl-cwide
+        to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-cwide
+    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.1.0/kubectl-cwide_Darwin_x86_64.tar.gz
+    sha256: c4f5d86e53f82c817679af05005fb45153ddf7c65c63ac880ce6407329252d90
+    files:
+      - from: LICENSE
+        to: .
+      - from: kubectl-cwide
+        to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kubectl-cwide
+    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.1.0/kubectl-cwide_Darwin_arm64.tar.gz
+    sha256: 1f13c013a1caa4395544f4e5add39e194e6db67ba274cb6730c4f16aeb77e563
+    files:
+      - from: LICENSE
+        to: .
+      - from: kubectl-cwide
+        to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: kubectl-cwide.exe
+    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.1.0/kubectl-cwide_Windows_x86_64.zip
+    sha256: 29c382085c28685ff6e014e8f2a61126c139b3e1118a59c53673017ac739a560
+    files:
+      - from: LICENSE
+        to: .
+      - from: kubectl-cwide.exe
+        to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  caveats: |
+      Usage:
+        kubectl cwide init
+        kubectl cwide get <custom-resource-type> <resource-name>

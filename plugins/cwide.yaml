@@ -3,16 +3,11 @@ kind: Plugin
 metadata:
   name: cwide
 spec:
-  # 'version' is a valid semantic version string (see semver.org). Note the prefix 'v' is required.
   version: "v0.1.0"
-  # 'homepage' usually links to the GitHub repository of the plugin
   homepage: https://github.com/reborn1867/kubectl-cwide
-  # 'shortDescription' explains what the plugin does in only a few words
-  shortDescription: "krew plugin for customized wide output of kubectl"
+  shortDescription: "Customized wide output of k8s objects"
   description: |
     kubectl-cwide provide an easy way to automatically store custom column template, you are free to edit, increase, alias the format and even share it with your team members.
-  # 'platforms' specify installation methods for various platforms (os/arch)
-  # See all supported platforms below.
   platforms:
   - bin: kubectl-cwide
     uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.1.0/kubectl-cwide_Linux_x86_64.tar.gz

@@ -1,0 +1,64 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ai
+spec:
+  version: v0.0.2
+  homepage: https://github.com/GoogleCloudPlatform/kubectl-ai
+  shortDescription: AI-powered Kubernetes assistant
+  description: |
+    This plugin provides a natural language interface to carry out kubernetes
+    related tasks. The plugin can plan and execute multiple steps given a high
+    level description of a task.
+    It's important to note that this plugin does not replace kubectl. Instead,
+    it makes kubectl accessible to non-kubernetes users and makes kubectl users
+    more productive because now they don't have to remember all the syntax and
+    commands to perform common tasks.
+  caveats: |
+    This plugin uses AI models (LLM) to plan and execute tasks. It supports
+    multiple LLM providers such as Gemini, Azure-OpenAI, Ollama, llamacpp.
+    You can get the API key for the default provider (Gemini) from
+    https://aistudio.google.com/app/apikey.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.2/kubectl-ai_Linux_x86_64.tar.gz
+    sha256: 8c6c895c83b64becd4dd93157386c50daf0b2a32d5551a32f120ee512e76bf49
+    bin: kubectl-ai
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.2/kubectl-ai_Linux_arm64.tar.gz
+    sha256: 1b5f798c2a95f0c3c6145ac63b6853a2635c6d2c160866644aea5938884ae153
+    bin: kubectl-ai
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.2/kubectl-ai_Darwin_x86_64.tar.gz
+    sha256: bdac9fed3369aaf13c580671949a6560750d0bb1decfae4a764dc270e1a03bf5
+    bin: kubectl-ai
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.2/kubectl-ai_Darwin_arm64.tar.gz
+    sha256: 734d95ab98c5059555103b8f7b354f0f12ed185c79a3d9e4562015a7ca00c3f4
+    bin: kubectl-ai
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.2/kubectl-ai_Windows_x86_64.zip
+    sha256: 79f53e1c872d84db0fbb8b64f7c9d2ac3dca2f0468dd168a7fed4d403a8f692a
+    bin: kubectl-ai.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.2/kubectl-ai_Windows_arm64.zip
+    sha256: 6280a2d5ac04e2750c82900a7d6e8c21e3f26118c227d03dad91e14770b842ab
+    bin: kubectl-ai.exe

@@ -5,7 +5,7 @@ metadata:
 spec:
   homepage: https://github.com/dodopizza/kubectl-shovel
   shortDescription: Gather diagnostics for .NET Core applications
-  version: v0.8.0
+  version: v0.9.0
   description: |
     Plugin for gathering diagnostics from running in Kubernetes .NET Core
     applications. It runs the job on the specified pod's node with a mount
@@ -18,8 +18,8 @@ spec:
     docker runtime and /run/containerd for containerd from a host in read-only
     mode
   platforms:
-    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.8.0/kubectl-shovel_Darwin_x86_64.tar.gz
-      sha256: f8b0c39f662a734d96f2ea2f38bb5a2ff2cf9f2eaf9035066a28fc34d12f8b64
+    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.9.0/kubectl-shovel_Darwin_x86_64.tar.gz
+      sha256: a87cc56e00ff643b139e51b2fa5add8f4a326665f1443a5a41615bca44d6e700
       bin: kubectl-shovel
       files:
         - from: kubectl-shovel
@@ -30,8 +30,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.8.0/kubectl-shovel_Darwin_arm64.tar.gz
-      sha256: f6ca1c1c003fc460eb99d56d53acd20130bb78f91d6463a28f223cafddf28207
+    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.9.0/kubectl-shovel_Darwin_arm64.tar.gz
+      sha256: da46b9acb094d57e5047bece0584c68f262648a1e6aa61c3a29667059d5c008c
       bin: kubectl-shovel
       files:
         - from: kubectl-shovel
@@ -42,8 +42,8 @@ spec:
         matchLabels:
           os: darwin
           arch: arm64
-    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.8.0/kubectl-shovel_Linux_x86_64.tar.gz
-      sha256: 3f1d761ae46560529c19463daec23c5c77a7ec352d4e086e2942da11124fff5e
+    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.9.0/kubectl-shovel_Linux_x86_64.tar.gz
+      sha256: 42e985655a35c03d5da0c2140a2086fa36b61422c15205748c9c46e5402e8d3e
       bin: kubectl-shovel
       files:
         - from: kubectl-shovel
@@ -54,8 +54,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.8.0/kubectl-shovel_Linux_arm64.tar.gz
-      sha256: 37253d08d75848fdc09cd10f88a28a0768cebe80a6c3001aa667342e4229a4a7
+    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.9.0/kubectl-shovel_Linux_arm64.tar.gz
+      sha256: b765e3db27f655ff10fe70598f43d6e2f7c820d60c1d7d6cd37d7fa1018fecc0
       bin: kubectl-shovel
       files:
         - from: kubectl-shovel
@@ -66,8 +66,8 @@ spec:
         matchLabels:
           os: linux
           arch: arm64
-    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.8.0/kubectl-shovel_Windows_x86_64.zip
-      sha256: 42088659125b027ea3fb554f290f8902f404aa73c33aa1298f8cae7e3075607f
+    - uri: https://github.com/dodopizza/kubectl-shovel/releases/download/v0.9.0/kubectl-shovel_Windows_x86_64.zip
+      sha256: 42e3330d1d19b6368ff16149eaaea9fdda088b5fd8a59a7eb8f8793ac4f4fbf6
       bin: kubectl-shovel.exe
       files:
         - from: kubectl-shovel.exe

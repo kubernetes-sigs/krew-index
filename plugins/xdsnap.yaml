@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: xdsnap
 spec:
-  version: "v0.2.3"
+  version: "v0.2.5"
   homepage: "https://github.com/markcampv/xdsnap"
   shortDescription: "Capture Envoy xDS snapshots and endpoints from Consul service mesh"
   description: |
@@ -17,19 +17,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/markcampv/xdsnap/releases/download/v0.2.3/xdsnap_0.2.3_linux_amd64.tar.gz
-      sha256: a78f455d96389c4f91acee6e8de68f2cef2659b00d9bf8c6515c3939b2f84a55
-      bin: kubectl-xdsnap
-      files:
-        - from: kubectl-xdsnap
-          to: .
-
-    - selector:
-        matchLabels:
-          os: linux
-          arch: arm64
-      uri: https://github.com/markcampv/xdsnap/releases/download/v0.2.3/xdsnap_0.2.3_linux_arm64.tar.gz
-      sha256: 62bf78749de8b756b5873af4788528cdb44ab93ef201b7fd01f24fcfbdf365f9
+      uri: https://github.com/markcampv/xdsnap/releases/download/v0.2.5/xdsnap_0.2.5_linux_amd64.tar.gz
+      sha256: 494b02c32e5c01378de3cbdf1ed472313d6a4a4e6fe74dc8b7004b700ef9c8a8
       bin: kubectl-xdsnap
       files:
         - from: kubectl-xdsnap
@@ -39,8 +28,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/markcampv/xdsnap/releases/download/v0.2.3/xdsnap_0.2.3_darwin_amd64.tar.gz
-      sha256: 00edae05802007c9958244aa242db1da202afa55ecab8e98aa0a05d1420c782a
+      uri: https://github.com/markcampv/xdsnap/releases/download/v0.2.5/xdsnap_0.2.5_darwin_amd64.tar.gz
+      sha256: 28d5b7f4a38035ece6e0a796dc4423d6ce52ea9c8ddc6603df00ea9afdd45f28
       bin: kubectl-xdsnap
       files:
         - from: kubectl-xdsnap
@@ -50,8 +39,8 @@ spec:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/markcampv/xdsnap/releases/download/v0.2.3/xdsnap_0.2.3_darwin_arm64.tar.gz
-      sha256: 68787bd1840cee31bb76ce60eec55d060976c76f7acc6da85147bce4aac4e96b
+      uri: https://github.com/markcampv/xdsnap/releases/download/v0.2.5/xdsnap_0.2.5_darwin_arm64.tar.gz
+      sha256: cde4823c78a84a9dd63c4444a0e85405ca6877500fbcf097ab701e4a3bfa9b59
       bin: kubectl-xdsnap
       files:
         - from: kubectl-xdsnap
@@ -61,8 +50,8 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/markcampv/xdsnap/releases/download/v0.2.3/xdsnap_0.2.3_windows_amd64.tar.gz
-      sha256: a71a7204484498c01c6251a5a763ecc5dca5f8fc569658ea7a2643b7fe35d749
+      uri: https://github.com/markcampv/xdsnap/releases/download/v0.2.5/xdsnap_0.2.5_windows_amd64.tar.gz
+      sha256: c0d9501a4042b3c188cf58f36ff70848d5e22e6495302efbddb1b5c7fef248a0
       bin: kubectl-xdsnap.exe
       files:
         - from: kubectl-xdsnap.exe

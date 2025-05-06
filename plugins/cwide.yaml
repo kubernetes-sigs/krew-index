@@ -3,61 +3,37 @@ kind: Plugin
 metadata:
   name: cwide
 spec:
-  version: "v0.1.1"
+  version: v0.2.0
   homepage: https://github.com/reborn1867/kubectl-cwide
-  shortDescription: "Customize wide kubectl get output"
-  description: |
-    kubectl-cwide is a Kubernetes plugin that enhances the kubectl command-line tool by providing a customizable wide output format for Kubernetes objects. It allows users to define custom column templates(both jsonpath and go template are supported) to tailor the output to their specific needs. With kubectl-cwide, users can easily modify, extend, or alias the output format and share these configurations with their team members. This makes it a powerful tool for improving the readability and usability of Kubernetes object data in various workflows.
   platforms:
-  - bin: kubectl-cwide
-    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.1.1/kubectl-cwide_Linux_x86_64.tar.gz
-    sha256: 787b0137dd9a100501396331b47735579638a1f911ee1715209c405e304e9bcc
-    files:
-      - from: LICENSE
-        to: .
-      - from: kubectl-cwide
-        to: .
-    selector:
-      matchLabels:
-        os: linux
-        arch: amd64
-  - bin: kubectl-cwide
-    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.1.1/kubectl-cwide_Darwin_x86_64.tar.gz
-    sha256: 6df75398e4820aa594ef24b5a9b71e5fe9b73fb58dcffd4ad869937e23106e9d
-    files:
-      - from: LICENSE
-        to: .
-      - from: kubectl-cwide
-        to: .
-    selector:
+  - selector:
       matchLabels:
         os: darwin
         arch: amd64
-  - bin: kubectl-cwide
-    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.1.1/kubectl-cwide_Darwin_arm64.tar.gz
-    sha256: 9637626be31edcbaaccba6244abc80b301dde680c683c21da4c52f3116de112e
-    files:
-      - from: LICENSE
-        to: .
-      - from: kubectl-cwide
-        to: .
-    selector:
+    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.2.0/kubectl-cwide_Darwin_x86_64.tar.gz
+    sha256: fdd9b16c2313bcc70447e6f950da34265c1dd75558ddb3d4c095fe34f2faad24
+    bin: kubectl-cwide
+  - selector:
       matchLabels:
         os: darwin
         arch: arm64
-  - bin: kubectl-cwide.exe
-    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.1.1/kubectl-cwide_Windows_x86_64.zip
-    sha256: ec1bca026cba555aecca8a131adc2fc83cb81a35da5dc6809da893fa8ef6bdea
-    files:
-      - from: LICENSE
-        to: .
-      - from: kubectl-cwide.exe
-        to: .
-    selector:
+    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.2.0/kubectl-cwide_Darwin_arm64.tar.gz
+    sha256: bb90f054e5efb5ef175e6b0c096dd83c7480bb4cd3389e3939eed5fcf94b9dec
+    bin: kubectl-cwide
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.2.0/kubectl-cwide_Linux_x86_64.tar.gz
+    sha256: bf99503f7e1ddb8d50df58d6d770f17452e7d1485125757f2dc05e989c3080a4
+    bin: kubectl-cwide
+  - selector:
       matchLabels:
         os: windows
         arch: amd64
-  caveats: |
-      Usage:
-        kubectl cwide init
-        kubectl cwide get <custom-resource-type> <resource-name>
+    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.2.0/kubectl-cwide_Windows_x86_64.zip
+    sha256: 73d7492d57186aa9669ad987b3bbc7cbd2e3bcff7bba0b162ca19fe5c4f455a2
+    bin: kubectl-cwide
+  shortDescription: Customize wide kubectl get output
+  description: |
+    kubectl-cwide is a Kubernetes plugin that enhances the kubectl command-line tool by providing a customizable wide output format for Kubernetes objects. It allows users to define custom column templates(both jsonpath and go template are supported) to tailor the output to their specific needs. With kubectl-cwide, users can easily modify, extend, or alias the output format and share these configurations with their team members. This makes it a powerful tool for improving the readability and usability of Kubernetes object data in various workflows.

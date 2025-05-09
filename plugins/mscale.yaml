@@ -1,0 +1,43 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: mscale
+spec:
+  version: v0.0.0
+  shortDescription: Scale resources across multiple namespaces.
+  homepage: https://github.com/Stenstromen/kubectl-mscale
+  description: |
+    A kubectl plugin for scaling resources across multiple namespaces simultaneously.
+    This tool is particularly useful when you need to scale the same resource across different environments or namespaces.
+    Examples:
+    `$ kubectl mscale deployment --replicas=3 -n default,staging,production`
+    `$ kubectl mscale statefulset mysql --replicas=1 -n default,staging,production`
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/Stenstromen/kubectl-mscale/releases/download/v0.0.0/kubectl-mscale_Darwin_x86_64.tar.gz
+      sha256: e8d66d7e6f9838428e025482637afc186ab5f6268710b89400c2344c388ba152
+      bin: kubectl-mscale
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/Stenstromen/kubectl-mscale/releases/download/v0.0.0/kubectl-mscale_Darwin_arm64.tar.gz
+      sha256: 25a330bd8f9dd8554cad4c7f299051634a45f29afb4708b59c1a1e0411f2b8c2
+      bin: kubectl-mscale
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/Stenstromen/kubectl-mscale/releases/download/v0.0.0/kubectl-mscale_Linux_x86_64.tar.gz
+      sha256: d8da1f0204c76e4556125ca82672b8346d25bcb14dd307d47bd7cca5aacd20f2
+      bin: kubectl-mscale
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/Stenstromen/kubectl-mscale/releases/download/v0.0.0/kubectl-mscale_Linux_arm64.tar.gz
+      sha256: b67437a0052ac098c40f22e79edc473c092f29ee3073056eb577e3b7da6c9bd6
+      bin: kubectl-mscale

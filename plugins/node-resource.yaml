@@ -1,0 +1,42 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: node-resource
+spec:
+  version: v0.1.0
+  homepage: https://github.com/ahmetb/kubectl-node_resource
+  shortDescription: Show node allocations/utilization list or summary
+  description: |
+    Show node CPU/memory allocations (pod requests) and actual utilizations
+    for all nodes in the cluster, or a subset of nodes (by label selector),
+    either as a list and/or, as a summary table with histograms/percentiles.
+    Optimized to work in large clusters with many nodes and pods.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/ahmetb/kubectl-node_resource/releases/download/v0.1.0/kubectl-node_resource_v0.1.0_darwin_amd64.tar.gz
+    sha256: 1dcf3f971c11a5ad1dfb8bd733ab28233f242b5215ca2e7be38f23a26ec98a2e
+    bin: kubectl-node_resource
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/ahmetb/kubectl-node_resource/releases/download/v0.1.0/kubectl-node_resource_v0.1.0_darwin_arm64.tar.gz
+    sha256: bbdd75a337a710fab377080e84143e5e8a6a0ec2b2a2e7efd9d6aba254c7d04c
+    bin: kubectl-node_resource
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/ahmetb/kubectl-node_resource/releases/download/v0.1.0/kubectl-node_resource_v0.1.0_linux_amd64.tar.gz
+    sha256: 6eaf78f49cc7fe03b7e395021d66c74044fc03ff72bdde5e7c6186e44a813f03
+    bin: kubectl-node_resource
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/ahmetb/kubectl-node_resource/releases/download/v0.1.0/kubectl-node_resource_v0.1.0_windows_amd64.tar.gz
+    sha256: 0416410311416803c21e9a05d5d8a67590f7d2132ffde2d0768f79b2a7b47eeb
+    bin: kubectl-node_resource.exe

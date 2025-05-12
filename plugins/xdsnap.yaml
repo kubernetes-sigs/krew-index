@@ -1,0 +1,79 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: xdsnap
+spec:
+  version: "v0.2.7"
+  homepage: "https://github.com/markcampv/xdsnap"
+  shortDescription: "Capture Envoy xDS state from Consul sidecars"
+  description: |
+    xDSnap helps platform and service mesh operators extract debug-level
+    configuration and endpoint state from Envoy sidecars connected to Consul.
+    It's helpful for analyzing upstream issues, traffic configuration, and
+    xDS debug state.
+
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/markcampv/xdsnap/releases/download/v0.2.7/xdsnap_0.2.7_linux_amd64.tar.gz
+      sha256: 0849c292c4a9c7f46aeabb5f57c78c005677a1f86d8c33c356aff1cede8d543e
+      bin: kubectl-xdsnap
+      files:
+        - from: kubectl-xdsnap
+          to: .
+        - from: LICENSE
+          to: .
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/markcampv/xdsnap/releases/download/v0.2.7/xdsnap_0.2.7_linux_arm64.tar.gz
+      sha256: fea24874cbef66f80bf86b746c2df2a912d3b1fa0b5fe84e158c320abbe70ff6
+      bin: kubectl-xdsnap
+      files:
+        - from: kubectl-xdsnap
+          to: .
+        - from: LICENSE
+          to: .
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/markcampv/xdsnap/releases/download/v0.2.7/xdsnap_0.2.7_darwin_amd64.tar.gz
+      sha256: 83906ce6e9a6065fc29c28130aae04f554bdd4d77eb27e587cd6b0a72ec9b4b5
+      bin: kubectl-xdsnap
+      files:
+        - from: kubectl-xdsnap
+          to: .
+        - from: LICENSE
+          to: .
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/markcampv/xdsnap/releases/download/v0.2.7/xdsnap_0.2.7_darwin_arm64.tar.gz
+      sha256: c1db73c903b47765ee7ac3061e8cb509210ec74b47c3bc1c4f00052f863163e8
+      bin: kubectl-xdsnap
+      files:
+        - from: kubectl-xdsnap
+          to: .
+        - from: LICENSE
+          to: .
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/markcampv/xdsnap/releases/download/v0.2.7/xdsnap_0.2.7_windows_amd64.tar.gz
+      sha256: 0cddc9eacd7408c435e589df494de757f0e18c0c5baa403ef4659a1da094c666
+      bin: kubectl-xdsnap.exe
+      files:
+        - from: kubectl-xdsnap.exe
+          to: .
+        - from: LICENSE
+          to: .

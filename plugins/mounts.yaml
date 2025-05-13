@@ -1,0 +1,90 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: mounts
+spec:
+  version: "v0.0.4"
+  homepage: https://github.com/yeqianmen/kubectl-mounts
+  shortDescription: Show volumes and volumeMounts for pods in the current namespace.
+  description: |
+    A kubectl plugin that displays detailed information about pod volumes
+    and volumeMounts, helping developers inspect Kubernetes storage usage.
+
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/yeqianmen/kubectl-mounts/releases/download/v0.0.4/kubectl-mounts_darwin_amd64.tar.gz
+    sha256: 74a8c3e5c44ad0ab44f0b3ae001e3bd3a87595fa916b22b785af44835e191774
+    bin: kubectl-mounts
+    files:
+      - from: kubectl-mounts
+        to: .
+      - from: LICENSE
+        to: .
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/yeqianmen/kubectl-mounts/releases/download/v0.0.4/kubectl-mounts_darwin_arm64.tar.gz
+    sha256: dd6b762aea89c20bb337d7fa0ac8afc61aa3f25d88655ef663036e482aac8d34
+    bin: kubectl-mounts
+    files:
+      - from: kubectl-mounts
+        to: .
+      - from: LICENSE
+        to: .
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/yeqianmen/kubectl-mounts/releases/download/v0.0.4/kubectl-mounts_linux_amd64.tar.gz
+    sha256: 9952c1793a6212b59cc7efef6e1fa5fe1ea1f8b814fb81237a6df83f34c6882b
+    bin: kubectl-mounts
+    files:
+      - from: kubectl-mounts
+        to: .
+      - from: LICENSE
+        to: .
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm
+    uri: https://github.com/yeqianmen/kubectl-mounts/releases/download/v0.0.4/kubectl-mounts_linux_arm.tar.gz
+    sha256: 30e276ed4dde964ea047bd659f4c6ff55f12e2f026eb871d75cd1c7dff877a22
+    bin: kubectl-mounts
+    files:
+      - from: kubectl-mounts
+        to: .
+      - from: LICENSE
+        to: .
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/yeqianmen/kubectl-mounts/releases/download/v0.0.4/kubectl-mounts_linux_arm64.tar.gz
+    sha256: 4e875be446dc6fe9dd56ad84a6bb89ce5aa4d77d33660268ce8e3d39ea3f47b3
+    bin: kubectl-mounts
+    files:
+      - from: kubectl-mounts
+        to: .
+      - from: LICENSE
+        to: .
+
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/yeqianmen/kubectl-mounts/releases/download/v0.0.4/kubectl-mounts_windows_amd64.tar.gz
+    sha256: 7b802d8566222b2a7f753986cb2c3efa83b93597722e8a1f55883901e492a46d
+    bin: kubectl-mounts.exe
+    files:
+      - from: kubectl-mounts.exe
+        to: .
+      - from: LICENSE
+        to: .

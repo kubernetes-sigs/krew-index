@@ -1,0 +1,33 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: limitrange
+spec:
+  version: v1.0.3
+  homepage: https://github.com/mfenerich/kubectl-lr
+  shortDescription: "Creates limitrange resources in Kubernetes"
+  description: |
+    kubectl create-limitrange is a kubectl plugin that extends the standard 'kubectl create' command, allowing easy creation of LimitRange resources in Kubernetes namespaces with configurable CPU and memory limits.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/mfenerich/kubectl-lr/releases/download/v1.0.3/kubectl-limitrange-darwin-arm64.tar.gz
+    sha256: 0597e012578fbc08b483fa0cdf73e84bf3e91c807f057f1039b9239397f298b1
+    bin: kubectl-limitrange
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/mfenerich/kubectl-lr/releases/download/v1.0.3/kubectl-limitrange-linux-amd64.tar.gz
+    sha256: 97a1792fb9df9ba483dea2c0e82ced8a7740b629c24c912288657563982f22e7
+    bin: kubectl-limitrange
+  - selector:
+      matchExpressions:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/mfenerich/kubectl-lr/releases/download/v1.0.3/kubectl-limitrange-windows-amd64.zip
+    sha256: 78a07428730d9ca66b072ad089ee928f9364c0e87ae97040a383b4cfd4a9a564
+    bin: kubectl-limitrange.exe

@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: syncpod
+spec:
+  version: v1.0.0
+  homepage: https://github.com/hashmap-kz/kubectl-syncpod
+  shortDescription: High-Speed File Transfer to and from PVCs
+  description: |
+    Small utility that mounts PVCs using a temporary helper pod
+    and transfers files via high-performance SFTP, without impacting
+    application containers or requiring in-container tools.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/hashmap-kz/kubectl-syncpod/releases/download/v1.0.0/kubectl-syncpod_v1.0.0_darwin_amd64.tar.gz
+    sha256: 5fad495dfa52598e244c88416a4c058ec13ff46ff42b13288c6df62492b50898
+    bin: kubectl-syncpod
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/hashmap-kz/kubectl-syncpod/releases/download/v1.0.0/kubectl-syncpod_v1.0.0_darwin_arm64.tar.gz
+    sha256: a471fc93bef166b48dfcf18cc2d5347428df48802b3bade32fb92e7bda538988
+    bin: kubectl-syncpod
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/hashmap-kz/kubectl-syncpod/releases/download/v1.0.0/kubectl-syncpod_v1.0.0_linux_amd64.tar.gz
+    sha256: fe1281788cd45c8aa55f2001f22daa3ce2a7f57e77d334cf2366c41c41156c85
+    bin: kubectl-syncpod
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/hashmap-kz/kubectl-syncpod/releases/download/v1.0.0/kubectl-syncpod_v1.0.0_linux_arm64.tar.gz
+    sha256: c6c0740f89c81313bbaf62b062afd565e18fd8c181637d8acbba49a10369c3c3
+    bin: kubectl-syncpod
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/hashmap-kz/kubectl-syncpod/releases/download/v1.0.0/kubectl-syncpod_v1.0.0_windows_amd64.tar.gz
+    sha256: 09a8440a371314bd44a4078d7785cc56c78c5b35aabad2f0c88af6ade84e5b12
+    bin: kubectl-syncpod.exe

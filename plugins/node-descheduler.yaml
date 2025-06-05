@@ -1,0 +1,52 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: node-descheduler
+spec:
+  version: v0.1.0
+  platforms:
+    - bin: kubectl-node_descheduler.exe
+      uri: https://github.com/hornwind/kubectl-node-descheduler/releases/download/v0.1.0/kubectl-node-descheduler_Windows_x86_64.zip
+      sha256: 6ab41ef9880e39c8eb8aec0c6ed293ea2a3660c205576c3d868b8a57482907b8
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+    - bin: kubectl-node_descheduler.exe
+      uri: https://github.com/hornwind/kubectl-node-descheduler/releases/download/v0.1.0/kubectl-node-descheduler_Windows_arm64.zip
+      sha256: 0dfc966396659e32f125f646a98e3db7286ac6794850dc14fc28cad5151fc87e
+      selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+    - bin: kubectl-node_descheduler
+      uri: https://github.com/hornwind/kubectl-node-descheduler/releases/download/v0.1.0/kubectl-node-descheduler_Linux_x86_64.tar.gz
+      sha256: 430d79be7e3ec6d803ffcf25575db708158071b2a6d7f9ff70d341054bfde6e4
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - bin: kubectl-node_descheduler
+      uri: https://github.com/hornwind/kubectl-node-descheduler/releases/download/v0.1.0/kubectl-node-descheduler_Linux_arm64.tar.gz
+      sha256: df1745d473fd1569c773687a396a4f42b873f3d211be2f2a670d8ea94c6e1950
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+    - bin: kubectl-node_descheduler
+      uri: https://github.com/hornwind/kubectl-node-descheduler/releases/download/v0.1.0/kubectl-node-descheduler_Darwin_x86_64.tar.gz
+      sha256: a2e191c2a0bac96721f74cf7fc28a6aa4393ba2cc9e546a7a1c6d1fa99dfcd1a
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+    - bin: kubectl-node_descheduler
+      uri: https://github.com/hornwind/kubectl-node-descheduler/releases/download/v0.1.0/kubectl-node-descheduler_Darwin_arm64.tar.gz
+      sha256: 6a7c9532f34caff5e4ea2669fc1e026198f6e3fffa462a529f5fd93d13f11fbb
+      selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+  shortDescription: Node-descheduler allows you to gracefully deschedule pods from nodes.
+  homepage: https://github.com/hornwind/kubectl-node-descheduler
+  description: Node-descheduler allows you to gracefully deschedule pods from nodes.

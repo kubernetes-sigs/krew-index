@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kelper
+spec:
+  version: v0.0.28
+  shortDescription: A CLI tool to serve as swiss-army knife for your operations on Kubernetes pods and nodes
+  description: |
+    Kelper helps manage your kubernetes resources efficiently by performing multiple commands
+    on nodes and pods. It consists of all the ideal utilities that should have been a part of kubectl
+  homepage: https://github.com/aliabbasjaffri/kelper
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/aliabbasjaffri/kelper/releases/download/v0.0.28/kelper-x86_64-unknown-linux-gnu.tar.gz
+      sha256: b913054eef83e66569efea6e94b9fb09078c45f44055359718b86cb1d2396b4c
+      bin: kelper
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/aliabbasjaffri/kelper/releases/download/v0.0.28/kelper-x86_64-apple-darwin.tar.gz
+      sha256: b25b9f636aa9c1ef67228a8e323e267ab0a0723b39d8f14efd8b03d8d5e5d313
+      bin: kelper
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/aliabbasjaffri/kelper/releases/download/v0.0.28/kelper-aarch64-apple-darwin.tar.gz
+      sha256: 6636fe21c8b957a30c4ca62f47d45028d5ab34b63a05374f41b5eb601f7f4236
+      bin: kelper
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/aliabbasjaffri/kelper/releases/download/v0.0.28/kelper-x86_64-pc-windows-msvc.zip
+      sha256: fcea350d3d78908f1415feca27277629dfac8d5c9ce1f9904f08d0326acc8987
+      bin: kelper.exe

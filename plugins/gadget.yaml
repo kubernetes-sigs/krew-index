@@ -32,16 +32,10 @@ metadata:
       $ kubectl gadget deploy
       ```
 
-      ## Run built-in gadgets
-
-      ```bash
-      $ kubectl gadget trace exec
-      ```
-
       ## Run image-based gadgets
 
       ```bash
-      $ kubectl gadget deploy --experimental
+      $ kubectl gadget deploy
       $ kubectl gadget run ghcr.io/inspektor-gadget/gadget/trace_open:latest
       ```
     # artifacthub.io/changes:
@@ -50,7 +44,7 @@ metadata:
     # artifacthub.io/recommendations:
     # artifacthub.io/screenshots:
 spec:
-  version: v0.41.0
+  version: v0.42.0
   homepage: https://github.com/inspektor-gadget/inspektor-gadget
   shortDescription: Gadgets for debugging and introspecting apps
   description: |
@@ -82,38 +76,38 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.41.0/kubectl-gadget-linux-amd64-v0.41.0.tar.gz
-    sha256: f22cf551d48e84a7668039d7778c8ff54375f31c6cf363e6ce3120f39ad13f09
+    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.42.0/kubectl-gadget-linux-amd64-v0.42.0.tar.gz
+    sha256: 2e47dcde63f579a38ae301653a517edd90b7bb7638182ffd8a5f99ab2d3af6e6
     bin: kubectl-gadget
 
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.41.0/kubectl-gadget-linux-arm64-v0.41.0.tar.gz
-    sha256: fb37d087edc2778aa62f28f6941521879fc71724e946588ed9e50f31d2ad4903
+    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.42.0/kubectl-gadget-linux-arm64-v0.42.0.tar.gz
+    sha256: a9b3e584dda4689807fb5a72c8fe5c5280c808a4e80f36cae3d121d9fdd1baad
     bin: kubectl-gadget
 
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.41.0/kubectl-gadget-darwin-amd64-v0.41.0.tar.gz
-    sha256: 910795fb8879f37bb01eaafa07f38ef59ba6111b1a114f893a7c6419886bc875
+    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.42.0/kubectl-gadget-darwin-amd64-v0.42.0.tar.gz
+    sha256: 4f28425c8353fc0e7b7953a7e8085599f076c74f6506dffe40c80ecacfc23725
     bin: kubectl-gadget
 
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.41.0/kubectl-gadget-darwin-arm64-v0.41.0.tar.gz
-    sha256: b87e8929441c507adc3564d36b67a52b72d85c94a139fcf6c24daedbf5cd35d0
+    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.42.0/kubectl-gadget-darwin-arm64-v0.42.0.tar.gz
+    sha256: d123cc0ce3aa2cd63bc90bc1d2497b8ed982137928d43ae10b1cd71c6c2276a8
     bin: kubectl-gadget
 
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.41.0/kubectl-gadget-windows-amd64-v0.41.0.tar.gz
-    sha256: 903f76604336c6ea87781c37ebd5232c9be866a6b7840635d8b2f86851353142
+    uri: https://github.com/inspektor-gadget/inspektor-gadget/releases/download/v0.42.0/kubectl-gadget-windows-amd64-v0.42.0.tar.gz
+    sha256: 52606573fe3d367969dd99bc89d00b931a10b9b3bd33b56808d04f5cd075e259
     bin: kubectl-gadget.exe

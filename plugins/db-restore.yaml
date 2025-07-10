@@ -1,0 +1,38 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: db-restore
+spec:
+  version: v0.1.0
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/wiremind/kubectl-db-restore/releases/download/v0.1.0/kubectl-db-restore_linux_amd64.tar.gz
+    sha256: 642b6916c28007a4b3566e3e66333372595ab56087abeee0daec855251cb8cab
+    bin: "kubectl-db-restore"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/wiremind/kubectl-db-restore/releases/download/v0.1.0/kubectl-db-restore_darwin_amd64.tar.gz
+    sha256: 92261c035ca00853648a36096454272533d382f2d3d9e510c025c5cf91dc32dc
+    bin: "kubectl-db-restore"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/wiremind/kubectl-db-restore/releases/download/v0.1.0/kubectl-db-restore_windows_amd64.zip
+    sha256: 63647227c38ec18b74f6ac8dffbaa9ddd8bd6d7599a46067997eb21c48e8d863
+    bin: "kubectl-db-restore.exe"
+  shortDescription: "Perform restore for databases."
+  homepage: https://github.com/wiremind/kubectl-db-restore
+  caveats: |
+    Usage:
+      $ kubectl restore
+    For additional options:
+      $ kubectl restore --help
+      or https://github.com/wiremind/kubectl-db-restore/blob/v0.1.0/doc/USAGE.md
+  description: |
+    This is a plugin that perfoms restore for databases, currently supporting clickhouse only, and going for a postgresql support soon.

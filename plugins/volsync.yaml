@@ -4,7 +4,7 @@ kind: Plugin
 metadata:
   name: volsync
 spec:
-  version: v0.12.0
+  version: v0.13.0
   homepage: https://github.com/backube/volsync
   shortDescription: "Manage replication with the VolSync operator"
   description: |
@@ -14,17 +14,31 @@ spec:
     It provides an easy method to perform several common data replication
     workflows without directly creating/manipulating VolSync's CRs.
   platforms:
-    - selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-      # This URL requires the artifact to be added to the release page as an
-      # "Asset"
-      uri: https://github.com/backube/volsync/releases/download/v0.12.0/kubectl-volsync.tar.gz
-      sha256: 609d820db0df34482f8e120c794a59c4e9db92fef4bf8a57115bf321fdc604a5
-      files:
-        - from: "./kubectl-volsync"
-          to: "."
-        - from: "LICENSE"
-          to: "."
-      bin: kubectl-volsync
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    # This URL requires the artifact to be added to the release page as an
+    # "Asset"
+    uri: https://github.com/backube/volsync/releases/download/v0.13.0/kubectl-volsync-linux-amd64.tar.gz
+    sha256: b82227f2180a2ea67eaa506584a58a1144f04b5e0d5299c408d31a9b60bf9c80
+    files:
+    - from: "./kubectl-volsync"
+      to: "."
+    - from: "LICENSE"
+      to: "."
+    bin: kubectl-volsync
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    # This URL requires the artifact to be added to the release page as an
+    # "Asset"
+    uri: https://github.com/backube/volsync/releases/download/v0.13.0/kubectl-volsync-linux-arm64.tar.gz
+    sha256: 183bd98c8498967261a072f91bfbcd4e8e5d60ddda931c0013886808368ba813
+    files:
+    - from: "./kubectl-volsync"
+      to: "."
+    - from: "LICENSE"
+      to: "."
+    bin: kubectl-volsync

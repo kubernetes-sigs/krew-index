@@ -1,0 +1,31 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: mdba
+spec:
+  version: v0.0.9
+  homepage: https://github.com/hedgieinsocks/kubectl-mdba
+  shortDescription: Manage mariadb-operator semi-sync replication clusters
+  description: |
+    This unofficial plugin helps manage
+    mariadb-operator semi-sync replication clusters:
+    launch mariadb shell, switch the primary pod,
+    recreate a replica pod, etc.
+  caveats: |
+    Dependencies: jq
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - linux
+        - darwin
+    uri: https://github.com/hedgieinsocks/kubectl-mdba/archive/refs/tags/v0.0.9.tar.gz
+    sha256: e94bb81123f0aa7c92bd4eafff0d062e3689c04af974743b492fc156c5a5076b
+    files:
+    - from: kubectl-mdba-*/kubectl-mdba
+      to: .
+    - from: kubectl-mdba-*/LICENSE
+      to: .
+    bin: "./kubectl-mdba"

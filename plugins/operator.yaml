@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: operator
 spec:
-  version: v0.0.5
+  version: v0.6.0
   homepage: https://github.com/operator-framework/kubectl-operator
   shortDescription: Manage operators with Operator Lifecycle Manager
   description: |
@@ -23,28 +23,35 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.0.5/kubectl-operator_v0.0.5_darwin_amd64.tar.gz
-    sha256: 7df50cae22bf53a3b4f706a6b146cb87eeaaf4edfcd02f53da9d1a626c200770
+    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.6.0/kubectl-operator_v0.6.0_darwin_amd64.tar.gz
+    sha256: d6f0c047b39ddd55f633ce8d6522fa24a9651236779bd26e2dffd4243595d629
+    bin: kubectl-operator
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.6.0/kubectl-operator_v0.6.0_darwin_arm64.tar.gz
+    sha256: 94a51b0cc3e52caf17e2e8ce4f5f0e5a2a29126b7c4733403e30557762a91de5
     bin: kubectl-operator
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.0.5/kubectl-operator_v0.0.5_linux_amd64.tar.gz
-    sha256: 1737738ba2c8720bbf6a07d7a9136cf1566ae2816114b8c46d611e1cce069957
+    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.6.0/kubectl-operator_v0.6.0_linux_amd64.tar.gz
+    sha256: d3f2f84b91a4ac3919c2ab455a6c540c5920bb5caeac0865b879ca9f92133971
     bin: kubectl-operator
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.0.5/kubectl-operator_v0.0.5_linux_arm64.tar.gz
-    sha256: 049a9d66d11ae8e64fdbeb7f6164d58b43a461adb996477caf36d847b5fd7104
+    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.6.0/kubectl-operator_v0.6.0_linux_arm64.tar.gz
+    sha256: 485dc89204d8443df48ccb2bfe504ba2b798752a6ea1e0e5bb5a037354fd1e8f
     bin: kubectl-operator
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.0.5/kubectl-operator_v0.0.5_windows_amd64.tar.gz
-    sha256: 587c5e7ad7f146edc9d6b4c0704a894d6dcb4cdb49ecebfc1962034acdac0755
+    uri: https://github.com/operator-framework/kubectl-operator/releases/download/v0.6.0/kubectl-operator_v0.6.0_windows_amd64.tar.gz
+    sha256: 5bb603883352d116c4dbace8778a683b774daf4df62fb8643f1df80192881299
     bin: kubectl-operator.exe
 

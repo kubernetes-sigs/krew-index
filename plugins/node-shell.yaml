@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: node-shell
 spec:
-  version: "v1.1.4"
+  version: v1.11.0
   homepage: https://github.com/kvaps/kubectl-node-shell
   shortDescription: Spawn a root shell on a node via kubectl 
   description: |
@@ -11,7 +11,21 @@ spec:
     You need to be able to start privileged containers for that.
 
     Usage:
+
+      Get standard bash shell:
       $ kubectl node-shell <node>
+      
+      Use X-mode (mount /host, and do not enter host namespace)
+      $ kubectl node-shell -x <node>
+
+      Execute custom command:
+      $ kubectl node-shell <node> -- echo 123
+      
+      Use stdin:
+      $ cat /etc/passwd | kubectl node-shell <node> -- sh -c 'cat > /tmp/passwd'
+      
+      Run oneliner script:
+      $ kubectl node-shell <node> -- sh -c 'cat /tmp/passwd; rm -f /tmp/passwd'
   caveats: |
       You need to be allowed to start privileged pods in the cluster
   platforms:
@@ -22,8 +36,8 @@ spec:
         values:
         - darwin
         - linux
-    uri: https://github.com/kvaps/kubectl-node-shell/archive/v1.1.4.tar.gz
-    sha256: "5035deecc2e17d39c8942854d840cc6d093a68b3466469113986a64956dae4f9"
+    uri: https://github.com/kvaps/kubectl-node-shell/archive/v1.11.0.tar.gz
+    sha256: b8da7cbde602f3087f3765e6f7d714d1377d2a67c99de45cca2e0df9142fe7f5
     files:
     - from: kubectl-node-shell-*/kubectl-node_shell
       to: .

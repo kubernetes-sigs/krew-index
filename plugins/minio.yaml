@@ -1,0 +1,51 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: minio
+spec:
+  version: v5.0.14
+  homepage: https://github.com/minio/operator/tree/master/kubectl-minio
+  shortDescription: Deploy and manage MinIO Operator and Tenant(s)
+  description: |
+    The kubectl-minio plugin wraps the MinIO Operator and provides a simplified 
+    interface to create and manage MinIO tenant clusters.
+  caveats: |
+    * For resources that are not in default namespace, currently you must
+      specify -n/--namespace explicitly (the current namespace setting is not
+      yet used).
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/minio/operator/releases/download/v5.0.14/kubectl-minio_darwin_amd64_v1.zip
+    sha256: 0adee2a6a49154ced97f7b3ea552da7c27ec9cd9c42343e1c2ebed67aa4b2983
+    bin: kubectl-minio
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/minio/operator/releases/download/v5.0.14/kubectl-minio_darwin_arm64.zip
+    sha256: 06bd470d4c1a91307b20c26f1d77977977283f5aed34e13d193194af0fbb776c
+    bin: kubectl-minio
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/minio/operator/releases/download/v5.0.14/kubectl-minio_linux_amd64_v1.zip
+    sha256: 53cdf94f7ef7e9ed6e58103114915ef65cfb20d5c06686e8eeaafe37b16c11af
+    bin: kubectl-minio
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/minio/operator/releases/download/v5.0.14/kubectl-minio_linux_arm64.zip
+    sha256: 265aec12686631072d5decae6e72e22b7a41f7e99e9ba378169e4cab5f56ab55
+    bin: kubectl-minio
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/minio/operator/releases/download/v5.0.14/kubectl-minio_windows_amd64_v1.zip
+    sha256: fc64dac787fd9446ad4766f4fa4aa0d7344db604e7b1d3171c7c6f7dd9b5d8bf
+    bin: kubectl-minio.exe

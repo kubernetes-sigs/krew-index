@@ -1,0 +1,52 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: reverse-proxy
+spec:
+  version: v0.3.0
+  homepage: https://github.com/rajatjindal/kubectl-reverse-proxy
+  shortDescription: Start reverse proxy for the Service Pods.
+  description: |
+    Runs the reverse proxy locally and route traffic to all Pods behind 
+    the given Service object. 
+    
+    It is different from the existing proxy plugins in that it start a reverse proxy 
+    locally (instead of e.g. starting a socat proxy Pod in the cluster) and updates the 
+    backend config of that reverse proxy (currently using Caddy) by doing port-forwarding 
+    and adding those listeners as backends.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.3.0/kubectl-reverse-proxy_v0.3.0_darwin_amd64.tar.gz
+    sha256: 8f5d9311b038dd870c442441f642043a8f0aefc40f73d2bf74c490b42496ebfe
+    bin: kubectl-reverse_proxy
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.3.0/kubectl-reverse-proxy_v0.3.0_darwin_arm64.tar.gz
+    sha256: cd70c9a8b0b9fb9aae5e27187c73bc52eec6febf6c7f42ee63a41968b111eeca
+    bin: kubectl-reverse_proxy
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.3.0/kubectl-reverse-proxy_v0.3.0_linux_amd64.tar.gz
+    sha256: 7848ffebe74793083903c0d60b14b3037e0ae554d2c2ce9e6d96ca192334f3d2
+    bin: kubectl-reverse_proxy
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.3.0/kubectl-reverse-proxy_v0.3.0_linux_arm64.tar.gz
+    sha256: c5fffa46cd083096682b8969a4e9767a322e017da8af6cf0edb28bd6f2e79bb1
+    bin: kubectl-reverse_proxy
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-reverse-proxy/releases/download/v0.3.0/kubectl-reverse-proxy_v0.3.0_windows_amd64.tar.gz
+    sha256: 2501e4b4584c485c6f7930f46b4524d505f0809023d4c793f9a959221570602a
+    bin: kubectl-reverse_proxy.exe

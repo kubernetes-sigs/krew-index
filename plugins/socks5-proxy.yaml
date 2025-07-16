@@ -1,0 +1,30 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: socks5-proxy
+spec:
+  version: "v1.1.0"
+  homepage: https://github.com/yokawasa/kubectl-plugin-socks5-proxy
+  platforms:
+  - selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+    uri: https://github.com/yokawasa/kubectl-plugin-socks5-proxy/archive/v1.1.0.zip
+    sha256: d8b6e81034ec09c665ee1bf58eba6818bf67da02b29ef3ec048d3b524add444e
+    files:
+    - from: "./*/kubectl-socks5-proxy"
+      to: .
+    - from: "./*/LICENSE"
+      to: .
+    bin: "./kubectl-socks5-proxy"
+  shortDescription: SOCKS5 proxy to Services or Pods in the cluster
+  description: |
+    A kubectl plugin that creates a local SOCKS5 proxy through which you can
+    access to Services or Pods in a Kubernetes cluster.
+    
+    What the plugin actually does is that it create a SOCKS5 proxy server Pod
+    (based on serjs/go-socks5-proxy) in a Kubernetes cluster and forwards a local
+    port (default:1080) to the proxy. So you can access Services or Pods in the
+    Kuberenetes cluster by using the local port as SOCKS5 proxy like this:
+
+    curl --socks5-hostname localhost:1080 http://httpbin.default.svc.cluster.local/header

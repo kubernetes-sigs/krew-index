@@ -1,0 +1,61 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: flame
+spec:
+  homepage: https://github.com/VerizonMedia/kubectl-flame
+  shortDescription: Generate CPU flame graphs from pods
+  version: v0.2.4
+  description: |
+    Generate CPU flame graphs without restarting pods and with low overhead.
+  caveats: |
+    Currently supported languages: Go, Java (any JVM based language), Python, Ruby, and NodeJS.
+  platforms:
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.2.4/kubectl-flame_v0.2.4_darwin_x86_64.tar.gz
+      sha256: 913544dc04d324374430513afb70e4d9a9542a7d9e607b1975643f9bfb0e9b1c
+      bin: kubectl-flame
+      files:
+        - from: kubectl-flame
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.2.4/kubectl-flame_v0.2.4_linux_x86_64.tar.gz
+      sha256: b5257217ac044d2996396d94f656ca2e2d4ec6b0208e8a01a8bbb2ca4075ba69
+      bin: kubectl-flame
+      files:
+        - from: kubectl-flame
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.2.4/kubectl-flame_v0.2.4_linux_arm64.tar.gz
+      sha256: 1ce0585b973fa351a2f748246b22b2d986bb0d010703cdfa50edfeb285d03c38
+      bin: kubectl-flame
+      files:
+        - from: kubectl-flame
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+    - uri: https://github.com/VerizonMedia/kubectl-flame/releases/download/v0.2.4/kubectl-flame_v0.2.4_windows_x86_64.zip
+      sha256: 51a6c800ea376ad6cb8c8918b2981a63cd2bb5ec886ec57c8d9d9a37b7947e6c
+      bin: kubectl-flame.exe
+      files:
+        - from: kubectl-flame.exe
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64

@@ -1,0 +1,48 @@
+# Copyright Contributors to the Open Cluster Management project
+
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cm
+spec:
+  version: v1.0.15
+  homepage: https://github.com/stolostron/cm-cli
+  shortDescription: Provides commands for OCM/MCE/ACM.
+  description: |
+    This plugin allows you to manage clusters on the OCM/MCE/ACM platform.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.15/cm_darwin_amd64.tar.gz
+    sha256: 65840a96a7911942be80b257a763a38e9a05e35d483828e5b91374a60d94c85d
+    bin: cm
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.15/cm_darwin_arm64.tar.gz
+    sha256: 4b2e9327ab92f7e8f219ee2ed6fa45047af024df145e0d9732fda093e03b801e
+    bin: cm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.15/cm_linux_amd64.tar.gz
+    sha256: 095a4f43681db4e4499201bc18e17846c1a9bad2acc1ae815c5736559469823e
+    bin: cm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.15/cm_linux_arm64.tar.gz
+    sha256: fc1a2e27fbed25d517248b515f68fb6351b8513b6c8ab6df5e77fb4169729dea
+    bin: cm
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/stolostron/cm-cli/releases/download/v1.0.15/cm_windows_amd64.zip
+    sha256: 076472547a22e38b91c49efbae87715af0dc8f6ba968307f3c218293226bdd0d
+    bin: cm.exe

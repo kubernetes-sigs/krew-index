@@ -1,0 +1,78 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: community-images
+spec:
+  version: v0.5.1
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.5.1/community-images_linux_amd64.tar.gz
+    sha256: f2a985598fc8a15d4bef3b6608e51f039a5382a21a2e1b5c9ddaecf850510c02
+    files:
+    - from: community-images
+      to: .
+    - from: LICENSE
+      to: .
+    bin: community-images
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.5.1/community-images_linux_arm64.tar.gz
+    sha256: cd0c97d7fa6d4d42b9352ee929b2e741e4cc3056e9b4aa888ad9c59e10897756
+    files:
+    - from: community-images
+      to: .
+    - from: LICENSE
+      to: .
+    bin: community-images
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.5.1/community-images_darwin_amd64.tar.gz
+    sha256: 2e63ce4667204687c122337fa4f44b57c0108f5cec8aa6fb87bcb036db146522
+    files:
+    - from: community-images
+      to: .
+    - from: LICENSE
+      to: .
+    bin: community-images
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.5.1/community-images_darwin_arm64.tar.gz
+    sha256: 4fbbab100244c8281d1d0779d5d8260abc743d7447b26938c1381154a6721a4f
+    files:
+    - from: community-images
+      to: .
+    - from: LICENSE
+      to: .
+    bin: community-images
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/kubernetes-sigs/community-images/releases/download/v0.5.1/community-images_windows_amd64.zip
+    sha256: 8a07beb5b8852ec7412602860c9dd4d29d2f103c83342532c6ac39ac0055c4cd
+    files:
+    - from: community-images.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: community-images.exe
+  shortDescription: List community owned container images running
+  homepage: https://github.com/kubernetes-sigs/community-images
+  description: |
+    The plugin will scan for all pods in all namespaces that you have at least
+    read access to. The output is a list of all images, with the community
+    owned images in red, and the rest of the images in green. It also prints
+    some tips to ensure you are using the correct official repository.
+
+    For additional options:
+      $ kubectl community-images --help
+      or https://github.com/kubernetes-sigs/community-images/blob/master/doc/USAGE.md

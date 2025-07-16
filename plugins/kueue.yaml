@@ -1,0 +1,45 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kueue
+spec:
+  version: v0.12.4
+  shortDescription: Controls Kueue queueing manager.
+  homepage: https://kueue.sigs.k8s.io/docs/reference/kubectl-kueue/
+  description: |
+    The kubectl-kueue plugin, kueuectl, allows you to list, create, resume
+    and stop kueue resources such as clusterqueues, localqueues and workloads.
+
+    See the documentation for more information: https://kueue.sigs.k8s.io/docs/reference/kubectl-kueue/
+  caveats: |
+    Requires the Kueue operator to be installed:
+      https://kueue.sigs.k8s.io/docs/installation/
+  platforms:
+  - selector:
+      matchLabels:
+        os: "linux"
+        arch: "amd64"
+    uri: https://github.com/kubernetes-sigs/kueue/releases/download/v0.12.4/kubectl-kueue-linux-amd64.tar.gz
+    sha256: db0ce4873f02f38d3d62da1c099bea6c6a99dad5626d9ee6bc29284046414e8e
+    bin: "kubectl-kueue"
+  - selector:
+      matchLabels:
+        os: "linux"
+        arch: "arm64"
+    uri: https://github.com/kubernetes-sigs/kueue/releases/download/v0.12.4/kubectl-kueue-linux-arm64.tar.gz
+    sha256: 78f795edacb9bd46c5d20c8f66837da5fe6162e188b227bd0d39fa288064ce8d
+    bin: "kubectl-kueue"
+  - selector:
+      matchLabels:
+        os: "darwin"
+        arch: "amd64"
+    uri: https://github.com/kubernetes-sigs/kueue/releases/download/v0.12.4/kubectl-kueue-darwin-amd64.tar.gz
+    sha256: ce2f224c1ec6bb66a69c36e620f13e73bc101c82c1a9934458b0db346cc873f6
+    bin: "kubectl-kueue"
+  - selector:
+      matchLabels:
+        os: "darwin"
+        arch: "arm64"
+    uri: https://github.com/kubernetes-sigs/kueue/releases/download/v0.12.4/kubectl-kueue-darwin-arm64.tar.gz
+    sha256: 004496f14602f6e7f39de6aefcef7ff6b200bf646bc693d9f50bde4f1707bddd
+    bin: "kubectl-kueue"

@@ -1,0 +1,26 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: link
+spec:
+  version: v0.1.0
+  homepage: https://github.com/umutbasal/kubectl-link
+  shortDescription: Access cluster resources without vpn
+  description: |
+    kubectl-link simplifies accessing your Kubernetes
+    pods and services by automatically creating port-forwards on demand
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/umutbasal/kubectl-link/releases/download/v0.1.0/kubectl-link_Darwin_x86_64.tar.gz
+    sha256: ec8514e34a55ee20ea08f1fdb67a82ecb0e364aadc3a144c8d6338de10c6461b
+    bin: kubectl-link
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/umutbasal/kubectl-link/releases/download/v0.1.0/kubectl-link_Darwin_arm64.tar.gz
+    sha256: 0e37c23d9cca83ddc7bf36cc5ac5a6f3ce7465c527397510bd84ce9ed3adf5c1
+    bin: kubectl-link

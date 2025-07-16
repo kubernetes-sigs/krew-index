@@ -1,0 +1,56 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: tunnel
+spec:
+  version: v1.6.1
+  homepage: https://github.com/omrikiei/ktunnel
+  shortDescription: Reverse tunneling between cluster and your machine
+  description: |
+      This plugin establishes a reverse tunnel between the Kubernetes cluster
+      and your local machine. It lets you expose your machine as a service in
+      the cluster or expose it to a specific deployment as a local host.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.6.1/ktunnel_1.6.1_Darwin_x86_64.tar.gz
+    sha256: b1ceb7fe8b40b96020ffa6ead1b59deadc0facb05064627e9175a20c109fd8b2
+    bin: ktunnel
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.6.1/ktunnel_1.6.1_Darwin_arm64.tar.gz
+    sha256: fcd3b7c6fc5dc72bcb7ccc5f735f271fdb43e30cae680e3eb09c28bb3dee7866
+    bin: ktunnel
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.6.1/ktunnel_1.6.1_Linux_x86_64.tar.gz
+    sha256: 6665722db841a1df29fd733bb46c08e2a109753638f080218e9ebba7e96fa873
+    bin: ktunnel
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.6.1/ktunnel_1.6.1_Linux_arm64.tar.gz
+    sha256: 23620e0beca7d7efbe35f064f825dc8deda7994df3e402193a65fece179b2b8b
+    bin: ktunnel
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.6.1/ktunnel_1.6.1_Windows_x86_64.tar.gz
+    sha256: 1fe1aa79e9ce04275bbdc3cf24e30ec159db21d273b467647a6a83f99326419f
+    bin: ktunnel.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.6.1/ktunnel_1.6.1_Windows_arm64.tar.gz
+    sha256: 12753d5624e6653ea1586aa9a6320be40ac3728fb3dae9bba30bc21cb2bde40c
+    bin: ktunnel.exe
+

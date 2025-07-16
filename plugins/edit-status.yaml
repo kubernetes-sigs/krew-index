@@ -1,0 +1,46 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: edit-status
+spec:
+  version: v0.3.0
+  homepage: https://github.com/ulucinar/kubectl-edit-status
+  shortDescription: Edit /status subresources of CRs
+  description: |
+    This plugin allows editing /status subresource interactively via a text editor.
+    The intended use case is updating status.conditions (or any status field)
+    for a custom resource. The editor to be used can be specified via
+    the KUBE_EDITOR or EDITOR environment variables and the default editor is vi.
+  caveats: |
+    * For resources that are not in default namespace, currently you must
+      specify -n/--namespace explicitly (namespace of the current kubeconfig context
+      is not yet used).
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/ulucinar/kubectl-edit-status/releases/download/v0.3.0/kubectl-edit-status_v0.3.0_darwin_amd64.tar.gz
+      sha256: bf5cf012a7531b75739d11bfad8095d2fdc69134291aadaf980b33f52cd60f57
+      bin: kubectl-edit_status
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/ulucinar/kubectl-edit-status/releases/download/v0.3.0/kubectl-edit-status_v0.3.0_darwin_arm64.tar.gz
+      sha256: f6da5dbffc90ed69007465771d543874dd0b8fd63b5c469acb927e9816c18a1d
+      bin: kubectl-edit_status
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/ulucinar/kubectl-edit-status/releases/download/v0.3.0/kubectl-edit-status_v0.3.0_linux_amd64.tar.gz
+      sha256: 85a44d895ee4febe9f62942ace5b70a4c1d483929e96c12c1341b5c1fc206bdc
+      bin: kubectl-edit_status
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/ulucinar/kubectl-edit-status/releases/download/v0.3.0/kubectl-edit-status_v0.3.0_windows_amd64.tar.gz
+      sha256: 6a02a2fe5e5aa821fbc6f48778d694352614ab3ca9f3c38d884bc3e385efe32d
+      bin: kubectl-edit_status.exe

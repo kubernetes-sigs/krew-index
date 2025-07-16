@@ -1,0 +1,65 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: nsenter
+spec:
+  version: v1.2.1
+  homepage: https://github.com/pabateman/kubectl-nsenter
+  shortDescription: "Run shell command in Pod's namespace on the node over SSH connection"
+  description: |
+    This plugin establishes a connection to node that's running the Pod over SSH and uses
+    nsenter to run commands in the container's namespace. You would need something
+    like this to run programs that are missing in the container image but presents on node.
+  caveats: |
+    * This plugin needs SSH access to nodes
+    * Remote user must have root access
+    * Nodes need to have 'nsenter'
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/pabateman/kubectl-nsenter/releases/download/v1.2.1/kubectl-nsenter-linux-amd64.tar.gz
+    sha256: a31ffbf6974ba67e7517cccc369225bd7a36151ec7dcd535899817e0d10bcc20
+    bin: kubectl-nsenter
+    files:
+      - from: kubectl-nsenter-linux-amd64
+        to: kubectl-nsenter
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/pabateman/kubectl-nsenter/releases/download/v1.2.1/kubectl-nsenter-linux-arm64.tar.gz
+    sha256: fa1e43122a0c07a40273c6a7c176d97cc84df0d5b5a0b46754c98fee9d27ff38
+    bin: kubectl-nsenter
+    files:
+      - from: kubectl-nsenter-linux-arm64
+        to: kubectl-nsenter
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/pabateman/kubectl-nsenter/releases/download/v1.2.1/kubectl-nsenter-darwin-amd64.tar.gz
+    sha256: 80dc7047ca563ad81a3970985e4007eee9592b7bcf1373d7a1d3bd10f5320f32
+    bin: kubectl-nsenter
+    files:
+      - from: kubectl-nsenter-darwin-amd64
+        to: kubectl-nsenter
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/pabateman/kubectl-nsenter/releases/download/v1.2.1/kubectl-nsenter-darwin-arm64.tar.gz
+    sha256: 77e9ddd2de837fae87ceec754b168a1c4aa4eb1aa17997d25fa70f71c0eba3f6
+    bin: kubectl-nsenter
+    files:
+      - from: kubectl-nsenter-darwin-arm64
+        to: kubectl-nsenter
+      - from: LICENSE
+        to: .

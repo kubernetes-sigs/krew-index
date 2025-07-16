@@ -1,52 +1,67 @@
 name: krew-index CI
 
-on: pull_request
+on:
+  push:
+    branches:
+      - master
+  pull_request:
 
 jobs:
   build:
-    name: Build and Tags
+    name: Validate plugin manifests
     runs-on: ubuntu-latest
     env:
-      KREW_VERSION: v0.3.4
+      KREW_VERSION: v0.4.5
       GO111MODULE: on
     steps:
 
-    - name: Set up Go 1.13
-      uses: actions/setup-go@v1
+    - name: Setup Go
+      uses: actions/setup-go@v3
       with:
-        go-version: 1.13
+        go-version: '1.22'
       id: go
 
+    - name: Go module cache
+      uses: actions/cache@v3
+      with:
+        path: ~/go/pkg/mod
+        key: ${{ runner.os }}-go-${{ env.KREW_VERSION }}
+        restore-keys: |
+          ${{ runner.os }}-go-
+
     - name: Check out PR branch
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0  # disable shallow clones
 
     - name: Fetch base branch
+      if: github.event_name == 'pull_request'
       run: |
         git fetch --no-tags --prune --depth=1 origin +refs/heads/${GITHUB_BASE_REF}:refs/remotes/origin/${GITHUB_BASE_REF}
 
     - name: Install kubectl
       run: |
         set -euo pipefail
-        sudo curl -fsSL -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.13.1/bin/linux/amd64/kubectl
+        sudo curl -fsSL -o /usr/bin/kubectl https://dl.k8s.io/release/v1.18.8/bin/linux/amd64/kubectl
         sudo chmod +x /usr/bin/kubectl
 
     - name: Install krew
       run: |
         set -euo pipefail
         cd "$(mktemp -d)"
-        curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew.{tar.gz,yaml}"
-        tar zxvf krew.tar.gz
-        ./krew-linux_amd64 install --manifest=krew.yaml --archive=krew.tar.gz
+        curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew.yaml"
+        curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew-linux_amd64.tar.gz"
+        tar zxvf krew-linux_amd64.tar.gz
+        ./krew-linux_amd64 install --manifest=krew.yaml --archive=krew-linux_amd64.tar.gz
 
     - name: Install validate-krew-manifest plugin
       run : |
         set -euo pipefail
         export GOBIN=$HOME/bin
-        go get sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
+        go install sigs.k8s.io/krew/cmd/validate-krew-manifest@${KREW_VERSION}
 
     - name: Validate updated plugin manifests
+      if: github.event_name == 'pull_request'
       run : |
         set -x
         set -euo pipefail
@@ -54,4 +69,3 @@ jobs:
         git diff --name-only --diff-filter=AM origin/${GITHUB_BASE_REF} ${{ github.sha }} -- plugins/ |
           tee /dev/stderr |
           xargs -I _ $HOME/bin/validate-krew-manifest -manifest _
-

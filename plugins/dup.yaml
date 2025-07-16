@@ -1,0 +1,43 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: dup
+spec:
+  version: v0.3.2
+  homepage: https://github.com/vash/dup
+  shortDescription: Duplicate existing Kubernetes resources
+  description: |
+    This plugin is designed for on-the-fly duplication of Kubernetes resources.
+    It focuses on providing a convenient way to edit resources before duplication,
+    with a specific emphasis on Pods to create a fine-tuned resource quickly.
+    This tool can be used for debugging running containers without them crashing,
+    and simplifying the administration and general interaction with Kubernetes clusters.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/vash/dup/releases/download/v0.3.2/dup_v0.3.2_darwin_amd64.tar.gz
+    sha256: ba08ef2d4dd0d385e1bdd65f37d3f6e659430a55170016b846d2e596c7f08eac
+    bin: kubectl-dup
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/vash/dup/releases/download/v0.3.2/dup_v0.3.2_darwin_arm64.tar.gz
+    sha256: 27392314a720e7eae3b0a87312f6ecca28b684a05269d9ff1bd7538698a3efd9
+    bin: kubectl-dup
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/vash/dup/releases/download/v0.3.2/dup_v0.3.2_linux_amd64.tar.gz
+    sha256: 0097fe92d36515438044fe976ccae98795138d6380c8a54f0ffa5a24c9049608
+    bin: kubectl-dup
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/vash/dup/releases/download/v0.3.2/dup_v0.3.2_windows_amd64.zip
+    sha256: 7995e1a0010c945cb57949895faf5140daf077f58c025b4ac95ecb22c3826c5e
+    bin: kubectl-dup.exe

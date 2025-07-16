@@ -1,0 +1,45 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: colorize-managed-fields
+spec:
+  version: v0.0.5
+  homepage: https://github.com/tt-kuma/kubectl-colorize-managed-fields
+  shortDescription: Display resources colorized based on managed fields.
+  description: |
+    Prints the specified resources with fields colorized based on managed fields
+    to help visually understand them.
+
+    Fields managed by a single manager are uniquely colorized to distinguish
+    each manager. Fields managed by multiple managers uniformly colorized with
+    a predefined color indicating a conflict, regardless of the combination of
+    managers.
+  platforms:
+  - bin: kubectl-colorize_managed_fields
+    uri: https://github.com/tt-kuma/kubectl-colorize-managed-fields/releases/download/v0.0.5/kubectl-colorize-managed-fields_linux_amd64.tar.gz
+    sha256: 3bd84d37dc5645181a8e720499dbeac0360572c5f7eebb0d3f41313ceb5917c3
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-colorize_managed_fields
+    uri: https://github.com/tt-kuma/kubectl-colorize-managed-fields/releases/download/v0.0.5/kubectl-colorize-managed-fields_linux_arm64.tar.gz
+    sha256: c823a78d32e99afcb6b74cba90e83785e313fa0e690aef9fd7d40b1df98ff950
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - bin: kubectl-colorize_managed_fields
+    uri: https://github.com/tt-kuma/kubectl-colorize-managed-fields/releases/download/v0.0.5/kubectl-colorize-managed-fields_darwin_amd64.tar.gz
+    sha256: 98b4ff30bb1a46f7fbf96d4b9dc559e82ec1199ffd5af8191a4469e318103cab
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kubectl-colorize_managed_fields
+    uri: https://github.com/tt-kuma/kubectl-colorize-managed-fields/releases/download/v0.0.5/kubectl-colorize-managed-fields_darwin_arm64.tar.gz
+    sha256: 2998ee634945de0fe5c3fc11ecc08a982be61d5f2f1173cd49cf6fce464e6aee
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64

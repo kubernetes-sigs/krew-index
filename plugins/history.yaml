@@ -1,0 +1,32 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: history
+spec:
+  version: v1.2.1
+  homepage: https://github.com/wd/kubectl-history
+  shortDescription: List & diff revisions of workload resources
+  description: |
+    This plugin allows viewing history reversions of deployment/daemonset/statefulset and shows diff between reversions.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/wd/kubectl-history/releases/download/v1.2.1/kubectl-history-v1.2.1-linux-amd64.tar.gz
+    sha256: b8f48414aa2441ef8141ac8fc456b9722200633e6ae8124bce3e06debbc2621b
+    bin: kubectl-history
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/wd/kubectl-history/releases/download/v1.2.1/kubectl-history-v1.2.1-darwin-arm64.tar.gz
+    sha256: ad55045598f924f57ae09596b5e72a2192f0653640cd7d03165f738b24536a9d
+    bin: kubectl-history
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/wd/kubectl-history/releases/download/v1.2.1/kubectl-history-v1.2.1-darwin-amd64.tar.gz
+    sha256: 2d36782c20b70932ab4e012a5838bf210014337099ec982496396d373220d76e
+    bin: kubectl-history

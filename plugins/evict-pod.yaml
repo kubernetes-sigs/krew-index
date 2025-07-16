@@ -3,22 +3,29 @@ kind: Plugin
 metadata:
   name: evict-pod
 spec:
-  version: v0.0.9
+  version: v0.0.14
   homepage: https://github.com/rajatjindal/kubectl-evict-pod
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/rajatjindal/kubectl-evict-pod/releases/download/v0.0.9/kubectl-evict-pod_v0.0.9_darwin_amd64.tar.gz
-    sha256: a6b724668e97bf6a5730aef0645afb3b4f7bd367bd76c16280f0e9ef444b52eb
+    uri: https://github.com/rajatjindal/kubectl-evict-pod/releases/download/v0.0.14/kubectl-evict-pod_v0.0.14_darwin_amd64.tar.gz
+    sha256: 640cdb99ea9cbca9f8008e24f2e87900bfef2518f1d49cf6d426c6119adac725
+    bin: kubectl-evict-pod
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/rajatjindal/kubectl-evict-pod/releases/download/v0.0.14/kubectl-evict-pod_v0.0.14_darwin_arm64.tar.gz
+    sha256: d38030f6236e0868c4b853bf405625ff1e3e7deab9b0a6d943d5c932e0055a64
     bin: kubectl-evict-pod
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/rajatjindal/kubectl-evict-pod/releases/download/v0.0.9/kubectl-evict-pod_v0.0.9_linux_amd64.tar.gz
-    sha256: f31b2abe8638c8458fc328bf18bcaedae044dd9c4d2c964e68bea44276ce2df7
+    uri: https://github.com/rajatjindal/kubectl-evict-pod/releases/download/v0.0.14/kubectl-evict-pod_v0.0.14_linux_amd64.tar.gz
+    sha256: e2ac19532f4993df09c2dcd8b9f8f8649b905df2e8baa4f84b9eebb148e8339c
     bin: kubectl-evict-pod
   shortDescription: Evicts the given pod
   description: |

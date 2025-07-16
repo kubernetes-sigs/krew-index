@@ -1,0 +1,54 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ice
+spec:
+  version: "v0.2.13"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/NimbleArchitect/kubectl-ice/releases/download/v0.2.13/kubectl-ice_linux_amd64.tar.gz
+    sha256: 5e9c555bd6ba6330c6ded59db3b97a102fcb955223a428c7bab38cc8e59e2459
+    bin: "kubectl-ice"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/NimbleArchitect/kubectl-ice/releases/download/v0.2.13/kubectl-ice_linux_arm64.tar.gz
+    sha256: 12b25f17d9ae32d1e130edb6c129c7274fd9747145edeed8a496c3c5908de95f
+    bin: "kubectl-ice"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/NimbleArchitect/kubectl-ice/releases/download/v0.2.13/kubectl-ice_darwin_amd64.tar.gz
+    sha256: 5335ea0db9c392a7ba929692fb3326ab4a63b7b24e0a69f2219231eaf7c9187d
+    bin: "kubectl-ice"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/NimbleArchitect/kubectl-ice/releases/download/v0.2.13/kubectl-ice_darwin_arm64.tar.gz
+    sha256: da2c064e095d0ea5800d4baf562a42249172cad3b7541a58fe005b9fe0dc6514
+    bin: "kubectl-ice"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/NimbleArchitect/kubectl-ice/releases/download/v0.2.13/kubectl-ice_windows_amd64.zip
+    sha256: e77a142eff57e663841abc0ed2c5433cc07b29e451cd69d368161f71595460b4
+    bin: "kubectl-ice.exe"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/NimbleArchitect/kubectl-ice/releases/download/v0.2.13/kubectl-ice_windows_arm64.zip
+    sha256: 9dd57d7d3b645d0dc8f99c63a8446b490a2dea47b1185195d9854d5c73ce716d
+    bin: "kubectl-ice.exe"
+  shortDescription: View configuration settings of containers inside Pods
+  homepage: https://github.com/NimbleArchitect/kubectl-ice
+  description: |
+    ice lets you peer inside a Pod and easily see Volume, Image, Port and Exec configurations,
+    along with CPU and Memory metrics all at the container level (requires metrics server)

@@ -1,0 +1,47 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: realname-diff
+spec:
+  version: v0.4.0
+  homepage: https://github.com/hhiroshell/kubectl-realname-diff
+  platforms:
+  - bin: kubectl-realname_diff
+    uri: https://github.com/hhiroshell/kubectl-realname-diff/releases/download/v0.4.0/kubectl-realname-diff-linux-amd64.tar.gz
+    sha256: 190c376c6701aa6b9f15d6b8aac39127578bc65c360469920d62e6f3cf849b22
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-realname_diff
+    uri: https://github.com/hhiroshell/kubectl-realname-diff/releases/download/v0.4.0/kubectl-realname-diff-linux-arm64.tar.gz
+    sha256: 538a8401a899c9d5c85a64c2aab335a8b134c25e7581449f98f99e3f94c437b3
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - bin: kubectl-realname_diff
+    uri: https://github.com/hhiroshell/kubectl-realname-diff/releases/download/v0.4.0/kubectl-realname-diff-darwin-amd64.tar.gz
+    sha256: aadffbc015e1cc753b9617e8a99e6f0481aba028c91941ddb8fd13cc290f8209
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kubectl-realname_diff
+    uri: https://github.com/hhiroshell/kubectl-realname-diff/releases/download/v0.4.0/kubectl-realname-diff-darwin-arm64.tar.gz
+    sha256: 2d0b8a5c1c0711c456c8076ae47a38ae7a4c0830b20ad794883bbad2015e2beb
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  shortDescription: Diffs live and local resources ignoring Kustomize hash-suffixes
+  description: |
+    Kubectl realname-diff works the same as kubectl diff, but if you set "real
+    name" as a label, local and live resources with the same label will be
+    compared.
+    This is especially beneficial if you use the Kustomize and enable hash
+    suffixing ConfigMap/Secret names. In case of `kubectl diff`, local and live
+    resources with hash suffixed name are considered as irrelevant. So you will not
+    be able to get any results comparing them.
+    With realname-diff, you can compare the resources with hash suffixed name by
+    specifying the comparison target with "real name" labels.

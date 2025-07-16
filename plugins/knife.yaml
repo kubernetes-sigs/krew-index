@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: knife
+spec:
+  version: v0.0.10
+  homepage: https://github.com/spideyz0r/kubectl-knife
+  shortDescription: Run commands on multiple pods concurrently
+  description: |
+    kubectl-knife is a tool to run commands on multiple pods, in different
+    contexts or namespaces concurrently filtering with regex
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/spideyz0r/kubectl-knife/releases/download/v0.0.10/kubectl-knife_0.0.10_darwin_amd64.tar.gz
+    sha256: 3d54abb5d5171c0f71d85a9e6b25cb73005c7680d239cfc0a8b5e16edb79925d
+    bin: kubectl-knife
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/spideyz0r/kubectl-knife/releases/download/v0.0.10/kubectl-knife_0.0.10_darwin_arm64.tar.gz
+    sha256: 9e75bbe2c561f99533de14ed048529d8f349fe76114df578af762f1022842ba8
+    bin: kubectl-knife
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/spideyz0r/kubectl-knife/releases/download/v0.0.10/kubectl-knife_0.0.10_linux_amd64.tar.gz
+    sha256: 8a7b5b22c6092e305a4fc3cabaf50bab5a74f56f13eee7b652e6308cad66e50c
+    bin: kubectl-knife
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/spideyz0r/kubectl-knife/releases/download/v0.0.10/kubectl-knife_0.0.10_linux_arm64.tar.gz
+    sha256: c9c03157785676805c39347129d7cbde646a58160d0378cc423f39cffbced48b
+    bin: kubectl-knife

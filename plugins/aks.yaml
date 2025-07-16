@@ -1,0 +1,52 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: aks
+spec:
+  version: v0.2.4
+  homepage: https://github.com/Azure/kubectl-aks
+  shortDescription: Interact with and debug AKS clusters
+  description: |
+    This plugin provides a set of commands that enable users to interact with an
+    AKS cluster even when the control plane is not functioning as expected. For
+    example, users can still use the plugin to debug their cluster if the API
+    server is not working correctly. This plugin allows users to perform various
+    tasks, retrieve information, and execute commands against the cluster nodes,
+    regardless of the control plane's state.
+
+    It's important to note that this plugin does not replace az (the Azure CLI
+    [1]). Instead, it complements it by offering additional commands and
+    providing users with a kubectl-like experience. In practice, users will use
+    az to create and delete their AKS cluster, and then use kubectl and
+    kubectl-aks to interact with and debug it.
+
+    [1] https://learn.microsoft.com/en-us/cli/azure/
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.2.4/kubectl-aks-linux-amd64-v0.2.4.tar.gz
+    sha256: 42984fe352b9c81f4cc339b95e55616b0ba99d26d185b300cf856d44e30a3dc4
+    bin: kubectl-aks
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.2.4/kubectl-aks-darwin-amd64-v0.2.4.tar.gz
+    sha256: 7df93f1f24f9358c7f8ef4956aad4dd7ac95ba2fea53a68c4e01827aa1421db4
+    bin: kubectl-aks
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.2.4/kubectl-aks-darwin-arm64-v0.2.4.tar.gz
+    sha256: ad7fd271647319069bfebfbca44f91c92def254a90dc6f60979189ca9373be8e
+    bin: kubectl-aks
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.2.4/kubectl-aks-windows-amd64-v0.2.4.tar.gz
+    sha256: caf9388bdd7e5ec2914dbdbb61fbe950c8a907b08fbdc75ae673b270073f2d7f
+    bin: kubectl-aks.exe

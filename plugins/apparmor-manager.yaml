@@ -3,22 +3,22 @@ kind: Plugin
 metadata:
   name: apparmor-manager
 spec:
-  version: v0.0.5
+  version: v0.0.6
   homepage: https://github.com/sysdiglabs/kube-apparmor-manager
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/sysdiglabs/kube-apparmor-manager/releases/download/v0.0.5/kube-apparmor-manager_v0.0.5_darwin_amd64.tar.gz
-    sha256: 88dcf6aa52feb43bf64598e8873fad1c9f199a93aa59a44cdbceb490070c58cf
+    uri: https://github.com/sysdiglabs/kube-apparmor-manager/releases/download/v0.0.6/kube-apparmor-manager_v0.0.6_darwin_amd64.tar.gz
+    sha256: 22e66d24bc295a5cd10fe54c028fd9107c6ba66f37e3596a55a31fcc7e3c2570
     bin: kube-apparmor-manager
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/sysdiglabs/kube-apparmor-manager/releases/download/v0.0.5/kube-apparmor-manager_v0.0.5_linux_amd64.tar.gz
-    sha256: e25256072f8c0b0db942b543455ab97bef6148aa792813a5fd521530c722d0d0
+    uri: https://github.com/sysdiglabs/kube-apparmor-manager/releases/download/v0.0.6/kube-apparmor-manager_v0.0.6_linux_amd64.tar.gz
+    sha256: 86cbe6e61f5963b2c6e7f19265ba76a899163e30d8834fd213b862ac9b156808
     bin: kube-apparmor-manager
   shortDescription: Manage AppArmor profiles for cluster.
   description: |

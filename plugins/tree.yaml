@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: tree
 spec:
-  version: v0.4.0
+  version: v0.4.3
   homepage: https://github.com/ahmetb/kubectl-tree
   shortDescription: Show a tree of object hierarchies through ownerReferences
   description: |
@@ -19,29 +19,27 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/ahmetb/kubectl-tree/releases/download/v0.4.0/kubectl-tree_v0.4.0_darwin_amd64.tar.gz
-    sha256: c90dd260212b7da7163f12a27269923dedaeb17667616d990aa7ddbee31d2364
-    files:
-    - from: "*"
-      to: "."
+    uri: https://github.com/ahmetb/kubectl-tree/releases/download/v0.4.3/kubectl-tree_v0.4.3_darwin_amd64.tar.gz
+    sha256: ac2e509904bd2478e650609bc8f1c3a3c399e3a5502fce6041878adc15d8fbfa
+    bin: kubectl-tree
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/ahmetb/kubectl-tree/releases/download/v0.4.3/kubectl-tree_v0.4.3_darwin_arm64.tar.gz
+    sha256: 17a1ff7aaf214972e9261b4d6b1ccd335175999716731592eb30a71c43ec0684
     bin: kubectl-tree
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/ahmetb/kubectl-tree/releases/download/v0.4.0/kubectl-tree_v0.4.0_linux_amd64.tar.gz
-    sha256: 3253a981099abceb41f2ea32c89489fd1ba459d950becef2e302f79a8b2f0507
-    files:
-    - from: "*"
-      to: "."
+    uri: https://github.com/ahmetb/kubectl-tree/releases/download/v0.4.3/kubectl-tree_v0.4.3_linux_amd64.tar.gz
+    sha256: 3f92e0025297c687fe219679a69bfdc126c7b706be6eb96b90a24d9905471b2d
     bin: kubectl-tree
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/ahmetb/kubectl-tree/releases/download/v0.4.0/kubectl-tree_v0.4.0_windows_amd64.tar.gz
-    sha256: 8fe0fefe22816c3c34116f7b2e236bc351db053a839f7e2f396c7eaaf88e612c
-    files:
-    - from: "*"
-      to: "."
+    uri: https://github.com/ahmetb/kubectl-tree/releases/download/v0.4.3/kubectl-tree_v0.4.3_windows_amd64.tar.gz
+    sha256: f8eb6d445c0c9843952aa65dda7072fe39e85a6adebed8b62184bb5d948c7837
     bin: kubectl-tree.exe

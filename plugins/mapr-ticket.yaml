@@ -1,0 +1,41 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: mapr-ticket
+spec:
+  version: v0.4.1
+  homepage: https://github.com/nobbs/kubectl-mapr-ticket
+  shortDescription: "Get information about deployed MapR tickets"
+  description: |
+    This plugin allows you to get information about MapR tickets deployed in the
+    cluster, including data parsed from the ticket itself, e.g. ticket expiry
+    date, user name, etc.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/nobbs/kubectl-mapr-ticket/releases/download/v0.4.1/kubectl-mapr-ticket-amd64-darwin.tar.gz
+    sha256: f4c35a1b3de4d5549da4f12fa3c86dbe971c45727de72b66eb65cfa17ec03671
+    bin: kubectl-mapr-ticket
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/nobbs/kubectl-mapr-ticket/releases/download/v0.4.1/kubectl-mapr-ticket-arm64-darwin.tar.gz
+    sha256: 32f9e43b6381b06382835b30df8eee63f445f9de78291b9ed6dd7eef87a4dd7d
+    bin: kubectl-mapr-ticket
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/nobbs/kubectl-mapr-ticket/releases/download/v0.4.1/kubectl-mapr-ticket-amd64-linux.tar.gz
+    sha256: 7901dce8665ff429aed68377d3f5f73162a9b8926c727bced74ceadc2ee92928
+    bin: kubectl-mapr-ticket
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/nobbs/kubectl-mapr-ticket/releases/download/v0.4.1/kubectl-mapr-ticket-arm64-linux.tar.gz
+    sha256: b953f9c062b3db1719960f30b448f95bdf2ed726f996570dd0ece25656acc131
+    bin: kubectl-mapr-ticket

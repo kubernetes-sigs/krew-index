@@ -1,0 +1,53 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pv-migrate
+spec:
+  version: v2.2.1
+  homepage: https://github.com/utkuozdemir/pv-migrate
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/utkuozdemir/pv-migrate/releases/download/v2.2.1/pv-migrate_v2.2.1_linux_x86_64.tar.gz
+      sha256: 44b01b1b6c72a2fef6f77f6e61087810cc0cae9e26347afd2baa3fe911374690
+      bin: pv-migrate
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/utkuozdemir/pv-migrate/releases/download/v2.2.1/pv-migrate_v2.2.1_linux_arm64.tar.gz
+      sha256: 28ec000b39667554758683be01a76183b879a8283eda6a96c141e4ba16b2b711
+      bin: pv-migrate
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm
+      uri: https://github.com/utkuozdemir/pv-migrate/releases/download/v2.2.1/pv-migrate_v2.2.1_linux_armv7.tar.gz
+      sha256: e9bcae2beff096311fa2977fa5519eeb143d67794414d790039c3b92b64269b6
+      bin: pv-migrate
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/utkuozdemir/pv-migrate/releases/download/v2.2.1/pv-migrate_v2.2.1_darwin_x86_64.tar.gz
+      sha256: ba2ebe7e86062e9b1f418ca54dff51203a5f3425e908658b287316cbc9288554
+      bin: pv-migrate
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/utkuozdemir/pv-migrate/releases/download/v2.2.1/pv-migrate_v2.2.1_darwin_arm64.tar.gz
+      sha256: 3efb100f31cd6a7d7d7e27d3c532bb1cce81cc12505507a49dc7cca8871b58dc
+      bin: pv-migrate
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/utkuozdemir/pv-migrate/releases/download/v2.2.1/pv-migrate_v2.2.1_windows_x86_64.zip
+      sha256: 0ed58867f00ceea5b5cafdc36ca5714e205989b9b601949b24f5323cf85c1774
+      bin: pv-migrate.exe
+  shortDescription: Migrate data across persistent volumes
+  description: |
+    pv-migrate uses ssh and rsync to copy data across persistent volumes

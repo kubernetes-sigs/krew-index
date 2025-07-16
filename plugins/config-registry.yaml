@@ -1,0 +1,61 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: config-registry
+spec:
+  homepage: https://github.com/mumoshu/config-registry
+  shortDescription: Switch between registered kubeconfigs
+  version: v0.2.2
+  description: |
+    Switch between kubeconfigs stored in your local filesystem.
+    Similar to "ctx" and "ns", but for switching the whole kubeconfig.
+
+    The recommended workflow is as follows:
+
+    - Run `init` to set up the registry at `~/.kube/registry`.
+      The registry is where all the registered kubeconfigs will be stored.
+      On `init`, the default kubeconfig is imported as `default`.
+    - Register more kubeconfigs with `import`. `import PATH NAME` registers the
+      kubeconfig at PATH as NAME
+    - Run `ls` to list all the registered configs
+    - Run `use NAME` to switch to the kubeconfig by name
+  caveats: |
+    If fzf is installed on your machine, you can interactively choose
+    between the entries using the arrow keys, or by fuzzy searching
+    as you type.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/mumoshu/config-registry/releases/download/v0.2.2/config-registry_v0.2.2_darwin_amd64.tar.gz
+    sha256: 1183da12b057010c957edc0f7194f1d78ba687a6a5981cb3f9366d1a5754696d
+    bin: config-registry
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/mumoshu/config-registry/releases/download/v0.2.2/config-registry_v0.2.2_darwin_arm64.tar.gz
+    sha256: d2754246a1f1d9b2a19dd305de3c64e5e199a36e8fb2323d474da4c0acf239f1
+    bin: config-registry
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/mumoshu/config-registry/releases/download/v0.2.2/config-registry_v0.2.2_linux_amd64.tar.gz
+    sha256: 548af88b1c6104a29e9b38ca4fda3a5d22d029c58bb099cb92819dbccb829b25
+    bin: config-registry
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/mumoshu/config-registry/releases/download/v0.2.2/config-registry_v0.2.2_linux_arm64.tar.gz
+    sha256: bbd946d0efc764df07f55a3acc01942c7ea5a8b86541208c8e5cb00b4fa599c9
+    bin: config-registry
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/mumoshu/config-registry/releases/download/v0.2.2/config-registry_v0.2.2_windows_amd64.zip
+    sha256: b0562a4a21ba93707bc54ba0018dd72bde979b8b33cc474227f8a1f453b174d0
+    bin: config-registry.exe

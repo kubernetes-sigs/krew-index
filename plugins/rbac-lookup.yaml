@@ -4,8 +4,8 @@ metadata:
   name: rbac-lookup
 spec:
   platforms:
-  - uri: https://github.com/reactiveops/rbac-lookup/releases/download/v0.3.0/rbac-lookup_0.3.0_Darwin_x86_64.tar.gz
-    sha256: 7a271bddae25bc178079815954e957c80c8d7d95a060b537128ebf800692492b
+  - uri: https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.9.0/rbac-lookup_0.9.0_Darwin_x86_64.tar.gz
+    sha256: b8b82d0af2e2ff6c4851748b8478e68fb6ccfa700636606f49a5230e21b803b3
     bin: rbac-lookup
     files:
     - from: "*"
@@ -14,8 +14,18 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/reactiveops/rbac-lookup/releases/download/v0.3.0/rbac-lookup_0.3.0_Linux_x86_64.tar.gz
-    sha256: a758133ce7c0e056f6cd90dc12b33c0c0f63c8adec37041b25891e54880db141
+  - uri: https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.9.0/rbac-lookup_0.9.0_Darwin_arm64.tar.gz
+    sha256: 44fc6e3e10c194eafcc0052553ec5d60ca55aceb84ca046512b5460df4429476
+    bin: rbac-lookup
+    files:
+    - from: "*"
+      to: "."
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64       
+  - uri: https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.9.0/rbac-lookup_0.9.0_Linux_x86_64.tar.gz
+    sha256: 0b77d90820e9b238b7fcf1d21651ce8d30952e76b04dfd745d6e492d8e102146
     bin: rbac-lookup
     files:
     - from: "*"
@@ -24,8 +34,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  version: v0.3.0
-  homepage: https://github.com/reactiveops/rbac-lookup
+  version: v0.9.0
+  homepage: https://github.com/FairwindsOps/rbac-lookup
   shortDescription: Reverse lookup for RBAC
   description: |
     Easily find roles and cluster roles attached to any user, service account, or group name in your Kubernetes cluster.

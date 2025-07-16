@@ -1,0 +1,50 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: vela
+spec:
+  version: "v1.10.3"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/oam-dev/kubevela/releases/download/v1.10.3/kubectl-vela-v1.10.3-linux-amd64.tar.gz
+    sha256: a67ff3de8d0352513c4921a7163de79d9f8783a424145c86ec2aca13f7fafbdc
+    files:
+    - from: "*/kubectl-vela"
+      to: "."
+    - from: "*/LICENSE"
+      to: "."
+    bin: "kubectl-vela"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/oam-dev/kubevela/releases/download/v1.10.3/kubectl-vela-v1.10.3-darwin-amd64.tar.gz
+    sha256: 9da7ca59b93c34c83d42f0661e7fad3c39552c5d1c7e509e92d76c2b5a4493c7
+    files:
+    - from: "*/kubectl-vela"
+      to: "."
+    - from: "*/LICENSE"
+      to: "."
+    bin: "kubectl-vela"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/oam-dev/kubevela/releases/download/v1.10.3/kubectl-vela-v1.10.3-windows-amd64.zip
+    sha256: a757cad84070ddf210cbe274eaee71b6aec801ff8eae1b3c71b0de9674f8ac3c
+    files:
+    - from: "*/kubectl-vela.exe"
+      to: "."
+    - from: "*/LICENSE"
+      to: "."
+    bin: "kubectl-vela.exe"
+  shortDescription: Easily interact with KubeVela
+  homepage: https://kubevela.io
+  description: |
+    kubectl vela is a kubectl plugin from the KubeVela project. KubeVela is
+    a modern application platform that is fully self-service, and adapts to
+    your needs when you grow. This plugin allows you to better view, manage
+    and maintain KubeVela applications.

@@ -3,8 +3,52 @@ kind: Plugin
 metadata:
   name: sort-manifests
 spec:
-  version: v0.4.0
+  version: v0.4.4
+  platforms:
+    - bin: ksort.exe
+      uri: https://github.com/superbrothers/ksort/releases/download/v0.4.4/ksort-windows-arm64.zip
+      sha256: f81c2f46ae75b1e65155c53b7a03db39ecf1d88573949a6cd797786a57f34f7b
+      selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+    - bin: ksort.exe
+      uri: https://github.com/superbrothers/ksort/releases/download/v0.4.4/ksort-windows-amd64.zip
+      sha256: 76b8802d76c9459dc6d8e87319360b63eb249a499277a9cf6ade2361602d24c6
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+    - bin: ksort
+      uri: https://github.com/superbrothers/ksort/releases/download/v0.4.4/ksort-linux-arm64.zip
+      sha256: 337d79c705e495311b9f80967c1af926134c0cf7cd4ae57bea218d3036eec071
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+    - bin: ksort
+      uri: https://github.com/superbrothers/ksort/releases/download/v0.4.4/ksort-linux-amd64.zip
+      sha256: 0a7c65291a70885bc437367914e6fe32ef01be8da09d2cd06d0c4f077d44bed0
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - bin: ksort
+      uri: https://github.com/superbrothers/ksort/releases/download/v0.4.4/ksort-darwin-arm64.zip
+      sha256: beba7ae3ebdddb3c9a4f981ff5ead068ed057011c3508bb039ae3b268d1a2141
+      selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+    - bin: ksort
+      uri: https://github.com/superbrothers/ksort/releases/download/v0.4.4/ksort-darwin-amd64.zip
+      sha256: 0238e6e63006a4a4feb6a49c73cd5f0bb0eaa6ba2d0f4dccc18c1ace601ea581
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
   shortDescription: Sort manifest files in a proper order by Kind
+  homepage: https://github.com/superbrothers/ksort
   description: |
     When installing manifests, they should be sorted in a proper order by Kind.
     For example, Namespace object must be in the first place when installing
@@ -12,29 +56,3 @@ spec:
 
     ksort sorts manifest files in a proper order by Kind, which is implementd by
     using tiller.SortByKind() in Kubernetes Helm.
-  homepage: https://github.com/superbrothers/ksort
-  platforms:
-  - uri: https://github.com/superbrothers/ksort/releases/download/v0.4.0/ksort-darwin-amd64.zip
-    sha256: 7e794656a28b5c684a7b8c83a6f241aa01caa792c2542cab35edbdd02908f9ef
-    bin: ksort
-    files:
-    - from: ksort
-      to: .
-    - from: LICENSE.txt
-      to: .
-    selector:
-      matchLabels:
-        os: darwin
-        arch: amd64
-  - uri: https://github.com/superbrothers/ksort/releases/download/v0.4.0/ksort-linux-amd64.zip
-    sha256: 3ff26e30b1cf457c9f0d9be8acf62af4b7c1c104bcfe6427f06f524b84bd05a2
-    bin: ksort
-    files:
-    - from: ksort
-      to: .
-    - from: LICENSE.txt
-      to: .
-    selector:
-      matchLabels:
-        os: linux
-        arch: amd64

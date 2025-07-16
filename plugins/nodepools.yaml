@@ -1,0 +1,61 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: nodepools
+spec:
+  version: v0.0.7
+  homepage: https://github.com/grafana/kubectl-nodepools
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/grafana/kubectl-nodepools/releases/download/v0.0.7/kubectl-nodepools_v0.0.7_darwin_amd64.tar.gz
+    sha256: 76559e1bed4f9011a7be48ad9c31d8bdc9a943a4688f5839049cd0ab32f6b5ff
+    bin: kubectl-nodepools
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/grafana/kubectl-nodepools/releases/download/v0.0.7/kubectl-nodepools_v0.0.7_darwin_arm64.tar.gz
+    sha256: a03d8f837584059564b0e3112639d7d08273222617cd7b5071c6b22c8f353e24
+    bin: kubectl-nodepools
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/grafana/kubectl-nodepools/releases/download/v0.0.7/kubectl-nodepools_v0.0.7_linux_amd64.tar.gz
+    sha256: b8434bb513d76b43ec17d17af77a7abb0c51128798ee621dc8d9d7cd549c125a
+    bin: kubectl-nodepools
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/grafana/kubectl-nodepools/releases/download/v0.0.7/kubectl-nodepools_v0.0.7_linux_arm64.tar.gz
+    sha256: e924d1376ad67c64bf1f56993060af1bff69fb205c8a4c0b1829750fade957df
+    bin: kubectl-nodepools
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/grafana/kubectl-nodepools/releases/download/v0.0.7/kubectl-nodepools_v0.0.7_windows_amd64.zip
+    sha256: 1201147be12873c2aecb55c0edfd29f622ea101ca166f635cb0508508ca39ffe
+    bin: kubectl-nodepools.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/grafana/kubectl-nodepools/releases/download/v0.0.7/kubectl-nodepools_v0.0.7_windows_arm64.zip
+    sha256: b5a7fe49c0bfdd69a61a6a150218b8fa7199ab6108ffe86a1ae28d1e1cfc1226
+    bin: kubectl-nodepools.exe
+  shortDescription: List node pools/groups
+  description: |
+    Some cloud providers allow to manage your cluster nodes in pools/groups
+    where all their nodes share base settings. This plugin allows you to
+    list node pools/groups in the current cluster, alongside a count of how
+    many nodes there are in each pool/group and their instance type. In
+    addition to this you can also list nodes for a given node pool/group by
+    name.
+
+    This plugin supports the standard kubectl flags for environment and
+    cluster selection and authentication.

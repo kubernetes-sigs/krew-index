@@ -1,0 +1,36 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: log2rbac
+spec:
+  version: "v0.0.4"
+  homepage: https://github.com/jkremser/log2rbac-operator/tree/master/kubectl-plugin
+  shortDescription: "Fine-tune your RBAC using log2rbac operator"
+  description: |
+    Simple TUI based kubectl plugin to interface with the log2rbac operator.
+    It can (un)deploy the operator and create the `RbacNegotiation` custom
+    resources for various types of K8s kinds. The operator will help with
+    setting up the correct RBAC rules for your application by inspecting the
+    log files from pods and adding the rights violation as new rules.
+    Don't use this in production, but only for development purposes!
+  platforms:
+    - selector:
+        matchExpressions:
+          - key: "os"
+            operator: "In"
+            values:
+              - darwin
+              - linux
+      uri: https://github.com/jkremser/log2rbac-operator/archive/refs/tags/v0.0.4.zip
+      # 'sha256' is the sha256sum of the zip from url above (shasum -a 256 ..zip)
+      sha256: a702a8c82bca9d6fa33afaedc47d700a44742dd02f297c53fc40fc2eb5264931
+      files:
+        - from: "log2rbac-operator-*/kubectl-plugin/kubectl-log2rbac"
+          to: "."
+        - from: "log2rbac-operator-*/LICENSE"
+          to: "."
+        - from: "log2rbac-operator-*/kubectl-plugin/VERSION"
+          to: "."
+        - from: "log2rbac-operator-*/kubectl-plugin/README.md"
+          to: "."
+      bin: kubectl-log2rbac

@@ -3,23 +3,59 @@ kind: Plugin
 metadata:
   name: emit-event
 spec:
-  version: v0.0.3
+  version: v0.6.0
   homepage: https://github.com/rajatjindal/kubectl-emit-event
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/rajatjindal/kubectl-emit-event/releases/download/v0.0.3/kubectl-emit-event_v0.0.3_darwin_amd64.tar.gz
-    sha256: b3b396ab693093591b4742d6d15a24941848bdbb39ab9904cf599ead1e3a6a35
+    uri: https://github.com/rajatjindal/kubectl-emit-event/releases/download/v0.6.0/kubectl-emit-event_v0.6.0_darwin_amd64.tar.gz
+    sha256: 62925ee0a2f92f7b2ef88d834ad0ef6e6c57d300d798734c383b1d26a271d8cc
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-emit-event
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/rajatjindal/kubectl-emit-event/releases/download/v0.6.0/kubectl-emit-event_v0.6.0_darwin_arm64.tar.gz
+    sha256: dbd1ad583347c10dec63d1b893bb4af450331593b07263b1877f7277bbd25432
+    files:
+    - from: "*"
+      to: "."
     bin: kubectl-emit-event
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/rajatjindal/kubectl-emit-event/releases/download/v0.0.3/kubectl-emit-event_v0.0.3_linux_amd64.tar.gz
-    sha256: 28c76c70ea6ba727e1d8bd01fee4262f6ec36b965b2552f84ca3926cc7d7eeaf
+    uri: https://github.com/rajatjindal/kubectl-emit-event/releases/download/v0.6.0/kubectl-emit-event_v0.6.0_linux_amd64.tar.gz
+    sha256: 640a66f4b2d02a8f568141477e7f0e7319810745da4f0d9dd7aa5ba5c30ae8c3
+    files:
+    - from: "*"
+      to: "."
     bin: kubectl-emit-event
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/rajatjindal/kubectl-emit-event/releases/download/v0.6.0/kubectl-emit-event_v0.6.0_linux_arm64.tar.gz
+    sha256: 59959cc11dff4035d7bf54331f9b6fcaba0a6c1018ee25591375a460dc62d5ec
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-emit-event
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/rajatjindal/kubectl-emit-event/releases/download/v0.6.0/kubectl-emit-event_v0.6.0_windows_amd64.tar.gz
+    sha256: c7bbd7f068eb16f2c43c51fa91d7dbbac3d1c526200c26417dfefba227da6d35
+    files:
+    - from: "*"
+      to: "."
+    bin: kubectl-emit-event.exe
   shortDescription: Emit Kubernetes Events for the requested object
   description: |
     This plugin emits the Kubernetes Events for the requested object

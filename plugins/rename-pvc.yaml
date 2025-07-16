@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: rename-pvc
+spec:
+  version: "v0.5.0"
+  homepage: https://github.com/stackitcloud/rename-pvc
+  shortDescription: "Rename a PersistentVolumeClaim (PVC)"
+  description: |
+    rename-pvc renames an existing PersistentVolumeClaim (PVC) by creating a new PVC
+    with the same spec and rebinding the existing PersistentClaim (PV) to the newly created PVC.
+    Afterwards the old PVC is automatically deleted.
+  caveats: "Be sure to create a backup of your data in the PVC before using rename-pvc!"
+  platforms:
+  - bin: rename-pvc
+    uri: https://github.com/stackitcloud/rename-pvc/releases/download/v0.5.0/rename-pvc-linux-amd64.tar.gz
+    sha256: 485727b6e254732f287a0f78d4f9767d405c3dba1d4c2db847ef2abab585e658
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: rename-pvc
+    uri: https://github.com/stackitcloud/rename-pvc/releases/download/v0.5.0/rename-pvc-linux-arm64.tar.gz
+    sha256: 0b31d14f1aeec70f26eca95f805388bc755c93ec8d41aeae94dbc068a41b626c
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - bin: rename-pvc
+    uri: https://github.com/stackitcloud/rename-pvc/releases/download/v0.5.0/rename-pvc-darwin-amd64.tar.gz
+    sha256: 9095e6e316b298adb3ed96de8a6b921cfda0803e31ddab172f4099155284354d
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: rename-pvc
+    uri: https://github.com/stackitcloud/rename-pvc/releases/download/v0.5.0/rename-pvc-darwin-arm64.tar.gz
+    sha256: c244b40a859a1eea4a9700f49d70185191fec25071e80fc9a3a48406fa991d20
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: rename-pvc.exe
+    uri: https://github.com/stackitcloud/rename-pvc/releases/download/v0.5.0/rename-pvc-windows-amd64.zip
+    sha256: e9908df05d55398964182ad4ce510cb83995368d2ea57f6ef06d05dbb3385655
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

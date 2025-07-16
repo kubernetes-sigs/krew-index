@@ -1,0 +1,77 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: mc
+spec:
+  version: v1.1.7
+  homepage: https://github.com/jonnylangefeld/kubectl-mc
+  shortDescription: Run kubectl commands against multiple clusters at once
+  description: |+2
+    This plugin helps to work with multiple kubernetes clusters at once, filtered by
+    a regular expression. For instance to get the status of a deployment across all
+    `staging` clusters run the following command:
+    kubectl mc -r staging -- get deployments -n kube-system
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.7/kubectl-mc_v1.1.7_darwin_amd64.tar.gz
+    sha256: 439fac55676e23915ee64066540412b9ae5f20f629d04fed79ca8c6740d7a6d0
+    bin: kubectl-mc
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.7/kubectl-mc_v1.1.7_darwin_arm64.tar.gz
+    sha256: d87f97e096fd037cea6367f79ee1e1735797c44bfb32f85ce54580a237c90074
+    bin: kubectl-mc
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.7/kubectl-mc_v1.1.7_linux_amd64.tar.gz
+    sha256: e4251f720dd0271b976d8bab95ce6ab87de4cccd2ac575695b0db125c0a91164
+    bin: kubectl-mc
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.7/kubectl-mc_v1.1.7_linux_arm64.tar.gz
+    sha256: 1746d8520205a09a030961f1172ce05682cf0d06fb8e6a2537fcca770a868c5c
+    bin: kubectl-mc
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.7/kubectl-mc_v1.1.7_linux_armv7.tar.gz
+    sha256: 51f069459829700080d5b8ab5cce52f23d7e7c1aa4412b5072229c31a24bd551
+    bin: kubectl-mc
+  - selector:
+      matchLabels:
+        os: linux
+        arch: "386"
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.7/kubectl-mc_v1.1.7_linux_386.tar.gz
+    sha256: 42243b8531b21e81138a53daf326ee847170741f3bbfe237a4cd780f468e8439
+    bin: kubectl-mc
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.7/kubectl-mc_v1.1.7_windows_amd64.tar.gz
+    sha256: e9f8d5833211d446e3a1965dd331ad24db50ae3df280d165e35b4a0154b72df3
+    bin: kubectl-mc.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.7/kubectl-mc_v1.1.7_windows_arm64.tar.gz
+    sha256: 8555c91306cc1c7aed0327b148b25a630e0ca7ce2361ec6c366db35f7743f0eb
+    bin: kubectl-mc.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: "386"
+    uri: https://github.com/jonnylangefeld/kubectl-mc/releases/download/v1.1.7/kubectl-mc_v1.1.7_windows_386.tar.gz
+    sha256: df10591e571056af0be54df4a4cd92c1f8991bc1d4c0bec8e7763b4c9ff49ec8
+    bin: kubectl-mc.exe

@@ -1,0 +1,46 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: openebs
+spec:
+  version: v4.3.2
+  homepage: https://openebs.io/docs/
+  shortDescription: Provides commands for OpenEBS engines.
+  description: |
+    This plugin allows you to manage storage engines provided by OpenEBS.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/openebs/openebs/releases/download/v4.3.2/kubectl-openebs-x86_64-apple-darwin.tar.gz
+    sha256: 2e916f09bb70f09616b8810f6fe79d8f1ed2d196cf32d85cd4109798b0c52f52
+    bin: kubectl-openebs
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/openebs/openebs/releases/download/v4.3.2/kubectl-openebs-aarch64-apple-darwin.tar.gz
+    sha256: 62a96c3c7cc70584cb83ec3258f9733e659b5645458083b2dd7f75a1c2609006
+    bin: kubectl-openebs
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/openebs/openebs/releases/download/v4.3.2/kubectl-openebs-x86_64-linux-musl.tar.gz
+    sha256: 7f0699a2191d7d10c1b57f0649250f590dbed3bc174b27b0e1d4a494fc5db783
+    bin: kubectl-openebs
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/openebs/openebs/releases/download/v4.3.2/kubectl-openebs-aarch64-linux-musl.tar.gz
+    sha256: 1f9086a19f51411d1f175243b8e51fdea06eafa4329f4406c1382af8f69a5931
+    bin: kubectl-openebs
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/openebs/openebs/releases/download/v4.3.2/kubectl-openebs-x86_64-windows-gnu.tar.gz
+    sha256: 2b202c8126a06c16946ad506585f8e77b3a31b0b747ea8b77271444f50d90b93
+    bin: kubectl-openebs.exe

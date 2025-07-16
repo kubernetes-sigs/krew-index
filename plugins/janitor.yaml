@@ -1,0 +1,39 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: janitor
+spec:
+  version: v0.1.0
+  homepage: https://github.com/dastergon/kubectl-janitor
+  shortDescription: Lists objects in a problematic state
+  description: |
+    Troubleshooting Kubernetes clusters sometimes requires
+    a combination of kubectl commands and other command-line tools
+    such as jq to do correlations around the issues that the various
+    objects might have. Moreover, sometimes the supported options
+    of the --field-selector flag might be limited as well.
+    This plugin assists in finding Kubernetes objects in a problematic state.
+    It currently supports Job, Pod, PersistentVolume,
+    and PersistentVolumeClaim resources.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/dastergon/kubectl-janitor/releases/download/v0.1.0/kubectl-janitor_v0.1.0_darwin_amd64.tar.gz
+    sha256: b991c1c80c58c4563b5718babb8345ac9d7bfe98e08dcbf633a7a7882f447826
+    bin: kubectl-janitor
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/dastergon/kubectl-janitor/releases/download/v0.1.0/kubectl-janitor_v0.1.0_linux_amd64.tar.gz
+    sha256: a2d1d34e4173569cff0b6804c93376c535e9a33e939e44b8da3111d48eb3a6ab
+    bin: kubectl-janitor
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/dastergon/kubectl-janitor/releases/download/v0.1.0/kubectl-janitor_v0.1.0_windows_amd64.tar.gz
+    sha256: 3de3f8c66e38e41629ecd776e52d5e614bfc00874454c793d5b5c9ed00bb3e87
+    bin: kubectl-janitor.exe

@@ -1,0 +1,73 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kruise
+spec:
+  version: "v1.1.2"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/openkruise/kruise-tools/releases/download/v1.1.2/kubectl-kruise-linux-amd64.tar.gz
+    sha256: 233b830f3b8db6a6ab92b971c3d95b470955857b739d1a39c75925424930a243
+    files:
+      - from: "*/kubectl-kruise"
+        to: "."
+      - from: "*/LICENSE"
+        to: "."
+    bin: "kubectl-kruise"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/openkruise/kruise-tools/releases/download/v1.1.2/kubectl-kruise-linux-arm64.tar.gz
+    sha256: 20bcf95e17a53e816c83457a4012050e11ed96cf9496a12f6b0ae2dbafcdafb5
+    files:
+      - from: "*/kubectl-kruise"
+        to: "."
+      - from: "*/LICENSE"
+        to: "."
+    bin: "kubectl-kruise"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/openkruise/kruise-tools/releases/download/v1.1.2/kubectl-kruise-darwin-amd64.tar.gz
+    sha256: 4b4ff3b8e08d7392720d71f4ea6ecd5f2f63bd15a61de474c0408b90d8eb95a1
+    files:
+      - from: "*/kubectl-kruise"
+        to: "."
+      - from: "*/LICENSE"
+        to: "."
+    bin: "kubectl-kruise"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/openkruise/kruise-tools/releases/download/v1.1.2/kubectl-kruise-darwin-arm64.tar.gz
+    sha256: 29cacc482c48c33b4eef8c72499f27ae68b927ac0665ecf4daaa4f55f8c2a68c
+    files:
+      - from: "*/kubectl-kruise"
+        to: "."
+      - from: "*/LICENSE"
+        to: "."
+    bin: "kubectl-kruise"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/openkruise/kruise-tools/releases/download/v1.1.2/kubectl-kruise-windows-amd64.tar.gz
+    sha256: 8e8fb62a0978d169220729ba9958fa5e90b8420bdc155fb2a92ad081923a47c8
+    files:
+      - from: "*/kubectl-kruise"
+        to: "."
+      - from: "*/LICENSE"
+        to: "."
+    bin: "kubectl-kruise"
+  shortDescription: Easily handle OpenKruise workloads
+  homepage: https://openkruise.io/
+  description: |
+    kubectl kruise is a kubectl plugin from the OpenKruise project. OpenKruise is an extended component suite for Kubernetes,
+    which mainly focuses on application automations, such as deployment, upgrade, ops and avalibility protection.
+    This plugin allows you to better handle, manage and maintain OpenKruise workloads.

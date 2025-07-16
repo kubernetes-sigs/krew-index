@@ -1,0 +1,72 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: dumpy
+spec:
+  homepage: https://github.com/larryTheSlap/dumpy
+  shortDescription: Performs tcpdump captures on resources
+  version: v0.2.1
+  description: |
+    This plugin make capturing network traffic easy on different kubernetes resources (deployments, pods, nodes...),
+    it does that by running tcpdump directly on targeted resource.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.2.1/dumpy_Darwin_x86_64.tar.gz
+    sha256: 674c6fec400b7c56f7592f6461c6fe6d890c0a86d3336fe9b0dbdbe78e0a1812
+    bin: kubectl-dumpy
+    files:
+    - from: kubectl-dumpy
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.2.1/dumpy_Darwin_arm64.tar.gz
+    sha256: 6b4466a537d4b902b1788dc2f015f8aedaedbe687bffb58467597005d21ec9c7
+    bin: kubectl-dumpy
+    files:
+    - from: kubectl-dumpy
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.2.1/dumpy_Linux_x86_64.tar.gz
+    sha256: c68b4f8175854734aac8f2b3f76acf005bff4ba12a4ba35383bde768a7d44b10
+    bin: kubectl-dumpy
+    files:
+    - from: kubectl-dumpy
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.2.1/dumpy_Linux_arm64.tar.gz
+    sha256: 9927b68196c89d777b2ec1d87775751466dda5e1c5cf8122bfc9eb519b5ce8dd
+    bin: kubectl-dumpy
+    files:
+    - from: kubectl-dumpy
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/larryTheSlap/dumpy/releases/download/v0.2.1/dumpy_Windows_x86_64.zip
+    sha256: 2fba225c3aa8213855efd5c32ff39abd43e513d9f5e8415b338cdb2fe9f95a75
+    bin: kubectl-dumpy.exe
+    files:
+    - from: kubectl-dumpy.exe
+      to: .
+    - from: LICENSE
+      to: .

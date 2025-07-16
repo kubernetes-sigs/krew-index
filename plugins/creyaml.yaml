@@ -1,0 +1,21 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: creyaml
+spec:
+  version: v0.0.3
+  homepage: https://github.com/sahil-lakhwani/kubectl-creyaml
+  shortDescription: Generate custom resource YAML manifest
+  description: |
+    This plugin creates custom resource YAML manifest for specified
+    custom resource definition.
+  caveats: |
+    * The CRD needs to be in the cluster.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/sahil-lakhwani/kubectl-creyaml/releases/download/v0.0.3/kubectl-creyaml.tar.gz
+    sha256: 521b435623b210b62afa0e8a362ea94a3af4734156452d4552fc6ed455853f6d
+    bin: kubectl-creyaml

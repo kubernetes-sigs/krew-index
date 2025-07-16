@@ -3,14 +3,26 @@ kind: Plugin
 metadata:
   name: status
 spec:
-  version: v0.4.1
+  version: v0.7.13
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.4.1/status_linux_amd64.tar.gz
-    sha256: 550e974c9c18ac40759f9e25b8419e3d20aec850b0e20305b08fea7006791ad7
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.13/status_linux_amd64.tar.gz
+    sha256: 814594703b110e6f463fd9491548cf102ae1f5daf9ca4cf2e3ce773dc687e33e
+    files:
+    - from: "./status"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "status"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.13/status_linux_arm64.tar.gz
+    sha256: 2cdc9b4e3c8f43f987716305d4e0ef8849c502f8fe09f922670668327595ab46
     files:
     - from: "./status"
       to: "."
@@ -21,8 +33,20 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.4.1/status_darwin_amd64.tar.gz
-    sha256: ebf9e6158bca3d4f37ed080e01f2432771502ca9fd31a3a8583248406602cb93
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.13/status_darwin_amd64.tar.gz
+    sha256: e3dd63cb1e3ccc2fbec57b8c984189a993f905e46b6aca0623d4004ef826c443
+    files:
+    - from: "./status"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "status"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.13/status_darwin_arm64.tar.gz
+    sha256: a19847d69b83382ce1ee1783b8b87677746e5e812b3df4c4e738355135203bde
     files:
     - from: "./status"
       to: "."
@@ -33,8 +57,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.4.1/status_windows_amd64.zip
-    sha256: ffa7e83276f2ee8137cfeeaaa157243507410de899d6876ea1588596380e94f2
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.13/status_windows_amd64.zip
+    sha256: b59a1f8f3adfc01962e0da04d1ceb6e7bbe4ad32f9e68964e6836ebf637c09d4
     files:
     - from: "/status.exe"
       to: "."
@@ -43,10 +67,13 @@ spec:
     bin: "status.exe"
   shortDescription: Show status details of a given resource.
   homepage: https://github.com/bergerx/kubectl-status
-  description: |
-    Show status details of a given resource. Most useful when debugging Pod issues.
+  caveats: |
+    Usage:
+      $ kubectl status
 
     For additional options:
       $ kubectl status --help
       or https://github.com/bergerx/kubectl-status/blob/master/doc/USAGE.md
 
+  description: |
+    Show status details of a given resource. Most useful when debugging Pod issues.

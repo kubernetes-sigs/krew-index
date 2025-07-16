@@ -1,0 +1,65 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cyclonus
+spec:
+  version: "v0.2.1"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.2.1/kubectl-cyclonus_linux_amd64.tar.gz
+    sha256: bd4abf4dc13582bca8d81f08c9413f5d137cf9cbf87e1810e062452dadfd3335
+    files:
+    - from: "./kubectl-cyclonus"
+      to: "cyclonus"
+    - from: LICENSE
+      to: "."
+    bin: "cyclonus"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.2.1/kubectl-cyclonus_darwin_amd64.tar.gz
+    sha256: 99e1b712bf6b8a4010632290b6b905ee1beb294fcaf8c4f0894d14e2bc860809
+    files:
+    - from: "./kubectl-cyclonus"
+      to: "cyclonus"
+    - from: LICENSE
+      to: "."
+    bin: "cyclonus"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.2.1/kubectl-cyclonus_darwin_arm64.tar.gz
+    sha256: 67531555e4e53027234e065931921a38637c3bd6e31e795526df82b8e37a8787
+    files:
+    - from: "./kubectl-cyclonus"
+      to: "cyclonus"
+    - from: LICENSE
+      to: "."
+    bin: "cyclonus"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/mattfenwick/kubectl-cyclonus/releases/download/v0.2.1/kubectl-cyclonus_windows_amd64.zip
+    sha256: 0ac5a11fc3fe8a34bf741a0ce9593734708cb4c9b2a06d545f082737eda44e6d
+    files:
+    - from: "/kubectl-cyclonus.exe"
+      to: "cyclonus.exe"
+    - from: LICENSE
+      to: "."
+    bin: "cyclonus.exe"
+  shortDescription: NetworkPolicy analysis tool suite
+  homepage: https://github.com/mattfenwick/kubectl-cyclonus
+  description: |
+    This plugin provides a suite of tools for working with network policies, including:
+    - linting to detect common problems
+    - target- and pod-based resolution of policies, to understand how policies work in practice
+      and override each other
+    - simulation of traffic allow/deny based on application of policies to source and destination
+      pod and namespace labels and IP addresses
+

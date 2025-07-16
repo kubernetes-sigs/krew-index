@@ -1,0 +1,87 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: clusternet
+spec:
+  homepage: https://github.com/clusternet/kubectl-clusternet
+  shortDescription: "Wrap multiple kubectl calls to Clusternet"
+  description: |
+    A plugin to interact with Clusternet.
+  version: v0.8.1
+  caveats: |
+    For additional options:
+      $ kubectl clusternet --help
+      or https://github.com/clusternet/kubectl-clusternet/blob/main/doc/USAGE.md
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/clusternet/kubectl-clusternet/releases/download/v0.8.1/kubectl-clusternet_darwin_amd64.tar.gz
+    sha256: a7e0e7f52f808de80bf29ecffab00e3ddddd8b8317acb6f0ebddffb7db2d711a
+    files:
+    - from: "./kubectl-clusternet"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-clusternet
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/clusternet/kubectl-clusternet/releases/download/v0.8.1/kubectl-clusternet_darwin_arm64.tar.gz
+    sha256: 2158d3d0bb00870a03fcd370ae6fb69110332df4061c71af0592691ba74f3d53
+    files:
+    - from: "./kubectl-clusternet"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-clusternet
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/clusternet/kubectl-clusternet/releases/download/v0.8.1/kubectl-clusternet_linux_amd64.tar.gz
+    sha256: 5cf37cf698881500f4aa2c47a54dd724657ee7c4e9ad017fdaf4c2b1db9df78b
+    files:
+    - from: "./kubectl-clusternet"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-clusternet
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/clusternet/kubectl-clusternet/releases/download/v0.8.1/kubectl-clusternet_linux_arm64.tar.gz
+    sha256: 1746e5cabc79c65173fb4ff16bf3920a0471c703c27e9d0b76714e4fe9bfe704
+    files:
+    - from: "./kubectl-clusternet"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-clusternet
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm
+    uri: https://github.com/clusternet/kubectl-clusternet/releases/download/v0.8.1/kubectl-clusternet_linux_armv6.tar.gz
+    sha256: 2967c60002cff94b738416fbec5d813475e68e2693298f2326b6b7bc09999f6a
+    files:
+    - from: "./kubectl-clusternet"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-clusternet
+  - selector:
+      matchLabels:
+        os: linux
+        arch: 386
+    uri: https://github.com/clusternet/kubectl-clusternet/releases/download/v0.8.1/kubectl-clusternet_linux_i386.tar.gz
+    sha256: d09e9c88fb097ee3c72b40ffc0b8fe1c13963f4be3e8daa1af353e88132671a6
+    files:
+    - from: "./kubectl-clusternet"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-clusternet

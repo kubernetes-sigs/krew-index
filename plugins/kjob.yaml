@@ -1,0 +1,43 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kjob
+spec:
+  version: v0.1.0
+  shortDescription: Run AI/ML jobs based on the pre-defined templates
+  homepage: https://github.com/kubernetes-sigs/kjob/
+  description: |
+    This kubectl plugin allows ML researchers to run templated Jobs with different values 
+    for the application-specific parameters, without the need to edit and submit entire 
+    YAML files. The tool comes with built-in support for running slurm scripts inside 
+    a Kubernetes cluster.
+  platforms:
+  - selector:
+      matchLabels:
+        os: "linux"
+        arch: "amd64"
+    uri: https://github.com/kubernetes-sigs/kjob/releases/download/v0.1.0/kubectl-kjob-linux-amd64.tar.gz
+    sha256: 34fd7e04cacfd49dd361453819ab460101ddef98f94b5fb4a76430ccb1e3a92a
+    bin: "kubectl-kjob"
+  - selector:
+      matchLabels:
+        os: "linux"
+        arch: "arm64"
+    uri: https://github.com/kubernetes-sigs/kjob/releases/download/v0.1.0/kubectl-kjob-linux-arm64.tar.gz
+    sha256: 4c1d09bcd522c7ef144770dbd5381d4ca70d1019783348efa8df80950a9e84dc
+    bin: "kubectl-kjob"
+  - selector:
+      matchLabels:
+        os: "darwin"
+        arch: "amd64"
+    uri: https://github.com/kubernetes-sigs/kjob/releases/download/v0.1.0/kubectl-kjob-darwin-amd64.tar.gz
+    sha256: f66681eb410d8df04cb413a442b6e3db9c3090cb02375cf83aca6e453cd90d1d
+    bin: "kubectl-kjob"
+  - selector:
+      matchLabels:
+        os: "darwin"
+        arch: "arm64"
+    uri: https://github.com/kubernetes-sigs/kjob/releases/download/v0.1.0/kubectl-kjob-darwin-arm64.tar.gz
+    sha256: 64c320d7f7a1d61f894357351726223269cfa5bb60996e19dbb29c4ad01a7768
+    bin: "kubectl-kjob"
+

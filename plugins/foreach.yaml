@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: foreach
+spec:
+  version: v0.3.0
+  homepage: https://github.com/ahmetb/kubectl-foreach
+  shortDescription: Run kubectl commands against some/all contexts in parallel
+  description: |
+    Run the same kubectl command against multiple contexts
+    simultaneously and print their output, prefixed by context name.
+    Choose contexts with exact name match or regular expressions.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/ahmetb/kubectl-foreach/releases/download/v0.3.0/kubectl-foreach_v0.3.0_darwin_amd64.tar.gz
+    sha256: 4df4fe5680dcc8e353a2ed16a8af0260d41035807f60dd53583fc37464e87a61
+    bin: kubectl-foreach
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/ahmetb/kubectl-foreach/releases/download/v0.3.0/kubectl-foreach_v0.3.0_darwin_arm64.tar.gz
+    sha256: fec92eafce5354992d1084a341a07005809408d09265e8054af978c4ce2a39fd
+    bin: kubectl-foreach
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/ahmetb/kubectl-foreach/releases/download/v0.3.0/kubectl-foreach_v0.3.0_linux_amd64.tar.gz
+    sha256: 34cd3dad24738d2c70f792be17c2731e4b46fe6a03209a42a08446d0c60d7ea1
+    bin: kubectl-foreach
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/ahmetb/kubectl-foreach/releases/download/v0.3.0/kubectl-foreach_v0.3.0_linux_arm64.tar.gz
+    sha256: db293c0bfd485ee2ae2ce9300bc2a5aa9e9baa404ea853bf3e41b9d6e9feaae1
+    bin: kubectl-foreach
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/ahmetb/kubectl-foreach/releases/download/v0.3.0/kubectl-foreach_v0.3.0_windows_amd64.tar.gz
+    sha256: 3a3fa8367f366656299f3d74700705efae4d52077ebad9fc18b7ab3b9deffb60
+    bin: kubectl-foreach.exe

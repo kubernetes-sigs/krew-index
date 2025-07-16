@@ -1,0 +1,42 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: strace
+spec:
+  version: "v0.0.1"
+  homepage: https://github.com/michaelwasher/kstrace
+  shortDescription: "Capture strace logs from a running workload"
+  description: |
+    kubectl-strace is a kubectl plugin that provides the ability to easily perform
+    debugging of system-calls for applications running in the cluster. 
+    kubectl-strace starts a priviledged Pod and attaches an strace instance
+    to one or many running Pods, displaying or collecting the results for later.
+    Read more documentation see: https://github.com/michaelwasher/kstrace
+  caveats: |
+    This plugin requires the RBAC authority to start privileged Pods and create Namespaces.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/MichaelWasher/kstrace/releases/download/v0.0.1/kubectl-strace-darwin-amd64-v0.0.1.tar
+    sha256: 07c6bfedeac7817b493b5db6371185b5107b5d74e97aa1fe9c73c2eefe3d3955
+    files:
+    - from: "kubectl-strace"
+      to: "."
+    - from: "LICENSE"
+      to: "."
+    bin: kubectl-strace
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/MichaelWasher/kstrace/releases/download/v0.0.1/kubectl-strace-linux-amd64-v0.0.1.tar
+    sha256: c979ca903bf3a23481c34268e9c4feec057099289a0d575f307cdc406d530796
+    files:
+    - from: "kubectl-strace"
+      to: "."
+    - from: "LICENSE"
+      to: "."
+    bin: kubectl-strace
+    

@@ -1,0 +1,47 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kubescape
+spec:
+  homepage: https://github.com/kubescape/kubescape/
+  shortDescription: Scan resources and cluster configs against security frameworks.
+  version: v3.0.3
+  description: |
+    It includes risk analysis, security compliance, and misconfiguration scanning
+    with an easy-to-use CLI interface, flexible output formats, and automated scanning capabilities.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/kubescape/kubescape/releases/download/v3.0.3/kubescape-macos-latest.tar.gz
+    sha256: bd2769259a06d1b851eb6cb439a992c853a8401d8dbd21da6a49291fb6cfdd21
+    bin: kubescape
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/kubescape/kubescape/releases/download/v3.0.3/kubescape-arm64-macos-latest.tar.gz
+    sha256: 82e15805654d82e8bfa1ad10255d8bc12db8771cbe8a7b4ea4bf6c5cbc11fa62
+    bin: kubescape
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/kubescape/kubescape/releases/download/v3.0.3/kubescape-ubuntu-latest.tar.gz
+    sha256: 91a6aa06b259b4d645f6be1e00709462be59f45226643e22bce77e73ded9eff5
+    bin: kubescape
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/kubescape/kubescape/releases/download/v3.0.3/kubescape-arm64-ubuntu-latest.tar.gz
+    sha256: 62d5b55146943f7de90ccf77b42972e20c81064f84dc9b5841a36c8bda6d0874
+    bin: kubescape
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/kubescape/kubescape/releases/download/v3.0.3/kubescape-windows-latest.tar.gz
+    sha256: 1618012cf0ceb17975f42568426ebdaef5ba1ece980efea4ac529628ce70dd20
+    bin: kubescape.exe

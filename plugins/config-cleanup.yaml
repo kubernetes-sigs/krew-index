@@ -3,16 +3,16 @@ kind: Plugin
 metadata:
   name: config-cleanup
 spec:
-  version: "v0.5.0"
+  version: "v0.6.0"
   shortDescription: Automatically clean up your kubeconfig
   description: |
     This plugin will attempt to connect to each apiserver specified by a context entry in your kubeconfig.
     If the connection succeeds then the user, cluster, and context entries are maintained in the result.
     Otherwise, the entries are removed.
-  homepage: https://github.com/b23llc/kubectl-config-cleanup
+  homepage: https://github.com/B23admin/kubectl-config-cleanup
   platforms:
-  - uri: https://github.com/b23llc/kubectl-config-cleanup/releases/download/v0.5.0/kubectl-config-cleanup_0.5.0_Linux_x86_64.tar.gz
-    sha256: 0efdcabfb3aa205e62179ee29d8f9f4f542d2ef31005147ae0b411a2ea776cdf
+  - uri: https://github.com/B23admin/kubectl-config-cleanup/releases/download/v0.6.0/kubectl-config-cleanup_0.6.0_linux_amd64.tar.gz
+    sha256: 17dd97598f25b3fe1b1b5582dcf55016a5a870007dcc99e78f7cad65993375f6
     bin: kubectl-config_cleanup
     files:
     - from: "./kubectl-config_cleanup"
@@ -23,8 +23,20 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/b23llc/kubectl-config-cleanup/releases/download/v0.5.0/kubectl-config-cleanup_0.5.0_Darwin_x86_64.tar.gz
-    sha256: 44b14fdf5b46c5a798fd61d7d20a0e6ff513b5d6ecfe88de156a7e344a8e3e69
+  - uri: https://github.com/B23admin/kubectl-config-cleanup/releases/download/v0.6.0/kubectl-config-cleanup_0.6.0_linux_arm64.tar.gz
+    sha256: baf80bf66e5b07f581ef99169fa9013d860c3d709a46fcb177feb36c416cac07
+    bin: kubectl-config_cleanup
+    files:
+    - from: "./kubectl-config_cleanup"
+      to: "."
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - uri: https://github.com/B23admin/kubectl-config-cleanup/releases/download/v0.6.0/kubectl-config-cleanup_0.6.0_darwin_amd64.tar.gz
+    sha256: eae610b7dd411c7a1cefb1287d5c00c090034288ba536dcf85c99bd4974446df
     bin: kubectl-config_cleanup
     files:
     - from: "./kubectl-config_cleanup"
@@ -35,8 +47,20 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/b23llc/kubectl-config-cleanup/releases/download/v0.5.0/kubectl-config-cleanup_0.5.0_Windows_x86_64.zip
-    sha256: e259be7518240597e773c744469b49a6bc8bb01ed0df19627cea6df9579889a2
+  - uri: https://github.com/B23admin/kubectl-config-cleanup/releases/download/v0.6.0/kubectl-config-cleanup_0.6.0_darwin_arm64.tar.gz
+    sha256: a9ff25426ca58ae917903aea1a13a0d8e8ed6c79cfbc57c378e308f3752eefdc
+    bin: kubectl-config_cleanup
+    files:
+    - from: "./kubectl-config_cleanup"
+      to: "."
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - uri: https://github.com/B23admin/kubectl-config-cleanup/releases/download/v0.6.0/kubectl-config-cleanup_0.6.0_windows_amd64.zip
+    sha256: e1b974bdec5d6ce45c5cf1783d1dcc0667a7b7eed46a6a611f305d5f93a6862e
     bin: kubectl-config_cleanup.exe
     files:
     - from: "./kubectl-config_cleanup.exe"

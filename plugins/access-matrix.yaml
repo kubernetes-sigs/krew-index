@@ -3,40 +3,52 @@ kind: Plugin
 metadata:
   name: access-matrix
 spec:
-  version: v0.4.4
+  version: v0.5.0
   platforms:
-  - bin: access-matrix
-    uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.4/access-matrix-amd64-linux.tar.gz
-    sha256: 53b1ee5865d11360cea3e59b91cdc6707ee30845567e63657782ee11815f1de4
+  - bin: access-matrix-amd64-linux
+    uri: https://github.com/corneliusweig/rakkess/releases/download/v0.5.0/access-matrix-amd64-linux.tar.gz
+    sha256: 3217c192703d1d62ef7c51a3d50979eaa8f3c73c9a2d5d0727d4fbe07d89857a
     files:
-      - from: ./LICENSE
+      - from: LICENSE
         to: .
-      - from: ./access-matrix-amd64-linux
-        to: access-matrix
+      - from: access-matrix-amd64-linux
+        to: .
     selector:
       matchLabels:
         os: linux
         arch: amd64
-  - bin: access-matrix
-    uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.4/access-matrix-amd64-darwin.tar.gz
-    sha256: 9489b7a845226f373bdc0cda12664938250e88ae18c0486c5f6827eb0894ae35
+  - bin: access-matrix-amd64-darwin
+    uri: https://github.com/corneliusweig/rakkess/releases/download/v0.5.0/access-matrix-amd64-darwin.tar.gz
+    sha256: ac6d445e5e01146df7bed77243d09f7f323a65a2ff96ba43dd48a0c0632e98af
     files:
-      - from: ./LICENSE
+      - from: LICENSE
         to: .
-      - from: ./access-matrix-amd64-darwin
-        to: access-matrix
+      - from: access-matrix-amd64-darwin
+        to: .
     selector:
       matchLabels:
         os: darwin
         arch: amd64
-  - bin: access-matrix.exe
-    uri: https://github.com/corneliusweig/rakkess/releases/download/v0.4.4/access-matrix-amd64-windows.zip
-    sha256: c0657d66ece0ec86b714af947209f0eed7781ee58421fbfa6e367b0500e334a2
+  - bin: access-matrix-arm64-darwin
+    uri: https://github.com/corneliusweig/rakkess/releases/download/v0.5.0/access-matrix-arm64-darwin.tar.gz
+    sha256: 11766425a1ec8f74b0ccfb3788f5e7230c8e37142fb1835f71a945d02ed2e916
     files:
-      - from: ./LICENSE
+      - from: LICENSE
         to: .
-      - from: ./access-matrix-amd64-windows.exe
-        to: access-matrix.exe
+      - from: access-matrix-arm64-darwin
+        to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: access-matrix-amd64-windows.exe
+    uri: https://github.com/corneliusweig/rakkess/releases/download/v0.5.0/access-matrix-amd64-windows.zip
+    sha256: 6ec96238a99123aa01acf9344f0075876ce5ff5d33f406e22950f8caba0540ed
+    files:
+      - from: LICENSE
+        to: .
+      - from: access-matrix-amd64-windows.exe
+        to: .
     selector:
       matchLabels:
         os: windows

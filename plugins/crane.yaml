@@ -1,0 +1,115 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: crane
+spec:
+  homepage: https://github.com/gocrane/kubectl-crane
+  shortDescription: "Easily interact with Crane"
+  description: |
+    Crane is a powerful FinOps platform that can analyze
+    the state of a kubernetes cluster and provide detailed
+    optimization recommendations. With these recommendations,
+    users can easily adjust their deployments to reduce costs
+    and increase efficiency. The kubectl plugin makes it easy
+    for users to follow these recommendations by allowing them
+    to manually adjust the number of replicas or requests for
+    a deployment with just a few simple commands.
+
+  version: v0.2.0
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/gocrane/kubectl-crane/releases/download/v0.2.0/kubectl-crane_v0.2.0_Darwin_arm64.tar.gz
+    sha256: 8e5e7cd8df85d36084a4aefaf419c52cdb0f890f95c56b07f55e41a4725bacdf
+    files:
+    - from: kubectl-crane_v0.2.0_Darwin_arm64/kubectl-crane
+      to: kubectl-crane
+    - from: kubectl-crane_v0.2.0_Darwin_arm64/LICENSE
+      to: LICENSE
+    bin: kubectl-crane
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/gocrane/kubectl-crane/releases/download/v0.2.0/kubectl-crane_v0.2.0_Darwin_x86_64.tar.gz
+    sha256: 9f5a499f27b7dc9d76a46348bb2dbf96e6204c7391cbaa1079bc67003f172404
+    files:
+    - from: kubectl-crane_v0.2.0_Darwin_x86_64/kubectl-crane
+      to: kubectl-crane
+    - from: kubectl-crane_v0.2.0_Darwin_x86_64/LICENSE
+      to: LICENSE
+    bin: kubectl-crane
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/gocrane/kubectl-crane/releases/download/v0.2.0/kubectl-crane_v0.2.0_Linux_x86_64.tar.gz
+    sha256: 3a3e306db26872da06164aef5f45228aac80de89de1aedce1e03da238ee7c82c
+    files:
+    - from: kubectl-crane_v0.2.0_Linux_x86_64/kubectl-crane
+      to: kubectl-crane
+    - from: kubectl-crane_v0.2.0_Linux_x86_64/LICENSE
+      to: LICENSE
+    bin: kubectl-crane
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/gocrane/kubectl-crane/releases/download/v0.2.0/kubectl-crane_v0.2.0_Linux_arm64.tar.gz
+    sha256: c72cf4a9c4c868a646fbb8852678d19ac8d8ffc6e8771d4fcb75e0795fb8754c
+    files:
+    - from: kubectl-crane_v0.2.0_Linux_arm64/kubectl-crane
+      to: kubectl-crane
+    - from: kubectl-crane_v0.2.0_Linux_arm64/LICENSE
+      to: LICENSE
+    bin: kubectl-crane
+  - selector:
+      matchLabels:
+        os: linux
+        arch: 386
+    uri: https://github.com/gocrane/kubectl-crane/releases/download/v0.2.0/kubectl-crane_v0.2.0_Linux_i386.tar.gz
+    sha256: 7d9c91cee9b6f3114accd5a068fc142025780f778b6ed3e7553c31a2c0f93563
+    files:
+    - from: kubectl-crane_v0.2.0_Linux_i386/kubectl-crane
+      to: kubectl-crane
+    - from: kubectl-crane_v0.2.0_Linux_i386/LICENSE
+      to: LICENSE
+    bin: kubectl-crane
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/gocrane/kubectl-crane/releases/download/v0.2.0/kubectl-crane_v0.2.0_Windows_x86_64.zip
+    sha256: a7b826f5ea5796c3ceaf28303b2e406eba6a0b59a5dca1d449330de6a8c21496
+    files:
+    - from: kubectl-crane_v0.2.0_Windows_x86_64/kubectl-crane.exe
+      to: kubectl-crane.exe
+    - from: kubectl-crane_v0.2.0_Windows_x86_64/LICENSE
+      to: LICENSE
+    bin: kubectl-crane.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/gocrane/kubectl-crane/releases/download/v0.2.0/kubectl-crane_v0.2.0_Windows_arm64.zip
+    sha256: 37e20209ee97872193343be9c6c5880c0dc1488e3a451ef1548e3c305927cdc3
+    files:
+    - from: kubectl-crane_v0.2.0_Windows_arm64/kubectl-crane.exe
+      to: kubectl-crane.exe
+    - from: kubectl-crane_v0.2.0_Windows_arm64/LICENSE
+      to: LICENSE
+    bin: kubectl-crane.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: 386
+    uri: https://github.com/gocrane/kubectl-crane/releases/download/v0.2.0/kubectl-crane_v0.2.0_Windows_i386.zip
+    sha256: e31f01a9597c1af5e6398e390aa0ad87e30c9fae17467b3ff064421091f6d6ce
+    files:
+    - from: kubectl-crane_v0.2.0_Windows_i386/kubectl-crane.exe
+      to: kubectl-crane.exe
+    - from: kubectl-crane_v0.2.0_Windows_i386/LICENSE
+      to: LICENSE
+    bin: kubectl-crane.exe

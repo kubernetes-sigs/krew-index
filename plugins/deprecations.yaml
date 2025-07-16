@@ -4,7 +4,7 @@ metadata:
   name: deprecations
 spec:
   shortDescription: >-
-    Checks for deprecated objects in a cluster 
+    Checks for deprecated objects in a cluster
   homepage: https://github.com/rikatz/kubepug
   caveats: |
     * By default, deprecations finds deprecated object relative to the current kubernetes
@@ -13,31 +13,38 @@ spec:
 
     * Deprecations needs permission to GET all objects in the Cluster
   description: |
-    This plugin shows all the deprecated objects in a Kubernetes cluster allowing 
-    the operator to verify them before upgrading the cluster. It uses the 
+    This plugin shows all the deprecated objects in a Kubernetes cluster allowing
+    the operator to verify them before upgrading the cluster. It uses the
     swagger.json version available in master branch of Kubernetes repository
-    (github.com/kubernetes/kubernetes) as a reference. The branch can be changed 
+    (github.com/kubernetes/kubernetes) as a reference. The branch can be changed
     to some other desired Kubernetes version
-  version: v1.1.3
+  version: v1.6.1
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/rikatz/kubepug/releases/download/v1.1.3/kubepug_darwin_amd64.tar.gz
-    sha256: 55420652db367b06dc1e929da06c16a8653bad5a9840d3ae0de8bf1de5dcc8f9
-    bin: "kubepug" 
+    uri: https://github.com/rikatz/kubepug/releases/download/v1.6.1/kubepug_darwin_amd64.tar.gz
+    sha256: a3005d26af5161e5d3359eceda2f385d134710483e4e5170d22b51e8b74f1fbd
+    bin: "kubepug"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/rikatz/kubepug/releases/download/v1.6.1/kubepug_darwin_arm64.tar.gz
+    sha256: 462f8f81f9e42d5aa16764f541a9e9a2f8ee6dac12b8b03fc2479164cf45f2fa
+    bin: "kubepug"
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/rikatz/kubepug/releases/download/v1.1.3/kubepug_linux_amd64.tar.gz
-    sha256: 9ca8970c77faa4fac11a6571862372debe7e87fc9e0b54053a3279fcb7e4ffe4
-    bin: "kubepug" 
+    uri: https://github.com/rikatz/kubepug/releases/download/v1.6.1/kubepug_linux_amd64.tar.gz
+    sha256: 77d2e24cada49d29c38bdd9b42780f5e308ff02b8349e458a4c1f152dc886a77
+    bin: "kubepug"
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/rikatz/kubepug/releases/download/v1.1.3/kubepug_windows_amd64.zip
-    sha256: be627d02fe66313bccf4ad7c9fbe10dc51e0ee7e3367e6821ffa3ec6b0c1b3b1
-    bin: "kubepug.exe" 
+    uri: https://github.com/rikatz/kubepug/releases/download/v1.6.1/kubepug_windows_amd64.zip
+    sha256: 4bf5e8af23d68b1c5b99b463784d62361edc3a45dc635ac0c37fb62e9bba2865
+    bin: "kubepug.exe"

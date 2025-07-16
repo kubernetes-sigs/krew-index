@@ -3,21 +3,21 @@ kind: Plugin
 metadata:
   name: custom-cols
 spec:
-  version: "v0.0.5"
+  version: "v0.1.2"
   platforms:
-  - selector:
-      matchExpressions:
-      - {key: os, operator: In, values: [darwin, linux]}
-    uri: https://github.com/webofmars/kubectl-custom-cols/archive/v0.0.5.tar.gz
-    sha256: "ea967d0c0d73e7d26a222b8632f16a06dec9d6c8a2680b968b6fb00ca1139284"
-    files:
-    - from: "./kubectl-custom-cols-*/kubectl-custom-cols"
-      to: .
-    - from: "./kubectl-custom-cols-*/LICENSE"
-      to: .
-    - from: "./kubectl-custom-cols-*/templates/*.tpl"
-      to: "templates"
-    bin: "./kubectl-custom-cols"
+    - selector:
+        matchExpressions:
+          - { key: os, operator: In, values: [darwin, linux] }
+      uri: https://github.com/webofmars/kubectl-custom-cols/archive/refs/tags/v0.1.2.tar.gz
+      sha256: "f29156b636fdf89bacc17ad7a7bfd8e60033bbea14b17ed3def5279b50c8f489"
+      files:
+        - from: "./kubectl-custom-cols-*/kubectl-custom-cols"
+          to: .
+        - from: "./kubectl-custom-cols-*/LICENSE"
+          to: .
+        - from: "./kubectl-custom-cols-*/templates/*.tpl"
+          to: "templates"
+      bin: "./kubectl-custom-cols"
   shortDescription: A "kubectl get" replacement with customizable column presets
   homepage: https://github.com/webofmars/kubectl-custom-cols
   caveats: |
@@ -29,9 +29,11 @@ spec:
     It's time saving to retrieve some often needed infos like
     image names, containers names, versions, labels, etc...
     It currently supports the following templates (but PRs are welcome upstream):
-    - images
-    - resources
-    - limits
-    - requests
     - annotations
+    - finalizers
+    - images
+    - limits
+    - node where pods are running
     - qos-class
+    - requests
+    - resources

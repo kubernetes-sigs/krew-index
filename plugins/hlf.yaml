@@ -1,0 +1,52 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: hlf
+spec:
+  version: "v1.12.0"
+  homepage: https://github.com/hyperledger-bevel/bevel-operator-fabric
+  shortDescription: "Deploy and manage Hyperledger Fabric components"
+  description: |
+    The kubectl-hlf plugin wraps the HLF Operator and provides a simple
+    interface to create and manage Hyperledger Fabric Peers, 
+    Orderers and Certificate authorities
+  caveats: |
+    * For resources that are not in default namespace, currently you must
+      specify -n/--namespace explicitly (the current namespace setting is not
+      yet used).
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/hyperledger-bevel/bevel-operator-fabric/releases/download/v1.12.0/hlf-operator_v1.12.0_darwin_amd64.zip
+      sha256: e99285d8eae5a24f0f5f7f6902cc73079cc8c9063e8793b4d54e54dab45feaaa
+      bin: kubectl-hlf
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/hyperledger-bevel/bevel-operator-fabric/releases/download/v1.12.0/hlf-operator_v1.12.0_darwin_arm64.zip
+      sha256: 65b8e5fcb48b33aeac6c29e6fbe130181178558cf289123abbbd8510b195743a
+      bin: kubectl-hlf
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/hyperledger-bevel/bevel-operator-fabric/releases/download/v1.12.0/hlf-operator_v1.12.0_linux_amd64.zip
+      sha256: 2f5478afe0ea8d75fe7db929c47aebd10b7815c5aed45a224cfe9d1440e76a3a
+      bin: kubectl-hlf
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/hyperledger-bevel/bevel-operator-fabric/releases/download/v1.12.0/hlf-operator_v1.12.0_linux_arm64.zip
+      sha256: b7d64df7742fb0d56ac6116a2ede506600fc0de65438b2c5b2d1ed82a5a044d8
+      bin: kubectl-hlf
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/hyperledger-bevel/bevel-operator-fabric/releases/download/v1.12.0/hlf-operator_v1.12.0_windows_amd64.zip
+      sha256: 479de55d01f68679ea91aaf1917177288dff96eab63f749eb13bad25a2e4b9d5
+      bin: kubectl-hlf.exe

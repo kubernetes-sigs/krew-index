@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ray
+spec:
+  version: v1.4.1
+  homepage: https://github.com/ray-project/kuberay/tree/master/kubectl-plugin
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/ray-project/kuberay/releases/download/v1.4.1/kubectl-ray_v1.4.1_darwin_amd64.tar.gz
+      sha256: 24f75f28728203e2e38f4719b40a99aeea6b82304246af948d61166b945883f5
+      bin: kubectl-ray
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/ray-project/kuberay/releases/download/v1.4.1/kubectl-ray_v1.4.1_darwin_arm64.tar.gz
+      sha256: bacd219e012e70be6c13dbb0127b7be1110139786dd5c49ba385bb8c026b5dd9
+      bin: kubectl-ray
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/ray-project/kuberay/releases/download/v1.4.1/kubectl-ray_v1.4.1_linux_amd64.tar.gz
+      sha256: a5e30d1eb468fe10cb1a781a80e04044fffc673d7426facb81ae5e411899af1d
+      bin: kubectl-ray
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/ray-project/kuberay/releases/download/v1.4.1/kubectl-ray_v1.4.1_linux_arm64.tar.gz
+      sha256: 7b53b5abfdef68deaaa22bb4ce955ceb0998a461c240831b0ae6a5d5572a4945
+      bin: kubectl-ray
+  shortDescription: Ray kubectl plugin
+  description: |
+    Kubectl plugin/extension for Kuberay CLI that provides the ability to manage ray resources.
+    Read more documentation at: https://github.com/ray-project/kuberay/tree/master/kubectl-plugin

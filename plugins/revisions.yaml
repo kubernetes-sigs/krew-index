@@ -1,0 +1,47 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: revisions
+spec:
+  version: v0.9.0
+  homepage: https://github.com/timebertt/kubectl-revisions
+  shortDescription: Time-travel through your workload revision history
+  description: |
+    Go back in time in the history of revisions and answers common questions like
+    "Why was my Deployment rolled?"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/timebertt/kubectl-revisions/releases/download/v0.9.0/kubectl-revisions_v0.9.0_linux_amd64.tar.gz
+    sha256: 853f18fb16b62b2c091d5c896cf7a253256e7dcc8535358432c45bfdf65b7da8
+    bin: kubectl-revisions
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/timebertt/kubectl-revisions/releases/download/v0.9.0/kubectl-revisions_v0.9.0_linux_arm64.tar.gz
+    sha256: 2714304d04780f12fae5e23f27a0887002764c6a946a40f58fb7d85b78866185
+    bin: kubectl-revisions
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/timebertt/kubectl-revisions/releases/download/v0.9.0/kubectl-revisions_v0.9.0_darwin_amd64.tar.gz
+    sha256: 325a633dca766494049dc2b7b0cc5f63b56cab57a56f7f42cd69072632138d2a
+    bin: kubectl-revisions
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/timebertt/kubectl-revisions/releases/download/v0.9.0/kubectl-revisions_v0.9.0_darwin_arm64.tar.gz
+    sha256: 5c0d6d7442a25edc87450cb260572d5f3acf5095e732395b4b4802491e811770
+    bin: kubectl-revisions
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/timebertt/kubectl-revisions/releases/download/v0.9.0/kubectl-revisions_v0.9.0_windows_amd64.zip
+    sha256: 1154e59b79082aea3e33747734e2d23d52ac8c4eed72f3ad3a88f4e7092e237c
+    bin: kubectl-revisions.exe

@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: unlimited
+spec:
+  version: v1.0.1
+  homepage: https://github.com/nilic/kubectl-unlimited
+  shortDescription: Show running containers with no limits set
+  description: |
+    Display information about running containers with no CPU and memory limits set
+    so you can detect potential noisy neighbors and optimize cluster's performance
+    and resource consumption.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/nilic/kubectl-unlimited/releases/download/v1.0.1/kubectl-unlimited_v1.0.1_darwin_amd64.tar.gz
+    sha256: 953a41211fe9e8063a071e98c559b0c0ee4110084031778579cdd17923eb1396
+    bin: kubectl-unlimited
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/nilic/kubectl-unlimited/releases/download/v1.0.1/kubectl-unlimited_v1.0.1_darwin_arm64.tar.gz
+    sha256: bdd28270815ec5a500c5b62d5399878df495942255159a82c976ef42af8c2447
+    bin: kubectl-unlimited
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/nilic/kubectl-unlimited/releases/download/v1.0.1/kubectl-unlimited_v1.0.1_linux_amd64.tar.gz
+    sha256: f34a417fcdf955bf5fb27b4bd4d7a54aa3d1279377859decd0dc55d36c5e9e59
+    bin: kubectl-unlimited
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/nilic/kubectl-unlimited/releases/download/v1.0.1/kubectl-unlimited_v1.0.1_linux_arm64.tar.gz
+    sha256: 3130c87f64cabd16cf1c1a888711963ed7cac2ff1f79f9fdae97efa6b47cbc18
+    bin: kubectl-unlimited
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/nilic/kubectl-unlimited/releases/download/v1.0.1/kubectl-unlimited_v1.0.1_windows_amd64.zip
+    sha256: fcd313ea6740d09c9ca604299200054b871e03493ef8acca0c08cfb3f262b718
+    bin: kubectl-unlimited.exe

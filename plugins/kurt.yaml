@@ -1,0 +1,83 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kurt
+spec:
+  version: v1.1.0
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/soraro/kurt/releases/download/v1.1.0/kurt_linux_amd64.tar.gz
+    sha256: 4b3c91cce9d3bd8c5ef4ac050563073a2f07d6408b850aebe72037474bcb76ce
+    files:
+    - from: kurt
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kurt
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/soraro/kurt/releases/download/v1.1.0/kurt_darwin_amd64.tar.gz
+    sha256: 99a2d25ee8a91d12b065634b32adcd4fa1c288429f7277f1d4452b728827f9d6
+    files:
+    - from: kurt
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kurt
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/soraro/kurt/releases/download/v1.1.0/kurt_darwin_arm64.tar.gz
+    sha256: 0b7b560bb56de18543d379ce9d18683fe2154d6c74d643959fc796c91f4fd604
+    files:
+    - from: kurt
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kurt
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/soraro/kurt/releases/download/v1.1.0/kurt_linux_arm64.tar.gz
+    sha256: 9844caf468738666a246111b47f742e15fe00a2d2984cc86cdea2816fbb4329a
+    files:
+    - from: kurt
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kurt
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/soraro/kurt/releases/download/v1.1.0/kurt_windows_amd64.zip
+    sha256: 8046a7cd31d1fcafa51197743ea23cc263afb2aa231caff3f44119715a4aa19c
+    files:
+    - from: kurt.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kurt.exe
+  shortDescription: Find what's restarting and why
+  homepage: https://github.com/soraro/kurt
+  description: |
+    Use kurt to see pods that are restarting in your cluster and get further context to issues by grouping the results.
+    Top 5 results from all groupings:
+    kubectl kurt all
+
+    Top 5 nodes with restarting pods:
+    kubectl kurt nodes
+
+    All restarting pods in the test namespace:
+    kubectl kurt pods -c 0 -n test
+
+    Help:
+    kubectl kurt -h
+

@@ -3,22 +3,36 @@ kind: Plugin
 metadata:
   name: iexec
 spec:
-  version: v1.8.0
+  version: v1.19.14
   homepage: https://github.com/gabeduke/kubectl-iexec
   platforms:
     - selector:
         matchLabels:
           os: darwin
+          arch: arm64
+      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/v1.19.14/kubectl-iexec_v1.19.14_Darwin_arm64.tar.gz
+      sha256: dbfab05f550ad63cae58ba71452723513a88281fbf5d58541ae466acb020f747
+      bin: kubectl-iexec
+    - selector:
+        matchLabels:
+          os: darwin
           arch: amd64
-      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/v1.8.0/kubectl-iexec_v1.8.0_Darwin_x86_64.tar.gz
-      sha256: dd45b70ed9d5ec122fc5d9cae3a9dd2881685eb829bbd54ed9f8c5410f28c09f
+      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/v1.19.14/kubectl-iexec_v1.19.14_Darwin_x86_64.tar.gz
+      sha256: 03c43514edfce554cd3ca77a623f81c7d7f0b6937dc46d44bde719708a48773a
+      bin: kubectl-iexec
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/v1.19.14/kubectl-iexec_v1.19.14_Linux_arm64.tar.gz
+      sha256: afb9d567810a03348b8bed82eebbc4bd5f3c31db98d0142ad01826f2f6447bf3
       bin: kubectl-iexec
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/v1.8.0/kubectl-iexec_v1.8.0_Linux_x86_64.tar.gz
-      sha256: 701bfc512f096c6bf27d996dfabc625b30b21e164608265030039aae546835c5
+      uri: https://github.com/gabeduke/kubectl-iexec/releases/download/v1.19.14/kubectl-iexec_v1.19.14_Linux_x86_64.tar.gz
+      sha256: f0f381a9214f67b5e298920bb0376ddb9e52b90d604030a6e2fae2d075a8af39
       bin: kubectl-iexec
   shortDescription: Interactive selection tool for `kubectl exec`
   description: |

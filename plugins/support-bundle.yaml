@@ -3,14 +3,38 @@ kind: Plugin
 metadata:
   name: support-bundle
 spec:
-  version: v0.9.38
+  version: v0.120.3
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.38/support-bundle_linux_amd64.tar.gz
-    sha256: a7b3d65b689ef218e4e19b3e6e6ab1c2146155938b5d13983ea79cf3f9b452fa
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.120.3/support-bundle_linux_amd64.tar.gz
+    sha256: ec37586756e0ed19cf84945935eb4fd7c1e47d6c87ba9f81dff9c1ae1007f0a5
+    files:
+    - from: support-bundle
+      to: .
+    - from: LICENSE
+      to: .
+    bin: support-bundle
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.120.3/support-bundle_linux_arm64.tar.gz
+    sha256: 940c298b1d8ed3602511e4806ff7e1c042ee19163cfa40d1ac1c132b4dd48968
+    files:
+    - from: support-bundle
+      to: .
+    - from: LICENSE
+      to: .
+    bin: support-bundle
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.120.3/support-bundle_linux_arm.tar.gz
+    sha256: 8c993c108ebd61705e24d9f6d5835013645d5ce7ed370da9988f403c7e83b459
     files:
     - from: support-bundle
       to: .
@@ -21,8 +45,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.38/support-bundle_darwin_amd64.tar.gz
-    sha256: 62376f6f7d05a8f4f111defab592baedea405e1454cdb12fabdf909d00b6471c
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.120.3/support-bundle_darwin_amd64.tar.gz
+    sha256: 70a34fcdf4f0a9b55fd43c7671f96f47be0937d0293cf063c8184529da34c223
     files:
     - from: support-bundle
       to: .
@@ -31,16 +55,16 @@ spec:
     bin: support-bundle
   - selector:
       matchLabels:
-        os: windows
-        arch: amd64
-    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.9.38/support-bundle_windows_amd64.zip
-    sha256: 30f3e9226b5eb1462ba661ca8ea36ba76ea6c83060c4a600fecabcf9ce0779b2
+        os: darwin
+        arch: arm64
+    uri: https://github.com/replicatedhq/troubleshoot/releases/download/v0.120.3/support-bundle_darwin_arm64.tar.gz
+    sha256: 7038f8aa9216df7e3c2b42e1c2783a4fc4d2379d8a5d6d3329139c608ce18ed7
     files:
-    - from: support-bundle.exe
+    - from: support-bundle
       to: .
     - from: LICENSE
       to: .
-    bin: support-bundle.exe
+    bin: support-bundle
   shortDescription: Creates support bundles for off-cluster analysis
   homepage: https://github.com/replicatedhq/troubleshoot
   description: |

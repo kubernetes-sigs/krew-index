@@ -3,15 +3,15 @@ kind: Plugin
 metadata:
   name: kyverno
 spec:
-  version: v1.1.9
-  homepage: https://github.com/nirmata/kyverno
+  version: v1.14.4
+  homepage: https://github.com/kyverno/kyverno
   platforms:
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/nirmata/kyverno/releases/download/v1.1.9/kyverno-cli_v1.1.9_linux_x86_64.tar.gz
-      sha256: d8e8ac17b88a0085d448fdbdc7ed8c2a19421f7d17721830c2a2d6f52a490c02
+      uri: https://github.com/kyverno/kyverno/releases/download/v1.14.4/kyverno-cli_v1.14.4_linux_x86_64.tar.gz
+      sha256: 1a76da4c21e39fa869e1363c661e19f1c0b7d71980b40c9e1b01a6196563012b
       files:
         - from: kyverno
           to: .
@@ -22,8 +22,20 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/nirmata/kyverno/releases/download/v1.1.9/kyverno-cli_v1.1.9_darwin_x86_64.tar.gz
-      sha256: 4aae445fc9675f018c8439fd9f36d1b79b36cb0d574efaab05ef7f9ffebf5d86
+      uri: https://github.com/kyverno/kyverno/releases/download/v1.14.4/kyverno-cli_v1.14.4_darwin_x86_64.tar.gz
+      sha256: 7005d8f9e1adf5e238539b4534d8633487b6682c55354e86eabbd48dea3b9fd3
+      files:
+        - from: kyverno
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kyverno
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/kyverno/kyverno/releases/download/v1.14.4/kyverno-cli_v1.14.4_darwin_arm64.tar.gz
+      sha256: 4eb55cfbf1e9b5f63b24cac93932b607f01a399333f2caefe37f6222c52d11c2
       files:
         - from: kyverno
           to: .
@@ -34,8 +46,8 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/nirmata/kyverno/releases/download/v1.1.9/kyverno-cli_v1.1.9_windows_x86_64.zip
-      sha256: 4f21a5b7311f7441419d89dbc485589a715e6c4f911420f18500fcc7556e89c0
+      uri: https://github.com/kyverno/kyverno/releases/download/v1.14.4/kyverno-cli_v1.14.4_windows_x86_64.zip
+      sha256: c324a423b910a79e062e3c7863b363371eba698b0aad4fba81ad9c7de06c7a16
       files:
         - from: kyverno.exe
           to: .

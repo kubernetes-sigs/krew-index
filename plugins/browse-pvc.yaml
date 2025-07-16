@@ -1,0 +1,43 @@
+# Krew Manifest
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: browse-pvc
+spec:
+  version: "v1.3.0"
+  homepage: https://github.com/clbx/kubectl-browse-pvc
+  shortDescription: "Browse PVC contents from the command line."
+  description: "Browse PVCs from the command line. Creates a job thats binds an unbound PVC and execs into it."
+  platforms:
+  # macOS ARM
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/clbx/kubectl-browse-pvc/releases/download/v1.3.0/kubectl-browse-pvc-darwin-arm.zip
+    sha256: ca8e33f6e3e0aac7bd1f092f0b2f8c7948dc34bd2bc5c9c1b4da955d72cc6edd
+    bin: kubectl-browse-pvc
+  # macOS x86_64
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/clbx/kubectl-browse-pvc/releases/download/v1.3.0/kubectl-browse-pvc-darwin-x86_64.zip
+    sha256: 655af310ef596dffc7113480b70d02329cb7c89e5be854e3ad9d8de9884580df
+    bin: kubectl-browse-pvc
+  # linux x86_64
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/clbx/kubectl-browse-pvc/releases/download/v1.3.0/kubectl-browse-pvc-linux-x86_64.zip
+    sha256: 3b6125703bf38635ec8b8d192edae593dd66c74180bb22c76ba32d4f4a4c56ce
+    bin: kubectl-browse-pvc
+  # linux ARM
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/clbx/kubectl-browse-pvc/releases/download/v1.3.0/kubectl-browse-pvc-linux-arm.zip
+    sha256: 85123b0bb28f685cf46259c364d29d85f73817d63b6973cb792ed6eab03df5d4
+    bin: kubectl-browse-pvc

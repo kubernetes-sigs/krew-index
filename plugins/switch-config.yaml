@@ -1,0 +1,26 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: switch-config
+spec:
+  version: "v0.2.0"
+  homepage: https://github.com/radraw/kube-switch-config
+  shortDescription: "Switches between kubeconfig files"
+  description: |
+    Simple switching between kubeconfig files using symbolic links.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/radraw/kube-switch-config/releases/download/v0.2.0/kube-switch-config-v0.2.0.tar.gz
+    sha256: a6a44f13bb8fa22d3f5123cb13908e398a2d7457094d8e353c81c71b429700e7
+    files:
+    - from: kubectl-switch_config
+      to: "."
+    - from: "LICENSE"
+      to: "."
+    bin: kubectl-switch_config

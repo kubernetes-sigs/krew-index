@@ -1,0 +1,92 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: view-quotas
+spec:
+  version: v0.0.1
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.1/kubectl-view-quotas_darwin_arm64.tar.gz
+      sha256: 1219f56e278858c1e0a67af4c8a687e988caf4d9321bffcab284a7a625263f23
+      files:
+        - from: "./kubectl-view-quotas"
+          to: "."
+        - from: LICENSE
+          to: "."
+      bin: "kubectl-view-quotas"
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.1/kubectl-view-quotas_linux_arm64.tar.gz
+      sha256: 5f0c3b7df38153b59a48be946c056280bb4f2e984b8152185cabcf67beea1599
+      files:
+        - from: "./kubectl-view-quotas"
+          to: "."
+        - from: LICENSE
+          to: "."
+      bin: "kubectl-view-quotas"
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.1/kubectl-view-quotas_windows_arm64.zip
+      sha256: 889dae0a6fb9bfa05ad538fa08d1c45549ee56fd034e39e485ebc313089f5356
+      files:
+        - from: "./kubectl-view-quotas.exe"
+          to: "."
+        - from: LICENSE
+          to: "."
+      bin: "kubectl-view-quotas.exe"
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.1/kubectl-view-quotas_darwin_amd64.tar.gz
+      sha256: c6085a48e29bd605572123f9a7d85647d7b5da3603fa4152804119eac4fa0103
+      files:
+        - from: "./kubectl-view-quotas"
+          to: "."
+        - from: LICENSE
+          to: "."
+      bin: "kubectl-view-quotas"
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.1/kubectl-view-quotas_linux_amd64.tar.gz
+      sha256: 8e628322891e796dedfdedfecd3879f2d650a59a08e0d854f62e2eb34e2051d0
+      files:
+        - from: "./kubectl-view-quotas"
+          to: "."
+        - from: LICENSE
+          to: "."
+      bin: "kubectl-view-quotas"
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.1/kubectl-view-quotas_windows_amd64.zip
+      sha256: 21249fb520fa2db5587a7e4c5fb5b45b59785b3b06c318799b33a49afff252f8
+      files:
+        - from: "./kubectl-view-quotas.exe"
+          to: "."
+        - from: LICENSE
+          to: "."
+      bin: "kubectl-view-quotas.exe"
+  shortDescription: List resource quotas in colors
+  homepage: https://github.com/hasanhakkaev/kubectl-view-quotas
+  caveats: |
+    Usage:
+      $ kubectl view-quotas
+
+    For additional options:
+      $ kubectl view-quotas --help
+      or https://github.com/hasanhakkaev/kubectl-view-quotas/blob/v0.0.1/doc/USAGE.md
+
+  description: |
+    A "kubectl describe resourcequota " alternative that lists resource quotas
+    in colors.

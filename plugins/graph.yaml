@@ -1,0 +1,52 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: graph
+spec:
+  version: v0.7.0
+  homepage: https://github.com/steveteuber/kubectl-graph
+  shortDescription: Visualize Kubernetes resources and relationships.
+  description: |
+    This plugin generates a visual representation of Kubernetes resources and
+    relationships. The graph is outputted in AQL, CQL or DOT format which can
+    be used by ArangoDB, Neo4j or Graphviz.
+  caveats: |
+    This plugin requires Graphviz or Neo4j to visualize the dependency graph.
+    Please see the quickstart guide for more information:
+    https://github.com/steveteuber/kubectl-graph#quickstart
+  platforms:
+  - bin: kubectl-graph
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.7.0/kubectl-graph_v0.7.0_darwin_amd64.tar.gz
+    sha256: e720b024a9f9c873bd5ec0c2d6aeff7dd86b45910b29f44ded4a0bd708d72a5b
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kubectl-graph
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.7.0/kubectl-graph_v0.7.0_darwin_arm64.tar.gz
+    sha256: e70dad30860739088f7eabbb6087ca8a8599b4c0a32b9ccddb1bd5ef03a1072e
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: kubectl-graph
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.7.0/kubectl-graph_v0.7.0_linux_amd64.tar.gz
+    sha256: c38acabd9f1ab841118fee788a5bc73a1dd9683b7addf76117f85eafa1accd24
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-graph
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.7.0/kubectl-graph_v0.7.0_linux_arm64.tar.gz
+    sha256: 67da1694c0e2fa70bc82ca6cd8f3d191e45bbccda5a33066a6a4c1099686db3a
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - bin: kubectl-graph.exe
+    uri: https://github.com/steveteuber/kubectl-graph/releases/download/v0.7.0/kubectl-graph_v0.7.0_windows_amd64.zip
+    sha256: 472018c89ac4e5f70094bf873e49180e0d197eea0ff1d8df083a4346706bb75f
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

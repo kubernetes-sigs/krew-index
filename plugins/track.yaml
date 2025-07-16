@@ -1,0 +1,109 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: track
+spec:
+  version: v0.1.0
+  homepage: https://github.com/semihbkgr/kubectl-track
+  shortDescription: Tracking the changes between resource versions
+  description: |
+    This plugin tracks changes between resource versions for a Kubernetes object.
+    It continuously monitors the resource, displaying differences between versions to
+    help with debugging and understanding the resource evolution during their lifetime.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/semihbkgr/kubectl-track/releases/download/v0.1.0/kubectl-track_linux_amd64.tar.gz
+    sha256: 6bed1dfa0da471e227590f873937dc8ae4dbf17e103f2770fe696f5fbc9cca88
+    files:
+    - from: "./kubectl-track"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-track"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: "386"
+    uri: https://github.com/semihbkgr/kubectl-track/releases/download/v0.1.0/kubectl-track_linux_386.tar.gz
+    sha256: 7314fc39f718c52eda841f70ab05a0534064ebfffe7bb49759e555e3888aafa8
+    files:
+    - from: "./kubectl-track"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-track"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: "arm64"
+    uri: https://github.com/semihbkgr/kubectl-track/releases/download/v0.1.0/kubectl-track_linux_arm64.tar.gz
+    sha256: cd18da4ce6bd06cbf45f78797e862a2440e5d4740b431bd9060414a5f2fb83c9
+    files:
+    - from: "./kubectl-track"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-track"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/semihbkgr/kubectl-track/releases/download/v0.1.0/kubectl-track_darwin_amd64.tar.gz
+    sha256: ce68c12dba4dff4df863e5b33e0cae706ccc91b67c9287473d1148a9f68a0081
+    files:
+    - from: "./kubectl-track"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-track"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/semihbkgr/kubectl-track/releases/download/v0.1.0/kubectl-track_darwin_arm64.tar.gz
+    sha256: 41c5d75a95f01b4f1fae1c0b1205cfe55b7347bc112966e09d960e79f09b9766
+    files:
+    - from: "./kubectl-track"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-track"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/semihbkgr/kubectl-track/releases/download/v0.1.0/kubectl-track_windows_amd64.zip
+    sha256: 35336c51e7776b3ef0505ffbe2bddbd91d04f6427d82038f717a99d3d787eed3
+    files:
+    - from: "/kubectl-track.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-track.exe"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: "386"
+    uri: https://github.com/semihbkgr/kubectl-track/releases/download/v0.1.0/kubectl-track_windows_386.zip
+    sha256: 42e68ff901fd545c398065f7e1077ee671efe69d85d5783a9540499666ff2ff0
+    files:
+    - from: "/kubectl-track.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-track.exe"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/semihbkgr/kubectl-track/releases/download/v0.1.0/kubectl-track_windows_arm64.zip
+    sha256: c5431f151f38c82f7d52aa538186c6a5b1da912afc9e01d3cb5bc00fe722e0a8
+    files:
+    - from: "/kubectl-track.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-track.exe"

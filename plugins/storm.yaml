@@ -1,0 +1,34 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: storm
+spec:
+  version: v0.0.3
+  homepage: https://github.com/guilhem/kubectl-storm
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/guilhem/kubectl-storm/releases/download/v0.0.3/kubectl-storm_v0.0.3_darwin_amd64.tar.gz
+    sha256: 665afbd7f75e072acaaa15484649b1f9fb45e46346085f92479aed86494f4e14
+    bin: kubectl-storm
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/guilhem/kubectl-storm/releases/download/v0.0.3/kubectl-storm_v0.0.3_darwin_arm64.tar.gz
+    sha256: 78c2f7caf3141243a2d637c58486c02eb14faf1b28ea1522de8450015e853bec
+    bin: kubectl-storm
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/guilhem/kubectl-storm/releases/download/v0.0.3/kubectl-storm_v0.0.3_linux_amd64.tar.gz
+    sha256: 39314ce41974a4e8ed726b9aaa259e30e9c338926c39c7b5dd942b06a6094f9b
+    bin: kubectl-storm
+  shortDescription: Monitor and diff excessive generation changes.
+  description: |
+    Monitor and diff excessive generation changes.
+    It detects rapid updates to Kubernetes resource generations, providing detailed diffs and a visual interface for debugging.
+    The tool supports filtering by resource types and employs a user-friendly terminal interface to display updates and differences, making it easier to identify and address potential issues caused by high-frequency changes in resource configurations.

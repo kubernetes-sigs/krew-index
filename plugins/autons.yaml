@@ -1,0 +1,39 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: autons
+spec:
+  version: v0.2.2
+  homepage: https://github.com/ragrag/kubectl-autons
+  shortDescription: Automatic namespace detection
+  description: |
+    Automatically detect namespaces for resources without the --namespace flag.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/ragrag/kubectl-autons/releases/download/v0.2.2/kubectl-autons-darwin-amd64.tar.gz
+      sha256: 65b54c67a53b5a6ab510d1b360bd803b5e41061adc7c1595948ef1f19c69e532
+      bin: kubectl-autons
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/ragrag/kubectl-autons/releases/download/v0.2.2/kubectl-autons-darwin-arm64.tar.gz
+      sha256: fdfe8c3c38ed7bbf3a2bc0238438f24dae494b8f1df2145a16890835d450ad4b
+      bin: kubectl-autons
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/ragrag/kubectl-autons/releases/download/v0.2.2/kubectl-autons-linux-amd64.tar.gz
+      sha256: 567bb2676fa419c169eada7519100bde00141a8eb8f13301f21659e3064b42f8
+      bin: kubectl-autons
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/ragrag/kubectl-autons/releases/download/v0.2.2/kubectl-autons-windows-amd64.tar.gz
+      sha256: f8d671122dc09605fd10951e0252fa4792fb60148e88c4eb7f74b1a1ec0357f1
+      bin: kubectl-autons.exe

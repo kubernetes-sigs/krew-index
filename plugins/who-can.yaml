@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: who-can
 spec:
-  version: "v0.1.2"
+  version: "v0.4.0"
   homepage: https://github.com/aquasecurity/kubectl-who-can
   shortDescription: >-
     Shows who has RBAC permissions to access Kubernetes resources
@@ -32,8 +32,20 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.2/kubectl-who-can_darwin_x86_64.tar.gz
-      sha256: 1dba059144578b720f9a2c325f20dbede265e2e97791db9a2253eb1295aef395
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.4.0/kubectl-who-can_darwin_x86_64.tar.gz
+      sha256: 87d13dce52322d2e2fb075e0a26a0ceabbbe97bcb270f033b20ab66b20b10161
+      files:
+        - from: kubectl-who-can
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-who-can
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.4.0/kubectl-who-can_darwin_arm64.tar.gz
+      sha256: df67cee447444a3e317e7efe0cf167c4ebcdd82f3dd1f23ab2f795ada5db48a4
       files:
         - from: kubectl-who-can
           to: .
@@ -44,8 +56,20 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.2/kubectl-who-can_linux_x86_64.tar.gz
-      sha256: 8e00f2aaea6443a9ae1bcc2f6c5fa2b054f182080890976fe9ba645f3d911725
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.4.0/kubectl-who-can_linux_x86_64.tar.gz
+      sha256: 3ba4a529e2f759b13030e5fc803639fda6e13fd05ed0d8bda1c722459a298f32
+      files:
+        - from: kubectl-who-can
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-who-can
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.4.0/kubectl-who-can_linux_arm64.tar.gz
+      sha256: dd889ca24159c59622c3465627513bb4004704cbac54f7907e80ec8a07e62760
       files:
         - from: kubectl-who-can
           to: .
@@ -56,8 +80,20 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.1.2/kubectl-who-can_windows_x86_64.zip
-      sha256: a2a3b479e60c2f967bf26a5a6c1ae3f782930a149904dd54cf3920e8c330f6d7
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.4.0/kubectl-who-can_windows_x86_64.zip
+      sha256: 285337a9026530cf2b16cd9a7a90c3e7e123e3bdb2a0d7143c777bedb675c187
+      files:
+        - from: kubectl-who-can.exe
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-who-can.exe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/aquasecurity/kubectl-who-can/releases/download/v0.4.0/kubectl-who-can_windows_arm64.zip
+      sha256: a041c7280e75e99967d48a5e0113565d1e5b05d16329d117e47ecb0018feedef
       files:
         - from: kubectl-who-can.exe
           to: .

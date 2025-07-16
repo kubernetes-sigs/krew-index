@@ -1,0 +1,74 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: linstor
+spec:
+  version: v0.3.2
+  homepage: https://github.com/piraeusdatastore/kubectl-linstor
+  shortDescription: View and manage LINSTOR storage resources
+  description: |
+    Usage:
+      kubectl linstor ...
+      Executes control commands for the LINSTOR storage system directly via kubectl.
+      Read more documentation at: https://github.com/piraeusdatastore/kubectl-linstor
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/piraeusdatastore/kubectl-linstor/releases/download/v0.3.2/kubectl-linstor_v0.3.2_darwin_amd64.tar.gz
+    sha256: 03d64ded4b22e10f5c1a58c402fcf528b7e7522aa7f0cd06c56e89a845e61fd7
+    files:
+      - from: ./kubectl-linstor
+        to: .
+      - from: ./LICENSE
+        to: .
+    bin: kubectl-linstor
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/piraeusdatastore/kubectl-linstor/releases/download/v0.3.2/kubectl-linstor_v0.3.2_darwin_arm64.tar.gz
+    sha256: 237a7abf735545bd22b1e6c4edb0c35e448fadf716dc55ed9e56d5d3ddbca6d1
+    files:
+      - from: ./kubectl-linstor
+        to: .
+      - from: ./LICENSE
+        to: .
+    bin: kubectl-linstor
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/piraeusdatastore/kubectl-linstor/releases/download/v0.3.2/kubectl-linstor_v0.3.2_linux_amd64.tar.gz
+    sha256: f2ff11a663b4811e51ed811600e6ed5abf3c5b584acc072fcd51065a8871fa4f
+    files:
+      - from: ./kubectl-linstor
+        to: .
+      - from: ./LICENSE
+        to: .
+    bin: kubectl-linstor
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/piraeusdatastore/kubectl-linstor/releases/download/v0.3.2/kubectl-linstor_v0.3.2_linux_arm64.tar.gz
+    sha256: 5fa7f1bd4f0aa745835c049e2c443db49ad1554d50bde645fbb789e1fb43a9f4
+    files:
+      - from: ./kubectl-linstor
+        to: .
+      - from: ./LICENSE
+        to: .
+    bin: kubectl-linstor
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/piraeusdatastore/kubectl-linstor/releases/download/v0.3.2/kubectl-linstor_v0.3.2_windows_amd64.zip
+    sha256: 9cd31d50327e36616404d2680e2611931d11385a71aa0ccbff925a7aa31145d6
+    files:
+      - from: ./kubectl-linstor.exe
+        to: .
+      - from: ./LICENSE
+        to: .
+    bin: kubectl-linstor.exe

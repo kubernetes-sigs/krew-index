@@ -1,0 +1,47 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: blame
+spec:
+  version: v0.0.12
+  homepage: https://github.com/knight42/kubectl-blame
+  shortDescription: Show who edited resource fields.
+  description: |
+    Annotate each line in the given resource's YAML with information from the managedFields to show
+    who last modified the field.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/knight42/kubectl-blame/releases/download/v0.0.12/kubectl-blame-v0.0.12-darwin-amd64.tar.gz
+    sha256: 12459ebbf19e8dd90fd8cf58a025528c7cce3da47b7f5ad64484ff0fc1c12ec3
+    bin: kubectl-blame
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/knight42/kubectl-blame/releases/download/v0.0.12/kubectl-blame-v0.0.12-darwin-arm64.tar.gz
+    sha256: b39813153d2268f82f59c3fc9f7e026dafb95e0b1bdc7dd305fb943240a5518f
+    bin: kubectl-blame
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/knight42/kubectl-blame/releases/download/v0.0.12/kubectl-blame-v0.0.12-linux-amd64.tar.gz
+    sha256: 47a625857480ec2a7a9e729d9c271711911105b29ef4338a69a731ff5fd50d7b
+    bin: kubectl-blame
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/knight42/kubectl-blame/releases/download/v0.0.12/kubectl-blame-v0.0.12-linux-arm64.tar.gz
+    sha256: a4808671c95abd15d5fd4211be322437294c14bc25c53dd4e5cb343c8b28dc06
+    bin: kubectl-blame
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/knight42/kubectl-blame/releases/download/v0.0.12/kubectl-blame-v0.0.12-windows-amd64.tar.gz
+    sha256: b290cf4c358af00f1714947219e171f6ec812a65f609e2506320d634d43c1ac0
+    bin: kubectl-blame.exe

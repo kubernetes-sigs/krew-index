@@ -1,0 +1,47 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: plogs
+spec:
+  version: v0.1.1
+  homepage: https://github.com/kha7iq/plogs
+  shortDescription: Retrieve and stream colorized logs from Pods.
+  description: |
+    Plogs retrieves colorized logs from Pods
+    with various filtering and monitoring options.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/kha7iq/plogs/releases/download/v0.1.1/plogs_Darwin_x86_64.tar.gz
+    sha256: ff034bee61c66a0bec7dbdf395e7de7f6876dd1e9e775c382e11e460b01bf194
+    bin: plogs
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/kha7iq/plogs/releases/download/v0.1.1/plogs_Darwin_arm64.tar.gz
+    sha256: 57c53d53a2aa3e57a7897d16a1923965fce8d520fea521e77910b5e50e68a0bc
+    bin: plogs
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/kha7iq/plogs/releases/download/v0.1.1/plogs_Linux_x86_64.tar.gz
+    sha256: 44ceb36f6a81f534ecce37fcbd0869993657000d5886ab790fb57e0e3a9b8881
+    bin: plogs
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/kha7iq/plogs/releases/download/v0.1.1/plogs_Linux_arm64.tar.gz 
+    sha256: 0db1eaf16643fc578afcf654e6b577f0ebd7f1443be9154a52b2e211bca66fbf
+    bin: plogs
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/kha7iq/plogs/releases/download/v0.1.1/plogs_Windows_x86_64.zip 
+    sha256: 85afefb5270e1e04d5864407308987e322356fb60748cd7267a517be3a60fd15
+    bin: plogs.exe

@@ -1,0 +1,48 @@
+# Copyright Red Hat
+
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: applier
+spec:
+  version: v1.2.5
+  homepage: https://github.com/stolostron/applier
+  shortDescription: Apply 'go text/template' files on k8s.
+  description: |
+    This plugin allows you apply 'go text/template' files on k8s or just render them.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/stolostron/applier/releases/download/v1.2.5/applier_darwin_amd64.tar.gz
+    sha256: f253c0b18da0a04cc217b57c9da8f411d23eb03c28e17a257f4d5497fb500860
+    bin: applier
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/stolostron/applier/releases/download/v1.2.5/applier_darwin_arm64.tar.gz
+    sha256: 2a4c5311f8203ff44b5627084c2f6eb00a405cba604c292d9579d1f536318b9f
+    bin: applier
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/stolostron/applier/releases/download/v1.2.5/applier_linux_amd64.tar.gz
+    sha256: 1ee8894b218ab0f521c772e17447953ffe44fe7f31e23292caa58e5ef945c3c2
+    bin: applier
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/stolostron/applier/releases/download/v1.2.5/applier_linux_arm64.tar.gz
+    sha256: a89fa13345242929243b6d9001033b91381e00fccc391365ddc99a4b4e2b1ab9
+    bin: applier
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/stolostron/applier/releases/download/v1.2.5/applier_windows_amd64.zip
+    sha256: 9f46d27cc361340698cc9a1e88eb05256a4a47b7e4d9f0b13b8bc65a8f9694c6
+    bin: applier.exe

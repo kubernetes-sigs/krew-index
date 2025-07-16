@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pods-on
+spec:
+  version: v0.3.0
+  homepage: https://github.com/ahmetb/kubectl-pods_on
+  shortDescription: List Pods by Node names/selectors
+  description: |
+    A "kubectl get pods" alternative that lists pods
+    by node names or selectors.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/ahmetb/kubectl-pods_on/releases/download/v0.3.0/kubectl-pods_on_v0.3.0_darwin_amd64.tar.gz
+    sha256: 5e3a095f110292b1632fbe46cf379e0ed01776552a6fb8319bf52ca16945def5
+    bin: kubectl-pods_on
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/ahmetb/kubectl-pods_on/releases/download/v0.3.0/kubectl-pods_on_v0.3.0_darwin_arm64.tar.gz
+    sha256: f1d2425ab146ec0aab740c03476ac988ac705e04e359bb3ec8ebaf401a787709
+    bin: kubectl-pods_on
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/ahmetb/kubectl-pods_on/releases/download/v0.3.0/kubectl-pods_on_v0.3.0_linux_amd64.tar.gz
+    sha256: e68b30e124a50669aaff4e644bb0667aae93a422e40fd9d51387441130c1e140
+    bin: kubectl-pods_on
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/ahmetb/kubectl-pods_on/releases/download/v0.3.0/kubectl-pods_on_v0.3.0_windows_amd64.tar.gz
+    sha256: 3feb0436089ab06ec64cf71db83d247f9facc65b0d5f3b883f4885f93a9ac84c
+    bin: kubectl-pods_on.exe

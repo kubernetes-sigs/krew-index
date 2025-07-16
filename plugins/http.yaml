@@ -1,0 +1,28 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: http
+spec:
+  version: "v0.1.0"  # Replace with your current version
+  homepage: https://github.com/sttts/kubectl-http
+  shortDescription: "Make HTTP requests with kubeconfig credentials"
+  description: |
+    This plugin allows users to make HTTP requests to the Kubernetes API server
+    using the current context's credentials from kubeconfig. It supports both
+    token-based and client-certificate-based authentication methods.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/sttts/kubectl-http/archive/refs/tags/v0.1.0.tar.gz
+    sha256: "a34a547ccc1d337440767d7bf2a013dd90d5498d41b9046650188ac8192f86d8"
+    files:
+    - from: "kubectl-http-*/kubectl-http"
+      to: "."
+    - from: "kubectl-http-*/LICENSE"
+      to: "."
+    bin: "kubectl-http"

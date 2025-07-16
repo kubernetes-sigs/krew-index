@@ -3,10 +3,22 @@ kind: Plugin
 metadata:
   name: tail
 spec:
-  version: "v0.10.1"
+  version: "v0.17.4"
   platforms:
-  - uri: https://github.com/boz/kail/releases/download/v0.10.1/kail_0.10.1_darwin_amd64.tar.gz
-    sha256: c0539d100c0c72ac88340976df7c3dd96febfcced7cf6cc5272b61a5ea514506
+  - uri: https://github.com/boz/kail/releases/download/v0.17.4/kail_v0.17.4_darwin_arm64.tar.gz
+    sha256: 61c331113e3cdc40133f4b5f7a200862e281c23af3f6017bb71a71bae83b0caa
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    bin: kail
+    files:
+    - from: "kail"
+      to: "."
+    - from: LICENSE.txt
+      to: .
+  - uri: https://github.com/boz/kail/releases/download/v0.17.4/kail_v0.17.4_darwin_amd64v2.tar.gz
+    sha256: 88f2f514760312d2f029e69e733575b65563c08f38f6e238f1f2bcc7f57fd661
     selector:
       matchLabels:
         os: darwin
@@ -17,8 +29,20 @@ spec:
       to: "."
     - from: LICENSE.txt
       to: .
-  - uri: https://github.com/boz/kail/releases/download/v0.10.1/kail_0.10.1_linux_amd64.tar.gz
-    sha256: 253ab06570bc3a7afc6ab163b0ac9808b1ce257d2cbcd87c09859511bcbfc138
+  - uri: https://github.com/boz/kail/releases/download/v0.17.4/kail_v0.17.4_linux_arm64.tar.gz
+    sha256: c29c6e69b2ed1a8d8ae1ce00bf5857d2984c820c5c3b83bac9b9f04bc4b372d3
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    bin: kail
+    files:
+    - from: "kail"
+      to: "."
+    - from: LICENSE.txt
+      to: .
+  - uri: https://github.com/boz/kail/releases/download/v0.17.4/kail_v0.17.4_linux_amd64v2.tar.gz
+    sha256: aebdf0401a46b26189eeec2cdd8539675805fcfa68a4561c9ae1993f275c3358
     selector:
       matchLabels:
         os: linux
@@ -29,6 +53,30 @@ spec:
       to: "."
     - from: LICENSE.txt
       to: .
+  - uri: https://github.com/boz/kail/releases/download/v0.17.4/kail_v0.17.4_windows_arm64.tar.gz
+    sha256: e3313c1d02ec9192694484cd59ddc59fd8f10d07a89bc551d8dd6e2e6bdaa5ec
+    selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    bin: kail.exe
+    files:
+      - from: "kail.exe"
+        to: "."
+      - from: LICENSE.txt
+        to: .
+  - uri: https://github.com/boz/kail/releases/download/v0.17.4/kail_v0.17.4_windows_amd64v2.tar.gz
+    sha256: 393a2951ce0828ea2f796a12504f792033ad2b931e33428a2f57dee5741eba09
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    bin: kail.exe
+    files:
+      - from: "kail.exe"
+        to: "."
+      - from: LICENSE.txt
+        to: .
   homepage: https://github.com/boz/kail
   shortDescription: Stream logs from multiple pods and containers using simple, dynamic source selection.
   description: |-

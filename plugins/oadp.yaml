@@ -1,0 +1,90 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: oadp
+spec:
+  version: v1.0.0
+  homepage: https://github.com/migtools/oadp-cli
+  shortDescription: Manage OpenShift API for Data Protection (OADP) backup and restore operations
+  description: |
+    kubectl-oadp is a kubectl plugin for managing OpenShift API for Data Protection (OADP) backup and restore operations.
+    
+    It provides both admin and non-admin commands:
+    - Admin commands: Full OADP/Velero backup and restore operations
+    - Non-admin commands: Namespace-scoped backup operations with automatic namespace detection
+    
+    The plugin automatically detects the appropriate namespace from your current kubectl context
+    for non-admin operations, following the principle of least privilege.
+    
+    Features:
+    - Create and manage OADP backups
+    - View backup status and logs  
+    - Delete backups
+    - Support for both cluster-admin and namespace-scoped operations
+    - Integration with kubectl context for namespace detection
+  caveats: |
+    This plugin requires:
+    - OADP operator to be installed in the cluster
+    - Appropriate RBAC permissions for the operations you want to perform
+    - For non-admin operations: namespace-scoped permissions in your current kubectl context namespace
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/migtools/oadp-cli/releases/download/v1.0.0/kubectl-oadp-linux-amd64.tar.gz
+    sha256: ""
+    files:
+    - from: kubectl-oadp
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-oadp
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/migtools/oadp-cli/releases/download/v1.0.0/kubectl-oadp-linux-arm64.tar.gz
+    sha256: ""
+    files:
+    - from: kubectl-oadp
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-oadp
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/migtools/oadp-cli/releases/download/v1.0.0/kubectl-oadp-darwin-amd64.tar.gz
+    sha256: ""
+    files:
+    - from: kubectl-oadp
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-oadp
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/migtools/oadp-cli/releases/download/v1.0.0/kubectl-oadp-darwin-arm64.tar.gz
+    sha256: ""
+    files:
+    - from: kubectl-oadp
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-oadp
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/migtools/oadp-cli/releases/download/v1.0.0/kubectl-oadp-windows-amd64.tar.gz
+    sha256: ""
+    files:
+    - from: kubectl-oadp.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-oadp.exe 

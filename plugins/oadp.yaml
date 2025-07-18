@@ -33,7 +33,7 @@ spec:
         os: linux
         arch: amd64
     uri: https://github.com/migtools/oadp-cli/releases/download/v0.0.1/kubectl-oadp-linux-amd64.tar.gz
-    sha256: "1a5f3220a6782adac13ed08f46aedf3222726c912d6573977cb00aff22e56a9e"
+    sha256: "588ecc3d0b4d39f92ca000fe77eabe881fbc8304a7613d2afb012bd3afa25d9e"
     files:
     - from: kubectl-oadp
       to: .
@@ -45,7 +45,31 @@ spec:
         os: linux
         arch: arm64
     uri: https://github.com/migtools/oadp-cli/releases/download/v0.0.1/kubectl-oadp-linux-arm64.tar.gz
-    sha256: "e25fcfb4dbe5a5eaeb8a24c8e6aa5203c6b68679be5964464fb3eb6ff3113460"
+    sha256: "ca50a9b97132e9da99fd2b6b078d31ffef68ba7484cf6217816e5c13ceaeed41"
+    files:
+    - from: kubectl-oadp
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-oadp
+  - selector:
+      matchLabels:
+        os: linux
+        arch: ppc64le
+    uri: https://github.com/migtools/oadp-cli/releases/download/v0.0.1/kubectl-oadp-linux-ppc64le.tar.gz
+    sha256: "844ff929cff9750e919455de7bd48f4393c45d1881ae4ac0a9ebeb48af377239"
+    files:
+    - from: kubectl-oadp
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-oadp
+  - selector:
+      matchLabels:
+        os: linux
+        arch: s390x
+    uri: https://github.com/migtools/oadp-cli/releases/download/v0.0.1/kubectl-oadp-linux-s390x.tar.gz
+    sha256: "6ecda349bb84d882a1b48300d1c14dce53fc5842619b82db6edb3e8923a90ad0"
     files:
     - from: kubectl-oadp
       to: .
@@ -57,7 +81,7 @@ spec:
         os: darwin
         arch: amd64
     uri: https://github.com/migtools/oadp-cli/releases/download/v0.0.1/kubectl-oadp-darwin-amd64.tar.gz
-    sha256: "830a960372dec3fe9b45c5975ad0c6ba81ab9b4db5ece51c79a001903e8b808d"
+    sha256: "27ecba3f5b3d9afda1a28920b7caeaab2dee6101d2c913ca3e37482ac1586832"
     files:
     - from: kubectl-oadp
       to: .
@@ -69,7 +93,7 @@ spec:
         os: darwin
         arch: arm64
     uri: https://github.com/migtools/oadp-cli/releases/download/v0.0.1/kubectl-oadp-darwin-arm64.tar.gz
-    sha256: "4076d25484c45827037bc858de07f92f9e53288704b083253402352eb9ae8a7b"
+    sha256: "006e017fa9753ec9b792ead0704c4425d9a93f90275a8260548359ffad8a09fe"
     files:
     - from: kubectl-oadp
       to: .
@@ -81,7 +105,7 @@ spec:
         os: windows
         arch: amd64
     uri: https://github.com/migtools/oadp-cli/releases/download/v0.0.1/kubectl-oadp-windows-amd64.tar.gz
-    sha256: "401b58eeeedb095a7b179f6223069d8c75db540839f179a990e45585f2ffd0d5"
+    sha256: "5273a69dffd4b8c347bf81f823033bc8d63029bac93caa5cb27e8ee9d36ec41a"
     files:
     - from: kubectl-oadp.exe
       to: .
@@ -93,7 +117,7 @@ spec:
         os: windows
         arch: arm64
     uri: https://github.com/migtools/oadp-cli/releases/download/v0.0.1/kubectl-oadp-windows-arm64.tar.gz
-    sha256: "938da633a4d300cd49e78238dc39f908ecb1da061eb551f8187a6cfd6af085ac"
+    sha256: "a5faab9f2f4743f8c236b569ff0d7b3a64519bce4820c74097d8f45ecfa86f3c"
     files:
     - from: kubectl-oadp.exe
       to: .

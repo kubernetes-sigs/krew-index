@@ -54,30 +54,6 @@ spec:
     bin: kubectl-oadp
   - selector:
       matchLabels:
-        os: linux
-        arch: ppc64le
-    uri: https://github.com/migtools/oadp-cli/releases/download/v0.0.1/kubectl-oadp-linux-ppc64le.tar.gz
-    sha256: "844ff929cff9750e919455de7bd48f4393c45d1881ae4ac0a9ebeb48af377239"
-    files:
-    - from: kubectl-oadp
-      to: .
-    - from: LICENSE
-      to: .
-    bin: kubectl-oadp
-  - selector:
-      matchLabels:
-        os: linux
-        arch: s390x
-    uri: https://github.com/migtools/oadp-cli/releases/download/v0.0.1/kubectl-oadp-linux-s390x.tar.gz
-    sha256: "6ecda349bb84d882a1b48300d1c14dce53fc5842619b82db6edb3e8923a90ad0"
-    files:
-    - from: kubectl-oadp
-      to: .
-    - from: LICENSE
-      to: .
-    bin: kubectl-oadp
-  - selector:
-      matchLabels:
         os: darwin
         arch: amd64
     uri: https://github.com/migtools/oadp-cli/releases/download/v0.0.1/kubectl-oadp-darwin-amd64.tar.gz

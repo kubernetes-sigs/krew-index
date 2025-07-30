@@ -10,14 +10,14 @@ spec:
     and illustrate ArgoCD concepts, such as the 'App of Apps' pattern
     across multiple clusters and dependency trees, primarily for
     documentation, learning, and teaching purposes.
-  version: v0.1.3
+  version: v0.2.0
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.1.3/argo-apps-viz_linux_amd64.tar.gz
-    sha256: 9f878da8bfb7fdeb721138bd2fd58bb7dce33817b9f4f4b43a8866316974ea9e
+    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.2.0/argo-apps-viz_linux_amd64.tar.gz
+    sha256: 8bf5eac75c4e0c2525eb3611126eed728f9fa6011823bfdb509a296013a0c42b
     files:
     - from: "./argo-apps-viz"
       to: "."
@@ -28,8 +28,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.1.3/argo-apps-viz_linux_arm64.tar.gz
-    sha256: 0266875d7b40f2d05085fee0d7588da7f36670573a5e65d9baf67053825888a9
+    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.2.0/argo-apps-viz_linux_arm64.tar.gz
+    sha256: dcb35d9bb229c99f72f3ddb9546feb89183350c92c207d4e943cbe740370096a
     files:
     - from: "./argo-apps-viz"
       to: "."
@@ -40,8 +40,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.1.3/argo-apps-viz_darwin_amd64.tar.gz
-    sha256: 58147534aca9a66d29142cc4fb8c4e59e9a237759ef84f894882175b4741ea5d
+    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.2.0/argo-apps-viz_darwin_amd64.tar.gz
+    sha256: 36075a2f21f1a785d4c4e318dea53b57fd1476a7987055109f26309def22640a
     files:
     - from: "./argo-apps-viz"
       to: "."
@@ -52,8 +52,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.1.3/argo-apps-viz_darwin_arm64.tar.gz
-    sha256: 94e8c05b0bfdab4fde6c343f675838b4f5ef3fbd9c99238bf34ae8e903da1898
+    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.2.0/argo-apps-viz_darwin_arm64.tar.gz
+    sha256: 9158d31a017b1c14930a0da1bd23d59362ea64bc00705f745ff1fd934887e653
     files:
     - from: "./argo-apps-viz"
       to: "."
@@ -65,8 +65,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.1.3/argo-apps-viz_windows_amd64.zip
-    sha256: 346e79f85cb247922537691f6f060ddec3a75d17cdd2c9f39811bf8e1798fadc
+    uri: https://github.com/syndlex/argo-apps-viz/releases/download/v0.2.0/argo-apps-viz_windows_amd64.zip
+    sha256: 85b4bfea10ee950dc6f6138e25102f240d9392b6839768f073ece680af892b67
     files:
     - from: "/argo-apps-viz.exe"
       to: "."

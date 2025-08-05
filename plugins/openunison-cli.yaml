@@ -1,0 +1,59 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: openunison-cli
+spec:
+  version: "v1.0.0"
+  homepage: https://github.com/OpenUnison/openunison-cli
+  shortDescription: "Login to a kubernetes cluster via OpenUnison"
+  description: |
+    kubectl exec plugin that will launch a browser to authenticate you 
+    without having a pre-existing kubectl configuration file.  The first
+    time you execute this plugin, include the host of your OpenUnison 
+    server and the plugin will launch a browser and authenticate you.  As
+    you work with kubectl it will keep your short-lived tokens updated and
+    if they expire, automatically re-launch a browser window to authenticate
+    you.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+    uri: https://nexus.tremolo.io/repository/openunison-cli/openunison-cli-v1.0.0-macos.zip
+    sha256: 17c61e87dc201d4fdfe3d6cb45a5968e067a3519860708d8a6ab57e05c6621f0
+    files:
+    - from: "openunison-cli"
+      to: "openunison-cli"
+    - from: "LICENSE"
+      to: "LICENSE"
+    bin: openunison-cli
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - linux
+    uri: https://nexus.tremolo.io/repository/openunison-cli/openunison-cli-v1.0.0-linux.zip
+    sha256: eb0c2c6d1b5ecb9f040469d35b98426cc2d1a45d302a32c9587dc39175702532
+    files:
+    - from: "openunison-cli"
+      to: "openunison-cli"
+    - from: "LICENSE"
+      to: "LICENSE"
+    bin: openunison-cli
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - windows
+    uri: https://nexus.tremolo.io/repository/openunison-cli/openunison-cli-v1.0.0-win.zip
+    sha256: 3b03a02c197d5a1b091f482c445f81717fd7dfd99e1f52c1d4016ea9d82997cb
+    files:
+    - from: "openunison-cli.exe"
+      to: "openunison-cli.exe"
+    - from: "LICENSE"
+      to: "LICENSE"
+    bin: openunison-cli.exe

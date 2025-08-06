@@ -1,0 +1,58 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kaito
+spec:
+  version: v0.1.1
+  homepage: https://github.com/kaito-project/kaito-kubectl-plugin
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/kaito-project/kaito-kubectl-plugin/releases/download/v0.1.1/kaito-kubectl-plugin-0.1.1-linux-amd64.tar.gz
+    sha256: bd8fa300b4e67039b08fb0a80285274b1254f78030dd125211eebfbe8616cca6
+    bin: "bin/kubectl-kaito"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/kaito-project/kaito-kubectl-plugin/releases/download/v0.1.1/kaito-kubectl-plugin-0.1.1-linux-arm64.tar.gz
+    sha256: 86c67cfc0b6d4cccf1cabe4eec8cee8d17914f0cce88bf2ad8c9381ec23030ad
+    bin: "bin/kubectl-kaito"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/kaito-project/kaito-kubectl-plugin/releases/download/v0.1.1/kaito-kubectl-plugin-0.1.1-darwin-amd64.tar.gz
+    sha256: df5fb945e8d63c465c358965bd9457f99ccea5730b5dda42f233452e2abad72d
+    bin: "bin/kubectl-kaito"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/kaito-project/kaito-kubectl-plugin/releases/download/v0.1.1/kaito-kubectl-plugin-0.1.1-darwin-arm64.tar.gz
+    sha256: 56e990a0dfb8182b7210b61a43d7baee51481b9e7344afb574811cd60fc209b9
+    bin: "bin/kubectl-kaito"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/kaito-project/kaito-kubectl-plugin/releases/download/v0.1.1/kaito-kubectl-plugin-0.1.1-windows-amd64.tar.gz
+    sha256: c676a398df1478605f39f519246d9f3f9de4bd9f777aeb639a8e14cdeb7fb0ea
+    bin: "bin/kubectl-kaito.exe"
+  shortDescription: Manage AI/ML model inference and fine-tuning with Kaito
+  description: |
+    kubectl-kaito is a command-line tool for managing AI/ML model inference workloads
+    using the Kubernetes AI Toolchain Operator (Kaito).
+
+    This plugin simplifies the deployment, management, and monitoring of AI models
+    in Kubernetes clusters through Kaito workspaces.
+
+    Features:
+    - Deploy AI models for inference with automatic GPU provisioning
+    - Manage workspace lifecycle and monitor status with real-time updates
+    - Interactive chat with deployed models using OpenAI-compatible API
+    - Discover and validate available model presets from Kaito repository
+    - Get inference endpoints for programmatic access to deployed models
+    

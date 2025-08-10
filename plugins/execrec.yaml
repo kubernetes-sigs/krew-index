@@ -1,0 +1,55 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: execrec
+spec:
+  version: v1.0.0
+  homepage: https://github.com/keidarcy/kubectl-execrec
+  shortDescription: A kubectl plugin that wraps `kubectl exec` with session recording capabilities 📝.
+  description: |
+    A kubectl plugin that wraps `kubectl exec` with session recording capabilities.
+    All interactive sessions are automatically logged to timestamped files for audit and debugging purposes.
+    You can also upload the log file to storage like S3.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/keidarcy/kubectl-execrec/releases/download/v1.0.0/kubectl-execrec_v1.0.0_darwin_amd64.tar.gz
+    sha256: b89c8f5f49aba86b1c12f8ca5c4e24a18d0aa0e33b2e152a4687a8f4ab727455
+    bin: kubectl-execrec
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/keidarcy/kubectl-execrec/releases/download/v1.0.0/kubectl-execrec_v1.0.0_darwin_arm64.tar.gz
+    sha256: 65ee869802073eff6c57353bd34ef9fc9ac5db93ad4c569e1994cd1c7aa99c45
+    bin: kubectl-execrec
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/keidarcy/kubectl-execrec/releases/download/v1.0.0/kubectl-execrec_v1.0.0_linux_amd64.tar.gz
+    sha256: 78f7e0dc27706c89bf90df139f0686c875c4f8cbc397605385d680f11443bc13
+    bin: kubectl-execrec
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/keidarcy/kubectl-execrec/releases/download/v1.0.0/kubectl-execrec_v1.0.0_linux_arm64.tar.gz
+    sha256: 7c95a347b5fb3ae7979c3a9265fad6e777a25cd6a54ba45e99282f737eb587cc
+    bin: kubectl-execrec
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/keidarcy/kubectl-execrec/releases/download/v1.0.0/kubectl-execrec_v1.0.0_windows_amd64.zip
+    sha256: eb03392a612ca0d74ad2d4df2ff394fbc45f8555a7093c94f9e4f587a11c194b
+    bin: kubectl-execrec.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/keidarcy/kubectl-execrec/releases/download/v1.0.0/kubectl-execrec_v1.0.0_windows_arm64.zip
+    sha256: 65f5b448d91fddb21b9cfffed86ed8dbb9c6546d1df2ba3234a638c1bba7dd8f
+    bin: kubectl-execrec.exe

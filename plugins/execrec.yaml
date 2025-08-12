@@ -5,11 +5,12 @@ metadata:
 spec:
   version: v1.0.0
   homepage: https://github.com/keidarcy/kubectl-execrec
-  shortDescription: A kubectl plugin that wraps `kubectl exec` with session recording capabilities for audit and debugging.
+  shortDescription: Record kubectl exec sessions for audit
   description: |
-    A kubectl plugin that wraps `kubectl exec` with session recording capabilities.
-    All interactive sessions are automatically logged to timestamped files for audit and debugging purposes.
-    You can also upload the log file to storage like S3.
+    A kubectl plugin that wraps kubectl exec with session recording capabilities.
+    All interactive sessions are automatically logged to timestamped files for audit
+    and debugging purposes. Supports optional upload to S3-compatible storage
+    services for centralized log management and compliance requirements.
   platforms:
   - selector:
       matchLabels:

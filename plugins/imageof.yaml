@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: imageof
 spec:
-  version: "v0.1.1"
+  version: "v0.1.2"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
     uri: https://github.com/HarshPanchal18/kubectl-imageof/releases/download/v0.1.0/kubectl-imageof-linux-amd64.tar.gz
-    sha256: "1eaafa9e245f66d419ebf5650050b4913d40b362b5e8a322807f06afeac8be60"
+    sha256: "bde1b24d2c2fcc481fea140e21431fcfdd0512d6944181afe573d57c2400f127"
     bin: kubectl-imageof-linux-amd64
 
   - selector:
@@ -18,7 +18,7 @@ spec:
         os: darwin
         arch: amd64
     uri: https://github.com/HarshPanchal18/kubectl-imageof/releases/download/v0.1.0/kubectl-imageof-darwin-amd64.tar.gz
-    sha256: "163b7ec6609cad9c3af81fe15a013fcc60a2c9de4ce750adcfb8153e71e08852"
+    sha256: "393cf914b2c4196dcb7351d439adfd1be902c30a1eb617c4c05d0c8220c8fae9"
     bin: kubectl-imageof-darwin-amd64
 
   - selector:
@@ -26,7 +26,7 @@ spec:
         os: darwin
         arch: arm64
     uri: https://github.com/HarshPanchal18/kubectl-imageof/releases/download/v0.1.0/kubectl-imageof-darwin-arm64.tar.gz
-    sha256: "f4260d1627b04607b9da77b8360b6f36f1b1ec21cac2e79a87368f8ea2b9ee8a"
+    sha256: "ad36fa68bc6631a00e72f4002552d6275c86c2129615497070621de5f4d162f5"
     bin: kubectl-imageof-darwin-arm64
 
   - selector:
@@ -34,7 +34,7 @@ spec:
         os: windows
         arch: amd64
     uri: https://github.com/HarshPanchal18/kubectl-imageof/releases/download/v0.1.0/kubectl-imageof-windows-amd64.zip
-    sha256: "4e432dd3dd925777b39b881aece00989cf5f18664014f62f2a6975daf5904f05"
+    sha256: "20e8dbd6d7edffd17d018000ab2b902ea91304bfbe679dd1d9587c9e6bb4f018"
     bin: kubectl-imageof-windows-amd64.exe
 
   shortDescription: "Get container images of pods quickly"

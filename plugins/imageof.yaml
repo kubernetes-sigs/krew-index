@@ -1,0 +1,45 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: imageof
+spec:
+  version: "v0.1.0"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/HarshPanchal18/kubectl-imageof/releases/download/v0.1.0/kubectl-imageof-linux-amd64.tar.gz
+    sha256: "7fac9743d202035896ead94d822d6066be21f6b8f83e61040e8746e604261ad3"
+    bin: kubectl-imageof-linux-amd64
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/HarshPanchal18/kubectl-imageof/releases/download/v0.1.0/kubectl-imageof-darwin-amd64.tar.gz
+    sha256: "cd0517ff6bb9b94b7222d1c82a25983545dc0f7761817129939641e190641194"
+    bin: kubectl-imageof-darwin-amd64
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/HarshPanchal18/kubectl-imageof/releases/download/v0.1.0/kubectl-imageof-darwin-arm64.tar.gz
+    sha256: "cd0517ff6bb9b94b7222d1c82a25983545dc0f7761817129939641e190641194"
+    bin: kubectl-imageof-darwin-arm64
+
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/HarshPanchal18/kubectl-imageof/releases/download/v0.1.0/kubectl-imageof-windows-amd64.zip
+    sha256: "4b6e1fad7e030bc8944fc6af03b865ed6eba0a8cd77c8b880dd2798fccffd91e"
+    bin: kubectl-imageof-windows-amd64.exe
+
+  shortDescription: "Get container images of pods quickly"
+  description: |
+    kubectl-imageof is a kubectl plugin to print images of containers
+    in a pod or across all pods in a namespace. Useful alternative to
+    `kubectl describe pod | grep Image`.
+  homepage: https://github.com/HarshPanchal18/kubectl-imageof

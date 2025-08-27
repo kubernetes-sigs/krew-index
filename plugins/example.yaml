@@ -62,18 +62,6 @@ spec:
     - selector:
         matchLabels:
           os: windows
-          arch: arm64
-      uri: https://github.com/talos-labs/kubectl-example/releases/download/v0.0.1/kubectl-example_Windows_arm64.tar.gz
-      sha256: "4192614377957f644a9808303c2d04c159c5c704b7a6d5f83d344d08d9230c11"
-      bin: "./kubectl-example.exe"
-      files:
-        - from: kubectl-example.exe
-          to: .
-        - from: LICENSE
-          to: .
-    - selector:
-        matchLabels:
-          os: windows
           arch: amd64
       uri: https://github.com/talos-labs/kubectl-example/releases/download/v0.0.1/kubectl-example_Windows_x86_64.tar.gz
       sha256: "7147719b7c76647d4264f39d770cbebf0cc7d67d9c10ebf95e316762bbf9fb27"

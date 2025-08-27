@@ -50,18 +50,6 @@ spec:
     - selector:
         matchLabels:
           os: linux
-          arch: i386
-      uri: https://github.com/talos-labs/kubectl-example/releases/download/v0.0.1/kubectl-example_v0.0.1_Linux_i386.tar.gz
-      sha256: "f145f5a0ce32e3f6a0f29841dfadc79c1c3c25a5f54d4153b0c2b4cfb9593f98"
-      bin: "./kubectl-example"
-      files:
-        - from: kubectl-example
-          to: .
-        - from: LICENSE
-          to: .
-    - selector:
-        matchLabels:
-          os: linux
           arch: amd64
       uri: https://github.com/talos-labs/kubectl-example/releases/download/v0.0.1/kubectl-example_v0.0.1_Linux_x86_64.tar.gz
       sha256: "8954ab9a146f968cf599cd97940bb98b31bfe46cdf071c32bfffc2bebd87d8e2"
@@ -77,18 +65,6 @@ spec:
           arch: arm64
       uri: https://github.com/talos-labs/kubectl-example/releases/download/v0.0.1/kubectl-example_v0.0.1_Windows_arm64.tar.gz
       sha256: "4192614377957f644a9808303c2d04c159c5c704b7a6d5f83d344d08d9230c11"
-      bin: "./kubectl-example.exe"
-      files:
-        - from: kubectl-example.exe
-          to: .
-        - from: LICENSE
-          to: .
-    - selector:
-        matchLabels:
-          os: windows
-          arch: i386
-      uri: https://github.com/talos-labs/kubectl-example/releases/download/v0.0.1/kubectl-example_v0.0.1_Windows_i386.tar.gz
-      sha256: "4ba8d12678694d760afe839cecd50f79bb3a6cef531473a50a0f7a2966c7297b"
       bin: "./kubectl-example.exe"
       files:
         - from: kubectl-example.exe

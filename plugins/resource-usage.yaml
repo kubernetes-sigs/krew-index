@@ -1,0 +1,88 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: resource-usage
+spec:
+  version: "v0.1.0"
+  homepage: https://github.com/clglavan/kubectl-resource-usage
+  shortDescription: "Real-time Kubernetes pod resource usage monitor with TUI"
+  description: |
+    A terminal-based user interface (TUI) for monitoring Kubernetes pod resource usage in real-time.
+    
+    Features:
+    - Real-time CPU and memory usage monitoring
+    - Resource requests and limits display
+    - HPA (Horizontal Pod Autoscaler) metrics and status
+    - Recent cluster events monitoring
+    - Multi-namespace support
+    - Configurable refresh intervals
+    - Color-coded alerts for resource thresholds
+    
+    The plugin provides an intuitive dashboard for monitoring pod resources across multiple namespaces,
+    making it easy to identify resource bottlenecks and scaling events.
+  caveats: |
+    This plugin requires:
+    - Access to Kubernetes metrics-server for resource usage data
+    - Appropriate RBAC permissions to read pods, events, and HPA resources
+    - A terminal that supports colors and unicode characters for best experience
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/clglavan/kubectl-resource-usage/releases/download/v0.1.0/kubectl-resource-usage-linux-amd64.tar.gz
+    sha256: "a0c0ed33defc8b8536af1e602a7899d5d7b5ae5eff83e2d417b3e0a019f41cf3"
+    files:
+    - from: kubectl-resource_usage
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-resource_usage
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/clglavan/kubectl-resource-usage/releases/download/v0.1.0/kubectl-resource-usage-linux-arm64.tar.gz
+    sha256: "82326b73405764598f4511659a982137183798a0f0e6f13015300d5dccec6551"
+    files:
+    - from: kubectl-resource_usage
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-resource_usage
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/clglavan/kubectl-resource-usage/releases/download/v0.1.0/kubectl-resource-usage-darwin-amd64.tar.gz
+    sha256: "a71b36226924c47803fb7d13d50277c7492bf17e4ac8d01ba2ac03dc94fa9610"
+    files:
+    - from: kubectl-resource_usage
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-resource_usage
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/clglavan/kubectl-resource-usage/releases/download/v0.1.0/kubectl-resource-usage-darwin-arm64.tar.gz
+    sha256: "e88e252ce16e78df0568dd5ae4654ee1d4bd23f6771a8d08d2c893436d832bf7"
+    files:
+    - from: kubectl-resource_usage
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-resource_usage
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/clglavan/kubectl-resource-usage/releases/download/v0.1.0/kubectl-resource-usage-windows-amd64.tar.gz
+    sha256: "8d239007ef16b2c4d45099ffe87c3dc9d21c5cda573efedf43efab426b41187d"
+    files:
+    - from: kubectl-resource_usage.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-resource_usage.exe

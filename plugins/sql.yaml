@@ -3,16 +3,88 @@ kind: Plugin
 metadata:
   name: sql
 spec:
-  version: v0.3.35
+  version: v0.3.41
   homepage: https://github.com/yaacov/kubectl-sql
+  shortDescription: Query Kubernetes resources using SQL-like syntax
+  description: |
+    kubectl-sql is a kubectl plugin that allows you to query Kubernetes resources
+    using SQL-like syntax. It supports complex queries with WHERE clauses, sorting,
+    limiting, and filtering across multiple resource types and namespaces.
+    
+    Features:
+    - SQL-like query language with operators (=, !=, ~=, >, <, etc.)
+    - Support for all Kubernetes resource types
+    - Cross-namespace queries
+    - Multiple output formats (table, json, yaml, name)
+    - Array operations (any, all, len)
+    - Time and size unit support
+  caveats: |
+    This plugin requires kubectl to be installed and configured to access your cluster.
+    
+    Examples:
+      # Get pods with specific labels
+      kubectl sql "SELECT name, status.phase FROM */pods WHERE metadata.labels.app = 'nginx'"
+      
+      # Find pods with high memory usage
+      kubectl sql "SELECT name FROM */pods WHERE spec.containers[*].resources.requests.memory > 1Gi"
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/yaacov/kubectl-sql/releases/download/v0.3.35/kubectl-sql.tar.gz
-    sha256: e8bc6295842844b87896ce3d9b5845606a2c317b8ab4dad68d70ac60d3732534
+    uri: https://github.com/yaacov/kubectl-sql/releases/download/v0.3.41/kubectl-sql-v0.3.41-linux-amd64.tar.gz
+    sha256: 1fbda4ee429988494c9003dd1f3363d8b2c191cb0fa0e3cabefe275a9c6d234b
+    files:
+    - from: kubectl-sql-linux-amd64
+      to: kubectl-sql
+    - from: LICENSE
+      to: .
     bin: kubectl-sql
-  shortDescription: Query the cluster via pseudo-SQL
-  description: |
-    This plugin enables to query the kubernetes API server via a SQL like language.
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/yaacov/kubectl-sql/releases/download/v0.3.41/kubectl-sql-v0.3.41-linux-arm64.tar.gz
+    sha256: d0e4e811dc75e0e28fb3ba75f32092ce4aaaaafaa18f2c844d183882bb3162e5
+    files:
+    - from: kubectl-sql-linux-arm64
+      to: kubectl-sql
+    - from: LICENSE
+      to: .
+    bin: kubectl-sql
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-sql/releases/download/v0.3.41/kubectl-sql-v0.3.41-darwin-amd64.tar.gz
+    sha256: 46c3ae68eb2e7ac2f024215423122810241450e82e2b581b6a2bfed253df774e
+    files:
+    - from: kubectl-sql-darwin-amd64
+      to: kubectl-sql
+    - from: LICENSE
+      to: .
+    bin: kubectl-sql
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/yaacov/kubectl-sql/releases/download/v0.3.41/kubectl-sql-v0.3.41-darwin-arm64.tar.gz
+    sha256: 70468c576be8bc6455d4b0961d5569fef91da66f4cd252b7221dc8a5f5cb1f1f
+    files:
+    - from: kubectl-sql-darwin-arm64
+      to: kubectl-sql
+    - from: LICENSE
+      to: .
+    bin: kubectl-sql
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-sql/releases/download/v0.3.41/kubectl-sql-v0.3.41-windows-amd64.zip
+    sha256: a321327bbfd8392a23454faf3bd44b8114bec118d43181dffc85117fa3efbc1f
+    files:
+    - from: kubectl-sql-windows-amd64.exe
+      to: kubectl-sql.exe
+    - from: LICENSE
+      to: .
+    bin: kubectl-sql.exe

@@ -3,16 +3,93 @@ kind: Plugin
 metadata:
   name: mtv
 spec:
-  version: v0.1.36
+  version: v0.1.38
   homepage: https://github.com/yaacov/kubectl-mtv
+  shortDescription: Migrate VMs to KubeVirt using Forklift
+  description: |
+    kubectl-mtv is a kubectl plugin for migrating virtual machines to KubeVirt using Forklift.
+    It helps migrate VMs from vSphere, oVirt, OpenStack, and OVA to Kubernetes/OpenShift
+    with advanced query capabilities, mapping management, and migration planning.
+    
+    Features:
+    - Multi-Platform Support: Migrate from vSphere, oVirt, OpenStack, and OVA
+    - Flexible Mapping: Use existing mappings, inline pairs, or automatic defaults
+    - Advanced Queries: Filter and search inventory with powerful query language
+    - VDDK Support: Optimized VMware disk transfers
+    - Real-time Monitoring: Track migration progress live
+    - Warm Migrations: Minimize downtime for critical systems
+  caveats: |
+    This plugin requires kubectl to be installed and configured to access your cluster.
+    For VMware migrations, consider using VDDK for optimal disk transfer performance.
+    
+    Examples:
+      # Create a VMware provider
+      kubectl mtv create provider vmware --type vsphere -U https://vcenter.com/sdk -u admin
+      
+      # List available VMs
+      kubectl mtv get inventory vms vmware -q "where name ~= 'web-.*'"
+      
+      # Create and start a migration plan
+      kubectl mtv create plan my-migration --source vmware --vms vm1,vm2
+      kubectl mtv start plan my-migration
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.36/kubectl-mtv.tar.gz
-    sha256: 72dd4c68ef5bbe00e4944ed8819d11a733270730d5db3b450bb3fba814172af9
+    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.38/kubectl-mtv-v0.1.38-linux-amd64.tar.gz
+    sha256: e1a19291ec0656e14966369d446bae87937fd92d1dbf11111315e2f5a020fb3d
+    files:
+    - from: kubectl-mtv-linux-amd64
+      to: kubectl-mtv
+    - from: LICENSE
+      to: .
     bin: kubectl-mtv
-  shortDescription: Migrate virtualization workloads to KubeVirt
-  description: |
-    This plugin helps users migrate virtualization workloads from oVirt, VMware, OpenStack, and OVA files to KubeVirt on Kubernetes.
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.38/kubectl-mtv-v0.1.38-linux-arm64.tar.gz
+    sha256: 268a24bcfb68a4bcdef74e3616b04ea3d2895ef6fcc7a6a9ffe737e2d1d0a23b
+    files:
+    - from: kubectl-mtv-linux-arm64
+      to: kubectl-mtv
+    - from: LICENSE
+      to: .
+    bin: kubectl-mtv
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.38/kubectl-mtv-v0.1.38-darwin-amd64.tar.gz
+    sha256: a0ebd65ceeb601a77201254402a35608a030d40520283926f855c1f94bf38608
+    files:
+    - from: kubectl-mtv-darwin-amd64
+      to: kubectl-mtv
+    - from: LICENSE
+      to: .
+    bin: kubectl-mtv
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.38/kubectl-mtv-v0.1.38-darwin-arm64.tar.gz
+    sha256: 87a8924ec0758a23632a8a61e271c3c014117240e12daa2b4944d9bb2fc9c8a8
+    files:
+    - from: kubectl-mtv-darwin-arm64
+      to: kubectl-mtv
+    - from: LICENSE
+      to: .
+    bin: kubectl-mtv
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.38/kubectl-mtv-v0.1.38-windows-amd64.zip
+    sha256: 46a23e43fa31dea88bc2d0c6b97e2f37e642cf62427e521716e727032e9d2223
+    files:
+    - from: kubectl-mtv-windows-amd64.exe
+      to: kubectl-mtv.exe
+    - from: LICENSE
+      to: .
+    bin: kubectl-mtv.exe

@@ -3,35 +3,35 @@ kind: Plugin
 metadata:
   name: view-allocations
 spec:
-  version: "v0.23.4"
+  version: "v1.0.0"
   platforms:
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.23.4/kubectl-view-allocations_0.23.4-x86_64-apple-darwin.tar.gz
-      sha256: 65b810988543ffb0318c44a169c9e557167c48f2a0579b34d3f4d443ac98866b
+      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/1.0.0/kubectl-view-allocations_1.0.0-x86_64-apple-darwin.tar.gz
+      sha256: 8a932ba69ae34a5fd85633859506ed9edc9dd34dbc8e9826b3edfe798da88ce9
       bin: "./kubectl-view-allocations"
     - selector:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.23.4/kubectl-view-allocations_0.23.4-aarch64-apple-darwin.tar.gz
-      sha256: ba15e24d6b3a8dff59b0b847e66784cd6903006067c39731aa38f8834eeec623
+      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/1.0.0/kubectl-view-allocations_1.0.0-aarch64-apple-darwin.tar.gz
+      sha256: c2a81c6e0781158e7237a11ec9cc37729d273192e5a10d06d0fcca1bf3a0a987
       bin: "./kubectl-view-allocations"
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.23.4/kubectl-view-allocations_0.23.4-x86_64-unknown-linux-musl.tar.gz
-      sha256: 78958fd18c35abe52e8452eccedb798955d5b25c892dcf8eee6a11e01248a135
+      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/1.0.0/kubectl-view-allocations_1.0.0-x86_64-unknown-linux-musl.tar.gz
+      sha256: 32d8661f039ebe43dda0999e716ff35edff35964d138deed2910c6ef471f30a2
       bin: "./kubectl-view-allocations"
     - selector:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/0.23.4/kubectl-view-allocations_0.23.4-aarch64-unknown-linux-musl.tar.gz
-      sha256: 7ea81155575a5e00158479ccf5d21d9a18a0eb8bdee744c8681f9588b82fc7a9
+      uri: https://github.com/davidB/kubectl-view-allocations/releases/download/1.0.0/kubectl-view-allocations_1.0.0-aarch64-unknown-linux-musl.tar.gz
+      sha256: ffcffdcb8dbafb1d1a1fa5a271650c4df78f118fd533fca235907ecf97636066
       bin: "./kubectl-view-allocations"
   shortDescription: List allocations per resources, nodes, pods.
   homepage: https://github.com/davidB/kubectl-view-allocations

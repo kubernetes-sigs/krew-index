@@ -3,15 +3,15 @@ kind: Plugin
 metadata:
   name: kyverno
 spec:
-  version: v1.15.1
+  version: v1.15.2
   homepage: https://github.com/kyverno/kyverno
   platforms:
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/kyverno/kyverno/releases/download/v1.15.1/kyverno-cli_v1.15.1_linux_x86_64.tar.gz
-      sha256: 6b252750af3063e698f4d72cbf7599e8b292bd710248e23d0b1c8935e88aee67
+      uri: https://github.com/kyverno/kyverno/releases/download/v1.15.2/kyverno-cli_v1.15.2_linux_x86_64.tar.gz
+      sha256: c90520ba24fb8b8df003ec22d6d2621e4a3d3c7497665fdcf84e9eab4ff1dfe0
       files:
         - from: kyverno
           to: .
@@ -22,8 +22,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/kyverno/kyverno/releases/download/v1.15.1/kyverno-cli_v1.15.1_darwin_x86_64.tar.gz
-      sha256: 6875b5836f188b089fe4af6d3be8709a61ccad46d7e39febf06472df19d171f5
+      uri: https://github.com/kyverno/kyverno/releases/download/v1.15.2/kyverno-cli_v1.15.2_darwin_x86_64.tar.gz
+      sha256: bf6348d84ef0ee487b3476db03217d24e6e980ceaea35248932f6e96ffb6d0c8
       files:
         - from: kyverno
           to: .
@@ -34,8 +34,8 @@ spec:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/kyverno/kyverno/releases/download/v1.15.1/kyverno-cli_v1.15.1_darwin_arm64.tar.gz
-      sha256: a6a2a25b1d0ee1ea564cc3303434096f0313f45fdac1ec453b5f63586b2ebdfb
+      uri: https://github.com/kyverno/kyverno/releases/download/v1.15.2/kyverno-cli_v1.15.2_darwin_arm64.tar.gz
+      sha256: 217af6bc2fc21006dd243101db64a48436c01a63092feabb3d994e286d64d4b1
       files:
         - from: kyverno
           to: .
@@ -46,8 +46,8 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/kyverno/kyverno/releases/download/v1.15.1/kyverno-cli_v1.15.1_windows_x86_64.zip
-      sha256: 81fed918faa8811f400d03144ce7d2cbbc04cb5e790dfdbb3ae162bacae4eae5
+      uri: https://github.com/kyverno/kyverno/releases/download/v1.15.2/kyverno-cli_v1.15.2_windows_x86_64.zip
+      sha256: bfac6adbc6159f9cd63b4c105d217ec907eedd7661e51154c309a6aa7d0540c4
       files:
         - from: kyverno.exe
           to: .

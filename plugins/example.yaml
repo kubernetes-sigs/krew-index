@@ -3,71 +3,71 @@ kind: Plugin
 metadata:
   name: example
 spec:
+  version: v1.2.1
   homepage: https://github.com/talos-labs/kubectl-example
   shortDescription: Prints out example manifest YAMLs
-  version: v1.2.0
   description: |
-    Prints out a example manifest YAML for a given resource type. 
+    Prints out a example manifest YAML for a given resource type.
     The plugin works similar to a dry run output but for arbitrary resources.
     All examples originate from kubernetes.io.
   platforms:
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: arm64
-      uri: https://github.com/talos-labs/kubectl-example/releases/download/v1.2.0/kubectl-example_Darwin_arm64.tar.gz
-      sha256: "c561b6cc00a718a7de01a9242c23d535b10fe0be39541dbe71df5b636b05759a"
-      bin: "./kubectl-example"
-      files:
-        - from: kubectl-example
-          to: .
-        - from: LICENSE
-          to: .
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: amd64
-      uri: https://github.com/talos-labs/kubectl-example/releases/download/v1.2.0/kubectl-example_Darwin_x86_64.tar.gz
-      sha256: "8e5f40beb340f739a03cd3d9e148e1cfc09b31941e6b3dde00ab548bc8b32599"
-      bin: "./kubectl-example"
-      files:
-        - from: kubectl-example
-          to: .
-        - from: LICENSE
-          to: .
-    - selector:
-        matchLabels:
-          os: linux
-          arch: arm64
-      uri: https://github.com/talos-labs/kubectl-example/releases/download/v1.2.0/kubectl-example_Linux_arm64.tar.gz
-      sha256: "2f8922d0820fb9e9eae9748ef752908fbec8732024d3d983a319fbb6a1b99b1b"
-      bin: "./kubectl-example"
-      files:
-        - from: kubectl-example
-          to: .
-        - from: LICENSE
-          to: .
-    - selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-      uri: https://github.com/talos-labs/kubectl-example/releases/download/v1.2.0/kubectl-example_Linux_x86_64.tar.gz
-      sha256: "5db005ee8042447c3b24c7a62be62a252be3e66e7e8fc7eacae845491871f388"
-      bin: "./kubectl-example"
-      files:
-        - from: kubectl-example
-          to: .
-        - from: LICENSE
-          to: .
-    - selector:
-        matchLabels:
-          os: windows
-          arch: amd64
-      uri: https://github.com/talos-labs/kubectl-example/releases/download/v1.2.0/kubectl-example_Windows_x86_64.zip
-      sha256: "6a3486b542ca9ecba645f114cf9add77db8016ee44ba32ecbb0351273783f4b3"
-      bin: "./kubectl-example.exe"
-      files:
-        - from: kubectl-example.exe
-          to: .
-        - from: LICENSE
-          to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/talos-labs/kubectl-example/releases/download/v1.2.1/kubectl-example_Darwin_arm64.tar.gz
+    sha256: 086e46920a8dd54fb7f32e0b6b6614478ad19f34ceb1c88e1cf56127e8e9beca
+    bin: "./kubectl-example"
+    files:
+      - from: kubectl-example
+        to: .
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/talos-labs/kubectl-example/releases/download/v1.2.1/kubectl-example_Darwin_x86_64.tar.gz
+    sha256: 3d5591730c92816863c66ca01e34cf89fbfe838a732ee95445a3de659753aaa9
+    bin: "./kubectl-example"
+    files:
+      - from: kubectl-example
+        to: .
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/talos-labs/kubectl-example/releases/download/v1.2.1/kubectl-example_Linux_arm64.tar.gz
+    sha256: a3c245fdab6a301457be3aa5480f2dd21c296c93f97c417e85ef06b76276722f
+    bin: "./kubectl-example"
+    files:
+      - from: kubectl-example
+        to: .
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/talos-labs/kubectl-example/releases/download/v1.2.1/kubectl-example_Linux_x86_64.tar.gz
+    sha256: 2891d0444e4996ae13834e254a22ecfbd6d5f196e02ef563e4e15b4a6260470d
+    bin: "./kubectl-example"
+    files:
+      - from: kubectl-example
+        to: .
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/talos-labs/kubectl-example/releases/download/v1.2.1/kubectl-example_Windows_x86_64.zip
+    sha256: 245240c7607936c87feec3cd861f846c09c414811c5ebedd6df5af7890f678ae
+    bin: "./kubectl-example.exe"
+    files:
+      - from: kubectl-example.exe
+        to: .
+      - from: LICENSE
+        to: .

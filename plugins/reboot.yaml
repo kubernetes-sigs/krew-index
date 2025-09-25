@@ -1,0 +1,101 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: reboot
+spec:
+  version: "v1.1.0"
+  homepage: https://github.com/ayetkin/kubectl-reboot
+  shortDescription: Safely restart Kubernetes nodes with automated drain and SSH reboot
+  description: |
+    kubectl-reboot is a kubectl plugin that provides safe node restart operations for Kubernetes clusters.
+    
+    Features:
+    - 🔄 Safe Node Restart: Automatically cordon, drain, reboot, and uncordon nodes
+    - 🚀 SSH Integration: Reboot nodes via SSH with customizable commands  
+    - 🔍 Reboot Verification: Verify successful reboots by monitoring Boot ID changes
+    - 🌐 Cluster-wide Operations: Restart all nodes or specific subsets
+    - 🧪 Dry-run Mode: Preview operations without making changes
+    - ⚡ Flexible Configuration: Extensive customization options
+    
+    Usage examples:
+    - kubectl reboot node1                    # Restart single node
+    - kubectl reboot --all                    # Restart all nodes
+    - kubectl reboot --dry-run node1          # Preview without executing
+    - kubectl reboot --ssh-user ubuntu node1  # Custom SSH user
+  
+  caveats: |
+    This plugin requires:
+    - SSH access to target nodes (key-based authentication recommended)
+    - Appropriate RBAC permissions for node operations
+    - kubectl configured and authenticated to your cluster
+    
+    IMPORTANT: Always test in non-production environments first.
+  
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - linux
+      - key: "arch"
+        operator: "In"
+        values:
+        - amd64
+    uri: https://github.com/ayetkin/kubectl-reboot/releases/download/v1.1.0/kubectl-reboot-linux-amd64.tar.gz
+    sha256: "ad6e7511e7ba91ed320583703c4748d11228b58168ea567307018394b5ed0ba4"
+    bin: kubectl-reboot
+    files:
+    - from: "kubectl-reboot-linux-amd64"
+      to: kubectl-reboot
+
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - linux
+      - key: "arch"
+        operator: "In"
+        values:
+        - arm64
+    uri: https://github.com/ayetkin/kubectl-reboot/releases/download/v1.1.0/kubectl-reboot-linux-arm64.tar.gz
+    sha256: "2a8b56d29c20de5983ccf399db9c9e10b8e8737771892d55959f0fa63087ca04"
+    bin: kubectl-reboot
+    files:
+    - from: "kubectl-reboot-linux-arm64"
+      to: kubectl-reboot
+
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+      - key: "arch"
+        operator: "In"
+        values:
+        - amd64
+    uri: https://github.com/ayetkin/kubectl-reboot/releases/download/v1.1.0/kubectl-reboot-darwin-amd64.tar.gz
+    sha256: "5bdb14272d94ff50fcdcb95ce799b4ecbf0ee66b6d0227e2d3ff40430e5cdd81"
+    bin: kubectl-reboot
+    files:
+    - from: "kubectl-reboot-darwin-amd64"
+      to: kubectl-reboot
+
+  - selector:
+      matchExpressions:
+      - key: "os"
+        operator: "In"
+        values:
+        - darwin
+      - key: "arch"
+        operator: "In"
+        values:
+        - arm64
+    uri: https://github.com/ayetkin/kubectl-reboot/releases/download/v1.1.0/kubectl-reboot-darwin-arm64.tar.gz
+    sha256: "fb0cb99a6c26741ebd2fe9c04ff206587cebee56fbe005eb99156f0bf775c898"
+    bin: kubectl-reboot
+    files:
+    - from: "kubectl-reboot-darwin-arm64"
+      to: kubectl-reboot

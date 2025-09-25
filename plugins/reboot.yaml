@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: reboot
 spec:
-  version: "v1.1.0"
+  version: "v1.1.1"
   homepage: https://github.com/ayetkin/kubectl-reboot
   shortDescription: Safely restart Kubernetes nodes with automated drain and SSH reboot
   description: |
@@ -42,8 +42,8 @@ spec:
         operator: "In"
         values:
         - amd64
-    uri: https://github.com/ayetkin/kubectl-reboot/releases/download/v1.1.0/kubectl-reboot-linux-amd64.tar.gz
-    sha256: "ad6e7511e7ba91ed320583703c4748d11228b58168ea567307018394b5ed0ba4"
+    uri: https://github.com/ayetkin/kubectl-reboot/releases/download/v1.1.1/kubectl-reboot-linux-amd64.tar.gz
+    sha256: "6b3317b65c19402bea50ff3dcd783eeea8be9647867ebb4889165357dded9e41"
     bin: kubectl-reboot
     files:
     - from: "kubectl-reboot-linux-amd64"
@@ -59,8 +59,8 @@ spec:
         operator: "In"
         values:
         - arm64
-    uri: https://github.com/ayetkin/kubectl-reboot/releases/download/v1.1.0/kubectl-reboot-linux-arm64.tar.gz
-    sha256: "2a8b56d29c20de5983ccf399db9c9e10b8e8737771892d55959f0fa63087ca04"
+    uri: https://github.com/ayetkin/kubectl-reboot/releases/download/v1.1.1/kubectl-reboot-linux-arm64.tar.gz
+    sha256: "99400f8fce6095112b3fd22e13428cd8fdea5080f6e271eb694cd66ff91e0790"
     bin: kubectl-reboot
     files:
     - from: "kubectl-reboot-linux-arm64"
@@ -76,8 +76,8 @@ spec:
         operator: "In"
         values:
         - amd64
-    uri: https://github.com/ayetkin/kubectl-reboot/releases/download/v1.1.0/kubectl-reboot-darwin-amd64.tar.gz
-    sha256: "5bdb14272d94ff50fcdcb95ce799b4ecbf0ee66b6d0227e2d3ff40430e5cdd81"
+    uri: https://github.com/ayetkin/kubectl-reboot/releases/download/v1.1.1/kubectl-reboot-darwin-amd64.tar.gz
+    sha256: "8bb1b6fdf03d44b4c77053b69309674a31c5d60e61b9cc883b2a9fad52685882"
     bin: kubectl-reboot
     files:
     - from: "kubectl-reboot-darwin-amd64"
@@ -93,8 +93,8 @@ spec:
         operator: "In"
         values:
         - arm64
-    uri: https://github.com/ayetkin/kubectl-reboot/releases/download/v1.1.0/kubectl-reboot-darwin-arm64.tar.gz
-    sha256: "fb0cb99a6c26741ebd2fe9c04ff206587cebee56fbe005eb99156f0bf775c898"
+    uri: https://github.com/ayetkin/kubectl-reboot/releases/download/v1.1.1/kubectl-reboot-darwin-arm64.tar.gz
+    sha256: "24ced929b6a58c035e89ab61dfbed3cc6d25bdd410344eee75e6443d2b300c9e"
     bin: kubectl-reboot
     files:
     - from: "kubectl-reboot-darwin-arm64"

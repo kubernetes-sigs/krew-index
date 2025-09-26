@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: dolphin
+spec:
+  version: "v0.1.0"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/HarshPanchal18/kubectl-dolphin/releases/download/v0.1.0/kubectl-dolphin-linux-amd64.tar.gz
+    sha256: "1150644e39162efa183a065ff54436f3d2173c443662cd88b695689563ee9cf7"
+    bin: kubectl-dolphin-linux-amd64
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/HarshPanchal18/kubectl-dolphin/releases/download/v0.1.0/kubectl-dolphin-darwin-amd64.tar.gz
+    sha256: "e15050a0e28a40ec6000e0facbde06127986df800c832e849dbbc09aa21a27bc"
+    bin: kubectl-dolphin-darwin-amd64
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/HarshPanchal18/kubectl-dolphin/releases/download/v0.1.0/kubectl-dolphin-darwin-arm64.tar.gz
+    sha256: "d22dd8673cbfc948a2982368c2d6733b4dcdf4613920a997ac9d06f810215514"
+    bin: kubectl-dolphin-darwin-arm64
+
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/HarshPanchal18/kubectl-dolphin/releases/download/v0.1.0/kubectl-dolphin-windows-amd64.zip
+    sha256: "216516914f38ba6fce8361671de5b0f61139737bac60fadd8b8a6bc7f6d13e1e"
+    bin: kubectl-dolphin-windows-amd64.exe
+
+  shortDescription: "Delete pods of a namespace scheduled on a specific node"
+  description: |
+    kubectl-dolphin is a kubectl plugin to delete pods of a namespace scheduled on a specific node.
+    It helps in draining a node by deleting all the pods of a specific namespace running on that node.
+    It is useful in scenarios where you want to delete all the pods of a specific namespace running on a node
+    without affecting the pods of other namespaces.
+    It also supports batch deletion of pods from a large number of pod along with interval to do not overwhelm api-server.
+    It also supports dry-run mode to preview the pods that will be deleted without actually deleting them.
+  homepage: https://github.com/HarshPanchal18/kubectl-dolphin

@@ -3,65 +3,51 @@ kind: Plugin
 metadata:
   name: get-all
 spec:
-  version: v1.3.8
-  platforms:
-  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.8/get-all-amd64-linux.tar.gz
-    sha256: f2595f998f02b64b4b360905a64bf72060a89060713d9120febf5451073e4071
-    bin: get-all-amd64-linux
-    files:
-    - from: get-all-amd64-linux
-      to: .
-    - from: LICENSE
-      to: .
-    selector:
-      matchLabels:
-        os: linux
-        arch: amd64
-  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.8/get-all-amd64-darwin.tar.gz
-    sha256: 3a39db7c04c730bb1d2667cfbfd667b08fb2391c071be5a5d2f15eb3ea7391e1
-    bin: get-all-amd64-darwin
-    files:
-    - from: get-all-amd64-darwin
-      to: .
-    - from: LICENSE
-      to: .
-    selector:
-      matchLabels:
-        os: darwin
-        arch: amd64
-  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.8/get-all-arm64-darwin.tar.gz
-    sha256: 1354ff2b1561ed752c9d25e7bf74200447ff3551f4b3eae1903d05d2ff6e727e
-    bin: get-all-arm64-darwin
-    files:
-    - from: get-all-arm64-darwin
-      to: .
-    - from: LICENSE
-      to: .
-    selector:
-      matchLabels:
-        os: darwin
-        arch: arm64
-  - uri: https://github.com/corneliusweig/ketall/releases/download/v1.3.8/get-all-amd64-windows.zip
-    sha256: bc783037888fd9176f638dc65de6131ba076ad82f662ef400b897a37447c54c7
-    bin: get-all-amd64-windows.exe
-    files:
-    - from: get-all-amd64-windows.exe
-      to: .
-    - from: LICENSE
-      to: .
-    selector:
-      matchLabels:
-        os: windows
-        arch: amd64
-  shortDescription: Like `kubectl get all` but _really_ everything
-  homepage: https://github.com/corneliusweig/ketall
-  description: |+2
-
+  version: v1.4.2
+  homepage: https://github.com/stackitcloud/kubectl-get-all
+  shortDescription: Like `kubectl get all` but **really** everything
+  description: |
       Like 'kubectl get all', but get _really_ all resources
 
       For a complete overview of all resources in a kubernetes cluster,
-       $ kubectl get all --all-namespaces
+      `kubectl get all --all-namespaces`
       is not enough, because it simply does not show everything. This helper
       lists _really_ all resources on the cluster.
 
-      More on https://github.com/corneliusweig/ketall/blob/master/doc/USAGE.md
+      More on https://github.com/stackitcloud/kubectl-get-all/blob/main/doc/USAGE.md
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/stackitcloud/kubectl-get-all/releases/download/v1.4.2/get-all_v1.4.2_linux_amd64.tar.gz
+      sha256: e51d7a57c2b24bd135ab597f3eddac1b1277c078703997e13f9cebe31b865229
+      bin: get-all
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/stackitcloud/kubectl-get-all/releases/download/v1.4.2/get-all_v1.4.2_linux_arm64.tar.gz
+      sha256: f1e5b5c9b87e90ee0ddaab3846e43dbce63c3b8e1d2757492404bc0a31ec8414
+      bin: get-all
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/stackitcloud/kubectl-get-all/releases/download/v1.4.2/get-all_v1.4.2_darwin_amd64.tar.gz
+      sha256: 47a2538096e42e5cf8ff90ea3a7132003c5519bee170eadbaa8841e9075e2462
+      bin: get-all
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/stackitcloud/kubectl-get-all/releases/download/v1.4.2/get-all_v1.4.2_darwin_arm64.tar.gz
+      sha256: 9730c446610d5767631526c25d95e4d27ce56cf2b2b4ffb7f68afee5fad97734
+      bin: get-all
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/stackitcloud/kubectl-get-all/releases/download/v1.4.2/get-all_v1.4.2_windows_amd64.zip
+      sha256: 94a724896f757e13c578fbd7c10b505eeed11ee26cfc38c7130818eae8483209
+      bin: get-all.exe

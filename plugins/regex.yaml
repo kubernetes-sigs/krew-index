@@ -1,0 +1,57 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: regex
+spec:
+  version: v0.2.7
+  homepage: https://github.com/ahmedTouati/kubectl-regex
+  shortDescription: "Get and delete Kubernetes resources with regex patterns"
+  description: |
+    A kubectl plugin that allows you to list or delete Kubernetes resources
+    (Pods, Services, Deployments, CRDs, etc.) by regex pattern.
+
+    Instead of using long shell pipelines like:
+      kubectl get pods | grep "app" | awk '{print $1}' | xargs kubectl delete pods
+    You can simply run:
+      kubectl regex delete pods "app"
+
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/<your-username>/kubectl-regex/releases/download/v0.2.7/kubectl-regex_v0.2.7_linux_amd64.tar.gz
+    sha256: "fb05466e9c070f08552dbb6837824e0257eee2054161d39b82336f52c25602d4"
+    bin: kubectl-regex
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/<your-username>/kubectl-regex/releases/download/v0.2.7/kubectl-regex_v0.2.7_linux_arm64.tar.gz
+    sha256: "1d5f00bfb9ef439cc7f95be2f1044d8dbd11ea17451bee68e9532adbbb9a5d88"
+    bin: kubectl-regex
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/<your-username>/kubectl-regex/releases/download/v0.2.7/kubectl-regex_v0.2.7_darwin_amd64.tar.gz
+    sha256: "73ebd706ea4993e9974de16bc6849acec727b08446743f86be4d2be4887f22cb"
+    bin: kubectl-regex
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/<your-username>/kubectl-regex/releases/download/v0.2.7/kubectl-regex_v0.2.7_darwin_arm64.tar.gz
+    sha256: "82d8641709adf9b8a8a0c825ddefb11c23c5f0fdba0b0fa765ff2f4b1a52d050"
+    bin: kubectl-regex
+
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/<your-username>/kubectl-regex/releases/download/v0.2.7/kubectl-regex_v0.2.7_windows_amd64.tar.gz
+    sha256: "f3ef707b89c01adf02e4dc6d0f126df82a3934e4dbaee67f42a18405b6e07e6f"
+    bin: kubectl-regex.exe

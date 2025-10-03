@@ -1,0 +1,47 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: mounts
+spec:
+  version: v0.1.3
+  homepage: https://github.com/yeqianmen/kubectl-mounts
+  shortDescription: Show Pods' Volumes and VolumeMounts in the current namespace
+  description: |
+    kubectl-mounts is a kubectl plugin that lists all Pods in the
+    current namespace along with their Volumes and VolumeMounts.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/yeqianmen/kubectl-mounts/releases/download/v0.1.3/kubectl-mounts_linux_amd64.tar.gz
+      sha256: 3459d9de7f40f4e49f591b7a4f822bf6b405315ed433342433ccaeb36e9b3864
+      bin: kubectl-mounts
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/yeqianmen/kubectl-mounts/releases/download/v0.1.3/kubectl-mounts_linux_arm64.tar.gz
+      sha256: bdf3d8a6df4bd292b95d3baa169022534a64b1ece7ca71817af7e320367047d8
+      bin: kubectl-mounts
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/yeqianmen/kubectl-mounts/releases/download/v0.1.3/kubectl-mounts_darwin_amd64.tar.gz
+      sha256: 040fcf0b8cee7a25dfdaf2b8107a00e4a77e1a983a4bc9def40f2f0f36be10e2
+      bin: kubectl-mounts
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/yeqianmen/kubectl-mounts/releases/download/v0.1.3/kubectl-mounts_darwin_arm64.tar.gz
+      sha256: ef5d422187ac1974b91588b86a3f9c100f1da87daaeb974fc35b5d03a4a2e4ea
+      bin: kubectl-mounts
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/yeqianmen/kubectl-mounts/releases/download/v0.1.3/kubectl-mounts_windows_amd64.tar.gz
+      sha256: 31fb94a48070123654d2f03352cfb6558c90fe2253a25f7ec7d312ee9c5100ac
+      bin: kubectl-mounts.exe

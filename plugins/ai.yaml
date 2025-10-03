@@ -1,9 +1,10 @@
+# Generated from: https://rajatjindal.com/tools/krew-release-bot-helper/
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
   name: ai
 spec:
-  version: v0.0.8
+  version: v0.0.25
   homepage: https://github.com/GoogleCloudPlatform/kubectl-ai
   shortDescription: AI-powered Kubernetes assistant
   description: |
@@ -24,41 +25,41 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.8/kubectl-ai_Linux_x86_64.tar.gz
-    sha256: 7a87d9c62925df8d9a94767439eff1698f485a6cf97c8476922a1cf7000e53ff
+    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.25/kubectl-ai_Linux_x86_64.tar.gz
+    sha256: c03ce7fd12a832959d6029c54d31eb686601f818579d347e2dd49665a40e9d44
     bin: kubectl-ai
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.8/kubectl-ai_Linux_arm64.tar.gz
-    sha256: 78e08ab104d8a674632bff783fe837656954a5cce3161702334c1b3b1e4b1d17
+    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.25/kubectl-ai_Linux_arm64.tar.gz
+    sha256: 777a09002374b1e3cb6dfb54cc5431666526773fd192213b56b26945087b0492
     bin: kubectl-ai
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.8/kubectl-ai_Darwin_x86_64.tar.gz
-    sha256: a2695aee3563e8d2549d90e9b41ef20682e1c857c45f8941470cd13a789ad0b1
+    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.25/kubectl-ai_Darwin_x86_64.tar.gz
+    sha256: a74726acb821db9b4810a23a07b83bdd0bdd504a36b1256631605659d1fb0cd5
     bin: kubectl-ai
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.8/kubectl-ai_Darwin_arm64.tar.gz
-    sha256: 9401a86e926c44b07a1958c94432642fc28c2be2163ed1ed581f0c3194d8c08d
+    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.25/kubectl-ai_Darwin_arm64.tar.gz
+    sha256: b1d246f1df9a8ade01813dccf45096034e00cfdf8665bbe189e60b49a2d4bc3f
     bin: kubectl-ai
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.8/kubectl-ai_Windows_x86_64.zip
-    sha256: ddcfbcadb8eb4d0b7a1ec2afffdb07b671a8db836a4358cf250221ff2668b8f6
+    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.25/kubectl-ai_Windows_x86_64.zip
+    sha256: 57fb54d4b449f5af91a53fd62901b8ea7f4aeb2c7d1c1bd333e0f24ea9023788
     bin: kubectl-ai.exe
   - selector:
       matchLabels:
         os: windows
         arch: arm64
-    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.8/kubectl-ai_Windows_arm64.zip
-    sha256: c9f35bb742da91357310584ab63d4363c61ca3974f93c7296f262cdd6514752a
+    uri: https://github.com/GoogleCloudPlatform/kubectl-ai/releases/download/v0.0.25/kubectl-ai_Windows_arm64.zip
+    sha256: 590ce1e40346cbb036a90901e7d51ef7471a176f439d63bb29e27cb4ad864699
     bin: kubectl-ai.exe

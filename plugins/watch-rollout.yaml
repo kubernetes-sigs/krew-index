@@ -78,16 +78,13 @@ spec:
     - from: LICENSE
       to: "."
     bin: kubectl-watch_rollout.exe
-  shortDescription: Watch Kubernetes deployment rollouts with live progress
+  shortDescription: Monitor deployment rollouts with live progress
   description: |
-    kubectl watch-rollout monitors Kubernetes deployment rollouts in real-time,
-    displaying progress bars, pod status, warnings, and completion estimates.
+    Monitors deployment rollouts in real-time, displaying progress bars, pod
+    status, warnings, and completion estimates.
 
-    Features:
-    - Real-time progress bars for new and old ReplicaSets
-    - Pod status counts (Available, Ready, Current)
-    - Warning events from pods with aggregation
-    - Estimated time to completion
-    - Progress deadline tracking
-    - Automatic detection of rollout success or failure
-    - Auto-discovery mode for active rollouts
+    Features include real-time progress bars for new and old ReplicaSets, pod
+    status counts (Available, Ready, Current), warning events from pods with
+    aggregation, estimated time to completion, progress deadline tracking,
+    automatic detection of rollout success or failure, and auto-discovery mode
+    for active rollouts.

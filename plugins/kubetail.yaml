@@ -1,0 +1,56 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kubetail
+spec:
+  version: "v0.8.2"
+  homepage: https://github.com/kubetail-org/kubetail
+  shortDescription: "Logging tool for Kubernetes with real-time web dashboard"
+  description: |
+    Kubetail is a general-purpose logging tool for Kubernetes, optimized for
+    tailing logs across multi-container workloads in real-time. With Kubetail,
+    you can view logs from all the containers in a workload merged into a single,
+    chronological timeline, delivered to your browser or terminal.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.8.2/kubetail-darwin-amd64.tar.gz
+    sha256: 25a799fd0f0979af21063afe46bd4335daf3fa570ca6628aad68d758cee5d226
+    bin: kubetail
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.8.2/kubetail-darwin-arm64.tar.gz
+    sha256: e65918fa8c2f5dfba295306f2c1dda5d6151a8144ee78a15cb42b3f00157c86e
+    bin: kubetail
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.8.2/kubetail-linux-amd64.tar.gz
+    sha256: 78810fcd420b165e033289d18022f89991b165b384775ed24939a7a603cf045c
+    bin: kubetail
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.8.2/kubetail-linux-arm64.tar.gz
+    sha256: 65ae2f3cc7cd213696d5d53bc7f90c6f994b3a49d237b1e9190119869521660e
+    bin: kubetail
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.8.2/kubetail-windows-amd64.tar.gz
+    sha256: a5460adb71525f150cf84b106c161f8ff302dff63ac9e13c86ece1c2448fc588
+    bin: kubetail.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.8.2/kubetail-windows-arm64.tar.gz
+    sha256: 11fb3c091d8a3748e23644e326fbc847d46f54ff1894bcb231428a63c9b66572
+    bin: kubetail.exe

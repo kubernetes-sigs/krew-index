@@ -1,0 +1,54 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: meshsync-snapshot
+spec:
+  version: v0.8.0
+  homepage: https://github.com/meshery-extensions/kubectl-meshsync-snapshot
+  shortDescription: Creates a k8s cluster snapshot using meshsync library
+  description: |
+    Plugin creates cluster snapshot to upload to meshery server for visualisation
+  caveats:
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/meshery-extensions/kubectl-meshsync-snapshot/releases/download/v0.8.0/kubectl-meshsync-snapshot_0.8.0_Linux_x86_64.tar.gz
+    sha256: fb4b2f3293c0b49679c99e10a15c2dbbfdf3a4d3e4484383e1c6fb0bdecf6023 
+    bin: kubectl-meshsync-snapshot
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/meshery-extensions/kubectl-meshsync-snapshot/releases/download/v0.8.0/kubectl-meshsync-snapshot_0.8.0_Linux_arm64.tar.gz
+    sha256: 108859914dfa94e7a173c52a70622316cdc763f1e5f150aa3779ee7ab901f8ae 
+    bin: kubectl-meshsync-snapshot
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/meshery-extensions/kubectl-meshsync-snapshot/releases/download/v0.8.0/kubectl-meshsync-snapshot_0.8.0_Darwin_x86_64.tar.gz
+    sha256: b7fabbfa1d412b7bd526686fe3d9d2dc881b0e70d04118baaea87154656f41e6
+    bin: kubectl-meshsync-snapshot
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/meshery-extensions/kubectl-meshsync-snapshot/releases/download/v0.8.0/kubectl-meshsync-snapshot_0.8.0_Darwin_arm64.tar.gz
+    sha256: f3524aa772ee0a02b2c0ffd1bdd9738f437c7607eb3d5de05fb0ca1f1ba73d5a
+    bin: kubectl-meshsync-snapshot
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/meshery-extensions/kubectl-meshsync-snapshot/releases/download/v0.8.0/kubectl-meshsync-snapshot_0.8.0_Windows_x86_64.zip
+    sha256: 2a947b7898fe2c5ce0487bef7454e2cfd14789d4ca59ff29427824ae42a3f43c
+    bin: kubectl-meshsync-snapshot.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: 386
+    uri: https://github.com/meshery-extensions/kubectl-meshsync-snapshot/releases/download/v0.8.0/kubectl-meshsync-snapshot_0.8.0_Windows_i386.zip
+    sha256: 8fbb346c3b53a9a05ddb485105f24f0cf47b67667c41094b0a6fb44da28200a2
+    bin: kubectl-meshsync-snapshot.exe

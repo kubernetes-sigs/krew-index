@@ -7,9 +7,7 @@ spec:
   homepage: https://github.com/tgigli/kubectl-ctx-tags
   shortDescription: Manage and organize kubectl contexts using tags
   description: |
-    kubectl-ctx-tags is a kubectl plugin that helps you organize and manage
-    your kubectl contexts using tags. It provides an interactive TUI for
-    powerful context filtering and searching.
+    Organize and manage kubectl contexts using tags with an interactive TUI.
 
     Features:
     - Tag management for kubectl contexts
@@ -18,17 +16,9 @@ spec:
     - Saved searches (supertags)
     - Context switching and editing
     - Context deletion with confirmation
-    - Safe storage using kubeconfig extensions
+    - Safe storage using kubeconfig extensions field
   caveats: |
-    This plugin requires kubectl to be installed.
-
-    Usage:
-      kubectl ctx-tags              # Open interactive TUI
-      kubectl ctx-tags add <ctx> <tags...>   # Add tags to a context
-      kubectl ctx-tags list         # List all contexts with tags
-      kubectl ctx-tags filter <tags...>      # Filter contexts by tags
-
-    See the full documentation at:
+    See full documentation at:
     https://github.com/tgigli/kubectl-ctx-tags#readme
   platforms:
   - selector:

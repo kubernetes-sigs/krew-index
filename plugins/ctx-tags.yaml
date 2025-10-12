@@ -1,0 +1,55 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ctx-tags
+spec:
+  version: v0.1.2
+  homepage: https://github.com/tgigli/kubectl-ctx-tags
+  shortDescription: Manage and organize contexts using tags
+  description: |
+    Organize and manage kubectl contexts using tags with an interactive TUI.
+
+    Features:
+    - Tag management for kubectl contexts
+    - Interactive fuzzy search TUI
+    - Multi-tag filtering (AND logic)
+    - Saved searches as *supertags
+    - Context switching and editing
+    - Context deletion with confirmation
+    - Safe storage using kubeconfig extensions field
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/tgigli/kubectl-ctx-tags/releases/download/v0.1.2/kubectl-ctx-tags-0.1.2-linux-amd64.tar.gz
+      sha256: 4f5837208cd6e3fb83189d0e6d9d8ebe296db41a50b7ce0c9c346e02c92765df
+      bin: kubectl-ctx-tags
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/tgigli/kubectl-ctx-tags/releases/download/v0.1.2/kubectl-ctx-tags-0.1.2-linux-arm64.tar.gz
+      sha256: 55c801d0413cf77ad1610c9b744a595da438a6de61dc0ad7d4507fb77955a7d2
+      bin: kubectl-ctx-tags
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/tgigli/kubectl-ctx-tags/releases/download/v0.1.2/kubectl-ctx-tags-0.1.2-darwin-amd64.tar.gz
+      sha256: 5913fe31fd739ac57f615631e616bcdf3351b1c587d678c6a780b525c9d0000c
+      bin: kubectl-ctx-tags
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/tgigli/kubectl-ctx-tags/releases/download/v0.1.2/kubectl-ctx-tags-0.1.2-darwin-arm64.tar.gz
+      sha256: e9a7f9ea8389d80def1fd80d71b5b82eda3fb9b91a9906c5a20600d7d3d49a78
+      bin: kubectl-ctx-tags
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/tgigli/kubectl-ctx-tags/releases/download/v0.1.2/kubectl-ctx-tags-0.1.2-windows-amd64.zip
+      sha256: 8b654fe0280d7a84c7e6dca4440d9100b587f4c54e262de52e36dca4689fbe6b
+      bin: kubectl-ctx-tags.exe

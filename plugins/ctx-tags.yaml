@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: ctx-tags
 spec:
-  version: v0.1.2
+  version: v0.2.2
   homepage: https://github.com/tgigli/kubectl-ctx-tags
   shortDescription: Manage and organize contexts using tags
   description: |
@@ -18,38 +18,38 @@ spec:
     - Context deletion with confirmation
     - Safe storage using kubeconfig extensions field
   platforms:
-    - selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-      uri: https://github.com/tgigli/kubectl-ctx-tags/releases/download/v0.1.2/kubectl-ctx-tags-0.1.2-linux-amd64.tar.gz
-      sha256: 4f5837208cd6e3fb83189d0e6d9d8ebe296db41a50b7ce0c9c346e02c92765df
-      bin: kubectl-ctx-tags
-    - selector:
-        matchLabels:
-          os: linux
-          arch: arm64
-      uri: https://github.com/tgigli/kubectl-ctx-tags/releases/download/v0.1.2/kubectl-ctx-tags-0.1.2-linux-arm64.tar.gz
-      sha256: 55c801d0413cf77ad1610c9b744a595da438a6de61dc0ad7d4507fb77955a7d2
-      bin: kubectl-ctx-tags
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: amd64
-      uri: https://github.com/tgigli/kubectl-ctx-tags/releases/download/v0.1.2/kubectl-ctx-tags-0.1.2-darwin-amd64.tar.gz
-      sha256: 5913fe31fd739ac57f615631e616bcdf3351b1c587d678c6a780b525c9d0000c
-      bin: kubectl-ctx-tags
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: arm64
-      uri: https://github.com/tgigli/kubectl-ctx-tags/releases/download/v0.1.2/kubectl-ctx-tags-0.1.2-darwin-arm64.tar.gz
-      sha256: e9a7f9ea8389d80def1fd80d71b5b82eda3fb9b91a9906c5a20600d7d3d49a78
-      bin: kubectl-ctx-tags
-    - selector:
-        matchLabels:
-          os: windows
-          arch: amd64
-      uri: https://github.com/tgigli/kubectl-ctx-tags/releases/download/v0.1.2/kubectl-ctx-tags-0.1.2-windows-amd64.zip
-      sha256: 8b654fe0280d7a84c7e6dca4440d9100b587f4c54e262de52e36dca4689fbe6b
-      bin: kubectl-ctx-tags.exe
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/tgigli/kubectl-ctx-tags/releases/download/v0.2.2/kubectl-ctx-tags-v0.2.2-linux-amd64.tar.gz
+    sha256: 41125f18f0ffaaa61cc7dcde51dac68ad99afbb58c87c840f59869830cf3899f
+    bin: kubectl-ctx-tags
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/tgigli/kubectl-ctx-tags/releases/download/v0.2.2/kubectl-ctx-tags-v0.2.2-linux-arm64.tar.gz
+    sha256: 0a9c60e76b97f0a79aa1d306d2f45a67c0adac9ce441f5d2fe7c6b88f7093c79
+    bin: kubectl-ctx-tags
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/tgigli/kubectl-ctx-tags/releases/download/v0.2.2/kubectl-ctx-tags-v0.2.2-darwin-amd64.tar.gz
+    sha256: 073ecd8020c07c2617bc861261e33f94b41f3f0ee2b2e4637c8a47edfde21ec1
+    bin: kubectl-ctx-tags
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/tgigli/kubectl-ctx-tags/releases/download/v0.2.2/kubectl-ctx-tags-v0.2.2-darwin-arm64.tar.gz
+    sha256: 9333131f4044a5ae122565bfa2895b61de3ee971c9a6001c6270e9852085249a
+    bin: kubectl-ctx-tags
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/tgigli/kubectl-ctx-tags/releases/download/v0.2.2/kubectl-ctx-tags-v0.2.2-windows-amd64.zip
+    sha256: 197da9be48bea02de7ec458d830eb72a080439c141536600869c1d3853006dde
+    bin: kubectl-ctx-tags.exe

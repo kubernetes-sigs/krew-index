@@ -3,15 +3,15 @@ kind: Plugin
 metadata:
   name: watch-rollout
 spec:
-  version: v0.1.1
+  version: v0.2.0
   homepage: https://github.com/ivoronin/kubectl-watch-rollout
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.1.1/kubectl-watch-rollout_v0.1.1_linux_amd64.tar.gz
-    sha256: 5d3ffd15326651a78dfe3cf25968a2372dc00a2f7c6a0edd198cf2a989a2fa47
+    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.2.0/kubectl-watch-rollout_v0.2.0_linux_amd64.tar.gz
+    sha256: 3dc6a6e79764d2e026781eb887c34233ba6865d611dc309c07eecb08558cbe20
     files:
     - from: kubectl-watch_rollout
       to: "."
@@ -22,8 +22,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.1.1/kubectl-watch-rollout_v0.1.1_linux_arm64.tar.gz
-    sha256: ed63a987ca3a7dee29a6e9996e03b917bc66127fddef9b0474d04769fb05548e
+    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.2.0/kubectl-watch-rollout_v0.2.0_linux_arm64.tar.gz
+    sha256: ea677269786cf4d86efd4ac1f3bbcff3b7957309a24b005c6eae11f0553bcff9
     files:
     - from: kubectl-watch_rollout
       to: "."
@@ -34,8 +34,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.1.1/kubectl-watch-rollout_v0.1.1_darwin_amd64.tar.gz
-    sha256: 411b2b6f13155bb1acbe754f77a1be8c3bb3b1323b0ff46a29b1135e1e14eefb
+    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.2.0/kubectl-watch-rollout_v0.2.0_darwin_amd64.tar.gz
+    sha256: 495490e6421f03017276c175a33c7ed3c1590aaca5677ef590e99caf4f97e8f5
     files:
     - from: kubectl-watch_rollout
       to: "."
@@ -46,8 +46,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.1.1/kubectl-watch-rollout_v0.1.1_darwin_arm64.tar.gz
-    sha256: e994944e9e155447d5b603e2565e002465dc72ac82d2e613c30f64dcaca58071
+    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.2.0/kubectl-watch-rollout_v0.2.0_darwin_arm64.tar.gz
+    sha256: 1331a22a8d406939c328d67d45350cb827bf49aa6f37c453d3db1d381804ffc3
     files:
     - from: kubectl-watch_rollout
       to: "."
@@ -58,8 +58,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.1.1/kubectl-watch-rollout_v0.1.1_windows_amd64.zip
-    sha256: 44783f8e867e26dc4467c94dc6487bb0384ff39321b00be98e05c9476112672a
+    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.2.0/kubectl-watch-rollout_v0.2.0_windows_amd64.zip
+    sha256: e041dd76345794d506b759a03b5d4308961b78784b370e974105c1ad35c1b957
     files:
     - from: kubectl-watch_rollout.exe
       to: "."
@@ -70,8 +70,8 @@ spec:
       matchLabels:
         os: windows
         arch: arm64
-    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.1.1/kubectl-watch-rollout_v0.1.1_windows_arm64.zip
-    sha256: 9f9e259daa381944f9168ca5c25932e57c0ab6493acaca12994c8205b71e6520
+    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.2.0/kubectl-watch-rollout_v0.2.0_windows_arm64.zip
+    sha256: 4f399cce5252f1c87ce7dbd0ff5a3bb83862fce91f38194244b66760747bd003
     files:
     - from: kubectl-watch_rollout.exe
       to: "."
@@ -85,6 +85,6 @@ spec:
 
     Features include real-time progress bars for new and old ReplicaSets, pod
     status counts (Available, Ready, Current), warning events from pods with
-    aggregation, estimated time to completion, progress deadline tracking,
-    automatic detection of rollout success or failure, and auto-discovery mode
-    for active rollouts.
+    aggregation and filtering, estimated time to completion, progress deadline
+    tracking, automatic detection of rollout success or failure, line mode for
+    CI/CD pipelines and log aggregation.

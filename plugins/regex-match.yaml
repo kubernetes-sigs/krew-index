@@ -8,12 +8,7 @@ spec:
   shortDescription: "Get and delete Kubernetes resources with regex patterns"
   description: |
     A kubectl plugin that allows you to list or delete Kubernetes resources
-    (Pods, Services, Deployments, CRDs, etc.) by regex pattern.
-
-    Instead of using long shell pipelines like:
-      kubectl get pods | grep "app" | awk '{print $1}' | xargs kubectl delete pods
-    You can simply run:
-      kubectl regex-match delete pods "app" --yes
+    (Pods, Services, Deployments, etc.) by regex pattern.
 
   platforms:
   - selector:

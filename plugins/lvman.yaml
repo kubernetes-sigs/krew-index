@@ -1,0 +1,63 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: lvman
+spec:
+  version: v0.1.0
+  homepage: https://github.com/achernov3/kubectl-lvman
+  shortDescription: "Plugin for managing topolvm logicalvolumes resources"
+  description: |
+    This plugin show disk usage mounted volumes to pods via PersistentVolumeClaims. And shows oprhaned logicalvolumes which hasn't PersistentVolumes.
+  caveats: |
+    * This plugin needs SSH access to nodes
+    * Nodes need to have 'df' command
+    * User need to have access to delete resource logicalvolumes
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: "https://github.com/achernov3/kubectl-lvman/releases/download/v0.1.0/kubectl-lvman-linux-amd64.tar.gz"
+    sha256: 360aca70dd6b655e3f190441cf2b38525f07e148e96e2d78723ff75dcc353481
+    bin: kubectl-lvman
+    files:
+      - from: kubectl-lvman-linux-amd64
+        to: kubectl-lvman
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: "https://github.com/achernov3/kubectl-lvman/releases/download/v0.1.0/kubectl-lvman-linux-arm64.tar.gz"
+    sha256: dcab377f4a5565029b0213e57c5670f2cebeaf2823a2b9a7f5d0e138bd071e57
+    bin: kubectl-lvman
+    files:
+      - from: kubectl-lvman-linux-arm64
+        to: kubectl-lvman
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: "https://github.com/achernov3/kubectl-lvman/releases/download/v0.1.0/kubectl-lvman-linux-darwin-amd64.tar.gz"
+    sha256: 551785e12a5db7c871367a11f81c64ea173476ef0e5c4836cf66193bc56b600e
+    bin: kubectl-lvman
+    files:
+      - from: kubectl-lvman-darwin-amd64
+        to: kubectl-lvman
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: "https://github.com/achernov3/kubectl-lvman/releases/download/v0.1.0/kubectl-lvman-linux-darwin-arm64.tar.gz"
+    bin: kubectl-lvman
+    sha256: ad690c70766b30257c192d6557e618ea86e1a03bdbe0b7858fd54d000606e405
+    files:
+      - from: kubectl-lvman-darwin-arm64
+        to: kubectl-lvman
+      - from: LICENSE
+        to: .

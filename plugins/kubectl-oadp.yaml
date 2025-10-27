@@ -1,0 +1,72 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kubectl-oadp
+spec:
+  version: v0.1.3-beta
+  homepage: https://github.com/migtools/oadp-cli
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/migtools/oadp-cli/releases/download/v0.1.3-beta/kubectl-oadp_v0.1.3-beta_darwin_amd64.tar.gz
+    sha256: 500968994f4c69ebc94d194db216f3b2cfa4874889b449708a1258d1df7d3b52
+    bin: kubectl-oadp
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/migtools/oadp-cli/releases/download/v0.1.3-beta/kubectl-oadp_v0.1.3-beta_darwin_arm64.tar.gz
+    sha256: a588ee64b4d50db0f38a04812d6345c1cc1eb39ea210c933e73cb9ccc37ef3f4
+    bin: kubectl-oadp
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/migtools/oadp-cli/releases/download/v0.1.3-beta/kubectl-oadp_v0.1.3-beta_linux_amd64.tar.gz
+    sha256: e6ba04ba44b0c11953fc3142f37b2a1b8eb1f8889ddf81380c43fb1334af5b51
+    bin: kubectl-oadp
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/migtools/oadp-cli/releases/download/v0.1.3-beta/kubectl-oadp_v0.1.3-beta_linux_arm64.tar.gz
+    sha256: 12683321ba2f9944e586440b64a9e86c0e54b28252df7da1a4f209e317bc1649
+    bin: kubectl-oadp
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/migtools/oadp-cli/releases/download/v0.1.3-beta/kubectl-oadp_v0.1.3-beta_windows_amd64.tar.gz
+    sha256: 54aeb738aaed4e951ff28ad772b3931aed42b4d0b60c300748a0531b3e5d9509
+    bin: kubectl-oadp
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/migtools/oadp-cli/releases/download/v0.1.3-beta/kubectl-oadp_v0.1.3-beta_windows_arm64.tar.gz
+    sha256: 37bef35d50c7afbbbcb7497632bf9ddf63c0eb64bee248978e95f5d283319c57
+    bin: kubectl-oadp
+  shortDescription: CLI for OpenShift APIs for Data Protection (OADP) operator
+  description: |
+    kubectl-oadp is a kubectl plugin for managing OpenShift API for Data Protection (OADP) backup and restore operations.
+    
+    It provides both admin and non-admin commands:
+    - Admin commands: Full OADP/Velero backup and restore operations
+    - Non-admin commands: Namespace-scoped backup operations with automatic namespace detection
+    
+    The plugin automatically detects the appropriate namespace from your current kubectl context
+    for non-admin operations, following the principle of least privilege.
+    
+    Features:
+    - Create and manage OADP backups
+    - View backup status and logs  
+    - Delete backups
+    - Support for both cluster-admin and namespace-scoped operations
+  caveats: |
+    This plugin requires:
+    - OADP operator to be installed in the cluster
+    - Ensure the velero namespace (where the server is running) is correct: Run `kubectl oadp client config set namespace=<namespace>` to set the velero namespace
+    - Appropriate RBAC permissions for the operations you want to perform
+    - Read more documentation at: https://github.com/migtools/oadp-cli

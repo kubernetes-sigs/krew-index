@@ -1,0 +1,90 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: watch-rollout
+spec:
+  version: v0.2.1
+  homepage: https://github.com/ivoronin/kubectl-watch-rollout
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.2.1/kubectl-watch-rollout_v0.2.1_linux_amd64.tar.gz
+    sha256: 76c7577744bd1851063789f70b83d12d74d484599100908c7ddea475b82ba519
+    files:
+    - from: kubectl-watch_rollout
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-watch_rollout
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.2.1/kubectl-watch-rollout_v0.2.1_linux_arm64.tar.gz
+    sha256: 6246ff46cfede312f62f4e206d06427c66acaf4fea54bf4fd33e7a7faf175d80
+    files:
+    - from: kubectl-watch_rollout
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-watch_rollout
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.2.1/kubectl-watch-rollout_v0.2.1_darwin_amd64.tar.gz
+    sha256: 7fe0f6857d1e8c6a7cb77add2b517cf46d900657fa6270516bba35f2c5dfb067
+    files:
+    - from: kubectl-watch_rollout
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-watch_rollout
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.2.1/kubectl-watch-rollout_v0.2.1_darwin_arm64.tar.gz
+    sha256: e5a4075227835feb9e1789076bce92cf3cc3d7152a8a26e37f7aad4ccf5e68b5
+    files:
+    - from: kubectl-watch_rollout
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-watch_rollout
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.2.1/kubectl-watch-rollout_v0.2.1_windows_amd64.zip
+    sha256: 7004eab95fc3bf93246c5ffed89b96177b9d3098ad7689435ff47564052948db
+    files:
+    - from: kubectl-watch_rollout.exe
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-watch_rollout.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/ivoronin/kubectl-watch-rollout/releases/download/v0.2.1/kubectl-watch-rollout_v0.2.1_windows_arm64.zip
+    sha256: 3bc72ed155ac3e738fc152666a7be1d9a209d58328445a039b60e73fce7181b4
+    files:
+    - from: kubectl-watch_rollout.exe
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-watch_rollout.exe
+  shortDescription: Monitor deployment rollouts with live progress
+  description: |
+    Monitors deployment rollouts in real-time, displaying progress bars, pod
+    status, warnings, and completion estimates.
+
+    Features include real-time progress bars for new and old ReplicaSets, pod
+    status counts (Available, Ready, Current), warning events from pods with
+    aggregation and filtering, estimated time to completion, progress deadline
+    tracking, automatic detection of rollout success or failure, line mode for
+    CI/CD pipelines and log aggregation.

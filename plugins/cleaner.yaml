@@ -1,0 +1,35 @@
+# Krew Manifest
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cleaner
+spec:
+  version: "v0.1.0"
+  homepage: https://github.com/ratulbasak/kubectl-cleaner
+  shortDescription: Safe, intelligent cleanup of unused Kubernetes resources.
+  description: "Analyze and clean up stale Deployments, Services, PVCs, orphaned Secrets/ConfigMaps, and Jobs in a namespace."
+  platforms:
+  # macOS ARM
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/ratulbasak/kubectl-cleaner/releases/download/v0.1.0/kubectl-cleaner_darwin_arm64.tar.gz
+    sha256: "777e47a9f1289d0e81ce51c5f9e976afb334eaa4f1d97baa879452f129acb4f5"
+    bin: kubectl-cleaner
+  # macOS x86_64
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/ratulbasak/kubectl-cleaner/releases/download/v0.1.0/kubectl-cleaner_darwin_amd64.tar.gz
+    sha256: "f4a8e355d1959ef4ccab76bba7c34bd0e5bff7c648cc787094d15e6d58c23c31"
+    bin: kubectl-cleaner
+  # Linux x86_64
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/ratulbasak/kubectl-cleaner/releases/download/v0.1.0/kubectl-cleaner_linux_amd64.tar.gz
+    sha256: "ba9c8bba9e6ce689523be8287f45151fc559b6031ef2194c587a0711019fa844"
+    bin: kubectl-cleaner

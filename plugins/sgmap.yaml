@@ -1,0 +1,60 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: sgmap
+spec:
+  version: v1.4.3
+  homepage: https://github.com/naka-gawa/kubectl-sgmap
+  shortDescription: "Visualize security group per pod."
+  description: |
+    A kubectl plugin to visualize security group per pod.
+    This plugin provides a command to generate a security group map for pods in a Kubernetes cluster.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/naka-gawa/kubectl-sgmap/releases/download/v1.4.3/kubectl-sgmap_Darwin_arm64.tar.gz
+      sha256: f6bd515b1fe026ad538115956a07c071b22018d2b8e4e5b62087617c01c9f29a
+      files:
+        - from: "kubectl-sgmap"
+          to: "."
+        - from: "LICENSE"
+          to: "."
+      bin: "./kubectl-sgmap"
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/naka-gawa/kubectl-sgmap/releases/download/v1.4.3/kubectl-sgmap_Darwin_x86_64.tar.gz
+      sha256: 28917a687508ea1221680001f0bb01c35a37ff09dd8670546ae348406b45fd2e
+      files:
+        - from: "kubectl-sgmap"
+          to: "."
+        - from: "LICENSE"
+          to: "."
+      bin: "./kubectl-sgmap"
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/naka-gawa/kubectl-sgmap/releases/download/v1.4.3/kubectl-sgmap_Linux_x86_64.tar.gz
+      sha256: 320f8cbd89b6b56282dea1615abb33178754d2e7976c9419aa8b48ac45295700
+      files:
+        - from: "kubectl-sgmap"
+          to: "."
+        - from: "LICENSE"
+          to: "."
+      bin: "./kubectl-sgmap"
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/naka-gawa/kubectl-sgmap/releases/download/v1.4.3/kubectl-sgmap_Linux_arm64.tar.gz
+      sha256: fd2360844b7d625db50c3880a0a9dfe6142a3acff51dbc67694f469572b055a8
+      files:
+        - from: "kubectl-sgmap"
+          to: "."
+        - from: "LICENSE"
+          to: "."
+      bin: "./kubectl-sgmap"

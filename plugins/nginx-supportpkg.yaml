@@ -3,52 +3,52 @@ kind: Plugin
 metadata:
   name: nginx-supportpkg
 spec:
-  version: v0.1.6
+  version: v1.0.8
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/nginxinc/nginx-supportpkg-for-k8s/releases/download/v0.1.6/kubectl-nginx_supportpkg_v0.1.6_linux_arm64.tar.gz
-    sha256: 8ddd77e0cf092b3afe5b98142a9dac9aac6f63fd49ae623e8d0514b376a16502
+    uri: https://github.com/nginx/nginx-supportpkg-for-k8s/releases/download/v1.0.8/kubectl-nginx_supportpkg_v1.0.8_linux_arm64.tar.gz
+    sha256: 5e5adb0e53f5f53d3f8a7142f5dc7be578b867c2afbf1257e3c395bc93a8af68
     bin: kubectl-nginx_supportpkg
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/nginxinc/nginx-supportpkg-for-k8s/releases/download/v0.1.6/kubectl-nginx_supportpkg_v0.1.6_linux_amd64.tar.gz
-    sha256: 89f997f025dbbc9f81eefe33d82e8e9ae7bd67f05e79292bcb4aed98967b329b
+    uri: https://github.com/nginx/nginx-supportpkg-for-k8s/releases/download/v1.0.8/kubectl-nginx_supportpkg_v1.0.8_linux_amd64.tar.gz
+    sha256: b3ca7f65a09ad52460e235529d81a5980fde43d7254732e726797e69757b65d0
     bin: kubectl-nginx_supportpkg
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/nginxinc/nginx-supportpkg-for-k8s/releases/download/v0.1.6/kubectl-nginx_supportpkg_v0.1.6_darwin_arm64.tar.gz
-    sha256: b9f0de2980fab132bec025ca7a0c76524e2e052e14b7b18210466d26c5be54f4
+    uri: https://github.com/nginx/nginx-supportpkg-for-k8s/releases/download/v1.0.8/kubectl-nginx_supportpkg_v1.0.8_darwin_arm64.tar.gz
+    sha256: 967e26a4ad7d4d01d1cd75f286598d658afdb4c8a060cdb8258fda37f0b5321b
     bin: kubectl-nginx_supportpkg
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/nginxinc/nginx-supportpkg-for-k8s/releases/download/v0.1.6/kubectl-nginx_supportpkg_v0.1.6_darwin_amd64.tar.gz
-    sha256: 8d345ff7d7e98a961ebdf5497e2edbc60be7b3c34dbaad2b1ec20901c2b19fa1
+    uri: https://github.com/nginx/nginx-supportpkg-for-k8s/releases/download/v1.0.8/kubectl-nginx_supportpkg_v1.0.8_darwin_amd64.tar.gz
+    sha256: eb933076e1178c8be7ff7a556bc990543a7dcd7d1fd02ab25dc70b3d1a317f56
     bin: kubectl-nginx_supportpkg
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/nginxinc/nginx-supportpkg-for-k8s/releases/download/v0.1.6/kubectl-nginx_supportpkg_v0.1.6_windows_amd64.tar.gz
-    sha256: 53aba2aa7e2b9c65ecac66d8d382a522a068fbcf0212a77ca1a47df32ae9e255
+    uri: https://github.com/nginx/nginx-supportpkg-for-k8s/releases/download/v1.0.8/kubectl-nginx_supportpkg_v1.0.8_windows_amd64.tar.gz
+    sha256: 37f04459fa39352ecd8b77591971c7124cd191d28cac5751c634da534d1667c2
     bin: kubectl-nginx_supportpkg
   - selector:
       matchLabels:
         os: windows
         arch: arm64
-    uri: https://github.com/nginxinc/nginx-supportpkg-for-k8s/releases/download/v0.1.6/kubectl-nginx_supportpkg_v0.1.6_windows_arm64.tar.gz
-    sha256: e6f699a00b6d4f3a8c2c5fd09492954ffbf19962edac05c17c2cfc86cb84a28e
+    uri: https://github.com/nginx/nginx-supportpkg-for-k8s/releases/download/v1.0.8/kubectl-nginx_supportpkg_v1.0.8_windows_arm64.tar.gz
+    sha256: a2f1042466f01dd6e5bd359424e31d54e174f7e48f9fa2c454278bb7844b3216
     bin: kubectl-nginx_supportpkg
   shortDescription: Collect support packages for NGINX products that run on k8s
-  homepage: https://github.com/nginxinc/nginx-supportpkg-for-k8s
+  homepage: https://github.com/nginx/nginx-supportpkg-for-k8s
   description: |
     Provides a single command to collect troubleshooting information
     for all NGINX products that run on k8s.

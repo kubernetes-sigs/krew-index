@@ -1,0 +1,42 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kimspect
+spec:
+  version: v0.0.35
+  shortDescription: inspect container images on your pods and nodes.
+  description: |
+    kimspect is a kubernetes container image inspection tool that provides
+    comprehensive visibility into container images running inside your cluster
+    and can get container image & registry information by pods, namespaces and nodes
+    in your cluster
+  homepage: https://github.com/koithos/kimspect
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/koithos/kimspect/releases/download/v0.0.35/kimspect-x86_64-unknown-linux-gnu.tar.gz
+      sha256: abcf9575c03b129d07ce6bbd764ba727fb0928ed2704ae31dd5157ad040cc324
+      bin: kimspect
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/koithos/kimspect/releases/download/v0.0.35/kimspect-x86_64-apple-darwin.tar.gz
+      sha256: fc2a2f92a001d71d8c90442727f54244dc1e1bf1eaecad268ba3d8bbc1f44aee
+      bin: kimspect
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/koithos/kimspect/releases/download/v0.0.35/kimspect-aarch64-apple-darwin.tar.gz
+      sha256: 4ee189e5e82879e900eefb4f8ce6b8a21667c86cbacd037a36d5817bfdc2dd9f
+      bin: kimspect
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/koithos/kimspect/releases/download/v0.0.35/kimspect-x86_64-pc-windows-msvc.zip
+      sha256: 98a614ab9d85f49234c27e73bc8bdcd60871df1acb7a779dde477f51e95852f0
+      bin: kimspect.exe

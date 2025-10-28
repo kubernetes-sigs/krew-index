@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kimspect
+spec:
+  version: v0.0.33
+  shortDescription: A CLI tool to serve as swiss-army knife for your operations on Kubernetes pods and nodes
+  description: |
+    kimspect helps manage your kubernetes resources efficiently by performing multiple commands
+    on nodes and pods. It consists of all the ideal utilities that should have been a part of kubectl
+  homepage: https://github.com/koithos/kimspect
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/koithos/kimspect/releases/download/v0.0.33/kimspect-x86_64-unknown-linux-gnu.tar.gz
+      sha256: c0763a83c350f1aedd2f54e3b6fb671440d6925cb810b896969a367a178e5c0a
+      bin: kimspect
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/koithos/kimspect/releases/download/v0.0.33/kimspect-x86_64-apple-darwin.tar.gz
+      sha256: 0b15b2cb196c0a02c8847710bb320893342b377491f6decfa4a0b5a1f5ce3b46
+      bin: kimspect
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/koithos/kimspect/releases/download/v0.0.33/kimspect-aarch64-apple-darwin.tar.gz
+      sha256: ec5b1f3e23e909c40105335914beb5c7eebd06e0aab859e86a4bdf773e9fa99d
+      bin: kimspect
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/koithos/kimspect/releases/download/v0.0.33/kimspect-x86_64-pc-windows-msvc.zip
+      sha256: 7d4106bf3570b3b081699ca107b2901557539d9ce82abed8e625849f2815f153
+      bin: kimspect.exe

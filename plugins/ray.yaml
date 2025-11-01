@@ -3,36 +3,36 @@ kind: Plugin
 metadata:
   name: ray
 spec:
-  version: v1.4.2
+  version: v1.5.0-rc.0
   homepage: https://github.com/ray-project/kuberay/tree/master/kubectl-plugin
   platforms:
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/ray-project/kuberay/releases/download/v1.4.2/kubectl-ray_v1.4.2_darwin_amd64.tar.gz
-      sha256: f77f0bdf397f8494b8f3b57b25667e9974acaefa73ab024041a670b11e3a2dab
+      uri: https://github.com/ray-project/kuberay/releases/download/v1.5.0-rc.0/kubectl-ray_v1.5.0-rc.0_darwin_amd64.tar.gz
+      sha256: 09792afddd5289bd20e49db378ca71342137f6fee3788e11be1f40f9b92d6fcc
       bin: kubectl-ray
     - selector:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/ray-project/kuberay/releases/download/v1.4.2/kubectl-ray_v1.4.2_darwin_arm64.tar.gz
-      sha256: 91fd47e58e8c3b3f362430d20d4b8b16d99df7489652ecb7a4c69cb7c6a24078
+      uri: https://github.com/ray-project/kuberay/releases/download/v1.5.0-rc.0/kubectl-ray_v1.5.0-rc.0_darwin_arm64.tar.gz
+      sha256: 614cc238516a8f8ef624891a43d6ba79b62fabeb76fa6cf464c60ef9b816b429
       bin: kubectl-ray
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/ray-project/kuberay/releases/download/v1.4.2/kubectl-ray_v1.4.2_linux_amd64.tar.gz
-      sha256: 04ed71a2ba3be1d398acdfa684f2b88462f14ad8864f9f14b9462b4c311f2449
+      uri: https://github.com/ray-project/kuberay/releases/download/v1.5.0-rc.0/kubectl-ray_v1.5.0-rc.0_linux_amd64.tar.gz
+      sha256: df47fa28d7263bda8db3d199e421b69986edd33cc2eabda43b9af381ceb9755d
       bin: kubectl-ray
     - selector:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/ray-project/kuberay/releases/download/v1.4.2/kubectl-ray_v1.4.2_linux_arm64.tar.gz
-      sha256: 5a910030db3743d79c970d10078bf9d458f84a1c9df56c21cc5766f8200a71cf
+      uri: https://github.com/ray-project/kuberay/releases/download/v1.5.0-rc.0/kubectl-ray_v1.5.0-rc.0_linux_arm64.tar.gz
+      sha256: 50f8ffbec350b53512cb83af8f9b8391456a89c325cc56a42986bcf831d92844
       bin: kubectl-ray
   shortDescription: Ray kubectl plugin
   description: |

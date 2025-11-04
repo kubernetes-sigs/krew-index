@@ -1,0 +1,46 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: actuator
+spec:
+  version: v0.0.2
+  homepage: https://github.com/deviceinsight/kubectl-actuator
+  shortDescription: Interact with Spring Boot Actuator endpoints.
+  description: |
+    This plugin allows you to interact with Spring Boot Actuator endpoints. You can use it to view and modify log levels, view scheduled tasks, and more.
+    Examples:
+      # Show loggers and their log levels
+      kubectl actuator --pod my-app-pod logger
+      # Set log level
+      kubectl actuator --pod my-app-pod logger com.example.app.service DEBUG
+      # View scheduled tasks
+      kubectl actuator --deployment my-app scheduled-tasks
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/deviceinsight/kubectl-actuator/releases/download/v0.0.2/kubectl-actuator_Darwin_x86_64.tar.gz
+      sha256: b0dac9fb47ec16b5d240ff2ec1d689314e561e1310b93cb92cbd148b90b87bfb
+      bin: kubectl-actuator
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/deviceinsight/kubectl-actuator/releases/download/v0.0.2/kubectl-actuator_Darwin_arm64.tar.gz
+      sha256: 797ee5c1d00bfd484cc1827bb1628111888058cd62f62fb2102f92348bb342f6
+      bin: kubectl-actuator
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/deviceinsight/kubectl-actuator/releases/download/v0.0.2/kubectl-actuator_Linux_x86_64.tar.gz
+      sha256: a6e2b5011ae8bbf131f1a6b12bc926814a36a8fd65ff68fb199a24068bdd8e4d
+      bin: kubectl-actuator
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/deviceinsight/kubectl-actuator/releases/download/v0.0.2/kubectl-actuator_Windows_x86_64.zip
+      sha256: 641f8fa97343af25a43e81984e82f344297c877a0a82f8c80540c33069305b88
+      bin: kubectl-actuator.exe

@@ -4,46 +4,46 @@ kind: Plugin
 metadata:
   name: stern
 spec:
-  version: v1.33.0
+  version: v1.33.1
   platforms:
     - bin: stern.exe
-      uri: https://github.com/stern/stern/releases/download/v1.33.0/stern_1.33.0_windows_arm64.tar.gz
-      sha256: c6c9e960bf055a1768bf269f6cbaa18f6633143a4ac57bccfd474aa53ebe6825
+      uri: https://github.com/stern/stern/releases/download/v1.33.1/stern_1.33.1_windows_arm64.tar.gz
+      sha256: 48a926c5ee1ac58d69ae221a9cf7effc633a62f4b46dc8101cc9208c335a9b01
       selector:
         matchLabels:
           os: windows
           arch: arm64
     - bin: stern.exe
-      uri: https://github.com/stern/stern/releases/download/v1.33.0/stern_1.33.0_windows_amd64.tar.gz
-      sha256: 7755c37202b5bfa318af31787fc52890dad48c1958c5f729b10285b02330408d
+      uri: https://github.com/stern/stern/releases/download/v1.33.1/stern_1.33.1_windows_amd64.tar.gz
+      sha256: e1451cac9f01dbd9ab9aacde9d8e8d7fa800970f51054d4ffaa04f6d3bf959bd
       selector:
         matchLabels:
           os: windows
           arch: amd64
     - bin: stern
-      uri: https://github.com/stern/stern/releases/download/v1.33.0/stern_1.33.0_linux_arm64.tar.gz
-      sha256: 747abadcd780a07d19e4f27e23d22050497728843b95043f77ef8a3e7892913a
+      uri: https://github.com/stern/stern/releases/download/v1.33.1/stern_1.33.1_linux_arm64.tar.gz
+      sha256: 41ff85d85aeaf6f61b1cfb7aeccad64d7f66051b51f955f55b49ce20b5822374
       selector:
         matchLabels:
           os: linux
           arch: arm64
     - bin: stern
-      uri: https://github.com/stern/stern/releases/download/v1.33.0/stern_1.33.0_linux_amd64.tar.gz
-      sha256: 87b5b8926a9b49202fddef1b509f72b4961ae777cd1d33a73924841765855084
+      uri: https://github.com/stern/stern/releases/download/v1.33.1/stern_1.33.1_linux_amd64.tar.gz
+      sha256: 185be29c6a22bd07c0791ec697900943c0cc27292e5a5640a07a543886f1bfc9
       selector:
         matchLabels:
           os: linux
           arch: amd64
     - bin: stern
-      uri: https://github.com/stern/stern/releases/download/v1.33.0/stern_1.33.0_darwin_arm64.tar.gz
-      sha256: e6bd1b294384b1e40c23d9238de08f118d331bb1b93be19d1c10d5345a47dded
+      uri: https://github.com/stern/stern/releases/download/v1.33.1/stern_1.33.1_darwin_arm64.tar.gz
+      sha256: bdca897b9bd5a0ee8b4d1f4e00c8e63cf503d2f85abceab4ae6a276a7d232d95
       selector:
         matchLabels:
           os: darwin
           arch: arm64
     - bin: stern
-      uri: https://github.com/stern/stern/releases/download/v1.33.0/stern_1.33.0_darwin_amd64.tar.gz
-      sha256: 0bd8921d580d8ad0d6e0379e7ce1eb8b8e850608b9ca4b8432cb982ffabf980b
+      uri: https://github.com/stern/stern/releases/download/v1.33.1/stern_1.33.1_darwin_amd64.tar.gz
+      sha256: 6dc34102318ef012a4cb16f786c5930240b202b33c20666399230826e857107e
       selector:
         matchLabels:
           os: darwin

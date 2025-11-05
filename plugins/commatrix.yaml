@@ -1,0 +1,45 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: commatrix
+spec:
+  version: v0.0.4
+  homepage: https://github.com/openshift-kni/commatrix
+  shortDescription: Generate a communication matrix for OpenShift clusters.
+  description: "The `kubectl commatrix generate` generates an up-to-date communication flows matrix for all ingress flows \nof OpenShift (multi-node and single-node deployments) and Operators.\n"
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/openshift-kni/commatrix/releases/download/v0.0.4/kubectl-commatrix_linux_amd64.tar.gz
+      sha256: 44f14d518abfa908025fdb82d8fd4c6decf8a966b5fe5447e2f1ff3e5f7b8ea5
+      bin: kubectl-commatrix
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/openshift-kni/commatrix/releases/download/v0.0.4/kubectl-commatrix_linux_arm64.tar.gz
+      sha256: ecac41c7948ca0f4082c91f4496a51812f1c96ad9a8b5da1f931031616e84981
+      bin: kubectl-commatrix
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/openshift-kni/commatrix/releases/download/v0.0.4/kubectl-commatrix_darwin_amd64.tar.gz
+      sha256: aa258e1587ebe21a66788b5e54bf322fddf0e31776a5bb447aeb8c085fce7595
+      bin: kubectl-commatrix
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/openshift-kni/commatrix/releases/download/v0.0.4/kubectl-commatrix_darwin_arm64.tar.gz
+      sha256: aae85d7c75f27892a90c6d236ecc81725dd083ab12796142a969c362ade17d78
+      bin: kubectl-commatrix
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/openshift-kni/commatrix/releases/download/v0.0.4/kubectl-commatrix_windows_amd64.tar.gz
+      sha256: 7c712098ba0a6ccd3a10483931bde4d93fd67e4c7e3c5b8555cabda087895aa3
+      bin: kubectl-commatrix.exe

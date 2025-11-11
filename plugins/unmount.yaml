@@ -1,0 +1,42 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: unmount
+spec:
+  version: v0.2.0
+  homepage: https://github.com/dancavallaro/kubectl-unmount
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/dancavallaro/kubectl-unmount/releases/download/v0.2.0/kubectl-unmount_v0.2.0_darwin_amd64.tar.gz
+    sha256: 3d424c598cf451699e045e1722814eb4b9ec13b6d81997b392df10cd30b2fa74
+    bin: kubectl-unmount
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/dancavallaro/kubectl-unmount/releases/download/v0.2.0/kubectl-unmount_v0.2.0_darwin_arm64.tar.gz
+    sha256: 31fc78d0717b99e1e8c0ba5844be9f34c2a15fb0af7af157876b934d8db3ee3c
+    bin: kubectl-unmount
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/dancavallaro/kubectl-unmount/releases/download/v0.2.0/kubectl-unmount_v0.2.0_linux_amd64.tar.gz
+    sha256: 0f15a609a9ec720dc7c9eafe42a035a0ab67df12f256bd63ebd49c47d46017c2
+    bin: kubectl-unmount
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/dancavallaro/kubectl-unmount/releases/download/v0.2.0/kubectl-unmount_v0.2.0_linux_arm64.tar.gz
+    sha256: 35232eef8e9aa0eff2c9e6ff6069b607f92b4feb32a3831aa7c6247076d9ee79
+    bin: kubectl-unmount
+  shortDescription: Unmount PVs by scaling down workloads that use them
+  description: |
+    Usage:
+      kubectl unmount --storage-class=<storageclass>
+      This plugin unmounts PersistentVolumes by scaling down workloads that use them.
+      Read more documentation at: https://github.com/dancavallaro/kubectl-unmount

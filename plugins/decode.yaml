@@ -1,0 +1,92 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: decode
+spec:
+  version: v0.1.0
+  homepage: https://github.com/crackmac/kubectl-decode-plugin
+  shortDescription: Decode base64-encoded values in Kubernetes secrets
+  description: |
+    kubectl-decode is a plugin that decodes base64-encoded values in Kubernetes
+    secrets, making them easily readable. It supports multiple output formats
+    (JSON, YAML, table), namespace and context selection, and provides helpful
+    error messages.
+
+    Features:
+    - Multiple output formats: JSON, YAML, and table
+    - Namespace and context support
+    - Automatic secret listing when no name provided
+    - Dependency validation on startup
+    - Helpful error messages
+  caveats: |
+    This plugin requires jq to be installed on your system.
+    Install jq from: https://stedolan.github.io/jq/download/
+
+    For better YAML formatting, install yq (optional):
+    https://github.com/mikefarah/yq
+
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/crackmac/kubectl-decode-plugin/archive/v0.1.0.tar.gz
+    sha256: c56f57c6d3d1fc9ac44f819be4463fbac1e79964f531f4cc9457ad5cd5fffc93
+    bin: kubectl-decode
+    files:
+    - from: kubectl-decode-plugin-*/kubectl-decode
+      to: .
+    - from: kubectl-decode-plugin-*/LICENSE
+      to: .
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/crackmac/kubectl-decode-plugin/archive/v0.1.0.tar.gz
+    sha256: c56f57c6d3d1fc9ac44f819be4463fbac1e79964f531f4cc9457ad5cd5fffc93
+    bin: kubectl-decode
+    files:
+    - from: kubectl-decode-plugin-*/kubectl-decode
+      to: .
+    - from: kubectl-decode-plugin-*/LICENSE
+      to: .
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/crackmac/kubectl-decode-plugin/archive/v0.1.0.tar.gz
+    sha256: c56f57c6d3d1fc9ac44f819be4463fbac1e79964f531f4cc9457ad5cd5fffc93
+    bin: kubectl-decode
+    files:
+    - from: kubectl-decode-plugin-*/kubectl-decode
+      to: .
+    - from: kubectl-decode-plugin-*/LICENSE
+      to: .
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/crackmac/kubectl-decode-plugin/archive/v0.1.0.tar.gz
+    sha256: c56f57c6d3d1fc9ac44f819be4463fbac1e79964f531f4cc9457ad5cd5fffc93
+    bin: kubectl-decode
+    files:
+    - from: kubectl-decode-plugin-*/kubectl-decode
+      to: .
+    - from: kubectl-decode-plugin-*/LICENSE
+      to: .
+
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/crackmac/kubectl-decode-plugin/archive/v0.1.0.tar.gz
+    sha256: c56f57c6d3d1fc9ac44f819be4463fbac1e79964f531f4cc9457ad5cd5fffc93
+    bin: kubectl-decode
+    files:
+    - from: kubectl-decode-plugin-*/kubectl-decode
+      to: .
+    - from: kubectl-decode-plugin-*/LICENSE
+      to: .

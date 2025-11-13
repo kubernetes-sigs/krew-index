@@ -3,28 +3,51 @@ kind: Plugin
 metadata:
   name: wider
 spec:
-  version: "v0.0.1"
+  version: "v1.0.4"
   platforms:
-  - selector:
-      matchExpressions:
-      - key: "os"
-        operator: "In"
-        values:
-        - windows
-        - darwin
-        - linux
-    uri: https://github.com/boriscosic/wider/releases/download/v0.0.1/v0.0.1.zip
-    sha256: 753d0a7eac6f25e68ec40ba01c86d6bcdeb981a6480c212bfe22b517b52f1385
-    files:
-    - from: "*"
-      to: "."
-    bin: kubectl-wider
-  shortDescription: >-
-    Get pod and associated node information with one command
-  homepage: https://github.com/boriscosic/wider
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/boriscosic/kubectl-wider/releases/download/v1.0.4/kubectl-wider_v1.0.4_darwin_amd64.tar.gz
+      sha256: 1e9625740d5e7c27f6a65d5c9cd94a68b8dc25d667ae449ddd6e11270a5f3f99
+      bin: kubectl-wider
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/boriscosic/kubectl-wider/releases/download/v1.0.4/kubectl-wider_v1.0.4_darwin_arm64.tar.gz
+      sha256: ed0773017d93a5f593522c4ef489cc470aea008516cd348e8779e878dcddcaa3
+      bin: kubectl-wider
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/boriscosic/kubectl-wider/releases/download/v1.0.4/kubectl-wider_v1.0.4_linux_amd64.tar.gz
+      sha256: 81fe00260cc2dbaa65cdadcd3d862524f956addc3cea6234c3ef3b58e0234ab6
+      bin: kubectl-wider
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/boriscosic/kubectl-wider/releases/download/v1.0.4/kubectl-wider_v1.0.4_linux_arm64.tar.gz
+      sha256: f2317c185ef5119f59f7a5a6ae06ac9c74b03c7a8152afad9b36b76b8ada8e0b
+      bin: kubectl-wider
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/boriscosic/kubectl-wider/releases/download/v1.0.4/kubectl-wider_v1.0.4_windows_amd64.tar.gz
+      sha256: 0c1aeb730a270e0b78dc5d3b9cc0c8ab97c5572383b4785bd339ee71d33891d1
+      bin: kubectl-wider.exe
+  shortDescription: Get pod and associated resource information with one command
+  homepage: https://github.com/boriscosic/kubectl-wider
   description: |
-    Get pods and associated node information. Extend the output with custom-columns 
-    by leveraging keys from pod or node specs. 
+    Get pods and associated resource information. Extend the output with custom-columns 
+    by leveraging keys from the spec group. See full docs and features on homepage.
+    
     Examples:
-    `$ kubectl wider`
-    `$ kubectl wider -n istio-system -o custom-columns="NAME:.metadata.name,NODE:.node.metadata.name`
+      $ kubectl wider
+      $ kubectl wider -n istio-system
+      $ kubectl wider -l app=myapp
+      $ kubectl wider -o custom-columns=NAME:.pod.metadata.name,NODE:.node.metadata.name

@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: tree
 spec:
-  version: v0.4.4
+  version: v0.4.6
   homepage: https://github.com/ahmetb/kubectl-tree
   shortDescription: Show a tree of object hierarchies through ownerReferences
   description: |
@@ -19,27 +19,34 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/ahmetb/kubectl-tree/releases/download/v0.4.4/kubectl-tree_v0.4.4_darwin_amd64.tar.gz
-    sha256: 94c2493d023d5aadb6a0e949c491997ed5f05319cddd130db278d6e5ce0e306d
+    uri: https://github.com/ahmetb/kubectl-tree/releases/download/v0.4.6/kubectl-tree_v0.4.6_darwin_amd64.tar.gz
+    sha256: 37c234df4060bf1286b5bb41ef86fddf4db0a21e56ae4323f9982bbaf5a86813
     bin: kubectl-tree
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/ahmetb/kubectl-tree/releases/download/v0.4.4/kubectl-tree_v0.4.4_darwin_arm64.tar.gz
-    sha256: 3b7f07cdcee154953915a1ba320eea15f8c821d42ff861b04ca8c42fe05e5739
+    uri: https://github.com/ahmetb/kubectl-tree/releases/download/v0.4.6/kubectl-tree_v0.4.6_darwin_arm64.tar.gz
+    sha256: 5e30c756ff17607832de05a3870dcbb76382516a3db34b51130198676960d856
     bin: kubectl-tree
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/ahmetb/kubectl-tree/releases/download/v0.4.4/kubectl-tree_v0.4.4_linux_amd64.tar.gz
-    sha256: 95d8812e178740cee444655faf9eefca9c73822c5ecf72648463ed4c23783df7
+    uri: https://github.com/ahmetb/kubectl-tree/releases/download/v0.4.6/kubectl-tree_v0.4.6_linux_amd64.tar.gz
+    sha256: bfcd1dfe6db7b29e7382776cb5dc5483d3e2ed3d541080f70cce18624727d46d
+    bin: kubectl-tree
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/ahmetb/kubectl-tree/releases/download/v0.4.6/kubectl-tree_v0.4.6_linux_arm64.tar.gz
+    sha256: 58cc9c7a2d88637ed09dc065726b15d502334299ec51e4e828109b031e9aec94
     bin: kubectl-tree
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/ahmetb/kubectl-tree/releases/download/v0.4.4/kubectl-tree_v0.4.4_windows_amd64.tar.gz
-    sha256: cdcefdbd936afb2bd626737ac8090b02d571282048d7754ac00c0dc3d9497aee
+    uri: https://github.com/ahmetb/kubectl-tree/releases/download/v0.4.6/kubectl-tree_v0.4.6_windows_amd64.tar.gz
+    sha256: e7d0d05298e6ec764e07c91377bc98f66538f7b89892828915ab54f48ad90715
     bin: kubectl-tree.exe

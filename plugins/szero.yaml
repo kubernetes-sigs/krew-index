@@ -3,112 +3,112 @@ kind: Plugin
 metadata:
   name: szero
 spec:
-  version: v1.11.0
+  version: v1.12.6
   homepage: https://github.com/jadolg/szero
   platforms:
-    - selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-      uri: https://github.com/jadolg/szero/releases/download/v1.11.0/szero_linux_amd64.tar.gz
-      sha256: 715c4bd3167e0db20df4d63b6a65cd0c33519338656415e55d6fe18759502dfe
-      files:
-        - from: "./szero"
-          to: "kubectl-szero"
-        - from: LICENSE
-          to: "."
-      bin: "kubectl-szero"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/jadolg/szero/releases/download/v1.12.6/szero_linux_amd64.tar.gz
+    sha256: 27cf91dc7f82e814d0416b9a8feb1e234cdefb48a4a4a49f81f7f6011d5a9db7
+    files:
+    - from: "./szero"
+      to: "kubectl-szero"
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-szero"
 
-    - selector:
-        matchLabels:
-          os: linux
-          arch: "386"
-      uri: https://github.com/jadolg/szero/releases/download/v1.11.0/szero_linux_386.tar.gz
-      sha256: d3fa74ab85af8920fe3a2f7cae3b778870e219d2694850eb0d3173bbe3df31bf
-      files:
-        - from: "./szero"
-          to: "kubectl-szero"
-        - from: LICENSE
-          to: "."
-      bin: "kubectl-szero"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: "386"
+    uri: https://github.com/jadolg/szero/releases/download/v1.12.6/szero_linux_386.tar.gz
+    sha256: 43582ce82e3d6ea1fa230737e29ec9198614a5d7f6f8d0ba797dd0de1ca7422c
+    files:
+    - from: "./szero"
+      to: "kubectl-szero"
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-szero"
 
-    - selector:
-        matchLabels:
-          os: linux
-          arch: "arm64"
-      uri: https://github.com/jadolg/szero/releases/download/v1.11.0/szero_linux_arm64.tar.gz
-      sha256: 28ca17e0cf87f84315db859daf6132d37671de347c6f3a1070b18f7913c86108
-      files:
-        - from: "./szero"
-          to: "kubectl-szero"
-        - from: LICENSE
-          to: "."
-      bin: "kubectl-szero"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: "arm64"
+    uri: https://github.com/jadolg/szero/releases/download/v1.12.6/szero_linux_arm64.tar.gz
+    sha256: 1c12a44cf47763cc6e15521e325e5d33790c780a03598a4eed2f7a108b63c72a
+    files:
+    - from: "./szero"
+      to: "kubectl-szero"
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-szero"
 
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: amd64
-      uri: https://github.com/jadolg/szero/releases/download/v1.11.0/szero_darwin_amd64.tar.gz
-      sha256: 6f7f39e411c05e610841d3452b9a71c6aa7f3338ec587d06c15c9ebef8387181
-      files:
-        - from: "./szero"
-          to: "kubectl-szero"
-        - from: LICENSE
-          to: "."
-      bin: "kubectl-szero"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/jadolg/szero/releases/download/v1.12.6/szero_darwin_amd64.tar.gz
+    sha256: a2374c56846fe1cd2c19464baf64fa69aa08f087ad2f4a572e8b8824cffdae3f
+    files:
+    - from: "./szero"
+      to: "kubectl-szero"
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-szero"
 
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: arm64
-      uri: https://github.com/jadolg/szero/releases/download/v1.11.0/szero_darwin_arm64.tar.gz
-      sha256: 7c87234ec25b930c806cf7148922a304b0ef5bf2a3c8c0109b932f609f6848ee
-      files:
-        - from: "./szero"
-          to: "kubectl-szero"
-        - from: LICENSE
-          to: "."
-      bin: "kubectl-szero"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/jadolg/szero/releases/download/v1.12.6/szero_darwin_arm64.tar.gz
+    sha256: 4214a96683dc5240dbab1f914642457a5203b6bc545ba59e30f8b0f71af947bb
+    files:
+    - from: "./szero"
+      to: "kubectl-szero"
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-szero"
 
-    - selector:
-        matchLabels:
-          os: windows
-          arch: amd64
-      uri: https://github.com/jadolg/szero/releases/download/v1.11.0/szero_windows_amd64.zip
-      sha256: 94b12498ce04bea9236a5a99e2f109712fcbbbf52e5e277f64643434a1fa51fd
-      files:
-        - from: "./szero.exe"
-          to: "kubectl-szero.exe"
-        - from: LICENSE
-          to: "."
-      bin: "kubectl-szero.exe"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/jadolg/szero/releases/download/v1.12.6/szero_windows_amd64.zip
+    sha256: 60e7dfd704e66b9a0b6f0182dd2162316cd6c4a9d3097780805aff6544724437
+    files:
+    - from: "./szero.exe"
+      to: "kubectl-szero.exe"
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-szero.exe"
 
-    - selector:
-        matchLabels:
-          os: windows
-          arch: "386"
-      uri: https://github.com/jadolg/szero/releases/download/v1.11.0/szero_windows_386.zip
-      sha256: d2f9591a2597aa6b95a01c23dd99260c4d4ed7e9026e0d8c946d704c7f3f5162
-      files:
-        - from: "./szero.exe"
-          to: "kubectl-szero.exe"
-        - from: LICENSE
-          to: "."
-      bin: "kubectl-szero.exe"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: "386"
+    uri: https://github.com/jadolg/szero/releases/download/v1.12.6/szero_windows_386.zip
+    sha256: e159235129d0ebf0e4d3b57350ad718fb11b729efb2cf3869902b73f6f7f21b2
+    files:
+    - from: "./szero.exe"
+      to: "kubectl-szero.exe"
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-szero.exe"
 
-    - selector:
-        matchLabels:
-          os: windows
-          arch: arm64
-      uri: https://github.com/jadolg/szero/releases/download/v1.11.0/szero_windows_arm64.zip
-      sha256: 7769bca78775337c675745b0e397e15bdd7b609f8e997b691a109cff547f60d1
-      files:
-        - from: "./szero.exe"
-          to: "kubectl-szero.exe"
-        - from: LICENSE
-          to: "."
-      bin: "kubectl-szero.exe"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/jadolg/szero/releases/download/v1.12.6/szero_windows_arm64.zip
+    sha256: 1a6e902a564c76806a8ad5c0efa133bf06ad8f865cdb8c14aff76d77142f5b4d
+    files:
+    - from: "./szero.exe"
+      to: "kubectl-szero.exe"
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-szero.exe"
 
   shortDescription: Scale all workloads in a namespace to 0 and back
   description: |

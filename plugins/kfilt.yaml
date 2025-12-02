@@ -1,0 +1,57 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kfilt
+spec:
+  version: "v1.0.0"
+  homepage: https://github.com/ryane/kfilt
+  shortDescription: Filter Kubernetes resources
+  description: |
+    kfilt is a tool that lets you filter specific resources from a stream of
+    Kubernetes YAML manifests. It can read manifests from a file, URL, or from stdin.
+
+    kfilt is useful for developers working with Helm charts or Kustomize bases,
+    allowing you to narrow down focus to specific resources or exclude certain resources.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/ryane/kfilt/releases/download/v1.0.0/kubectl-kfilt_linux_amd64.tar.gz
+    sha256: "e2fb1e78a28a941571f1c11735b97e53a329d97492cb185e217a30bdaba5eeaf"
+    bin: kubectl-kfilt
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/ryane/kfilt/releases/download/v1.0.0/kubectl-kfilt_linux_arm64.tar.gz
+    sha256: "e38368c89f8185c09adea4c2ae1331c55062b8db358871f36913cd5cef2dbe60"
+    bin: kubectl-kfilt
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/ryane/kfilt/releases/download/v1.0.0/kubectl-kfilt_darwin_all.tar.gz
+    sha256: "f4a6d3d59c3156e2a90a7c3ccb1555f54ff7443556db0f1111503bc6853b1699"
+    bin: kubectl-kfilt
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/ryane/kfilt/releases/download/v1.0.0/kubectl-kfilt_darwin_all.tar.gz
+    sha256: "f4a6d3d59c3156e2a90a7c3ccb1555f54ff7443556db0f1111503bc6853b1699"
+    bin: kubectl-kfilt
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/ryane/kfilt/releases/download/v1.0.0/kubectl-kfilt_windows_amd64.zip
+    sha256: "c972b2def0daa373ec782f7f0310beb18847d8d12295731f721f1e30e96bc701"
+    bin: kubectl-kfilt.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/ryane/kfilt/releases/download/v1.0.0/kubectl-kfilt_windows_arm64.zip
+    sha256: "f9e8b758f5b4157ac95349c6859cc1532482e6c9d7c447195f1b04f597580b68"
+    bin: kubectl-kfilt.exe

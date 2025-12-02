@@ -1,0 +1,36 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: aks-debug-node
+spec:
+  version: "v1.0.0"
+  homepage: "https://github.com/ragatgen/kubectl-aks-debug-node"
+  shortDescription: "Debug Azure AKS nodes: collect logs, kubelet info, OS/runtime diagnostics."
+  description: |
+    A kubectl plugin to collect detailed diagnostic information from Azure Kubernetes Service nodes.
+    It gathers kubelet logs, system details, container runtime status, OS information, Node events,
+    and network/service information to help troubleshoot AKS node health and kubelet behavior.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: "https://github.com/ragatgen/kubectl-aks-debug-node/releases/download/v1.0.0/kubectl-aks-debug-node_v1.0.0_linux_amd64.tar.gz"
+      sha256: "24643882e3c65d93f4ab06dbb406aafe75780d4ab1b5c593a094d4836e02db5a"
+      bin: "kubectl-aks-debug-node"
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: "https://github.com/ragatgen/kubectl-aks-debug-node/releases/download/v1.0.0/kubectl-aks-debug-node_v1.0.0_darwin_amd64.tar.gz"
+      sha256: "24643882e3c65d93f4ab06dbb406aafe75780d4ab1b5c593a094d4836e02db5a"
+      bin: "kubectl-aks-debug-node"
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: "https://github.com/ragatgen/kubectl-aks-debug-node/releases/download/v1.0.0/kubectl-aks-debug-node_v1.0.0_darwin_arm64.tar.gz"
+      sha256: "24643882e3c65d93f4ab06dbb406aafe75780d4ab1b5c593a094d4836e02db5a"
+      bin: "kubectl-aks-debug-node"

@@ -3,8 +3,8 @@ kind: Plugin
 metadata:
   name: tap
 spec:
-  version: v0.1.2
-  homepage: https://soluble-ai.github.io/kubetap/
+  version: v0.0.4
+  homepage: https://Lappihuan.github.io/kubetap/
   shortDescription: "Interactively proxy Kubernetes Services with ease"
   description: |
     Interactively proxy Kubernetes Services by deploying
@@ -14,27 +14,27 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/soluble-ai/kubetap/releases/download/v0.1.2/kubetap_0.1.2_Darwin_x86_64.tar.gz
-    sha256: 9ddea952974ef3802db505738368279be012756e1fe8d858a0959a50f97879b4
+    uri: https://github.com/Lappihuan/kubetap/releases/download/v0.0.4/kubetap_v0.0.4_Darwin_x86_64.tar.gz
+    sha256: 17707f631df73817f44831a7d07c0012e66dcc60dfc3e4a9dd52eaf102b14cc5
     bin: kubectl-tap
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/soluble-ai/kubetap/releases/download/v0.1.2/kubetap_0.1.2_Windows_x86_64.zip
-    sha256: 06b4f7fa3b042ce34520898186d761158fedeeb48d2aea402e0337fd5bcc6938
+    uri: https://github.com/Lappihuan/kubetap/releases/download/v0.0.4/kubetap_v0.0.4_Windows_x86_64.zip
+    sha256: 80313907c6b667ed41a38f4f833e560a0063238ba7f48fd97e106ecd82962c15
     bin: kubectl-tap.exe
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/soluble-ai/kubetap/releases/download/v0.1.2/kubetap_0.1.2_Linux_x86_64.tar.gz
-    sha256: 9f16cc721b8912a705ad2cb0fd8dfdf018f9b54d70a56fbf46d6a5030bda5526
+    uri: https://github.com/Lappihuan/kubetap/releases/download/v0.0.4/kubetap_v0.0.4_Linux_x86_64.tar.gz
+    sha256: c23492214c8d41a30b3a238facc9f5d8d4511c0ae16b7ea0c6498d04754ee6be
     bin: kubectl-tap
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/soluble-ai/kubetap/releases/download/v0.1.2/kubetap_0.1.2_Linux_arm64.tar.gz
-    sha256: bacefd89b685c7adf6965ceacdbd25c73dac972a82bec38166aa2790128fc773
+    uri: https://github.com/Lappihuan/kubetap/releases/download/v0.0.4/kubetap_v0.0.4_Linux_arm64.tar.gz
+    sha256: 23d9507258d23f6eba226149c3acea533039ad1e0b0726ea6b689d7e7befb9cd
     bin: kubectl-tap

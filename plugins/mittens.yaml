@@ -1,0 +1,26 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: mittens
+spec:
+  version: v0.0.10
+  homepage: https://github.com/Lappihuan/mittens
+  shortDescription: "Interactively proxy Kubernetes Services with mitmproxy TUI"
+  description: |
+    Interactively proxy Kubernetes Services by deploying
+    mitmproxy intercepting proxy sidecars for traffic inspection.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/Lappihuan/mittens/releases/download/v0.0.10/mittens_v0.0.10_linux_amd64.tar.gz
+    sha256: "5414ec916adf8672ed83e2992de230545a14cee55d89a1601b9c9e2c581d7a20"
+    bin: kubectl-mittens
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/Lappihuan/mittens/releases/download/v0.0.10/mittens_v0.0.10_linux_arm64.tar.gz
+    sha256: "447b92eae3c0f7126ffc054f29cf2efefd9f09481998898d4ec1a6947d0d1dbc"
+    bin: kubectl-mittens

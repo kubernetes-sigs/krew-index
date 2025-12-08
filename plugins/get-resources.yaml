@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: get-resources
+spec:
+  version: v0.1.1
+  homepage: https://github.com/Sandeep-Prajapati/kubectl-get-resources
+  shortDescription: Get Kubernetes resources in CSV or YAML
+  description: |
+    This plugin collects Kubernetes resource details in CSV format or can
+    directly save resources (YAML) to the local filesystem using various flags
+    available.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/Sandeep-Prajapati/kubectl-get-resources/releases/download/v0.1.1/kubectl-get-resources_v0.1.1_darwin_amd64.tar.gz
+    sha256: a22651fbdb2a35ca2741ad962e93e616be7335c90be1a9718779b2af49d11664
+    bin: kubectl-get-resources
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/Sandeep-Prajapati/kubectl-get-resources/releases/download/v0.1.1/kubectl-get-resources_v0.1.1_darwin_arm64.tar.gz
+    sha256: 6be428f5893b51384a41bab2460297c5be5f0534a359018f73587e912e33bdac
+    bin: kubectl-get-resources
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/Sandeep-Prajapati/kubectl-get-resources/releases/download/v0.1.1/kubectl-get-resources_v0.1.1_linux_amd64.tar.gz
+    sha256: a2500e17ec34a38f8bc02fcb8ab80f236bede776b096765ab4dbe996ae26d8ec
+    bin: kubectl-get-resources
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/Sandeep-Prajapati/kubectl-get-resources/releases/download/v0.1.1/kubectl-get-resources_v0.1.1_linux_arm64.tar.gz
+    sha256: 24568dc198877120dd54f7d8a2e895d1565298bf687a24c2a71e2448f6c9a98f
+    bin: kubectl-get-resources
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/Sandeep-Prajapati/kubectl-get-resources/releases/download/v0.1.1/kubectl-get-resources_v0.1.1_windows_amd64.tar.gz
+    sha256: 3b7d88021ff9eb74f4db5e74fe8811d149d375cf8018b281fad794e4514a5a6d
+    bin: kubectl-get-resources.exe

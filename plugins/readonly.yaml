@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/kubernetes-sigs/krew/master/pkg/index/spec/embedded_plugin_schema.json
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: readonly
+spec:
+  version: v0.3.0
+  homepage: https://github.com/Evaneos/kubectl-readonly
+  shortDescription: Safe kubectl wrapper that only allows read-only commands
+  description: |
+    A safe kubectl wrapper that only allows read-only commands.
+    Ideal for giving AI assistants (like Claude) unrestricted access to explore
+    Kubernetes clusters, including production, without risk of accidental modifications.
+
+    Features:
+    - Allowlist-based: Only explicitly allowed commands can run
+    - Secrets protection: Can list secrets but not view their values
+    - Context switching: Can switch contexts safely
+    - No side effects: All allowed commands are read-only
+
+    Allowed commands include: get, describe, logs, top, explain, api-resources,
+    api-versions, cluster-info, version, events, wait, diff, and safe subcommands
+    of config, auth, and rollout.
+  caveats: |
+    This plugin requires kubectl to be installed and available in your PATH.
+
+    Usage:
+      kubectl readonly get pods
+      kubectl readonly describe deployment nginx
+      kubectl readonly logs my-pod -f
+
+    Or use the binary directly:
+      kubectl-readonly get pods
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.3.0/kubectl-readonly_0.3.0_linux_amd64.tar.gz
+    sha256: "24c2798f244f4790b4935128fb2b85bfe42a2143c50f4e7788e30524055ea0dc"
+    bin: kubectl-readonly
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.3.0/kubectl-readonly_0.3.0_linux_arm64.tar.gz
+    sha256: "9f66f7297109869fdc0cd417a53c7acfd290cc060a8cc7de456b274705c343ce"
+    bin: kubectl-readonly
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.3.0/kubectl-readonly_0.3.0_darwin_amd64.tar.gz
+    sha256: "f424005777e2ec06fa1bb8c25b31b655322bdb9e5a872a8a94978f7eb75a7348"
+    bin: kubectl-readonly
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.3.0/kubectl-readonly_0.3.0_darwin_arm64.tar.gz
+    sha256: "43706746df1dbc7945c63d4aa2a480b6251dd67927a8f639da3726019ed2389c"
+    bin: kubectl-readonly
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.3.0/kubectl-readonly_0.3.0_windows_amd64.zip
+    sha256: "2e6cbde842379da29b6f53af2e77884f0ff0b7dfbfa840b79bce3d6ae33d3b33"
+    bin: kubectl-readonly.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.3.0/kubectl-readonly_0.3.0_windows_arm64.zip
+    sha256: "65d246764cd46dd023984fad3dc9f62b2e301aa99c5ee8f4b6d14a5b24ac58e2"
+    bin: kubectl-readonly.exe

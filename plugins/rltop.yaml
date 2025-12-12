@@ -2,9 +2,9 @@ apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
   name: rltop
-  version: v0.1.1
+  version: v1.0.4
 spec:
-  version: v0.1.1
+  version: v1.0.4
   shortDescription: Display pod resource usage with requests and limits
   description: |
     Display pod resource usage (CPU and memory) along with resource requests and limits.
@@ -19,41 +19,41 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/vedit/kubectl-rltop/releases/download/v0.1.1/kubectl-rltop-darwin-amd64.tar.gz
-      sha256: 6636749b43949b77c4d94eeee35e7652cfbb595c9247331df9e5b5d35cab3baa
+      uri: https://github.com/vedit/kubectl-rltop/releases/download/v1.0.4/kubectl-rltop-darwin-amd64.tar.gz
+      sha256: 393d5a107a113a97a7cc46462052ed0edfb9dd62bc2348822d7a06efb57a2343
       bin: kubectl-rltop
     - selector:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/vedit/kubectl-rltop/releases/download/v0.1.1/kubectl-rltop-darwin-arm64.tar.gz
-      sha256: e957c4ac5164dbabcc46405cdf55775bc3559a62fb770f98236b35bbca529b77
+      uri: https://github.com/vedit/kubectl-rltop/releases/download/v1.0.4/kubectl-rltop-darwin-arm64.tar.gz
+      sha256: 62c087dc943f19560294c90f95c717582c1d1e6533ef8a5c557f35e5b2065e74
       bin: kubectl-rltop
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/vedit/kubectl-rltop/releases/download/v0.1.1/kubectl-rltop-linux-amd64.tar.gz
-      sha256: 9ee7214386df745dbb46dd6031d107bd62789aeee318e85e7cd10e981d94f65b
+      uri: https://github.com/vedit/kubectl-rltop/releases/download/v1.0.4/kubectl-rltop-linux-amd64.tar.gz
+      sha256: cd9dbcc17b32b3e56601c1032d940be129a5164080f5bb582ef8059e01f382ef
       bin: kubectl-rltop
     - selector:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/vedit/kubectl-rltop/releases/download/v0.1.1/kubectl-rltop-linux-arm64.tar.gz
-      sha256: 9bb0ea20c502285e682c6a81c252a186caf5db7fb9158f3766d7186bf3f4ff51
+      uri: https://github.com/vedit/kubectl-rltop/releases/download/v1.0.4/kubectl-rltop-linux-arm64.tar.gz
+      sha256: b51620d288d6f14221186480c2be270e2d170221bd5151481f3402160324dfa4
       bin: kubectl-rltop
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/vedit/kubectl-rltop/releases/download/v0.1.1/kubectl-rltop-windows-amd64.tar.gz
-      sha256: f71182ee7529cfe3914bd6030a09ddd7318971b948045e926c562be64011764b
+      uri: https://github.com/vedit/kubectl-rltop/releases/download/v1.0.4/kubectl-rltop-windows-amd64.tar.gz
+      sha256: 776281ba6d830f2adf820a4da12065f4301bc78c1228a6f816df149679c2b030
       bin: kubectl-rltop.exe
     - selector:
         matchLabels:
           os: windows
           arch: arm64
-      uri: https://github.com/vedit/kubectl-rltop/releases/download/v0.1.1/kubectl-rltop-windows-arm64.tar.gz
-      sha256: 444fb2a07014398d941380de24066ccd88b3088920e01b859642c654592de4b8
+      uri: https://github.com/vedit/kubectl-rltop/releases/download/v1.0.4/kubectl-rltop-windows-arm64.tar.gz
+      sha256: b001083164b4dcc94872bbd9cb16189f22ba24767392f416508e2b25dcfabd09
       bin: kubectl-rltop.exe

@@ -1,0 +1,52 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: regex
+spec:
+  version: v1.0.1
+  homepage: https://github.com/ahmedTouati/kubectl-regex
+  shortDescription: "Get and delete Kubernetes resources with regex patterns"
+  description: |
+    A kubectl plugin that allows you to list or delete Kubernetes resources
+    (Pods, Services, Deployments, etc.) by regex pattern.
+
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/ahmedTouati/kubectl-regex/releases/download/v1.0.1/kubectl-regex_v1.0.1_linux_amd64.tar.gz
+    sha256: "57335d3386ed54c6286c575c0d88b4d54286fa454c21364bb0dc206285984ae5"
+    bin: kubectl-regex
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/ahmedTouati/kubectl-regex/releases/download/v1.0.1/kubectl-regex_v1.0.1_linux_arm64.tar.gz
+    sha256: "6b2dde6761c0ca7413a63c998e83cbe9d2398b711ad633171ab25b600093c54f"
+    bin: kubectl-regex
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/ahmedTouati/kubectl-regex/releases/download/v1.0.1/kubectl-regex_v1.0.1_darwin_amd64.tar.gz
+    sha256: "bfccbcbaf4ff7ee087ee749df9df46cce5e49d3f8a216a9d1f0eb9c7865e1fa8"
+    bin: kubectl-regex
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/ahmedTouati/kubectl-regex/releases/download/v1.0.1/kubectl-regex_v1.0.1_darwin_arm64.tar.gz
+    sha256: "722eb0c2fc2cc7e46275e1d322e2066a264d1906c352f8a650663109e25a66ef"
+    bin: kubectl-regex
+
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/ahmedTouati/kubectl-regex/releases/download/v1.0.1/kubectl-regex_v1.0.1_windows_amd64.tar.gz
+    sha256: "7cf64c4a70dd1450edaa0ee503e5814fa82b2382c331cd1b07d822bcf4f36842"
+    bin: kubectl-regex.exe

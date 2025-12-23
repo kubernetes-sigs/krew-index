@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: kimspect
 spec:
-  version: v0.0.41
+  version: v0.0.42
   shortDescription: Inspect container images on your pods and nodes.
   description: |
     kimspect is a kubernetes container image inspection tool that provides
@@ -16,27 +16,27 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/koithos/kimspect/releases/download/v0.0.41/kimspect-x86_64-unknown-linux-gnu.tar.gz
-      sha256: 05bb717b94e47d910af4a4a6ad06609989da7a04614a548325faea5b79511daa
+      uri: https://github.com/koithos/kimspect/releases/download/v0.0.42/kimspect-x86_64-unknown-linux-gnu.tar.gz
+      sha256: 1fbc15b119a4706cf17a199a09fd701c64ae63af0b28d61c22baf68783aa7006
       bin: kimspect
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/koithos/kimspect/releases/download/v0.0.41/kimspect-x86_64-apple-darwin.tar.gz
-      sha256: e4d891da5f9d957c16024d00d54d207abbc6f36b7a0f683286527878e99e329e
+      uri: https://github.com/koithos/kimspect/releases/download/v0.0.42/kimspect-x86_64-apple-darwin.tar.gz
+      sha256: 365a85dfa8f3f2ce9ee27a1abc42625f18086fd4bd292d64c2409f1b3fa9c993
       bin: kimspect
     - selector:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/koithos/kimspect/releases/download/v0.0.41/kimspect-aarch64-apple-darwin.tar.gz
-      sha256: 1d06b35792393bf4106ebeb572b5336201132ffb232846749410bf1b96d3e779
+      uri: https://github.com/koithos/kimspect/releases/download/v0.0.42/kimspect-aarch64-apple-darwin.tar.gz
+      sha256: 3aeb15c55454bd80166b0990f3ddb6f14f7460b202fd4bbe879c46c3c0e8326f
       bin: kimspect
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/koithos/kimspect/releases/download/v0.0.41/kimspect-x86_64-pc-windows-msvc.zip
-      sha256: 07ebacec2404505025080a4a76ac7a26980eb4452b97f23e1587f167e9744302
+      uri: https://github.com/koithos/kimspect/releases/download/v0.0.42/kimspect-x86_64-pc-windows-msvc.zip
+      sha256: c9f260dcb212b625f82dd11994dcb533ba98f112b45e3a1e9b16f6205cbd9689
       bin: kimspect.exe

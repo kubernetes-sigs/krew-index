@@ -3,16 +3,14 @@ kind: Plugin
 metadata:
   name: sniff
 spec:
-  version: v1.6.2
-  homepage: https://github.com/eldadru/ksniff
+  version: v2.0.0
+  homepage: https://github.com/samdotci/ksniff
   platforms:
-  - uri: https://github.com/eldadru/ksniff/releases/download/v1.6.2/ksniff.zip
-    sha256: c59b5c9ea84d6cb771096f1246c919b71389f9d4234e858f4929208957e561fd
+  - uri: https://github.com/samdotci/ksniff/releases/download/v2.0.0/ksniff_v2.0.0_darwin_amd64.tar.gz
+    sha256: 34718cff322150cc176d1f7c2490dd8ddc99baaeaaa5a1c0773065913b804fb2
     bin: kubectl-sniff
     files:
-    - from: kubectl-sniff-darwin
-      to: kubectl-sniff
-    - from: static-tcpdump
+    - from: kubectl-sniff
       to: .
     - from: LICENSE
       to: .
@@ -20,13 +18,11 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/eldadru/ksniff/releases/download/v1.6.2/ksniff.zip
-    sha256: c59b5c9ea84d6cb771096f1246c919b71389f9d4234e858f4929208957e561fd
+  - uri: https://github.com/samdotci/ksniff/releases/download/v2.0.0/ksniff_v2.0.0_darwin_arm64.tar.gz
+    sha256: 3e805be43a1fd78717d485fd2e11e38e70d9332cd2d794df78103c0ca8156e08
     bin: kubectl-sniff
     files:
-    - from: kubectl-sniff-darwin-arm64
-      to: kubectl-sniff
-    - from: static-tcpdump
+    - from: kubectl-sniff
       to: .
     - from: LICENSE
       to: .
@@ -34,13 +30,11 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-  - uri: https://github.com/eldadru/ksniff/releases/download/v1.6.2/ksniff.zip
-    sha256: c59b5c9ea84d6cb771096f1246c919b71389f9d4234e858f4929208957e561fd
+  - uri: https://github.com/samdotci/ksniff/releases/download/v2.0.0/ksniff_v2.0.0_linux_amd64.tar.gz
+    sha256: 8333f023497e045ed85e45765ace6c6425e4ef2274447a3a871e82b53a7278e8
     bin: kubectl-sniff
     files:
     - from: kubectl-sniff
-      to: .
-    - from: static-tcpdump
       to: .
     - from: LICENSE
       to: .
@@ -48,13 +42,23 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/eldadru/ksniff/releases/download/v1.6.2/ksniff.zip
-    sha256: c59b5c9ea84d6cb771096f1246c919b71389f9d4234e858f4929208957e561fd
+  - uri: https://github.com/samdotci/ksniff/releases/download/v2.0.0/ksniff_v2.0.0_linux_arm64.tar.gz
+    sha256: e3fa0644d5b553451bfa003032d889a40bc86467638e3f6de0a5e6be222d876d
+    bin: kubectl-sniff
+    files:
+    - from: kubectl-sniff
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - uri: https://github.com/samdotci/ksniff/releases/download/v2.0.0/ksniff_v2.0.0_windows_amd64.zip
+    sha256: b81ad5e924174dfd867966c700a2ce1a3e7dc40adb2b4050e261b1f80309e4ad
     bin: kubectl-sniff.exe
     files:
-    - from: kubectl-sniff-windows
-      to: kubectl-sniff.exe
-    - from: static-tcpdump
+    - from: kubectl-sniff.exe
       to: .
     - from: LICENSE
       to: .
@@ -68,7 +72,7 @@ spec:
     * wireshark (optional, used for live capture)
   description: |
     When working with micro-services, many times it's very helpful to get a capture of the network
-    activity between your micro-service and it's dependencies.
+    activity between your micro-service and it1s dependencies.
 
-    ksniff use kubectl to upload a statically compiled tcpdump binary to your pod and redirecting it's
+    ksniff use kubectl to create an ephemeral container with tcpdump and redirecting it's
     output to your local Wireshark for smooth network debugging experience.

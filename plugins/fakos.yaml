@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: fakos
+spec:
+  version: v0.0.2
+  shortDescription: Quickly access the state and metadata of k8s resources
+  description: |
+    fakos allows users to fetch state and metadata of different k8s resources
+    (pods, nodes, daemonsets etc.) in a cleaner way than describing them.
+  homepage: https://github.com/koithos/fakos
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/koithos/fakos/releases/download/v0.0.2/fakos-x86_64-unknown-linux-gnu.tar.gz
+      sha256: 5ad8aba674a25e69c802c72d48446fe74c09cdf7c5a66270593f76d1c0c6fc12
+      bin: fakos
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/koithos/fakos/releases/download/v0.0.2/fakos-x86_64-apple-darwin.tar.gz
+      sha256: 16f8e54d656ee9ef16fce21cc54f001cdaa28384f4c2a36b87baa2babe23b222
+      bin: fakos
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/koithos/fakos/releases/download/v0.0.2/fakos-aarch64-apple-darwin.tar.gz
+      sha256: 7d6751299a34c813007a7fe01c125d88631af24085580104d13cbce227440db9
+      bin: fakos
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/koithos/fakos/releases/download/v0.0.2/fakos-x86_64-pc-windows-msvc.zip
+      sha256: a5472d550b1aeb7d0be1ca840a7405fe284179c15f3d440695641f60a1b87d6f
+      bin: fakos.exe

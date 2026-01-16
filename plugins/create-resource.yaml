@@ -1,0 +1,63 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: create-resource
+spec:
+  version: v0.1.1
+  homepage: https://github.com/gshaibi/kubectl-create-resource
+  shortDescription: Create any Kubernetes resource interactively or from templates
+  description: |
+    A kubectl plugin that generalizes resource creation to all Kubernetes
+    resource types, including Custom Resource Definitions (CRDs).
+
+    Features:
+    - Create any resource type (built-in or CRD)
+    - Template mode: clone existing resources via editor
+    - Interactive mode: wizard-style prompts
+    - Flag mode: scriptable with --set flags
+    
+    Examples:
+      # List available resource types
+      kubectl create-resource --list
+      
+      # Clone an existing resource
+      kubectl create-resource deployment --from=nginx --name=nginx-clone
+      
+      # Create interactively
+      kubectl create-resource configmap --name=my-config
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/gshaibi/kubectl-create-resource/releases/download/v0.1.1/kubectl-create-resource-darwin-amd64.tar.gz
+    sha256: 5574fee78fa861dfcba94e573d5be2878c541f06e670d36c1fc0003387371628
+    bin: kubectl-create-resource
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/gshaibi/kubectl-create-resource/releases/download/v0.1.1/kubectl-create-resource-darwin-arm64.tar.gz
+    sha256: fb5cedc20f4a3fbcacc5b6adba89f0c433085afa35067610d936c7f6cd740466
+    bin: kubectl-create-resource
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/gshaibi/kubectl-create-resource/releases/download/v0.1.1/kubectl-create-resource-linux-amd64.tar.gz
+    sha256: 2a9d59f1f6a1f08c61c831c585aa6170c04ccbff3a34f38a065566b384279499
+    bin: kubectl-create-resource
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/gshaibi/kubectl-create-resource/releases/download/v0.1.1/kubectl-create-resource-linux-arm64.tar.gz
+    sha256: e24b4641ecfe43716528975c1e28eeafab6b351bb34b196a70d140e5db22cbf1
+    bin: kubectl-create-resource
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/gshaibi/kubectl-create-resource/releases/download/v0.1.1/kubectl-create-resource-windows-amd64.zip
+    sha256: ae6a5a186467a3bcc3aaf4bf679b2f5f34b4674ba95369644f837be4a4ab5734
+    bin: kubectl-create-resource.exe

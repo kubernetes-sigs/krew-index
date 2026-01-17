@@ -14,17 +14,7 @@ spec:
     - Create any resource type (built-in or CRD)
     - Template mode: clone existing resources via editor
     - Interactive mode: wizard-style prompts
-    - Flag mode: scriptable with --set flags
-    
-    Examples:
-      # List available resource types
-      kubectl create-resource --list
-      
-      # Clone an existing resource
-      kubectl create-resource deployment --from=nginx --name=nginx-clone
-      
-      # Create interactively
-      kubectl create-resource configmap --name=my-config
+    - Flag mode: scriptable with --set flags    
   platforms:
   - selector:
       matchLabels:

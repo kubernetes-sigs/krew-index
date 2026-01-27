@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: commatrix
 spec:
-  version: v0.0.4
+  version: v0.0.5
   homepage: https://github.com/openshift-kni/commatrix
   shortDescription: Generate a communication matrix for OpenShift clusters.
   description: "The `kubectl commatrix generate` generates an up-to-date communication flows matrix for all ingress flows \nof OpenShift (multi-node and single-node deployments) and Operators.\n"
@@ -12,34 +12,34 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/openshift-kni/commatrix/releases/download/v0.0.4/kubectl-commatrix_linux_amd64.tar.gz
-      sha256: 44f14d518abfa908025fdb82d8fd4c6decf8a966b5fe5447e2f1ff3e5f7b8ea5
+      uri: https://github.com/openshift-kni/commatrix/releases/download/v0.0.5/kubectl-commatrix_linux_amd64.tar.gz
+      sha256: cb6f913de8f3252ee9ac35f490135a67a6c5394dbcd954337ecf32898acba52a
       bin: kubectl-commatrix
     - selector:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/openshift-kni/commatrix/releases/download/v0.0.4/kubectl-commatrix_linux_arm64.tar.gz
-      sha256: ecac41c7948ca0f4082c91f4496a51812f1c96ad9a8b5da1f931031616e84981
+      uri: https://github.com/openshift-kni/commatrix/releases/download/v0.0.5/kubectl-commatrix_linux_arm64.tar.gz
+      sha256: c00ec4318453a6f36411df7fd02118997ca81539eb9118d846b3bc9c8b960ca8
       bin: kubectl-commatrix
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/openshift-kni/commatrix/releases/download/v0.0.4/kubectl-commatrix_darwin_amd64.tar.gz
-      sha256: aa258e1587ebe21a66788b5e54bf322fddf0e31776a5bb447aeb8c085fce7595
+      uri: https://github.com/openshift-kni/commatrix/releases/download/v0.0.5/kubectl-commatrix_darwin_amd64.tar.gz
+      sha256: 463259c14ecfeef9081e1c03fa2e88e5590b80d596350d4ffb1b1fbfa4b2ff12
       bin: kubectl-commatrix
     - selector:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/openshift-kni/commatrix/releases/download/v0.0.4/kubectl-commatrix_darwin_arm64.tar.gz
-      sha256: aae85d7c75f27892a90c6d236ecc81725dd083ab12796142a969c362ade17d78
+      uri: https://github.com/openshift-kni/commatrix/releases/download/v0.0.5/kubectl-commatrix_darwin_arm64.tar.gz
+      sha256: 7a1f50cc44c3865e8820a74aa8704cb936a5d1c5a02c42a86e7d415307031374
       bin: kubectl-commatrix
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/openshift-kni/commatrix/releases/download/v0.0.4/kubectl-commatrix_windows_amd64.tar.gz
-      sha256: 7c712098ba0a6ccd3a10483931bde4d93fd67e4c7e3c5b8555cabda087895aa3
+      uri: https://github.com/openshift-kni/commatrix/releases/download/v0.0.5/kubectl-commatrix_windows_amd64.tar.gz
+      sha256: b8246e803ee724927de79f0eca41b94081aedf61f8c0c7952a7193c7e10e4774
       bin: kubectl-commatrix.exe

@@ -5,7 +5,7 @@ metadata:
 spec:
   version: v0.6.5
   homepage: https://github.com/skyhook-io/radar
-  shortDescription: Modern Kubernetes visibility with topology and traffic visualization
+  shortDescription: Cluster dashboard with topology and traffic maps
   description: |
     Radar provides real-time visibility into your Kubernetes cluster.
 
@@ -19,11 +19,6 @@ spec:
     - Port forwarding
 
     Local-first. No account required. No cloud dependency.
-
-    Usage:
-      kubectl radar              # Opens browser UI on http://localhost:9280
-      kubectl radar --namespace default  # Filter to specific namespace
-      kubectl radar --no-browser # Start server without opening browser
   caveats: |
     This plugin opens a web UI in your browser by default.
     Use --no-browser to start the server without opening a browser.

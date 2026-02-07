@@ -5,7 +5,7 @@ metadata:
 spec:
   homepage: https://github.com/rabbitmq/cluster-operator
   shortDescription: Manage RabbitMQ clusters
-  version: v2.19.0
+  version: v2.19.1
   description: |
     A plugin providing utilities to operate RabbitMQ clusters deployed
     by the RabbitMQ cluster operator.
@@ -16,17 +16,30 @@ spec:
     `tail` subcommand requires the `tail` plugin. You can install it with `kubectl krew install tail`.
   platforms:
   - selector:
-      matchExpressions:
-      - key: os
-        operator: In
-        values:
-        - darwin
-        - linux
-    uri: https://github.com/rabbitmq/cluster-operator/archive/v2.19.0.tar.gz
-    sha256: 87ccf70b0c746e412a242fd0dc4a896e2d469824b8daeeb7894bafbd526e4578
-    bin: kubectl-rabbitmq
-    files:
-    - from: cluster-operator-*/bin/kubectl-rabbitmq
-      to: .
-    - from: cluster-operator-*/LICENSE.txt
-      to: .
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/rabbitmq/cluster-operator/releases/download/v2.19.1/kubectl-rabbitmq-v2.19.1-darwin-amd64.tar.gz
+    sha256: d83d4a9330679eaf1170b0f3e2946f79e96ba7b4bee3c884ad7a2ae7e32b4fb6
+    bin: kubectl-rabbitmq-v2.19.1-darwin-amd64
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/rabbitmq/cluster-operator/releases/download/v2.19.1/kubectl-rabbitmq-v2.19.1-darwin-arm64.tar.gz
+    sha256: f9b6a80bca3490fab2058f6c69ed063fcee59581f9597a7b96aec3d1d9417d19
+    bin: kubectl-rabbitmq-v2.19.1-darwin-arm64
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/rabbitmq/cluster-operator/releases/download/v2.19.1/kubectl-rabbitmq-v2.19.1-linux-amd64.tar.gz
+    sha256: 71e47e3eee2bcf58a0e0ee1821a3e9499ab7e6808d2062a1f4c7a9d5ee515883
+    bin: kubectl-rabbitmq-v2.19.1-linux-amd64
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/rabbitmq/cluster-operator/releases/download/v2.19.1/kubectl-rabbitmq-v2.19.1-linux-arm64.tar.gz
+    sha256: 45525a25e393013363fb9479e85851272f5b33e82654fcdde0d4bb48a7812277
+    bin: kubectl-rabbitmq-v2.19.1-linux-arm64

@@ -1,0 +1,63 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: readonly
+spec:
+  version: v0.3.1
+  homepage: https://github.com/Evaneos/kubectl-readonly
+  shortDescription: Guardrail against accidental cluster changes
+  description: |
+    A kubectl wrapper that prevents accidental modifications. Allowed commands
+    are passed through to kubectl in your PATH.
+
+    Designed to guard against human errors and AI assistants overstepping their
+    instructions. Also provides basic protection against leaking secret values
+    to LLM context. Does NOT protect against deliberate bypass attempts.
+
+    Examples:
+    - Allowed: get pods, describe deploy, logs, top nodes
+    - Blocked: delete pod, apply -f, exec, scale
+    - Secrets: list allowed, but -o yaml/-o json blocked
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.3.1/kubectl-readonly_0.3.1_linux_amd64.tar.gz
+    sha256: "641b69f93f8dedc442d3f7fc08b764b70f0d67c99dc141d7f390e6d4ece46831"
+    bin: kubectl-readonly
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.3.1/kubectl-readonly_0.3.1_linux_arm64.tar.gz
+    sha256: "22f62308d33937fc0b2c8e0de6d8416236728b03d101036c5ed38cbef8617d91"
+    bin: kubectl-readonly
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.3.1/kubectl-readonly_0.3.1_darwin_amd64.tar.gz
+    sha256: "0a0a7d831fe6ca32b617670580869b9f79fe99c6b3f1638c93d0e33b33c2b3c0"
+    bin: kubectl-readonly
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.3.1/kubectl-readonly_0.3.1_darwin_arm64.tar.gz
+    sha256: "9831b802cfffe3e590172bc8f88ceae9d2a49a5a78090bf4111330764ff9a8f4"
+    bin: kubectl-readonly
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.3.1/kubectl-readonly_0.3.1_windows_amd64.zip
+    sha256: "0d33c79d0369c0091d81b7a4660adb04641d3064c476ae845b9cfdbe0b0e9027"
+    bin: kubectl-readonly.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.3.1/kubectl-readonly_0.3.1_windows_arm64.zip
+    sha256: "4d86ca868dbca02c9279c8e42c3e75a6930f17c9a50346cfedc222e4d8658d7b"
+    bin: kubectl-readonly.exe

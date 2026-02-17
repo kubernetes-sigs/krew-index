@@ -1,0 +1,50 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: jqlogs
+spec:
+  version: "v1.0.0"
+  homepage: https://github.com/shihyuho/kubectl-jqlogs
+  shortDescription: Readable, colorful JSON logs via jq
+  description: |
+    Formats JSON logs from pods using a built-in jq processor. It behaves like
+    "kubectl logs" but automatically detects and prettifies valid JSON lines.
+    Non-JSON lines are printed as-is (Hybrid Processing). It supports all std
+    kubectl logs flags mode, rich colors, and YAML output.
+
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/shihyuho/kubectl-jqlogs/releases/download/v1.0.0/kubectl-jqlogs_Darwin_x86_64.tar.gz
+      sha256: "9b1e9f3bb1ee41e4d8b6f513183248a5ec04a0c2a64e0cf57a6e76e6c3a0ef84"
+      bin: kubectl-jqlogs
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/shihyuho/kubectl-jqlogs/releases/download/v1.0.0/kubectl-jqlogs_Darwin_arm64.tar.gz
+      sha256: "b5d5f6a4537a613756513b792841b3e0a68432ab99ad5e81914da50dfe367c03"
+      bin: kubectl-jqlogs
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/shihyuho/kubectl-jqlogs/releases/download/v1.0.0/kubectl-jqlogs_Linux_x86_64.tar.gz
+      sha256: "01bfffbecee7fe6f51bcac0094dc690e0a0a744a8baef3c5868c72ae40e79cd1"
+      bin: kubectl-jqlogs
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/shihyuho/kubectl-jqlogs/releases/download/v1.0.0/kubectl-jqlogs_Linux_arm64.tar.gz
+      sha256: "eb530a83b04bd3f4c4d7d983bdb54bf1a21d45e2f74788105d70d24f57145774"
+      bin: kubectl-jqlogs
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/shihyuho/kubectl-jqlogs/releases/download/v1.0.0/kubectl-jqlogs_Windows_x86_64.zip
+      sha256: "973ce222b72da3fdbc1cc9dad1e64be3869ded6380dd1a91e975886fcd709917"
+      bin: kubectl-jqlogs.exe

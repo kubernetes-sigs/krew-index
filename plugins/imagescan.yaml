@@ -1,0 +1,41 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: imagescan
+spec:
+  version: v1.0.1
+  homepage: https://github.com/dejanu/kubectl-imagescan
+  shortDescription: Image vulnerability scanning for Kubernetes Pods
+  description: |
+    kubectl-imagescan embeds Trivy to perform vulnerability scanning on
+    container images used by Kubernetes Pods. It surfaces discovered CVEs,
+    associated metadata, and prioritized findings to identify security risks in cluster workloads.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/dejanu/kubectl-imagescan/releases/download/v1.0.1/kubectl-imagescan-v1.0.1-linux-amd64.tar.gz
+      sha256: 51bb4ed959407d33c883e3b2b2fe5cfa0cc18f92a8ca75c80446aa141018b6bc
+      bin: kubectl-imagescan
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/dejanu/kubectl-imagescan/releases/download/v1.0.1/kubectl-imagescan-v1.0.1-linux-arm64.tar.gz
+      sha256: e4adb5ae8f5c0468991d60e0be7caa7e3ee6062dd2e337f8443d34ab0240ec04
+      bin: kubectl-imagescan
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/dejanu/kubectl-imagescan/releases/download/v1.0.1/kubectl-imagescan-v1.0.1-darwin-amd64.tar.gz
+      sha256: 2992a5d85b444903e844ab56d2d0fe5d38c769d0f8ff05d695bda1a5bb80f5fc
+      bin: kubectl-imagescan
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/dejanu/kubectl-imagescan/releases/download/v1.0.1/kubectl-imagescan-v1.0.1-darwin-arm64.tar.gz
+      sha256: 926666554f056988c98fcc51981aec0ad3cd8cdce7b0762ae6587423bd1f47c8
+      bin: kubectl-imagescan

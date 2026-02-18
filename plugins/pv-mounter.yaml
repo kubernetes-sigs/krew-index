@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: pv-mounter
 spec:
-  version: v26.8.2
+  version: v26.8.3
   shortDescription: Mount PVC locally using SSHFS or NFS
   homepage: https://github.com/fenio/pv-mounter
   description: |
@@ -14,8 +14,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/fenio/pv-mounter/releases/download/v26.8.2/pv-mounter_v26.8.2_linux_amd64.tar.gz
-    sha256: c83cf7892c57a6d47b42a2c59c8834e6b3f689e8ed69e42aabbb88ed2bca358b
+    uri: https://github.com/fenio/pv-mounter/releases/download/v26.8.3/pv-mounter_v26.8.3_linux_amd64.tar.gz
+    sha256: 930d8f3ad6bb351b1b0a46168e70bea1c3c431ccdbb468179fe950ac26aaf61a
     files:
     - from: "./pv-mounter"
       to: "."
@@ -26,8 +26,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/fenio/pv-mounter/releases/download/v26.8.2/pv-mounter_v26.8.2_linux_arm64.tar.gz
-    sha256: f5d2ee48d703605192c6fce34c3f69ec54c99f418d286a5e08db7afafb713d3e
+    uri: https://github.com/fenio/pv-mounter/releases/download/v26.8.3/pv-mounter_v26.8.3_linux_arm64.tar.gz
+    sha256: 7b0e89f0e97a3a9704c8b921e3d3eb126e88dde3795c7fdb4df8caa9efb0b59c
     files:
     - from: "./pv-mounter"
       to: "."
@@ -39,8 +39,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/fenio/pv-mounter/releases/download/v26.8.2/pv-mounter_v26.8.2_darwin_amd64.tar.gz
-    sha256: 8908db75dc738707d473588a95a61b2224685550a150db5f172ba8de068ab106
+    uri: https://github.com/fenio/pv-mounter/releases/download/v26.8.3/pv-mounter_v26.8.3_darwin_amd64.tar.gz
+    sha256: 0b42fd5870eee9bcb7d2dc4e3b0349f842fe4657b9aec65f00d640f9af634069
     files:
     - from: "./pv-mounter"
       to: "."
@@ -51,8 +51,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/fenio/pv-mounter/releases/download/v26.8.2/pv-mounter_v26.8.2_darwin_arm64.tar.gz
-    sha256: 0e200869b072e89da8710971de157d5eef338f6171da9aa8dd8933e0fe3dde70
+    uri: https://github.com/fenio/pv-mounter/releases/download/v26.8.3/pv-mounter_v26.8.3_darwin_arm64.tar.gz
+    sha256: 2174a80f110f3b287ce7e0bdb950d3da2ba06039d7f28411263d04cb0d5d8a0e
     files:
     - from: "./pv-mounter"
       to: "."

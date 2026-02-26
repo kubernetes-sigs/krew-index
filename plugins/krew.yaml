@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: krew
 spec:
-  version: "v0.4.5"
+  version: "v0.5.0"
   homepage: https://krew.sigs.k8s.io/
   shortDescription: Package manager for kubectl plugins.
   caveats: |
@@ -28,8 +28,8 @@ spec:
   # The supported platforms for plugins are the ones that Krew itself is distributed in.
   # See all supported platforms on the [releases page](https://github.com/kubernetes-sigs/krew/releases).
   platforms:
-  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.4.5/krew-darwin_amd64.tar.gz
-    sha256: 7ff3dde825734e74f4975c8e922b4419639e5fbff738786ab085cf06a0d1ccc0
+  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.5.0/krew-darwin_amd64.tar.gz
+    sha256: 2d60559126452b57e3df0612f0475a473363f064da35f817290dbbcd877d1ea8
     bin: krew
     files:
     - from: ./krew-darwin_amd64
@@ -40,8 +40,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.4.5/krew-darwin_arm64.tar.gz
-    sha256: 5e33636a73392cf88021a85162ac4d4c86d4c0b57677e64094bcbcca637068e6
+  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.5.0/krew-darwin_arm64.tar.gz
+    sha256: cd6e58b4e954e301abd19001d772846997216d696bcaa58f0bcf04708339ece3
     bin: krew
     files:
     - from: ./krew-darwin_arm64
@@ -52,8 +52,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.4.5/krew-linux_amd64.tar.gz
-    sha256: bacc06800bda14ec063cd0b6f377a961fdf4661c00366bf9834723cd28bfabc7
+  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.5.0/krew-linux_amd64.tar.gz
+    sha256: 5d5a221fffdf331d1c5c68d9917530ecd102e0def5b5a6d62eeed1c404efb28a
     bin: krew
     files:
     - from: ./krew-linux_amd64
@@ -64,8 +64,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.4.5/krew-linux_arm.tar.gz
-    sha256: 856f212fc83c22082cba1bedc5eac3d601f9d19a0f442a7e18db054b5cef35e9
+  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.5.0/krew-linux_arm.tar.gz
+    sha256: 3bbbbc8876113175513cc483aa824e9e4f190fbecad53c61ea6a42092b1e7214
     bin: krew
     files:
     - from: ./krew-linux_arm
@@ -76,8 +76,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm
-  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.4.5/krew-linux_arm64.tar.gz
-    sha256: e02bdb8fe67cd6641b9ed6b45c6d084f7aa5b161fe49191caf5b1d5e83b0c0f9
+  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.5.0/krew-linux_arm64.tar.gz
+    sha256: ab7a98b992424e76b6c162f8b67fb76c4b1e243598aa2807bdf226752f964548
     bin: krew
     files:
     - from: ./krew-linux_arm64
@@ -88,8 +88,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.4.5/krew-linux_ppc64le.tar.gz
-    sha256: 5b969d0c3d1483f82113faeed0e704d5732bae83d17ac400538ad2a6bb492a00
+  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.5.0/krew-linux_ppc64le.tar.gz
+    sha256: 5d172e0a50d2afa0092427e9a9efb7723794c3cac7d0308e4d4f8585b1996f7e
     bin: krew
     files:
     - from: ./krew-linux_ppc64le
@@ -100,8 +100,8 @@ spec:
       matchLabels:
         os: linux
         arch: ppc64le
-  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.4.5/krew-windows_amd64.tar.gz
-    sha256: 61cbe66d47c1f8e3ad4d778d136c293487efc7b2bf7085a3e30a6701a374b51d
+  - uri: https://github.com/kubernetes-sigs/krew/releases/download/v0.5.0/krew-windows_amd64.tar.gz
+    sha256: 1fbbb665b61d8a42246818eca47b160f1eab20fe9a3673974d1f28a73bcaddf7
     bin: krew.exe
     files:
     - from: ./krew-windows_amd64.exe

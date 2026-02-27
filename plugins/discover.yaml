@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: discover
 spec:
-  version: v0.1.7
+  version: v0.1.8
   homepage: https://github.com/mateimicu/kdiscover
   shortDescription: "Find/export kubeconfigs for cloud clusters"
   description: |
@@ -15,8 +15,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.7/kdiscover_v0.1.7_darwin_arm64.tar.gz
-    sha256: 8e3f1f6543039299943fef689d9573c724a15c79f356133f4bd7bbc4cea9edf0
+    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.8/kdiscover_v0.1.8_darwin_arm64.tar.gz
+    sha256: 90d2c76c8493c8313a7c56bb5602ef43e2d3055de66f00391a6b99f8d83b3838
     bin: kubectl-discover
     files:
     - from: "kdiscover"
@@ -27,8 +27,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.7/kdiscover_v0.1.7_darwin_amd64.tar.gz
-    sha256: 98be56b2bbeb1099974c6657c555a41dfdeb408a97e0b4a535906d751ebaa271
+    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.8/kdiscover_v0.1.8_darwin_amd64.tar.gz
+    sha256: ac78ba020a58565ec286be3e0390446d3b78bda3adbbe8093a1265938a400413
     bin: kubectl-discover
     files:
     - from: "kdiscover"
@@ -40,8 +40,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.7/kdiscover_v0.1.7_linux_amd64.tar.gz
-    sha256: 64ce6eca26aa168b60612f98d22115ddb7ad3a6212891f6b5f235b18627971ae
+    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.8/kdiscover_v0.1.8_linux_amd64.tar.gz
+    sha256: bb4906724dc4f82b593e039d7d32c253b45a9c552faed0932d388a3ddeb6ce95
     bin: kubectl-discover
     files:
     - from: "kdiscover"
@@ -52,8 +52,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.7/kdiscover_v0.1.7_linux_arm64.tar.gz
-    sha256: 5dd4cc5ce6c3dd79c6fd6cb55c4559e236ac16280a0bf258da56f5032cb1adc6
+    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.8/kdiscover_v0.1.8_linux_arm64.tar.gz
+    sha256: ae902286abcbda57107ecd6382dcdef24e61ff6ebb9622fc46f52084ed9d9b46
     bin: kubectl-discover
     files:
     - from: "kdiscover"
@@ -64,8 +64,8 @@ spec:
       matchLabels:
         os: linux
         arch: 386
-    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.7/kdiscover_v0.1.7_linux_386.tar.gz
-    sha256: 3acd54f5b06ae8454231f9c27e93d8a1a56569f8ded37fe1820eedbfeb14d2b1
+    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.8/kdiscover_v0.1.8_linux_386.tar.gz
+    sha256: 677535de8f51a0373f4592fd428f2e6f8e3e1bf53f00d969c86ad5ba86c2fdbd
     bin: kubectl-discover
     files:
     - from: "kdiscover"
@@ -77,8 +77,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.7/kdiscover_v0.1.7_windows_amd64.zip
-    sha256: 9b47784d1be0198e78713301545e6491a1d5ae1661d5cb8a158255f1ee85e213
+    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.8/kdiscover_v0.1.8_windows_amd64.zip
+    sha256: 6957ea2ffd9947c82891151813096b9a40c30f9aac36d07c47a5092465b005d9
     bin: kubectl-discover.exe
     files:
     - from: "kdiscover.exe"
@@ -89,8 +89,8 @@ spec:
       matchLabels:
         os: windows
         arch: arm64
-    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.7/kdiscover_v0.1.7_windows_arm64.zip
-    sha256: acda0515364d5cb5cdc513ad83b2e5c6e369d283717cc77cc9c65fe009f92384
+    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.8/kdiscover_v0.1.8_windows_arm64.zip
+    sha256: ae9a2b92145dc8e59ee53b25b995b827c3de1f3c85d6340edb64a92ca91d94b4
     bin: kubectl-discover.exe
     files:
     - from: "kdiscover.exe"
@@ -101,8 +101,8 @@ spec:
       matchLabels:
         os: windows
         arch: 386
-    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.7/kdiscover_v0.1.7_windows_386.zip
-    sha256: e7d008ed371eca59bd4c11cb8015d5ae9d72ba8e8d609d153b4d67ccde85a598
+    uri: https://github.com/mateimicu/kdiscover/releases/download/v0.1.8/kdiscover_v0.1.8_windows_386.zip
+    sha256: 8b16fdb10a35b70f0b2eb5e30817f2a8cda06cd8fb0079cd739ff399885192e8
     bin: kubectl-discover.exe
     files:
     - from: "kdiscover.exe"

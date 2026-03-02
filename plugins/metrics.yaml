@@ -1,0 +1,97 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: metrics
+spec:
+  version: v0.0.2
+  homepage: https://github.com/yaacov/kubectl-metrics
+  shortDescription: Query Prometheus/Thanos metrics on OpenShift clusters
+  description: |
+    kubectl-metrics is a kubectl plugin for querying Prometheus and Thanos
+    metrics on OpenShift clusters. It works as both a CLI tool and an MCP
+    server for AI assistants (Claude Desktop, Cursor IDE, OpenShift Lightspeed).
+
+    Features:
+    - Discover available metrics with keyword filtering
+    - Run instant and range PromQL queries
+    - Preset queries for common metrics (storage, network, migrations)
+    - Auto-discovers Prometheus/Thanos from cluster routes
+    - MCP server mode (stdio and SSE) for AI assistant integration
+    - Standard kubectl authentication (kubeconfig, context, token)
+  caveats: |
+    This plugin requires kubectl to be installed and configured to access
+    an OpenShift cluster with Prometheus/Thanos deployed.
+
+    Examples:
+      # Discover available metrics
+      kubectl metrics discover --keyword http
+
+      # Run an instant query
+      kubectl metrics query --query "up"
+
+      # Run a preset query
+      kubectl metrics preset --name mtv_migration_status
+
+      # Start MCP server for AI assistants
+      kubectl metrics mcp-server
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-metrics/releases/download/v0.0.2/kubectl-metrics-v0.0.2-linux-amd64.tar.gz
+    sha256: 681b1c78a42b2315d1313d8ee82fa9c2c067250d0d8af852beec194c2199a47c
+    files:
+    - from: kubectl-metrics-linux-amd64
+      to: kubectl-metrics
+    - from: LICENSE
+      to: .
+    bin: kubectl-metrics
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/yaacov/kubectl-metrics/releases/download/v0.0.2/kubectl-metrics-v0.0.2-linux-arm64.tar.gz
+    sha256: cb8ce86034add1b305211dbcd1783df262126bbcb28bff6c1bf8da35e99f8de2
+    files:
+    - from: kubectl-metrics-linux-arm64
+      to: kubectl-metrics
+    - from: LICENSE
+      to: .
+    bin: kubectl-metrics
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-metrics/releases/download/v0.0.2/kubectl-metrics-v0.0.2-darwin-amd64.tar.gz
+    sha256: 56983c081e3b194cace4f48c254a5607afc24a65d41e26d43a87a26ce354e4a5
+    files:
+    - from: kubectl-metrics-darwin-amd64
+      to: kubectl-metrics
+    - from: LICENSE
+      to: .
+    bin: kubectl-metrics
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/yaacov/kubectl-metrics/releases/download/v0.0.2/kubectl-metrics-v0.0.2-darwin-arm64.tar.gz
+    sha256: 54875a295b996d24906f2713951c86a4b3fe3704f6bb20ad5b485bf17c90bec4
+    files:
+    - from: kubectl-metrics-darwin-arm64
+      to: kubectl-metrics
+    - from: LICENSE
+      to: .
+    bin: kubectl-metrics
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-metrics/releases/download/v0.0.2/kubectl-metrics-v0.0.2-windows-amd64.zip
+    sha256: 938e04359e94c1ecddf46186558b9c2a16c791c56f8267065639e466e10ed884
+    files:
+    - from: kubectl-metrics-windows-amd64.exe
+      to: kubectl-metrics.exe
+    - from: LICENSE
+      to: .
+    bin: kubectl-metrics.exe

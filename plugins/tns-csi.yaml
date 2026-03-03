@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: tns-csi
 spec:
-  version: v0.4.8
+  version: v0.5.0
   homepage: https://github.com/fenio/tns-csi
   shortDescription: Manage TrueNAS CSI volumes
   description: |
@@ -27,34 +27,34 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/fenio/tns-csi/releases/download/plugin-v0.4.8/kubectl-tns_csi-linux-amd64.tar.gz
-    sha256: 12859af21517036c160eb1c3ac24841f4d56c4b9ac3d516beb154fc04644391c
+    uri: https://github.com/fenio/tns-csi/releases/download/plugin-v0.5.0/kubectl-tns_csi-linux-amd64.tar.gz
+    sha256: a3506d62e9e204b55164ec3806e9594ca4253bce4b2351c4942429d16eb98641
     bin: kubectl-tns_csi
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/fenio/tns-csi/releases/download/plugin-v0.4.8/kubectl-tns_csi-linux-arm64.tar.gz
-    sha256: 752f8c7ba98ee0df47a77253c07eda534b31dddfadfc10a95bad038f08fe0830
+    uri: https://github.com/fenio/tns-csi/releases/download/plugin-v0.5.0/kubectl-tns_csi-linux-arm64.tar.gz
+    sha256: cfae1d50743b1cdfc2571d20a59fe90154692f3a458dc85f21de488329125247
     bin: kubectl-tns_csi
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/fenio/tns-csi/releases/download/plugin-v0.4.8/kubectl-tns_csi-darwin-amd64.tar.gz
-    sha256: 77beba182cf773c4ec40e81c7faa8ce8b6eb54b278a4bfb78f1e2bbac4d00f3c
+    uri: https://github.com/fenio/tns-csi/releases/download/plugin-v0.5.0/kubectl-tns_csi-darwin-amd64.tar.gz
+    sha256: 74e2612fbe6d87d8017f8fc886c6c60ac5101b170519c759c9ee05c5542d8c1a
     bin: kubectl-tns_csi
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/fenio/tns-csi/releases/download/plugin-v0.4.8/kubectl-tns_csi-darwin-arm64.tar.gz
-    sha256: 381d5fce61a946334c00ef844e1c0950d0d1f01ef188192e4f808e5d096c1dbb
+    uri: https://github.com/fenio/tns-csi/releases/download/plugin-v0.5.0/kubectl-tns_csi-darwin-arm64.tar.gz
+    sha256: d0b505cf84b85c763f659adaea2aca19fb00e84e1eb4e6447f5c3b49628f9588
     bin: kubectl-tns_csi
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/fenio/tns-csi/releases/download/plugin-v0.4.8/kubectl-tns_csi-windows-amd64.zip
-    sha256: d5c821975448dc29596f59ba26ce78fe1f817c0159f7c04a49cc8f55fe46170a
+    uri: https://github.com/fenio/tns-csi/releases/download/plugin-v0.5.0/kubectl-tns_csi-windows-amd64.zip
+    sha256: 73a633cb7d344254da73e771778cbe073e087866d645dc886191fc507c78d26d
     bin: kubectl-tns_csi.exe

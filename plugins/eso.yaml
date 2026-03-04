@@ -1,0 +1,86 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: eso
+spec:
+  version: v0.2.0
+  homepage: https://github.com/josegonzalez/kubectl-eso
+  shortDescription: Manage Secrets for External Secrets Operator
+  description: |
+    Manage Secrets within the External Secrets Operator ecosystem.
+
+    kubectl-eso provides commands for managing ExternalSecret and SecretStore resources,
+    simplifying common workflows when working with the External Secrets Operator.
+  platforms:
+  - bin: kubectl-eso
+    uri: https://github.com/josegonzalez/kubectl-eso/releases/download/v0.2.0/kubectl-eso_0.2.0_linux_amd64.tar.gz
+    sha256: a7b94897d9dc4ec19caf40e962e4811d02a7560dab6ad736abef205b52c51274
+    files:
+      - from: kubectl-eso
+        to: .
+      - from: LICENSE
+        to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-eso
+    uri: https://github.com/josegonzalez/kubectl-eso/releases/download/v0.2.0/kubectl-eso_0.2.0_linux_arm64.tar.gz
+    sha256: c87f4466080b4f90a3e4d3fa2cbd581d90a496a64b55dd24d056a8f555d1d661
+    files:
+      - from: kubectl-eso
+        to: .
+      - from: LICENSE
+        to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - bin: kubectl-eso
+    uri: https://github.com/josegonzalez/kubectl-eso/releases/download/v0.2.0/kubectl-eso_0.2.0_darwin_amd64.tar.gz
+    sha256: 3798cd3a300ccd6b3a59b1a30347050cbb7daf1fa8f435042401742efbf3c717
+    files:
+      - from: kubectl-eso
+        to: .
+      - from: LICENSE
+        to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kubectl-eso
+    uri: https://github.com/josegonzalez/kubectl-eso/releases/download/v0.2.0/kubectl-eso_0.2.0_darwin_arm64.tar.gz
+    sha256: 03b907e740ab4a83923bcee0f3aebfc038b55ee2ad31be8a4f3183bf21a2b8eb
+    files:
+      - from: kubectl-eso
+        to: .
+      - from: LICENSE
+        to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: kubectl-eso.exe
+    uri: https://github.com/josegonzalez/kubectl-eso/releases/download/v0.2.0/kubectl-eso_0.2.0_windows_amd64.zip
+    sha256: 3a2ca9844fad3625de8e05184bae59ffd7a81c62b93da663f15a36bf593a8ee6
+    files:
+      - from: kubectl-eso.exe
+        to: .
+      - from: LICENSE
+        to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  - bin: kubectl-eso.exe
+    uri: https://github.com/josegonzalez/kubectl-eso/releases/download/v0.2.0/kubectl-eso_0.2.0_windows_arm64.zip
+    sha256: 5227d6924441aafaae1f416dd0e5fb2291a5787eae089997f772a91dcb80a9af
+    files:
+      - from: kubectl-eso.exe
+        to: .
+      - from: LICENSE
+        to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: arm64

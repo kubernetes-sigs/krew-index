@@ -3,10 +3,10 @@ kind: Plugin
 metadata:
   name: kuttl
 spec:
-  version: "v0.22.0"
+  version: "v0.25.0"
 
   shortDescription: Declaratively run and test operators
-  homepage: https://kuttl.dev/
+  homepage: https://github.com/kudobuilder/kuttl
   description: |
     The KUbernetes Test TooL (KUTTL) is a highly productive test
     toolkit for testing operators on Kubernetes.
@@ -15,34 +15,34 @@ spec:
       matchLabels:
         os: "linux"
         arch: "amd64"
-    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.22.0/kuttl_0.22.0_linux_x86_64.tar.gz
-    sha256: "86f3a9f7c0b2614af62aa8cd3c6667131a64d76179fe12df97061cb168b63949"
+    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.25.0/kuttl_0.25.0_linux_x86_64.tar.gz
+    sha256: "11329501df6448610f4813242dfafeba9a1a81fa1f1d90abd855eaf6e06ab779"
     bin: "./kubectl-kuttl"
   - selector:
       matchLabels:
         os: "linux"
         arch: "386"
-    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.22.0/kuttl_0.22.0_linux_i386.tar.gz
-    sha256: "52c055c477ed5bd34afde5d4fe128124e3578d2d78b89eba44519eac4fb575a0"
+    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.25.0/kuttl_0.25.0_linux_i386.tar.gz
+    sha256: "e9718e05eed973f9decbf820194d827a02d0ff2ac1cdc5903642716c1c0dc7f2"
     bin: "./kubectl-kuttl"
   - selector:
       matchLabels:
         os: "linux"
         arch: "arm64"
-    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.22.0/kuttl_0.22.0_linux_arm64.tar.gz
-    sha256: "90566abcd37ca7c4eea080eeb29c68dbbc72bf8e27a2e21269020e327240b859"
+    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.25.0/kuttl_0.25.0_linux_arm64.tar.gz
+    sha256: "0000a9cd9ae70ed1fccf7a83d8580d0c066f69dc12ee826ed5dc25e1a0b6862d"
     bin: "./kubectl-kuttl"
   - selector:
       matchLabels:
         os: "darwin"
         arch: "amd64"
-    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.22.0/kuttl_0.22.0_darwin_x86_64.tar.gz
-    sha256: "76128163b1f49655267c81a166f69001bba082e213cfaddc86a4ce88c1bceb32"
+    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.25.0/kuttl_0.25.0_darwin_x86_64.tar.gz
+    sha256: "f9ab06b4ddcf2a2a6e2005b217089849fc4625a6485f24effb306696bc5d189f"
     bin: "./kubectl-kuttl"
   - selector:
       matchLabels:
         os: "darwin"
         arch: "arm64"
-    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.22.0/kuttl_0.22.0_darwin_arm64.tar.gz
-    sha256: "04c127e141719bbb8df29e4e1f7c6f6eb169423a5b0aceca73cac8e4326153f8"
+    uri: https://github.com/kudobuilder/kuttl/releases/download/v0.25.0/kuttl_0.25.0_darwin_arm64.tar.gz
+    sha256: "1350dc5b06a4de5723055ffadca0dfb9d6bfd26988d33fd6d3b445d256b242d0"
     bin: "./kubectl-kuttl"

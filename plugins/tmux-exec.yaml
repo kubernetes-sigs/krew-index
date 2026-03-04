@@ -3,13 +3,13 @@ kind: Plugin
 metadata:
   name: tmux-exec
 spec:
-  version: "v0.4.0"
+  version: "v0.5.0"
   platforms:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-    uri: https://github.com/predatorray/kubectl-tmux-exec/releases/download/v0.4.0/kubectl-tmux-exec-0.4.0.tar.gz
-    sha256: "f82c498432f02a7ff619546733011360426a16190a122f849a9a8a82e795ee1e"
+    uri: https://github.com/predatorray/kubectl-tmux-exec/releases/download/v0.5.0/kubectl-tmux-exec-0.5.0.tar.gz
+    sha256: "6083d9724c028a0a70fa7266fc55518a105921e5204357c4b7e5616dbcf15739"
     bin: "bin/kubectl-tmux_exec"
   shortDescription: >- 
     An exec multiplexer using Tmux
@@ -17,19 +17,6 @@ spec:
   caveats: |
     This plugin needs the following programs:
     * tmux(1)
-    * gnu-getopt(1)
-
-    Since the `getopt` in GNU-Linux is by default the GNU's one,
-    it is not required to install `gnu-getopt` again.
-
-    But, if you are using Mac, please follow the instruction below.
-    1. `brew install gnu-getopt`, or download it from its website
-       and install it manually.
-    2. Either add `export GNU_GETOPT_PREFIX="$(brew --prefix gnu-getopt)"`
-       to your profile file, which is RECOMMENDED.
-       Or, replace the `getopt` with `gnu-getopt` by adding it to
-       the head of `$PATH` env, like
-       `export PATH="$(brew --prefix gnu-getopt)/bin:$PATH"`.
   description: |
     This plugin uses Tmux to multiplex commands to pods.
     Instead of `exec bash` into multiple pod's containers one-at-a-time,

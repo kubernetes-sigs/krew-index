@@ -4,7 +4,7 @@ kind: Plugin
 metadata:
   name: browse-pvc
 spec:
-  version: "v1.3.0"
+  version: "v1.4.0"
   homepage: https://github.com/clbx/kubectl-browse-pvc
   shortDescription: "Browse PVC contents from the command line."
   description: "Browse PVCs from the command line. Creates a job thats binds an unbound PVC and execs into it."
@@ -14,30 +14,30 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/clbx/kubectl-browse-pvc/releases/download/v1.3.0/kubectl-browse-pvc-darwin-arm.zip
-    sha256: ca8e33f6e3e0aac7bd1f092f0b2f8c7948dc34bd2bc5c9c1b4da955d72cc6edd
+    uri: https://github.com/clbx/kubectl-browse-pvc/releases/download/v1.4.0/kubectl-browse-pvc-darwin-arm.zip
+    sha256: bc616a9217d1ad3fcdf880cd014e64688dc8fa14736860f29c0f6f09c0838e96
     bin: kubectl-browse-pvc
   # macOS x86_64
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/clbx/kubectl-browse-pvc/releases/download/v1.3.0/kubectl-browse-pvc-darwin-x86_64.zip
-    sha256: 655af310ef596dffc7113480b70d02329cb7c89e5be854e3ad9d8de9884580df
+    uri: https://github.com/clbx/kubectl-browse-pvc/releases/download/v1.4.0/kubectl-browse-pvc-darwin-x86_64.zip
+    sha256: 3bce3f02261c4a4bf97fac52f29043a231ec350c9bfcf3f5d79a019e37ead3f1
     bin: kubectl-browse-pvc
   # linux x86_64
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/clbx/kubectl-browse-pvc/releases/download/v1.3.0/kubectl-browse-pvc-linux-x86_64.zip
-    sha256: 3b6125703bf38635ec8b8d192edae593dd66c74180bb22c76ba32d4f4a4c56ce
+    uri: https://github.com/clbx/kubectl-browse-pvc/releases/download/v1.4.0/kubectl-browse-pvc-linux-x86_64.zip
+    sha256: 4dfe925433ab1ee7c632c2aad15042f3e383b229a8bd2eba196427a9fb163e26
     bin: kubectl-browse-pvc
   # linux ARM
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/clbx/kubectl-browse-pvc/releases/download/v1.3.0/kubectl-browse-pvc-linux-arm.zip
-    sha256: 85123b0bb28f685cf46259c364d29d85f73817d63b6973cb792ed6eab03df5d4
+    uri: https://github.com/clbx/kubectl-browse-pvc/releases/download/v1.4.0/kubectl-browse-pvc-linux-arm.zip
+    sha256: 1c8379eb71886e6b5ff891b7e3da32a085e9055a0865ba5e6845d4c2d318a375
     bin: kubectl-browse-pvc

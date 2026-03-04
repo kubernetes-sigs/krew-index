@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: mtv
 spec:
-  version: v0.1.48
+  version: v0.1.91
   homepage: https://github.com/yaacov/kubectl-mtv
   shortDescription: Migrate VMs to KubeVirt using Forklift
   description: |
@@ -24,21 +24,21 @@ spec:
     
     Examples:
       # Create a VMware provider
-      kubectl mtv create provider vmware --type vsphere -U https://vcenter.com/sdk -u admin
+      kubectl mtv create provider --name vmware --type vsphere --url https://vcenter.com/sdk --username admin
       
       # List available VMs
-      kubectl mtv get inventory vms vmware -q "where name ~= 'web-.*'"
+      kubectl mtv get inventory vms --provider vmware --query "where name ~= 'web-.*'"
       
       # Create and start a migration plan
-      kubectl mtv create plan my-migration --source vmware --vms vm1,vm2
-      kubectl mtv start plan my-migration
+      kubectl mtv create plan --name my-migration --source vmware --vms vm1,vm2
+      kubectl mtv start plan --name my-migration
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.48/kubectl-mtv-v0.1.48-linux-amd64.tar.gz
-    sha256: f27dbf13f0505bf293dc1904d4b36e47ccf98fc7832bb6c0ee8a08645cc44822
+    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.91/kubectl-mtv-v0.1.91-linux-amd64.tar.gz
+    sha256: 189aa72be6313f751d8bc4b226aff299850e288b1fd023da8543105a86043d33
     files:
     - from: kubectl-mtv-linux-amd64
       to: kubectl-mtv
@@ -49,8 +49,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.48/kubectl-mtv-v0.1.48-linux-arm64.tar.gz
-    sha256: cd130015622d217a566035b757c458188502664d91831a731d7933638a10702d
+    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.91/kubectl-mtv-v0.1.91-linux-arm64.tar.gz
+    sha256: d3d4381837bf6976d681c9f67d2d02d9db6d675564b0466484a8b65628862f6f
     files:
     - from: kubectl-mtv-linux-arm64
       to: kubectl-mtv
@@ -61,8 +61,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.48/kubectl-mtv-v0.1.48-darwin-amd64.tar.gz
-    sha256: 4f41545957f6be3cb4d5c62090e30e56b4ad30a7c4e9dcb7d0fb53b31ddc461e
+    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.91/kubectl-mtv-v0.1.91-darwin-amd64.tar.gz
+    sha256: 4588b23b6eb934747531c85bcede11bd7bf580da53cd836ba2d701ef8bf1ab45
     files:
     - from: kubectl-mtv-darwin-amd64
       to: kubectl-mtv
@@ -73,8 +73,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.48/kubectl-mtv-v0.1.48-darwin-arm64.tar.gz
-    sha256: 07acf029a34de36b36b286c6fdc8424633f2fb60ed693c5dd5f91fb7da551880
+    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.91/kubectl-mtv-v0.1.91-darwin-arm64.tar.gz
+    sha256: 006298202ec112b7219d44ab08bee43353624802d9866a4fb2815063118be201
     files:
     - from: kubectl-mtv-darwin-arm64
       to: kubectl-mtv
@@ -85,8 +85,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.48/kubectl-mtv-v0.1.48-windows-amd64.zip
-    sha256: 57205d565ee4fcb910da07d52f3fdff843468b42291c3e0ede58c488abed7cc1
+    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.1.91/kubectl-mtv-v0.1.91-windows-amd64.zip
+    sha256: 2c86770de36a761886a7b7fcab7c1aa4349195485397ced925e445a407558f99
     files:
     - from: kubectl-mtv-windows-amd64.exe
       to: kubectl-mtv.exe

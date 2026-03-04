@@ -3,46 +3,46 @@ kind: Plugin
 metadata:
   name: conditioner
 spec:
-  version: v1.4.1
+  version: v1.5.1
   platforms:
     - bin: kubectl-conditioner.exe
-      uri: https://github.com/devbytes-cloud/conditioner/releases/download/v1.4.1/conditioner_Windows_x86_64.zip
-      sha256: 96b3dd3678e2c83af5943878aab11b2dda8b17ed981620011a79afde42a02ac3
+      uri: https://github.com/devbytes-cloud/conditioner/releases/download/v1.5.1/conditioner_Windows_x86_64.zip
+      sha256: 1cf75a028c0b83879119bee4ab08f56b10f141b8848ac5bebf54aaa098119892
       selector:
         matchLabels:
           os: windows
           arch: amd64
     - bin: kubectl-conditioner.exe
-      uri: https://github.com/devbytes-cloud/conditioner/releases/download/v1.4.1/conditioner_Windows_arm64.zip
-      sha256: 296db4a4a44acac4654890aeba882e7f27428a07d20af486dde1bb8f8a608d57
+      uri: https://github.com/devbytes-cloud/conditioner/releases/download/v1.5.1/conditioner_Windows_arm64.zip
+      sha256: 1dbb69342d397a5c584f45ac75ab85d4538c663cb9bd779ecd574b2d29c1a73f
       selector:
         matchLabels:
           os: windows
           arch: arm64
     - bin: kubectl-conditioner
-      uri: https://github.com/devbytes-cloud/conditioner/releases/download/v1.4.1/conditioner_Linux_x86_64.tar.gz
-      sha256: 791f8d41ee35817837bf0ff7f81976d8471aa112106b3bbebaa5ae4b74373d31
+      uri: https://github.com/devbytes-cloud/conditioner/releases/download/v1.5.1/conditioner_Linux_x86_64.tar.gz
+      sha256: dd838868f9a00357dc50a4cbc79816512500b264ff8c1e898e05878efc5b42f2
       selector:
         matchLabels:
           os: linux
           arch: amd64
     - bin: kubectl-conditioner
-      uri: https://github.com/devbytes-cloud/conditioner/releases/download/v1.4.1/conditioner_Linux_arm64.tar.gz
-      sha256: f44c05eaedcf79a82883a57e7209a08a0cab0a2fc594bc8176e7e5e4bf4dd51a
+      uri: https://github.com/devbytes-cloud/conditioner/releases/download/v1.5.1/conditioner_Linux_arm64.tar.gz
+      sha256: 3f811aa56e22488638fd6f3ce98b6faee0747feee990dffaf659df99ecfc8656
       selector:
         matchLabels:
           os: linux
           arch: arm64
     - bin: kubectl-conditioner
-      uri: https://github.com/devbytes-cloud/conditioner/releases/download/v1.4.1/conditioner_Darwin_x86_64.tar.gz
-      sha256: c10a3ad64e255f9e454c1d93170d63fa494fcab108f5a992a2a557273b72fb04
+      uri: https://github.com/devbytes-cloud/conditioner/releases/download/v1.5.1/conditioner_Darwin_x86_64.tar.gz
+      sha256: 043a4f1551be5e05b74dc59f3a6f3f67f041ff1e138e1b9b2090de27faec9520
       selector:
         matchLabels:
           os: darwin
           arch: amd64
     - bin: kubectl-conditioner
-      uri: https://github.com/devbytes-cloud/conditioner/releases/download/v1.4.1/conditioner_Darwin_arm64.tar.gz
-      sha256: 8a0f8694fbc511d4ebdafb686a9fe0ec29f8ec8bf385111e3675446156cac01e
+      uri: https://github.com/devbytes-cloud/conditioner/releases/download/v1.5.1/conditioner_Darwin_arm64.tar.gz
+      sha256: 2a9cfdf0421d71869ba580ad40328321fba0fb4b27d28d2fa65bbf8fa5b2d8f3
       selector:
         matchLabels:
           os: darwin

@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: kueue
 spec:
-  version: v0.14.4
+  version: v0.16.2
   shortDescription: Controls Kueue queueing manager.
   homepage: https://kueue.sigs.k8s.io/docs/reference/kubectl-kueue/
   description: |
@@ -19,27 +19,27 @@ spec:
       matchLabels:
         os: "linux"
         arch: "amd64"
-    uri: https://github.com/kubernetes-sigs/kueue/releases/download/v0.14.4/kubectl-kueue-linux-amd64.tar.gz
-    sha256: bc3a46147e78fd6ce80b740c5a1e334d96575f8575ca6dfc42d64f2ae7918969
+    uri: https://github.com/kubernetes-sigs/kueue/releases/download/v0.16.2/kubectl-kueue-linux-amd64.tar.gz
+    sha256: d3bdfc805d45dcf710022e43218dfff97363948ea70af364c0b1ee12a57cffd8
     bin: "kubectl-kueue"
   - selector:
       matchLabels:
         os: "linux"
         arch: "arm64"
-    uri: https://github.com/kubernetes-sigs/kueue/releases/download/v0.14.4/kubectl-kueue-linux-arm64.tar.gz
-    sha256: f5e2705d0e652fde10f94263483d6d97ebef90eb46c44679fb8f92ab256e1869
+    uri: https://github.com/kubernetes-sigs/kueue/releases/download/v0.16.2/kubectl-kueue-linux-arm64.tar.gz
+    sha256: 5c226cf5da23f55b111603f4cd44700acfe717fd3a2f8fa8800206f1cf3eebe8
     bin: "kubectl-kueue"
   - selector:
       matchLabels:
         os: "darwin"
         arch: "amd64"
-    uri: https://github.com/kubernetes-sigs/kueue/releases/download/v0.14.4/kubectl-kueue-darwin-amd64.tar.gz
-    sha256: fc324e4ced518d9d14d7b89d92852e63dc773f1c2ac813f5d355485575057c6d
+    uri: https://github.com/kubernetes-sigs/kueue/releases/download/v0.16.2/kubectl-kueue-darwin-amd64.tar.gz
+    sha256: 97f82de752f3ec7c5adabeb2beab7e1ef663158999adea27eceb6f5c0bd112f9
     bin: "kubectl-kueue"
   - selector:
       matchLabels:
         os: "darwin"
         arch: "arm64"
-    uri: https://github.com/kubernetes-sigs/kueue/releases/download/v0.14.4/kubectl-kueue-darwin-arm64.tar.gz
-    sha256: 42b87576fd24ab853317cbf31ef07888fed15a2b87feca3ef054712ad8d34aa8
+    uri: https://github.com/kubernetes-sigs/kueue/releases/download/v0.16.2/kubectl-kueue-darwin-arm64.tar.gz
+    sha256: 4e44ae8f80209007fdd0249b038d9d2505745ff1b8d4543de065f1f6fde20f45
     bin: "kubectl-kueue"

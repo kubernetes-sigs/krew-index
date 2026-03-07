@@ -1,0 +1,73 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: debug-queries
+spec:
+  version: v0.0.1
+  homepage: https://github.com/yaacov/kubectl-debug-queries
+  shortDescription: Query Kubernetes resources, logs, and events
+  description: |
+    kubectl-debug-queries is a kubectl plugin for querying Kubernetes resources,
+    logs, and events. It works as both a CLI tool and an MCP server for
+    AI assistants (Claude Desktop, Cursor IDE, OpenShift Lightspeed).
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-debug-queries/releases/download/v0.0.1/kubectl-debug-queries-v0.0.1-linux-amd64.tar.gz
+    sha256: 8d5e9b0bb806d37e3d0d7f7380b7de1182d09c09dbe96b53335f1e52eb8ddb0a
+    files:
+    - from: kubectl-debug-queries-linux-amd64
+      to: kubectl-debug_queries
+    - from: LICENSE
+      to: .
+    bin: kubectl-debug_queries
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/yaacov/kubectl-debug-queries/releases/download/v0.0.1/kubectl-debug-queries-v0.0.1-linux-arm64.tar.gz
+    sha256: 112b5086cf3859b7c5d0b42df90191d13e5cee8471b72f4db07598e5e1ea5769
+    files:
+    - from: kubectl-debug-queries-linux-arm64
+      to: kubectl-debug_queries
+    - from: LICENSE
+      to: .
+    bin: kubectl-debug_queries
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-debug-queries/releases/download/v0.0.1/kubectl-debug-queries-v0.0.1-darwin-amd64.tar.gz
+    sha256: 500f111a9d5e064cca83d6f0fe3e5c720de1fe85250c2ab083cd4c7576b6374c
+    files:
+    - from: kubectl-debug-queries-darwin-amd64
+      to: kubectl-debug_queries
+    - from: LICENSE
+      to: .
+    bin: kubectl-debug_queries
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/yaacov/kubectl-debug-queries/releases/download/v0.0.1/kubectl-debug-queries-v0.0.1-darwin-arm64.tar.gz
+    sha256: 1d5988284ee08a666bc9129976d3934e7b7d84e9b8856b533c6551890a35b470
+    files:
+    - from: kubectl-debug-queries-darwin-arm64
+      to: kubectl-debug_queries
+    - from: LICENSE
+      to: .
+    bin: kubectl-debug_queries
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-debug-queries/releases/download/v0.0.1/kubectl-debug-queries-v0.0.1-windows-amd64.zip
+    sha256: 041de208cd4259827fb9aabaf9b8fc0fd7e01e485a1f2a80c436c730bef2d28e
+    files:
+    - from: kubectl-debug-queries-windows-amd64.exe
+      to: kubectl-debug_queries.exe
+    - from: LICENSE
+      to: .
+    bin: kubectl-debug_queries.exe

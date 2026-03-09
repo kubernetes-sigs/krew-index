@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: rbac-map
+spec:
+  version: "v0.2.1" # This will be managed by Git Tags
+  homepage: https://github.com/hrishin/kubectl-rbacmap
+  shortDescription: "Map RBAC permissions for subjects (ServiceAccounts, Users, Groups)"
+  description: |
+    kubectl-rbac-map finds all permissions associated with Kubernetes subjects
+    by inspecting Roles, ClusterRoles, RoleBindings, and ClusterRoleBindings.
+    It resolves complex mappings (like AWS IAM ARNs to EKS identities) and
+    outputs the exact access granted in clean tables, markdown, or CSV.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/hrishin/kubectl-rbacmap/releases/download/v0.2.1/kubectl-rbacmap_Darwin_x86_64.tar.gz
+    sha256: "89d0ba9ee71cb7c256cd7ec5a4c49e78283a8820b0684bd5ae70200d283d8171"
+    bin: kubectl-rbac-map
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/hrishin/kubectl-rbacmap/releases/download/v0.2.1/kubectl-rbacmap_Darwin_arm64.tar.gz
+    sha256: "da3d38354ffc121b836b680a75833ca431b5c7e45908635559ae01f9eb98a9b4"
+    bin: kubectl-rbac-map
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/hrishin/kubectl-rbacmap/releases/download/v0.2.1/kubectl-rbacmap_Linux_x86_64.tar.gz
+    sha256: "623ed2a79f5d698e73586086aa9abacfe795b9a9a7f4be6ff4cd654d72433b86"
+    bin: kubectl-rbac-map
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/hrishin/kubectl-rbacmap/releases/download/v0.2.1/kubectl-rbacmap_Linux_arm64.tar.gz
+    sha256: "28669e5727469609e863d2ca21a5e173299ece9e0b07c13c771f3b5c1c14bdd4"
+    bin: kubectl-rbac-map
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/hrishin/kubectl-rbacmap/releases/download/v0.2.1/kubectl-rbacmap_Windows_x86_64.zip
+    sha256: "b0bd4ea6da803392f2d18a27f5238361bb4f56f6a7071dbb72990b8ed651899e"
+    bin: kubectl-rbac-map.exe

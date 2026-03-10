@@ -1,0 +1,53 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cilium-policy-gen
+spec:
+  version: v1.3.0
+  homepage: https://github.com/SoulKyu/cpg
+  shortDescription: "Generate CiliumNetworkPolicy from Hubble flows"
+  description: |
+    Watches dropped network flows in real-time via Hubble Relay and
+    automatically generates CiliumNetworkPolicy YAML files that would
+    allow them. Useful for clusters with a default-deny posture where
+    writing policies manually is tedious and error-prone.
+
+    Supports TCP/UDP ports, ICMP, reserved entities, and CIDR rules.
+    Merges with existing policies on disk and writes only on changes.
+
+    Usage:
+      kubectl cilium-policy-gen generate -n <namespace>
+      kubectl cilium-policy-gen generate --server <relay-addr>
+      kubectl cilium-policy-gen generate --cluster-dedup -n <namespace>
+  caveats: |
+    Requires a running Cilium cluster with Hubble Relay enabled.
+    The plugin auto port-forwards to hubble-relay by default.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/SoulKyu/cpg/releases/download/v1.3.0/cilium-policy-gen_linux_amd64.tar.gz
+    sha256: 07cf24cc249e507e08df8f52f0af06783ba8489bddfd35719adff67e16aa2fb5
+    bin: kubectl-cilium_policy_gen
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/SoulKyu/cpg/releases/download/v1.3.0/cilium-policy-gen_linux_arm64.tar.gz
+    sha256: f207423f2d87be5d800299cefb406a68b46386053f6d45b84c09ee76e350bd7f
+    bin: kubectl-cilium_policy_gen
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/SoulKyu/cpg/releases/download/v1.3.0/cilium-policy-gen_darwin_amd64.tar.gz
+    sha256: f39f1383bd77f248e520cc38a27f53988310d20898f050b9059e119e21e8c6c8
+    bin: kubectl-cilium_policy_gen
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/SoulKyu/cpg/releases/download/v1.3.0/cilium-policy-gen_darwin_arm64.tar.gz
+    sha256: 9142fd5a75770d58bc01ce217f8f851dd6dd8f0d64e19d9d017e13c8ff4eddd3
+    bin: kubectl-cilium_policy_gen

@@ -3,35 +3,35 @@ kind: Plugin
 metadata:
   name: config-doctor
 spec:
-  version: v0.3.7
+  version: v0.3.8
   shortDescription: Validate and test kubeconfigs 
   homepage: https://github.com/aptakube/kubectl-config-doctor
   description: This plugin validates and test different kubeconfigs settings 
   platforms:
   - bin: ./kubectl-config-doctor.exe
-    uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.7/kubectl-config-doctor-windows-amd64.zip
-    sha256: ee064b10eacd4f75ab30e3677b8783f001bdd739e18c10e2e08eca36b01ec676
+    uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.8/kubectl-config-doctor-windows-amd64.zip
+    sha256: cce2d3f98fadb7ab499d071455139092dc8e5324434a3e73b9cbe13e6b5b1d5b
     selector:
       matchLabels:
         os: windows
         arch: amd64
   - bin: ./kubectl-config-doctor
-    uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.7/kubectl-config-doctor-linux-amd64.tar.gz
-    sha256: d4fc3e59a6a0ff2d8d1a4ea8006328bdfb83a8a32b280238c0e50e0fb5168dc5
+    uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.8/kubectl-config-doctor-linux-amd64.tar.gz
+    sha256: c72e3a142fefcdb721915b64cb42b1038d826aa59bfef8f62dd6e03dc984c0e8
     selector:
       matchLabels:
         os: linux
         arch: amd64
   - bin: ./kubectl-config-doctor
-    uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.7/kubectl-config-doctor-darwin-amd64.tar.gz
-    sha256: c63560ea9ecbf08a58fa30571b862ca264abe847c2259905a46d4f8bbf83b136
+    uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.8/kubectl-config-doctor-darwin-amd64.tar.gz
+    sha256: fa348ef566ac514e53920f033d8c28a08ce940477bd1ba85a50fba775564be6d
     selector:
       matchLabels:
         os: darwin
         arch: amd64
   - bin: ./kubectl-config-doctor
-    uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.7/kubectl-config-doctor-darwin-arm64.tar.gz
-    sha256: caaf205a812d5798c953da4e8d35d5d3e9979f35247431344c72adfab7de1771
+    uri: https://github.com/aptakube/kubectl-config-doctor/releases/download/v0.3.8/kubectl-config-doctor-darwin-arm64.tar.gz
+    sha256: d10faa40313fce9637a0215b3144f59b0d842ffe865597fa0cbe4982081da68a
     selector:
       matchLabels:
         os: darwin

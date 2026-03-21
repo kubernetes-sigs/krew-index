@@ -1,0 +1,121 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: finalizers
+spec:
+  version: v0.0.1
+  platforms:
+  - bin: kubectl-finalizers
+    uri: https://github.com/tremes/kubectl-finalizers/releases/download/v0.0.1/kubectl-finalizers_Linux_x86_64.tar.gz
+    sha256: 21969c88e56d2d00ec2daa3af5c5ba758d02e69b01ea8f651c17e011a76f8bed
+    files:
+      - from: kubectl-finalizers
+        to: kubectl-finalizers
+      - from: LICENSE
+        to: LICENSE
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-finalizers
+    uri: https://github.com/tremes/kubectl-finalizers/releases/download/v0.0.1/kubectl-finalizers_Linux_arm64.tar.gz
+    sha256: d1d238614fde5b083c7c9142bcaa8c152a2d2d8385d7d62d51533d0e1a0e6df2
+    files:
+      - from: kubectl-finalizers
+        to: kubectl-finalizers
+      - from: LICENSE
+        to: LICENSE
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - bin: kubectl-finalizers
+    uri: https://github.com/tremes/kubectl-finalizers/releases/download/v0.0.1/kubectl-finalizers_Darwin_x86_64.tar.gz
+    sha256: 91e3f28afdc1b7a83a00806207af5e4c8dafdd29019a4c72884e93f11fcad3ee
+    files:
+      - from: kubectl-finalizers
+        to: kubectl-finalizers
+      - from: LICENSE
+        to: LICENSE
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kubectl-finalizers
+    uri: https://github.com/tremes/kubectl-finalizers/releases/download/v0.0.1/kubectl-finalizers_Darwin_arm64.tar.gz
+    sha256: 12efbfa946093631298b6e0d471d4a455f846c5c061b18ce3e0bb56f6dc91aba
+    files:
+      - from: kubectl-finalizers
+        to: kubectl-finalizers
+      - from: LICENSE
+        to: LICENSE
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: kubectl-finalizers
+    uri: https://github.com/tremes/kubectl-finalizers/releases/download/v0.0.1/kubectl-finalizers_Linux_i386.tar.gz
+    sha256: aafbdbbdc4e71e276a6ddc47e6c3847bc5ba5ae32f6ba7060ee52d7ab2e4f69f
+    files:
+      - from: kubectl-finalizers
+        to: kubectl-finalizers
+      - from: LICENSE
+        to: LICENSE
+    selector:
+      matchLabels:
+        os: linux
+        arch: "386"
+  - bin: kubectl-finalizers.exe
+    uri: https://github.com/tremes/kubectl-finalizers/releases/download/v0.0.1/kubectl-finalizers_Windows_x86_64.zip
+    sha256: 0a3ea327dde03878814a74b07cd0dc8e98225634bc401dc9babefef550acd14f
+    files:
+      - from: kubectl-finalizers.exe
+        to: kubectl-finalizers.exe
+      - from: LICENSE
+        to: LICENSE
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  - bin: kubectl-finalizers.exe
+    uri: https://github.com/tremes/kubectl-finalizers/releases/download/v0.0.1/kubectl-finalizers_Windows_i386.zip
+    sha256: 53454c8ffa86b4a8059314615091bc4a6774c857ff83a32cd7ae3c5c9b11331d
+    files:
+      - from: kubectl-finalizers.exe
+        to: kubectl-finalizers.exe
+      - from: LICENSE
+        to: LICENSE
+    selector:
+      matchLabels:
+        os: windows
+        arch: "386"
+  - bin: kubectl-finalizers.exe
+    uri: https://github.com/tremes/kubectl-finalizers/releases/download/v0.0.1/kubectl-finalizers_Windows_arm64.zip
+    sha256: 2046f3ddd6d970338066848a81023b7394f696ccdf7f8cb1fc876f8a04811bc0
+    files:
+      - from: kubectl-finalizers.exe
+        to: kubectl-finalizers.exe
+      - from: LICENSE
+        to: LICENSE
+    selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+  shortDescription: Discover and fix resources blocked by pending finalizers
+  homepage: https://github.com/tremes/kubectl-finalizers
+  caveats: |
+    Usage:
+      kubectl finalizers                    # current namespace
+      kubectl finalizers --namespace test   # specific namespace
+      kubectl finalizers --clusterscoped   # cluster-wide resources
+  description: |
+    A kubectl plugin for discovering and fixing resources blocked by pending finalizers.
+
+    This plugin helps Kubernetes administrators resolve resources that are stuck in a
+    deletion state by automatically clearing their finalizers. It can scan resources
+    in a specific namespace or cluster-scoped resources.
+
+    Features:
+    - Identifies Kubernetes resources with pending deletion
+    - Removes finalizer values from stuck resources
+    - Supports namespace-specific and cluster-scoped resource scanning

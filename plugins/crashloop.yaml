@@ -1,0 +1,72 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: crashloop
+spec:
+  version: "v0.1.0"
+  homepage: "https://github.com/rohankaran/kubectl-crashloop"
+  shortDescription: "Inspect pod crash history and previous logs"
+  description: |
+    kubectl-crashloop correlates warning Events, last termination state,
+    and previous logs into one report for a single pod.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: "https://github.com/rohankaran/kubectl-crashloop/releases/download/v0.1.0/kubectl-crashloop_darwin_amd64.tar.gz"
+      sha256: "0a9b4c15f4acdea25d66eb849a201fe5fb0f8c92c7c385c6370641d767f9b630"
+      files:
+        - from: "kubectl-crashloop"
+          to: "."
+        - from: "LICENSE"
+          to: "."
+      bin: "kubectl-crashloop"
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: "https://github.com/rohankaran/kubectl-crashloop/releases/download/v0.1.0/kubectl-crashloop_darwin_arm64.tar.gz"
+      sha256: "e1046817034123f33a2609e4647184fa139f5b2293c15601bd8c246516aaa8c1"
+      files:
+        - from: "kubectl-crashloop"
+          to: "."
+        - from: "LICENSE"
+          to: "."
+      bin: "kubectl-crashloop"
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: "https://github.com/rohankaran/kubectl-crashloop/releases/download/v0.1.0/kubectl-crashloop_linux_amd64.tar.gz"
+      sha256: "86d978db1598916db4a8ec6a5bfd402bdf7cc6751938fd31bad61f3748ff459d"
+      files:
+        - from: "kubectl-crashloop"
+          to: "."
+        - from: "LICENSE"
+          to: "."
+      bin: "kubectl-crashloop"
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: "https://github.com/rohankaran/kubectl-crashloop/releases/download/v0.1.0/kubectl-crashloop_linux_arm64.tar.gz"
+      sha256: "8492569f049b53aadebd6199962f93a9d31fd9460ef0d7d86522beda608fa8ad"
+      files:
+        - from: "kubectl-crashloop"
+          to: "."
+        - from: "LICENSE"
+          to: "."
+      bin: "kubectl-crashloop"
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: "https://github.com/rohankaran/kubectl-crashloop/releases/download/v0.1.0/kubectl-crashloop_windows_amd64.zip"
+      sha256: "125d85ce5f68334ec9d67a8648f5d53f2fd730fbdef8d4832215c9713b2e2f80"
+      files:
+        - from: "kubectl-crashloop.exe"
+          to: "."
+        - from: "LICENSE"
+          to: "."
+      bin: "kubectl-crashloop.exe"

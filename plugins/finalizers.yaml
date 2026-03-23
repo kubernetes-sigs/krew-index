@@ -103,11 +103,6 @@ spec:
         arch: arm64
   shortDescription: Discover and fix resources blocked by pending finalizers
   homepage: https://github.com/tremes/kubectl-finalizers
-  caveats: |
-    Usage:
-      kubectl finalizers                    # current namespace
-      kubectl finalizers --namespace test   # specific namespace
-      kubectl finalizers --clusterscoped   # cluster-wide resources
   description: |
     A kubectl plugin for discovering and fixing resources blocked by pending finalizers.
 

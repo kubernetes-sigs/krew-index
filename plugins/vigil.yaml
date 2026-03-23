@@ -5,19 +5,13 @@ metadata:
 spec:
   version: v0.5.0
   homepage: https://github.com/stribog-cloud/KubeVigil
-  shortDescription: Kubernetes Security Posture Management — scan clusters for misconfigurations
+  shortDescription: Scan clusters for misconfigurations
   description: |
     KubeVigil scans Kubernetes clusters and YAML manifests for security
     misconfigurations. It runs 110 security checks across 12 categories,
     maps findings to compliance frameworks (CIS, MITRE ATT&CK, NSA/CISA),
     and outputs reports in 8 formats. Includes auto-remediation with a
     five-ring safety model.
-  caveats: |
-    This plugin provides the 'kubectl vigil' command.
-    Usage:
-      kubectl vigil scan                  # Scan live cluster
-      kubectl vigil scan -f ./manifests/  # Scan manifests
-      kubectl vigil fix ./manifests/      # Preview auto-fixes
   platforms:
     - selector:
         matchLabels:

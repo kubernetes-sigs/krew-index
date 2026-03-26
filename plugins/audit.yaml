@@ -1,0 +1,82 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: audit
+spec:
+  version: v0.1.0
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/codenio/kubectl-audit/releases/download/v0.1.0/audit_linux_amd64.tar.gz
+      sha256: "d03f090d69c1c1ce1ac9f8ef3755dc24e1409aa342b4518c6688af5928fd224b"
+      files:
+        - from: audit
+          to: .
+        - from: LICENSE
+          to: .
+      bin: audit
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/codenio/kubectl-audit/releases/download/v0.1.0/audit_linux_arm64.tar.gz
+      sha256: "a04c43185fdd4fd288cafabdf4080b0101c1e36a9410f036406c69771711550a"
+      files:
+        - from: audit
+          to: .
+        - from: LICENSE
+          to: .
+      bin: audit
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/codenio/kubectl-audit/releases/download/v0.1.0/audit_darwin_amd64.tar.gz
+      sha256: "e2aec5380819e88a8dc4fc261d01e7cbcbd338bfea18f8195189ff57c88348b0"
+      files:
+        - from: audit
+          to: .
+        - from: LICENSE
+          to: .
+      bin: audit
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/codenio/kubectl-audit/releases/download/v0.1.0/audit_darwin_arm64.tar.gz
+      sha256: "f36c635ad91c7edf09165f9c7d6f6cf4a85e205c28b3d925197c91a66e5762d8"
+      files:
+        - from: audit
+          to: .
+        - from: LICENSE
+          to: .
+      bin: audit
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/codenio/kubectl-audit/releases/download/v0.1.0/audit_windows_amd64.zip
+      sha256: "c5e40af343f0a031ee55868aa707555b495eab09b7d7f2ebddc378e2002cb503"
+      files:
+        - from: audit.exe
+          to: .
+        - from: LICENSE
+          to: .
+      bin: audit.exe
+  shortDescription: Run Kubernetes resource audits
+  homepage: https://github.com/codenio/kubectl-audit
+  caveats: |
+    Usage:
+      $ kubectl audit
+
+    For additional options:
+      $ kubectl audit --help
+      or https://github.com/codenio/kubectl-audit/blob/v0.1.0/doc/USAGE.md
+
+  description: |
+    Run quick Kubernetes resource audits for common operational issues, including
+    non-running pods, NotReady/SchedulingDisabled nodes, non-Bound PVC/PV,
+    failed jobs, and suspended cronjobs.
+    

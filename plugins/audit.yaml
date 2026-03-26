@@ -1,0 +1,57 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: audit
+spec:
+  version: v0.1.0
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/codenio/kubectl-audit/releases/download/v0.1.0/audit_linux_amd64.tar.gz
+    sha256: 0cbcf6799c7e8300b5b701cb28491d2405c99caca5d4eb6d16934e4ad8fece34
+    files:
+    - from: audit
+      to: .
+    - from: LICENSE
+      to: .
+    bin: audit
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/codenio/kubectl-audit/releases/download/v0.1.0/audit_darwin_amd64.tar.gz
+    sha256: 139ea4a5d579cf9b4845538eb849ee1f09f64ff2cd0b8ae02f3a41555be07511
+    files:
+    - from: audit
+      to: .
+    - from: LICENSE
+      to: .
+    bin: audit
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/codenio/kubectl-audit/releases/download/v0.1.0/audit_windows_amd64.zip
+    sha256: f39682b2a4222d82ced45e524eb06677872c72f638308be5d367d8971a1fd383
+    files:
+    - from: audit.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: audit.exe
+  shortDescription: Run Kubernetes resource audits
+  homepage: https://github.com/codenio/kubectl-audit
+  caveats: |
+    Usage:
+      $ kubectl audit
+
+    For additional options:
+      $ kubectl audit --help
+      or https://github.com/codenio/kubectl-audit/blob/v0.1.0/doc/USAGE.md
+
+  description: |
+    Run quick Kubernetes resource audits for common operational issues, including
+    non-running pods, NotReady/SchedulingDisabled nodes, non-Bound PVC/PV,
+    failed jobs, and suspended cronjobs.

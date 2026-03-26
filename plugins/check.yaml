@@ -1,0 +1,57 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: check
+spec:
+  version: v0.1.0
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/codenio/kubectl-check/releases/download/v0.1.0/check_linux_amd64.tar.gz
+    sha256: d0505b129438a96a216cc27c80156f01473390b41010280c8f63444035a9c75c
+    files:
+    - from: check
+      to: .
+    - from: LICENSE
+      to: .
+    bin: check
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/codenio/kubectl-check/releases/download/v0.1.0/check_darwin_amd64.tar.gz
+    sha256: 0e823b50df7d4857a953d0403e535dd292f8fccd5910688a76fcda3020980724
+    files:
+    - from: check
+      to: .
+    - from: LICENSE
+      to: .
+    bin: check
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/codenio/kubectl-check/releases/download/v0.1.0/check_windows_amd64.zip
+    sha256: a670d70b6194c510439b3bd3446d0007552e3c7f8438d69f56b33c86e4ed84d5
+    files:
+    - from: check.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: check.exe
+  shortDescription: Run Kubernetes health checks
+  homepage: https://github.com/codenio/kubectl-check
+  caveats: |
+    Usage:
+      $ kubectl check
+
+    For additional options:
+      $ kubectl check --help
+      or https://github.com/codenio/kubectl-check/blob/v0.1.0/doc/USAGE.md
+
+  description: |
+    Run quick Kubernetes health checks for common operational issues, including
+    non-running pods, NotReady/SchedulingDisabled nodes, non-Bound PVC/PV,
+    failed jobs, and suspended cronjobs.

@@ -1,0 +1,52 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: node-pods
+spec:
+  version: v0.0.1
+  homepage: https://github.com/noahnut/kubectl-node-pods
+  shortDescription: "Show node pod and resource balance"
+  description: |
+    A kubectl plugin that displays pod counts and CPU/Memory
+    request pressure across nodes to identify scheduling imbalance.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/noahnut/kubectl-node-pods/releases/download/v0.0.1/kubectl-node_pods-linux-amd64.tar.gz
+    sha256: 6b75dc0ba15608f667212cf0b464443e61d5dee806db402895c40b0be03d0084
+    bin: kubectl-node_pods
+    files:
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/noahnut/kubectl-node-pods/releases/download/v0.0.1/kubectl-node_pods-linux-arm64.tar.gz
+    sha256: 6dd1f4634554d57f429d19e23f6a989e8ac81d02af1edb29b8e2bfe73ac78a3d
+    bin: kubectl-node_pods
+    files:
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/noahnut/kubectl-node-pods/releases/download/v0.0.1/kubectl-node_pods-darwin-amd64.tar.gz
+    sha256: f85921a9dd0077388bb6b9f8d0874071e97e72885993231ad04e82c2086c8c3c
+    bin: kubectl-node_pods
+    files:
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/noahnut/kubectl-node-pods/releases/download/v0.0.1/kubectl-node_pods-darwin-arm64.tar.gz
+    sha256: f66ada0f313317a56fb5b4906ad61b41993d06cf9f5d9b37817ebe5f66846bee
+    bin: kubectl-node_pods
+    files:
+      - from: LICENSE
+        to: .

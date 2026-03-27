@@ -20,6 +20,8 @@ spec:
     files:
       - from: LICENSE
         to: .
+      - from: kubectl-node_pods
+        to: .
   - selector:
       matchLabels:
         os: linux
@@ -29,6 +31,8 @@ spec:
     bin: kubectl-node_pods
     files:
       - from: LICENSE
+        to: .
+      - from: kubectl-node_pods
         to: .
   - selector:
       matchLabels:
@@ -40,6 +44,8 @@ spec:
     files:
       - from: LICENSE
         to: .
+      - from: kubectl-node_pods
+        to: .
   - selector:
       matchLabels:
         os: darwin
@@ -49,4 +55,6 @@ spec:
     bin: kubectl-node_pods
     files:
       - from: LICENSE
+        to: .
+      - from: kubectl-node_pods
         to: .

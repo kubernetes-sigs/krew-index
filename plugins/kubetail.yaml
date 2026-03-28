@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: kubetail
 spec:
-  version: "v0.12.1"
+  version: "v0.12.2"
   homepage: https://github.com/kubetail-org/kubetail
   shortDescription: "Logging tool for Kubernetes with real-time web dashboard"
   description: |
@@ -16,41 +16,41 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.12.1/kubetail-darwin-amd64.tar.gz
-    sha256: fe35707f8fa09986e6bf6975cb2264e96eea15a4e4c312e4ae4960c5ecc212c0
+    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.12.2/kubetail-darwin-amd64.tar.gz
+    sha256: a683a40569e3413924930bacedd59b6b97d450c578b9a15c7eb43047fff0d138
     bin: kubetail
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.12.1/kubetail-darwin-arm64.tar.gz
-    sha256: 462882901e589a78026070ffda7bd678c98d893647f25a2e23713dfbc06cd1a6
+    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.12.2/kubetail-darwin-arm64.tar.gz
+    sha256: bd77b3445ba1345cddf61a6ac9da8d10d659f78fb58f81178182ec5d12e9ad21
     bin: kubetail
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.12.1/kubetail-linux-amd64.tar.gz
-    sha256: 239d69234850c5378300324317134a55ac8868282be5b08669a710f0f23d2241
+    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.12.2/kubetail-linux-amd64.tar.gz
+    sha256: 0fec6b89ac087f45b74b75bdf29c65bdd8cfa79e89f94075c35ef6788ae99906
     bin: kubetail
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.12.1/kubetail-linux-arm64.tar.gz
-    sha256: 4258467a739e0fc7f31f95d8fdacbd0677f2c0d78fe820f8cd3a0604640769a0
+    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.12.2/kubetail-linux-arm64.tar.gz
+    sha256: d0b6ad8b0da339295159dcf7774ca1629dbf58f08c83123def05498fef1b02b2
     bin: kubetail
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.12.1/kubetail-windows-amd64.tar.gz
-    sha256: 3d40657684d50765c8de6e6a40fc603e3f78f786dd44685540cee2bcf485142b
+    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.12.2/kubetail-windows-amd64.tar.gz
+    sha256: cc69c28c6d038a43deec7ec16cef19989bc1b443538cf40c558886781cd4de1b
     bin: kubetail.exe
   - selector:
       matchLabels:
         os: windows
         arch: arm64
-    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.12.1/kubetail-windows-arm64.tar.gz
-    sha256: f113ba837bcac00292f0db6df6cfc1c3e41b71e34ae31d05291a2e29f1766f98
+    uri: https://github.com/kubetail-org/kubetail/releases/download/cli%2Fv0.12.2/kubetail-windows-arm64.tar.gz
+    sha256: 0016747eb029760991b1d55fa4e68a8cd6a387b6194d3d8259d95186a74fa8a2
     bin: kubetail.exe

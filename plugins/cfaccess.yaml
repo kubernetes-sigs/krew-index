@@ -1,0 +1,53 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cfaccess
+spec:
+  version: v0.2.0
+  homepage: https://github.com/HolyBitsLLC/kubectl-cfaccess
+  shortDescription: Authenticate kubectl to a Cloudflare Access-protected Kubernetes API.
+  description: |
+    kubectl-cfaccess configures kubectl to use Cloudflare Access (OIDC or service token) with exec credential and optional local/remote modes.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/HolyBitsLLC/kubectl-cfaccess/releases/download/v0.2.0/kubectl-cfaccess_linux_amd64.tar.gz
+      bin: kubectl-cfaccess
+      sha256: 402f9e4d53f92cee94c014796b66e134467ae2e9acb816900141e22afa600e8b
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/HolyBitsLLC/kubectl-cfaccess/releases/download/v0.2.0/kubectl-cfaccess_linux_arm64.tar.gz
+      bin: kubectl-cfaccess
+      sha256: e84c34ba862f4f89ef6c58c8ff2cd9334b52e4d7f55c358001528739dd867533
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/HolyBitsLLC/kubectl-cfaccess/releases/download/v0.2.0/kubectl-cfaccess_darwin_amd64.tar.gz
+      bin: kubectl-cfaccess
+      sha256: dae2dacc9d864a1fb14dc920a5ce411e8f41e2fabd06cde7c9099e32a600149c
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/HolyBitsLLC/kubectl-cfaccess/releases/download/v0.2.0/kubectl-cfaccess_darwin_arm64.tar.gz
+      bin: kubectl-cfaccess
+      sha256: 114cfa27302833490af9a4a771b90bc6868e318c02e47e49cecc05b4a3d6dd20
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/HolyBitsLLC/kubectl-cfaccess/releases/download/v0.2.0/kubectl-cfaccess_windows_amd64.zip
+      bin: kubectl-cfaccess.exe
+      sha256: ef7664d6fd4e71fa4340d1a1dd0f2f9c4d9bd1cfdeabe53ba8c412652aaca8fa
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/HolyBitsLLC/kubectl-cfaccess/releases/download/v0.2.0/kubectl-cfaccess_windows_arm64.zip
+      bin: kubectl-cfaccess.exe
+      sha256: 39d67b1672016706c44c2049f2da02defbbf4704880ad3eb5f3031df4590fa28

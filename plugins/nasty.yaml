@@ -1,0 +1,60 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: nasty
+spec:
+  version: v0.0.1
+  homepage: https://github.com/nasty-project/nasty-plugin
+  shortDescription: Manage NASty CSI volumes
+  description: |
+    kubectl plugin for managing NASty CSI driver volumes.
+
+    Commands:
+    - list: List all managed volumes with clone relationships
+    - list-snapshots: List snapshots with source volumes
+    - list-orphaned: Find volumes without matching PVCs
+    - describe: Show detailed volume information
+    - health: Check health of all volumes
+    - troubleshoot: Diagnose PVC issues
+    - summary: Dashboard overview of all resources
+    - cleanup: Delete orphaned volumes safely
+    - mark-adoptable: Mark volumes for DR/adoption
+    - adopt: Generate PV manifest for adoption
+    - status: Show volume status from NASty
+    - connectivity: Test NASty connection
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/nasty-project/nasty-plugin/releases/download/v0.0.1/kubectl-nasty-linux-amd64.tar.gz
+    sha256: d4b6867c21f477a63f70beb01b77378c0794e7bc053ece8e58ece9a14167129f
+    bin: kubectl-nasty
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/nasty-project/nasty-plugin/releases/download/v0.0.1/kubectl-nasty-linux-arm64.tar.gz
+    sha256: 2818965263c88b76d1f1d6d502011927dc78d25b0534476baca645e4bf209225
+    bin: kubectl-nasty
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/nasty-project/nasty-plugin/releases/download/v0.0.1/kubectl-nasty-darwin-amd64.tar.gz
+    sha256: 3b584afe4fc888f308e2b034650ce5e4d8c972e8c98f9f5fd12d56caa3d2c77c
+    bin: kubectl-nasty
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/nasty-project/nasty-plugin/releases/download/v0.0.1/kubectl-nasty-darwin-arm64.tar.gz
+    sha256: 3d961ce89db2e6326f77ec322960bade34944831abefbb8f66d4674c646ff038
+    bin: kubectl-nasty
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/nasty-project/nasty-plugin/releases/download/v0.0.1/kubectl-nasty-windows-amd64.zip
+    sha256: dd2ab9ae92985841089f14ce0c7bfd6e612d1faa308c25ac69f267a39975664f
+    bin: kubectl-nasty.exe

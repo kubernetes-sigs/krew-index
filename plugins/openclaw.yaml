@@ -1,0 +1,54 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: openclaw
+spec:
+  version: v0.2.0
+  homepage: https://github.com/openclaw-rocks/kubectl-openclaw
+  shortDescription: Manage OpenClaw AI agent instances on Kubernetes
+  description: |
+    Full lifecycle management for OpenClawInstance custom resources
+    (openclaw.rocks/v1alpha1). Set an alias for a natural CLI experience:
+
+      alias claw="kubectl openclaw"
+
+    Lifecycle:     create, delete, restart, upgrade
+    Inspection:    list, status, logs, events, config
+    Interaction:   exec, port-forward, open
+    Configuration: skills, env, enable/disable sidecars
+    Operations:    backup, restore, doctor
+  caveats: |
+    Requires the OpenClaw operator installed in the cluster:
+      helm install openclaw-operator oci://ghcr.io/openclaw-rocks/charts/openclaw-operator
+
+    For the best experience, set an alias:
+      alias claw="kubectl openclaw"
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/openclaw-rocks/kubectl-openclaw/releases/download/v0.2.0/kubectl-openclaw-linux-amd64.tar.gz
+      sha256: "87371d2d1aa9ab07d376e705733b2746ef429d61f91664ec39a8c03c9cf1f80e"
+      bin: kubectl-openclaw
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/openclaw-rocks/kubectl-openclaw/releases/download/v0.2.0/kubectl-openclaw-linux-arm64.tar.gz
+      sha256: "7b07ee2c3f238518b8800470ccb9d8f7244be6e30eab13895839fb883d933ced"
+      bin: kubectl-openclaw
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/openclaw-rocks/kubectl-openclaw/releases/download/v0.2.0/kubectl-openclaw-darwin-amd64.tar.gz
+      sha256: "53fd5730015db9898438296a1f51cb47ed1c077f5ef4d17b0ffc680b6b0d6027"
+      bin: kubectl-openclaw
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/openclaw-rocks/kubectl-openclaw/releases/download/v0.2.0/kubectl-openclaw-darwin-arm64.tar.gz
+      sha256: "d15a2fde4d88dd18552fe9826de766e2f602bc885025f2f5af37858ef9dcb094"
+      bin: kubectl-openclaw

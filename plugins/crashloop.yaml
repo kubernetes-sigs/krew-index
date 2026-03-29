@@ -3,9 +3,9 @@ kind: Plugin
 metadata:
   name: crashloop
 spec:
-  version: "v0.1.0"
-  homepage: "https://github.com/rohankaran/kubectl-crashloop"
-  shortDescription: "Inspect pod crash history and previous logs"
+  version: v0.1.2
+  homepage: https://github.com/rohankaran/kubectl-crashloop
+  shortDescription: Inspect pod crash history and previous logs
   description: |
     kubectl-crashloop correlates warning Events, last termination state,
     and previous logs into one report for a single pod.
@@ -14,59 +14,59 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: "https://github.com/rohankaran/kubectl-crashloop/releases/download/v0.1.0/kubectl-crashloop_darwin_amd64.tar.gz"
-      sha256: "0a9b4c15f4acdea25d66eb849a201fe5fb0f8c92c7c385c6370641d767f9b630"
+      uri: https://github.com/rohankaran/kubectl-crashloop/releases/download/v0.1.2/kubectl-crashloop_darwin_amd64.tar.gz
+      sha256: 8a6001b426ba01324fac20bd5e53ea6fdeec3a8b240c94aec454127a3667cbf0
       files:
-        - from: "kubectl-crashloop"
-          to: "."
-        - from: "LICENSE"
-          to: "."
-      bin: "kubectl-crashloop"
+        - from: LICENSE
+          to: .
+        - from: kubectl-crashloop
+          to: .
+      bin: kubectl-crashloop
     - selector:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: "https://github.com/rohankaran/kubectl-crashloop/releases/download/v0.1.0/kubectl-crashloop_darwin_arm64.tar.gz"
-      sha256: "e1046817034123f33a2609e4647184fa139f5b2293c15601bd8c246516aaa8c1"
+      uri: https://github.com/rohankaran/kubectl-crashloop/releases/download/v0.1.2/kubectl-crashloop_darwin_arm64.tar.gz
+      sha256: 4f5069569453c0690363242c19efd27622c0276f2a326ff86995917f2de74b8b
       files:
-        - from: "kubectl-crashloop"
-          to: "."
-        - from: "LICENSE"
-          to: "."
-      bin: "kubectl-crashloop"
+        - from: LICENSE
+          to: .
+        - from: kubectl-crashloop
+          to: .
+      bin: kubectl-crashloop
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: "https://github.com/rohankaran/kubectl-crashloop/releases/download/v0.1.0/kubectl-crashloop_linux_amd64.tar.gz"
-      sha256: "86d978db1598916db4a8ec6a5bfd402bdf7cc6751938fd31bad61f3748ff459d"
+      uri: https://github.com/rohankaran/kubectl-crashloop/releases/download/v0.1.2/kubectl-crashloop_linux_amd64.tar.gz
+      sha256: 3c7863ed704d9711fbdafc06aaa7f48e971f5979aa16851e1493dad239b3133a
       files:
-        - from: "kubectl-crashloop"
-          to: "."
-        - from: "LICENSE"
-          to: "."
-      bin: "kubectl-crashloop"
+        - from: LICENSE
+          to: .
+        - from: kubectl-crashloop
+          to: .
+      bin: kubectl-crashloop
     - selector:
         matchLabels:
           os: linux
           arch: arm64
-      uri: "https://github.com/rohankaran/kubectl-crashloop/releases/download/v0.1.0/kubectl-crashloop_linux_arm64.tar.gz"
-      sha256: "8492569f049b53aadebd6199962f93a9d31fd9460ef0d7d86522beda608fa8ad"
+      uri: https://github.com/rohankaran/kubectl-crashloop/releases/download/v0.1.2/kubectl-crashloop_linux_arm64.tar.gz
+      sha256: 3784f9f6d25eb43f02c69640304f290dcaf25f4a47a3c00a8923a52af7111419
       files:
-        - from: "kubectl-crashloop"
-          to: "."
-        - from: "LICENSE"
-          to: "."
-      bin: "kubectl-crashloop"
+        - from: LICENSE
+          to: .
+        - from: kubectl-crashloop
+          to: .
+      bin: kubectl-crashloop
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: "https://github.com/rohankaran/kubectl-crashloop/releases/download/v0.1.0/kubectl-crashloop_windows_amd64.zip"
-      sha256: "125d85ce5f68334ec9d67a8648f5d53f2fd730fbdef8d4832215c9713b2e2f80"
+      uri: https://github.com/rohankaran/kubectl-crashloop/releases/download/v0.1.2/kubectl-crashloop_windows_amd64.zip
+      sha256: c7eb512d8204a7cfaebf9fc98c908ab70b20c37c577cd5342f0eb5b249a42a73
       files:
-        - from: "kubectl-crashloop.exe"
-          to: "."
-        - from: "LICENSE"
-          to: "."
-      bin: "kubectl-crashloop.exe"
+        - from: LICENSE
+          to: .
+        - from: kubectl-crashloop.exe
+          to: .
+      bin: kubectl-crashloop.exe

@@ -1,0 +1,78 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ksearch
+spec:
+  version: v1.1.0
+  homepage: https://github.com/arush-sal/ksearch
+  shortDescription: Search Kubernetes resources across API groups
+  description: |
+    ksearch lists and searches Kubernetes resources across both core/v1 and
+    apps/v1 API groups, including resources that kubectl get omits by
+    default. It supports substring matching, namespace scoping, kind
+    filtering, dynamic discovery, and cached output for repeated queries.
+  caveats: |
+    Requires a valid kubeconfig context and uses the current context by
+    default. Results are cached for 60s unless --cache-ttl or --no-cache is
+    used.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/arush-sal/ksearch/releases/download/v1.1.0/ksearch_linux_amd64.tar.gz
+    sha256: c99442b3717eba0a69dab68b530f4df35951a2512b78c054195ef623b77a52de
+    bin: ksearch
+    files:
+    - from: ksearch
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/arush-sal/ksearch/releases/download/v1.1.0/ksearch_linux_arm64.tar.gz
+    sha256: 92a0b0fcda0f5aba4f3d572e1e33020edb17fd971da1861baa942a1a636a2936
+    bin: ksearch
+    files:
+    - from: ksearch
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/arush-sal/ksearch/releases/download/v1.1.0/ksearch_darwin_amd64.tar.gz
+    sha256: 310f56006b92d8a06bff34903471bf5c8a6bb58511fa7cf2f545a3e7d15ee788
+    bin: ksearch
+    files:
+    - from: ksearch
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/arush-sal/ksearch/releases/download/v1.1.0/ksearch_darwin_arm64.tar.gz
+    sha256: 38b8d883b0c2e914f3874bb70995fa524c82ba8990b6c84b6036689ff34bb26c
+    bin: ksearch
+    files:
+    - from: ksearch
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/arush-sal/ksearch/releases/download/v1.1.0/ksearch_windows_amd64.zip
+    sha256: 68576c98427305c3fdd6599e7e29ba2df2b5b14d2b7944f701edd0afd5f321df
+    bin: ksearch.exe
+    files:
+    - from: ksearch.exe
+      to: .
+    - from: LICENSE
+      to: .

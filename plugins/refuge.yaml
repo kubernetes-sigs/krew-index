@@ -1,0 +1,16 @@
+apiVersion: krew.googlecontainertools/v1alpha2
+kind: Plugin
+metadata:
+  name: refuge
+spec:
+  version: "0.0.1"
+  shortDescription: "Ephemeral kubeconfig via Bitwarden"
+  homepage: "https://github.com/HolyBitsLLC/kubectl-refuge"
+  platforms:
+    - selector:
+        matchArchitecture: amd64
+        matchOS: linux
+      uri: "https://github.com/HolyBitsLLC/kubectl-refuge/releases/download/v0.0.1/kubectl-refuge_linux_amd64.tar.gz"
+      sha256: "TODO"
+      bin:
+        - kubectl-refuge

@@ -1,0 +1,77 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: weka
+spec:
+  version: "v0.1.0"
+  homepage: https://github.com/weka/kubectl-weka
+  shortDescription: "WEKA kubectl plugin"
+  description: |
+    Kubectl plugin for WEKA operator and cluster management (status, preflight, logs, instances, support bundles).
+
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/weka/kubectl-weka/releases/download/v0.1.0/kubectl-weka_v0.1.0_linux_amd64.tar.gz
+      sha256: d53283e3f321bbdbd4136b3f8337d9f8b301022b83d49302d4b27d2037e183e5
+      files:
+        - from: "kubectl-weka"
+          to: "."
+      bin: "kubectl-weka"
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/weka/kubectl-weka/releases/download/v0.1.0/kubectl-weka_v0.1.0_linux_arm64.tar.gz
+      sha256: 73abea97fd3b98d1afbe52f5fc4ad77a325779e2e99ca65aaf2dc606508c1ed4
+      files:
+        - from: "kubectl-weka"
+          to: "."
+      bin: "kubectl-weka"
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/weka/kubectl-weka/releases/download/v0.1.0/kubectl-weka_v0.1.0_darwin_amd64.tar.gz
+      sha256: aeb08855756a601281048a0dd66e7e60a330f43424dda04c291414821c6583ea
+      files:
+        - from: "kubectl-weka"
+          to: "."
+      bin: "kubectl-weka"
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/weka/kubectl-weka/releases/download/v0.1.0/kubectl-weka_v0.1.0_darwin_arm64.tar.gz
+      sha256: a1f3adcc97f1676734974e6944a73a7cb411d3a71c5448b6f7f6246352c4338f
+      files:
+        - from: "kubectl-weka"
+          to: "."
+      bin: "kubectl-weka"
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/weka/kubectl-weka/releases/download/v0.1.0/kubectl-weka_v0.1.0_windows_amd64.zip
+      sha256: e44afe9d6db989024fbfa06725014745f69514e8f304e0fdf0e2fa84fb257d22
+      files:
+        - from: "kubectl-weka.exe"
+          to: "."
+      bin: "kubectl-weka.exe"
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/weka/kubectl-weka/releases/download/v0.1.0/kubectl-weka_v0.1.0_windows_arm64.zip
+      sha256: aa17e9cbe8d8e9181d4cfede3c88551e51bfe94d8b59870ddbd04e3e592a7626
+      files:
+        - from: "kubectl-weka.exe"
+          to: "."
+      bin: "kubectl-weka.exe"

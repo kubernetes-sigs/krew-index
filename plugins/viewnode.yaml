@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: viewnode
 spec:
-  version: v1.1.0
+  version: v1.2.0
   homepage: https://github.com/NTTDATA-DACH/viewnode
   shortDescription: Displays nodes with their pods and containers and provides metrics for resources
   description: |
@@ -17,27 +17,27 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v1.1.0/viewnode_v1.1.0_darwin_amd64.tar.gz
-      sha256: a35ae7b3a231b3df9caf5a6c2edf1709185f862d5c1000aa0fc37092ddd59256
+      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v1.2.0/viewnode_v1.2.0_darwin_amd64.tar.gz
+      sha256: 44019c18d817f6c5699106d573c1bbc8131fa9e4df7d07070fd66b5e7dfdf605
       bin: viewnode
     - selector:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v1.1.0/viewnode_v1.1.0_darwin_arm64.tar.gz
-      sha256: b618fef30ddfe0b042a21075d5e1f946daf2c8d9cdea350b70a7492b006a928b
+      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v1.2.0/viewnode_v1.2.0_darwin_arm64.tar.gz
+      sha256: 2c11c60d97239f0101e93119ea79c7245b75b184f23bf9fe43acf3e654a2052d
       bin: viewnode
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v1.1.0/viewnode_v1.1.0_linux_amd64.tar.gz
-      sha256: 99d45afec05c400c3f21cfd489e40a4318f808bc969b3e758bc7cd01f89d5968
+      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v1.2.0/viewnode_v1.2.0_linux_amd64.tar.gz
+      sha256: c092c8acae4579d0a502f1fc2d1a3b1330a0935d6e87e4130a104473b5e0a8c2
       bin: viewnode
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v1.1.0/viewnode_v1.1.0_windows_amd64.tar.gz
-      sha256: fedbb1d4d053d210acffe46a1a4bd975b0e7c61d896ec21d9d667b3ffb25cb89
+      uri: https://github.com/NTTDATA-DACH/viewnode/releases/download/v1.2.0/viewnode_v1.2.0_windows_amd64.tar.gz
+      sha256: 6bb7ea1c0340ace9aa47ba09e97eee8aef0708c5493240ef51d53a4db6e2b585
       bin: viewnode.exe

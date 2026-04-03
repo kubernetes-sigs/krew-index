@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: nasty
 spec:
-  version: v0.0.1
+  version: v0.0.2
   homepage: https://github.com/nasty-project/nasty-plugin
   shortDescription: Manage NASty CSI volumes
   description: |
@@ -27,34 +27,34 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/nasty-project/nasty-plugin/releases/download/v0.0.1/kubectl-nasty-linux-amd64.tar.gz
-    sha256: d4b6867c21f477a63f70beb01b77378c0794e7bc053ece8e58ece9a14167129f
+    uri: https://github.com/nasty-project/nasty-plugin/releases/download/v0.0.2/kubectl-nasty-linux-amd64.tar.gz
+    sha256: 78dd1e4c5f28563477c7d173eccebc4a1679a951b3cd3603231b782f60eb5151
     bin: kubectl-nasty
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/nasty-project/nasty-plugin/releases/download/v0.0.1/kubectl-nasty-linux-arm64.tar.gz
-    sha256: 2818965263c88b76d1f1d6d502011927dc78d25b0534476baca645e4bf209225
+    uri: https://github.com/nasty-project/nasty-plugin/releases/download/v0.0.2/kubectl-nasty-linux-arm64.tar.gz
+    sha256: 6a1734fc5e7878f3eadb61b5b2bb83c04a29dcd42d3a376332b45677347cb3aa
     bin: kubectl-nasty
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/nasty-project/nasty-plugin/releases/download/v0.0.1/kubectl-nasty-darwin-amd64.tar.gz
-    sha256: 3b584afe4fc888f308e2b034650ce5e4d8c972e8c98f9f5fd12d56caa3d2c77c
+    uri: https://github.com/nasty-project/nasty-plugin/releases/download/v0.0.2/kubectl-nasty-darwin-amd64.tar.gz
+    sha256: d93e19dca4b3b7a4c3a6fc062ab6e2df322c866ebb3f2fd88ae4c27ad061305c
     bin: kubectl-nasty
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/nasty-project/nasty-plugin/releases/download/v0.0.1/kubectl-nasty-darwin-arm64.tar.gz
-    sha256: 3d961ce89db2e6326f77ec322960bade34944831abefbb8f66d4674c646ff038
+    uri: https://github.com/nasty-project/nasty-plugin/releases/download/v0.0.2/kubectl-nasty-darwin-arm64.tar.gz
+    sha256: b777eee50324db328aff2659801453b440a4534a2f1fc9d2f1515138b95a772e
     bin: kubectl-nasty
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/nasty-project/nasty-plugin/releases/download/v0.0.1/kubectl-nasty-windows-amd64.zip
-    sha256: dd2ab9ae92985841089f14ce0c7bfd6e612d1faa308c25ac69f267a39975664f
+    uri: https://github.com/nasty-project/nasty-plugin/releases/download/v0.0.2/kubectl-nasty-windows-amd64.zip
+    sha256: 248f9de4c81362b87033a9e1853358bca7560a5752364e9166b6363a00be3900
     bin: kubectl-nasty.exe

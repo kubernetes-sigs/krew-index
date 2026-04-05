@@ -1,0 +1,59 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: reach
+spec:
+  version: "v1.0.0"
+  homepage: https://github.com/amdadulbari/kubectl-reach
+  shortDescription: Test network connectivity from a pod to a target
+  description: |
+    Tests network connectivity from an existing Pod to a target (IP, DNS, or Service)
+    by injecting an ephemeral debug container into the source Pod. Useful for
+    verifying if NetworkPolicies or Service Meshes are blocking traffic. Requires
+    Kubernetes 1.25+ (EphemeralContainers). Does not restart application containers.
+  caveats: |
+    * Requires Kubernetes 1.25+ (EphemeralContainers is stable).
+    * The ephemeral container remains on the pod until the pod is deleted (it cannot be removed).
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/amdadulbari/kubectl-reach/releases/download/v1.0.0/kubectl-reach_1.0.0_darwin_amd64.tar.gz
+      sha256: 0f27cc5ff707c998ea8e89db26cc00393b984b75ea381495bfd1605101e3b39f
+      bin: kubectl-reach
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/amdadulbari/kubectl-reach/releases/download/v1.0.0/kubectl-reach_1.0.0_darwin_arm64.tar.gz
+      sha256: 940bfc290d9b8e7a9de5576728fd1a59d7a2dbc5ba55a077066a6a352e93223d
+      bin: kubectl-reach
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/amdadulbari/kubectl-reach/releases/download/v1.0.0/kubectl-reach_1.0.0_linux_amd64.tar.gz
+      sha256: e26cf6bd9fce177626d24efa91c9006ba0e9cdfd08c28d35b4165c4d9a6964db
+      bin: kubectl-reach
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/amdadulbari/kubectl-reach/releases/download/v1.0.0/kubectl-reach_1.0.0_linux_arm64.tar.gz
+      sha256: fb676f51a379f12c193f7bbf9199b9a49ac96fcacb78fa5742e300432faf7fa6
+      bin: kubectl-reach
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/amdadulbari/kubectl-reach/releases/download/v1.0.0/kubectl-reach_1.0.0_windows_amd64.zip
+      sha256: 3047783e01dcb84b3c485c99f20205a116f3795ed9e8fce2854ce7204882fa29
+      bin: kubectl-reach.exe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/amdadulbari/kubectl-reach/releases/download/v1.0.0/kubectl-reach_1.0.0_windows_arm64.zip
+      sha256: 4d7bf77b73a61538c68422a5caf611bb382864230c3700a700ccb20c8b097b9e
+      bin: kubectl-reach.exe

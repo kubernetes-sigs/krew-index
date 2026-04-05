@@ -3,24 +3,24 @@ kind: Plugin
 metadata:
   name: mittens
 spec:
-  version: v0.0.10
+  version: v0.0.13
   homepage: https://github.com/Lappihuan/mittens
   shortDescription: "Interactively proxy Kubernetes Services with mitmproxy TUI"
   description: |
     Interactively proxy Kubernetes Services by deploying
-    mitmproxy intercepting proxy sidecars for traffic inspection.
+    mitmproxy intercepting proxy sidecars.
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/Lappihuan/mittens/releases/download/v0.0.10/mittens_v0.0.10_linux_amd64.tar.gz
-    sha256: "5414ec916adf8672ed83e2992de230545a14cee55d89a1601b9c9e2c581d7a20"
+    uri: https://github.com/Lappihuan/mittens/releases/download/v0.0.13/mittens_v0.0.13_linux_amd64.tar.gz
+    sha256: 2bcad003629dd8dfb714bc022646b9de7a15bf9da1115c4c5ee99e58802c7e29
     bin: kubectl-mittens
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/Lappihuan/mittens/releases/download/v0.0.10/mittens_v0.0.10_linux_arm64.tar.gz
-    sha256: "447b92eae3c0f7126ffc054f29cf2efefd9f09481998898d4ec1a6947d0d1dbc"
+    uri: https://github.com/Lappihuan/mittens/releases/download/v0.0.13/mittens_v0.0.13_linux_arm64.tar.gz
+    sha256: a5945c069b0abedf22dbe0bf7345d1420ac5cf7b775c8c0d1588e801efe3451d
     bin: kubectl-mittens

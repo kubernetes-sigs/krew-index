@@ -1,0 +1,73 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: mtv-metrics
+spec:
+  version: v0.1.10
+  homepage: https://github.com/yaacov/kubectl-metrics
+  shortDescription: Query Prometheus/Thanos metrics for Kubernetes MTV/Forklift
+  description: |
+    kubectl-mtv-metrics is a kubectl plugin for querying Prometheus and Thanos
+    metrics for Kubernetes. It works as both a CLI tool and an MCP
+    server for AI assistants (Claude Desktop, Cursor IDE, OpenShift Lightspeed).
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-metrics/releases/download/v0.1.10/kubectl-metrics-v0.1.10-linux-amd64.tar.gz
+    sha256: fa27c31090d8ce6c8c8075c0b3e7e84fe770e7577de1f0b358326a23d133ee19
+    files:
+    - from: kubectl-metrics-linux-amd64
+      to: kubectl-mtv_metrics
+    - from: LICENSE
+      to: .
+    bin: kubectl-mtv_metrics
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/yaacov/kubectl-metrics/releases/download/v0.1.10/kubectl-metrics-v0.1.10-linux-arm64.tar.gz
+    sha256: 409d846eeb9acb2acacc6d0715d1566d87b17a9844a55de4f6c2a1e1a41f29eb
+    files:
+    - from: kubectl-metrics-linux-arm64
+      to: kubectl-mtv_metrics
+    - from: LICENSE
+      to: .
+    bin: kubectl-mtv_metrics
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-metrics/releases/download/v0.1.10/kubectl-metrics-v0.1.10-darwin-amd64.tar.gz
+    sha256: 2aacb0bef6fcc5ed49b32d30a4118a6a88fa2bacb63bf2ba7db44cbd10a9e4d6
+    files:
+    - from: kubectl-metrics-darwin-amd64
+      to: kubectl-mtv_metrics
+    - from: LICENSE
+      to: .
+    bin: kubectl-mtv_metrics
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/yaacov/kubectl-metrics/releases/download/v0.1.10/kubectl-metrics-v0.1.10-darwin-arm64.tar.gz
+    sha256: 82c07db6744338929836e711b96ffcc88ceab2a51f270a6d5689c1e7486da9a2
+    files:
+    - from: kubectl-metrics-darwin-arm64
+      to: kubectl-mtv_metrics
+    - from: LICENSE
+      to: .
+    bin: kubectl-mtv_metrics
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-metrics/releases/download/v0.1.10/kubectl-metrics-v0.1.10-windows-amd64.zip
+    sha256: fc11f95865ad8d663e3fc4409b4bcd13f751fe8a4d63b3f51cf771cb7e1f4110
+    files:
+    - from: kubectl-metrics-windows-amd64.exe
+      to: kubectl-mtv_metrics.exe
+    - from: LICENSE
+      to: .
+    bin: kubectl-mtv_metrics.exe

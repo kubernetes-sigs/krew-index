@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: topx
 spec:
-  version: v1.2.5
+  version: v1.2.6
   homepage: https://github.com/mms-gianni/kubectl-topx
   shortDescription: Monitor CPU and memory resources in real-time
   description: |
@@ -37,28 +37,27 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/mms-gianni/kubectl-topx/releases/download/v1.2.5/kubectl-topx-v1.2.5-linux-amd64.tar.gz
-    sha256: dbe649d04d5fba27fbe7dafc5de6f3ecc0e5fe8b88dc7192e511cdf67917ac59
+    uri: https://github.com/mms-gianni/kubectl-topx/releases/download/v1.2.6/kubectl-topx-v1.2.6-linux-amd64.tar.gz
+    sha256: 2bc740815c22ec7fc2c9033630a3e634c02df435f331fd3c83bb6681ee1f3605
     bin: kubectl-topx
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/mms-gianni/kubectl-topx/releases/download/v1.2.5/kubectl-topx-v1.2.5-darwin-amd64.tar.gz
-    sha256: 52a238c9e2807d275653f1a9467706df55366d97179e8316ec8ff22dae87d6f4
+    uri: https://github.com/mms-gianni/kubectl-topx/releases/download/v1.2.6/kubectl-topx-v1.2.6-darwin-amd64.tar.gz
+    sha256: ae9900d51d79764a8c464e3fee4f7422832658b5b909508194b02aa97ba74a00
     bin: kubectl-topx
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/mms-gianni/kubectl-topx/releases/download/v1.2.5/kubectl-topx-v1.2.5-darwin-arm64.tar.gz
-    sha256: 4e936d33153f66dc096669eb7c9e5a1dea6faf78d73b482c6f784b13898ec4d4
+    uri: https://github.com/mms-gianni/kubectl-topx/releases/download/v1.2.6/kubectl-topx-v1.2.6-darwin-arm64.tar.gz
+    sha256: bef60ec1a4fe06f12b36b02f2f21dbbd9b1ce444927efc8481e7da11e158b518
     bin: kubectl-topx
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/mms-gianni/kubectl-topx/releases/download/v1.2.5/kubectl-topx-v1.2.5-windows-amd64.zip
-    sha256: d13197232e39bd87f97cf284a6d6adfdaa02c9b0f4ae35c45e95e4bd20f96479
+    uri: https://github.com/mms-gianni/kubectl-topx/releases/download/v1.2.6/kubectl-topx-v1.2.6-windows-amd64.zip
+    sha256: 2ff87ff46477243846d48495b1e31b58909c8ba04a7f76025623637d4f4f247a
     bin: kubectl-topx.exe
-

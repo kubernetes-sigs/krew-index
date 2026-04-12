@@ -3,8 +3,8 @@ kind: Plugin
 metadata:
   name: tunnel
 spec:
-  version: v1.6.1
-  homepage: https://github.com/omrikiei/ktunnel
+  version: v3.0.0
+  homepage: https://github.com/appmana/ktunnel
   shortDescription: Reverse tunneling between cluster and your machine
   description: |
       This plugin establishes a reverse tunnel between the Kubernetes cluster
@@ -15,42 +15,42 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.6.1/ktunnel_1.6.1_Darwin_x86_64.tar.gz
-    sha256: b1ceb7fe8b40b96020ffa6ead1b59deadc0facb05064627e9175a20c109fd8b2
+    uri: https://github.com/appmana/ktunnel/releases/download/v3.0.0/ktunnel_3.0.0_Darwin_x86_64.tar.gz
+    sha256: 31e94bc15744dc6946579e017ccd62f09c949fd9ff01dcf91f3b4ad27af2e423
     bin: ktunnel
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.6.1/ktunnel_1.6.1_Darwin_arm64.tar.gz
-    sha256: fcd3b7c6fc5dc72bcb7ccc5f735f271fdb43e30cae680e3eb09c28bb3dee7866
+    uri: https://github.com/appmana/ktunnel/releases/download/v3.0.0/ktunnel_3.0.0_Darwin_arm64.tar.gz
+    sha256: be954ec2f45811de75c55b09d16bde539ac6c05ca6f01084d28f960dd27e8da8
     bin: ktunnel
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.6.1/ktunnel_1.6.1_Linux_x86_64.tar.gz
-    sha256: 6665722db841a1df29fd733bb46c08e2a109753638f080218e9ebba7e96fa873
+    uri: https://github.com/appmana/ktunnel/releases/download/v3.0.0/ktunnel_3.0.0_Linux_x86_64.tar.gz
+    sha256: 0ee80896df9f7deb01fd49e249a2b4b7b4a47cafd465f4e09c8c70485bcfcd48
     bin: ktunnel
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.6.1/ktunnel_1.6.1_Linux_arm64.tar.gz
-    sha256: 23620e0beca7d7efbe35f064f825dc8deda7994df3e402193a65fece179b2b8b
+    uri: https://github.com/appmana/ktunnel/releases/download/v3.0.0/ktunnel_3.0.0_Linux_arm64.tar.gz
+    sha256: 89259b9e42672f706001c76c54a75d4ca9a540faf12f1cee47cd433ec3e2f419
     bin: ktunnel
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.6.1/ktunnel_1.6.1_Windows_x86_64.tar.gz
-    sha256: 1fe1aa79e9ce04275bbdc3cf24e30ec159db21d273b467647a6a83f99326419f
+    uri: https://github.com/appmana/ktunnel/releases/download/v3.0.0/ktunnel_3.0.0_Windows_x86_64.tar.gz
+    sha256: bf4bcf7dad507c5a7796c354966b6c9b80ed59c3bd27b8d6656ab2830e82f0a4
     bin: ktunnel.exe
   - selector:
       matchLabels:
         os: windows
         arch: arm64
-    uri: https://github.com/omrikiei/ktunnel/releases/download/v1.6.1/ktunnel_1.6.1_Windows_arm64.tar.gz
-    sha256: 12753d5624e6653ea1586aa9a6320be40ac3728fb3dae9bba30bc21cb2bde40c
+    uri: https://github.com/appmana/ktunnel/releases/download/v3.0.0/ktunnel_3.0.0_Windows_arm64.tar.gz
+    sha256: 79bf560dd924954cca43ffdb504f67fa430d0cabeb57440305e8da8c4d60147b
     bin: ktunnel.exe
 

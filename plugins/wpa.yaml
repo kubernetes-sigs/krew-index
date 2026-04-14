@@ -1,0 +1,84 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: wpa
+spec:
+  version: "v0.11.0"
+  shortDescription: Easily interact and manage WatermarkPodAutoscaler resources.
+  description: |
+    The WatermarkPodAutoscaler kubectl plugin provides useful utilities to operate WatermarkPodAutoscaler
+    via the WatermarkPodAutoscaler controller and the WatermarkPodAutoscaler CRD.
+  homepage: https://github.com/DataDog/watermarkpodautoscaler
+  platforms:
+  - uri: https://github.com/DataDog/watermarkpodautoscaler/releases/download/v0.11.0/kubectl-wpa_0.11.0_darwin_amd64.zip
+    sha256: "def9df61c264ea709d00e0a04e81c108f5bc8711d004a9955f40343937fc2ed5"
+    bin: kubectl-wpa
+    files:
+    - from: kubectl-wpa
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - uri: https://github.com/DataDog/watermarkpodautoscaler/releases/download/v0.11.0/kubectl-wpa_0.11.0_linux_amd64.zip
+    sha256: "3832e2db20e22776fe2bbfe79e49cf97f804e8616dc5918106b93a949832fae7"
+    bin: kubectl-wpa
+    files:
+    - from: kubectl-wpa
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - uri: https://github.com/DataDog/watermarkpodautoscaler/releases/download/v0.11.0/kubectl-wpa_0.11.0_windows_amd64.zip
+    sha256: "f554ac5d5d5e8fa461ab9eb5cbad43980dbd1ebba0d4986f9eee22f1523336be"
+    bin: kubectl-wpa.exe
+    files:
+    - from: kubectl-wpa.exe
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+  - uri: https://github.com/DataDog/watermarkpodautoscaler/releases/download/v0.11.0/kubectl-wpa_0.11.0_darwin_arm64.zip
+    sha256: "0458797833a4aabb6c3a22b3e8ea835970fd7dfeccf0d36b024dd875791c2a26"
+    bin: kubectl-wpa
+    files:
+    - from: kubectl-wpa
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - uri: https://github.com/DataDog/watermarkpodautoscaler/releases/download/v0.11.0/kubectl-wpa_0.11.0_linux_arm64.zip
+    sha256: "b6aebe4ee586791f4f26445dfc8904fa8c457612d9d6744118653257b5f5f74f"
+    bin: kubectl-wpa
+    files:
+    - from: kubectl-wpa
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - uri: https://github.com/DataDog/watermarkpodautoscaler/releases/download/v0.11.0/kubectl-wpa_0.11.0_windows_arm64.zip
+    sha256: "d2054472173d00d2c6c3a5abaf6ee47c93a80a4c633f8fce618f85edb2aa0810"
+    bin: kubectl-wpa.exe
+    files:
+    - from: kubectl-wpa.exe
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: arm64

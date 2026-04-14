@@ -1,17 +1,3 @@
-# Krew plugin manifest for `kubectl gpu-top`.
-#
-# To publish to the centralized krew-index:
-#   1. Cut a GitHub release at https://github.com/jia-gao/kube-gpu-top/releases
-#      with tarballs named kubectl-gpu-top_<version>_<os>_<arch>.tar.gz
-#      containing the kubectl-gpu-top binary and the LICENSE file.
-#   2. Replace <VERSION> and every REPLACE_WITH_SHA256 placeholder below.
-#      `sha256sum <tarball>` will give you each value.
-#   3. Fork https://github.com/kubernetes-sigs/krew-index and open a PR
-#      adding this file to plugins/gpu-top.yaml.
-#
-# Until the PR lands, users can install directly from a local copy:
-#   kubectl krew install --manifest=./plugins/gpu-top.yaml \
-#     --archive=./dist/kubectl-gpu-top_<version>_<os>_<arch>.tar.gz
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:

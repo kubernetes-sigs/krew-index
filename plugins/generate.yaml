@@ -1,0 +1,52 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: generate
+spec:
+  version: v0.2.0
+  homepage: https://github.com/ogormans-deptstack/kubectl-generate
+  shortDescription: Generate example YAML manifests from OpenAPI v3 spec
+  description: |
+    Generate example Kubernetes YAML manifests from your cluster's OpenAPI v3
+    spec. Instead of copy-pasting from documentation or memorizing resource
+    schemas, kubectl-generate reads the live OpenAPI spec and generates valid,
+    apply-ready YAML for any resource type -- including CRDs.
+  caveats: |
+    * Requires a running cluster (reads OpenAPI v3 spec via discovery API)
+    * CRD examples require the CRD to be installed in the cluster
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/ogormans-deptstack/kubectl-generate/releases/download/v0.2.0/kubectl-generate_v0.2.0_darwin_amd64.tar.gz
+      sha256: 7517454a6b76f0dcb5853d8acabe896af110162779631e9288a470963b608c1e
+      bin: kubectl-generate
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/ogormans-deptstack/kubectl-generate/releases/download/v0.2.0/kubectl-generate_v0.2.0_darwin_arm64.tar.gz
+      sha256: 93d0d3b56c78c579f86c23d2cc977af908573dd84be5eb2ba0468f2c110a3c5f
+      bin: kubectl-generate
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/ogormans-deptstack/kubectl-generate/releases/download/v0.2.0/kubectl-generate_v0.2.0_linux_amd64.tar.gz
+      sha256: 04e3a3777712b78c825a77738d9355ee208f335e43c07399f51051f3c8815ee0
+      bin: kubectl-generate
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/ogormans-deptstack/kubectl-generate/releases/download/v0.2.0/kubectl-generate_v0.2.0_linux_arm64.tar.gz
+      sha256: f6ab33e8bcce06bf69e29251986e2c73b13130016700a8e6c5fb1052ed751c28
+      bin: kubectl-generate
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/ogormans-deptstack/kubectl-generate/releases/download/v0.2.0/kubectl-generate_v0.2.0_windows_amd64.zip
+      sha256: 6d924773b0d26553637a9df64c72c4b46f261a3f81d7c281beb9d7d6cff1af5d
+      bin: kubectl-generate.exe

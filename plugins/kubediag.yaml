@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: kubediag
 spec:
-  version: "v0.2.0"
+  version: "v0.2.1"
   homepage: https://github.com/khvedela/kubediag
   shortDescription: "Diagnose broken Kubernetes workloads"
   description: |
@@ -28,34 +28,34 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/khvedela/kubediag/releases/download/v0.2.0/kubediag_linux_amd64.tar.gz
-      sha256: "0dbd22e7562632fc6818656fd719f090d2925754a602432b3be629253c74b007"
+      uri: https://github.com/khvedela/kubediag/releases/download/v0.2.1/kubediag_linux_amd64.tar.gz
+      sha256: "4443878e51e0f7944d3038d36aa243fd7bcf027ac5c628447a2a876c512c70bb"
       bin: kubediag
     - selector:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/khvedela/kubediag/releases/download/v0.2.0/kubediag_linux_arm64.tar.gz
-      sha256: "c590a630e86b0958aefa15eab708e17d942e52ce44a7536169fe3653c14f04c7"
+      uri: https://github.com/khvedela/kubediag/releases/download/v0.2.1/kubediag_linux_arm64.tar.gz
+      sha256: "b70fe1152e93f8fc891bf3c4052db6e5f78e51a9571f3ebaf4e749f5521fad8b"
       bin: kubediag
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/khvedela/kubediag/releases/download/v0.2.0/kubediag_darwin_amd64.tar.gz
-      sha256: "7e7e08691654736283ac8e2d4afe53c62be0aa5cc2f715ba2181fa13156a0b9f"
+      uri: https://github.com/khvedela/kubediag/releases/download/v0.2.1/kubediag_darwin_amd64.tar.gz
+      sha256: "0a867a502ae1a6febc330b93a3c52fca58c046865d294af9b331d53d3bd961ea"
       bin: kubediag
     - selector:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/khvedela/kubediag/releases/download/v0.2.0/kubediag_darwin_arm64.tar.gz
-      sha256: "4fb898a5d868d61bcfcafa766b6751d3f9d01d29e117fec98880388733ca095a"
+      uri: https://github.com/khvedela/kubediag/releases/download/v0.2.1/kubediag_darwin_arm64.tar.gz
+      sha256: "1e44aebd9cf1ce41188f57e386b1dce69154813218fc51b83653bc976fb3d3c3"
       bin: kubediag
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/khvedela/kubediag/releases/download/v0.2.0/kubediag_windows_amd64.zip
-      sha256: "5c553b8a9c315988b50f3f92c2fae750ebb06ca23b4f4d979adb23a1af79d0a3"
+      uri: https://github.com/khvedela/kubediag/releases/download/v0.2.1/kubediag_windows_amd64.zip
+      sha256: "2404760180b89e2d73c90ee722d8088106b8f0cd521464e13de0fcd1286c0f2c"
       bin: kubediag.exe

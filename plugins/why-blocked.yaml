@@ -1,0 +1,98 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: why-blocked
+spec:
+  version: "v0.2.0"
+  homepage: https://github.com/opensource-alison/why-blocked
+  shortDescription: Explain why Kubernetes resources are blocked and how to fix them
+  description: |
+    why-blocked evaluates Kubernetes manifests against 14 security rules
+    and 1 advisory, all grounded in CIS Kubernetes Benchmark and Pod
+    Security Standards. Every rule cites a specific standard reference.
+
+    It also detects which admission system blocked a resource
+    (Pod Security Admission, Kyverno, Gatekeeper, RBAC, or a generic
+    admission webhook) and shows concrete YAML fix examples for each
+    violation.
+
+    Works fully offline for core evaluation. No cluster access required.
+    Supports 5 languages: en, ko, ja, zh, es.
+  caveats: |
+    Optional features require additional tools:
+      * AI enhancement (--ai flag): Python 3 and an API key
+      * CVE scanning (--scan cve): trivy
+      * SBOM scanning (--scan sbom): syft
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/opensource-alison/why-blocked/releases/download/v0.2.0/kubectl-why_0.2.0_linux_amd64.tar.gz
+      sha256: "b8372b3cb46703b1984cee780dbc7326f5f621047435d6ea61799663a69832f5"
+      bin: kubectl-why-blocked
+      files:
+        - from: kubectl-why
+          to: kubectl-why-blocked
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/opensource-alison/why-blocked/releases/download/v0.2.0/kubectl-why_0.2.0_linux_arm64.tar.gz
+      sha256: "47d4fa6af52782fe7401e2779e38b5d89e851b0b58f8908ac88c5c9d7b9c85ca"
+      bin: kubectl-why-blocked
+      files:
+        - from: kubectl-why
+          to: kubectl-why-blocked
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/opensource-alison/why-blocked/releases/download/v0.2.0/kubectl-why_0.2.0_darwin_amd64.tar.gz
+      sha256: "47a67f1a5211e7b4b2a561c402fd1269291390fa7960b39c15e66f229f820fba"
+      bin: kubectl-why-blocked
+      files:
+        - from: kubectl-why
+          to: kubectl-why-blocked
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/opensource-alison/why-blocked/releases/download/v0.2.0/kubectl-why_0.2.0_darwin_arm64.tar.gz
+      sha256: "aa9087490bfaebe3a4e33bb2e63181ff6f45af03bb66b60dbf658de37c7d2596"
+      bin: kubectl-why-blocked
+      files:
+        - from: kubectl-why
+          to: kubectl-why-blocked
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/opensource-alison/why-blocked/releases/download/v0.2.0/kubectl-why_0.2.0_windows_amd64.zip
+      sha256: "ddabb3d3db0e975eae971834aead19b6505de6bbbe8a0792c02f2ab05029f22a"
+      bin: kubectl-why-blocked.exe
+      files:
+        - from: kubectl-why.exe
+          to: kubectl-why-blocked.exe
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/opensource-alison/why-blocked/releases/download/v0.2.0/kubectl-why_0.2.0_windows_arm64.zip
+      sha256: "32695dcd414cff6818e5e9c46e4011b80bccd11b00f2c4c4a345aaf751774321"
+      bin: kubectl-why-blocked.exe
+      files:
+        - from: kubectl-why.exe
+          to: kubectl-why-blocked.exe
+        - from: LICENSE
+          to: .

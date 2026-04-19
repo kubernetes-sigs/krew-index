@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: triage
 spec:
-  version: "{{ .TagName }}"
+  version: "v0.1.1"
   homepage: https://github.com/khvedela/triage
   shortDescription: "Diagnose broken Kubernetes workloads"
   description: |
@@ -25,34 +25,34 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/khvedela/triage/releases/download/{{ .TagName }}/triage_linux_amd64.tar.gz
-      sha256: "{{ .linux_amd64_sha256 }}"
+      uri: https://github.com/khvedela/triage/releases/download/v0.1.1/triage_linux_amd64.tar.gz
+      sha256: "20f0ee65eec649c0f69a8d3a04e9bc405c0b08d9a792c270cb6843d9a07d7ff8"
       bin: triage
     - selector:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/khvedela/triage/releases/download/{{ .TagName }}/triage_linux_arm64.tar.gz
-      sha256: "{{ .linux_arm64_sha256 }}"
+      uri: https://github.com/khvedela/triage/releases/download/v0.1.1/triage_linux_arm64.tar.gz
+      sha256: "4ba9c0db7df4eb38e98af3ece4acdb877aaa349595e75215241f8c10cb3b397d"
       bin: triage
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/khvedela/triage/releases/download/{{ .TagName }}/triage_darwin_amd64.tar.gz
-      sha256: "{{ .darwin_amd64_sha256 }}"
+      uri: https://github.com/khvedela/triage/releases/download/v0.1.1/triage_darwin_amd64.tar.gz
+      sha256: "58210bc4fdeea79bb515b52339adfb808f5e1dbf04032f3d38154e8e9328fa6d"
       bin: triage
     - selector:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/khvedela/triage/releases/download/{{ .TagName }}/triage_darwin_arm64.tar.gz
-      sha256: "{{ .darwin_arm64_sha256 }}"
+      uri: https://github.com/khvedela/triage/releases/download/v0.1.1/triage_darwin_arm64.tar.gz
+      sha256: "99e18f242de248e8297be5deeb43ca10866e99d6765b99f633655ecc2bf990cd"
       bin: triage
     - selector:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/khvedela/triage/releases/download/{{ .TagName }}/triage_windows_amd64.zip
-      sha256: "{{ .windows_amd64_sha256 }}"
+      uri: https://github.com/khvedela/triage/releases/download/v0.1.1/triage_windows_amd64.zip
+      sha256: "037517f1b8bfed6816004fc9c97ff8fb981139afe92e860c3803abefb5175154"
       bin: triage.exe

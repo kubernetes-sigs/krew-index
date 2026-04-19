@@ -1,0 +1,61 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kubediag
+spec:
+  version: "v0.2.0"
+  homepage: https://github.com/khvedela/kubediag
+  shortDescription: "Diagnose broken Kubernetes workloads"
+  description: |
+    kubediag cross-references pod status, events, owner references, services,
+    endpoints, PVCs, and RBAC in one pass, returning ranked findings with
+    evidence, confidence levels, and exact next commands.
+
+    Usage:
+      kubectl kubediag pod <name> [-n namespace]
+      kubectl kubediag deployment <name> [-n namespace]
+      kubectl kubediag namespace <ns>
+      kubectl kubediag cluster
+      kubectl kubediag report namespace <ns>
+      kubectl kubediag report cluster
+  caveats: |
+    kubediag requires read access to pods, events, deployments, replicasets,
+    services, endpoints, configmaps, secrets, persistentvolumeclaims, nodes,
+    and resourcequotas. Run `kubectl kubediag rules list` to see all 28
+    available diagnostic rules.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/khvedela/kubediag/releases/download/v0.2.0/kubediag_linux_amd64.tar.gz
+      sha256: "0dbd22e7562632fc6818656fd719f090d2925754a602432b3be629253c74b007"
+      bin: kubediag
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/khvedela/kubediag/releases/download/v0.2.0/kubediag_linux_arm64.tar.gz
+      sha256: "c590a630e86b0958aefa15eab708e17d942e52ce44a7536169fe3653c14f04c7"
+      bin: kubediag
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/khvedela/kubediag/releases/download/v0.2.0/kubediag_darwin_amd64.tar.gz
+      sha256: "7e7e08691654736283ac8e2d4afe53c62be0aa5cc2f715ba2181fa13156a0b9f"
+      bin: kubediag
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/khvedela/kubediag/releases/download/v0.2.0/kubediag_darwin_arm64.tar.gz
+      sha256: "4fb898a5d868d61bcfcafa766b6751d3f9d01d29e117fec98880388733ca095a"
+      bin: kubediag
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/khvedela/kubediag/releases/download/v0.2.0/kubediag_windows_amd64.zip
+      sha256: "5c553b8a9c315988b50f3f92c2fae750ebb06ca23b4f4d979adb23a1af79d0a3"
+      bin: kubediag.exe

@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pod-why-dead
+spec:
+  version: v0.1.0
+  homepage: https://github.com/NotHarshhaa/pod-why-dead
+  shortDescription: "Full death story of any Kubernetes pod"
+  description: |
+    One command to get the full death story of any Kubernetes pod.
+    Gathers exit codes, previous logs, events, node conditions, and
+    resource usage into a structured postmortem report.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/NotHarshhaa/pod-why-dead/releases/download/v0.1.0/pod-why-dead_0.1.0_linux_amd64.tar.gz
+      sha256: "84d9d4427e963f88609ccbfb7889abc0f26105038ff7bd7a9fd8ad6eda79d099"
+      bin: pod-why-dead
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/NotHarshhaa/pod-why-dead/releases/download/v0.1.0/pod-why-dead_0.1.0_linux_arm64.tar.gz
+      sha256: "59970620b82aed05bd08a39c2639e7071123b4695ed401a5be588eda93ac691e"
+      bin: pod-why-dead
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/NotHarshhaa/pod-why-dead/releases/download/v0.1.0/pod-why-dead_0.1.0_darwin_amd64.tar.gz
+      sha256: "598ccaefcb573368a9d42705417b2c1a1d339b1fc2adbdb075c69f310b05c582"
+      bin: pod-why-dead
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/NotHarshhaa/pod-why-dead/releases/download/v0.1.0/pod-why-dead_0.1.0_darwin_arm64.tar.gz
+      sha256: "1d7ca1e715f1d3c6807ec2a6ebdb75ff14d56daabed0d2cb88d25ab1e7090efa"
+      bin: pod-why-dead
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/NotHarshhaa/pod-why-dead/releases/download/v0.1.0/pod-why-dead_0.1.0_windows_amd64.zip
+      sha256: "aa8827977fa8f9ca6d73892220f682bb02e674acedf02ee28930670b7e20c085"
+      bin: pod-why-dead.exe

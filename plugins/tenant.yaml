@@ -1,0 +1,131 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: tenant
+spec:
+  version: v1.0.0
+  homepage: https://github.com/stakater/kubectl-tenant
+  shortDescription: Tenant-scoped operations for Stakater Multi-Tenant Operator
+  description: |
+    kubectl-tenant extends kubectl with the `tenant` command group for
+    interacting with Stakater Multi-Tenant Operator (MTO).
+
+    It lets users list tenants they belong to and fetch tenant-scoped
+    cluster resources (namespaces, storageclasses, ingressclasses,
+    priorityclasses, quotas) with tenant access validation, overcoming
+    the limitation of Kubernetes RBAC on `list` for cluster-scoped
+    resources without exposing resources to tenants that have no
+    access to them.
+  caveats: |
+    This plugin requires Stakater Multi-Tenant Operator (MTO) to be
+    installed in the target cluster.
+    See https://docs.stakater.com/mto for installation instructions.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/stakater/kubectl-tenant/releases/download/v1.0.0/kubectl-tenant_v1.0.0_linux_amd64.tar.gz
+      sha256: c8ae35a8fe64696eaf6210a4aec5cbfa09c357cef9ddcd8d0bb9627bc8196a6f
+      files:
+        - from: kubectl-tenant
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-tenant
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/stakater/kubectl-tenant/releases/download/v1.0.0/kubectl-tenant_v1.0.0_linux_arm64.tar.gz
+      sha256: 373e4be3bb27ed95d3321720cbbbd97022be5200041ff13c4aa64efed10b087d
+      files:
+        - from: kubectl-tenant
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-tenant
+    - selector:
+        matchLabels:
+          os: linux
+          arch: "386"
+      uri: https://github.com/stakater/kubectl-tenant/releases/download/v1.0.0/kubectl-tenant_v1.0.0_linux_386.tar.gz
+      sha256: 17ba17c00211ba0ca952cb4f644d3ac38661e546f6384f7c1f119ed6bb7378e8
+      files:
+        - from: kubectl-tenant
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-tenant
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm
+      uri: https://github.com/stakater/kubectl-tenant/releases/download/v1.0.0/kubectl-tenant_v1.0.0_linux_armv6.tar.gz
+      sha256: 9baac99766230fd592afd91bec64c98257ac243544313ec16e6d6d06bad81ec7
+      files:
+        - from: kubectl-tenant
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-tenant
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/stakater/kubectl-tenant/releases/download/v1.0.0/kubectl-tenant_v1.0.0_darwin_amd64.tar.gz
+      sha256: a8d61d5fd52fa9086f7a4bfa6892c37bc446727ebdbf9762e6463711eac3d152
+      files:
+        - from: kubectl-tenant
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-tenant
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/stakater/kubectl-tenant/releases/download/v1.0.0/kubectl-tenant_v1.0.0_darwin_arm64.tar.gz
+      sha256: e86f29852f547320aa593b532f360496198b7afec2c944ea309f013090510b53
+      files:
+        - from: kubectl-tenant
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-tenant
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/stakater/kubectl-tenant/releases/download/v1.0.0/kubectl-tenant_v1.0.0_windows_amd64.tar.gz
+      sha256: b2bbd4e61aa0c53fa4294ce87ac92d07b2f5d36192bfc1bca433f7595af6dcc0
+      files:
+        - from: kubectl-tenant.exe
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-tenant.exe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: "386"
+      uri: https://github.com/stakater/kubectl-tenant/releases/download/v1.0.0/kubectl-tenant_v1.0.0_windows_386.tar.gz
+      sha256: 1db85c7b2c153072a962eafd3b6fccf4f977fbe171da4793c8152632b05de910
+      files:
+        - from: kubectl-tenant.exe
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-tenant.exe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/stakater/kubectl-tenant/releases/download/v1.0.0/kubectl-tenant_v1.0.0_windows_arm64.tar.gz
+      sha256: 64208b38ea8c6b5001a502ffa13f41e435543caab68e1314fc5a4a63829ddd91
+      files:
+        - from: kubectl-tenant.exe
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-tenant.exe

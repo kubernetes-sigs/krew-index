@@ -3,21 +3,18 @@ kind: Plugin
 metadata:
   name: kpil
 spec:
-  version: "v0.0.1"
+  version: "v0.0.2"
   homepage: https://github.com/qjoly/kpil
-  shortDescription: Run GitHub Copilot CLI with a scoped read-only kubeconfig
+  shortDescription: Run Copilot CLI with a scoped kubeconfig
   description: |
-    kpil provisions a temporary, read-only Kubernetes ServiceAccount (secrets
-    excluded), generates a short-lived kubeconfig, and launches the GitHub
-    Copilot CLI inside an isolated container. All RBAC resources and the
-    kubeconfig are deleted automatically when you exit.
+    kpil provisions a temporary, read-only Kubernetes ServiceAccount
+    (secrets excluded), generates a short-lived kubeconfig, and launches
+    the GitHub Copilot CLI inside an isolated container.
+    All RBAC resources and the kubeconfig are deleted on exit.
 
-    Requirements:
-      - Docker or Podman running locally
-      - GH_TOKEN env var (fine-grained PAT with copilot_requests: write)
-      - A GitHub Copilot subscription
+    Requires Docker or Podman and a GH_TOKEN with copilot access.
   caveats: |
-    GH_TOKEN must be set in your environment before running:
+    GH_TOKEN must be set before running:
       export GH_TOKEN=github_pat_xxxxxxxxxxxx
     Docker or Podman must be running locally.
   platforms:
@@ -25,10 +22,12 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/qjoly/kpil/releases/download/v0.0.1/kpil_0.0.1_darwin_arm64.tar.gz
-    sha256: "ecf85d092570ce21c955343875cb1d87cad65c7a8a409cb80db4ed6f01893585"
+    uri: https://github.com/qjoly/kpil/releases/download/v0.0.2/kpil_0.0.2_darwin_arm64.tar.gz
+    sha256: "938d25e27cf1e6bda1bbe77c52a9edc4deed34b3ef6aa0ca0bf7352f07a1a2c0"
     files:
     - from: kpil
+      to: .
+    - from: LICENSE
       to: .
     bin: kpil
 
@@ -36,10 +35,12 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/qjoly/kpil/releases/download/v0.0.1/kpil_0.0.1_darwin_amd64.tar.gz
-    sha256: "f770b3bd093ff85868650c407390bafda283fa7589bedbad91f41742ca07a90b"
+    uri: https://github.com/qjoly/kpil/releases/download/v0.0.2/kpil_0.0.2_darwin_amd64.tar.gz
+    sha256: "c3a8386717721d83e4a797a9f374d4cf1cabde9bc96255d46295a432f0a1e8ef"
     files:
     - from: kpil
+      to: .
+    - from: LICENSE
       to: .
     bin: kpil
 
@@ -47,10 +48,12 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/qjoly/kpil/releases/download/v0.0.1/kpil_0.0.1_linux_arm64.tar.gz
-    sha256: "6c41caf491efcb96a35cbf58ea2c1dd7830a1081d74c6efd6ae17dc126efb7a5"
+    uri: https://github.com/qjoly/kpil/releases/download/v0.0.2/kpil_0.0.2_linux_arm64.tar.gz
+    sha256: "9e262f97bc1ff321ed601657e8aed189aa33aff99337b380301698dc860086e3"
     files:
     - from: kpil
+      to: .
+    - from: LICENSE
       to: .
     bin: kpil
 
@@ -58,10 +61,12 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/qjoly/kpil/releases/download/v0.0.1/kpil_0.0.1_linux_amd64.tar.gz
-    sha256: "2fc3ccd99327ccf6dee7e31176d169597a614d17ba3019d669785ac9c069da04"
+    uri: https://github.com/qjoly/kpil/releases/download/v0.0.2/kpil_0.0.2_linux_amd64.tar.gz
+    sha256: "c7e82f7a6c52f3bb15255e15561185c2ed89eeca5ab53a96b8f4f391430c6415"
     files:
     - from: kpil
+      to: .
+    - from: LICENSE
       to: .
     bin: kpil
 
@@ -69,9 +74,11 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/qjoly/kpil/releases/download/v0.0.1/kpil_0.0.1_windows_amd64.zip
-    sha256: "e3805874e05c048439448bf1ed4d5a67bb565a53f65d25d67a41b564a669d57c"
+    uri: https://github.com/qjoly/kpil/releases/download/v0.0.2/kpil_0.0.2_windows_amd64.zip
+    sha256: "c1dac72c4e44497993f76b9e4616692c204329f91a32b7d68dd5b8815e8c112b"
     files:
     - from: kpil.exe
+      to: .
+    - from: LICENSE
       to: .
     bin: kpil.exe

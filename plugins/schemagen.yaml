@@ -1,0 +1,62 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: schemagen
+spec:
+  version: v0.3.0
+  homepage: https://github.com/ogormans-deptstack/kubectl-schemagen
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/ogormans-deptstack/kubectl-schemagen/releases/download/v0.3.0/kubectl-schemagen_v0.3.0_darwin_amd64.tar.gz
+      sha256: d9875720655443e3303210d31bb93d061974bfbe37a917b5f9e0d6704c30e041
+      bin: kubectl-schemagen
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/ogormans-deptstack/kubectl-schemagen/releases/download/v0.3.0/kubectl-schemagen_v0.3.0_darwin_arm64.tar.gz
+      sha256: f0eb174808b9659ec9d2fb20cb4e8d8b8f7d7ae2aeb6d41e1189a90c18b5f0ee
+      bin: kubectl-schemagen
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/ogormans-deptstack/kubectl-schemagen/releases/download/v0.3.0/kubectl-schemagen_v0.3.0_linux_amd64.tar.gz
+      sha256: 6a713705e4e1f83fbcb4193e35ba520ad0e43343633177aa7af1a9bbe18a269e
+      bin: kubectl-schemagen
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/ogormans-deptstack/kubectl-schemagen/releases/download/v0.3.0/kubectl-schemagen_v0.3.0_linux_arm64.tar.gz
+      sha256: f1d8c6689560d9b9546f12dfb109bbf4aa7d4efc662ac1391804c2f76b7f50d2
+      bin: kubectl-schemagen
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/ogormans-deptstack/kubectl-schemagen/releases/download/v0.3.0/kubectl-schemagen_v0.3.0_windows_amd64.zip
+      sha256: 21db9bad702dd289d04bf9a574cbcc3ace23c7f1b2323faf977179efe87130ec
+      bin: kubectl-schemagen.exe
+  shortDescription: Generate, migrate, and scaffold Kubernetes resources from cluster schema
+  description: |
+    A multi-subcommand kubectl plugin driven by the cluster's OpenAPI v3 schema.
+
+    Subcommands:
+      manifest  - Generate example YAML for any resource type or CRD
+      migrate   - Check manifests for deprecated or removed APIs
+      scaffold  - Generate kustomize bases from resource schemas
+
+    Uses the live cluster schema so output always matches the connected
+    cluster's API version, including any installed CRDs.
+
+    Examples:
+      kubectl schemagen manifest Deployment --name=web --image=myapp:v2
+      kubectl schemagen migrate -f manifests/
+      kubectl schemagen scaffold Deployment -o base/
+  caveats: |
+    Requires an active cluster connection (uses current kubeconfig context).
+    CRDs must be installed in the cluster for their schemas to be available.

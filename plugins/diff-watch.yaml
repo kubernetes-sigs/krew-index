@@ -1,0 +1,51 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: diff-watch
+spec:
+  version: v0.1.0
+  homepage: https://github.com/databus23/kubectl-diff-watch
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/databus23/kubectl-diff-watch/releases/download/v0.1.0/kubectl-diff-watch_darwin_amd64.tar.gz
+    sha256: 4daca85e96fcb480deaa28830903b54451c72ad08967bfa9fc56fe37892e0f48
+    bin: kubectl-diff-watch
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/databus23/kubectl-diff-watch/releases/download/v0.1.0/kubectl-diff-watch_darwin_arm64.tar.gz
+    sha256: cf62dc21cae34be6a9799c45eadfd485d17dd6ba60d63bc100243e6c300574a7
+    bin: kubectl-diff-watch
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/databus23/kubectl-diff-watch/releases/download/v0.1.0/kubectl-diff-watch_linux_amd64.tar.gz
+    sha256: 20b91de225d19c43cda1002b19d75ac63c5643de2b116cee09935bd83693e21b
+    bin: kubectl-diff-watch
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/databus23/kubectl-diff-watch/releases/download/v0.1.0/kubectl-diff-watch_linux_arm64.tar.gz
+    sha256: b144ab836a818de5802bd1b2ce83f6a74c984522a15155ce74677364075e1c78
+    bin: kubectl-diff-watch
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/databus23/kubectl-diff-watch/releases/download/v0.1.0/kubectl-diff-watch_windows_amd64.zip
+    sha256: 04881dd7270bda0ab0213ed850b956869c1660d5dbc005fcd88e7a1cfade1d19
+    bin: kubectl-diff-watch.exe
+  shortDescription: Watch resources and show diffs when they change
+  description: |
+    Watches Kubernetes resources in real-time and displays colored diffs
+    whenever a resource changes. Useful for observing how controllers,
+    operators, or manual edits modify resources over time.
+
+    Supports colored unified diff (default), structural diff via dyff,
+    and plain text output formats.

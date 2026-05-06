@@ -1,0 +1,57 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: diffyml
+spec:
+  version: v0.2.0
+  homepage: https://github.com/szhekpisov/kubectl-diffyml
+  shortDescription: Structural YAML diff for kubectl diff
+  description: |
+    Renders the output of `kubectl diff` using diffyml, a structural YAML
+    diff tool that highlights what changed by path rather than by line.
+    Useful for reviewing manifest drift, GitOps PRs, and Helm/Kustomize
+    output where unified-diff noise hides intent.
+
+    Wraps `kubectl diff` and forwards all flags. Output formatting can be
+    tuned via the KUBECTL_DIFFYML_OUTPUT and KUBECTL_DIFFYML_FLAGS
+    environment variables. See https://github.com/szhekpisov/diffyml for
+    the underlying engine.
+  caveats: |
+    * `kubectl diff` exits 1 when differences are found — that is expected
+      and propagated through this plugin.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/szhekpisov/kubectl-diffyml/releases/download/v0.2.0/kubectl-diffyml_v0.2.0_darwin_amd64.tar.gz
+    sha256: b64bf129250f11826840b0d9eddca04c81f3f4d06fa9b1072b7942ff2192743f
+    bin: kubectl-diffyml
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/szhekpisov/kubectl-diffyml/releases/download/v0.2.0/kubectl-diffyml_v0.2.0_darwin_arm64.tar.gz
+    sha256: e2366bff414470ed9934daba6f24c05e3f4ef40d0959e357ea096ec6c567d4d9
+    bin: kubectl-diffyml
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/szhekpisov/kubectl-diffyml/releases/download/v0.2.0/kubectl-diffyml_v0.2.0_linux_amd64.tar.gz
+    sha256: 555cb9cac40069e80544c7e89564a521a93688afcdf801414147d57c74a8d508
+    bin: kubectl-diffyml
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/szhekpisov/kubectl-diffyml/releases/download/v0.2.0/kubectl-diffyml_v0.2.0_linux_arm64.tar.gz
+    sha256: d9d576f371634bf30ff1e11594951ebfce84c94649499e210b030af0e3a9da29
+    bin: kubectl-diffyml
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/szhekpisov/kubectl-diffyml/releases/download/v0.2.0/kubectl-diffyml_v0.2.0_windows_amd64.tar.gz
+    sha256: 96170c013d52eed87c525c97947d551d016bd23d07952e14117852f43e2001d5
+    bin: kubectl-diffyml.exe

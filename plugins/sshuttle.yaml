@@ -3,64 +3,79 @@ kind: Plugin
 metadata:
   name: sshuttle
 spec:
-  version: v0.1.0
+  version: v0.2.5
   homepage: https://github.com/jjo/kubectl-sshuttle
   shortDescription: Tunnel traffic through a cluster using sshuttle
   description: |
-    Manages a proxy pod in a Kubernetes cluster and uses sshuttle to
-    tunnel traffic through it. Lets you reach IPs and subnets that are
-    only accessible from inside the cluster network.
+    Manages a proxy pod in a Kubernetes cluster and tunnels traffic
+    through it. Lets you reach IPs and subnets that are only accessible
+    from inside the cluster network.
 
-    It deploys a lightweight proxy pod, then uses sshuttle with kubectl
-    exec as the transport layer to create a transparent VPN tunnel.
+    Three transport modes:
+      default            — sshuttle locally, python+sshuttle in pod
+      --rushtle-server   — sshuttle locally, rushtle server in pod
+                           (works around kubectl-exec >1KB stdin
+                            truncation seen on tailscale-fronted clusters)
+      --rushtle          — rushtle on both ends, no sshuttle/python at all
+                           (linux+macos, requires root locally for NAT setup)
 
-    Requires sshuttle installed locally (pip install sshuttle).
+    Default and --rushtle-server modes require sshuttle locally
+    (pip install sshuttle). The bundled `rushtle` binary is used for
+    --rushtle mode.
   platforms:
-    - selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-      uri: https://github.com/jjo/kubectl-sshuttle/releases/download/v0.1.0/kubectl-sshuttle_0.1.0_linux_amd64.tar.gz
-      sha256: 8263366b50eeb104037309fef28fbe0e50d20b5b9bed4acf551ebf55bbae1c58
-      bin: kubectl-sshuttle
-      files:
-        - from: kubectl-sshuttle
-          to: .
-        - from: LICENSE
-          to: .
-    - selector:
-        matchLabels:
-          os: linux
-          arch: arm64
-      uri: https://github.com/jjo/kubectl-sshuttle/releases/download/v0.1.0/kubectl-sshuttle_0.1.0_linux_arm64.tar.gz
-      sha256: 70cba28d7f4227879167e942acfb1f3161f65b8fa6f8a41634358399eae002e5
-      bin: kubectl-sshuttle
-      files:
-        - from: kubectl-sshuttle
-          to: .
-        - from: LICENSE
-          to: .
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: amd64
-      uri: https://github.com/jjo/kubectl-sshuttle/releases/download/v0.1.0/kubectl-sshuttle_0.1.0_darwin_amd64.tar.gz
-      sha256: 71dc79175d422f937443472670a76614ac6f0eb16f630473caa049ce6f8094f1
-      bin: kubectl-sshuttle
-      files:
-        - from: kubectl-sshuttle
-          to: .
-        - from: LICENSE
-          to: .
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: arm64
-      uri: https://github.com/jjo/kubectl-sshuttle/releases/download/v0.1.0/kubectl-sshuttle_0.1.0_darwin_arm64.tar.gz
-      sha256: 577437d1e4c7759513a653e4c3cdfaf955e9501c5f98b130620359f027d0d721
-      bin: kubectl-sshuttle
-      files:
-        - from: kubectl-sshuttle
-          to: .
-        - from: LICENSE
-          to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/jjo/kubectl-sshuttle/releases/download/v0.2.5/kubectl-sshuttle_v0.2.5_linux_amd64.tar.gz
+    sha256: 1f12a7888e086cd1c7c5d2fdfdfe6d87a9098b0ab0e3fb5a9d68568aa5facccb
+    bin: kubectl-sshuttle
+    files:
+    - from: LICENSE
+      to: .
+    - from: kubectl-sshuttle
+      to: .
+    - from: rushtle
+      to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/jjo/kubectl-sshuttle/releases/download/v0.2.5/kubectl-sshuttle_v0.2.5_linux_arm64.tar.gz
+    sha256: 5fbc557af8ad10d35bbd7822c8d5dabf2527df14ee246e7ff3f43ba65f189001
+    bin: kubectl-sshuttle
+    files:
+    - from: LICENSE
+      to: .
+    - from: kubectl-sshuttle
+      to: .
+    - from: rushtle
+      to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/jjo/kubectl-sshuttle/releases/download/v0.2.5/kubectl-sshuttle_v0.2.5_darwin_amd64.tar.gz
+    sha256: 3d1dde80bd5143df6611f299b7f289250f0750b8d6b987cee2145a3d5ff51c42
+    bin: kubectl-sshuttle
+    files:
+    - from: LICENSE
+      to: .
+    - from: kubectl-sshuttle
+      to: .
+    - from: rushtle
+      to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/jjo/kubectl-sshuttle/releases/download/v0.2.5/kubectl-sshuttle_v0.2.5_darwin_arm64.tar.gz
+    sha256: 5a66f2cf2ab3dccb07ab0fd8c4fedca79e2c9a209ec1859d257d1cf0845904bc
+    bin: kubectl-sshuttle
+    files:
+    - from: LICENSE
+      to: .
+    - from: kubectl-sshuttle
+      to: .
+    - from: rushtle
+      to: .

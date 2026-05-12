@@ -1,0 +1,95 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: mtv
+spec:
+  version: v0.3.6
+  homepage: https://github.com/yaacov/kubectl-mtv
+  shortDescription: Migrate VMs to KubeVirt using Forklift
+  description: |
+    kubectl-mtv is a kubectl plugin for migrating virtual machines to KubeVirt using Forklift.
+    It helps migrate VMs from vSphere, oVirt, OpenStack, and OVA to Kubernetes/OpenShift
+    with advanced query capabilities, mapping management, and migration planning.
+    
+    Features:
+    - Multi-Platform Support: Migrate from vSphere, oVirt, OpenStack, and OVA
+    - Flexible Mapping: Use existing mappings, inline pairs, or automatic defaults
+    - Advanced Queries: Filter and search inventory with powerful query language
+    - VDDK Support: Optimized VMware disk transfers
+    - Real-time Monitoring: Track migration progress live
+    - Warm Migrations: Minimize downtime for critical systems
+  caveats: |
+    This plugin requires kubectl to be installed and configured to access your cluster.
+    For VMware migrations, consider using VDDK for optimal disk transfer performance.
+    
+    Examples:
+      # Create a VMware provider
+      kubectl mtv create provider --name vmware --type vsphere --url https://vcenter.com/sdk --username admin
+      
+      # List available VMs
+      kubectl mtv get inventory vms --provider vmware --query "where name ~= 'web-.*'"
+      
+      # Create and start a migration plan
+      kubectl mtv create plan --name my-migration --source vmware --vms vm1,vm2
+      kubectl mtv start plan --name my-migration
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.3.6/kubectl-mtv-v0.3.6-linux-amd64.tar.gz
+    sha256: 89c15e05f1e6ab6d1a953822b3b58e5a73db15a6d3b0bd2024736fda11917dbc
+    files:
+    - from: kubectl-mtv-linux-amd64
+      to: kubectl-mtv
+    - from: LICENSE
+      to: .
+    bin: kubectl-mtv
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.3.6/kubectl-mtv-v0.3.6-linux-arm64.tar.gz
+    sha256: 58abfe93b3deec729590b2fe40383c8d2255665833b0ff667ca28252cc5be5a1
+    files:
+    - from: kubectl-mtv-linux-arm64
+      to: kubectl-mtv
+    - from: LICENSE
+      to: .
+    bin: kubectl-mtv
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.3.6/kubectl-mtv-v0.3.6-darwin-amd64.tar.gz
+    sha256: 85b63a68d15ee877e699e869f615ceb6975b73d685190ab1c057fdf2705cfed1
+    files:
+    - from: kubectl-mtv-darwin-amd64
+      to: kubectl-mtv
+    - from: LICENSE
+      to: .
+    bin: kubectl-mtv
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.3.6/kubectl-mtv-v0.3.6-darwin-arm64.tar.gz
+    sha256: cff788f4fe7e795064c9c89d0312eb125f5a4ddcff63ee87333b879f91bcf9e8
+    files:
+    - from: kubectl-mtv-darwin-arm64
+      to: kubectl-mtv
+    - from: LICENSE
+      to: .
+    bin: kubectl-mtv
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/yaacov/kubectl-mtv/releases/download/v0.3.6/kubectl-mtv-v0.3.6-windows-amd64.zip
+    sha256: b5d100345c0cba79a999ceff2a0b8e8021a9a075ced70206ed434b2fc7e887cc
+    files:
+    - from: kubectl-mtv-windows-amd64.exe
+      to: kubectl-mtv.exe
+    - from: LICENSE
+      to: .
+    bin: kubectl-mtv.exe

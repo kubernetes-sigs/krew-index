@@ -1,0 +1,63 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ditto
+spec:
+  version: v0.2.2
+  homepage: https://github.com/rawkode/kubectl-ditto
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/rawkode/kubectl-ditto/releases/download/v0.2.2/kubectl-ditto-darwin-amd64.tar.gz
+      sha256: aa88e90f724936e78c9dc3e118df90fdf5ac23a22c1643fad3ebcd13571ea331
+      bin: kubectl-ditto
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/rawkode/kubectl-ditto/releases/download/v0.2.2/kubectl-ditto-darwin-arm64.tar.gz
+      sha256: d7d433c1cc3c6f29a4e5abed4f80677725550c5bde17a94290531e52e47c0bfb
+      bin: kubectl-ditto
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/rawkode/kubectl-ditto/releases/download/v0.2.2/kubectl-ditto-linux-amd64.tar.gz
+      sha256: 3cc3bb15eb40f91573b962563ee778c1f171f07fbb28e06d56aa4d534fe8ba2d
+      bin: kubectl-ditto
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/rawkode/kubectl-ditto/releases/download/v0.2.2/kubectl-ditto-linux-arm64.tar.gz
+      sha256: 4c677f6ee41f2678259757e5c2d0065ed8990e964faf36e6c3729783a66c06d7
+      bin: kubectl-ditto
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/rawkode/kubectl-ditto/releases/download/v0.2.2/kubectl-ditto-windows-amd64.tar.gz
+      sha256: 0b0b0c7b109ff03ad6dfaad3ad4dd02ef6843daeaa178603688b0819f7bc98ec
+      bin: kubectl-ditto.exe
+  shortDescription: Generate YAML for any resource/CRD using cluster schema
+  description: |
+    Generate YAML manifests for any Kubernetes resource or CRD installed in
+    your cluster. Uses the cluster's OpenAPI schema to produce accurate YAML
+    with smart defaults, field descriptions as comments, and optional
+    interactive prompts.
+
+    Supports plural names, short names, kind names, and fully-qualified
+    CRD names (e.g. certificates.cert-manager.io).
+
+    Examples:
+      kubectl ditto deployment -n default my-app
+      kubectl ditto svc -n default my-service
+      kubectl ditto certificates.cert-manager.io -n default my-cert
+      kubectl ditto deployment -n default my-app --interactive
+      kubectl ditto deployment -n default my-app --minimal
+      kubectl ditto deployment -n default my-app --full
+  caveats: |
+    Requires an active cluster connection (uses current kubeconfig context).
+    CRDs must be installed in the cluster for their schemas to be available.

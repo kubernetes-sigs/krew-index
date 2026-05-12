@@ -1,0 +1,52 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: watch-diff
+spec:
+  version: "v0.0.1"
+  homepage: https://github.com/alexmt/kubectl-watch-diff
+  shortDescription: "Watches the changes in the k8s resource and prints the diff."
+  description: |
+    Watches the the k8s resource with the given name.
+    Prints the diff of the resource when it changes.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/alexmt/kubectl-watch-diff/releases/download/v0.1.0/watchdiff-darwin-arm64.zip
+    sha256: 8d66bb04b1e1c7c921f470c05e504f62cea31e8562c783920a471ef5639f4822
+    files:
+    - from: "*"
+      to: "."
+    bin: dist/watchdiff
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/alexmt/kubectl-watch-diff/releases/download/v0.1.0/watchdiff-linux-arm64.zip
+    sha256: 805328d74a14c7bb60d35bf9637f1dedca295491f185ab1e81329dfc27a0c8d1
+    files:
+    - from: "*"
+      to: "."
+    bin: dist/watchdiff
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/alexmt/kubectl-watch-diff/releases/download/v0.1.0/watchdiff-darwin-amd64.zip
+    sha256: 7aa7bf0ec9940a365febc98bfbb59856144ec9b98e71983015cf85ece82dd8af
+    files:
+    - from: "*"
+      to: "."
+    bin: dist/watchdiff
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/alexmt/kubectl-watch-diff/releases/download/v0.1.0/watchdiff-linux-amd64.zip
+    sha256: c19dc4428b2381d5610e5258b04352138cdb4453f895b3c77969b6edcf2cbaa1
+    files:
+    - from: "*"
+      to: "."
+    bin: dist/watchdiff

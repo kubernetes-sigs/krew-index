@@ -1,0 +1,56 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ip-check
+spec:
+  version: "v0.1.0"
+  homepage: https://github.com/4rivappa/kubectl-ip-check
+  shortDescription: "Check IP utilization in EKS clusters with VPC CNI"
+  description: |
+    The ip-check plugin provides visibility into IP address allocation and usage
+    across EKS clusters using VPC CNI. It analyzes each node's ENI allocation
+    from AWS EC2 and compares it with actual pod IP consumption to identify
+    overallocation and help optimize VPC CNI configuration.
+    
+    Perfect for troubleshooting IP exhaustion issues and optimizing WARM_ENI_TARGET
+    and WARM_IP_TARGET settings in large EKS clusters.
+  caveats: |
+    * Currently only supports AWS EKS clusters with VPC CNI
+    * Requires AWS ec2:DescribeNetworkInterfaces permission
+    * Requires Kubernetes permissions to read nodes and pods
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/4rivappa/kubectl-ip-check/releases/download/v0.1.0/kubectl-ip-check-linux-amd64.tar.gz
+    sha256: "06b978591e10c95c743a71569198cf7676953a4aede417132bb74fecddfc5a03"
+    bin: kubectl-ip_check
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/4rivappa/kubectl-ip-check/releases/download/v0.1.0/kubectl-ip-check-linux-arm64.tar.gz
+    sha256: "049a1b6b388cef9af6cda8df8434364377bbe89504ca22c5848dbd78bd1823a1"
+    bin: kubectl-ip_check
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/4rivappa/kubectl-ip-check/releases/download/v0.1.0/kubectl-ip-check-darwin-amd64.tar.gz
+    sha256: "9c0152783fc020885102521fc4eed8491170e1daf140d8e0c0916c90ef3199b8"
+    bin: kubectl-ip_check
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/4rivappa/kubectl-ip-check/releases/download/v0.1.0/kubectl-ip-check-darwin-arm64.tar.gz
+    sha256: "4bdabeb2f3d3afbbb897000aba0141797d44f19d8d710c164aa3eb1ad9541693"
+    bin: kubectl-ip_check
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/4rivappa/kubectl-ip-check/releases/download/v0.1.0/kubectl-ip-check-windows-amd64.tar.gz
+    sha256: "7f735881db10edf3f8ee2b4807bd2ec1c4a253373c56b88254cbe95c0545dfce"
+    bin: kubectl-ip_check.exe

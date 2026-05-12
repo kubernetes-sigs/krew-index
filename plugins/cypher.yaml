@@ -1,0 +1,53 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cypher
+spec:
+  version: v0.18.2
+  homepage: https://github.com/avitaltamir/cyphernetes
+  shortDescription: Query your clusters using the Cyphernetes query language
+  description: |
+    Cyphernetes is a query language for Kubernetes. It allows you to query your clusters using a Cypher-like syntax.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/AvitalTamir/cyphernetes/releases/download/v0.18.2/kubectl-cypher-darwin-amd64.tar.gz
+    sha256: 0b05369d075b2a43856afa6da0c8a17792e0a5d8e1d350acb00028b69b7f3df4
+    bin: kubectl-cypher
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/AvitalTamir/cyphernetes/releases/download/v0.18.2/kubectl-cypher-darwin-arm64.tar.gz
+    sha256: e576a972a709f7bf6a65e2742b476d8ea49e0055c2e987968c93af2633d87fef
+    bin: kubectl-cypher
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/AvitalTamir/cyphernetes/releases/download/v0.18.2/kubectl-cypher-linux-amd64.tar.gz
+    sha256: 69932381e9b9285ad95865496d42889356bc600e1665617604876b33c7a1d5fc
+    bin: kubectl-cypher
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/AvitalTamir/cyphernetes/releases/download/v0.18.2/kubectl-cypher-linux-arm64.tar.gz
+    sha256: 7306a0052038ec4a627080e1cda958f0ffc33e9b75ad162add93cec9ee265473
+    bin: kubectl-cypher
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/AvitalTamir/cyphernetes/releases/download/v0.18.2/kubectl-cypher-windows-amd64.tar.gz
+    sha256: 4e34fb7065ebcf0086dd0c699b7d0e3e7c689849e101a52e59a005eec5b12ce3
+    bin: kubectl-cypher.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/AvitalTamir/cyphernetes/releases/download/v0.18.2/kubectl-cypher-windows-arm64.tar.gz
+    sha256: 773b7e71f46c4bb35ddcb07e53966b4838b7108078b951a44241697cfba31365
+    bin: kubectl-cypher.exe

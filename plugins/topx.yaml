@@ -1,0 +1,63 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: topx
+spec:
+  version: v1.2.7
+  homepage: https://github.com/mms-gianni/kubectl-topx
+  shortDescription: Monitor CPU and memory resources in real-time
+  description: |
+    kubectl-topx is a Kubernetes CLI tool for monitoring CPU and memory 
+    resources (requests, limits, and actual usage) in real-time.
+    
+    Features:
+    - Shows CPU and memory requests, limits, and current usage
+    - Live updates with configurable refresh intervals
+    - Progress bars for visual representation
+    - Color-coded output based on usage level
+    - Historical metrics with visual histograms
+    
+    Prerequisites:
+    - Metrics Server must be installed in your Kubernetes cluster
+  caveats: |
+    This plugin requires the Metrics Server to be installed in your cluster.
+    
+    Install Metrics Server:
+      kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+    
+    Usage:
+      kubectl topx                    # Monitor current namespace
+      kubectl topx -w                 # Display additional columns (requests, limits)
+      kubectl topx -i 5                # Refresh every 5 seconds
+      kubectl topx -A                 # Monitor all namespaces
+      kubectl topx -n <namespace>     # Monitor specific namespace
+      kubectl topx -t                 # Show historical metrics
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/mms-gianni/kubectl-topx/releases/download/v1.2.7/kubectl-topx-v1.2.7-linux-amd64.tar.gz
+    sha256: 011dee3d2765e6cbb3084e176da3874f9a1ccdcea997aa68a471737f9496f990
+    bin: kubectl-topx
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/mms-gianni/kubectl-topx/releases/download/v1.2.7/kubectl-topx-v1.2.7-darwin-amd64.tar.gz
+    sha256: befc8de276b75a3d9874c809109b8bd07f062666e25b369e084a264d230d8c39
+    bin: kubectl-topx
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/mms-gianni/kubectl-topx/releases/download/v1.2.7/kubectl-topx-v1.2.7-darwin-arm64.tar.gz
+    sha256: 953ef858517a2a2e7618792c4ca88b203b8dc2ac8e1e4e1e5df5152267da036d
+    bin: kubectl-topx
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/mms-gianni/kubectl-topx/releases/download/v1.2.7/kubectl-topx-v1.2.7-windows-amd64.zip
+    sha256: 9d3930e956e36d0112ef582e092b2f0d13b8345daebf328597380c02f5f6db8f
+    bin: kubectl-topx.exe

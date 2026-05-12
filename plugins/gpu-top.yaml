@@ -1,0 +1,74 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: gpu-top
+spec:
+  version: v0.2.0
+  homepage: https://github.com/jia-gao/kube-gpu-top
+  shortDescription: Show GPU utilization per pod across a cluster
+  description: |
+    kube-gpu-top is the missing `kubectl top` for GPUs. It shows per-pod
+    GPU utilization, memory, temperature, and power across every node in
+    your cluster, and can detect wasted GPUs and estimate their cost.
+
+    Requires the kube-gpu-agent DaemonSet to be running in the cluster.
+    See: https://github.com/jia-gao/kube-gpu-top#quick-start
+
+    Common commands:
+      kubectl gpu-top                     # table of all GPUs with pod attribution
+      kubectl gpu-top top -n ml-team      # filter by namespace
+      kubectl gpu-top waste               # detect idle GPUs and estimate cost
+  caveats: |
+    This plugin requires the kube-gpu-agent DaemonSet to be running in
+    the cluster. Install it with:
+
+      kubectl apply -f https://raw.githubusercontent.com/jia-gao/kube-gpu-top/main/deploy/daemonset.yaml
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/jia-gao/kube-gpu-top/releases/download/v0.2.0/kubectl-gpu-top_v0.2.0_linux_amd64.tar.gz
+      sha256: c59ede5b83f44bab29e3770602aaf52dbf64180fa6e6fc26fc5547c2e55b6ca9
+      bin: kubectl-gpu-top
+      files:
+        - from: kubectl-gpu-top
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/jia-gao/kube-gpu-top/releases/download/v0.2.0/kubectl-gpu-top_v0.2.0_linux_arm64.tar.gz
+      sha256: 84ffd19499999baa9f0b297e517276b66d077179e6416bce06dbd75881f0c4aa
+      bin: kubectl-gpu-top
+      files:
+        - from: kubectl-gpu-top
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/jia-gao/kube-gpu-top/releases/download/v0.2.0/kubectl-gpu-top_v0.2.0_darwin_amd64.tar.gz
+      sha256: 4275427bd67519de2ee63c2dc7f82638a4f63f32b86f51bce53db5416aab72dd
+      bin: kubectl-gpu-top
+      files:
+        - from: kubectl-gpu-top
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/jia-gao/kube-gpu-top/releases/download/v0.2.0/kubectl-gpu-top_v0.2.0_darwin_arm64.tar.gz
+      sha256: 187899866585b6d760ec8961cc7cfce61c596dc0d90ec2ddfa0c2193ab91f73c
+      bin: kubectl-gpu-top
+      files:
+        - from: kubectl-gpu-top
+          to: .
+        - from: LICENSE
+          to: .

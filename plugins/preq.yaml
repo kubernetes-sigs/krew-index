@@ -1,0 +1,113 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: preq
+  annotations:
+    # List of annotations for Artifact Hub
+    # https://artifacthub.io/docs/topics/annotations/krew/
+    artifacthub.io/category: monitoring-logging
+    artifacthub.io/displayName: preq problem detector
+    artifacthub.io/keywords: |
+      - reliability
+      - problem detection
+      - common reliability enumerations
+      - reliability intelligence
+    artifacthub.io/license: Apache-2.0
+    artifacthub.io/links: |
+      - name: homepage
+        url: https://docs.prequel.dev
+      - name: repository
+        url: https://github.com/prequel-dev/preq/
+      - name: support
+        url: https://github.com/prequel-dev/preq/issues
+    artifacthub.io/readme: |
+      `preq` (prounounced "preek") is a free and open community-driven reliability problem detector. Use `preq` to:
+
+      * detect the latest bugs, misconfigurations, anti-patterns, and known issues from a community of practitioners
+      * provide engineers, on-call support, and SRE agents with impact and community recommended mitigations
+      * hunt for new problems in logs
+
+      `preq` is powered by Common Reliability Enumerations (CREs) that are contributed by the community and [Prequel's Reliability Research Team](https://prequel.dev/blog). Reliability intelligence helps teams see a broad range of problems earlier, so they can prioritize, pinpoint, and reduce the risk of outages.
+
+      Visit https://docs.prequel.dev for more information.
+
+      ## Install
+
+      ```bash
+      $ kubectl krew install preq
+      $ kubectl preq <pod> -a -o "CRE Slack notification: "
+      ```
+    # artifacthub.io/changes:
+    # artifacthub.io/maintainers:
+    # artifacthub.io/provider:
+    # artifacthub.io/recommendations:
+    # artifacthub.io/screenshots:
+spec:
+  version: v0.1.34
+  homepage: https://github.com/prequel-dev/preq
+  shortDescription: "Use common reliability enumerations (CREs) to detect problems" 
+  description: |
+    preq (prounounced "preek") is a free and open community-driven reliability problem detector. Use preq to detect
+    the latest bugs, misconfigurations, anti-patterns, and known issues from a community of practitioners. 
+    CREs provide engineers, on-call support, and SRE agents with impact and community recommended mitigations.
+
+    preq is powered by Common Reliability Enumerations (CREs) that are contributed by the problem detection community and Prequel's Reliability Research Team. Reliability intelligence helps teams see a broad range of problems earlier, so they can prioritize, pinpoint, and reduce the risk of outages.
+
+    Visit https://docs.prequel.dev for more information.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      sha256: e5633a06dfbb38bec67c621be4950bf769f0f4596d39df7693cfd2f9ab00af9e
+      bin: kubectl-preq
+      uri: https://github.com/prequel-dev/preq/releases/download/v0.1.34/kubectl-preq_linux-amd64.tar.gz
+      files:
+        - from: kubectl-preq_linux-amd64
+          to: kubectl-preq
+        - from: kubectl-preq_linux-amd64.sig
+          to: kubectl-preq.sig
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      sha256: 0264166d91f59800994dd264c872ec38274c087e43c98376365fa2aa9c647d77
+      bin: kubectl-preq
+      uri: https://github.com/prequel-dev/preq/releases/download/v0.1.34/kubectl-preq_linux-arm64.tar.gz
+      files:
+        - from: kubectl-preq_linux-arm64
+          to: kubectl-preq
+        - from: kubectl-preq_linux-arm64.sig
+          to: kubectl-preq.sig
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      sha256: 29f114d3a282a761afab49f5d70dc0eaf13ba26dc11909a2ca4e5b9394334c0e
+      bin: kubectl-preq
+      uri: https://github.com/prequel-dev/preq/releases/download/v0.1.34/kubectl-preq_darwin-arm64.tar.gz
+      files:
+        - from: kubectl-preq_darwin-arm64
+          to: kubectl-preq
+        - from: kubectl-preq_darwin-arm64.sig
+          to: kubectl-preq.sig
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      sha256: 53cceb828680130867c3ffef7de30cff7ceff769dd719a93d9e5ee122bb426f6
+      bin: kubectl-preq
+      uri: https://github.com/prequel-dev/preq/releases/download/v0.1.34/kubectl-preq_windows-amd64.tar.gz
+      files:
+        - from: kubectl-preq_windows-amd64.exe
+          to: kubectl-preq
+        - from: kubectl-preq_windows-amd64.sig
+          to: kubectl-preq.sig
+        - from: LICENSE
+          to: .

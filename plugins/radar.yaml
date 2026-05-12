@@ -1,0 +1,85 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: radar
+spec:
+  version: v1.5.14
+  homepage: https://github.com/skyhook-io/radar
+  shortDescription: Cluster dashboard with topology and traffic maps
+  description: |
+    Radar provides real-time visibility into your Kubernetes cluster.
+
+    Features:
+    - Topology visualization of resources and their relationships
+    - Service traffic maps showing network connections
+    - Event timeline with resource change history
+    - Resource browser with YAML editing
+    - Helm release management
+    - Pod logs and terminal exec
+    - Port forwarding
+
+    Local-first. No account required. No cloud dependency.
+  caveats: |
+    This plugin opens a web UI in your browser by default.
+    Use --no-browser to start the server without opening a browser.
+  platforms:
+  - bin: kubectl-radar
+    uri: https://github.com/skyhook-io/radar/releases/download/v1.5.14/radar_v1.5.14_darwin_arm64.tar.gz
+    sha256: 531e87f03f6adc79a3e1291a54fd1db436850a79532a3d3056f47e9f5de15032
+    files:
+    - from: kubectl-radar
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+  - bin: kubectl-radar
+    uri: https://github.com/skyhook-io/radar/releases/download/v1.5.14/radar_v1.5.14_darwin_amd64.tar.gz
+    sha256: 92dde24311512c0e23e2171db3960b4371949251410b49107048fba38d2bee37
+    files:
+    - from: kubectl-radar
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+  - bin: kubectl-radar
+    uri: https://github.com/skyhook-io/radar/releases/download/v1.5.14/radar_v1.5.14_linux_amd64.tar.gz
+    sha256: 85509d3621d0bb597136dc4177695aa0efd0fc1e08bcfd4cee7807df544ec197
+    files:
+    - from: kubectl-radar
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+  - bin: kubectl-radar
+    uri: https://github.com/skyhook-io/radar/releases/download/v1.5.14/radar_v1.5.14_linux_arm64.tar.gz
+    sha256: dce74a629009ac4221ce5ec5da73fde8fd316df9075068a7770cfee1d86a060c
+    files:
+    - from: kubectl-radar
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+  - bin: kubectl-radar.exe
+    uri: https://github.com/skyhook-io/radar/releases/download/v1.5.14/radar_v1.5.14_windows_amd64.zip
+    sha256: d4897f7ab5f8b9c8e728a9fa2d6dce292e086f55a19254eab254afcaa215c884
+    files:
+    - from: kubectl-radar.exe
+      to: .
+    - from: LICENSE
+      to: .
+    selector:
+      matchLabels:
+        os: windows
+        arch: amd64

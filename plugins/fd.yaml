@@ -1,0 +1,54 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: fd
+spec:
+  version: v0.14.0
+  homepage: https://github.com/alikhil/kubectl-find
+  shortDescription: Find resources and perform action on them.
+  description: |
+    It's a plugin for kubectl that gives you a UNIX find-like experience.
+    Find then print, patch or delete any resource matching the provided criteria based on name, age, labels, etc
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/alikhil/kubectl-find/releases/download/v0.14.0/kubectl-fd_Linux_x86_64.tar.gz
+    sha256: 2b799884c92e61d7df911f3363ae2e07a283573c8a7e8e225f149aa14713d22e
+    bin: kubectl-fd
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/alikhil/kubectl-find/releases/download/v0.14.0/kubectl-fd_Linux_arm64.tar.gz
+    sha256: 8643222bb64d1fd9c2457d9af8f3617b6042f72f5b4db5128169cb4c580a1a77
+    bin: kubectl-fd
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/alikhil/kubectl-find/releases/download/v0.14.0/kubectl-fd_Darwin_x86_64.tar.gz
+    sha256: 45e93d19c5875bb4b272b9c835dba04815e0986bdf07a3fa27b57140878d127e
+    bin: kubectl-fd
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/alikhil/kubectl-find/releases/download/v0.14.0/kubectl-fd_Darwin_arm64.tar.gz
+    sha256: 71f422bde9dec0cd31c2d449fcdfcde7dc6b26543742d0496b40887385631219
+    bin: kubectl-fd
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/alikhil/kubectl-find/releases/download/v0.14.0/kubectl-fd_Windows_x86_64.zip
+    sha256: db940d299eb1c6d78615749479e807203fe41ce789409f27668688e1bde1fd75
+    bin: kubectl-fd.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/alikhil/kubectl-find/releases/download/v0.14.0/kubectl-fd_Windows_arm64.zip
+    sha256: c0f81b3bc43b406cb7db9529697f91424edd08ec6ffc2042072ecb73b461cd30
+    bin: kubectl-fd.exe

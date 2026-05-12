@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: view-quotas
 spec:
-  version: v0.0.1
+  version: v0.0.3
   platforms:
     - selector:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.1/kubectl-view-quotas_darwin_arm64.tar.gz
-      sha256: 1219f56e278858c1e0a67af4c8a687e988caf4d9321bffcab284a7a625263f23
+      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.3/kubectl-view-quotas_darwin_arm64.tar.gz
+      sha256: 705cdfbb9c7e0648cbbf91488580c31c92ae9f94e22595c69fdc616b2974d93f
       files:
         - from: "./kubectl-view-quotas"
           to: "."
@@ -21,8 +21,8 @@ spec:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.1/kubectl-view-quotas_linux_arm64.tar.gz
-      sha256: 5f0c3b7df38153b59a48be946c056280bb4f2e984b8152185cabcf67beea1599
+      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.3/kubectl-view-quotas_linux_arm64.tar.gz
+      sha256: bff4be13a9bc20a4e9e8c67433a2b51180382cd794e631059b9d701facb12c2e
       files:
         - from: "./kubectl-view-quotas"
           to: "."
@@ -33,8 +33,8 @@ spec:
         matchLabels:
           os: windows
           arch: arm64
-      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.1/kubectl-view-quotas_windows_arm64.zip
-      sha256: 889dae0a6fb9bfa05ad538fa08d1c45549ee56fd034e39e485ebc313089f5356
+      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.3/kubectl-view-quotas_windows_arm64.zip
+      sha256: 2c09974e952a60dff7333238b7e6901216666394e66018e7fb11069eeada7880
       files:
         - from: "./kubectl-view-quotas.exe"
           to: "."
@@ -45,8 +45,8 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.1/kubectl-view-quotas_darwin_amd64.tar.gz
-      sha256: c6085a48e29bd605572123f9a7d85647d7b5da3603fa4152804119eac4fa0103
+      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.3/kubectl-view-quotas_darwin_amd64.tar.gz
+      sha256: 004fde0375dd362df7b4f9f72aa1018a896f003f4df29adbfafc8aa828d25012
       files:
         - from: "./kubectl-view-quotas"
           to: "."
@@ -57,8 +57,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.1/kubectl-view-quotas_linux_amd64.tar.gz
-      sha256: 8e628322891e796dedfdedfecd3879f2d650a59a08e0d854f62e2eb34e2051d0
+      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.3/kubectl-view-quotas_linux_amd64.tar.gz
+      sha256: adacb1e704f86cb0f8fca039a1333d198df4661a082e58eac3c5d8456687b09d
       files:
         - from: "./kubectl-view-quotas"
           to: "."
@@ -69,8 +69,8 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.1/kubectl-view-quotas_windows_amd64.zip
-      sha256: 21249fb520fa2db5587a7e4c5fb5b45b59785b3b06c318799b33a49afff252f8
+      uri: https://github.com/hasanhakkaev/kubectl-view-quotas/releases/download/v0.0.3/kubectl-view-quotas_windows_amd64.zip
+      sha256: 6e45e58974150d777fc3bd2eb89265f6c797f35bf2e61598d83c7c1542de5011
       files:
         - from: "./kubectl-view-quotas.exe"
           to: "."
@@ -85,7 +85,6 @@ spec:
 
     For additional options:
       $ kubectl view-quotas --help
-      or https://github.com/hasanhakkaev/kubectl-view-quotas/blob/v0.0.1/doc/USAGE.md
 
   description: |
     A "kubectl describe resourcequota " alternative that lists resource quotas

@@ -1,0 +1,52 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kflow
+spec:
+  version: "v0.0.10"
+  homepage: https://github.com/AlexsJones/kflow
+  shortDescription: Network traffic visualization for Kubernetes
+  description: |
+    kflow is like 'top' for Kubernetes networking. It reads kernel conntrack
+    tables via node-local daemons and visualizes per-node network connections
+    in a terminal UI.
+
+    Features:
+    - Real-time connection tracking across all nodes
+    - TUI with connection details, throughput metrics
+    - Easy DaemonSet installation via 'kubectl kflow install'
+
+    Quick start:
+      kubectl kflow install -n monitoring
+      kubectl kflow
+
+  caveats: |
+    This plugin requires a DaemonSet to be installed in your cluster.
+    Run 'kubectl kflow install -n <namespace>' to deploy the node agents.
+    
+    The DaemonSet requires elevated privileges (NET_ADMIN, hostPath /proc)
+    to read kernel conntrack tables. Cluster-admin permissions are typically
+    needed to install it.
+
+  platforms:
+    - bin: kflow
+      uri: https://github.com/AlexsJones/kflow/releases/download/v0.0.10/kflow-linux-amd64.tar.gz
+      sha256: "74c662bf47827c1550ba1724c69f36b95cf1fe57cb312a9e2e555b9b34cd5d22"
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - bin: kflow
+      uri: https://github.com/AlexsJones/kflow/releases/download/v0.0.10/kflow-darwin-amd64.tar.gz
+      sha256: "f17f9ae3183784fef9631023c452b773f655a2e434053498f02f4e56516e1b3a"
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+    - bin: kflow
+      uri: https://github.com/AlexsJones/kflow/releases/download/v0.0.10/kflow-darwin-arm64.tar.gz
+      sha256: "028f18081537830bd4edd407239a9cc0e935bd26fa314c3ef9cacc5e6ad748d8"
+      selector:
+        matchLabels:
+          os: darwin
+          arch: arm64

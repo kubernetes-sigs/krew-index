@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: liqo
 spec:
-  version: v0.10.3
+  version: v1.1.2
   homepage: https://github.com/liqotech/liqo
   shortDescription: Install and manage Liqo on your clusters
   description: |
@@ -20,34 +20,34 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/liqotech/liqo/releases/download/v0.10.3/liqoctl-darwin-amd64.tar.gz
-    sha256: f3efc6c91617bf27afda44472b81eba817280848eb5ecbd44645f0465d0928a1
+    uri: https://github.com/liqotech/liqo/releases/download/v1.1.2/liqoctl-darwin-amd64.tar.gz
+    sha256: 7710a086369dfdab6415ab3c76605d51f7e9acf55fab9ab66cb129ae98f43571
     bin: liqoctl
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/liqotech/liqo/releases/download/v0.10.3/liqoctl-darwin-arm64.tar.gz
-    sha256: 5061245bddd5df75ba6b13b96e4a207cef4828b2d9c87d323f41b83d2941ed6d
+    uri: https://github.com/liqotech/liqo/releases/download/v1.1.2/liqoctl-darwin-arm64.tar.gz
+    sha256: b706540aafc3908901c2318e5345b15713bcb5ce72755cea43f01f61a5b18ef4
     bin: liqoctl
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/liqotech/liqo/releases/download/v0.10.3/liqoctl-linux-amd64.tar.gz
-    sha256: 23c182c93890e1bda80f8dfee3ebc9e2f629ac3c89b8f6cde6e6ead19f8604fd
+    uri: https://github.com/liqotech/liqo/releases/download/v1.1.2/liqoctl-linux-amd64.tar.gz
+    sha256: 846ddc81565bd185370f9134b30ae60e44c69ed7101ced05099ef30c2a3ebe80
     bin: liqoctl
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/liqotech/liqo/releases/download/v0.10.3/liqoctl-linux-arm64.tar.gz
-    sha256: b8eeb6600884e74d0902c447e6ac8c80bf5eb3ecbd5b00c5abe4a15682bdcce3
+    uri: https://github.com/liqotech/liqo/releases/download/v1.1.2/liqoctl-linux-arm64.tar.gz
+    sha256: 338a393fe2bfcd5d3320d4587dd1b89c67b8e0816cc52f964630614176e870cc
     bin: liqoctl
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/liqotech/liqo/releases/download/v0.10.3/liqoctl-windows-amd64.tar.gz
-    sha256: 48b668ed7a1e495901457e7f2340b6c9f0efb7de2e65eb70a88279de9ad46c54
+    uri: https://github.com/liqotech/liqo/releases/download/v1.1.2/liqoctl-windows-amd64.tar.gz
+    sha256: 7a002dd87d547ac54104cc95efb6ca6a0b1db6237a28d2182e28496fbad5c133
     bin: liqoctl

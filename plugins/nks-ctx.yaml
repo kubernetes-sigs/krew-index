@@ -1,0 +1,58 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: nks-ctx
+spec:
+  version: v0.1.0
+  shortDescription: Manage NKS (Ncloud Kubernetes Service) cluster contexts
+  description: |
+    kubectl plugin for managing NKS (Ncloud Kubernetes Service) cluster contexts
+    using NCP IAM authentication.
+    
+    Features:
+    - List all NKS clusters in your NCP account
+    - Automatically configure kubeconfig for all clusters
+    - Switch between cluster contexts (similar to kubectl ctx)
+  homepage: https://github.com/consol-lee/nks-ctx
+  caveats: |
+    This plugin requires ncp-iam-authenticator to be installed and in your PATH.
+    See https://github.com/NaverCloudPlatform/ncp-iam-authenticator for installation.
+
+    NCP API credentials must be configured via environment variables or ~/.ncloud/configure.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/consol-lee/nks-ctx/releases/download/v0.1.0/kubectl-nks_ctx-darwin-amd64.tar.gz
+      sha256: 7e81f063cf23c2a9bea4b190f642b9f540d8cda69799469dca6be4c71ed25496
+      bin: kubectl-nks_ctx
+      files:
+        - from: kubectl-nks_ctx
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/consol-lee/nks-ctx/releases/download/v0.1.0/kubectl-nks_ctx-darwin-arm64.tar.gz
+      sha256: 7832095302e1636cd224d6a18052bab85e6af9b397eacdac5a740246ace52289
+      bin: kubectl-nks_ctx
+      files:
+        - from: kubectl-nks_ctx
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/consol-lee/nks-ctx/releases/download/v0.1.0/kubectl-nks_ctx-linux-amd64.tar.gz
+      sha256: 7f90118f2be6cf859e31d023286c6909cd568628537acd9f884f3fd065c488b8
+      bin: kubectl-nks_ctx
+      files:
+        - from: kubectl-nks_ctx
+          to: .
+        - from: LICENSE
+          to: .

@@ -1,0 +1,84 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: wild
+spec:
+  version: v1.0.12
+  homepage: https://github.com/alex-vee-sh/kube-wild
+  shortDescription: "Use wildcard patterns for kubectl get/describe/delete"
+  description: |
+    kubectl-wild adds simple wildcard matching and safety features for resource names,
+    then delegates to kubectl for output and actions.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/alex-vee-sh/kube-wild/releases/download/v1.0.12/kubectl-wild_darwin_amd64.tar.gz
+    sha256: "386023176307c6d67003f05c8ff6c1e09ac97bf397034540b21465836a4ec99e"
+    bin: kubectl-wild
+    files:
+    - from: "kubectl-wild"
+      to: "kubectl-wild"
+    - from: "LICENSE"
+      to: "LICENSE"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/alex-vee-sh/kube-wild/releases/download/v1.0.12/kubectl-wild_darwin_arm64.tar.gz
+    sha256: "720e27e2490f59c3d4d9779d0f08384401ff0e1f980a58952100f5cb65db56bf"
+    bin: kubectl-wild
+    files:
+    - from: "kubectl-wild"
+      to: "kubectl-wild"
+    - from: "LICENSE"
+      to: "LICENSE"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/alex-vee-sh/kube-wild/releases/download/v1.0.12/kubectl-wild_linux_amd64.tar.gz
+    sha256: "4ba2f553b2bcacb1a76b3f0f17dadfd3211d56acef4c2cb0682c5699d3cc3d5c"
+    bin: kubectl-wild
+    files:
+    - from: "kubectl-wild"
+      to: "kubectl-wild"
+    - from: "LICENSE"
+      to: "LICENSE"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/alex-vee-sh/kube-wild/releases/download/v1.0.12/kubectl-wild_linux_arm64.tar.gz
+    sha256: "eb3d43d029469d8d58b1ac7510372c6d24897ba52947627a8ff080ddc7c4f50e"
+    bin: kubectl-wild
+    files:
+    - from: "kubectl-wild"
+      to: "kubectl-wild"
+    - from: "LICENSE"
+      to: "LICENSE"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/alex-vee-sh/kube-wild/releases/download/v1.0.12/kubectl-wild_windows_amd64.tar.gz
+    sha256: "cd92c59fc2801cc99411fecf0d1694b30f2ac3ef44044a1120012321db36a6dd"
+    bin: kubectl-wild.exe
+    files:
+    - from: "kubectl-wild.exe"
+      to: "kubectl-wild.exe"
+    - from: "LICENSE"
+      to: "LICENSE"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/alex-vee-sh/kube-wild/releases/download/v1.0.12/kubectl-wild_windows_arm64.tar.gz
+    sha256: "9a99794b4b913071b7cc7181cda31526abfa4babed398f7dbba2409d33b11129"
+    bin: kubectl-wild.exe
+    files:
+    - from: "kubectl-wild.exe"
+      to: "kubectl-wild.exe"
+    - from: "LICENSE"
+      to: "LICENSE"

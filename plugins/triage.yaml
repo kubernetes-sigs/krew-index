@@ -1,0 +1,64 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: triage
+spec:
+  version: "v0.1.1"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/Lc-Lin/kubectl-triage/releases/download/v0.1.1/kubectl-triage_linux_amd64.tar.gz
+    sha256: "d212e7202a4db0df9fe611057067fe8388412f2efb271ae2bd185e24c1fa665b"
+    files:
+    - from: "kubectl-triage"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-triage"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/Lc-Lin/kubectl-triage/releases/download/v0.1.1/kubectl-triage_darwin_amd64.tar.gz
+    sha256: "baabb936ec8051cd06910c3fa1678d4f8641cc717397e120b0f765023d548b9f"
+    files:
+    - from: "kubectl-triage"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-triage"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/Lc-Lin/kubectl-triage/releases/download/v0.1.1/kubectl-triage_windows_amd64.zip
+    sha256: "112553a86b6398337ba27b41397f75a5d5cd1dde7961b6b18ea472a3938484e7"
+    files:
+    - from: "kubectl-triage.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-triage.exe"
+  shortDescription: Fast diagnostics for failed pods
+  homepage: https://github.com/Lc-Lin/kubectl-triage
+  description: |
+    kubectl-triage provides 5-second diagnostic snapshots for failed
+    Kubernetes pods.
+
+    It intelligently aggregates the critical information you need:
+    - Pod status and container states
+    - Critical events (Warning/Error only, filtering out noise)
+    - Previous crash logs (if container restarted)
+    - Current container logs
+
+    Only failed/restarted containers are shown by default, keeping output
+    focused.
+
+    Key features:
+    - Smart health detection (catches "flapping" pods)
+    - Intelligent container filtering (RestartCount > 0)
+    - Signal-over-noise event filtering
+    - Parallel log collection for speed
+    - Beautiful color-coded output

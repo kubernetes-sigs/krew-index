@@ -5,7 +5,7 @@ metadata:
 spec:
   homepage: https://juicefs.com
   shortDescription: Debug JuiceFS issues in Kubernetes
-  version: v0.3.0
+  version: v0.4.0
   description: |
     JuiceFS is an open-source, high-performance distributed file system designed for the cloud.
     This plugin helps debugging issues with the JuiceFS CSI driver.
@@ -14,9 +14,9 @@ spec:
     - selector:
         matchLabels:
           os: darwin
-          arch: arm64
-      uri: https://github.com/juicedata/kubectl-jfs-plugin/releases/download/v0.3.0/kubectl-jfs-plugin-0.3.0-darwin-arm64.tar.gz
-      sha256: "4dd5d2c30bc028bb25cb7e1ddec74446e7bf9c7037f8300b67ab4c261d8d21e3"
+          arch: amd64
+      uri: https://github.com/juicedata/kubectl-jfs-plugin/releases/download/v0.4.0/kubectl-jfs-plugin-0.4.0-darwin-amd64.tar.gz
+      sha256: "2b7bd4241ec14b6453b25e74247d7b91060876b5eda9781e889be92442978e4f"
       bin: "./kubectl-jfs"
       files:
         - from: kubectl-jfs-plugin
@@ -26,9 +26,21 @@ spec:
     - selector:
         matchLabels:
           os: darwin
+          arch: arm64
+      uri: https://github.com/juicedata/kubectl-jfs-plugin/releases/download/v0.4.0/kubectl-jfs-plugin-0.4.0-darwin-arm64.tar.gz
+      sha256: "a7a8b9f243932d4c1c22d3c03793e20239488fe1f1ff52b7b4bccfe454ee970d"
+      bin: "./kubectl-jfs"
+      files:
+        - from: kubectl-jfs-plugin
+          to: kubectl-jfs
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
           arch: amd64
-      uri: https://github.com/juicedata/kubectl-jfs-plugin/releases/download/v0.3.0/kubectl-jfs-plugin-0.3.0-darwin-amd64.tar.gz
-      sha256: "84cad55ed666cd3ee131f8e4fe315e3cb5dccde68f8c2c840efd95a61f9a96fa"
+      uri: https://github.com/juicedata/kubectl-jfs-plugin/releases/download/v0.4.0/kubectl-jfs-plugin-0.4.0-linux-amd64.tar.gz
+      sha256: "56edfa9998bcc717c60ba4ce1b74f4e16ead6d8d4b0dfe4c5ca94fdca92bfd28"
       bin: "./kubectl-jfs"
       files:
         - from: kubectl-jfs-plugin
@@ -39,20 +51,8 @@ spec:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/juicedata/kubectl-jfs-plugin/releases/download/v0.3.0/kubectl-jfs-plugin-0.3.0-linux-arm64.tar.gz
-      sha256: "a042bb95e8c53d02ac96b53972f7ca513cf3dfb7ddd0de417a2cec4811f853a2"
-      bin: "./kubectl-jfs"
-      files:
-        - from: kubectl-jfs-plugin
-          to: kubectl-jfs
-        - from: LICENSE
-          to: .
-    - selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-      uri: https://github.com/juicedata/kubectl-jfs-plugin/releases/download/v0.3.0/kubectl-jfs-plugin-0.3.0-linux-amd64.tar.gz
-      sha256: "7666acea07429c1110a6c05194437e88529021b982d93077f789cd635b0fea87"
+      uri: https://github.com/juicedata/kubectl-jfs-plugin/releases/download/v0.4.0/kubectl-jfs-plugin-0.4.0-linux-arm64.tar.gz
+      sha256: "d171292f9e73640c2e3ffb869640402b8649bf6a3c7111e3a6a0ea4301b0de71"
       bin: "./kubectl-jfs"
       files:
         - from: kubectl-jfs-plugin

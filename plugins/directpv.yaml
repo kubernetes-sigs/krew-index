@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: directpv
 spec:
-  version: v4.1.4
+  version: v4.1.5
   homepage: https://github.com/minio/directpv
   shortDescription: Deploys and manages the lifecycle of DirectPV CSI driver
   description: |
@@ -14,34 +14,34 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/minio/directpv/releases/download/v4.1.4/kubectl-directpv_darwin_amd64_v1.zip
-    sha256: dd963d1e2a32c9e0311f8408828f99b7f70a5c0c74a8e5a42337d8b9475a775d
+    uri: https://github.com/minio/directpv/releases/download/v4.1.5/kubectl-directpv_darwin_amd64_v1.zip
+    sha256: 6da96b0a647f9f7ce47c3b49c88341f6eda1fd8972374c4086d8bcac273f22ff
     bin: kubectl-directpv
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/minio/directpv/releases/download/v4.1.4/kubectl-directpv_darwin_arm64.zip
-    sha256: 79a89b296cc053489dbfad07057640b501f2666a3db73161fa507c7bfe19a9a4
+    uri: https://github.com/minio/directpv/releases/download/v4.1.5/kubectl-directpv_darwin_arm64_v8.0.zip
+    sha256: c0cbf6018539593c461d28d2d034a9c293359913471dff335dd6d2f3e5978eb9
     bin: kubectl-directpv
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/minio/directpv/releases/download/v4.1.4/kubectl-directpv_linux_amd64_v1.zip
-    sha256: fe29ec81966bd31f0ad6cd8fd9f3077ab0f4b5f866b9e048d5a5c21872cb4dbf
+    uri: https://github.com/minio/directpv/releases/download/v4.1.5/kubectl-directpv_linux_amd64_v1.zip
+    sha256: 09f058902f2abc41549748926c20da2c25bdfcc0b2418c4499c349df2a627169
     bin: kubectl-directpv
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/minio/directpv/releases/download/v4.1.4/kubectl-directpv_linux_arm64.zip
-    sha256: 5909ca6ed02070cc0b4a4949b41bc7654aebc9b04f3038366a02aa8993dd4f76
+    uri: https://github.com/minio/directpv/releases/download/v4.1.5/kubectl-directpv_linux_arm64_v8.0.zip
+    sha256: da9ba28fa19ae51b4412ba0d6ed9c7d19d38dd160c3f4f85aaf3755d325fd9cb
     bin: kubectl-directpv
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/minio/directpv/releases/download/v4.1.4/kubectl-directpv_windows_amd64_v1.zip
-    sha256: 20254f9be34b540dbd262aa904c5207dbf11d2d4434172e5cba57ae548125730
+    uri: https://github.com/minio/directpv/releases/download/v4.1.5/kubectl-directpv_windows_amd64_v1.zip
+    sha256: 668e7054d0336323d57df24c1057e2b69f089c76084db80f081100a1c6379135
     bin: kubectl-directpv.exe

@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: inspect
+spec:
+  version: v1.1.4
+  homepage: https://github.com/irenedo/kubectl-inspect
+  shortDescription: Browse Kubernetes resources interactively with a TUI tree browser
+  description: |
+    An interactive terminal UI for browsing Kubernetes resource and CRD field
+    structures. Instead of typing kubectl explain repeatedly, use the collapsible
+    tree view to explore fields and see full explain output in real-time.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/irenedo/kubectl-inspect/releases/download/v1.1.4/kubectl-inspect_v1.1.4_darwin_amd64.tar.gz
+    sha256: a89fa85ede269466532d8d122e6d945edb982a0595ad381dcb710a243b110d4e
+    bin: kubectl-inspect
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/irenedo/kubectl-inspect/releases/download/v1.1.4/kubectl-inspect_v1.1.4_darwin_arm64.tar.gz
+    sha256: 3cfdd391493a01ff3eac20af17428b7edb13770f0d5a10b6e9865bc24eca2fa7
+    bin: kubectl-inspect
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/irenedo/kubectl-inspect/releases/download/v1.1.4/kubectl-inspect_v1.1.4_linux_amd64.tar.gz
+    sha256: 3dc9e0c4dbafa79b95b4c63ac25803fcac6dde3eb9e3fb8c19279c5778e4dfbc
+    bin: kubectl-inspect
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/irenedo/kubectl-inspect/releases/download/v1.1.4/kubectl-inspect_v1.1.4_linux_arm64.tar.gz
+    sha256: ca521ae7f89e2616d5914e49b6742621cdc9699b058d86dfb09c2bcd68a3f7ce
+    bin: kubectl-inspect
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/irenedo/kubectl-inspect/releases/download/v1.1.4/kubectl-inspect_v1.1.4_windows_amd64.tar.gz
+    sha256: c0813e3b7c0be9f9618cdba88d2a3e50aa76f8c1f9faa7637661849194f13c17
+    bin: kubectl-inspect.exe

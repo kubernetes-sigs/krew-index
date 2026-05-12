@@ -1,0 +1,116 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: szero
+spec:
+  version: v1.14.3
+  homepage: https://github.com/jadolg/szero
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/jadolg/szero/releases/download/v1.14.3/szero_linux_amd64.tar.gz
+    sha256: 6e56e8493959cf3a43544c8e6c285f6966fa4b2c2b96f9e17e148056233537eb
+    files:
+    - from: "./szero"
+      to: "kubectl-szero"
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-szero"
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: "386"
+    uri: https://github.com/jadolg/szero/releases/download/v1.14.3/szero_linux_386.tar.gz
+    sha256: 4e4aa35f785d876ae5413480d4629f7313dc0df4dacc23da0c84f191b6f18737
+    files:
+    - from: "./szero"
+      to: "kubectl-szero"
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-szero"
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: "arm64"
+    uri: https://github.com/jadolg/szero/releases/download/v1.14.3/szero_linux_arm64.tar.gz
+    sha256: 9dd93eb0674111b41f594a93de825dc84e9ad38e3c09f1efc60a9f562d0053b1
+    files:
+    - from: "./szero"
+      to: "kubectl-szero"
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-szero"
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/jadolg/szero/releases/download/v1.14.3/szero_darwin_amd64.tar.gz
+    sha256: 48d1b4234a448a8bae491b6552a955cf99f4ae16082539da74fdd8fa39729b19
+    files:
+    - from: "./szero"
+      to: "kubectl-szero"
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-szero"
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/jadolg/szero/releases/download/v1.14.3/szero_darwin_arm64.tar.gz
+    sha256: 4e840ceb42c14e5e288d933720ad314b524b0e2444982f63b5f18bd070b8c744
+    files:
+    - from: "./szero"
+      to: "kubectl-szero"
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-szero"
+
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/jadolg/szero/releases/download/v1.14.3/szero_windows_amd64.zip
+    sha256: ecdf83f867788676c9e1d61411982bf37e96b9e037145fb2bc76a3c413c54cca
+    files:
+    - from: "./szero.exe"
+      to: "kubectl-szero.exe"
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-szero.exe"
+
+  - selector:
+      matchLabels:
+        os: windows
+        arch: "386"
+    uri: https://github.com/jadolg/szero/releases/download/v1.14.3/szero_windows_386.zip
+    sha256: 55df0f7b2af52450a8672d8f99efe8ca78c9dd5c7db9f55c702bc37d6c0aa660
+    files:
+    - from: "./szero.exe"
+      to: "kubectl-szero.exe"
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-szero.exe"
+
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/jadolg/szero/releases/download/v1.14.3/szero_windows_arm64.zip
+    sha256: 58620d4af230ff3b6d849b5e9cef474d8584b4a8aaad6f4871603d21d0918194
+    files:
+    - from: "./szero.exe"
+      to: "kubectl-szero.exe"
+    - from: LICENSE
+      to: "."
+    bin: "kubectl-szero.exe"
+
+  shortDescription: Scale all workloads in a namespace to 0 and back
+  description: |
+    Downscale all deployments, statefulsets, and daemonsets in a namespace to 0 replicas and back to their previous state.
+    Useful when you need to tear everything down and bring it back in a namespace.

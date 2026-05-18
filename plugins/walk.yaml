@@ -1,0 +1,39 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: walk
+spec:
+  version: "v1.1.1"
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/HarshPanchal18/kubectl-walk/releases/download/v1.1.1/kubectl-walk-linux-amd64.tar.gz
+    sha256: "9f4354a210d0e211bcbea0b502cab79fa905b220ef19b8494dccca945a514d2d"
+    bin: kubectl-walk-linux-amd64
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/HarshPanchal18/kubectl-walk/releases/download/v1.1.1/kubectl-walk-darwin-amd64.tar.gz
+    sha256: "5cfdc8b6e9772e53c7d330c8b9d3f27b4474fb57e74609ee2a61a3c323e37fe2"
+    bin: kubectl-walk-darwin-amd64
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/HarshPanchal18/kubectl-walk/releases/download/v1.1.1/kubectl-walk-darwin-arm64.tar.gz
+    sha256: "0f22193dabd867763709da9e098e2d4e6f62faf6b8dac1f78a24287966176d97"
+    bin: kubectl-walk-darwin-arm64
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/HarshPanchal18/kubectl-walk/releases/download/v1.1.1/kubectl-walk-windows-amd64.zip
+    sha256: "e746d0acef7d16d6c3e202dd137cd14123f096f11ac94caa9e81e62216446b02"
+    bin: kubectl-walk-windows-amd64.exe
+  shortDescription: "Explore Kubernetes YAML like a human — not like a machine"
+  description: |
+    kubectl-walk helps you to flatten, filters, and visualizes nested fields of Kubernetes objects or YAML files.
+  homepage: https://github.com/HarshPanchal18/kubectl-walk

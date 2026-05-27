@@ -3,32 +3,40 @@ kind: Plugin
 metadata:
   name: storm
 spec:
-  version: v0.0.3
+  version: v0.1.0
   homepage: https://github.com/guilhem/kubectl-storm
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/guilhem/kubectl-storm/releases/download/v0.0.3/kubectl-storm_v0.0.3_darwin_amd64.tar.gz
-    sha256: 665afbd7f75e072acaaa15484649b1f9fb45e46346085f92479aed86494f4e14
+    uri: https://github.com/guilhem/kubectl-storm/releases/download/v0.1.0/kubectl-storm_v0.1.0_darwin_amd64.tar.gz
+    sha256: 89cccdea6aaab3ca84488053c1c4361ed52c812d07e59f91bc8882ceda43cdeb
     bin: kubectl-storm
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/guilhem/kubectl-storm/releases/download/v0.0.3/kubectl-storm_v0.0.3_darwin_arm64.tar.gz
-    sha256: 78c2f7caf3141243a2d637c58486c02eb14faf1b28ea1522de8450015e853bec
+    uri: https://github.com/guilhem/kubectl-storm/releases/download/v0.1.0/kubectl-storm_v0.1.0_darwin_arm64.tar.gz
+    sha256: 984f6933a03d51c0c1c492403c1ac58de019c7a13e4155170e8facf2e5e30a05
     bin: kubectl-storm
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/guilhem/kubectl-storm/releases/download/v0.0.3/kubectl-storm_v0.0.3_linux_amd64.tar.gz
-    sha256: 39314ce41974a4e8ed726b9aaa259e30e9c338926c39c7b5dd942b06a6094f9b
+    uri: https://github.com/guilhem/kubectl-storm/releases/download/v0.1.0/kubectl-storm_v0.1.0_linux_amd64.tar.gz
+    sha256: e136a12f08f1d8c618824c90bf20d9a7b6df861db8666922dedfdaac1c7c8fbe
     bin: kubectl-storm
-  shortDescription: Monitor and diff excessive generation changes.
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/guilhem/kubectl-storm/releases/download/v0.1.0/kubectl-storm_v0.1.0_linux_arm64.tar.gz
+    sha256: 399168de4f9685a91d3963d54b06645f8e4a0e2374265e1b593bdc4efc3f81c0
+    bin: kubectl-storm
+  shortDescription: Monitor and diff excessive Kubernetes resource changes.
   description: |
-    Monitor and diff excessive generation changes.
-    It detects rapid updates to Kubernetes resource generations, providing detailed diffs and a visual interface for debugging.
-    The tool supports filtering by resource types and employs a user-friendly terminal interface to display updates and differences, making it easier to identify and address potential issues caused by high-frequency changes in resource configurations.
+    Monitor and diff excessive Kubernetes resource changes.
+    By default it detects rapid metadata.resourceVersion updates, including status and metadata write storms.
+    It can also monitor metadata.generation changes to focus on spec updates.
+    The tool supports resource include/exclude filters and uses a terminal interface to display affected resources, change counts, and cleaned diffs.

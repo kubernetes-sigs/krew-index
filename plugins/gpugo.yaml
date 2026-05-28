@@ -1,15 +1,17 @@
-# Krew plugin manifest for gpugo.
+# krew-release-bot template. Rendered on every tag push, the result is
+# what gets PR'd to krew-index. The bot resolves `addURIAndSha` by
+# fetching each release archive and computing its sha256.
 #
-# This is the file to submit to kubernetes-sigs/krew-index as
-#   plugins/gpugo.yaml
-# in your PR. Kept here in the source repo as the canonical reference so
-# future releases just need the version + checksums updated and a fresh PR.
+# Keep this in sync with the (one-off, manually-submitted) v0.1.1 manifest
+# living in krew-index at plugins/gpugo.yaml — schema fields, description,
+# caveats. The static reference at /Users/taln/kubectl-gpugo/krew/gpugo.yaml
+# was deleted; this file is the source of truth.
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
   name: gpugo
 spec:
-  version: v0.1.1
+  version: "v0.1.3"
   homepage: https://github.com/Tal-Naeh/kubectl-gpugo
   shortDescription: Top-like TUI for per-pod GPU usage on Kubernetes
   description: |
@@ -41,49 +43,34 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.1/kubectl-gpugo_0.1.1_darwin_amd64.tar.gz
-    sha256: c7c8a0fa45f22d3b40dca8a647cfd0736ad403acb9d59e3d580b133b76ac896b
+    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.3/kubectl-gpugo_v0.1.3_darwin_amd64.tar.gz
+    sha256: 32021c2563c04a59081a1276921ad9385db680ba3194a200d7885d935c4e0b66
     bin: kubectl-gpugo
-    files:
-    - from: "*"
-      to: "."
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.1/kubectl-gpugo_0.1.1_darwin_arm64.tar.gz
-    sha256: f89f73bb61b59b0417f69c083ab386e91f1c80b4a71dffaaead7800401ce22bf
+    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.3/kubectl-gpugo_v0.1.3_darwin_arm64.tar.gz
+    sha256: 84f93d6f644711e3b1081b74133775f2bb7c21dd098b80b419f9dd96c4b05f58
     bin: kubectl-gpugo
-    files:
-    - from: "*"
-      to: "."
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.1/kubectl-gpugo_0.1.1_linux_amd64.tar.gz
-    sha256: e6d8a050a579741bc70fa7a806efcb1144fef21bc9b517a99b2ce626da7bcb07
+    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.3/kubectl-gpugo_v0.1.3_linux_amd64.tar.gz
+    sha256: 188c744e0a8533dbfb2ff50bf0b60f862da4288b15573091420df4a066513842
     bin: kubectl-gpugo
-    files:
-    - from: "*"
-      to: "."
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.1/kubectl-gpugo_0.1.1_linux_arm64.tar.gz
-    sha256: 33d1218af85aab2139c14c7ca5ba65ae913bd81898aeb58f090d5921c2d3896d
+    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.3/kubectl-gpugo_v0.1.3_linux_arm64.tar.gz
+    sha256: 975124bb681bfb6fecefc2d5b849d609592da6184089f05f07c92bd19bf8b512
     bin: kubectl-gpugo
-    files:
-    - from: "*"
-      to: "."
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.1/kubectl-gpugo_0.1.1_windows_amd64.zip
-    sha256: bdd0bad7e8b323d633393715a70efee696c91b3cdfd4db31a2d09f2e20089c8b
+    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.3/kubectl-gpugo_v0.1.3_windows_amd64.zip
+    sha256: 6ba7a89dc4c7e592d729ad17ad4bffaedaa658c41028d45c10bde0c6783aa778
     bin: kubectl-gpugo.exe
-    files:
-    - from: "*"
-      to: "."

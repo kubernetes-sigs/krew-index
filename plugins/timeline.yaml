@@ -5,16 +5,18 @@ metadata:
 spec:
   version: v0.2.0
   homepage: https://github.com/Bisman-Singh/kubectl-timeline
-  shortDescription: Reconstruct incident timelines from live cluster state
+  shortDescription: Incident timeline from live cluster state
   description: |
-    Agentless incident timeline reconstruction. Point it at any cluster
-    you can reach and get back a chronological, deduplicated, severity-ranked
-    account of what broke and in what order, with root-cause chain analysis.
+    Agentless incident timeline reconstruction from live
+    Kubernetes cluster state. Point it at any cluster and get
+    a chronological, deduplicated, severity-ranked account of
+    what broke and in what order, with root-cause analysis.
 
-    14 correlation patterns, cascade grouping, cross-namespace correlation,
-    chronic detection, and confidence-bucketed root cause analysis.
-    Reads events, pod status, rollout history, node conditions, HPA,
-    Karpenter, and Helm signals. Installs nothing in the cluster.
+    Features 14 correlation patterns, cascade grouping,
+    cross-namespace correlation, chronic issue detection, and
+    confidence-bucketed root cause chains. Reads events, pod
+    status, rollout history, node conditions, HPA, Karpenter,
+    and Helm signals. Installs nothing in the cluster.
   platforms:
     - selector:
         matchLabels:

@@ -1,0 +1,60 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: timeline
+spec:
+  version: v0.2.0
+  homepage: https://github.com/Bisman-Singh/kubectl-timeline
+  shortDescription: Reconstruct incident timelines from live cluster state
+  description: |
+    Agentless incident timeline reconstruction. Point it at any cluster
+    you can reach and get back a chronological, deduplicated, severity-ranked
+    account of what broke and in what order, with root-cause chain analysis.
+
+    14 correlation patterns, cascade grouping, cross-namespace correlation,
+    chronic detection, and confidence-bucketed root cause analysis.
+    Reads events, pod status, rollout history, node conditions, HPA,
+    Karpenter, and Helm signals. Installs nothing in the cluster.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/Bisman-Singh/kubectl-timeline/releases/download/v0.2.0/kubectl-timeline_0.2.0_linux_amd64.tar.gz
+      sha256: f83443c5e5d3812924665161e959f5791eabef5c36cb017ab02d34107c6e0bd2
+      bin: kubectl-timeline
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/Bisman-Singh/kubectl-timeline/releases/download/v0.2.0/kubectl-timeline_0.2.0_linux_arm64.tar.gz
+      sha256: d722f221e18307e1b74f47622df8366eb3a62e682df528067783f70303e8255e
+      bin: kubectl-timeline
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/Bisman-Singh/kubectl-timeline/releases/download/v0.2.0/kubectl-timeline_0.2.0_darwin_amd64.tar.gz
+      sha256: d82edc40664b69d50eb6295e19357f7cd30bf47cabff59072d2b1355057acea5
+      bin: kubectl-timeline
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/Bisman-Singh/kubectl-timeline/releases/download/v0.2.0/kubectl-timeline_0.2.0_darwin_arm64.tar.gz
+      sha256: 376afd32dd8325fd100c940951d603a20cdfa1f9ba21298162583c0805524e9d
+      bin: kubectl-timeline
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/Bisman-Singh/kubectl-timeline/releases/download/v0.2.0/kubectl-timeline_0.2.0_windows_amd64.zip
+      sha256: ebdf7646d8b3d8b5a2f74adde86c47c114ef654d6f9be661a0c926e1675d915b
+      bin: kubectl-timeline.exe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/Bisman-Singh/kubectl-timeline/releases/download/v0.2.0/kubectl-timeline_0.2.0_windows_arm64.zip
+      sha256: 208ee0ea26b5e20f0f692474efaec40f325f552fbaa95ab97eb5babff60e2bb0
+      bin: kubectl-timeline.exe

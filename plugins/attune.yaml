@@ -3,56 +3,57 @@ kind: Plugin
 metadata:
   name: attune
 spec:
-  version: v0.1.4
+  version: "v0.1.7"
   homepage: https://github.com/attune-io/attune
   shortDescription: Inspect and explain Attune pod right-sizing policies
   description: |
-    The kubectl-attune plugin provides visibility into Attune, a Kubernetes
-    operator for safe, in-place pod resource right-sizing.
+    Shows policy status, savings estimates, per-container recommendations,
+    recommendation reasoning, and resize history for Attune policies.
 
-    Available commands:
-      - explain: Show effective policy values for a workload, including
-        inherited defaults and per-container overrides
-      - status: Display active recommendations and current resize state
-        for targeted pods
-      - history: View the resize history for a workload, including
-        timestamps, old/new values, and outcomes
-      - version: Print the plugin version
+    Subcommands:
+      status            Show policy status, workload counts, and conditions
+      savings           Show estimated CPU/memory savings per policy
+      recommendations   Show per-container sizing recommendations
+      explain           Show recommendation reasoning for one policy
+      preview           Preview per-pod resource changes before promoting type
+      history           Show resize history (including eviction fallbacks)
+      diff              Show resource change diffs from recommendations
+      wizard            Interactive policy creation and type promotion
   caveats: |
     Requires the Attune operator to be installed in the cluster.
   platforms:
   - selector:
       matchLabels:
-        os: darwin
+        os: linux
         arch: amd64
-    uri: https://github.com/attune-io/attune/releases/download/v0.1.4/kubectl-attune_darwin_amd64.tar.gz
-    sha256: 5dc12abc8d2d360915e317cdae6562e0f8375a1183d94ed02bd950f077c2e623
-    bin: kubectl-attune
-  - selector:
-      matchLabels:
-        os: darwin
-        arch: arm64
-    uri: https://github.com/attune-io/attune/releases/download/v0.1.4/kubectl-attune_darwin_arm64.tar.gz
-    sha256: 21d0322ee524d8d7eafe44d06ef9d482d4c271e224961fc47651f80004333610
+    uri: https://github.com/attune-io/attune/releases/download/v0.1.7/kubectl-attune_linux_amd64.tar.gz
+    sha256: 5f3ce239fa9e1a2f177d61f0975358ae19593fa8e3c0fc7c2b21613d3d3c1d31
     bin: kubectl-attune
   - selector:
       matchLabels:
         os: linux
-        arch: amd64
-    uri: https://github.com/attune-io/attune/releases/download/v0.1.4/kubectl-attune_linux_amd64.tar.gz
-    sha256: 29f1449bd12569f9896cc37013ff1f81c5cfeb8fb562a8932b7c2b832900d188
+        arch: arm64
+    uri: https://github.com/attune-io/attune/releases/download/v0.1.7/kubectl-attune_linux_arm64.tar.gz
+    sha256: 39fdfbbe4fb00ededc5c93d66882622842251ac082581d36e509584bd025249b
     bin: kubectl-attune
   - selector:
       matchLabels:
         os: linux
         arch: arm
-    uri: https://github.com/attune-io/attune/releases/download/v0.1.4/kubectl-attune_linux_arm.tar.gz
-    sha256: 28db7b4e523555e70a7867d36110139a071973131c4e958d440e21432f75d4fb
+    uri: https://github.com/attune-io/attune/releases/download/v0.1.7/kubectl-attune_linux_arm.tar.gz
+    sha256: c3401c57325d7d0f31dd04f60b2d2e6523b55775ecb9c724c409676731fec03a
     bin: kubectl-attune
   - selector:
       matchLabels:
-        os: linux
+        os: darwin
+        arch: amd64
+    uri: https://github.com/attune-io/attune/releases/download/v0.1.7/kubectl-attune_darwin_amd64.tar.gz
+    sha256: 6e44448976950976924c242a52a2be3f805884375c5b023e1df7024982929733
+    bin: kubectl-attune
+  - selector:
+      matchLabels:
+        os: darwin
         arch: arm64
-    uri: https://github.com/attune-io/attune/releases/download/v0.1.4/kubectl-attune_linux_arm64.tar.gz
-    sha256: 3c2408fc6afe5c9f6fba63f3044460e069df5454224a1dd858ff4476d2d3f32c
+    uri: https://github.com/attune-io/attune/releases/download/v0.1.7/kubectl-attune_darwin_arm64.tar.gz
+    sha256: 54652c969f494c64dbc1f4b830f99fb6cdfd36439e4cfddae3e6dc46e7100c86
     bin: kubectl-attune

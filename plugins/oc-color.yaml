@@ -1,0 +1,49 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: oc-color
+spec:
+  version: "0.8.0"
+  homepage: "https://github.com/thephilip/oc-color"
+  shortDescription: "Colorize and syntax-highlight oc command output."
+  description: |-
+    oc-color is a plugin for the OpenShift CLI (oc) tool that wraps the oc binary,
+    intercepting its output and injecting ANSI color codes for improved readability.
+    It supports highlighting key status words (e.g., Running, Pending, Error) and can be
+    extended to support advanced syntax highlighting.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: "https://github.com/thephilip/oc-color/releases/download/v0.8.0/oc-color_0.8.0_linux_amd64.tar.gz"
+      sha256: "7565de39ec0199decd6ef17512f3ec46008a0118dd7810cba0c711e7890506f3"
+      bin: "oc-color"
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: "https://github.com/thephilip/oc-color/releases/download/v0.8.0/oc-color_0.8.0_linux_arm64.tar.gz"
+      sha256: "cc8eb9b6f9b22af17e953e526b28317651e26424023433e1ddb45d04f619b563"
+      bin: "oc-color"
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: "https://github.com/thephilip/oc-color/releases/download/v0.8.0/oc-color_0.8.0_darwin_amd64.tar.gz"
+      sha256: "19f07b040cc6a585c124344643405f5733997755f6945af8a8b4cb9297cc716f"
+      bin: "oc-color"
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: "https://github.com/thephilip/oc-color/releases/download/v0.8.0/oc-color_0.8.0_darwin_arm64.tar.gz"
+      sha256: "ee5b26f71828eb5d6da054f6d2aa7af256aa5605152a5d0c669bb9d0b43dc3af"
+      bin: "oc-color"
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: "https://github.com/thephilip/oc-color/releases/download/v0.8.0/oc-color_0.8.0_windows_amd64.zip"
+      sha256: "72dc553ca82fd239ac10fbe2209824cd0ff8fb38d3464a607fba369e4c82a561"
+      bin: "oc-color.exe"

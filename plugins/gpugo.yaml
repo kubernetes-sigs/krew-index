@@ -1,23 +1,21 @@
-# Krew plugin manifest for gpugo.
-#
-# This is the file to submit to kubernetes-sigs/krew-index as
-#   plugins/gpugo.yaml
-# in your PR. Kept here in the source repo as the canonical reference so
-# future releases just need the version + checksums updated and a fresh PR.
+# krew-release-bot template. Rendered on every tag push, the result is
+# what gets PR'd to krew-index. The bot resolves `addURIAndSha` by
+# fetching each release archive and computing its sha256.
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
   name: gpugo
 spec:
-  version: v0.1.1
+  version: "v0.1.4"
   homepage: https://github.com/Tal-Naeh/kubectl-gpugo
   shortDescription: Top-like TUI for per-pod GPU usage on Kubernetes
   description: |
     A zero-cluster-footprint, top-like TUI for per-pod GPU usage on
-    Kubernetes. Auto-discovers existing dcgm-exporter (and optionally
-    cadvisor-gpu-gpu-enricher) pods and scrapes them through the
-    kube-apiserver pod-proxy subresource — no DaemonSet to install,
-    no port-forwards on your machine, no firewall changes.
+    Kubernetes. Auto-discovers any GPU metrics exporter you already
+    have running (dcgm-exporter, or any per-process exporter emitting
+    gpu_process_memory_bytes) and scrapes it through the kube-apiserver
+    pod-proxy subresource — no DaemonSet to install, no port-forwards
+    on your machine, no firewall changes.
 
     Handles MIG: per-slice rows are grouped by physical GPU and labeled
     with the slice ID (e.g. "0:8" = GPU 0, MIG slice 8). When workloads
@@ -28,62 +26,47 @@ spec:
     20 seconds.
   caveats: |
     Requires:
-      - dcgm-exporter (or another exporter emitting DCGM_FI_DEV_* /
+      - A GPU exporter (dcgm-exporter, or one emitting
         gpu_process_memory_bytes) running in the target cluster.
       - The user's RBAC must allow "list pods" cluster-wide and
         "get pods/proxy" in the exporter's namespace.
 
-    Will not work with Lens / freelens local-proxy kubeconfigs — their
-    proxy does not pass pod-proxy subresource requests through. Use a
-    direct kubeconfig.
+    Will not work with Lens local-proxy kubeconfigs — their proxy does
+    not pass pod-proxy subresource requests through. Use a direct
+    kubeconfig.
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.1/kubectl-gpugo_0.1.1_darwin_amd64.tar.gz
-    sha256: c7c8a0fa45f22d3b40dca8a647cfd0736ad403acb9d59e3d580b133b76ac896b
+    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.4/kubectl-gpugo_v0.1.4_darwin_amd64.tar.gz
+    sha256: d76c3de71f73ce84fa3bfa78759809906afd98b099daae3e3936748d9d7d19be
     bin: kubectl-gpugo
-    files:
-    - from: "*"
-      to: "."
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.1/kubectl-gpugo_0.1.1_darwin_arm64.tar.gz
-    sha256: f89f73bb61b59b0417f69c083ab386e91f1c80b4a71dffaaead7800401ce22bf
+    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.4/kubectl-gpugo_v0.1.4_darwin_arm64.tar.gz
+    sha256: 8b5a584938561d63ce65a74279e20c21d4b86ce89c268b7e7fa174e2f767fa55
     bin: kubectl-gpugo
-    files:
-    - from: "*"
-      to: "."
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.1/kubectl-gpugo_0.1.1_linux_amd64.tar.gz
-    sha256: e6d8a050a579741bc70fa7a806efcb1144fef21bc9b517a99b2ce626da7bcb07
+    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.4/kubectl-gpugo_v0.1.4_linux_amd64.tar.gz
+    sha256: 20561e82eeb59eeb35408078cf0cfc152eda872d0e21da7d586efce83c7ecaf4
     bin: kubectl-gpugo
-    files:
-    - from: "*"
-      to: "."
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.1/kubectl-gpugo_0.1.1_linux_arm64.tar.gz
-    sha256: 33d1218af85aab2139c14c7ca5ba65ae913bd81898aeb58f090d5921c2d3896d
+    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.4/kubectl-gpugo_v0.1.4_linux_arm64.tar.gz
+    sha256: 15aef4aa47e4acae170f829e7d8db2ef6b382ed873a311905ad01328786737f6
     bin: kubectl-gpugo
-    files:
-    - from: "*"
-      to: "."
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.1/kubectl-gpugo_0.1.1_windows_amd64.zip
-    sha256: bdd0bad7e8b323d633393715a70efee696c91b3cdfd4db31a2d09f2e20089c8b
+    uri: https://github.com/Tal-Naeh/kubectl-gpugo/releases/download/v0.1.4/kubectl-gpugo_v0.1.4_windows_amd64.zip
+    sha256: 0d0a40409efa1b7cb88cc35d4be0c698cda5bdb1ab2a608160caeb3468085cc4
     bin: kubectl-gpugo.exe
-    files:
-    - from: "*"
-      to: "."

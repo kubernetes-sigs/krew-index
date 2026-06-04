@@ -1,13 +1,13 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: zanecli
+  name: zane
 spec:
-  version: v0.1.0
+  version: v0.1.1
   homepage: https://github.com/zarakM/zanecli
   shortDescription: Conversational Kubernetes co-pilot in your terminal
   description: |
-    zanecli is a conversational Kubernetes co-pilot. Launch it to open a chat
+    zane is a conversational Kubernetes co-pilot. Launch it to open a chat
     REPL, ask a question in plain English, and the agent investigates your
     cluster (pods, deployments, events, logs, PVCs, and arbitrary resources)
     through read-only API calls, cites the evidence it found, and proposes
@@ -24,14 +24,14 @@ spec:
 
     Start the co-pilot with:
 
-      kubectl zanecli
+      kubectl zane
   platforms:
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/zarakM/zanecli/releases/download/v0.1.0/zanecli_0.1.0_Darwin_x86_64.tar.gz
-      sha256: ca11d0ca35aadddb82ecc14d4e93cf6ae3dd11bdaa294007543e9fb84c8a59a4
+      uri: https://github.com/zarakM/zanecli/releases/download/v0.1.1/zanecli_0.1.1_Darwin_x86_64.tar.gz
+      sha256: bceecfbad7df6d5325ebae2a687d0b2c961f08ce5983af3ae4e613b03225303f
       bin: zanecli
       files:
         - from: zanecli
@@ -42,8 +42,8 @@ spec:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/zarakM/zanecli/releases/download/v0.1.0/zanecli_0.1.0_Darwin_arm64.tar.gz
-      sha256: 46675a38110dfb88e17205ee95f09e36c7080631338a80a76080af1c15ad7e73
+      uri: https://github.com/zarakM/zanecli/releases/download/v0.1.1/zanecli_0.1.1_Darwin_arm64.tar.gz
+      sha256: 293f2532365501474bad632cfa791188054011517fc40b1926e63b8513687295
       bin: zanecli
       files:
         - from: zanecli
@@ -54,8 +54,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/zarakM/zanecli/releases/download/v0.1.0/zanecli_0.1.0_Linux_x86_64.tar.gz
-      sha256: 2e67e118fbc8e59acebdfef3f4a0ccb12488c71a7d3bdd019e5b71e7798aea04
+      uri: https://github.com/zarakM/zanecli/releases/download/v0.1.1/zanecli_0.1.1_Linux_x86_64.tar.gz
+      sha256: b74e82a92b529c0575aa87b2b60a152096d1c8f1a7c4ba878b8b789ebb7a6ebc
       bin: zanecli
       files:
         - from: zanecli
@@ -66,8 +66,8 @@ spec:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/zarakM/zanecli/releases/download/v0.1.0/zanecli_0.1.0_Linux_arm64.tar.gz
-      sha256: 74170027b8f99080ddc8b0ced745478b137da18f8d2a383e412ae4322d517100
+      uri: https://github.com/zarakM/zanecli/releases/download/v0.1.1/zanecli_0.1.1_Linux_arm64.tar.gz
+      sha256: bbfefd9a5378fbad17b9633308e72a66b060c6b2f5c999c34fa9609a403cb1f6
       bin: zanecli
       files:
         - from: zanecli
@@ -78,8 +78,8 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/zarakM/zanecli/releases/download/v0.1.0/zanecli_0.1.0_Windows_x86_64.zip
-      sha256: 905bc4fac356679bd4f21ebc09d3bb8f4a236f1501bebb9b947f1570e2517ad5
+      uri: https://github.com/zarakM/zanecli/releases/download/v0.1.1/zanecli_0.1.1_Windows_x86_64.zip
+      sha256: 9e66fd2e61616293f94504e206a92ccb2bf0715abab38561a9c9a00453003485
       bin: zanecli.exe
       files:
         - from: zanecli.exe

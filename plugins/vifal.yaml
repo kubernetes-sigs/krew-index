@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: vifal
+spec:
+  version: v0.3.0
+  homepage: https://github.com/machine424/vifal
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/machine424/vifal/releases/download/v0.3.0/kubectl-vifal_v0.3.0_linux_amd64.tar.gz
+    sha256: 10a81c8620ba816de738788fd45ef6c116f3f823beaaf9e1cc79b82046102749
+    bin: kubectl-vifal
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/machine424/vifal/releases/download/v0.3.0/kubectl-vifal_v0.3.0_linux_arm64.tar.gz
+    sha256: d987bb90bc282c4017623deded794849d3d359cd8e9da8fbbb262c9a6162f2e2
+    bin: kubectl-vifal
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/machine424/vifal/releases/download/v0.3.0/kubectl-vifal_v0.3.0_darwin_amd64.tar.gz
+    sha256: 90f5c6795bf0fa53938e935c1442770a4ea8820e5eb5ebf1c71d10cc4a7f96f2
+    bin: kubectl-vifal
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/machine424/vifal/releases/download/v0.3.0/kubectl-vifal_v0.3.0_darwin_arm64.tar.gz
+    sha256: cdd2117aac5b9ab77fcf8340d40e27540aa35c2d17cb77aaa8b80d2039bea9d9
+    bin: kubectl-vifal
+  shortDescription: Expose and unify container filesystems locally
+  description: |
+    FUSE filesystem that exposes Kubernetes container filesystems locally.
+    Browse namespaces, pods, and containers as directories, read files,
+    and diff configs across pods using standard shell tools.
+  caveats: |
+    Requires FUSE:
+      - Linux: install fuse3
+      - macOS: install macFUSE (https://github.com/macfuse/macfuse)
+
+    Containers must have sh, stat, find, and dd available.
+

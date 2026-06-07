@@ -1,0 +1,88 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: zane
+spec:
+  version: v0.1.4
+  homepage: https://github.com/zarakM/zane
+  shortDescription: Conversational Kubernetes co-pilot in your terminal
+  description: |
+    zane is a conversational Kubernetes co-pilot. Launch it to open a chat
+    REPL, ask a question in plain English, and the agent investigates your
+    cluster (pods, deployments, events, logs, PVCs, and arbitrary resources)
+    through read-only API calls, cites the evidence it found, and proposes
+    fixes. A tightly-scoped set of writes (restart a deployment, delete a pod)
+    is available, and every cluster mutation is confirmation-gated.
+
+    It talks directly to the Anthropic API (no third-party LLM service) and
+    never stores cluster identifiers in its optional telemetry.
+  caveats: |
+    This plugin requires:
+      * An Anthropic API key, provided via the ANTHROPIC_API_KEY environment
+        variable or entered during the first-run setup wizard.
+      * A valid kubeconfig (KUBECONFIG or ~/.kube/config).
+
+    Start the co-pilot with:
+
+      kubectl zane
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/zarakM/zane/releases/download/v0.1.4/zane_0.1.4_Darwin_x86_64.tar.gz
+      sha256: 918e1459cd327bc01168add289251ae7080a1f91020a9144e9d8a69eb2ae94bc
+      bin: zane
+      files:
+        - from: zane
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/zarakM/zane/releases/download/v0.1.4/zane_0.1.4_Darwin_arm64.tar.gz
+      sha256: 3cd3242e8febb284707bc7d709ff6a76d1fae3123d07ec2e4d6354e3f5c2fe93
+      bin: zane
+      files:
+        - from: zane
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/zarakM/zane/releases/download/v0.1.4/zane_0.1.4_Linux_x86_64.tar.gz
+      sha256: 85cb0f8bedbc22c5b722a734c2c60f8b595db69a9213527b25affd29ad9eb2aa
+      bin: zane
+      files:
+        - from: zane
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/zarakM/zane/releases/download/v0.1.4/zane_0.1.4_Linux_arm64.tar.gz
+      sha256: 80037de5fa1a2fd11ed813e32e4f0a5ef1cb39eead657ad9386599a431186242
+      bin: zane
+      files:
+        - from: zane
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/zarakM/zane/releases/download/v0.1.4/zane_0.1.4_Windows_x86_64.zip
+      sha256: 189bc03386d9952e21d16cd53b6101c67175ce480b1d2311450f400cb67557ac
+      bin: zane.exe
+      files:
+        - from: zane.exe
+          to: .
+        - from: LICENSE
+          to: .

@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: doc
 spec:
-  version: v0.2.4
+  version: v0.2.5
   homepage: https://github.com/sttts/kubectl-doc
   shortDescription: Render Kubernetes API documentation
   description: |
@@ -18,12 +18,12 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.2.4/kubectl-doc-v0.2.4-linux-amd64.tar.gz
-      sha256: 92600c09771d7cb75c60c9ff719817d302c464a82e17e07c827ce245775c66ec
+      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.2.5/kubectl-doc-v0.2.5-linux-amd64.tar.gz
+      sha256: 7096be2785e20d306e6182f39a42aeaf5ab387253fd50cfc4577768fb5154cd4
       files:
-        - from: kubectl-doc-v0.2.4-linux-amd64/kubectl-doc
+        - from: kubectl-doc-v0.2.5-linux-amd64/kubectl-doc
           to: .
-        - from: kubectl-doc-v0.2.4-linux-amd64/LICENSE
+        - from: kubectl-doc-v0.2.5-linux-amd64/LICENSE
           to: .
       bin: kubectl-doc
 
@@ -31,12 +31,12 @@ spec:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.2.4/kubectl-doc-v0.2.4-linux-arm64.tar.gz
-      sha256: 0d01833c711342162d521613e41669fab6c6feae92a0ad79ca17fc5fcc62fe9b
+      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.2.5/kubectl-doc-v0.2.5-linux-arm64.tar.gz
+      sha256: 092ec76ffe34f4e4d4593bb3df32e46562e84582bb5570b62c166e0317014d5b
       files:
-        - from: kubectl-doc-v0.2.4-linux-arm64/kubectl-doc
+        - from: kubectl-doc-v0.2.5-linux-arm64/kubectl-doc
           to: .
-        - from: kubectl-doc-v0.2.4-linux-arm64/LICENSE
+        - from: kubectl-doc-v0.2.5-linux-arm64/LICENSE
           to: .
       bin: kubectl-doc
 
@@ -44,12 +44,12 @@ spec:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.2.4/kubectl-doc-v0.2.4-darwin-amd64.tar.gz
-      sha256: e78118f4a405eee671bd132456b06be9e6d09931347a6fb3da1bdc308e560c5e
+      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.2.5/kubectl-doc-v0.2.5-darwin-amd64.tar.gz
+      sha256: 60df275e4b9169f6ad2e50b5e088fcb226f6f62878a1683e88445ad3e011b5bc
       files:
-        - from: kubectl-doc-v0.2.4-darwin-amd64/kubectl-doc
+        - from: kubectl-doc-v0.2.5-darwin-amd64/kubectl-doc
           to: .
-        - from: kubectl-doc-v0.2.4-darwin-amd64/LICENSE
+        - from: kubectl-doc-v0.2.5-darwin-amd64/LICENSE
           to: .
       bin: kubectl-doc
 
@@ -57,12 +57,12 @@ spec:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.2.4/kubectl-doc-v0.2.4-darwin-arm64.tar.gz
-      sha256: 51c3e63b80d2795bd79b82344aa3417923c3624aec250e421b2a0d83d62f97c5
+      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.2.5/kubectl-doc-v0.2.5-darwin-arm64.tar.gz
+      sha256: 076fd9460fa1ec2af7f809216482f22091f3460da23784d9c3df255e22a1f875
       files:
-        - from: kubectl-doc-v0.2.4-darwin-arm64/kubectl-doc
+        - from: kubectl-doc-v0.2.5-darwin-arm64/kubectl-doc
           to: .
-        - from: kubectl-doc-v0.2.4-darwin-arm64/LICENSE
+        - from: kubectl-doc-v0.2.5-darwin-arm64/LICENSE
           to: .
       bin: kubectl-doc
 
@@ -70,12 +70,12 @@ spec:
         matchLabels:
           os: windows
           arch: amd64
-      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.2.4/kubectl-doc-v0.2.4-windows-amd64.zip
-      sha256: 1ff93b20251eb18a416851eb496e239e2f4a265b2939107fc44b2ddd470b4db2
+      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.2.5/kubectl-doc-v0.2.5-windows-amd64.zip
+      sha256: 672d43d77c3bd4628e86332b626f1a953e163bb4d0ecab2f9904d84bc330480b
       files:
-        - from: kubectl-doc-v0.2.4-windows-amd64/kubectl-doc.exe
+        - from: kubectl-doc-v0.2.5-windows-amd64/kubectl-doc.exe
           to: .
-        - from: kubectl-doc-v0.2.4-windows-amd64/LICENSE
+        - from: kubectl-doc-v0.2.5-windows-amd64/LICENSE
           to: .
       bin: kubectl-doc.exe
 
@@ -83,11 +83,11 @@ spec:
         matchLabels:
           os: windows
           arch: arm64
-      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.2.4/kubectl-doc-v0.2.4-windows-arm64.zip
-      sha256: 44a36715d8ac56fdddc422228008d67dd86165fabc6bdc0fecbafb8c65ca13a2
+      uri: https://github.com/sttts/kubectl-doc/releases/download/v0.2.5/kubectl-doc-v0.2.5-windows-arm64.zip
+      sha256: d4c6fcae5d1eba01e66c3ab1db33c8cb0fa4752c746f310df4edaae30e4bc08c
       files:
-        - from: kubectl-doc-v0.2.4-windows-arm64/kubectl-doc.exe
+        - from: kubectl-doc-v0.2.5-windows-arm64/kubectl-doc.exe
           to: .
-        - from: kubectl-doc-v0.2.4-windows-arm64/LICENSE
+        - from: kubectl-doc-v0.2.5-windows-arm64/LICENSE
           to: .
       bin: kubectl-doc.exe

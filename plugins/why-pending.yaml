@@ -1,0 +1,58 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: why-pending
+spec:
+  version: v0.2.0
+  homepage: https://github.com/SaiRohithGuntupally/kubectl-why-pending
+  shortDescription: Explain why a pod is stuck Pending.
+  description: |
+    why-pending re-runs the scheduler's filtering logic locally and explains, in
+    plain English, why a pod cannot be scheduled — and what to change.
+
+    It calls out the causes bare-metal / on-prem clusters hit that cloud clusters
+    hide behind the autoscaler: resource fragmentation (capacity exists, but not
+    on any single node), control-plane taints eating a small cluster, topology
+    spread skew, anti-affinity running out of hosts, a pod larger than any node,
+    nodeSelector / nodeAffinity mismatches, cordoned / NotReady nodes, and unbound
+    PersistentVolumeClaims. When no static blocker is found it points at the
+    dynamic causes it doesn't model and shows the raw scheduler event.
+
+    Usage:
+      kubectl why-pending                 # every Pending pod in the namespace
+      kubectl why-pending my-pod -n data  # a specific pod
+      kubectl why-pending -A              # all namespaces
+  caveats: |
+    Best-effort static analysis. It models the common scheduler predicates but not
+    priority/preemption, extended/custom resources (GPUs, hugepages), or topology
+    spread minDomains/nodeAffinityPolicy. It reads cluster state (nodes, pods,
+    events, PVCs) and makes no changes.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/SaiRohithGuntupally/kubectl-why-pending/releases/download/v0.2.0/kubectl-why-pending_darwin_arm64.tar.gz
+      sha256: "73ca20b5a994e16d23c4d30277223697f53a8823df527948a0056d84f379b032"
+      bin: kubectl-why_pending
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/SaiRohithGuntupally/kubectl-why-pending/releases/download/v0.2.0/kubectl-why-pending_darwin_amd64.tar.gz
+      sha256: "497cf7f1f0179bae581f10f5e39b12767364a92fda02f4c3340e555077e84f5b"
+      bin: kubectl-why_pending
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/SaiRohithGuntupally/kubectl-why-pending/releases/download/v0.2.0/kubectl-why-pending_linux_amd64.tar.gz
+      sha256: "7b5f778bb9555dcfae6354c70751ecd420d68c8f395473d69693ff4f8a25ae76"
+      bin: kubectl-why_pending
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/SaiRohithGuntupally/kubectl-why-pending/releases/download/v0.2.0/kubectl-why-pending_linux_arm64.tar.gz
+      sha256: "9ca0038c2880c5bbac746610f635c9dbfb1c7dcde333f3fd356f3412a112c625"
+      bin: kubectl-why_pending

@@ -1,0 +1,64 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: why
+spec:
+  version: v0.3.0
+  homepage: https://github.com/rameshsurapathi/kubectl-why
+  shortDescription: Explain why a Pod, Deployment, or Job is failing in plain English.
+  description: |
+    kubectl-why turns Kubernetes failures into plain-English diagnosis.
+
+    It explains why a Pod, Deployment, Job, Service, or any workload is failing
+    by collecting the useful bits from status, events, and logs, then showing:
+    - Why it failed — with human-readable reasoning
+    - Evidence that supports the diagnosis — with JSON-path provenance
+    - Fix commands you can run next — tagged with safety levels
+
+    Features:
+    - 11 pod failure rules (OOMKilled, CrashLoopBackOff, ImagePullBackOff, Pending, Evicted, etc.)
+    - Deployment, Job, CronJob, Service, PVC, and Node diagnosis
+    - Namespace scan: kubectl why scan -n <namespace>
+    - Relationship tracing: kubectl why trace ingress/service/deployment <name>
+    - Safety-tagged remediation commands (inspect, low-risk, mutating, destructive)
+    - Deep reasoning with --explain flag and evidence provenance
+    - JSON output for automation
+  caveats: |
+    This plugin requires an active kubeconfig context with read access to
+    pods, events, deployments, services, and other resources you want to diagnose.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/rameshsurapathi/kubectl-why/releases/download/v0.3.0/kubectl-why_Darwin_arm64.tar.gz
+      sha256: 981c2a0c16eceea7a797fc2508c41c44d2b1a3a868a19b5e81333447197d320b
+      bin: kubectl-why
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/rameshsurapathi/kubectl-why/releases/download/v0.3.0/kubectl-why_Darwin_x86_64.tar.gz
+      sha256: 390cff7b02cd51e59d89e68c340b8e3ed5d5c02b61d8e05df08d6615fe9ae32e
+      bin: kubectl-why
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/rameshsurapathi/kubectl-why/releases/download/v0.3.0/kubectl-why_Linux_arm64.tar.gz
+      sha256: 68b0c7f1e56057f6c445bc7d6a88880022bd0606e251a96bf65119d7bcd9cc2d
+      bin: kubectl-why
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/rameshsurapathi/kubectl-why/releases/download/v0.3.0/kubectl-why_Linux_x86_64.tar.gz
+      sha256: bab25e28980216c65d2e71b7a9ebef75160e0b6ffb905ee95cef7ed5dc5ef673
+      bin: kubectl-why
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/rameshsurapathi/kubectl-why/releases/download/v0.3.0/kubectl-why_Windows_x86_64.zip
+      sha256: aabf91a5b0b2c1e2fb3674d3696c65bd5f141c0cffa7f866fd2ab120500daf98
+      bin: kubectl-why.exe

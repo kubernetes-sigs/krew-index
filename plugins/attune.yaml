@@ -1,0 +1,57 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: attune
+spec:
+  version: "v0.1.15"
+  homepage: https://github.com/attune-io/attune
+  shortDescription: Inspect and explain Attune pod right-sizing policies
+  description: |
+    The kubectl-attune plugin provides visibility into Attune, a Kubernetes
+    operator for safe, in-place pod resource right-sizing. View policy status,
+    savings estimates, per-container recommendations, and resize history.
+  caveats: |
+    Requires the Attune operator to be installed in the cluster.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/attune-io/attune/releases/download/v0.1.15/kubectl-attune_linux_amd64.tar.gz
+    sha256: 9af14c84621c355a8a7b5615cf5b927beeb4b853ad1b6e813a6c83226bd3c2d2
+    bin: kubectl-attune
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/attune-io/attune/releases/download/v0.1.15/kubectl-attune_linux_arm64.tar.gz
+    sha256: 0ee8b8851fb30856657e4d469bc8e10dd1f534314d15841c0b1f26ef4bdfd020
+    bin: kubectl-attune
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm
+    uri: https://github.com/attune-io/attune/releases/download/v0.1.15/kubectl-attune_linux_arm.tar.gz
+    sha256: 93dc87b7d2f66e6ecaf4d363efb9db9a2e48d1475512f05fb73f41e4f51f1a2a
+    bin: kubectl-attune
+  - selector:
+      matchLabels:
+        os: linux
+        arch: ppc64le
+    uri: https://github.com/attune-io/attune/releases/download/v0.1.15/kubectl-attune_linux_ppc64le.tar.gz
+    sha256: 9f577859c8914d7b742a7c7e4c0688e7f3804739475f1e49ba14fa85d21079c5
+    bin: kubectl-attune
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/attune-io/attune/releases/download/v0.1.15/kubectl-attune_darwin_amd64.tar.gz
+    sha256: c722f678705f260521ec387fe85b2496f3f2f58ca08aca88dc755ac5e263b6a2
+    bin: kubectl-attune
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/attune-io/attune/releases/download/v0.1.15/kubectl-attune_darwin_arm64.tar.gz
+    sha256: 6f6cb1e77e36b3a76af6d451f7bcdc8645f3b71fb0b0a7ef74b4470de27b7064
+    bin: kubectl-attune

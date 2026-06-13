@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: podtrace
 spec:
-  version: "v0.11.9"
+  version: "v0.12.10"
   homepage: https://github.com/gma1k/podtrace
   shortDescription: eBPF diagnostics for Kubernetes pods
   description: |
@@ -22,38 +22,40 @@ spec:
     at /sys/kernel/btf/vmlinux.
 
     The agent and per-session Jobs run as privileged in-cluster
-    containers with CAP_BPF + CAP_PERFMON + hostPID. The kubectl plugin
-    itself does not need elevated permissions on your workstation.
+    containers with hostPID (capabilities include CAP_BPF,
+    CAP_SYS_ADMIN, CAP_PERFMON, CAP_SYS_RESOURCE, CAP_NET_ADMIN). The
+    kubectl plugin itself does not need elevated permissions on your
+    workstation.
 
     Supported platforms: linux/amd64, linux/arm64, darwin/amd64,
     darwin/arm64. Compatibility matrix:
-    https://github.com/gma1k/podtrace/blob/main/doc/compatibility.md
+    https://github.com/gma1k/podtrace/blob/main/docs/compatibility.md
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/gma1k/podtrace/releases/download/v0.11.9/podtrace_linux_amd64.tar.gz
-    sha256: 69971da82d828b577bb98f1cef0eb399ac4ec176ff74f8104631bc1aa3a42b07
+    uri: https://github.com/gma1k/podtrace/releases/download/v0.12.10/podtrace_linux_amd64.tar.gz
+    sha256: aaa2ccc020f97a51791bcc0e1652024f291086707a4af33b6ca763a46581a8c1
     bin: podtrace
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/gma1k/podtrace/releases/download/v0.11.9/podtrace_linux_arm64.tar.gz
-    sha256: fd3af886c6e102892148833d87ddc09733dd05e2881221c744d94d56191ab0e5
+    uri: https://github.com/gma1k/podtrace/releases/download/v0.12.10/podtrace_linux_arm64.tar.gz
+    sha256: 20f461e0c7889940376e0c0260b62f325d28a5efdd48e31c0676029c3c642abb
     bin: podtrace
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/gma1k/podtrace/releases/download/v0.11.9/podtrace_darwin_amd64.tar.gz
-    sha256: 28bde32d68c6211be8d767b5c90e94f92815173c38949c6119cbb481aa75fadb
+    uri: https://github.com/gma1k/podtrace/releases/download/v0.12.10/podtrace_darwin_amd64.tar.gz
+    sha256: cbc789e7fcc4c5a959fe9f42706b60fc516b3bdcc890ab9579385efd58be9d5f
     bin: podtrace
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/gma1k/podtrace/releases/download/v0.11.9/podtrace_darwin_arm64.tar.gz
-    sha256: e6b4a0f9308e9cba95c4cda4a045a2fdeb8dc9fe8c7140e86f94e3847bb64f7d
+    uri: https://github.com/gma1k/podtrace/releases/download/v0.12.10/podtrace_darwin_arm64.tar.gz
+    sha256: dbd0d3504ce310a4b625e5eced3b99ffaedc148fee04bd78edfcd92c769dd8e9
     bin: podtrace

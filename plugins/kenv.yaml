@@ -1,0 +1,55 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kenv
+spec:
+  version: "v0.5.0"
+  homepage: https://github.com/dexiotropic/kubenv
+  shortDescription: Render manifest variables
+  description: |
+    Render Kubernetes manifest variables before applying resources with
+    kubectl. The plugin uses {{ env.NAME }} placeholders by default and
+    can also render shell-style $NAME and ${NAME} placeholders.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.0/kubenv_kubectl-kenv_0.5.0_linux_amd64.tar.gz
+    sha256: c48d8b8751f53c4984a1d31e02b26ff8ba330d9d34c4e863b7fbfd6eac5d38bc
+    bin: kubectl-kenv
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.0/kubenv_kubectl-kenv_0.5.0_linux_arm64.tar.gz
+    sha256: 06df629146fdfe6ec5f1c84a40adf8705c92744cf70d899ad00a76991861c159
+    bin: kubectl-kenv
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.0/kubenv_kubectl-kenv_0.5.0_darwin_amd64.tar.gz
+    sha256: f9230d59323aff46a3596354faae9af16f54e7afc7ded45ccbac76738b1a2153
+    bin: kubectl-kenv
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.0/kubenv_kubectl-kenv_0.5.0_darwin_arm64.tar.gz
+    sha256: 7455c06681d783a4c6b29b6792e1495cb620d5b3e95e7cb86ef13f8fbe1d52c2
+    bin: kubectl-kenv
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.0/kubenv_kubectl-kenv_0.5.0_windows_amd64.zip
+    sha256: 0f4144831d2a1bb5f0cdabf30e8bf71a974c695b349eca95a71ce236cecfbc1b
+    bin: kubectl-kenv.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.0/kubenv_kubectl-kenv_0.5.0_windows_arm64.zip
+    sha256: 3796ed78067d066c7299410323234df6cd12730dc84a99a004bfa1f7a481aa4a
+    bin: kubectl-kenv.exe

@@ -1,0 +1,61 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: hpa-status
+spec:
+  version: v0.10.0
+  homepage: https://github.com/mattsu2020/kubectl-hpa-status
+  shortDescription: Show detailed HPA status, scaling analysis, and safe fix suggestions
+  description: |
+    Displays detailed HorizontalPodAutoscaler status including current and
+    target utilization, replica counts, scaling conditions, metric analysis,
+    and interpretation of scaling decisions. Features include health scoring,
+    KEDA ScaledObject cross-reference, VPA conflict detection, metrics pipeline
+    diagnostics, resource request consistency checks, safe dry-run-first patch
+    suggestions, interactive TUI dashboard, stabilization window countdown,
+    standalone reports, shell completion, and Japanese language support.
+    This plugin reads existing HPA status, metrics, conditions, and events
+    to provide human-readable analysis without reimplementing the HPA
+    controller's internal decision logic.
+  caveats: |
+    Krew installs the plugin as hpa-status. kubectl discovers that as
+    kubectl hpa_status. This project also documents kubectl hpa status for
+    nested plugin usage where kubectl plugin discovery supports it.
+
+
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/mattsu2020/kubectl-hpa-status/releases/download/v0.10.0/kubectl-hpa-status_v0.10.0_darwin_amd64.tar.gz
+    sha256: 348bb7af0e971fcd6e44802234a4cafa417666b3a9d3248e1def90181239bf10
+    bin: kubectl-hpa-status
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/mattsu2020/kubectl-hpa-status/releases/download/v0.10.0/kubectl-hpa-status_v0.10.0_darwin_arm64.tar.gz
+    sha256: 9a30c9f1a17eb10fd014a9076194ff5320948923667842bd84d523e5367aab3e
+    bin: kubectl-hpa-status
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/mattsu2020/kubectl-hpa-status/releases/download/v0.10.0/kubectl-hpa-status_v0.10.0_linux_amd64.tar.gz
+    sha256: f3ef7e40d1d2a5dcdf3b90f4deea19cff1b78f4bdf29fddffc01acee0c8d5a8a
+    bin: kubectl-hpa-status
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/mattsu2020/kubectl-hpa-status/releases/download/v0.10.0/kubectl-hpa-status_v0.10.0_linux_arm64.tar.gz
+    sha256: 517cc5893c76c5eb5dc0ad1cdce5d0b2ddfaf5e834dd5ac791ef8b8305905250
+    bin: kubectl-hpa-status
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/mattsu2020/kubectl-hpa-status/releases/download/v0.10.0/kubectl-hpa-status_v0.10.0_windows_amd64.tar.gz
+    sha256: 4af38fb5c7a63738f495478a94b06e26a8ac72588a80c33341869523b3c2ae73
+    bin: kubectl-hpa-status.exe

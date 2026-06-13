@@ -1,0 +1,59 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: crd-sample
+spec:
+  version: v0.1.1
+  homepage: https://github.com/hegerdes/kubectl-crd-sample
+  shortDescription: Generates an example manifest based of an CRD
+  description: |
+    This plugin takes the name of an CRD (including the api-group)
+    and generates an example manifest according to the CRDs OpenAPI-Schema.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      bin: kubectl-crd_sample
+      uri: https://github.com/hegerdes/kubeclt-crd-sample/releases/download/v0.1.1/kubectl-crd-sample_0.1.1_darwin_x86_64.tar.gz
+      sha256: 7f398bd5b7c7fac9971c0c162ae7250991132d1b22b6e8fa8a239da89287a3d7
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      bin: kubectl-crd_sample
+      uri: https://github.com/hegerdes/kubeclt-crd-sample/releases/download/v0.1.1/kubectl-crd-sample_0.1.1_darwin_arm64.tar.gz
+      sha256: bf19316221023c65d5c19bd78ce44853c6e75bacbb2d7af89675d894bc0b4f83
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      bin: kubectl-crd_sample
+      uri: https://github.com/hegerdes/kubeclt-crd-sample/releases/download/v0.1.1/kubectl-crd-sample_0.1.1_linux_x86_64.tar.gz
+      sha256: e7c5b86305555369fa5b803bc1866ecdc5d449ba5265e265322a7dd249553f81
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      bin: kubectl-crd_sample
+      uri: https://github.com/hegerdes/kubeclt-crd-sample/releases/download/v0.1.1/kubectl-crd-sample_0.1.1_linux_arm64.tar.gz
+      sha256: 9e2c044bdea4941d087550eec335a7ebfd22d3b864ca109865ba0d9376e478eb
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      bin: kubectl-crd_sample.exe
+      uri: https://github.com/hegerdes/kubeclt-crd-sample/releases/download/v0.1.1/kubectl-crd-sample_0.1.1_windows_x86_64.zip
+      sha256: d0111ac5d67b20e00ae541f744df03315e0053d1a490fc61c375aa242d30c721
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      bin: kubectl-crd_sample.exe
+      uri: https://github.com/hegerdes/kubeclt-crd-sample/releases/download/v0.1.1/kubectl-crd-sample_0.1.1_windows_arm64.zip
+      sha256: 734bac74f4bac89c0e953e850af3000d54328c586ff5f629e90ae117524e434c

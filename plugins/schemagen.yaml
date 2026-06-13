@@ -1,0 +1,56 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: schemagen
+spec:
+  version: v0.7.0
+  homepage: https://github.com/ogormans-deptstack/kubectl-schemagen
+  shortDescription: Generate, migrate, and scaffold Kubernetes resources from cluster schema
+  description: |
+    A multi-subcommand kubectl plugin driven by the cluster's OpenAPI v3 schema.
+    Generate example manifests, detect deprecated APIs, and scaffold kustomize
+    bases -- all from the live cluster schema.
+
+    Subcommands:
+      manifest  - Generate example YAML for any resource or CRD
+      migrate   - Check manifests for deprecated or removed APIs
+      scaffold  - Generate kustomize bases from resource schemas
+  caveats: |
+    * Requires a running cluster (reads OpenAPI v3 spec via discovery API)
+    * CRD examples require the CRD to be installed in the cluster
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/ogormans-deptstack/kubectl-schemagen/releases/download/v0.7.0/kubectl-schemagen_v0.7.0_darwin_amd64.tar.gz
+      sha256: 7190ef6daad6db346504b20a468dff641a1522d533aca47bd7d38a28ed712575
+      bin: kubectl-schemagen
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/ogormans-deptstack/kubectl-schemagen/releases/download/v0.7.0/kubectl-schemagen_v0.7.0_darwin_arm64.tar.gz
+      sha256: c0203e33183358ce87637a85e89d9fa6b083405f68c8691cba4abf1f0a3352d9
+      bin: kubectl-schemagen
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/ogormans-deptstack/kubectl-schemagen/releases/download/v0.7.0/kubectl-schemagen_v0.7.0_linux_amd64.tar.gz
+      sha256: 7529868de95d21c36678cf6e404e612b5fca2390d87743e3b0c50e74b2bcd02c
+      bin: kubectl-schemagen
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/ogormans-deptstack/kubectl-schemagen/releases/download/v0.7.0/kubectl-schemagen_v0.7.0_linux_arm64.tar.gz
+      sha256: 1f19ce21951826396631a83684cc1b6cf555ad1d447342b0f729dd0af6b3b18d
+      bin: kubectl-schemagen
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/ogormans-deptstack/kubectl-schemagen/releases/download/v0.7.0/kubectl-schemagen_v0.7.0_windows_amd64.zip
+      sha256: 17c19201a0eb939e500c0d57a795f2d6910d519d27cc1e9a676fa83fdca64d90
+      bin: kubectl-schemagen.exe

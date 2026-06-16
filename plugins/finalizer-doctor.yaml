@@ -1,0 +1,53 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: finalizer-doctor
+spec:
+  version: v0.1.1
+  homepage: https://github.com/alexremn/finalizer-doctor
+  shortDescription: Safely diagnose & clear stuck finalizers
+  description: 'Pinpoints the finalizer and the dead controller / APIService blocking deletion, cleans
+    truly-orphaned resources first, and clears finalizers only as a gated last resort. Dry-run and explain
+    by default.
+
+    '
+  caveats: 'This is a last resort. Clearing a finalizer is irreversible and can orphan infrastructure.
+    Run without --apply first to see the evidence and verdict.
+
+    '
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/alexremn/finalizer-doctor/releases/download/v0.1.1/finalizer-doctor_linux_amd64.tar.gz
+    sha256: 400604029eaaf909a235b7e8045262d68344dbc565d58f18cf44f8db799abec3
+    bin: kubectl-finalizer_doctor
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/alexremn/finalizer-doctor/releases/download/v0.1.1/finalizer-doctor_linux_arm64.tar.gz
+    sha256: 58d4a74b22e45694dfbc801d8bc141329b84da4adfd6d47cf2a6a9f84fdba5e1
+    bin: kubectl-finalizer_doctor
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/alexremn/finalizer-doctor/releases/download/v0.1.1/finalizer-doctor_darwin_amd64.tar.gz
+    sha256: ada71878f4ecfa9436c0844214d0fab1f667a1901e53c00a242d89e2afaa7525
+    bin: kubectl-finalizer_doctor
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/alexremn/finalizer-doctor/releases/download/v0.1.1/finalizer-doctor_darwin_arm64.tar.gz
+    sha256: f9deb3a31c697b48f4cd9f99bb5502cc7e5973c2698df0cf175719f05636c20f
+    bin: kubectl-finalizer_doctor
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/alexremn/finalizer-doctor/releases/download/v0.1.1/finalizer-doctor_windows_amd64.tar.gz
+    sha256: 22c8f3318868f455416650371bf058969b89f5df0505a31cae8c906ee2c80aa6
+    bin: kubectl-finalizer_doctor.exe

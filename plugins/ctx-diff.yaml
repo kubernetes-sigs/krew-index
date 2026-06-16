@@ -5,16 +5,11 @@ metadata:
 spec:
   version: v0.1.2
   homepage: https://github.com/salvador-arreola/kubectl-ctx-diff
-  shortDescription: Diff k8s resources between two contexts
+  shortDescription: Compare Kubernetes resources across contexts
   description: |
-    Compare Kubernetes environments across kubeconfig contexts.
-    Diffs ConfigMaps, Secrets (keys only), and Deployment resource
-    limits and env vars, with colored table or JSON output.
-
-    Usage:
-      kubectl ctx-diff diff --context-2 prod -n my-namespace
-      kubectl ctx-diff diff --context-2 prod --filter configmaps,secrets
-      kubectl ctx-diff diff --context-2 prod -o json
+    Compares Kubernetes resources between two kubeconfig contexts. Diffs
+    ConfigMaps, Secrets (keys only), and Deployment resource limits and
+    env vars, with colored table or JSON output.
 
   platforms:
     - selector:

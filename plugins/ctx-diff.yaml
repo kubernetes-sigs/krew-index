@@ -8,8 +8,8 @@ spec:
   shortDescription: Compare Kubernetes resources across contexts
   description: |
     Compares Kubernetes resources between two kubeconfig contexts. Diffs
-    ConfigMaps, Secrets (keys only), and Deployment resource limits and
-    env vars, with colored table or JSON output.
+    any namespaced resource including CRDs, discovered automatically.
+    Secret values are never exposed. Colored table or JSON output.
 
   platforms:
     - selector:

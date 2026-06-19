@@ -1,0 +1,53 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: fieldlord
+spec:
+  version: "v0.1.0"
+  homepage: https://github.com/alexremn/kubectl-fieldlord
+  shortDescription: Explain SSA field ownership, drift & clobber
+  description: |
+    Reads managedFields under Server-Side Apply to explain who owns each field,
+    attribute ownership drift to a fieldManager, and predict (via a non-persisting
+    server-side dry-run) exactly what --force-conflicts would clobber. Deterministic,
+    read-mostly, no LLM.
+  caveats: |
+    explain and drift are read-only. predict issues a server-side apply with
+    dryRun=All (never persists) but does invoke admission webhooks — run against a
+    non-production cluster first if their side-effect posture is unknown.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/alexremn/kubectl-fieldlord/releases/download/v0.1.0/kubectl-fieldlord_linux_amd64.tar.gz
+    sha256: 4ac98e761a3c44e89f48a927cb0b591181b3c3edb6f7f5c27ae234a245e954af
+    bin: kubectl-fieldlord
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/alexremn/kubectl-fieldlord/releases/download/v0.1.0/kubectl-fieldlord_linux_arm64.tar.gz
+    sha256: 0d594799d6c0b943244b3f5cdcbe0bd405bf7e3efc2accf7a6971bc8d93b4f29
+    bin: kubectl-fieldlord
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/alexremn/kubectl-fieldlord/releases/download/v0.1.0/kubectl-fieldlord_darwin_amd64.tar.gz
+    sha256: ae132b6d4e69bda575ab9db7b6d36f6ca21c517df2a016afc4ad3d274630af42
+    bin: kubectl-fieldlord
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/alexremn/kubectl-fieldlord/releases/download/v0.1.0/kubectl-fieldlord_darwin_arm64.tar.gz
+    sha256: 5c35c731df9b6844b417c87ebfa64b5ed1663f4d165aec4da9fb5304edfba166
+    bin: kubectl-fieldlord
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/alexremn/kubectl-fieldlord/releases/download/v0.1.0/kubectl-fieldlord_windows_amd64.zip
+    sha256: 2e884b60759ba6b3d46ef80a5531cb8143f5ce6c710490d8346efacccd7cb027
+    bin: kubectl-fieldlord.exe

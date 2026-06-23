@@ -1,0 +1,38 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: aperf
+spec:
+  version: v1.2.3
+  homepage: https://github.com/aws/aperf
+  shortDescription: Record and analyze performance metrics on nodes
+  description: |
+    APerf is a CLI tool for performance monitoring and debugging. It records
+    a wide range of performance-related system metrics over a sampling period,
+    such as CPU utilization, memory availability, and PMU counters, and writes
+    them into an archive on disk. APerf processes collected archives, performs
+    analysis, and generates an interactive HTML report with analytical findings
+    and data visualizations.
+  caveats: |
+    Usage:
+      kubectl aperf --node=NODE_NAME [options]
+
+    The plugin deploys a privileged pod on the target node to collect
+    performance data. Requires permissions to create pods in the target
+    namespace.
+
+    For more information, visit: https://github.com/aws/aperf
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values: ["darwin", "linux"]
+    uri: https://github.com/aws/aperf/releases/download/v1.2.3/kubectl-aperf-v1.2.3.tar.gz
+    sha256: 0309151fe469a13fb82c7f05a0c603483998c5ff47efa1a7d9f27879f288840b
+    files:
+    - from: "*/kubectl-aperf"
+      to: .
+    - from: "*/LICENSE"
+      to: .
+    bin: kubectl-aperf

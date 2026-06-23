@@ -1,0 +1,78 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ctx-diff
+spec:
+  version: v0.2.3
+  homepage: https://github.com/salvador-arreola/kubectl-ctx-diff
+  shortDescription: Compare Kubernetes resources across contexts
+  description: |
+    Compares Kubernetes resources between two kubeconfig contexts. Diffs
+    any namespaced resource including CRDs, discovered automatically.
+    Secret values are never exposed. Colored table or JSON output.
+
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/salvador-arreola/kubectl-ctx-diff/releases/download/v0.2.3/kubectl-ctx-diff_linux_amd64.tar.gz
+      sha256: "a09da89d5770d4c566f1792a339e30c512052919c021cb5dafd18a99eaf174f5"
+      bin: kubectl-ctx-diff
+      files:
+        - from: kubectl-ctx-diff
+          to: .
+        - from: LICENSE
+          to: .
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/salvador-arreola/kubectl-ctx-diff/releases/download/v0.2.3/kubectl-ctx-diff_linux_arm64.tar.gz
+      sha256: "311739273955dde9cb1ceb8278fe260190cfa500a6e8e0cb9e76f754e0ce36d9"
+      bin: kubectl-ctx-diff
+      files:
+        - from: kubectl-ctx-diff
+          to: .
+        - from: LICENSE
+          to: .
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/salvador-arreola/kubectl-ctx-diff/releases/download/v0.2.3/kubectl-ctx-diff_darwin_amd64.tar.gz
+      sha256: "122c0461168020093098df9e0509072ee16e66e46408930c0e8c56f2bc53063d"
+      bin: kubectl-ctx-diff
+      files:
+        - from: kubectl-ctx-diff
+          to: .
+        - from: LICENSE
+          to: .
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/salvador-arreola/kubectl-ctx-diff/releases/download/v0.2.3/kubectl-ctx-diff_darwin_arm64.tar.gz
+      sha256: "0f2783118b6d4cf54cefc494586f44b44909b69dc3e4ffa9e42b4bb32ad2b041"
+      bin: kubectl-ctx-diff
+      files:
+        - from: kubectl-ctx-diff
+          to: .
+        - from: LICENSE
+          to: .
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/salvador-arreola/kubectl-ctx-diff/releases/download/v0.2.3/kubectl-ctx-diff_windows_amd64.zip
+      sha256: "461a2bbbe4d254ffaec4b99fe470050a1c81a93ef327537ca9f102de34a4d6aa"
+      bin: kubectl-ctx-diff.exe
+      files:
+        - from: kubectl-ctx-diff.exe
+          to: .
+        - from: LICENSE
+          to: .

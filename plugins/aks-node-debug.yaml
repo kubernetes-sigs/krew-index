@@ -1,0 +1,24 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: aks-node-debug
+spec:
+  version: v0.1.1
+  homepage: https://github.com/ragatgen/kubectl-aks-node-debug
+  shortDescription: Interactive node debugging for AKS clusters
+  description: |
+    aks-node-debug provides an interactive workflow for node-level
+    troubleshooting.
+
+    The plugin discovers cluster nodes, allows the user to select
+    a node interactively, and launches a kubectl debug session.
+
+    Designed primarily for Azure Kubernetes Service (AKS).
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/ragatgen/kubectl-aks-node-debug/releases/download/v0.1.1/kubectl-aks-node-debug_v0.1.1_linux_amd64.tar.gz
+      sha256: df1807c34a360812c6a251e631972ce22e179393a78cd55de93fc135b4a1f419
+      bin: kubectl-aks-node-debug

@@ -1,0 +1,57 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: tessera
+spec:
+  version: v0.1.2
+  homepage: https://github.com/wagneripjr/kubectl-tessera
+  shortDescription: Mint short-lived, least-privilege kubeconfigs
+  description: |-
+    Mint short-lived, least-privilege kubeconfigs scoped to a single
+    ServiceAccount. kubectl-tessera creates a temporary identity, grants
+    exactly the RBAC you ask for, prints a ready-to-use kubeconfig, and
+    garbage-collects the identity when its lease expires — so you can hand
+    out narrowly scoped cluster access without sharing admin credentials.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/wagneripjr/kubectl-tessera/releases/download/v0.1.2/kubectl-tessera_v0.1.2_linux_amd64.tar.gz
+    sha256: 22d73d431eeaa30ee3e3a07e6b39509c3df736205b2553bfd79f98c144de4a9e
+    bin: kubectl-tessera
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/wagneripjr/kubectl-tessera/releases/download/v0.1.2/kubectl-tessera_v0.1.2_linux_arm64.tar.gz
+    sha256: bcdf191d9e908a8860c39fe8113a88aeb8fa1443135cb370feb2cba602a9cd81
+    bin: kubectl-tessera
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/wagneripjr/kubectl-tessera/releases/download/v0.1.2/kubectl-tessera_v0.1.2_darwin_amd64.tar.gz
+    sha256: 78f1f7c4ed1285e24330e9d45374d5f750354c197b5697cc8cfa9cd0f70e90d7
+    bin: kubectl-tessera
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/wagneripjr/kubectl-tessera/releases/download/v0.1.2/kubectl-tessera_v0.1.2_darwin_arm64.tar.gz
+    sha256: b6e2b9d9acdfe0db20c282b5d092b1fc0362ba7d9d9e7b798e4d00c6c25412c6
+    bin: kubectl-tessera
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/wagneripjr/kubectl-tessera/releases/download/v0.1.2/kubectl-tessera_v0.1.2_windows_amd64.zip
+    sha256: eca9ac030b996ed59058e9ba53cb84ec07e3d96df35b8227815be30d357f6ce7
+    bin: kubectl-tessera.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/wagneripjr/kubectl-tessera/releases/download/v0.1.2/kubectl-tessera_v0.1.2_windows_arm64.zip
+    sha256: 1f305f2cf388a181c489bfcc9bc12ad800456f292788571ecafa5cb9ba45f553
+    bin: kubectl-tessera.exe

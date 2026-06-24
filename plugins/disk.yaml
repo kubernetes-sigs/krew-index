@@ -1,0 +1,77 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: disk
+spec:
+  version: v1.0.0
+  homepage: https://github.com/wille/kubectl-disk
+  shortDescription: "df for Kubernetes PersistentVolumeClaims"
+  description: |
+    Report file system space usage across nodes and PersistentVolumeClaims,
+    and find PVCs that are not used by any pod.
+
+    Commands:
+      kubectl disk node    List nodes and their disk usage
+      kubectl disk df      List PersistentVolumeClaims and their usage
+      kubectl disk unused  List PersistentVolumeClaims not used by any pod
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/wille/kubectl-disk/releases/download/v1.0.0/kubectl-disk_v1.0.0_darwin_amd64.tar.gz
+    sha256: 966cbf1e04c9b463a553a6e7928f5e861a1f68b347cbe2d60ab566520abc54c3
+    files:
+    - from: kubectl-disk
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-disk
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/wille/kubectl-disk/releases/download/v1.0.0/kubectl-disk_v1.0.0_darwin_arm64.tar.gz
+    sha256: 634469cc187974c4b27612545dd41f54131e6f95d76ab9ebacc59ce443353c35
+    files:
+    - from: kubectl-disk
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-disk
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/wille/kubectl-disk/releases/download/v1.0.0/kubectl-disk_v1.0.0_linux_amd64.tar.gz
+    sha256: 281ed889f7cf2d4e0f6bc4a69df3899c06ccc6bd5243fe721d08e97bbc047008
+    files:
+    - from: kubectl-disk
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-disk
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/wille/kubectl-disk/releases/download/v1.0.0/kubectl-disk_v1.0.0_linux_arm64.tar.gz
+    sha256: fdba3c9a5406cd45b8915a7dfa3071966ab3983a8c48f3f18be1f9a0ee20963a
+    files:
+    - from: kubectl-disk
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-disk
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/wille/kubectl-disk/releases/download/v1.0.0/kubectl-disk_v1.0.0_windows_amd64.tar.gz
+    sha256: 30162c0ce784d58b1b694742625121ace07f3abdb7f90f6c999c64fdce965d4e
+    files:
+    - from: kubectl-disk.exe
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-disk.exe

@@ -1,0 +1,81 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: whoami-enhanced
+spec:
+  version: v0.1.0
+  homepage: https://github.com/akashbhujbalwebsite/kubectl-whoami-enhanced
+  shortDescription: Show your identity and RBAC permissions in the cluster
+  description: |
+    kubectl whoami-enhanced shows who you are and what you can do
+    in a Kubernetes cluster in one command.
+
+    It displays:
+      - Current context, user, and groups
+      - Token expiry time (parsed from JWT)
+      - Permission matrix (get/list/delete/exec/create) per resource
+      - REASON column: which Role/RoleBinding grants each permission
+      - Supports --all-namespaces and --output-json flags
+
+    Useful for debugging RBAC issues without needing to ask
+    the cluster admin "why can't I delete this pod?"
+  caveats: |
+    Groups are only shown with token-based auth (OIDC/ServiceAccount).
+    Certificate-based auth will show a note instead of groups.
+    The REASON column requires list access to rolebindings/clusterrolebindings;
+    falls back gracefully if that access is not available.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/akashbhujbalwebsite/kubectl-whoami-enhanced/releases/download/v0.1.0/kubectl-whoami-enhanced_linux_amd64.tar.gz
+      sha256: "853c11df1633f1b6a3a3d8dc6ff99a7dde3eaa037ba449f2f2577c78c7e44276"
+      bin: kubectl-whoami-enhanced
+      files:
+        - from: "*"
+          to: "."
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/akashbhujbalwebsite/kubectl-whoami-enhanced/releases/download/v0.1.0/kubectl-whoami-enhanced_linux_arm64.tar.gz
+      sha256: "74cf864803151fd7557f0d8bfa00c395d78db0dafa79242c410acc09057a0144"
+      bin: kubectl-whoami-enhanced
+      files:
+        - from: "*"
+          to: "."
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/akashbhujbalwebsite/kubectl-whoami-enhanced/releases/download/v0.1.0/kubectl-whoami-enhanced_darwin_amd64.tar.gz
+      sha256: "3866f32821e0eff407c417a914584170037af4b1c07eee5a4e9bcf4170eaff27"
+      bin: kubectl-whoami-enhanced
+      files:
+        - from: "*"
+          to: "."
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/akashbhujbalwebsite/kubectl-whoami-enhanced/releases/download/v0.1.0/kubectl-whoami-enhanced_darwin_arm64.tar.gz
+      sha256: "85866b3d0918922e7a36fa9c9bc954582e78aee0c9e9889c874aa56bf3656e94"
+      bin: kubectl-whoami-enhanced
+      files:
+        - from: "*"
+          to: "."
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/akashbhujbalwebsite/kubectl-whoami-enhanced/releases/download/v0.1.0/kubectl-whoami-enhanced_windows_amd64.zip
+      sha256: "f880ca644eb6a81a6a1d7c8ece40ffe22b71ea8133f1c957c9e5f6227d70dd8f"
+      bin: kubectl-whoami-enhanced.exe
+      files:
+        - from: "*"
+          to: "."

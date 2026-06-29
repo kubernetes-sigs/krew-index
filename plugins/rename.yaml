@@ -7,15 +7,16 @@ spec:
   homepage: https://github.com/akashbhujbalwebsite/kubectl-rename
   shortDescription: Safely rename ConfigMaps and Secrets
   description: |
-    kubectl rename safely renames Kubernetes ConfigMaps and Secrets
-    by creating a copy under the new name and deleting the original.
+    Renames Kubernetes ConfigMaps and Secrets by creating a copy under
+    the new name and deleting the original.
 
     Features:
-      - Pre-flight permission check (get+create+delete) before touching anything
+      - Pre-flight permission check (get+create+delete) before making
+        any changes
       - Dependency scanner: shows which Pods and Deployments reference
         the resource before rename, so you know what to update
       - --dry-run mode: preview the rename plan without making changes
-      - Automatic partial-failure recovery: re-running detects an interrupted
+      - Partial-failure recovery: re-running detects an interrupted
         rename and completes it safely
       - Confirmation prompt (bypass with -y for scripts/CI)
       - Clear error messages if permissions are missing
@@ -25,8 +26,9 @@ spec:
     The rename is not atomic — there is a brief window where both
     the old and new resource exist simultaneously. Re-running the
     command detects this and completes the rename automatically.
-    Resources referencing the renamed ConfigMap/Secret (Pods, Deployments)
-    are detected but not automatically updated — update them manually.
+    Resources referencing the renamed ConfigMap/Secret (Pods,
+    Deployments) are detected but not automatically updated — update
+    them manually.
   platforms:
   - selector:
       matchLabels:

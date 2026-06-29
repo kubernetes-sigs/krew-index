@@ -1,0 +1,90 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: rename
+spec:
+  version: v0.1.0
+  homepage: https://github.com/akashbhujbalwebsite/kubectl-rename
+  shortDescription: Safely rename ConfigMaps and Secrets
+  description: |
+    kubectl rename safely renames Kubernetes ConfigMaps and Secrets
+    by creating a copy under the new name and deleting the original.
+
+    Features:
+      - Pre-flight permission check (get+create+delete) before touching anything
+      - Dependency scanner: shows which Pods and Deployments reference
+        the resource before rename, so you know what to update
+      - --dry-run mode: preview the rename plan without making changes
+      - Automatic partial-failure recovery: re-running detects an interrupted
+        rename and completes it safely
+      - Confirmation prompt (bypass with -y for scripts/CI)
+      - Clear error messages if permissions are missing
+  caveats: |
+    Only ConfigMaps and Secrets are supported in v0.1.
+    References are scanned within the specified namespace only.
+    The rename is not atomic — there is a brief window where both
+    the old and new resource exist simultaneously. Re-running the
+    command detects this and completes the rename automatically.
+    Resources referencing the renamed ConfigMap/Secret (Pods, Deployments)
+    are detected but not automatically updated — update them manually.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/akashbhujbalwebsite/kubectl-rename/releases/download/v0.1.0/kubectl-rename_linux_amd64.tar.gz
+    sha256: "7eccfdbb30d2f142b6b1410e3d4e56ed0598657bbcb2a4e76bd68253511ebd3d"
+    bin: kubectl-rename
+    files:
+    - from: "*"
+      to: "."
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/akashbhujbalwebsite/kubectl-rename/releases/download/v0.1.0/kubectl-rename_linux_arm64.tar.gz
+    sha256: "6667c3840817d95b6c3484a0753348dbd91d758ee8188d94d73fa37bcfcff04e"
+    bin: kubectl-rename
+    files:
+    - from: "*"
+      to: "."
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/akashbhujbalwebsite/kubectl-rename/releases/download/v0.1.0/kubectl-rename_darwin_amd64.tar.gz
+    sha256: "d1512122cb43b9bba5a5b987387d02f845b879e7c15046a2604d45951fb712bc"
+    bin: kubectl-rename
+    files:
+    - from: "*"
+      to: "."
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/akashbhujbalwebsite/kubectl-rename/releases/download/v0.1.0/kubectl-rename_darwin_arm64.tar.gz
+    sha256: "6e518954fd43bed6f3fefb854f9d0a079532103a9c92b714c8ee8ff53db29760"
+    bin: kubectl-rename
+    files:
+    - from: "*"
+      to: "."
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/akashbhujbalwebsite/kubectl-rename/releases/download/v0.1.0/kubectl-rename_windows_amd64.zip
+    sha256: "f983872ff979ccdb3d865c2aab8fd46b5ecf9c65041b9546ca66cba24e59b527"
+    bin: kubectl-rename.exe
+    files:
+    - from: "*"
+      to: "."
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/akashbhujbalwebsite/kubectl-rename/releases/download/v0.1.0/kubectl-rename_windows_arm64.zip
+    sha256: "2f84bdda2ffe53206334fe0a3a04498e4a3b2c96e7bc96c5a3473307aff12439"
+    bin: kubectl-rename.exe
+    files:
+    - from: "*"
+      to: "."

@@ -1,0 +1,59 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: gpufit
+spec:
+  version: v0.1.0
+  homepage: https://github.com/SaiRohithGuntupally/kubectl-gpufit
+  shortDescription: Diagnose GPU scheduling and allocation.
+  description: |
+    gpufit answers GPU *scheduling* questions from the Kubernetes API alone — no
+    DaemonSet, agent, or metrics required (for per-pod GPU utilization, see the
+    gpu-top or gpugo plugins).
+
+      kubectl gpufit                 # allocatable vs allocated GPUs per node/type
+      kubectl gpufit why <pod>       # why a GPU pod can't be scheduled, with the fix
+
+    The `why` command explains, in plain English, the API-visible causes a GPU
+    pod stays Pending: no node advertises the resource — pinned to the exact
+    broken link in the GPU enablement chain (NFD → driver → toolkit →
+    device-plugin → GFD → DCGM → MIG-manager) — GPU fragmentation, insufficient
+    free GPUs (Kubernetes allocates whole GPUs), and untolerated GPU taints. It
+    also understands Dynamic Resource Allocation (DRA, k8s 1.34+): for pods using
+    resourceClaims it reports unallocated/missing claims, missing DeviceClasses,
+    and whether any DRA driver is publishing devices — each with a concrete fix.
+  caveats: |
+    Best-effort static analysis from the Kubernetes API. It models GPU/accelerator
+    extended resources (NVIDIA full GPUs and MIG slices, AMD/Intel GPUs), the GPU
+    enablement chain, and DRA claims — including CEL device-selector matching via
+    the scheduler's own evaluator — but not GPU utilization or priority/preemption.
+    It reads cluster state (nodes, pods, and DRA objects) and makes no changes.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/SaiRohithGuntupally/kubectl-gpufit/releases/download/v0.1.0/kubectl-gpufit_darwin_arm64.tar.gz
+    sha256: 4ec8d8654b798833204a497f5a8f709c53907250dde067e93bc9ec1aa3475e44
+    bin: kubectl-gpufit
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/SaiRohithGuntupally/kubectl-gpufit/releases/download/v0.1.0/kubectl-gpufit_darwin_amd64.tar.gz
+    sha256: a2fd526945f35efe5fee34feb9dec72af24edd8545fd1677d82d31b022e64ff7
+    bin: kubectl-gpufit
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/SaiRohithGuntupally/kubectl-gpufit/releases/download/v0.1.0/kubectl-gpufit_linux_amd64.tar.gz
+    sha256: 177627fde9ab44239d1d9663bc5580c50694f48cbbe427ca10460d432dfa3fe1
+    bin: kubectl-gpufit
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/SaiRohithGuntupally/kubectl-gpufit/releases/download/v0.1.0/kubectl-gpufit_linux_arm64.tar.gz
+    sha256: acc84a45cbaf4d7e6847f941b184e1bb4754133253e785246566389b66763e63
+    bin: kubectl-gpufit

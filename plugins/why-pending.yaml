@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: why-pending
 spec:
-  version: v0.4.1
+  version: v0.5.0
   homepage: https://github.com/SaiRohithGuntupally/kubectl-why-pending
   shortDescription: Explain why a pod is stuck Pending.
   description: |
@@ -13,47 +13,50 @@ spec:
     It calls out the causes bare-metal / on-prem clusters hit that cloud clusters
     hide behind the autoscaler: resource fragmentation (capacity exists, but not
     on any single node), control-plane taints eating a small cluster, GPU /
-    extended resources (no node provides it, or none has enough free), topology
-    spread skew, anti-affinity running out of hosts, a pod larger than any node,
-    nodeSelector / nodeAffinity mismatches, cordoned / NotReady nodes, and unbound
-    PersistentVolumeClaims. When no static blocker is found it points at the
-    dynamic causes it doesn't model and shows the raw scheduler event.
+    extended resources (no node provides it — naming the broken GPU device-plugin
+    / operator-chain link — or none has enough free), Dynamic Resource Allocation
+    (DRA) claims that can't be satisfied, topology spread skew, anti-affinity
+    running out of hosts, a pod larger than any node, nodeSelector / nodeAffinity
+    mismatches, cordoned / NotReady nodes, and unbound PersistentVolumeClaims.
+    When no static blocker is found it points at the dynamic causes it doesn't
+    model and shows the raw scheduler event.
 
     Usage:
       kubectl why-pending                 # every Pending pod in the namespace
       kubectl why-pending my-pod -n data  # a specific pod
       kubectl why-pending -A              # all namespaces
   caveats: |
-    Best-effort static analysis. It models the common scheduler predicates but not
-    priority/preemption, extended/custom resources (GPUs, hugepages), or topology
-    spread minDomains/nodeAffinityPolicy. It reads cluster state (nodes, pods,
+    Best-effort static analysis. It models the common scheduler predicates —
+    including extended resources (GPUs, hugepages, device-plugin resources) and
+    topology spread — but not priority/preemption or the topology-spread
+    minDomains/nodeAffinityPolicy refinements. It reads cluster state (nodes, pods,
     events, PVCs) and makes no changes.
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/SaiRohithGuntupally/kubectl-why-pending/releases/download/v0.4.1/kubectl-why-pending_darwin_arm64.tar.gz
-    sha256: e44a9128f27285dc141d4932053a93c2acd6548558bb75b1d8f172e73fe1969a
+    uri: https://github.com/SaiRohithGuntupally/kubectl-why-pending/releases/download/v0.5.0/kubectl-why-pending_darwin_arm64.tar.gz
+    sha256: bf6b21c74d0f892c7ede1b7f11120bb1f20afef647f16d93c210c1fe5f6bee4e
     bin: kubectl-why_pending
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/SaiRohithGuntupally/kubectl-why-pending/releases/download/v0.4.1/kubectl-why-pending_darwin_amd64.tar.gz
-    sha256: de8e11e20077730632740028e7ef704a291980cf414b87eaea886b9fa4ae0ab8
+    uri: https://github.com/SaiRohithGuntupally/kubectl-why-pending/releases/download/v0.5.0/kubectl-why-pending_darwin_amd64.tar.gz
+    sha256: b4013f42bade74d3e5973f2de5dfa4651352aceb08d0f817fc332aea10787f19
     bin: kubectl-why_pending
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/SaiRohithGuntupally/kubectl-why-pending/releases/download/v0.4.1/kubectl-why-pending_linux_amd64.tar.gz
-    sha256: 5f1d1438392fb6561c7b9a1eb422bc87cc8d78c21bb6bd6125ac458a2a3d9a97
+    uri: https://github.com/SaiRohithGuntupally/kubectl-why-pending/releases/download/v0.5.0/kubectl-why-pending_linux_amd64.tar.gz
+    sha256: 407a7a18ae45d7b4f10adf1e56d3d2de11d4c46e1dc1c4d46e493be1158d3823
     bin: kubectl-why_pending
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/SaiRohithGuntupally/kubectl-why-pending/releases/download/v0.4.1/kubectl-why-pending_linux_arm64.tar.gz
-    sha256: 7c4bf7fb0ef2098f453ae16378b819e1b0ac9e4ccb724f2c6d54c5a53b71347b
+    uri: https://github.com/SaiRohithGuntupally/kubectl-why-pending/releases/download/v0.5.0/kubectl-why-pending_linux_arm64.tar.gz
+    sha256: 46667fce67debf2116f7e6672c43faf17b8535b87b3eb6c38f5a592d9e4c7d43
     bin: kubectl-why_pending

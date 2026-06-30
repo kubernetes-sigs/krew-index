@@ -3,54 +3,54 @@ kind: Plugin
 metadata:
   name: mitos
 spec:
-  version: "v0.13.0"
-  homepage: https://mitos.run
+  version: "v1.7.0"
+  homepage: https://github.com/mitos-run/mitos
   shortDescription: Operate mitos.run sandboxes for AI agents
   description: |
     kubectl mitos inspects and operates mitos.run sandbox objects from your
     cluster: it lists sandbox claims and their copy-on-write forks, renders the
     fork lineage, reports per-sandbox memory metering, reads sandbox logs, and
-    runs commands inside a sandbox. mitos boots Firecracker microVMs and forks
+    runs commands inside a sandbox. Mitos boots Firecracker microVMs and forks
     them via memory snapshots into parallel attempts. The plugin reads the
     cluster connection from the standard kubeconfig resolution.
   caveats: |
     This plugin talks to the mitos.run CRDs and forkd sandbox API. It requires:
       * a Kubernetes cluster with mitos.run installed (controller + forkd), and
-      * a kubeconfig that can read SandboxClaim and SandboxFork objects.
+      * a kubeconfig that can read Sandbox objects.
     See https://mitos.run for installation.
   platforms:
-    - selector:
-        matchLabels:
-          os: linux
-          arch: amd64
-      uri: https://github.com/mitos-run/mitos/releases/download/v0.13.0/kubectl-mitos_v0.13.0_linux_amd64.tar.gz
-      sha256: 9d77192ae5817d5514b87b7370351184953208c3d38a35e74c87c6e633bd112b
-      bin: kubectl-mitos
-    - selector:
-        matchLabels:
-          os: linux
-          arch: arm64
-      uri: https://github.com/mitos-run/mitos/releases/download/v0.13.0/kubectl-mitos_v0.13.0_linux_arm64.tar.gz
-      sha256: 4b26c35e0c167713755022a1a600296107cbd94da9ffb36dbd8433ac5ee2ca95
-      bin: kubectl-mitos
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: amd64
-      uri: https://github.com/mitos-run/mitos/releases/download/v0.13.0/kubectl-mitos_v0.13.0_darwin_amd64.tar.gz
-      sha256: dc327d347652d501c360e21f87d051c42307b6bb8b9533eb656e948ed871c57c
-      bin: kubectl-mitos
-    - selector:
-        matchLabels:
-          os: darwin
-          arch: arm64
-      uri: https://github.com/mitos-run/mitos/releases/download/v0.13.0/kubectl-mitos_v0.13.0_darwin_arm64.tar.gz
-      sha256: bfa0a2cd30019f030d24b101b98139d1d65edb061555e8412990d51cce4346ae
-      bin: kubectl-mitos
-    - selector:
-        matchLabels:
-          os: windows
-          arch: amd64
-      uri: https://github.com/mitos-run/mitos/releases/download/v0.13.0/kubectl-mitos_v0.13.0_windows_amd64.zip
-      sha256: 315aa51ea9bdb915fc3bcd79d294031b94593355c97242936cd6db7537275977
-      bin: kubectl-mitos.exe
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/mitos-run/mitos/releases/download/v1.7.0/kubectl-mitos_v1.7.0_linux_amd64.tar.gz
+    sha256: ef08066bb0035f4db24c6e7d135776b6a33bcc8375590506e0c240978262c5a8
+    bin: kubectl-mitos
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/mitos-run/mitos/releases/download/v1.7.0/kubectl-mitos_v1.7.0_linux_arm64.tar.gz
+    sha256: 2fa5e89c6793c0502275ca2ff67b81798772d617e33220e389c1220ee2d916e4
+    bin: kubectl-mitos
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/mitos-run/mitos/releases/download/v1.7.0/kubectl-mitos_v1.7.0_darwin_amd64.tar.gz
+    sha256: e0150e23c3b48585968b1acdd4ac8acecba63793da83a7722bba29051d64a70b
+    bin: kubectl-mitos
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/mitos-run/mitos/releases/download/v1.7.0/kubectl-mitos_v1.7.0_darwin_arm64.tar.gz
+    sha256: 328c7de1ddebb5b6fd04ad39dc5034800ec0337659e541967cdb23211a0fbd7e
+    bin: kubectl-mitos
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/mitos-run/mitos/releases/download/v1.7.0/kubectl-mitos_v1.7.0_windows_amd64.zip
+    sha256: 0e6afcc1c372ee1cf25371c739979f5bb16ff8b8362153110a686a9a2a6a7c5d
+    bin: kubectl-mitos.exe

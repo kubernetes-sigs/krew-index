@@ -1,0 +1,80 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: rename
+spec:
+  version: v0.2.0
+  homepage: https://github.com/akashbhujbalwebsite/kubectl-safe-rename
+  shortDescription: Safely rename ConfigMaps and Secrets
+  description: |
+    kubectl rename safely renames Kubernetes ConfigMaps and Secrets
+    by creating a copy under the new name and deleting the original.
+
+    Features:
+      - Pre-flight permission check (get+create+delete) before touching anything
+      - Dependency scanner: shows which Pods and Deployments reference
+        the resource before rename, so you know what to update
+      - --dry-run mode: preview the rename plan without making changes
+      - Automatic partial-failure recovery: re-running detects an interrupted
+        rename and completes it safely
+      - Confirmation prompt (bypass with -y for scripts/CI)
+      - Clear error messages if permissions are missing
+  caveats: |
+    Only ConfigMaps and Secrets are supported in v0.1.
+    References are scanned within the specified namespace only.
+    The rename is not atomic — there is a brief window where both
+    the old and new resource exist simultaneously. Re-running the
+    command detects this and completes the rename automatically.
+    Resources referencing the renamed ConfigMap/Secret (Pods, Deployments)
+    are detected but not automatically updated — update them manually.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/akashbhujbalwebsite/kubectl-safe-rename/releases/download/v0.2.0/kubectl-safe-rename_linux_amd64.tar.gz
+    sha256: 4f621fc020498683b0e1016c7af230f7106f3352174c55791fb7a6199eaccab1
+    bin: kubectl-safe-rename
+    files:
+    - from: "*"
+      to: "."
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/akashbhujbalwebsite/kubectl-safe-rename/releases/download/v0.2.0/kubectl-safe-rename_linux_arm64.tar.gz
+    sha256: 9395d7b860f24aac626ac0dc9ac562bf44e61eb974dd746e3bb90f395c842780
+    bin: kubectl-safe-rename
+    files:
+    - from: "*"
+      to: "."
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/akashbhujbalwebsite/kubectl-safe-rename/releases/download/v0.2.0/kubectl-safe-rename_darwin_amd64.tar.gz
+    sha256: b2d677678cbed20ff464f59e31879a1c292f0d9c28d0968fe4acd97d1290f38a
+    bin: kubectl-safe-rename
+    files:
+    - from: "*"
+      to: "."
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/akashbhujbalwebsite/kubectl-safe-rename/releases/download/v0.2.0/kubectl-safe-rename_darwin_arm64.tar.gz
+    sha256: a2faf20591b9c042336810fbd4c97146cb24b75519c5fa2f414bad61019870b2
+    bin: kubectl-safe-rename
+    files:
+    - from: "*"
+      to: "."
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/akashbhujbalwebsite/kubectl-safe-rename/releases/download/v0.2.0/kubectl-safe-rename_windows_amd64.zip
+    sha256: e457f47db0cdb50848ecdb7ca59a20568f6b6a242c5569e21b2aabe0c0613302
+    bin: kubectl-safe-rename.exe
+    files:
+    - from: "*"
+      to: "."

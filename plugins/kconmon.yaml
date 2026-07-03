@@ -1,0 +1,70 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kconmon
+spec:
+  version: "v1.3.2"
+  homepage: https://github.com/EsDmitrii/kconmon-ng
+  shortDescription: On-demand node-to-node connectivity checks for kconmon-ng
+  description: |
+    kubectl-kconmon talks to a running kconmon-ng controller's HTTP API through
+    a client-go port-forward, so operators can inspect the cluster's node/zone
+    topology and run one-shot connectivity diagnostics (TCP, UDP, ICMP, DNS,
+    HTTP, and MTR per-hop traces) between any two nodes — without opening
+    Grafana. It requires kconmon-ng to be installed in the cluster.
+
+    Examples:
+      kubectl kconmon topology
+      kubectl kconmon check node-1 node-2 --type icmp
+      kubectl kconmon mtr node-1 node-2
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/EsDmitrii/kconmon-ng/releases/download/v1.3.2/kconmon_1.3.2_linux_amd64.tar.gz
+      sha256: "2199147690015d5264dd2948ed4b1464ec8413b15fc31fa8fa41e054cfc4eafd"
+      files:
+        - from: kubectl-kconmon
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-kconmon
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/EsDmitrii/kconmon-ng/releases/download/v1.3.2/kconmon_1.3.2_linux_arm64.tar.gz
+      sha256: "a882a637aa7432bdb57cb9599c803ecac124e39ebccab1c455622396491d2d7f"
+      files:
+        - from: kubectl-kconmon
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-kconmon
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: "https://github.com/EsDmitrii/kconmon-ng/releases/download/\
+        v1.3.2/kconmon_1.3.2_darwin_amd64.tar.gz"
+      sha256: "363d0ec1a4bab08c28f2efab81d5f47951ab1c64bb0cbd063259efca5da19376"
+      files:
+        - from: kubectl-kconmon
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-kconmon
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: "https://github.com/EsDmitrii/kconmon-ng/releases/download/\
+        v1.3.2/kconmon_1.3.2_darwin_arm64.tar.gz"
+      sha256: "985d9683b56c5835d05d1c41768d7723dd543929be896acd7385380520841a90"
+      files:
+        - from: kubectl-kconmon
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-kconmon

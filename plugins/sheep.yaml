@@ -1,0 +1,42 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: sheep
+spec:
+  version: v0.1.1
+  homepage: https://github.com/ahoz/kubectl-sheep
+  shortDescription: Fetch and manage kubeconfigs from Rancher-managed clusters
+  description: |
+    A kubectl plugin to manage multiple Rancher instances, list their downstream
+    clusters, and fetch/refresh kubeconfigs individually or in bulk. Rancher API
+    tokens can be stored either as plaintext or encrypted (passphrase-protected file
+    backend), selectable per instance.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/ahoz/kubectl-sheep/releases/download/v0.1.1/kubectl-sheep_linux_amd64.tar.gz
+      sha256: ed7b105cb28ff8414e69a387a2edf438ce3d84cbe9adf2c45343622a3bbbfe88
+      bin: kubectl-sheep
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/ahoz/kubectl-sheep/releases/download/v0.1.1/kubectl-sheep_linux_arm64.tar.gz
+      sha256: 8f163845988557d61371c1f71042e03f39e05064ef501d36936f7e7b5a6865e8
+      bin: kubectl-sheep
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/ahoz/kubectl-sheep/releases/download/v0.1.1/kubectl-sheep_darwin_amd64.tar.gz
+      sha256: 3fa6d95a1987d666caad031355517b810eb96fe39c30b2777eea8362e12fa33a
+      bin: kubectl-sheep
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/ahoz/kubectl-sheep/releases/download/v0.1.1/kubectl-sheep_darwin_arm64.tar.gz
+      sha256: 52a53dd185d16002f4f80223799b65d775416e35876043549fe49b15e8d91af4
+      bin: kubectl-sheep

@@ -1,0 +1,46 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: rsync
+spec:
+  version: v0.1.0
+  homepage: https://github.com/major1201/kubectl-rsync
+  shortDescription: Syncs files between local filesystem and Kubernetes pods using rsync.
+  description: |
+    A kubectl plugin that syncs files between local filesystem and Kubernetes pods using rsync.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/major1201/kubectl-rsync/releases/download/v0.1.0/kubectl-rsync_v0.1.0_darwin_amd64.tar.gz
+    sha256: 473809039f598cc7400ef936376e0d7effd26c4da7dc2c097882d817851974e7
+    bin: kubectl-rsync
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/major1201/kubectl-rsync/releases/download/v0.1.0/kubectl-rsync_v0.1.0_darwin_arm64.tar.gz
+    sha256: a3a7e83e5a0a4a449e2909c1d18b7183be3e2ba43706248d4dd28d497207a1d8
+    bin: kubectl-rsync
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/major1201/kubectl-rsync/releases/download/v0.1.0/kubectl-rsync_v0.1.0_linux_amd64.tar.gz
+    sha256: 006347dc083026d4d89a40bf29b686aaeb2139464256cac247fb0579514fa0ec
+    bin: kubectl-rsync
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/major1201/kubectl-rsync/releases/download/v0.1.0/kubectl-rsync_v0.1.0_linux_arm64.tar.gz
+    sha256: 365fd3297c947943e6abd5d90a6dcc87ef43242155315cee1c1e0699e1c1ef9b
+    bin: kubectl-rsync
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/major1201/kubectl-rsync/releases/download/v0.1.0/kubectl-rsync_v0.1.0_windows_amd64.tar.gz
+    sha256: c390bf6c459decb1a72b62e3d6f353a9ff14fb5c7315004180ec3b6c854833c5
+    bin: kubectl-rsync.exe

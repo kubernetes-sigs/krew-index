@@ -1,0 +1,69 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: can-schedule
+spec:
+  version: v0.1.2
+  homepage: https://github.com/ronaknnathani/kubectl-can-schedule
+  shortDescription: "Check whether workloads fit on a cluster"
+  description: |
+    Reports whether one or more workloads can be scheduled on a Kubernetes
+    cluster right now, by running the upstream default scheduler's filter
+    plugins (PreFilter + Filter) against a live, read-only snapshot of the
+    cluster. It is not a scorer or optimizer; it answers "can this land?".
+
+    - Accepts Pod, Deployment, and StatefulSet manifests (-f, multi-doc, stdin)
+      or a synthetic workload from repeatable --resource flags.
+    - Shows cluster allocatable and already-allocated capacity per resource.
+    - Reports, per workload, feasible node count, requested resources, how many
+      replicas fit, and a concise reason when they do not.
+    - Optionally simulates preemption of lower-priority pods (non-destructive).
+
+    The tool never mutates the cluster.
+  caveats: |
+    This plugin requires read access to the cluster. Specifically, it needs
+    permissions to list nodes, pods, priorityclasses, and storageclasses. It
+    performs no writes and never evicts or deletes any object.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/ronaknnathani/kubectl-can-schedule/releases/download/v0.1.2/kubectl-can-schedule_v0.1.2_linux_amd64.tar.gz
+    sha256: cddf2b031be3eac69310afc460a86c983a92aa51b9202ee6abcd95b66d0dc8fc
+    bin: kubectl-can_schedule
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/ronaknnathani/kubectl-can-schedule/releases/download/v0.1.2/kubectl-can-schedule_v0.1.2_linux_arm64.tar.gz
+    sha256: 658594c9a5ea65bdeb17d0e92c285e4ab1a2f735d40c1a4b9cf2362307b93caa
+    bin: kubectl-can_schedule
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/ronaknnathani/kubectl-can-schedule/releases/download/v0.1.2/kubectl-can-schedule_v0.1.2_darwin_amd64.tar.gz
+    sha256: d33a47cf720b46cd7a86f301d360a816a03b7899a5204b90b0813a7d39a9c4af
+    bin: kubectl-can_schedule
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/ronaknnathani/kubectl-can-schedule/releases/download/v0.1.2/kubectl-can-schedule_v0.1.2_darwin_arm64.tar.gz
+    sha256: 5e22bfe1ca1a338463b8b4f45e5b3753e70f1ace2383fee9e9b6d1a96731040d
+    bin: kubectl-can_schedule
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/ronaknnathani/kubectl-can-schedule/releases/download/v0.1.2/kubectl-can-schedule_v0.1.2_windows_amd64.zip
+    sha256: a7c3def383bb7a7cd27e4e974de607eff968300f6c8e19fcc802ee5fe88ef6f7
+    bin: kubectl-can_schedule.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/ronaknnathani/kubectl-can-schedule/releases/download/v0.1.2/kubectl-can-schedule_v0.1.2_windows_arm64.zip
+    sha256: b9587aebd54ce4595c1e7002b76252d59d87951324b5cd1edcaa4d5c8b5ebf29
+    bin: kubectl-can_schedule.exe

@@ -1,0 +1,22 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: node-debug-shell
+
+spec:
+  version: v0.2.0
+  homepage: https://github.com/ragatgen/node-debug-shell
+  shortDescription: Interactive node debug shell
+  description: |
+    node-debug-shell provides an interactive workflow for
+    troubleshooting Kubernetes nodes.
+    Select a node, choose a debug image, and launch a
+    kubectl debug session directly from the command line.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/ragatgen/node-debug-shell/releases/download/v0.2.0/kubectl-node-debug-shell_v0.2.0_linux_amd64.tar.gz
+      sha256: 285df1a1d18b94789a0715a1e19e175136c9617117b58bc8a137126d4f412a2e
+      bin: kubectl-node-debug-shell

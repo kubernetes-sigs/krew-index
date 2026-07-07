@@ -4,55 +4,103 @@ kind: Plugin
 metadata:
   name: cfgd
 spec:
-  version: v0.4.0
+  version: v0.5.0
   homepage: https://github.com/tj-smith47/cfgd
-  shortDescription: Declarative GitOps machine config manager
+  shortDescription: Manage cfgd modules on pods and workloads.
   description: |
-    cfgd reconciles machine state (packages, files, services, shell,
-    kernel settings, container runtimes, and Kubernetes nodes) against
-    a declarative YAML config. It detects drift and applies changes
-    safely. Inside a cluster, the kubectl plugin works with cfgd-managed
-    pods and nodes.
+    kubectl-cfgd attaches cfgd modules — portable bundles of CLI
+    tools, dotfiles, shell config, and packages — to running
+    Kubernetes workloads without rebuilding the upstream image:
+
+      kubectl cfgd inject deploy/web -m nvim:1.2  # patch template, roll out
+      kubectl cfgd debug web-xyz -m nvim:1.2      # ephemeral debug container
+      kubectl cfgd exec web-xyz -m nvim:1.2 -- nvim
+      kubectl cfgd status                         # fleet-wide module status
+
+    Modules are mounted by the cfgd CSI driver and admission webhook.
+    To declare and reconcile local machine state, install the cfgd CLI.
   platforms:
   - selector:
       matchLabels:
         os: windows
         arch: arm64
-    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.4.0/cfgd-0.4.0-windows-arm64.zip
-    sha256: c7ee717a63e38857752a4c65d058251db589f89b48db3e083f33d1270ae21a33
+    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.5.0/cfgd-0.5.0-windows-arm64.zip
+    sha256: 3798be7a34bb835a34d9a7f10b197b58380bd753d275c1c88333469e1e38994a
     bin: cfgd.exe
+    files:
+    - from: cfgd.exe
+      to: .
+    - from: LICENSE-MIT
+      to: .
+    - from: README.md
+      to: .
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.4.0/cfgd-0.4.0-windows-amd64.zip
-    sha256: 37ca040556665be0e559fd82b540eb5241b106a9f3eee62867196a16951f11d2
+    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.5.0/cfgd-0.5.0-windows-amd64.zip
+    sha256: c2a336db4c7a4ff8554289a72e6f614278072873d1bd874cbc2313e50312fea2
     bin: cfgd.exe
+    files:
+    - from: cfgd.exe
+      to: .
+    - from: LICENSE-MIT
+      to: .
+    - from: README.md
+      to: .
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.4.0/cfgd-0.4.0-linux-arm64.tar.gz
-    sha256: 05832151a4a881e35a2351d5bb696cb8ced8a6816d84122edf0bd72c43370dbb
+    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.5.0/cfgd-0.5.0-linux-arm64.tar.gz
+    sha256: 7a3b18cbc8996f34e66d6b9f36912cec9dd8f466d0ae10ad0add60706467626f
     bin: cfgd
+    files:
+    - from: cfgd
+      to: .
+    - from: LICENSE-MIT
+      to: .
+    - from: README.md
+      to: .
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.4.0/cfgd-0.4.0-linux-amd64.tar.gz
-    sha256: 640fd4f4e3dc8c38c9c2bb999e9441e919159d11fa5500f00d6a8c4b64a6caec
+    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.5.0/cfgd-0.5.0-linux-amd64.tar.gz
+    sha256: a79cb8b4a29fc7ffc2469ff5270e1813d5658584af886d1a03cc0429a194ca89
     bin: cfgd
+    files:
+    - from: cfgd
+      to: .
+    - from: LICENSE-MIT
+      to: .
+    - from: README.md
+      to: .
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.4.0/cfgd-0.4.0-darwin-arm64.tar.gz
-    sha256: e3d07dd0affb279dd88e718b8c6c3f82556db1c73ef9e8b77228b828a1952a94
+    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.5.0/cfgd-0.5.0-darwin-arm64.tar.gz
+    sha256: 7db786b595e1fae9c45ce04113a12797f5c453acc43f79cb28fb4b30d4d45345
     bin: cfgd
+    files:
+    - from: cfgd
+      to: .
+    - from: LICENSE-MIT
+      to: .
+    - from: README.md
+      to: .
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.4.0/cfgd-0.4.0-darwin-amd64.tar.gz
-    sha256: 0eb602a049f85898496cfdb6b645db8892d478d478f6e62d4b634662e63f119b
+    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.5.0/cfgd-0.5.0-darwin-amd64.tar.gz
+    sha256: 9e6c3f1fbddc1c23f633d5d1af9a5d76c4addaec482b4c2e438d65bd9fb5c7e5
     bin: cfgd
+    files:
+    - from: cfgd
+      to: .
+    - from: LICENSE-MIT
+      to: .
+    - from: README.md
+      to: .

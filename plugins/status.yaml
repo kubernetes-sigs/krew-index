@@ -3,14 +3,14 @@ kind: Plugin
 metadata:
   name: status
 spec:
-  version: v0.7.18
+  version: v0.7.19
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.18/status_linux_amd64.tar.gz
-    sha256: f9506b54f2bcb2f18357770dac66934393fbc11a9629d305490abb38f92f2338
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.19/status_linux_amd64.tar.gz
+    sha256: 5d0e525282c7258bed85149c7e52b6779a42d0f0955c8a9ff0fed4780522291b
     files:
     - from: "./status"
       to: "."
@@ -21,8 +21,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.18/status_linux_arm64.tar.gz
-    sha256: 15c36b3c980f0d2854cbd90cd1f48dd4d8b695c28aba184c8b6737e0c84aad1b
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.19/status_linux_arm64.tar.gz
+    sha256: 50366e64eda8bb1840450ae7f73a99ef02f788f529b234422f24d87bf9f646a1
     files:
     - from: "./status"
       to: "."
@@ -33,8 +33,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.18/status_darwin_amd64.tar.gz
-    sha256: 72affb9cf43c6094841839d85d2d7aefcce180d7225dfbd802b942998038787d
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.19/status_darwin_amd64.tar.gz
+    sha256: 66dcb3caf287febcde98a558e8deebb9ce3ef52d0c69892450c1fc2526498f6e
     files:
     - from: "./status"
       to: "."
@@ -45,8 +45,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.18/status_darwin_arm64.tar.gz
-    sha256: 61000e7b7b01329d0851da0bcceaabbcb12cc4402f6b938b1fe7bdbc4839ce07
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.19/status_darwin_arm64.tar.gz
+    sha256: 1737523f9964dd93abe441918aad4e81825371a6099a9cba4849f726a68914ca
     files:
     - from: "./status"
       to: "."
@@ -57,15 +57,15 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.18/status_windows_amd64.zip
-    sha256: 11e8e414ae232ad2418597406a101bc6a1f382bb2b93881ca736ebe16b82bf23
+    uri: https://github.com/bergerx/kubectl-status/releases/download/v0.7.19/status_windows_amd64.zip
+    sha256: 6a14a456a02337f8aa49b3e26271b616d9d67a263b8e6cfc0517d3546eefecc8
     files:
     - from: "/status.exe"
       to: "."
     - from: LICENSE
       to: "."
     bin: "status.exe"
-  shortDescription: Show status details of a given resource.
+  shortDescription: Show status of Kubernetes resources at a glance.
   homepage: https://github.com/bergerx/kubectl-status
   caveats: |
     Usage:
@@ -73,7 +73,8 @@ spec:
 
     For additional options:
       $ kubectl status --help
-      or https://github.com/bergerx/kubectl-status/blob/master/doc/USAGE.md
 
   description: |
-    Show status details of a given resource. Most useful when debugging Pod issues.
+    Shows the status of any Kubernetes resource in one command, in place of
+    separate get/describe calls. Most useful when debugging why a resource
+    isn't healthy.

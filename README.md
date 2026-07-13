@@ -28,6 +28,13 @@ If your plugin is rejected from this repository, you can host your own [custom
 index](https://krew.sigs.k8s.io/docs/developer-guide/custom-indexes/) repository
 to distribute your plugin with Krew.
 
+## Nix builds
+
+This repository includes a Nix flake that exposes plugin packages dynamically
+from `plugins/*.yaml` manifests.
+
+See `nix/README.md` for usage and metadata update workflow.
+
 ## Community
 
 ### Bug reports

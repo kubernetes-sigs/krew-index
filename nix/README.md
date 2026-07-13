@@ -12,6 +12,11 @@ Current target systems:
 
 - `x86_64-linux`
 - `aarch64-linux`
+- `x86_64-darwin`
+- `aarch64-darwin`
+
+Note: `x86_64-darwin` is evaluated with a dedicated `nixpkgs-26.05-darwin`
+input because recent `nixos-unstable` revisions dropped x86_64 macOS support.
 
 ## Update metadata
 

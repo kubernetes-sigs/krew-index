@@ -17,6 +17,8 @@ except ModuleNotFoundError as exc:
 SYSTEMS = {
     "x86_64-linux": {"os": "linux", "arch": "amd64"},
     "aarch64-linux": {"os": "linux", "arch": "arm64"},
+    "x86_64-darwin": {"os": "darwin", "arch": "amd64"},
+    "aarch64-darwin": {"os": "darwin", "arch": "arm64"},
 }
 
 

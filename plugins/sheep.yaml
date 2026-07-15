@@ -3,40 +3,41 @@ kind: Plugin
 metadata:
   name: sheep
 spec:
-  version: v0.2.0
+  version: v0.3.0
   homepage: https://github.com/ahoz/kubectl-sheep
   shortDescription: Fetch and manage kubeconfigs from Rancher-managed clusters
   description: |
     A kubectl plugin to manage multiple Rancher instances, list their downstream
-    clusters, and fetch/refresh kubeconfigs individually or in bulk. Rancher API
-    tokens can be stored either as plaintext or encrypted (passphrase-protected file
-    backend), selectable per instance.
+    clusters, and fetch or refresh kubeconfigs individually or in bulk. Fetched
+    kubeconfigs are cached locally and merged into ~/.kube/config automatically.
+    Rancher API tokens can be stored as plaintext or encrypted (passphrase-protected),
+    selectable per instance. Interactive arrow-key menus when run on a TTY.
   platforms:
     - selector:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/ahoz/kubectl-sheep/releases/download/v0.2.0/kubectl-sheep_linux_amd64.tar.gz
-      sha256: 635c5ec0328a78e01ddbd028e42294e147fb43941da8113e090ef582072d57a2
+      uri: https://github.com/ahoz/kubectl-sheep/releases/download/v0.3.0/kubectl-sheep_linux_amd64.tar.gz
+      sha256: 088a0746de84ae9c2627f0ac755245b753390476ba9c662ef9d2f99c8461e6d3
       bin: kubectl-sheep
     - selector:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/ahoz/kubectl-sheep/releases/download/v0.2.0/kubectl-sheep_linux_arm64.tar.gz
-      sha256: 9306461ba847105321f251ed09787c86f7ce212411a7fd8bacb99a5dad24305c
+      uri: https://github.com/ahoz/kubectl-sheep/releases/download/v0.3.0/kubectl-sheep_linux_arm64.tar.gz
+      sha256: c4e4d0d7d4d142e42f508e30db6665575c2d0755be0cd2bdcbb65e25e6c0a485
       bin: kubectl-sheep
     - selector:
         matchLabels:
           os: darwin
           arch: amd64
-      uri: https://github.com/ahoz/kubectl-sheep/releases/download/v0.2.0/kubectl-sheep_darwin_amd64.tar.gz
-      sha256: 002d47713fcda27d37ec1ac2ee41b5268f42e61c7dc7fdffc017b928097744f1
+      uri: https://github.com/ahoz/kubectl-sheep/releases/download/v0.3.0/kubectl-sheep_darwin_amd64.tar.gz
+      sha256: fb3c80c7f65f83ae297b672ac9a17b772501b61eb749027adfb559b9818b6cd5
       bin: kubectl-sheep
     - selector:
         matchLabels:
           os: darwin
           arch: arm64
-      uri: https://github.com/ahoz/kubectl-sheep/releases/download/v0.2.0/kubectl-sheep_darwin_arm64.tar.gz
-      sha256: 1340b9859878affe5da161a08178e057fd153c1fdc370cdf56d120df96181260
+      uri: https://github.com/ahoz/kubectl-sheep/releases/download/v0.3.0/kubectl-sheep_darwin_arm64.tar.gz
+      sha256: c8c0e83adb85ef8b690cbeb2bfccf6dd7fe3aed3d08f96aa11d39cbb79154a2d
       bin: kubectl-sheep

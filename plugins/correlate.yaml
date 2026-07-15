@@ -1,0 +1,88 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: correlate
+spec:
+  version: v0.1.2
+  homepage: https://github.com/Dasmat13/kubecorrelate
+  shortDescription: Chronologically merge logs, events, configs, and node pressures
+  description: |
+    KubeCorrelate is a lightweight CLI troubleshooting tool that multiplexes
+    pod container logs, Kubernetes events, config updates, and node-level
+    resource pressure alerts into a single time-aligned, colorized stream.
+  caveats: |
+    Requires an active kubeconfig context. Some features like Node watches
+    might require permissions that fallback gracefully if missing.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/Dasmat13/kubecorrelate/releases/download/v0.1.2/kubecorrelate_0.1.2_darwin_amd64.tar.gz
+    sha256: ae71a1878001c43c3a531bc89f26ea57d29c05b5d906789c6549e0f0814c2196
+    bin: kubecorrelate
+    files:
+    - from: "kubecorrelate"
+      to: "."
+    - from: "LICENSE"
+      to: "."
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/Dasmat13/kubecorrelate/releases/download/v0.1.2/kubecorrelate_0.1.2_darwin_arm64.tar.gz
+    sha256: 5c4cb16a00f4a7c34475fad7b095a410bdb28472eb7c658207b1ba947e03ca02
+    bin: kubecorrelate
+    files:
+    - from: "kubecorrelate"
+      to: "."
+    - from: "LICENSE"
+      to: "."
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/Dasmat13/kubecorrelate/releases/download/v0.1.2/kubecorrelate_0.1.2_linux_amd64.tar.gz
+    sha256: 306ea4824e0f7d4b2bd0529ee47c2fb7776b7840042e567cf80a2ba5eac8a6c5
+    bin: kubecorrelate
+    files:
+    - from: "kubecorrelate"
+      to: "."
+    - from: "LICENSE"
+      to: "."
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/Dasmat13/kubecorrelate/releases/download/v0.1.2/kubecorrelate_0.1.2_linux_arm64.tar.gz
+    sha256: 818063a1c9d5bfee3a3907ee38d756542c6a9e0f39cf67a70393f4be37d5ab93
+    bin: kubecorrelate
+    files:
+    - from: "kubecorrelate"
+      to: "."
+    - from: "LICENSE"
+      to: "."
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/Dasmat13/kubecorrelate/releases/download/v0.1.2/kubecorrelate_0.1.2_windows_amd64.zip
+    sha256: a71eee419cd92e1f37df4c31ee3784adeb7dc0aed3083b889443e4571304bb3f
+    bin: kubecorrelate.exe
+    files:
+    - from: "kubecorrelate.exe"
+      to: "."
+    - from: "LICENSE"
+      to: "."
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/Dasmat13/kubecorrelate/releases/download/v0.1.2/kubecorrelate_0.1.2_windows_arm64.zip
+    sha256: 90a9381f32b08b5f607ecb0a3188a762a4778f10ab3f3e63275338942109f8e4
+    bin: kubecorrelate.exe
+    files:
+    - from: "kubecorrelate.exe"
+      to: "."
+    - from: "LICENSE"
+      to: "."

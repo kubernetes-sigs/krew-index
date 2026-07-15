@@ -1,0 +1,16 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: test
+spec:
+  version: v0.0.1
+  homepage: https://github.com/test/test
+  shortDescription: test
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/test/test/releases/download/v0.0.1/test.tar.gz
+    sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    bin: test

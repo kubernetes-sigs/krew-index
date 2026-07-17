@@ -1,0 +1,54 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: chaos
+spec:
+  version: v0.1.1
+  homepage: https://github.com/amdadulbari/kubectl-chaos
+  shortDescription: Ephemeral-container chaos engineering
+  description: |
+    Inject bounded, self-healing faults into running pods via ephemeral (debug)
+    containers — no operator, no CRDs, nothing installed in the cluster. Each
+    fault is wrapped in a self-terminating "timeout" payload, so it auto-heals
+    when --duration elapses even if the client dies.
+
+    Attacks: cpu-hog, mem-hog, disk-fill, pod-latency, pod-kill. Load is sized to
+    the target node's allocatable capacity.
+  caveats: |
+    * Requires Kubernetes >= 1.23 to update pods/ephemeralcontainers.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/amdadulbari/kubectl-chaos/releases/download/v0.1.1/chaos_linux_amd64.tar.gz
+      sha256: e6c7cd0b4d9e20195795313cb70c51f699c9ddcec8d97aca8880b36370c6a975
+      bin: chaos
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/amdadulbari/kubectl-chaos/releases/download/v0.1.1/chaos_linux_arm64.tar.gz
+      sha256: 4fc05f3652eee5d4ea5bf347a22c2ab84f31a7b31fd29838d0b2d949e92910eb
+      bin: chaos
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/amdadulbari/kubectl-chaos/releases/download/v0.1.1/chaos_darwin_amd64.tar.gz
+      sha256: a36088b0103f602e8c887a34eb5b6b463c0121fd5822843a4967cf3a0e0e0070
+      bin: chaos
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/amdadulbari/kubectl-chaos/releases/download/v0.1.1/chaos_darwin_arm64.tar.gz
+      sha256: caf9355ea2f6baebe3b3e031faed6ee71beb0e1635641cdf67686887fc57fdac
+      bin: chaos
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/amdadulbari/kubectl-chaos/releases/download/v0.1.1/chaos_windows_amd64.zip
+      sha256: 4e33433db7091e68abace0fed64ac1b6b86e4dce137ea0b85695e2f9058ee4f0
+      bin: chaos.exe

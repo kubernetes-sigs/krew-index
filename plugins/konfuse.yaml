@@ -1,0 +1,48 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: konfuse
+spec:
+  version: v0.4.1
+  homepage: https://github.com/chameerar/konfuse
+  shortDescription: Merge and manage kubeconfig files
+  description: |
+    konfuse merges kubeconfig files into your existing config in one
+    command, with rename-on-import so context, cluster, and user names
+    never collide, and an automatic timestamped backup before every write.
+
+    It also lists entries, switches the active context, and cleanly deletes
+    a context (removing its orphaned cluster and user), with structured
+    --json output and meaningful exit codes for scripting and CI.
+  caveats: |
+    konfuse writes to ~/.kube/config (or the path given via --kubeconfig) and
+    always creates a timestamped backup before modifying it.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/chameerar/konfuse/releases/download/v0.4.1/konfuse-macos-amd64.tar.gz
+      sha256: aae4f2a690af9ce8d13f03d44ac2707baafbac2e06d3ff92c9cfe38b95d506f2
+      bin: konfuse
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/chameerar/konfuse/releases/download/v0.4.1/konfuse-macos-arm64.tar.gz
+      sha256: b065c98355e86db565f187ec6db80f4668809920f8c620491a17ffb5e646b364
+      bin: konfuse
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/chameerar/konfuse/releases/download/v0.4.1/konfuse-linux-amd64.tar.gz
+      sha256: e046061c00346058a2768ee0070783645c2714a04cc26b83557cf19e7b586d49
+      bin: konfuse
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/chameerar/konfuse/releases/download/v0.4.1/konfuse-linux-arm64.tar.gz
+      sha256: 0350fc37c756df19016ff09d9887a4be866cfffce7b39a80c7fc5c9f6636c951
+      bin: konfuse

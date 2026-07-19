@@ -1,22 +1,21 @@
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
-  name: kx
+  name: idx
 spec:
   version: v0.0.7
   homepage: https://github.com/jzills/kx
   shortDescription: Select resources by index instead of typing names
   description: |
-    kx wraps kubectl with index-based resource selection. List resources
-    once with "kubectl kx get pods" to assign numbered indexes, then
+    idx wraps kubectl with index-based resource selection. List resources
+    once with "kubectl idx get pods" to assign numbered indexes, then
     reference any resource by number in follow-up commands: describe,
     logs, exec, delete, edit, scale, rollout, port-forward, events,
     yaml, tree, and more. A navigable history of listings keeps indexes
     resolving as you move between resource kinds and namespaces.
+    Also distributed as "kx" on PyPI (https://pypi.org/project/kx-cli/).
   caveats: |
-    kx shells out to kubectl and uses your current kubeconfig context.
-    Index history is stored in ~/.kx/. For the short form, add:
-      alias kx="kubectl kx"
+    Index history is stored in ~/.kx/.
   platforms:
   - selector: {matchLabels: {os: linux, arch: amd64}}
     uri: https://github.com/jzills/kx/releases/download/v0.0.7/kx_v0.0.7_linux_amd64.tar.gz

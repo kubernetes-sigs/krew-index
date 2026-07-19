@@ -1,0 +1,37 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kx
+spec:
+  version: v0.0.7
+  homepage: https://github.com/jzills/kx
+  shortDescription: Select resources by index instead of typing names
+  description: |
+    kx wraps kubectl with index-based resource selection. List resources
+    once with "kubectl kx get pods" to assign numbered indexes, then
+    reference any resource by number in follow-up commands: describe,
+    logs, exec, delete, edit, scale, rollout, port-forward, events,
+    yaml, tree, and more. A navigable history of listings keeps indexes
+    resolving as you move between resource kinds and namespaces.
+  caveats: |
+    kx shells out to kubectl and uses your current kubeconfig context.
+    Index history is stored in ~/.kx/. For the short form, add:
+      alias kx="kubectl kx"
+  platforms:
+  - selector: {matchLabels: {os: linux, arch: amd64}}
+    uri: https://github.com/jzills/kx/releases/download/v0.0.7/kx_v0.0.7_linux_amd64.tar.gz
+    sha256: 9a66ba659cdf1c2ecf864a64bc15c83ea72749bb0428ba303563049cb89bf42a
+    bin: kx/kx
+  - selector: {matchLabels: {os: linux, arch: arm64}}
+    uri: https://github.com/jzills/kx/releases/download/v0.0.7/kx_v0.0.7_linux_arm64.tar.gz
+    sha256: 0e586cd21e9e69ecb19cddea8aa985e2f92363c8552a294831d62eb668abca55
+    bin: kx/kx
+  - selector: {matchLabels: {os: darwin, arch: amd64}}
+    uri: https://github.com/jzills/kx/releases/download/v0.0.7/kx_v0.0.7_darwin_amd64.tar.gz
+    sha256: 760ed7e47adb35ce9e9504b36cc365e0c3fbbb050dbafa5bcbbc4ef7c23be3b1
+    bin: kx/kx
+  - selector: {matchLabels: {os: darwin, arch: arm64}}
+    uri: https://github.com/jzills/kx/releases/download/v0.0.7/kx_v0.0.7_darwin_arm64.tar.gz
+    sha256: cebc4661f73cbb197eaa39d5f5c168f0543faf7f227ad7ea996e98a1ac4a226e
+    bin: kx/kx
+

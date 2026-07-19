@@ -1,0 +1,93 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: hawk
+
+spec:
+  version: "v1.0.0"
+  homepage: https://github.com/lakshya-8000cr/Hawk
+  shortDescription: Analyze Kubernetes dependencies and blast radius
+  description: |
+    Hawk analyzes Kubernetes workload dependencies and displays the potential
+    blast radius of operational changes. It discovers ownership relationships,
+    service routing, ingress exposure, ConfigMaps, Secrets, and persistent
+    storage dependencies for a target workload.
+
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/lakshya-8000cr/Hawk/releases/download/v1.0.0/hawk_v1.0.0_linux_amd64.tar.gz
+      sha256: 9c5940beb420e8b2a9c9a5350ce39eb233a0aac53c221f6056334c75402ab8ab
+      files:
+        - from: kubectl-hawk
+          to: kubectl-hawk
+        - from: LICENSE
+          to: LICENSE
+      bin: kubectl-hawk
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/lakshya-8000cr/Hawk/releases/download/v1.0.0/hawk_v1.0.0_linux_arm64.tar.gz
+      sha256: 6720a9a3bc5dbb43f078c0621737cb7fb6b35de9b673760ec8df8e1dae6fe931
+      files:
+        - from: kubectl-hawk
+          to: kubectl-hawk
+        - from: LICENSE
+          to: LICENSE
+      bin: kubectl-hawk
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/lakshya-8000cr/Hawk/releases/download/v1.0.0/hawk_v1.0.0_darwin_amd64.tar.gz
+      sha256: 54ee627c77d59eb3c8df3847e42a47e06f23f656d73b0240f55235612bd58f44
+      files:
+        - from: kubectl-hawk
+          to: kubectl-hawk
+        - from: LICENSE
+          to: LICENSE
+      bin: kubectl-hawk
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/lakshya-8000cr/Hawk/releases/download/v1.0.0/hawk_v1.0.0_darwin_arm64.tar.gz
+      sha256: 3fa485d3abd0ba3591e1c9f7180e8e37a94ea89106e5b4d13f69644b520976d9
+      files:
+        - from: kubectl-hawk
+          to: kubectl-hawk
+        - from: LICENSE
+          to: LICENSE
+      bin: kubectl-hawk
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/lakshya-8000cr/Hawk/releases/download/v1.0.0/hawk_v1.0.0_windows_amd64.zip
+      sha256: 5b8a8b6ad18913dbd1d8481648d3bede677e077cc9e10000ba9e5306f29189e2
+      files:
+        - from: kubectl-hawk.exe
+          to: kubectl-hawk.exe
+        - from: LICENSE
+          to: LICENSE
+      bin: kubectl-hawk.exe
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/lakshya-8000cr/Hawk/releases/download/v1.0.0/hawk_v1.0.0_windows_arm64.zip
+      sha256: 1914823362cf643af9888e91ba5fb415451df06cbc229d32c62e38e552dc0b37
+      files:
+        - from: kubectl-hawk.exe
+          to: kubectl-hawk.exe
+        - from: LICENSE
+          to: LICENSE
+      bin: kubectl-hawk.exe

@@ -4,24 +4,21 @@ metadata:
   name: lambda-g
 spec:
   version: v1.0.1
-  shortDescription: "6D resource imbalance scanner for Kubernetes clusters"
+  shortDescription: "6D resource imbalance scanner for K8s"
   description: |
-    Scans your Kubernetes cluster for stranded resources across 6 dimensions:
-    CPU, RAM, GPU Core, GPU Memory, IOPS, and Network.
+    Scans your Kubernetes cluster for stranded resources across 6
+    dimensions: CPU, RAM, GPU Core, GPU Memory, IOPS, and Network.
 
-    Detects nodes where one resource is maxed while others sit idle — the
-    kind of imbalance that kubectl top misses because it only shows one
-    dimension at a time.
+    Detects nodes where one resource is saturated while others sit
+    idle — the kind of imbalance that kubectl top misses because it
+    only shows one dimension at a time.
 
-    Most clusters waste 10-20% of compute budget this way.
-    GPU clusters waste even more (VRAM full but compute idle).
+    Most clusters waste 10-20% of compute budget this way. GPU
+    clusters waste even more (VRAM full but compute idle).
 
-    Commands:
-      kubectl lambda-g scan              Scan cluster
-      kubectl lambda-g scan --detailed   Full per-node breakdown
-      kubectl lambda-g scan --gpu        Include GPU metrics
-      kubectl lambda-g scan --json       JSON output
-      kubectl lambda-g watch             Continuous monitoring
+    Use --detailed for per-node breakdown, --gpu to include GPU
+    metrics, --json for machine-readable output, and watch for
+    continuous monitoring.
 
   homepage: https://github.com/0x-auth/lambda-g-auditor
   caveats: |

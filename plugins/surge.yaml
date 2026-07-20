@@ -1,0 +1,67 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: surge
+spec:
+  version: "v0.1.0"
+  homepage: https://github.com/kubesurge/kubesurge
+  shortDescription: Zero-touch, live multi-cloud pod packet capture and exfiltration.
+  description: |
+    KubeSurge injects safe, harvested ephemeral container payloads into running pods 
+    without restarts. It streams tcpdump captures directly to S3, GCS, Azure Blob, 
+    or local disk, bypassing local node write overhead and protecting sensitive workloads.
+  caveats: |
+    Requires Kubernetes 1.25+ and permissions to patch 'pods/ephemeralcontainers'.
+    If targeting hardened nodes, run with the --privileged flag to override UID restrictions.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/kubesurge/kubesurge/releases/download/v0.1.0/kubesurge_darwin_x86_64.tar.gz
+    sha256: b5ade2fb922960010feb87eb8fcdcc5ce829c933f55967c94a4c88016654c7fc
+    files:
+    - from: "./kubesurge"
+      to: "."
+    - from: "./LICENSE"
+      to: "."
+    bin: "kubesurge"
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/kubesurge/kubesurge/releases/download/v0.1.0/kubesurge_darwin_arm64.tar.gz
+    sha256: b3719870775b0f6252e280bbe5f03112c6705fae84f0252ac3cf51276130da10
+    files:
+    - from: "./kubesurge"
+      to: "."
+    - from: "./LICENSE"
+      to: "."
+    bin: "kubesurge"
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/kubesurge/kubesurge/releases/download/v0.1.0/kubesurge_linux_x86_64.tar.gz
+    sha256: 872f3ecff4738867cb73dbbd44bb220a5f577c413ad9595fb8e488421aa027de
+    files:
+    - from: "./kubesurge"
+      to: "."
+    - from: "./LICENSE"
+      to: "."
+    bin: "kubesurge"
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/kubesurge/kubesurge/releases/download/v0.1.0/kubesurge_linux_arm64.tar.gz
+    sha256: bf10de1553f1d2a9c509abcb04cc541f3e98c8b5eae0a06eb26f05f939ecd020
+    files:
+    - from: "./kubesurge"
+      to: "."
+    - from: "./LICENSE"
+      to: "."
+    bin: "kubesurge"

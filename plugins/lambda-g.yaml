@@ -33,6 +33,9 @@ spec:
     uri: https://github.com/0x-auth/lambda-g-auditor/releases/download/v1.0.1/kubectl-lambda_g-linux-amd64.tar.gz
     sha256: "04cfa585bfa4ec4cd154c227d8a45294603da36a74d30d61fc2d986f96df9c0f"
     bin: kubectl-lambda_g
+    files:
+    - from: kubectl-lambda_g-linux-amd64
+      to: kubectl-lambda_g
 
   - selector:
       matchLabels:
@@ -41,6 +44,9 @@ spec:
     uri: https://github.com/0x-auth/lambda-g-auditor/releases/download/v1.0.1/kubectl-lambda_g-linux-arm64.tar.gz
     sha256: "a81d1d070cec689bf49677bfc36687e991f823709bda859acd79dd668bcf3b29"
     bin: kubectl-lambda_g
+    files:
+    - from: kubectl-lambda_g-linux-arm64
+      to: kubectl-lambda_g
 
   - selector:
       matchLabels:
@@ -49,6 +55,9 @@ spec:
     uri: https://github.com/0x-auth/lambda-g-auditor/releases/download/v1.0.1/kubectl-lambda_g-darwin-amd64.tar.gz
     sha256: "a42c732341e4455f2a5757ec5841273db70729e582330e64e4c9367cc72977f6"
     bin: kubectl-lambda_g
+    files:
+    - from: kubectl-lambda_g-darwin-amd64
+      to: kubectl-lambda_g
 
   - selector:
       matchLabels:
@@ -57,6 +66,9 @@ spec:
     uri: https://github.com/0x-auth/lambda-g-auditor/releases/download/v1.0.1/kubectl-lambda_g-darwin-arm64.tar.gz
     sha256: "60a497793c29f9b4c7ee7bb8e8a4094a7bde346827883239cd7b8d42118ecff2"
     bin: kubectl-lambda_g
+    files:
+    - from: kubectl-lambda_g-darwin-arm64
+      to: kubectl-lambda_g
 
   - selector:
       matchLabels:
@@ -65,3 +77,6 @@ spec:
     uri: https://github.com/0x-auth/lambda-g-auditor/releases/download/v1.0.1/kubectl-lambda_g-windows-amd64.zip
     sha256: "93e95aa73f76530ef1b22b106e1f627db6db9347948beeaed31ad684be52a6fd"
     bin: kubectl-lambda_g.exe
+    files:
+    - from: kubectl-lambda_g-windows-amd64.exe
+      to: kubectl-lambda_g.exe

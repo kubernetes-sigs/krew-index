@@ -1,0 +1,44 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: tripwire
+spec:
+  version: v0.1.0
+  homepage: https://github.com/Dasmat13/kubectl-tripwire
+  shortDescription: Admission webhook failure-chain analyzer
+  description: |
+    KubeTripwire maps admission webhook runtime dependencies and identifies
+    concrete failure paths that may block Kubernetes API requests.
+
+    Models the complete dependency chain:
+    WebhookConfig → Service → EndpointSlice → Pods → TLS Certs
+
+    Checks backend availability, endpoint readiness, topology spread, and TLS validity.
+  caveats: |
+    Requires read access to admissionwebhookconfigurations, services,
+    endpointslices, pods, and secrets in the cluster.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/Dasmat13/kubectl-tripwire/archive/refs/tags/v0.1.0.tar.gz
+      sha256: a5c6c7ef8798d4772da7a7d41ef3694f35b005fde4bcafd7457891b8d978ef78
+      files:
+        - from: "*/kubectl-tripwire"
+          to: .
+        - from: "*/LICENSE"
+          to: .
+      bin: kubectl-tripwire
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/Dasmat13/kubectl-tripwire/archive/refs/tags/v0.1.0.tar.gz
+      sha256: a5c6c7ef8798d4772da7a7d41ef3694f35b005fde4bcafd7457891b8d978ef78
+      files:
+        - from: "*/kubectl-tripwire"
+          to: .
+        - from: "*/LICENSE"
+          to: .
+      bin: kubectl-tripwire

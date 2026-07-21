@@ -1,0 +1,72 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: peek
+spec:
+  version: v0.1.12
+  homepage: https://github.com/pierinho13/kubectl-peek
+  shortDescription: Interactive Kubernetes inspection and shell workflows
+  description: |
+    kubectl-peek is an interactive kubectl plugin for inspecting Kubernetes
+    Secrets, decoding or redacting their values, discovering resource
+    relationships, browsing Kubernetes Events, opening interactive Pod shells,
+    selecting namespaces, and launching isolated context-aware shells backed
+    by temporary kubeconfigs.
+
+    It runs entirely client-side using the user's existing kubeconfig and RBAC
+    permissions, without installing controllers, agents, CRDs, or other
+    components in the cluster.
+  caveats: |
+    Secret values are displayed by default.
+    Use --show-values=false to redact them.
+
+    Secret relationship discovery is disabled by default.
+    Use --show-usage to enable it.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/pierinho13/kubectl-peek/releases/download/v0.1.12/kubectl-peek_0.1.12_Darwin_amd64.tar.gz
+      sha256: 56c7d6354c2797a64a9c1b866fffe2d8859acd7dc62ee34aa8fecc28c04641b7
+      bin: kubectl-peek
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/pierinho13/kubectl-peek/releases/download/v0.1.12/kubectl-peek_0.1.12_Darwin_arm64.tar.gz
+      sha256: 7b97d6f89d6be0811d5ba538cc0caf95c1fb953ac485fc7bb88224a8da94e1f6
+      bin: kubectl-peek
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/pierinho13/kubectl-peek/releases/download/v0.1.12/kubectl-peek_0.1.12_Linux_amd64.tar.gz
+      sha256: d0d9932913aebbb24bb25128de7238a7ee3c9f317794681039d6fdabc399a062
+      bin: kubectl-peek
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/pierinho13/kubectl-peek/releases/download/v0.1.12/kubectl-peek_0.1.12_Linux_arm64.tar.gz
+      sha256: 9e1f4c7982f1e463227e3b2e4d43e326ab29c04be4ec7b2fcc62ab4bd07a4976
+      bin: kubectl-peek
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/pierinho13/kubectl-peek/releases/download/v0.1.12/kubectl-peek_0.1.12_Windows_amd64.zip
+      sha256: 15276e6a17ea55b57eb78560811444c97e3461ff10560c1659cec8996eeec801
+      bin: kubectl-peek.exe
+
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/pierinho13/kubectl-peek/releases/download/v0.1.12/kubectl-peek_0.1.12_Windows_arm64.zip
+      sha256: 4bbd86cc5cc6ec99c460c06b4d3a90f33bc584f47c295112b2f942e892fbd3f9
+      bin: kubectl-peek.exe

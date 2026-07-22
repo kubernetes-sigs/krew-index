@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: podtrace
 spec:
-  version: "v0.13.10"
+  version: "v0.14.0"
   homepage: https://github.com/gma1k/podtrace
   shortDescription: eBPF diagnostics for Kubernetes pods
   description: |
@@ -35,27 +35,27 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/gma1k/podtrace/releases/download/v0.13.10/podtrace_linux_amd64.tar.gz
-    sha256: 0edacf93b7c108c65a8d813835cb3797c353ebf1e811ea46b582ec1a62fcf734
+    uri: https://github.com/gma1k/podtrace/releases/download/v0.14.0/podtrace_linux_amd64.tar.gz
+    sha256: 2f467b9d113fc5149690219bcf6a84751c52ea5e743d7403e71600a1bc1b8991
     bin: podtrace
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/gma1k/podtrace/releases/download/v0.13.10/podtrace_linux_arm64.tar.gz
-    sha256: 058d54e93c1f02842c810104e7936e6c91fcc7024fc2a9a3a07cc056eaca61a1
+    uri: https://github.com/gma1k/podtrace/releases/download/v0.14.0/podtrace_linux_arm64.tar.gz
+    sha256: e4c06061da1636333e5038b2cfd69fd0de07b155709b0631057ab0abef752e96
     bin: podtrace
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/gma1k/podtrace/releases/download/v0.13.10/podtrace_darwin_amd64.tar.gz
-    sha256: 26ea925fd9b1b8bd6dab3796a77cd1693df30aa4b30cfa42de805fcdcdd6b293
+    uri: https://github.com/gma1k/podtrace/releases/download/v0.14.0/podtrace_darwin_amd64.tar.gz
+    sha256: add8dfa27dd284b552032914cea9de5f27b3497728638c0e32f123f6b7f831c7
     bin: podtrace
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/gma1k/podtrace/releases/download/v0.13.10/podtrace_darwin_arm64.tar.gz
-    sha256: 36e8a01b761e0e8cbb8577d71231aa127e7decd143d7454d6b6666cc57188a16
+    uri: https://github.com/gma1k/podtrace/releases/download/v0.14.0/podtrace_darwin_arm64.tar.gz
+    sha256: b69c7fabebf6b797c69b0ded36412ce80393e039ccb56f9afbc7b91c4390a89a
     bin: podtrace

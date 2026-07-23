@@ -1,0 +1,92 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: lambda-g
+spec:
+  version: v1.0.2
+  shortDescription: "6D resource imbalance scanner for K8s"
+  description: |
+    Scans your Kubernetes cluster for stranded resources across 6
+    dimensions: CPU, RAM, GPU Core, GPU Memory, IOPS, and Network.
+
+    Detects nodes where one resource is saturated while others sit
+    idle — the kind of imbalance that kubectl top misses because it
+    only shows one dimension at a time.
+
+    Most clusters waste 10-20% of compute budget this way. GPU
+    clusters waste even more (VRAM full but compute idle).
+
+    Use --detailed for per-node breakdown, --gpu to include GPU
+    metrics, --json for machine-readable output, and watch for
+    continuous monitoring.
+
+  homepage: https://github.com/0x-auth/lambda-g-auditor
+  caveats: |
+    Requires kubectl to be configured with cluster access.
+    Fix detected imbalances automatically with the lambda-g-controller:
+      helm install lambda-g-controller oci://registry-1.docker.io/bitsabhi/lambda-g-controller
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/0x-auth/lambda-g-auditor/releases/download/v1.0.2/kubectl-lambda_g-linux-amd64.tar.gz
+    sha256: "d3a7e81d84da72c3c52865963b42368972661bf5f102bd39ef5f6ab4778229ab"
+    bin: kubectl-lambda_g
+    files:
+    - from: kubectl-lambda_g-linux-amd64
+      to: kubectl-lambda_g
+    - from: LICENSE
+      to: LICENSE
+
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/0x-auth/lambda-g-auditor/releases/download/v1.0.2/kubectl-lambda_g-linux-arm64.tar.gz
+    sha256: "c425caa8bb76f7d39bb5641ee35cff7a8e1d360ca04f9dd16e3e41c21985ba4e"
+    bin: kubectl-lambda_g
+    files:
+    - from: kubectl-lambda_g-linux-arm64
+      to: kubectl-lambda_g
+    - from: LICENSE
+      to: LICENSE
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/0x-auth/lambda-g-auditor/releases/download/v1.0.2/kubectl-lambda_g-darwin-amd64.tar.gz
+    sha256: "6630a6470c0575952a7f90b19f1376692051651c5ef566a73b314e9e1eb4aa17"
+    bin: kubectl-lambda_g
+    files:
+    - from: kubectl-lambda_g-darwin-amd64
+      to: kubectl-lambda_g
+    - from: LICENSE
+      to: LICENSE
+
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/0x-auth/lambda-g-auditor/releases/download/v1.0.2/kubectl-lambda_g-darwin-arm64.tar.gz
+    sha256: "ce30ad6e9f421007ef230acedbf6167a9bda021067e705fea2759b1d3716a805"
+    bin: kubectl-lambda_g
+    files:
+    - from: kubectl-lambda_g-darwin-arm64
+      to: kubectl-lambda_g
+    - from: LICENSE
+      to: LICENSE
+
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/0x-auth/lambda-g-auditor/releases/download/v1.0.2/kubectl-lambda_g-windows-amd64.zip
+    sha256: "e2fe0e430d2fc556b025e4ae49d85b4a9b285627ec28d884d1381e8288254cfd"
+    bin: kubectl-lambda_g.exe
+    files:
+    - from: kubectl-lambda_g-windows-amd64.exe
+      to: kubectl-lambda_g.exe
+    - from: LICENSE
+      to: LICENSE

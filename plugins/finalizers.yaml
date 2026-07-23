@@ -3,36 +3,36 @@ kind: Plugin
 metadata:
   name: finalizers
 spec:
-  version: v0.0.2
+  version: v0.1.0
   homepage: https://github.com/tremes/kubectl-finalizers
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/tremes/kubectl-finalizers/releases/download/v0.0.2/kubectl-finalizers_Darwin_x86_64.tar.gz
-    sha256: ed85f78d336a6d0c81587f4c97b3e741bca28e44ec5c5a96f223f87d5f9a2ccd
+    uri: https://github.com/tremes/kubectl-finalizers/releases/download/v0.1.0/kubectl-finalizers_Darwin_x86_64.tar.gz
+    sha256: b5d9185d18043956e1c92d05164404da0cdd155d0a3ad397e9d05d05b581cf97
     bin: kubectl-finalizers
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/tremes/kubectl-finalizers/releases/download/v0.0.2/kubectl-finalizers_Darwin_arm64.tar.gz
-    sha256: f381a48d2634a6c488845ddadbb0732cea85b9bccd691f95c19e7beb6dd96052
+    uri: https://github.com/tremes/kubectl-finalizers/releases/download/v0.1.0/kubectl-finalizers_Darwin_arm64.tar.gz
+    sha256: 17599e61e5eabdfa288e0606647ed962f76ef348fa36acd6507c107196c16a55
     bin: kubectl-finalizers
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/tremes/kubectl-finalizers/releases/download/v0.0.2/kubectl-finalizers_Linux_x86_64.tar.gz
-    sha256: c6f8a5f44a7d030fa7553abf925bb9b92a28047acb7aacc4221db0bc36eaf968
+    uri: https://github.com/tremes/kubectl-finalizers/releases/download/v0.1.0/kubectl-finalizers_Linux_x86_64.tar.gz
+    sha256: 1bd7e0051385f0ad2403c271a787387b7cc49456811009794e23e9d9eb7438fe
     bin: kubectl-finalizers
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/tremes/kubectl-finalizers/releases/download/v0.0.2/kubectl-finalizers_Linux_arm64.tar.gz
-    sha256: 8570ab9d1ad36859c87e734de49debc82c25f5be8f0e888fbbedcefe7ccaad52
+    uri: https://github.com/tremes/kubectl-finalizers/releases/download/v0.1.0/kubectl-finalizers_Linux_arm64.tar.gz
+    sha256: dff76bc95351eebe4bdfc800f0f0c75d193098086a63430fc1b2f6e539165f9c
     bin: kubectl-finalizers
   shortDescription: Evicts the given pod
   description: |

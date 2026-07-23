@@ -1,0 +1,68 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: tripwire
+spec:
+  version: v0.1.0
+  homepage: https://github.com/Dasmat13/kubectl-tripwire
+  shortDescription: Admission webhook failure-chain analyzer
+  description: |
+    KubeTripwire maps admission webhook runtime dependencies and identifies
+    concrete failure paths that may block Kubernetes API requests.
+
+    Models the complete dependency chain:
+    WebhookConfig → Service → EndpointSlice → Pods → TLS Certs
+
+    Checks backend availability, endpoint readiness, topology spread, and TLS validity.
+  caveats: |
+    Requires read access to admissionwebhookconfigurations, services,
+    endpointslices, pods, and secrets in the cluster.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/Dasmat13/kubectl-tripwire/releases/download/v0.1.0/kubectl-tripwire_v0.1.0_linux_amd64.tar.gz
+      sha256: a9e095d397f77e73816dd9da269c8ced7d1287eeea49427504b474707b388b4d
+      files:
+        - from: "kubectl-tripwire"
+          to: .
+        - from: "LICENSE"
+          to: .
+      bin: kubectl-tripwire
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/Dasmat13/kubectl-tripwire/releases/download/v0.1.0/kubectl-tripwire_v0.1.0_linux_arm64.tar.gz
+      sha256: 4bcf0f6825e09a0f813277ac760364d07ea86bf6bd6578b3542b6181b576b5b5
+      files:
+        - from: "kubectl-tripwire"
+          to: .
+        - from: "LICENSE"
+          to: .
+      bin: kubectl-tripwire
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/Dasmat13/kubectl-tripwire/releases/download/v0.1.0/kubectl-tripwire_v0.1.0_darwin_amd64.tar.gz
+      sha256: b2d0020b226dfda0505bd96f4aa0818aeb4c80e5549613d072ffc45ed6a439a3
+      files:
+        - from: "kubectl-tripwire"
+          to: .
+        - from: "LICENSE"
+          to: .
+      bin: kubectl-tripwire
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/Dasmat13/kubectl-tripwire/releases/download/v0.1.0/kubectl-tripwire_v0.1.0_darwin_arm64.tar.gz
+      sha256: 73d8dfe6c25e5f5b363d15707e29b133fdfd083a0a6f12cb3606d43a7b572f88
+      files:
+        - from: "kubectl-tripwire"
+          to: .
+        - from: "LICENSE"
+          to: .
+      bin: kubectl-tripwire

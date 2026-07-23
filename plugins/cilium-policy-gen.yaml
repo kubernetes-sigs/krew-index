@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: cilium-policy-gen
 spec:
-  version: v1.10.0
+  version: v1.11.0
   homepage: https://github.com/SoulKyu/cpg
   shortDescription: "Generate CiliumNetworkPolicy from Hubble flows"
   description: |
@@ -27,27 +27,27 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/SoulKyu/cpg/releases/download/v1.10.0/cilium-policy-gen_linux_amd64.tar.gz
-    sha256: 01b94399ab9b2c6a2c43d1f53c4b848f9006dfc35842e9b6f250b4ceb898ce1c
+    uri: https://github.com/SoulKyu/cpg/releases/download/v1.11.0/cilium-policy-gen_linux_amd64.tar.gz
+    sha256: 92258bddbc13ae496e556af7b7bd8f1fe6c0609712e920779358e74b3f7e9993
     bin: kubectl-cilium_policy_gen
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/SoulKyu/cpg/releases/download/v1.10.0/cilium-policy-gen_linux_arm64.tar.gz
-    sha256: 0878da46d342ebed85258697b2671978c082ff7913529191bf04f26f438c061e
+    uri: https://github.com/SoulKyu/cpg/releases/download/v1.11.0/cilium-policy-gen_linux_arm64.tar.gz
+    sha256: acafe5a76ea781c3e4e7bbfe69a08daafa3e970dc2d327e5e71a3158fe234b41
     bin: kubectl-cilium_policy_gen
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/SoulKyu/cpg/releases/download/v1.10.0/cilium-policy-gen_darwin_amd64.tar.gz
-    sha256: 3fe9d9309c05c975ab1e64be26cd03592d8ee893091f4a4602adefd0bed5e9af
+    uri: https://github.com/SoulKyu/cpg/releases/download/v1.11.0/cilium-policy-gen_darwin_amd64.tar.gz
+    sha256: ffbf8382942a3e9e639a9ea934c3aa472e70d6c0531838cefb434ed0d2bdc756
     bin: kubectl-cilium_policy_gen
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/SoulKyu/cpg/releases/download/v1.10.0/cilium-policy-gen_darwin_arm64.tar.gz
-    sha256: 0d05e3be368bba395ef954adbae9f9a8943371e71b1d28d7029e430ab1136786
+    uri: https://github.com/SoulKyu/cpg/releases/download/v1.11.0/cilium-policy-gen_darwin_arm64.tar.gz
+    sha256: eb0d760815f3d20bb9747c2f0485a917f23653652db21b6e19c1e79f22dfc020
     bin: kubectl-cilium_policy_gen

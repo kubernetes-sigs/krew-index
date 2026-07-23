@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: idx
 spec:
-  version: v0.0.8
+  version: v0.0.10
   homepage: https://github.com/jzills/kx
   shortDescription: Select resources by index instead of typing names
   description: |
@@ -18,19 +18,18 @@ spec:
     Index history is stored in ~/.kx/.
   platforms:
   - selector: {matchLabels: {os: linux, arch: amd64}}
-    uri: https://github.com/jzills/kx/releases/download/v0.0.8/kx_v0.0.8_linux_amd64.tar.gz
-    sha256: 6fce4b8cd544e6d59cb2cdd65b8da57727779cee7926a89cd33b85b6b0f690ae
+    uri: https://github.com/jzills/kx/releases/download/v0.0.10/kx_v0.0.10_linux_amd64.tar.gz
+    sha256: d3c515fdea70239bd788e9cd7e25ba5fa5eff8223c9db3cac590c47fd8647c40
     bin: kx/kx
   - selector: {matchLabels: {os: linux, arch: arm64}}
-    uri: https://github.com/jzills/kx/releases/download/v0.0.8/kx_v0.0.8_linux_arm64.tar.gz
-    sha256: 44bf7a7fd6201d5026592b6f50dbb1127c1294802c0a13833a83025d14daeebe
+    uri: https://github.com/jzills/kx/releases/download/v0.0.10/kx_v0.0.10_linux_arm64.tar.gz
+    sha256: 7625250e2409dc6c7d25acf811dc61bfd08d608cb5a264f7c194ba455cd1ddae
     bin: kx/kx
   - selector: {matchLabels: {os: darwin, arch: amd64}}
-    uri: https://github.com/jzills/kx/releases/download/v0.0.8/kx_v0.0.8_darwin_amd64.tar.gz
-    sha256: d5b4b84b69eaebb96a765f824dae05f86fed6fbe0b9057761aa058ee070940b0
+    uri: https://github.com/jzills/kx/releases/download/v0.0.10/kx_v0.0.10_darwin_amd64.tar.gz
+    sha256: cb1aeb8855fd6bfd47bf7acba67e55789fee3796d12345d37679925ca46cd08a
     bin: kx/kx
   - selector: {matchLabels: {os: darwin, arch: arm64}}
-    uri: https://github.com/jzills/kx/releases/download/v0.0.8/kx_v0.0.8_darwin_arm64.tar.gz
-    sha256: e6733d31193ccaae677af0bd9465ef59bfe09ac0f529b1dfc3ee1bbab7fc47b8
+    uri: https://github.com/jzills/kx/releases/download/v0.0.10/kx_v0.0.10_darwin_arm64.tar.gz
+    sha256: cf9691c434fd02c3096d92da85d4906376122262e7350f6f9728e3d19b2847e6
     bin: kx/kx
-

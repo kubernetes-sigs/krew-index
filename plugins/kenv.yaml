@@ -3,53 +3,53 @@ kind: Plugin
 metadata:
   name: kenv
 spec:
-  version: "v0.5.0"
+  version: v0.5.1
   homepage: https://github.com/dexiotropic/kubenv
   shortDescription: Render manifest variables
   description: |
     Render Kubernetes manifest variables before applying resources with
-    kubectl. The plugin uses {{ env.NAME }} placeholders by default and
-    can also render shell-style $NAME and ${NAME} placeholders.
+    kubectl. The plugin uses explicit env placeholders by default and can
+    also render shell-style $NAME and ${NAME} placeholders.
   platforms:
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.0/kubenv_kubectl-kenv_0.5.0_linux_amd64.tar.gz
-    sha256: c48d8b8751f53c4984a1d31e02b26ff8ba330d9d34c4e863b7fbfd6eac5d38bc
+    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.1/kubenv_kubectl-kenv_0.5.1_linux_amd64.tar.gz
+    sha256: c16d265ea2d09a77d788ba2071061ace877d0b5e2c9d33aa02e5c43f1918c951
     bin: kubectl-kenv
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.0/kubenv_kubectl-kenv_0.5.0_linux_arm64.tar.gz
-    sha256: 06df629146fdfe6ec5f1c84a40adf8705c92744cf70d899ad00a76991861c159
+    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.1/kubenv_kubectl-kenv_0.5.1_linux_arm64.tar.gz
+    sha256: faec92348c83c3d8ea4a8c415a6ec78742fa21d9957739bee90778baddfcb10e
     bin: kubectl-kenv
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.0/kubenv_kubectl-kenv_0.5.0_darwin_amd64.tar.gz
-    sha256: f9230d59323aff46a3596354faae9af16f54e7afc7ded45ccbac76738b1a2153
+    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.1/kubenv_kubectl-kenv_0.5.1_darwin_amd64.tar.gz
+    sha256: aa68f104f42d1931338104f315270464a4595e07bcfb06e52781cbed1fd32ed2
     bin: kubectl-kenv
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.0/kubenv_kubectl-kenv_0.5.0_darwin_arm64.tar.gz
-    sha256: 7455c06681d783a4c6b29b6792e1495cb620d5b3e95e7cb86ef13f8fbe1d52c2
+    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.1/kubenv_kubectl-kenv_0.5.1_darwin_arm64.tar.gz
+    sha256: 889bb4b60ed0472f500cb5363d6b93adaf13bd86dfbf1271be5e279b4c4cbad7
     bin: kubectl-kenv
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.0/kubenv_kubectl-kenv_0.5.0_windows_amd64.zip
-    sha256: 0f4144831d2a1bb5f0cdabf30e8bf71a974c695b349eca95a71ce236cecfbc1b
+    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.1/kubenv_kubectl-kenv_0.5.1_windows_amd64.zip
+    sha256: 53768b74a7bfb30d4a4d85767fb9b0f72118467abdb111ce0952a48c3bd62e9d
     bin: kubectl-kenv.exe
   - selector:
       matchLabels:
         os: windows
         arch: arm64
-    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.0/kubenv_kubectl-kenv_0.5.0_windows_arm64.zip
-    sha256: 3796ed78067d066c7299410323234df6cd12730dc84a99a004bfa1f7a481aa4a
+    uri: https://github.com/dexiotropic/kubenv/releases/download/v0.5.1/kubenv_kubectl-kenv_0.5.1_windows_arm64.zip
+    sha256: 936a83d7046bbaff3014b8602515b5be47485d031bb79056c84581cee80a629a
     bin: kubectl-kenv.exe

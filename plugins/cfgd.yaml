@@ -4,18 +4,17 @@ kind: Plugin
 metadata:
   name: cfgd
 spec:
-  version: v0.6.1
+  version: v0.6.2
   homepage: https://github.com/tj-smith47/cfgd
   shortDescription: Manage cfgd modules on pods and workloads.
   description: |
     kubectl-cfgd attaches cfgd modules — portable bundles of CLI
     tools, dotfiles, shell config, and packages — to running
-    Kubernetes workloads without rebuilding the upstream image:
-
-      kubectl cfgd inject deploy/web -m nvim:1.2  # patch template, roll out
-      kubectl cfgd debug web-xyz -m nvim:1.2      # ephemeral debug container
-      kubectl cfgd exec web-xyz -m nvim:1.2 -- nvim
-      kubectl cfgd status                         # fleet-wide module status
+    Kubernetes workloads without rebuilding the upstream image.
+    It can patch a workload's pod template to roll modules out,
+    start an ephemeral debug container with modules mounted, exec
+    into a pod with modules available, and report fleet-wide
+    module status.
 
     Modules are mounted by the cfgd CSI driver and admission webhook.
     To declare and reconcile local machine state, install the cfgd CLI.
@@ -24,8 +23,8 @@ spec:
       matchLabels:
         os: windows
         arch: arm64
-    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.6.1/cfgd-0.6.1-windows-arm64.zip
-    sha256: d22547ec6b35f2ce80f1aed45c047da3bc8f6ca02e391065a73812843c19c88d
+    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.6.2/cfgd-0.6.2-windows-arm64.zip
+    sha256: f3332bf96b46f5f7d678a2299a6125963b0998c949238209ef76e8170148480f
     bin: cfgd.exe
     files:
     - from: cfgd.exe
@@ -38,8 +37,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.6.1/cfgd-0.6.1-windows-amd64.zip
-    sha256: 166a32fa47be5c8b048cd043f6ffa84a8c2977cbd9bcc20947ca7811d0800f32
+    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.6.2/cfgd-0.6.2-windows-amd64.zip
+    sha256: 12f9f8ce310c9eba01bd4a1f0639c3d03ab6028293c0a660c784761b392c5ab9
     bin: cfgd.exe
     files:
     - from: cfgd.exe
@@ -52,8 +51,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.6.1/cfgd-0.6.1-linux-arm64.tar.gz
-    sha256: c847e5d9a26c5122bab0cf8b2eef823c18bebba81de67fde3bab54e193bd2bba
+    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.6.2/cfgd-0.6.2-linux-arm64.tar.gz
+    sha256: 410ba7e393ee6d1c5068d169644c814239f5b04a85d2f33fa5a5f26189053b7e
     bin: cfgd
     files:
     - from: cfgd
@@ -66,8 +65,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.6.1/cfgd-0.6.1-linux-amd64.tar.gz
-    sha256: 7fb3c5f8b5c0c6acb6eee7f6c388f73f0d9650310005963d5e01a9b7c5573364
+    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.6.2/cfgd-0.6.2-linux-amd64.tar.gz
+    sha256: 7a791fd9c70717a734b47bcd1f5e6072e539ca7d5ae60b918c42225ddafc7421
     bin: cfgd
     files:
     - from: cfgd
@@ -80,8 +79,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.6.1/cfgd-0.6.1-darwin-arm64.tar.gz
-    sha256: 3216b74ab37468f19e15687da4126d99ad7c9edbebec029ebaa74496a3d6a50c
+    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.6.2/cfgd-0.6.2-darwin-arm64.tar.gz
+    sha256: 9bc2c855e7761616cee9768d761bcb7d00bd1ebf6a3114f2559677eb17289a4d
     bin: cfgd
     files:
     - from: cfgd
@@ -94,8 +93,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.6.1/cfgd-0.6.1-darwin-amd64.tar.gz
-    sha256: a4cc7cb1d8641b5f26377b63ed294fa1cc0958239555e2345b73c37fa129fa8e
+    uri: https://github.com/tj-smith47/cfgd/releases/download/v0.6.2/cfgd-0.6.2-darwin-amd64.tar.gz
+    sha256: b8be4e09dc57809cefd97c3026fe164b64054b3f773d766a3f2f55e7b92f4357
     bin: cfgd
     files:
     - from: cfgd

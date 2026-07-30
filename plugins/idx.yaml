@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: idx
 spec:
-  version: v0.0.11
+  version: v0.1.1
   homepage: https://github.com/jzills/kx
   shortDescription: Select resources by index instead of typing names
   description: |
@@ -15,21 +15,31 @@ spec:
     resolving as you move between resource kinds and namespaces.
     Also distributed as "kx" on PyPI (https://pypi.org/project/kx-cli/).
   caveats: |
-    Index history is stored in ~/.kx/.
+    Index history is stored in ~/.kx/ (%USERPROFILE%\.kx on Windows).
   platforms:
   - selector: {matchLabels: {os: linux, arch: amd64}}
-    uri: https://github.com/jzills/kx/releases/download/v0.0.11/kx_v0.0.11_linux_amd64.tar.gz
-    sha256: 0104aff05f363990c74f7e3edd505bfe6e73bc752650c26acf07891e4e8a4906
+    uri: https://github.com/jzills/kx/releases/download/v0.1.1/kx_v0.1.1_linux_amd64.tar.gz
+    sha256: b566bf418be576014fc6b6f96852484afbf63a31f06b4e724d3a93cb849d5dc2
     bin: kx/kx
   - selector: {matchLabels: {os: linux, arch: arm64}}
-    uri: https://github.com/jzills/kx/releases/download/v0.0.11/kx_v0.0.11_linux_arm64.tar.gz
-    sha256: 156afcec4a8f281252b5038e3b1329f3452e0e5902821de1bddc87e64072e12f
+    uri: https://github.com/jzills/kx/releases/download/v0.1.1/kx_v0.1.1_linux_arm64.tar.gz
+    sha256: 89bf7f2da38c494819197b531699240e5e91e279ba99f684053ad7488f285e70
     bin: kx/kx
   - selector: {matchLabels: {os: darwin, arch: amd64}}
-    uri: https://github.com/jzills/kx/releases/download/v0.0.11/kx_v0.0.11_darwin_amd64.tar.gz
-    sha256: 2908b34714032a593ddebad3892805a974e32b1f41ece76b678141f4404ffec0
+    uri: https://github.com/jzills/kx/releases/download/v0.1.1/kx_v0.1.1_darwin_amd64.tar.gz
+    sha256: 6bcdf6de4900e3d7754d3d68ecbc7682502f342e3033d747e4c39677715b7f3a
     bin: kx/kx
   - selector: {matchLabels: {os: darwin, arch: arm64}}
-    uri: https://github.com/jzills/kx/releases/download/v0.0.11/kx_v0.0.11_darwin_arm64.tar.gz
-    sha256: cceed41769bb7ba99d5833b02a9a7f16f3863fcb1deb19c767bb4b69303c80f9
+    uri: https://github.com/jzills/kx/releases/download/v0.1.1/kx_v0.1.1_darwin_arm64.tar.gz
+    sha256: 585efab79fbd712b28edde83859a1f0b27b58201178f522fb9cf736bd0fe667b
     bin: kx/kx
+  # Windows ships as .zip, which krew extracts alongside .tar.gz, and krew
+  # only runs .exe entrypoints there — so the archive holds kx/kx.exe.
+  - selector: {matchLabels: {os: windows, arch: amd64}}
+    uri: https://github.com/jzills/kx/releases/download/v0.1.1/kx_v0.1.1_windows_amd64.zip
+    sha256: 74950a4859fd81821ad6b071f1ed3110e20d8dba6dac62ecb59dc88d438950bb
+    bin: kx/kx.exe
+  - selector: {matchLabels: {os: windows, arch: arm64}}
+    uri: https://github.com/jzills/kx/releases/download/v0.1.1/kx_v0.1.1_windows_arm64.zip
+    sha256: a063417d64fc9968b5bd90e1bf1d60bc64d28b00212845beb1d03965513cde0f
+    bin: kx/kx.exe

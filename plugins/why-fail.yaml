@@ -3,11 +3,11 @@ kind: Plugin
 metadata:
   name: why-fail
 spec:
-  version: v0.1.0
-  homepage: https://github.com/iyedM/kubectl-whyfail
+  version: v0.1.1
+  homepage: https://github.com/iyedM/kubectl-why-fail
   shortDescription: Explain why a pod is failing, in plain language
   description: |
-    kubectl-whyfail diagnoses a failing pod and explains the cause in plain
+    kubectl-why-fail diagnoses a failing pod and explains the cause in plain
     language instead of raw kubectl describe/events/logs output. It covers
     the ten most common failure modes (CrashLoopBackOff, OOMKilled,
     ImagePullBackOff, stuck PVCs, and more) with deterministic, fully
@@ -18,27 +18,27 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/iyedM/kubectl-whyfail/releases/download/v0.1.0/kubectl-whyfail_linux_amd64.tar.gz
-    sha256: "14ac11c59bca44fd728e33670030194c4f329f5db3afd67d9266c92c6cec72da"
-    bin: kubectl-whyfail
+    uri: https://github.com/iyedM/kubectl-why-fail/releases/download/v0.1.1/kubectl-why-fail_linux_amd64.tar.gz
+    sha256: "6f8730b1df0ec738ad43a0a4d1eb0559a7886972f5cf27e6589d21a06b29eb10"
+    bin: kubectl-why-fail
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/iyedM/kubectl-whyfail/releases/download/v0.1.0/kubectl-whyfail_linux_arm64.tar.gz
-    sha256: "760096060cf6cb173aa76ef92ad406d7810909d65afbd47f589771c7ca5ab5d5"
-    bin: kubectl-whyfail
+    uri: https://github.com/iyedM/kubectl-why-fail/releases/download/v0.1.1/kubectl-why-fail_linux_arm64.tar.gz
+    sha256: "6880c2c9cef1c4f41735d60b4193bb9f59810554b4e38bf6b897245c2c2f765a"
+    bin: kubectl-why-fail
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/iyedM/kubectl-whyfail/releases/download/v0.1.0/kubectl-whyfail_darwin_arm64.tar.gz
-    sha256: "89eec41758e2c18716e5d2878898cb7ed80947ba7bf4ac14fde146fe32598ca2"
-    bin: kubectl-whyfail
+    uri: https://github.com/iyedM/kubectl-why-fail/releases/download/v0.1.1/kubectl-why-fail_darwin_arm64.tar.gz
+    sha256: "4d446e40e667a90a9dd27c992b3c025bf248b3a35a98b0d360c5712e0434fa6b"
+    bin: kubectl-why-fail
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/iyedM/kubectl-whyfail/releases/download/v0.1.0/kubectl-whyfail_windows_amd64.zip
-    sha256: "e5240c578d21256e3a76ccf74340079737eb0f25ffc16f9e4238e2bcebf5a1f8"
-    bin: kubectl-whyfail.exe
+    uri: https://github.com/iyedM/kubectl-why-fail/releases/download/v0.1.1/kubectl-why-fail_windows_amd64.zip
+    sha256: "00737baf681a8191d56035fdb1763f4f21fa4b51288ef5ef7e471ec0b6c51b8f"
+    bin: kubectl-why-fail.exe

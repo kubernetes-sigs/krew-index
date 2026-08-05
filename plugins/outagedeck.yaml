@@ -1,0 +1,119 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: outagedeck
+  annotations:
+    artifacthub.io/category: monitoring-logging
+    artifacthub.io/displayName: OutageDeck dependency status
+    artifacthub.io/keywords: |
+      - cloud status
+      - incident response
+      - kubernetes
+      - monitoring
+      - official status feeds
+      - saas status
+      - sre
+    artifacthub.io/license: MIT
+    artifacthub.io/links: |
+      - name: homepage
+        url: https://outagedeck.com
+      - name: repository
+        url: https://github.com/outagedeck/kubectl-outagedeck
+      - name: support
+        url: https://github.com/outagedeck/kubectl-outagedeck/issues
+    artifacthub.io/provider: OutageDeck
+    artifacthub.io/readme: |
+      Check whether cloud and SaaS dependencies behind Kubernetes workloads
+      are reporting incidents. OutageDeck normalizes official provider status
+      feeds and complements cluster and synthetic monitoring.
+
+      The plugin checks explicit provider slugs without cluster access, or
+      discovers dependencies from `outagedeck.com/providers` annotations on
+      Deployments, StatefulSets, and DaemonSets. Annotation discovery is
+      read-only, resource names never leave the machine, and API failures are
+      never reported as operational.
+spec:
+  version: v0.1.0
+  homepage: https://github.com/outagedeck/kubectl-outagedeck
+  shortDescription: Check external dependencies for provider incidents
+  description: |
+    Checks whether cloud and SaaS dependencies behind Kubernetes workloads
+    are reporting incidents in their official status feeds. Provider slugs can
+    be supplied directly, or discovered from annotations on Deployments,
+    StatefulSets, and DaemonSets. Discovery is read-only and resource names,
+    labels, kubeconfig data, and cluster credentials stay on the user's machine.
+    The plugin supports namespace, all-namespace, label-selector, context,
+    kubeconfig, JSON-output, timeout, and severity-threshold options.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.0/kubectl-outagedeck_0.1.0_darwin_amd64.tar.gz
+    sha256: 32fe22431b650180dd31891ddd8c20a67ae6d1cb254e7e42086e5f57297dbdbc
+    files:
+    - from: kubectl-outagedeck
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-outagedeck
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.0/kubectl-outagedeck_0.1.0_darwin_arm64.tar.gz
+    sha256: b3822bfa8b48110611c47df07f42cfca05be5a86510d06768af9e21f1c8f4b55
+    files:
+    - from: kubectl-outagedeck
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-outagedeck
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.0/kubectl-outagedeck_0.1.0_linux_amd64.tar.gz
+    sha256: 4c288b0838f5a5294e63f3c2a345abe39f8a2f8c516d91decd518fef2c4c2935
+    files:
+    - from: kubectl-outagedeck
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-outagedeck
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.0/kubectl-outagedeck_0.1.0_linux_arm64.tar.gz
+    sha256: ce6d8ae29fdd6866e936e3198d34109feac3fb8261afd9b05b569947b6794e81
+    files:
+    - from: kubectl-outagedeck
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-outagedeck
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.0/kubectl-outagedeck_0.1.0_windows_amd64.zip
+    sha256: 3151bbc15d86a3880a191f45e85835b2cb7c9ac399d3f2f8141d01ffb587d942
+    files:
+    - from: kubectl-outagedeck.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-outagedeck.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.0/kubectl-outagedeck_0.1.0_windows_arm64.zip
+    sha256: 0002e2af85c205d0c6aec4251a4a15b5b9fde5b6c6537987d7b05783ef05f63f
+    files:
+    - from: kubectl-outagedeck.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-outagedeck.exe

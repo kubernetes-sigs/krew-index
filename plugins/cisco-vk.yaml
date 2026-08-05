@@ -1,0 +1,45 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cisco-vk
+spec:
+  version: "v2026.8.1"
+  homepage: https://github.com/cisco-open/cisco-virtual-kubelet
+  shortDescription: Run read-only IOS-XE commands through CVK
+  description: |
+    Runs read-only IOS-XE commands through a Cisco Virtual Kubelet
+    per-device pod. The plugin discovers the provider pod and uses
+    kubectl port-forward to reach its local administrative endpoint.
+  caveats: |
+    kubectl must be installed and available on PATH. The active Kubernetes
+    identity needs permission to get/list pods and create pods/portforward in
+    the target namespace. exec currently supports per-device IOS-XE deployments.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: "https://github.com/cisco-open/cisco-virtual-kubelet/releases/download/v2026.8.1/kubectl-ciscovk_v2026.8.1_darwin_amd64.tar.gz"
+    sha256: "6cffaa6130a9d93e4fefe96542c022a097296bb0b7e0e45c52b2dc0ad7421d21"
+    bin: kubectl-ciscovk
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: "https://github.com/cisco-open/cisco-virtual-kubelet/releases/download/v2026.8.1/kubectl-ciscovk_v2026.8.1_darwin_arm64.tar.gz"
+    sha256: "5b86a7a0b842a7ace7dab96ccbe62308d4e843c500a97c44faf35fe51fbf543d"
+    bin: kubectl-ciscovk
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: "https://github.com/cisco-open/cisco-virtual-kubelet/releases/download/v2026.8.1/kubectl-ciscovk_v2026.8.1_linux_amd64.tar.gz"
+    sha256: "12ba44b22dfb5b00b0c0006afef7a0ee45cd6737aecfb111e83c58e40b911ac7"
+    bin: kubectl-ciscovk
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: "https://github.com/cisco-open/cisco-virtual-kubelet/releases/download/v2026.8.1/kubectl-ciscovk_v2026.8.1_linux_arm64.tar.gz"
+    sha256: "114477b58c9f976727030aef87d617379f9da66f1949bf82b3ad75dea6da91e7"
+    bin: kubectl-ciscovk

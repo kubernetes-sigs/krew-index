@@ -1,0 +1,44 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: why-fail
+spec:
+  version: v0.1.1
+  homepage: https://github.com/iyedM/kubectl-why-fail
+  shortDescription: Explain why a pod is failing, in plain language
+  description: |
+    kubectl-why-fail diagnoses a failing pod and explains the cause in plain
+    language instead of raw kubectl describe/events/logs output. It covers
+    the ten most common failure modes (CrashLoopBackOff, OOMKilled,
+    ImagePullBackOff, stuck PVCs, and more) with deterministic, fully
+    tested rules that answer instantly with no network calls. An optional
+    AI fallback (your own free OpenRouter API key) covers rarer cases.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/iyedM/kubectl-why-fail/releases/download/v0.1.1/kubectl-why-fail_linux_amd64.tar.gz
+    sha256: "6f8730b1df0ec738ad43a0a4d1eb0559a7886972f5cf27e6589d21a06b29eb10"
+    bin: kubectl-why-fail
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/iyedM/kubectl-why-fail/releases/download/v0.1.1/kubectl-why-fail_linux_arm64.tar.gz
+    sha256: "6880c2c9cef1c4f41735d60b4193bb9f59810554b4e38bf6b897245c2c2f765a"
+    bin: kubectl-why-fail
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/iyedM/kubectl-why-fail/releases/download/v0.1.1/kubectl-why-fail_darwin_arm64.tar.gz
+    sha256: "4d446e40e667a90a9dd27c992b3c025bf248b3a35a98b0d360c5712e0434fa6b"
+    bin: kubectl-why-fail
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/iyedM/kubectl-why-fail/releases/download/v0.1.1/kubectl-why-fail_windows_amd64.zip
+    sha256: "00737baf681a8191d56035fdb1763f4f21fa4b51288ef5ef7e471ec0b6c51b8f"
+    bin: kubectl-why-fail.exe

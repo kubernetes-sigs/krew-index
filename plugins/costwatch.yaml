@@ -1,0 +1,36 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: costwatch
+spec:
+  version: v0.1.0
+  homepage: https://github.com/ArpitRajputGithub/kubectl-costwatch
+  shortDescription: Track cost drift per namespace since the last run
+  description: |
+    Prices requested CPU/memory/storage against a bundled price table and diffs
+    against the previous run to show cost drift per namespace — no backend.
+  platforms:
+    - selector: { matchLabels: { os: linux, arch: amd64 } }
+      uri: https://github.com/ArpitRajputGithub/kubectl-costwatch/releases/download/v0.1.0/kubectl-costwatch_linux_amd64.tar.gz
+      sha256: 1066d8ed5404a1ca182efe8bb3d870cc872a25a8effa7d4c3a277e51d2c834ad
+      bin: kubectl-costwatch
+    - selector: { matchLabels: { os: linux, arch: arm64 } }
+      uri: https://github.com/ArpitRajputGithub/kubectl-costwatch/releases/download/v0.1.0/kubectl-costwatch_linux_arm64.tar.gz
+      sha256: ccff7c6802a666d4656c2ed204f24cc4ac96e3079b8caf4a0f3c6e16c636dc54
+      bin: kubectl-costwatch
+    - selector: { matchLabels: { os: darwin, arch: amd64 } }
+      uri: https://github.com/ArpitRajputGithub/kubectl-costwatch/releases/download/v0.1.0/kubectl-costwatch_darwin_amd64.tar.gz
+      sha256: cfe9977fabc24c64cb1393eae7d842f1c0daa12c70c67a5f0dff263d79ae4260
+      bin: kubectl-costwatch
+    - selector: { matchLabels: { os: darwin, arch: arm64 } }
+      uri: https://github.com/ArpitRajputGithub/kubectl-costwatch/releases/download/v0.1.0/kubectl-costwatch_darwin_arm64.tar.gz
+      sha256: 591a6a0c927ef3931aebb4c33722b15d8fd207b298ad97198f09721ad3b54b79
+      bin: kubectl-costwatch
+    - selector: { matchLabels: { os: windows, arch: amd64 } }
+      uri: https://github.com/ArpitRajputGithub/kubectl-costwatch/releases/download/v0.1.0/kubectl-costwatch_windows_amd64.tar.gz
+      sha256: 524c07608df811dc5e56e89a0be64d41086c7c9787d30aa8143bec3777d7ec25
+      bin: kubectl-costwatch.exe
+    - selector: { matchLabels: { os: windows, arch: arm64 } }
+      uri: https://github.com/ArpitRajputGithub/kubectl-costwatch/releases/download/v0.1.0/kubectl-costwatch_windows_arm64.tar.gz
+      sha256: 1939dd0a3a1125dcf76ffad6d9cec7dc529136b92eb21c739a89914ab1052ed0
+      bin: kubectl-costwatch.exe

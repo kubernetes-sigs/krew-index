@@ -1,0 +1,69 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: meta
+spec:
+  version: v0.1.0
+  shortDescription: Show metadata of any Kubernetes resource.
+  homepage: https://github.com/nickytd/kubectl-meta-plugin
+  description: |
+    Displays only the .metadata block of any Kubernetes resource
+    in YAML (default) or JSON format. Supports the same flags as
+    kubectl (--namespace, --context, --kubeconfig) and provides
+    full shell auto-completion for resource types and names.
+    By default, managedFields are hidden; use --with-managed-fields
+    to include them.
+
+    Usage:
+      kubectl meta pod/my-pod
+      kubectl meta deploy/my-deploy -n kube-system
+      kubectl meta pod/my-pod --with-managed-fields
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/nickytd/kubectl-meta-plugin/releases/download/v0.1.0/kubectl-meta_linux_amd64.tar.gz
+    sha256: b95c0cbbf1204799862036b9b968ea67dab5e6b2728b3feb4ce541a34e20fe1d
+    files:
+    - from: "./kubectl-meta"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-meta
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/nickytd/kubectl-meta-plugin/releases/download/v0.1.0/kubectl-meta_linux_arm64.tar.gz
+    sha256: ec314b4063bc7ac1ca2062ec63fb6684a179fa273b5329958004a0a060827a2d
+    files:
+    - from: "./kubectl-meta"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-meta
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/nickytd/kubectl-meta-plugin/releases/download/v0.1.0/kubectl-meta_darwin_amd64.tar.gz
+    sha256: 6895e7d2c44f90fdd51d81c1451e08d5656e364fcdf9a137f37e2d6e584a9a58
+    files:
+    - from: "./kubectl-meta"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-meta
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/nickytd/kubectl-meta-plugin/releases/download/v0.1.0/kubectl-meta_darwin_arm64.tar.gz
+    sha256: 19f7099c1723b6a80cd448d6c98da8d658ef63bd878f9cd6947a144c86dcf637
+    files:
+    - from: "./kubectl-meta"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: kubectl-meta

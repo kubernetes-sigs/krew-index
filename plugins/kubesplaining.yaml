@@ -28,11 +28,6 @@ spec:
     policy APIs it inspects. Forbidden resources are skipped and recorded
     as collection warnings, so partial scans of locked-down clusters
     still work.
-
-    Quick start:
-      kubectl kubesplaining scan
-      kubectl kubesplaining download -o snapshot.json
-      kubectl kubesplaining scan --input-file snapshot.json
   platforms:
   - selector:
       matchLabels:

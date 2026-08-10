@@ -1,0 +1,96 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kubesplaining
+spec:
+  version: v1.2.0
+  homepage: https://github.com/0hardik1/kubesplaining
+  shortDescription: Scan for security risks and RBAC escalation paths
+  description: |
+    Kubesplaining scans a Kubernetes cluster (live, or offline from a
+    snapshot file) and emits scored security findings as HTML, JSON, CSV,
+    or SARIF.
+
+    Its differentiator is an RBAC privilege-escalation graph: it searches
+    from every subject toward sinks such as cluster-admin, kube-system
+    secrets, node escape, and token minting, and reports the full hop
+    chain for each route it finds, including whether the route survives
+    the recommended fix.
+
+    Additional analyzers cover overbroad RBAC grants, pod security
+    (privileged containers, host namespaces, hostPath), NetworkPolicy
+    coverage, admission webhook weaknesses, secret and ConfigMap
+    exposure, service-account token handling, certificate-signing abuse,
+    and EKS-specific IAM mappings. Raw Secret values are never read, and
+    ConfigMap values are redacted at collection time.
+  caveats: |
+    This plugin needs read (get/list) access to the RBAC, workload, and
+    policy APIs it inspects. Forbidden resources are skipped and recorded
+    as collection warnings, so partial scans of locked-down clusters
+    still work.
+
+    Quick start:
+      kubectl kubesplaining scan
+      kubectl kubesplaining download -o snapshot.json
+      kubectl kubesplaining scan --input-file snapshot.json
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/0hardik1/kubesplaining/releases/download/v1.2.0/kubesplaining_1.2.0_Darwin_arm64.tar.gz
+    sha256: 27b1a495ac3ab8d1c175bf5b4c841c4de581c958f115ef28109f6557e00200f4
+    bin: kubesplaining
+    files:
+    - from: kubesplaining
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/0hardik1/kubesplaining/releases/download/v1.2.0/kubesplaining_1.2.0_Darwin_x86_64.tar.gz
+    sha256: c1dc4121507e46cc37981303150588e263c4fcc7e93851d6a6d0e46db2b489d2
+    bin: kubesplaining
+    files:
+    - from: kubesplaining
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/0hardik1/kubesplaining/releases/download/v1.2.0/kubesplaining_1.2.0_Linux_arm64.tar.gz
+    sha256: 0d51cdb825155b05583bc8cd2b1c0a405a9fe5314b2434f2ebb77f4835a7254a
+    bin: kubesplaining
+    files:
+    - from: kubesplaining
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/0hardik1/kubesplaining/releases/download/v1.2.0/kubesplaining_1.2.0_Linux_x86_64.tar.gz
+    sha256: b546168bb95936886d4be329f650cc5d9a4c2bb31333d7e3060cfc32299eba59
+    bin: kubesplaining
+    files:
+    - from: kubesplaining
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/0hardik1/kubesplaining/releases/download/v1.2.0/kubesplaining_1.2.0_Windows_x86_64.zip
+    sha256: b079df7684dc7311800f63a64fbc61e486044b2777f209a095af478418d2eb03
+    bin: kubesplaining.exe
+    files:
+    - from: kubesplaining.exe
+      to: .
+    - from: LICENSE
+      to: .

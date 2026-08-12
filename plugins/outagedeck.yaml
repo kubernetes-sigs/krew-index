@@ -31,9 +31,10 @@ metadata:
       discovers dependencies from `outagedeck.com/providers` annotations on
       Deployments, StatefulSets, and DaemonSets. Annotation discovery is
       read-only, resource names never leave the machine, and API failures are
-      never reported as operational.
+      never reported as operational. The `alerts` command turns either source
+      into a prefilled managed-alert setup link without sending cluster data.
 spec:
-  version: v0.1.0
+  version: v0.1.1
   homepage: https://github.com/outagedeck/kubectl-outagedeck
   shortDescription: Check external dependencies for provider incidents
   description: |
@@ -43,14 +44,15 @@ spec:
     StatefulSets, and DaemonSets. Discovery is read-only and resource names,
     labels, kubeconfig data, and cluster credentials stay on the user's machine.
     The plugin supports namespace, all-namespace, label-selector, context,
-    kubeconfig, JSON-output, timeout, and severity-threshold options.
+    kubeconfig, JSON-output, timeout, and severity-threshold options. Its alerts
+    command builds a prefilled setup link from named or discovered providers.
   platforms:
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.0/kubectl-outagedeck_0.1.0_darwin_amd64.tar.gz
-    sha256: 32fe22431b650180dd31891ddd8c20a67ae6d1cb254e7e42086e5f57297dbdbc
+    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.1/kubectl-outagedeck_darwin_amd64.tar.gz
+    sha256: 06a7764f0afad702bb1f9485ebe942e7500e307df973ada89867420810ee30c3
     files:
     - from: kubectl-outagedeck
       to: .
@@ -61,8 +63,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.0/kubectl-outagedeck_0.1.0_darwin_arm64.tar.gz
-    sha256: b3822bfa8b48110611c47df07f42cfca05be5a86510d06768af9e21f1c8f4b55
+    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.1/kubectl-outagedeck_darwin_arm64.tar.gz
+    sha256: 65b87700c9b47751f6a99654c140adaf1fbc320fedb8dbe0803c076284b12478
     files:
     - from: kubectl-outagedeck
       to: .
@@ -73,8 +75,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.0/kubectl-outagedeck_0.1.0_linux_amd64.tar.gz
-    sha256: 4c288b0838f5a5294e63f3c2a345abe39f8a2f8c516d91decd518fef2c4c2935
+    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.1/kubectl-outagedeck_linux_amd64.tar.gz
+    sha256: 7223133df9bb876341dcd59c4be0ff2b9da0be6e91bec5c0722d27ad33777ef4
     files:
     - from: kubectl-outagedeck
       to: .
@@ -85,8 +87,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.0/kubectl-outagedeck_0.1.0_linux_arm64.tar.gz
-    sha256: ce6d8ae29fdd6866e936e3198d34109feac3fb8261afd9b05b569947b6794e81
+    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.1/kubectl-outagedeck_linux_arm64.tar.gz
+    sha256: f384f0a01f02d7397f6a02411b1932290e5a2e9301dbc0e684137145759fd3fe
     files:
     - from: kubectl-outagedeck
       to: .
@@ -97,8 +99,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.0/kubectl-outagedeck_0.1.0_windows_amd64.zip
-    sha256: 3151bbc15d86a3880a191f45e85835b2cb7c9ac399d3f2f8141d01ffb587d942
+    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.1/kubectl-outagedeck_windows_amd64.zip
+    sha256: 6a74f8227151b5a07fd6aa6d5ddca3c81a2d8eb2e83c11d9de2a48851ebb8478
     files:
     - from: kubectl-outagedeck.exe
       to: .
@@ -109,8 +111,8 @@ spec:
       matchLabels:
         os: windows
         arch: arm64
-    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.0/kubectl-outagedeck_0.1.0_windows_arm64.zip
-    sha256: 0002e2af85c205d0c6aec4251a4a15b5b9fde5b6c6537987d7b05783ef05f63f
+    uri: https://github.com/outagedeck/kubectl-outagedeck/releases/download/v0.1.1/kubectl-outagedeck_windows_arm64.zip
+    sha256: 4285dc7c750a892dbe10c3f2e12c0a3c5f631b8e4672d13c4548b4176c9c89ef
     files:
     - from: kubectl-outagedeck.exe
       to: .

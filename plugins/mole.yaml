@@ -1,0 +1,66 @@
+# The krew manifest for the initial krew-index submission (copy to
+# plugins/mole.yaml in a krew-index fork). After the plugin is accepted,
+# krew-release-bot keeps the index current from .krew.yaml on each release.
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: mole
+spec:
+  version: v0.2.2
+  homepage: https://github.com/justin-tahara/kubectl-mole
+  shortDescription: Watch workloads settle and explain what broke
+  description: |
+    mole watches Kubernetes workloads until they settle, then emits one
+    deterministic structured verdict: what happened, why it failed
+    (signature, cause, ownership chain, evidence), and a meaningful exit
+    code (0 settled, 1 failed, 2 still progressing, 3 permission denied,
+    4 nothing matched). With no TYPE/NAME argument it fans out over every
+    Deployment, StatefulSet, and DaemonSet in scope and returns one verdict
+    for the whole fleet. Read-only, no LLM, informer-based.
+  caveats: |
+    mole needs read access to workloads, pods, and events. A minimal
+    ClusterRole ships with the repo:
+    https://github.com/justin-tahara/kubectl-mole/blob/main/deploy/rbac.yaml
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/justin-tahara/kubectl-mole/releases/download/v0.2.2/kubectl-mole_v0.2.2_linux_amd64.tar.gz
+    sha256: 0353dfa08c028c5c28fac14a5c34862ad6a868f7ac8d8d3d72714fecfc6f7e56
+    bin: kubectl-mole
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/justin-tahara/kubectl-mole/releases/download/v0.2.2/kubectl-mole_v0.2.2_linux_arm64.tar.gz
+    sha256: 508308c8c9ac655b4fcf0cb276bbe5eea8fb36c8ee82b407fdca7210f772b9d3
+    bin: kubectl-mole
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/justin-tahara/kubectl-mole/releases/download/v0.2.2/kubectl-mole_v0.2.2_darwin_amd64.tar.gz
+    sha256: 55d30796ae8128b05b761620f8b18f4307f5e5c9d03e7166f3ff53a5c8f86b37
+    bin: kubectl-mole
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/justin-tahara/kubectl-mole/releases/download/v0.2.2/kubectl-mole_v0.2.2_darwin_arm64.tar.gz
+    sha256: 906c377e4b1f82498eef30944cb70460f0fa933e3c50c90a53b8cb78d259f8b5
+    bin: kubectl-mole
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/justin-tahara/kubectl-mole/releases/download/v0.2.2/kubectl-mole_v0.2.2_windows_amd64.zip
+    sha256: a7797c1573a7506e8298d822ad7094ca0d768e0ab760d8fb4ec3530f314896e4
+    bin: kubectl-mole.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/justin-tahara/kubectl-mole/releases/download/v0.2.2/kubectl-mole_v0.2.2_windows_arm64.zip
+    sha256: eb7bc58c52320250fff6d36d55e23001407ed2381498d96f7917ee69e72b0d09
+    bin: kubectl-mole.exe

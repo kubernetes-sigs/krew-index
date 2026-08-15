@@ -1,0 +1,98 @@
+# krew plugin manifest for `kubectl kq`.
+#
+# This is a TEMPLATE, not a finished manifest: krew-release-bot renders
+# v2.3.1 and replaces each addURIAndSha call with the real download URL
+# and sha256 of the matching release asset, then opens a PR against
+# kubernetes-sigs/krew-index. The assets it points at are produced by
+# .github/workflows/release-binaries.yml, so that workflow must succeed for a
+# tag before the krew PR for that tag can be valid.
+#
+# Validate a rendered copy locally with:
+#   kubectl krew install --manifest=.krew.yaml --archive=kq_linux_amd64.tar.gz
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kq
+spec:
+  version: "v2.3.1"
+  homepage: https://github.com/MSKazemi/kubeintellect
+  shortDescription: Ask an AI SRE about your cluster
+  description: |
+    kq is the terminal client for KubeIntellect, an AI SRE for Kubernetes.
+
+    Ask about your cluster in plain English. It investigates with real tools —
+    kubectl, Prometheus and Loki — explains the root cause, and proposes a fix.
+    Mutating actions are never executed silently: every one is gated on an
+    explicit human approval, and API keys are scoped to admin / operator /
+    readonly tiers.
+
+    Features include an interactive REPL with streaming responses and Tab
+    completion, session persistence with search and branching, per-session token
+    and cost tracking, and multi-cluster profiles.
+
+    kq is a client. It talks over HTTPS to a KubeIntellect server, which you
+    self-host — see the Helm chart at
+    oci://ghcr.io/mskazemi/charts/kubeintellect.
+  caveats: |
+    kq needs a KubeIntellect server to talk to. Point it at one with:
+
+      export KUBE_Q_URL=https://your-kubeintellect-server
+      export KUBE_Q_API_KEY=...      # if the server has auth enabled
+
+    Then run `kubectl kq`. Without KUBE_Q_URL it defaults to a local server on
+    http://localhost:8000.
+
+    Deploy a server with:
+      helm install kubeintellect oci://ghcr.io/mskazemi/charts/kubeintellect \
+        --namespace kubeintellect --create-namespace
+
+    Documentation: https://mskazemi.github.io/kubeintellect/
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/MSKazemi/kubeintellect/releases/download/v2.3.1/kq_linux_amd64.tar.gz
+    sha256: 7101d944f13787329bc3dd29eabb158c28a598501760531acf997d1990aad76e
+    bin: kq
+    files:
+    - from: kq
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/MSKazemi/kubeintellect/releases/download/v2.3.1/kq_linux_arm64.tar.gz
+    sha256: 4ddca3951fe976722d7ff67a334fc2ea27ca37f98895fee16d1d1b6ea34a89af
+    bin: kq
+    files:
+    - from: kq
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/MSKazemi/kubeintellect/releases/download/v2.3.1/kq_darwin_amd64.tar.gz
+    sha256: e37b422935774ef6b01371bf5c7247ccdb25f4c7b9b4b6c51564963f2d3fb2ba
+    bin: kq
+    files:
+    - from: kq
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/MSKazemi/kubeintellect/releases/download/v2.3.1/kq_darwin_arm64.tar.gz
+    sha256: 7dea0241af334c66c71ef550bdec15e1f944b2728e1fd57f7e1de75a088d9ff5
+    bin: kq
+    files:
+    - from: kq
+      to: .
+    - from: LICENSE
+      to: .

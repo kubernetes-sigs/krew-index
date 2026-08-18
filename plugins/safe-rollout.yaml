@@ -1,0 +1,50 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: safe-rollout
+spec:
+  version: v0.2.0
+  homepage: https://github.com/HarnageaGabriel/kubectl-safe-rollout
+  shortDescription: Explain why a rollout failed or stalled
+  description: |
+    Use check for pre-flight analysis of a live workload and its namespace.
+    Use watch to observe a rollout and classify its failure cause. The tool
+    never modifies cluster state. Classification is deterministic; ambiguous
+    evidence is reported as an explicit *-undetermined cause with the observed
+    evidence, rather than as a guess presented as certain.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/HarnageaGabriel/kubectl-safe-rollout/releases/download/v0.2.0/kubectl-safe_rollout_v0.2.0_linux_amd64.tar.gz
+      sha256: 1813299a28b771fae5daf5ffc8e15195336b8de3ee3ae47c6a800df950cd4d5f
+      bin: kubectl-safe_rollout
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/HarnageaGabriel/kubectl-safe-rollout/releases/download/v0.2.0/kubectl-safe_rollout_v0.2.0_linux_arm64.tar.gz
+      sha256: 34c5ae5ddd41896cc06f74ea1fc24e99609c13d91ebe5b26634af17039166adf
+      bin: kubectl-safe_rollout
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/HarnageaGabriel/kubectl-safe-rollout/releases/download/v0.2.0/kubectl-safe_rollout_v0.2.0_darwin_amd64.tar.gz
+      sha256: 87c4daa03aa429ada8e40a64e75b3816bf832c32e3372287ad06c350ebd0e6d1
+      bin: kubectl-safe_rollout
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/HarnageaGabriel/kubectl-safe-rollout/releases/download/v0.2.0/kubectl-safe_rollout_v0.2.0_darwin_arm64.tar.gz
+      sha256: fb3beb4f06d8f22dddcbafa28040a8130b5da3ecdaf133fec5dc7d1ad9af245b
+      bin: kubectl-safe_rollout
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/HarnageaGabriel/kubectl-safe-rollout/releases/download/v0.2.0/kubectl-safe_rollout_v0.2.0_windows_amd64.zip
+      sha256: 094545a64b7647cfe8dcbc24a164daeb8a7b7f714c1adadad99fd6069b63427e
+      bin: kubectl-safe_rollout.exe

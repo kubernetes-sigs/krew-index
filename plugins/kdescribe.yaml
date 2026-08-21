@@ -1,0 +1,63 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kdescribe
+spec:
+  version: v1.2.0
+  homepage: https://github.com/dato-dev/kdescribe
+  shortDescription: Highlight important kubectl describe findings
+  description: |
+    kdescribe runs kubectl describe for Kubernetes resources, highlights common
+    workload failure signals, ranks findings by risk, and suggests the next
+    checks to run. It can also read kubectl describe output from stdin.
+  caveats: |
+    Run it like kubectl describe, but with highlighted findings:
+
+      kubectl kdescribe pod <pod-name>
+
+    Pipe mode is still supported:
+
+      kubectl describe pod <pod-name> | kubectl kdescribe
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/dato-dev/kdescribe/releases/download/v1.2.0/kdescribe_darwin_amd64.tar.gz
+      sha256: 58645663d90b63129ae6cc3c5b02ff2357705bf68eed89de5fa0812352fe7943
+      bin: kubectl-kdescribe
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/dato-dev/kdescribe/releases/download/v1.2.0/kdescribe_darwin_arm64.tar.gz
+      sha256: 97a6b6102f4ddfe483cff588e1522cc839a57752c6501e3f6591ec88f0b688c1
+      bin: kubectl-kdescribe
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/dato-dev/kdescribe/releases/download/v1.2.0/kdescribe_linux_amd64.tar.gz
+      sha256: 7e93787ebb992ca94649ab4ab31e03ba899d2de22cfabde8294e38e8cefc137f
+      bin: kubectl-kdescribe
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/dato-dev/kdescribe/releases/download/v1.2.0/kdescribe_linux_arm64.tar.gz
+      sha256: d1487733306ffbb27a75e72773deccfb69e93b53d50dd683e7d6be20728ebb3a
+      bin: kubectl-kdescribe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/dato-dev/kdescribe/releases/download/v1.2.0/kdescribe_windows_amd64.tar.gz
+      sha256: ad25ac5bc64ac5c0fc6e20f4e1261137ed245e87cc9738be342d7566741b26e9
+      bin: kubectl-kdescribe.exe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/dato-dev/kdescribe/releases/download/v1.2.0/kdescribe_windows_arm64.tar.gz
+      sha256: 745826be262a756940d00172ad3bc17e6a88b8bd4bf7ef358b4b9972f9daa7c2
+      bin: kubectl-kdescribe.exe

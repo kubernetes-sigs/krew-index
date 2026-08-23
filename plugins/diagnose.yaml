@@ -1,0 +1,88 @@
+# Krew plugin manifest for kubectl-diagnose.
+#
+# To publish to the central krew-index, open a PR adding this file (renamed to
+# diagnose.yaml) under plugins/ in https://github.com/kubernetes-sigs/krew-index
+# with the correct release URIs and sha256 sums (see the release checksums.txt).
+#
+# For local testing:
+#   kubectl krew install --manifest=plugins/diagnose.yaml --archive=dist/kubectl-diagnose-<os>-<arch>.tar.gz
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: diagnose
+spec:
+  version: v0.1.1
+  homepage: https://github.com/jainpratik163/kubectl-diagnose
+  shortDescription: Find the probable root cause of cluster issues
+  description: |
+    kubectl-diagnose helps SRE, DevOps and Platform Engineers quickly find
+    the probable root cause of pod, deployment, node and namespace problems.
+
+    It gathers pod details, events, logs, metrics, networking, storage and
+    security signals, runs a declarative root-cause rule engine, and prints a
+    scored, actionable report. Human, JSON, HTML and text output are supported.
+    Works with EKS, AKS, GKE and vanilla Kubernetes.
+  caveats: |
+    Live CPU/memory usage requires metrics-server (or a managed equivalent).
+    Without it, the plugin still reports on status, events, logs and config.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/jainpratik163/kubectl-diagnose/releases/download/v0.1.1/kubectl-diagnose-linux-amd64.tar.gz
+      sha256: "db8f1a182fb4b0136336abd8f4acee178f8264b16c06e57c699dfff9c9be0852"
+      bin: kubectl-diagnose
+      files:
+        - from: kubectl-diagnose-linux-amd64
+          to: kubectl-diagnose
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/jainpratik163/kubectl-diagnose/releases/download/v0.1.1/kubectl-diagnose-linux-arm64.tar.gz
+      sha256: "7fd96568becc737e96f276654a27d509eaf80992367c44650bd10cb167c5a2dd"
+      bin: kubectl-diagnose
+      files:
+        - from: kubectl-diagnose-linux-arm64
+          to: kubectl-diagnose
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/jainpratik163/kubectl-diagnose/releases/download/v0.1.1/kubectl-diagnose-darwin-amd64.tar.gz
+      sha256: "a3847401fcc6d0266afc4c500ea7a430096a8e518e4e3e764d237b9f8b86a6f4"
+      bin: kubectl-diagnose
+      files:
+        - from: kubectl-diagnose-darwin-amd64
+          to: kubectl-diagnose
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/jainpratik163/kubectl-diagnose/releases/download/v0.1.1/kubectl-diagnose-darwin-arm64.tar.gz
+      sha256: "65909fb142545c75db2b3daf5e6eee4bf2dcc0b86ee50b962f4df9bab03ab365"
+      bin: kubectl-diagnose
+      files:
+        - from: kubectl-diagnose-darwin-arm64
+          to: kubectl-diagnose
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/jainpratik163/kubectl-diagnose/releases/download/v0.1.1/kubectl-diagnose-windows-amd64.zip
+      sha256: "d9155cb4ad7e7684adda1bbf36bdc1e3eab315424a3f4df3f0778b319ad322bc"
+      bin: kubectl-diagnose.exe
+      files:
+        - from: kubectl-diagnose-windows-amd64.exe
+          to: kubectl-diagnose.exe
+        - from: LICENSE
+          to: .

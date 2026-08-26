@@ -3,36 +3,36 @@ kind: Plugin
 metadata:
   name: walk
 spec:
-  version: "v1.1.1"
+  version: v1.2.3
   platforms:
-  - selector:
-      matchLabels:
-        os: linux
-        arch: amd64
-    uri: https://github.com/HarshPanchal18/kubectl-walk/releases/download/v1.1.1/kubectl-walk-linux-amd64.tar.gz
-    sha256: "9f4354a210d0e211bcbea0b502cab79fa905b220ef19b8494dccca945a514d2d"
-    bin: kubectl-walk-linux-amd64
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/HarshPanchal18/kubectl-walk/releases/download/v1.1.1/kubectl-walk-darwin-amd64.tar.gz
-    sha256: "5cfdc8b6e9772e53c7d330c8b9d3f27b4474fb57e74609ee2a61a3c323e37fe2"
-    bin: kubectl-walk-darwin-amd64
+    uri: https://github.com/HarshPanchal18/kubectl-walk/releases/download/v1.2.3/kubectl-walk-v1.2.3-darwin-amd64.tar.gz
+    sha256: dd9c38e9d049682fde280ea6ac7c7724ee2409eb0f8d3b7d863cad246dfb5aa4
+    bin: kubectl-walk
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/HarshPanchal18/kubectl-walk/releases/download/v1.1.1/kubectl-walk-darwin-arm64.tar.gz
-    sha256: "0f22193dabd867763709da9e098e2d4e6f62faf6b8dac1f78a24287966176d97"
-    bin: kubectl-walk-darwin-arm64
+    uri: https://github.com/HarshPanchal18/kubectl-walk/releases/download/v1.2.3/kubectl-walk-v1.2.3-darwin-arm64.tar.gz
+    sha256: 2a940ac4cddf9f7aa32f72dd06c8d0c98af5b1f40e87aa9ca2db45e2e84efd57
+    bin: kubectl-walk
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/HarshPanchal18/kubectl-walk/releases/download/v1.2.3/kubectl-walk-v1.2.3-linux-amd64.tar.gz
+    sha256: ba4c2867e02f6f23d42601630e1fe45a934573f964a79bef4eec5e94c0700bbe
+    bin: kubectl-walk
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/HarshPanchal18/kubectl-walk/releases/download/v1.1.1/kubectl-walk-windows-amd64.zip
-    sha256: "e746d0acef7d16d6c3e202dd137cd14123f096f11ac94caa9e81e62216446b02"
-    bin: kubectl-walk-windows-amd64.exe
+    uri: https://github.com/HarshPanchal18/kubectl-walk/releases/download/v1.2.3/kubectl-walk-v1.2.3-windows-amd64.tar.gz
+    sha256: 8bf68ec14324078a96f918dfe01a07a435b9ffe960fa1e7fdc5dffbbc951cd48
+    bin: kubectl-walk.exe
   shortDescription: "Explore Kubernetes YAML like a human — not like a machine"
   description: |
     kubectl-walk helps you to flatten, filters, and visualizes nested fields of Kubernetes objects or YAML files.

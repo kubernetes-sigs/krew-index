@@ -82,10 +82,10 @@ spec:
   description: |
     Discovers resources managed by AWS Controllers for Kubernetes (ACK)
     across every installed ACK CRD and reports their ACK.ResourceSynced
-    and ACK.Terminal conditions in a single, color-coded table.
+    and ACK.Terminal conditions in a single, color-coded table, scoped
+    to the current namespace, all namespaces, or cluster-scoped
+    resources only.
 
-    Use -A/--all-namespaces to check across the whole cluster, or
-    -C/--cluster-scoped to check only cluster-scoped ACK resources.
-    Pass --fail-on-terminal to make the command exit non-zero when any
-    resource has entered a Terminal state, so it can be used as a
-    CI/CD pipeline gate rather than just a human-readable dashboard.
+    Supports exiting with a non-zero status when any resource has a
+    Terminal condition, so it can gate a CI/CD pipeline rather than
+    just be a human-readable dashboard.

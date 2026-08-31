@@ -1,0 +1,91 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ack-conditions
+spec:
+  version: v0.1.2
+  homepage: https://github.com/steamedeo/kubectl-ack-conditions
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/steamedeo/kubectl-ack-conditions/releases/download/v0.1.2/ack-conditions_linux_amd64.tar.gz
+    sha256: acb10a6c3400a54eaee0df00a38391fcd3c7188cc0a00b6cc3d23a046bd04aed
+    files:
+    - from: "./ack-conditions"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "ack-conditions"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/steamedeo/kubectl-ack-conditions/releases/download/v0.1.2/ack-conditions_linux_arm64.tar.gz
+    sha256: c316160793ac57dfa6221345dcdd079926a39be29ba37df19ffadde0820eb70c
+    files:
+    - from: "./ack-conditions"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "ack-conditions"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/steamedeo/kubectl-ack-conditions/releases/download/v0.1.2/ack-conditions_darwin_amd64.tar.gz
+    sha256: 09df4ceceabbe7d94d92dac7dfec835661e3e1602db01310af4b5c723a955957
+    files:
+    - from: "./ack-conditions"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "ack-conditions"
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/steamedeo/kubectl-ack-conditions/releases/download/v0.1.2/ack-conditions_darwin_arm64.tar.gz
+    sha256: 693a953aa2b0504e07e850da5cdc4df7cd8cab8b5d7a7241a446021953353f92
+    files:
+    - from: "./ack-conditions"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "ack-conditions"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/steamedeo/kubectl-ack-conditions/releases/download/v0.1.2/ack-conditions_windows_amd64.zip
+    sha256: 004b32009845337fd9f514374b7ffa8d1887e3048b34211386777cb321dfb875
+    files:
+    - from: "/ack-conditions.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "ack-conditions.exe"
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/steamedeo/kubectl-ack-conditions/releases/download/v0.1.2/ack-conditions_windows_arm64.zip
+    sha256: 468e4ab3ddcf6bd5701c0114acaf5a00cbe5f6dcf997dbcbf76f792e1d4291c5
+    files:
+    - from: "/ack-conditions.exe"
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: "ack-conditions.exe"
+  shortDescription: Show ACK resource sync and terminal conditions
+  description: |
+    Discovers resources managed by AWS Controllers for Kubernetes (ACK)
+    across every installed ACK CRD and reports their ACK.ResourceSynced
+    and ACK.Terminal conditions in a single, color-coded table, scoped
+    to the current namespace, all namespaces, or cluster-scoped
+    resources only.
+
+    Supports exiting with a non-zero status when any resource has a
+    Terminal condition, so it can gate a CI/CD pipeline rather than
+    just be a human-readable dashboard.

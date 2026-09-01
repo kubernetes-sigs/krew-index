@@ -3,15 +3,15 @@ kind: Plugin
 metadata:
   name: cwide
 spec:
-  version: v0.9.1
+  version: v0.9.2
   homepage: https://github.com/reborn1867/kubectl-cwide
   shortDescription: "Customize wide kubectl get output"
   description: |
     kubectl-cwide is a Kubernetes plugin that enhances the kubectl command-line tool by providing a customizable wide output format for Kubernetes objects. It allows users to define custom column templates(both jsonpath and go template are supported) to tailor the output to their specific needs. With kubectl-cwide, users can easily modify, extend, or alias the output format and share these configurations with their team members. This makes it a powerful tool for improving the readability and usability of Kubernetes object data in various workflows.
   platforms:
   - bin: kubectl-cwide
-    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.9.1/kubectl-cwide_Linux_x86_64.tar.gz
-    sha256: 3c365c5cba53b5f98decab98e9767cb2ce29350fb9e8e08567cc2aca54554c2d
+    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.9.2/kubectl-cwide_Linux_x86_64.tar.gz
+    sha256: cb3adc60f1c221f9054ea930f9e0626a51aae90ac29d1bc60ee4c999ccf63bed
     files:
       - from: LICENSE
         to: .
@@ -22,8 +22,8 @@ spec:
         os: linux
         arch: amd64
   - bin: kubectl-cwide
-    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.9.1/kubectl-cwide_Darwin_x86_64.tar.gz
-    sha256: 611a81acfdf54607ebdfcfc4496895f7b00fd231c4cb4f2fdef86a6d0034bfb3
+    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.9.2/kubectl-cwide_Darwin_x86_64.tar.gz
+    sha256: cd529f0e0dcdd916336c43b763a3cbab710c10b661bc3f93cfd88b14fae93e47
     files:
       - from: LICENSE
         to: .
@@ -34,8 +34,8 @@ spec:
         os: darwin
         arch: amd64
   - bin: kubectl-cwide
-    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.9.1/kubectl-cwide_Darwin_arm64.tar.gz
-    sha256: 2b9968da1790c7ab450e97e64e1384762a67026ed4aab53190d4b067230805cc
+    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.9.2/kubectl-cwide_Darwin_arm64.tar.gz
+    sha256: afc97e6b682fa22747b4a2a91feecff35a8017f5a0e69df9da5fd2e068c4236f
     files:
       - from: LICENSE
         to: .
@@ -46,8 +46,8 @@ spec:
         os: darwin
         arch: arm64
   - bin: kubectl-cwide.exe
-    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.9.1/kubectl-cwide_Windows_x86_64.zip
-    sha256: af452ea5345acbc915a942a0e63b34fe5e234bb0033295c717e8703c6c20346d
+    uri: https://github.com/reborn1867/kubectl-cwide/releases/download/v0.9.2/kubectl-cwide_Windows_x86_64.zip
+    sha256: 8831c92396f8c0c397f9197adcbebcdea862e7bfc1851b6f10411053c099bf90
     files:
       - from: LICENSE
         to: .

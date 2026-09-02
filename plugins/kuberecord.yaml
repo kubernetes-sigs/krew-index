@@ -11,7 +11,7 @@ metadata:
 spec:
   version: v0.3.0
   homepage: https://github.com/kuberecord/kuberecord
-  shortDescription: Query recorded Kubernetes state changes
+  shortDescription: Query recorded state changes
   description: |
     kuberecord answers questions about recorded Kubernetes state changes — who
     changed what, when, and what the object looked like before — without needing
@@ -19,11 +19,6 @@ spec:
 
     A kuberecord operator streams cluster state to a sink; this plugin is the
     read side of it.
-
-      kubectl kuberecord timeline deploy/checkout -n payments
-      kubectl kuberecord diff deploy/checkout -n payments --since 1h
-      kubectl kuberecord get deploy/checkout -n payments --at 2026-08-28T13:00:00Z
-      kubectl kuberecord blame deploy/checkout -n payments
 
     An empty answer is never presented on its own. Every command consults the
     watch-scope log first, so "nothing changed" and "nothing was watching" are
@@ -35,9 +30,8 @@ spec:
 
     The same build also ships under the name 'kuberecord', which runs on its own
     against an object-store archive with no cluster at all — an auditor's copy.
-    Install that from the Homebrew tap or from the release archive:
-
-      brew install kuberecord/tap/kuberecord
+    krew does not install that one; the project's own installation instructions
+    say where to get it.
 
     The plugin reads what a kuberecord operator has already recorded. With no
     operator running and no --source pointing at an archive one wrote, there is

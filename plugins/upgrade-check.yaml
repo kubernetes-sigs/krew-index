@@ -5,7 +5,7 @@ metadata:
 spec:
   version: v0.1.3
   homepage: https://github.com/runtimez-com/kube-upgrade-check
-  shortDescription: Find what breaks before you upgrade Kubernetes
+  shortDescription: Find what breaks before you upgrade
   description: |
     Reports what an upgrade to a target Kubernetes version would break in the
     cluster you are pointed at: objects still written at an API version the
@@ -24,11 +24,6 @@ spec:
     Every check that could not run is printed with the reason and a command to
     run yourself, so a clean report cannot be one where half the checks were
     silently skipped.
-
-    Examples:
-      kubectl upgrade-check --target 1.34
-      kubectl upgrade-check --target 1.34 -o json
-      kubectl upgrade-check --fail-on high --strict
   caveats: |
     Some checks need permissions the built-in view role does not grant:
 

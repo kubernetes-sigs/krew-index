@@ -1,0 +1,108 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: oskar
+spec:
+  version: v0.2.1
+  # The krew-release-bot uses `homepage` to prove ownership: it must be the
+  # GitHub repository the releases are published from.
+  homepage: https://github.com/alessandrocorsico/oskar
+  shortDescription: "Radar for silent cluster anomalies"
+  description: |
+    OSKAR (Open Source Kubernetes Anomaly Radar) performs a read-only scan of
+    the cluster and reports silent state inconsistencies: EndpointSlice
+    entries pointing at dead pods (ghost endpoints), admission webhooks with
+    a missing backend, Ingresses/Routes referencing non-existent Services,
+    Services whose selector matches nothing, expiring TLS certificates,
+    resources stuck in Terminating, Released/Failed PVs and orphaned HPAs.
+
+    It needs only list permissions and works on EKS, AKS, GKE, OpenShift
+    and RKE2 alike. Checks whose resources cannot be listed are skipped
+    with a notice, never run on empty data.
+
+    After install, run: kubectl oskar scan
+  caveats: |
+    OSKAR is read-only and needs "list" on the inspected resources
+    (run `kubectl oskar checks` for the exact set).
+    The cert-expiry check lists TLS secrets (type=kubernetes.io/tls only);
+    if your RBAC forbids secret access, run: kubectl oskar scan --skip-checks cert-expiry
+  # Archive names come from .goreleaser.yaml: oskar_<os>_<arch>.tar.gz
+  # (zip on Windows). LICENSE is extracted from every archive, as the
+  # krew-index requires.
+  #
+  # Indentation matters: krew-release-bot renders addURIAndSha as
+  # "uri: ...\n    sha256: ..." with a fixed 4-space indent, so platform
+  # entries must sit at 2 spaces and their keys at 4, exactly like this.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/alessandrocorsico/oskar/releases/download/v0.2.1/oskar_linux_amd64.tar.gz
+    sha256: 857d10b1d75bc6c2b843ca6250d89a4b8d8b0ab15bd880e37f7298c8d27eb416
+    files:
+    - from: oskar
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: oskar
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/alessandrocorsico/oskar/releases/download/v0.2.1/oskar_linux_arm64.tar.gz
+    sha256: b1b34ac966b3d7aa85899a5d93bb682c024278bca10971a414fc23f86a1ce046
+    files:
+    - from: oskar
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: oskar
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/alessandrocorsico/oskar/releases/download/v0.2.1/oskar_darwin_amd64.tar.gz
+    sha256: 0a39557ae7ef7a75e6df380e255f747460a05f94c5517baf08256ac2135638a6
+    files:
+    - from: oskar
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: oskar
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/alessandrocorsico/oskar/releases/download/v0.2.1/oskar_darwin_arm64.tar.gz
+    sha256: b09144eb6a6d3935825732c241fd91f7566862fec32e45ab14c5b75e43c0830d
+    files:
+    - from: oskar
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: oskar
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/alessandrocorsico/oskar/releases/download/v0.2.1/oskar_windows_amd64.zip
+    sha256: 28e88c093081f3f418b05055c45d096f780bd649b8169b93390abf49edd4ab94
+    files:
+    - from: oskar.exe
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: oskar.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/alessandrocorsico/oskar/releases/download/v0.2.1/oskar_windows_arm64.zip
+    sha256: 2f8c87e9a37b47f1cb4db7f3ef8ce394933ab69fa239f7a22421dae6dad55cf0
+    files:
+    - from: oskar.exe
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: oskar.exe

@@ -1,0 +1,52 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: gonogo
+spec:
+  version: v0.1.0
+  homepage: https://github.com/akhila14/kubectl-gonogo
+  shortDescription: Release gate and drift audit for live Deployments
+  description: |
+    kubectl-gonogo runs production-readiness checks (probes, resources,
+    replicas, PDBs, HPAs, security context, and more) against live
+    Deployments — the state actually running in the cluster, not YAML
+    files — in two modes:
+
+      gate   GO / NO-GO release verdict with CI exit codes
+             (0 GO, 1 NO-GO, 2 error)
+      audit  HEALTHY / AT RISK drift report for what is already
+             running; always exits 0, safe in cron
+
+    It needs only read access (get/list) to the cluster.
+  caveats: |
+    This plugin only needs read-only (get/list) RBAC access. See the
+    project README for a minimal ClusterRole.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/akhila14/kubectl-gonogo/releases/download/v0.1.0/kubectl-gonogo_v0.1.0_darwin_amd64.tar.gz
+      sha256: eab9b53296b7f73aabada8b523a29c02f2ff57e08510dd34ca7650aea874b8c9
+      bin: kubectl-gonogo
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/akhila14/kubectl-gonogo/releases/download/v0.1.0/kubectl-gonogo_v0.1.0_darwin_arm64.tar.gz
+      sha256: ec45c6ac4a469c835b720c572b23e41b49f48b60240fea613f6f6331f1ca33f7
+      bin: kubectl-gonogo
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/akhila14/kubectl-gonogo/releases/download/v0.1.0/kubectl-gonogo_v0.1.0_linux_amd64.tar.gz
+      sha256: 9e2d3806882a06d8c6b88cb61ca09d5a324aa64c8d466c99d06a37605191a3ff
+      bin: kubectl-gonogo
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/akhila14/kubectl-gonogo/releases/download/v0.1.0/kubectl-gonogo_v0.1.0_linux_arm64.tar.gz
+      sha256: ba385072a136a105e63ae6beaff63cf7370b24398614d65921ebbc3bdabb157d
+      bin: kubectl-gonogo

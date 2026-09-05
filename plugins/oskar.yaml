@@ -1,0 +1,103 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: oskar
+spec:
+  version: v0.2.1
+  homepage: https://github.com/alessandrocorsico/oskar
+  shortDescription: "Finds broken links: ghost endpoints, dead webhooks"
+  description: |
+    OSKAR (Open Source Kubernetes Anomaly Radar) performs a read-only scan of
+    the cluster and reports silent state inconsistencies: the broken links
+    between objects that raise no events and keep every dashboard green.
+
+    Checks: EndpointSlice entries pointing at pods that no longer exist or at
+    IPs the pod does not own (ghost endpoints); admission webhooks whose
+    backend Service is missing or has no ready endpoints; Ingresses and
+    OpenShift Routes referencing non-existent Services or ports; Services
+    whose selector matches no pods; TLS Secrets expired or about to expire;
+    Pods, Namespaces and PVCs stuck in Terminating; Released or Failed
+    PersistentVolumes; HorizontalPodAutoscalers whose scale target is gone.
+
+    Every finding carries a remediation hint. Output is a human-readable
+    table or JSON, and exit codes make it usable as a CI/CD gate. It needs
+    only list permissions; a check whose resources cannot be listed is
+    skipped with a notice, never run on empty data.
+  caveats: |
+    OSKAR is read-only and needs the "list" verb on the resources it
+    inspects. The certificate check lists Secrets of type kubernetes.io/tls
+    only; if your RBAC forbids access to Secrets, that single check can be
+    disabled and everything else keeps working.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/alessandrocorsico/oskar/releases/download/v0.2.1/oskar_linux_amd64.tar.gz
+    sha256: 857d10b1d75bc6c2b843ca6250d89a4b8d8b0ab15bd880e37f7298c8d27eb416
+    files:
+    - from: oskar
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: oskar
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/alessandrocorsico/oskar/releases/download/v0.2.1/oskar_linux_arm64.tar.gz
+    sha256: b1b34ac966b3d7aa85899a5d93bb682c024278bca10971a414fc23f86a1ce046
+    files:
+    - from: oskar
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: oskar
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/alessandrocorsico/oskar/releases/download/v0.2.1/oskar_darwin_amd64.tar.gz
+    sha256: 0a39557ae7ef7a75e6df380e255f747460a05f94c5517baf08256ac2135638a6
+    files:
+    - from: oskar
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: oskar
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/alessandrocorsico/oskar/releases/download/v0.2.1/oskar_darwin_arm64.tar.gz
+    sha256: b09144eb6a6d3935825732c241fd91f7566862fec32e45ab14c5b75e43c0830d
+    files:
+    - from: oskar
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: oskar
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/alessandrocorsico/oskar/releases/download/v0.2.1/oskar_windows_amd64.zip
+    sha256: 28e88c093081f3f418b05055c45d096f780bd649b8169b93390abf49edd4ab94
+    files:
+    - from: oskar.exe
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: oskar.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/alessandrocorsico/oskar/releases/download/v0.2.1/oskar_windows_arm64.zip
+    sha256: 2f8c87e9a37b47f1cb4db7f3ef8ce394933ab69fa239f7a22421dae6dad55cf0
+    files:
+    - from: oskar.exe
+      to: "."
+    - from: LICENSE
+      to: "."
+    bin: oskar.exe

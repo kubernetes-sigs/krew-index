@@ -1,0 +1,87 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: diagnose-workloads
+spec:
+  version: v1.16.1
+  homepage: https://github.com/imantaba/kubeagent
+  shortDescription: Diagnose why workloads are broken, read-only
+  description: |
+    Scans a cluster and names the underlying cause of each failing workload:
+    the container exit reason, the scheduler's message, the failed image pull,
+    rather than only reporting that something is unhealthy. It correlates
+    related failures, such as many pods failing because one node is NotReady,
+    into a single root cause. The report is prioritized: cluster health first,
+    then workload failures.
+
+    A scan is read-only (get and list calls only) and works offline. Opt-in
+    flags add a plain-English explanation, JSON output, and guard-railed
+    remediation with per-action confirmation. See the homepage for usage.
+  caveats: |
+    Pass flags after the subcommand. kubectl does not forward its own global
+    flags to plugins, so options such as --context and --kubeconfig must go
+    after the subcommand rather than after kubectl. These flags are spelled
+    exactly like kubectl's, and KUBECONFIG is read from the environment the
+    same way. See the homepage for usage.
+
+    A scan is read-only: it issues get and list calls only. Writes happen
+    solely under the opt-in --fix flag, which is limited to a fixed allowlist
+    of reversible actions, refuses protected namespaces, and confirms every
+    action before applying it.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/imantaba/kubeagent/releases/download/v1.16.1/kubeagent_v1.16.1_linux_amd64.tar.gz
+      sha256: 821a9f2baf0755aa143483f0daffe8c27f5fde4b9afa74141188bc66ab0718d2
+      bin: kubeagent
+      files:
+        - from: kubeagent
+          to: .
+        - from: LICENSE
+          to: .
+        - from: NOTICE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/imantaba/kubeagent/releases/download/v1.16.1/kubeagent_v1.16.1_linux_arm64.tar.gz
+      sha256: d9bcc7da472c04c20a9e83e274c8417ba40b97e551c7b7cd2adb6edc78c8ce9d
+      bin: kubeagent
+      files:
+        - from: kubeagent
+          to: .
+        - from: LICENSE
+          to: .
+        - from: NOTICE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/imantaba/kubeagent/releases/download/v1.16.1/kubeagent_v1.16.1_darwin_amd64.tar.gz
+      sha256: 5a3dd60a6691bc14996cd9e65675af8c3a97473b0521cb23aef063b7f1422bc1
+      bin: kubeagent
+      files:
+        - from: kubeagent
+          to: .
+        - from: LICENSE
+          to: .
+        - from: NOTICE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/imantaba/kubeagent/releases/download/v1.16.1/kubeagent_v1.16.1_darwin_arm64.tar.gz
+      sha256: 7b05ead4db4d4112a25ab0fc82ca2ed9f36b664669b29b90124a69392b843300
+      bin: kubeagent
+      files:
+        - from: kubeagent
+          to: .
+        - from: LICENSE
+          to: .
+        - from: NOTICE
+          to: .

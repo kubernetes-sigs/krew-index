@@ -1,0 +1,133 @@
+# krew plugin manifest for crashcause (`kubectl crashcause`).
+#
+# STATUS: not yet published to the krew index
+# (https://github.com/kubernetes-sigs/krew-index). This file is the basis
+# for a future krew-index submission; until then the installable copy is
+# published as a release asset (see below).
+#
+# ---------------------------------------------------------------------------
+# RELEASE AUTOMATION CONTRACT
+# ---------------------------------------------------------------------------
+# .goreleaser.yaml deliberately does NOT use goreleaser's `krews:` publisher
+# (its availability varies across goreleaser versions); this manifest is the
+# single source of truth instead.
+#
+# The committed copy of this file stays in PLACEHOLDER form permanently:
+# spec.version is v0.0.0, the archive uris carry v0.0.0/0.0.0 segments, and
+# every sha256 is 64 zeros -- a well-formed but never-matching digest, so an
+# accidental install from this repo copy FAILS the checksum check rather
+# than silently installing something. Do not "fix" the zeros by shortening
+# or removing them, and do not commit real versions or digests here.
+#
+# The installable form is produced per release by hack/krew-manifest.sh,
+# which stamps the tag into spec.version and the uris and fills each
+# platform's sha256 from that release's crashcause_<version>_checksums.txt,
+# pairing digest to platform by archive filename rather than list order.
+# The release workflow's `krew` job runs it and uploads the result as the
+# release's `crashcause.yaml` asset -- which is what the README's
+# releases/latest/download/crashcause.yaml install line resolves to.
+#
+# The `uri` filenames MUST stay in sync with the archive `name_template` in
+# ../../.goreleaser.yaml ("crashcause_{{ .Version }}_{{ .Os }}_{{ .Arch }}",
+# format tar.gz). The platform matrix below mirrors that file's
+# goos x goarch matrix exactly: linux and darwin, amd64 and arm64. There is
+# no windows build, so there is deliberately no windows selector here.
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: crashcause
+spec:
+  version: v0.1.1
+  homepage: https://github.com/ryckakas/crashcause
+  shortDescription: Explain why a Kubernetes pod crashed
+  description: |
+    Answers "why did this pod crash?" without the usual ritual of
+    kubectl describe + kubectl logs --previous + digging through events.
+
+    crashcause pulls the pod's spec and status, its events, the previous
+    container's log tail, and the node's conditions straight from the
+    cluster API - nothing to copy, nothing to paste - and classifies the
+    crash into a stable cause code with confidence, the concrete evidence
+    it used, and suggested next steps.
+
+    Cause codes include oom_killed, sigkill_unattributed, evicted,
+    probe_liveness_failure, probe_startup_failure, image_pull_auth,
+    image_pull_not_found, image_pull_other, security_context_violation,
+    config_missing_reference, volume_mount_failure, init_container_failure,
+    init_container_stuck, unschedulable, app_exit_nonzero,
+    sigkill_after_grace and completed_restart_loop.
+
+    Usage:
+
+      kubectl crashcause inspect <pod> -n <namespace>
+      kubectl crashcause inspect <pod> -n <namespace> --output json
+
+    Exit codes: 0 diagnosed, 2 nothing to diagnose (the pod is not
+    crashing), 1 error.
+
+    inspect runs entirely with your own kubeconfig credentials and needs no
+    in-cluster component. The same binary also has a `watch` mode - a
+    controller that turns crash causes into Prometheus labels and
+    structured log lines - which is deployed separately via the Helm chart
+    in the repository, not through this plugin.
+
+    An optional AI log-summarization layer (--ai) is available, off by
+    default, bring-your-own-key, with ollama supported for setups where no
+    data may leave the machine.
+  caveats: |
+    This is a pre-1.0 build. `kubectl crashcause inspect` is the supported
+    entry point; some cause codes and the in-cluster `watch` mode are still
+    being finished. Report anything that misdiagnoses at
+    https://github.com/ryckakas/crashcause/issues.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/ryckakas/crashcause/releases/download/v0.1.1/crashcause_0.1.1_darwin_amd64.tar.gz
+      sha256: "e4cc3921cc95ba638cfa0f3aa258186a4345bae37d1f1c4eaa6bd7ea608c30b5"
+      bin: crashcause
+      files:
+        - from: crashcause
+          to: .
+        - from: LICENSE
+          to: .
+
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/ryckakas/crashcause/releases/download/v0.1.1/crashcause_0.1.1_darwin_arm64.tar.gz
+      sha256: "c515a835fa59b86bed3836553e573217ab5444f8e1e34d870431f2b4fd749276"
+      bin: crashcause
+      files:
+        - from: crashcause
+          to: .
+        - from: LICENSE
+          to: .
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/ryckakas/crashcause/releases/download/v0.1.1/crashcause_0.1.1_linux_amd64.tar.gz
+      sha256: "05691fc739e2bf8eaa440de3de66c80ff8cc9bf7c68b15e46dc52c033ea31e71"
+      bin: crashcause
+      files:
+        - from: crashcause
+          to: .
+        - from: LICENSE
+          to: .
+
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/ryckakas/crashcause/releases/download/v0.1.1/crashcause_0.1.1_linux_arm64.tar.gz
+      sha256: "fcce510412733366b04c6eaa1528e40f492fc990edfe878abfab508951f0d8ba"
+      bin: crashcause
+      files:
+        - from: crashcause
+          to: .
+        - from: LICENSE
+          to: .

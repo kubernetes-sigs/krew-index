@@ -5,7 +5,7 @@ metadata:
 spec:
   version: v0.1.1
   homepage: https://github.com/ryckakas/crashcause
-  shortDescription: Explain why a Kubernetes pod crashed
+  shortDescription: Explain why a pod crashed
   description: |
     Answers "why did this pod crash?" without the usual ritual of
     kubectl describe + kubectl logs --previous + digging through events.
@@ -23,15 +23,10 @@ spec:
     init_container_stuck, unschedulable, app_exit_nonzero,
     sigkill_after_grace and completed_restart_loop.
 
-    Usage:
-
-      kubectl crashcause inspect <pod> -n <namespace>
-      kubectl crashcause inspect <pod> -n <namespace> --output json
-
     Exit codes: 0 diagnosed, 2 nothing to diagnose (the pod is not
     crashing), 1 error.
 
-    inspect runs entirely with your own kubeconfig credentials and needs no
+    Runs entirely with your own kubeconfig credentials and needs no
     in-cluster component. The same binary also has a `watch` mode - a
     controller that turns crash causes into Prometheus labels and
     structured log lines - which is deployed separately via the Helm chart

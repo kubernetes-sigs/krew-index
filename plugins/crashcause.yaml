@@ -1,37 +1,3 @@
-# krew plugin manifest for crashcause (`kubectl crashcause`).
-#
-# STATUS: not yet published to the krew index
-# (https://github.com/kubernetes-sigs/krew-index). This file is the basis
-# for a future krew-index submission; until then the installable copy is
-# published as a release asset (see below).
-#
-# ---------------------------------------------------------------------------
-# RELEASE AUTOMATION CONTRACT
-# ---------------------------------------------------------------------------
-# .goreleaser.yaml deliberately does NOT use goreleaser's `krews:` publisher
-# (its availability varies across goreleaser versions); this manifest is the
-# single source of truth instead.
-#
-# The committed copy of this file stays in PLACEHOLDER form permanently:
-# spec.version is v0.0.0, the archive uris carry v0.0.0/0.0.0 segments, and
-# every sha256 is 64 zeros -- a well-formed but never-matching digest, so an
-# accidental install from this repo copy FAILS the checksum check rather
-# than silently installing something. Do not "fix" the zeros by shortening
-# or removing them, and do not commit real versions or digests here.
-#
-# The installable form is produced per release by hack/krew-manifest.sh,
-# which stamps the tag into spec.version and the uris and fills each
-# platform's sha256 from that release's crashcause_<version>_checksums.txt,
-# pairing digest to platform by archive filename rather than list order.
-# The release workflow's `krew` job runs it and uploads the result as the
-# release's `crashcause.yaml` asset -- which is what the README's
-# releases/latest/download/crashcause.yaml install line resolves to.
-#
-# The `uri` filenames MUST stay in sync with the archive `name_template` in
-# ../../.goreleaser.yaml ("crashcause_{{ .Version }}_{{ .Os }}_{{ .Arch }}",
-# format tar.gz). The platform matrix below mirrors that file's
-# goos x goarch matrix exactly: linux and darwin, amd64 and arm64. There is
-# no windows build, so there is deliberately no windows selector here.
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:

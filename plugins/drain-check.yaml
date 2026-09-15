@@ -1,0 +1,58 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: drain-check
+spec:
+  version: v0.2.0
+  homepage: https://github.com/mjavedali/drain-check
+  shortDescription: Pre-flight safety report before draining a node
+  description: |
+    drain-check scans a Kubernetes node before you run `kubectl drain`
+    and flags pods that would block eviction (PodDisruptionBudgets
+    allowing zero disruptions), cause an outage (single-replica
+    workloads with no PDB), lose data (local emptyDir/hostPath storage),
+    or hang (stuck finalizers, pods already stuck Terminating).
+    Fully read-only — it never modifies your cluster.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/mjavedali/drain-check/releases/download/v0.2.0/drain-check_0.2.0_darwin_amd64.tar.gz
+      sha256: f41528f6a6f7a39d1ad4c306e336af8d84c33addd62e56567d260832e4657063
+      bin: drain-check
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/mjavedali/drain-check/releases/download/v0.2.0/drain-check_0.2.0_darwin_arm64.tar.gz
+      sha256: eb9a04962426e8a344cf3a0186fdd70281be88b0a5f6b4f4363badcf2f8c5642
+      bin: drain-check
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/mjavedali/drain-check/releases/download/v0.2.0/drain-check_0.2.0_linux_amd64.tar.gz
+      sha256: aaccf995957741ce35b8e21a09eb7037e06c97f28b62e14ea513ff63b7b77fd2
+      bin: drain-check
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/mjavedali/drain-check/releases/download/v0.2.0/drain-check_0.2.0_linux_arm64.tar.gz
+      sha256: 59e7982c5d0573f00ac4e4b87d7b210d06a304d3a6bd4be4c323a83e771478fb
+      bin: drain-check
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/mjavedali/drain-check/releases/download/v0.2.0/drain-check_0.2.0_windows_amd64.zip
+      sha256: 7efd603d94c351b83a7f9d85e1987f6d5a1b827e6afe15f38cd1c5d60e3637aa
+      bin: drain-check.exe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/mjavedali/drain-check/releases/download/v0.2.0/drain-check_0.2.0_windows_arm64.zip
+      sha256: 8ab12e9a08f6183fe40ca9b4f390354adcf21665fba5bb9387d7718d4081eb21
+      bin: drain-check.exe

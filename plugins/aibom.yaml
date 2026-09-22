@@ -11,11 +11,16 @@ spec:
   homepage: https://github.com/GoogleCloudPlatform/k8s-aibom
   shortDescription: Read, summarize, and verify AIBOM resources
   description: |
-    Works with k8s-aibom, the runtime AI inventory controller.
-    Provides `kubectl aibom summary` (models, runtimes, confidence,
-    and signature state per workload), `view` (the decoded CycloneDX
-    ML-BOM document), and `verify` (recompute the document sha256
-    against the published digest; non-zero exit on mismatch).
+    Companion CLI for k8s-aibom, the runtime AI/ML inventory
+    controller. Summarizes AI workload inventory (models, runtimes,
+    confidence tier, and signature verification state per workload),
+    displays the decoded CycloneDX ML-BOM document, and verifies
+    document integrity by recomputing its sha256 against the
+    published digest (non-zero exit on mismatch).
+  caveats: |
+    Requires the k8s-aibom controller and its AIBOM custom resources
+    installed in the target cluster (read-only get/list access is
+    enough).
   platforms:
     - selector: {matchLabels: {os: linux, arch: amd64}}
       uri: https://github.com/GoogleCloudPlatform/k8s-aibom/releases/download/v1.5.0/kubectl-aibom_v1.5.0_linux_amd64.tar.gz

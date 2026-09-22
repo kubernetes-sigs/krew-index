@@ -1,9 +1,20 @@
+# krew-release-bot template. On every v* release, the release workflow's
+# krew-release-bot step renders this with the new tag and opens a version-bump
+# PR against kubernetes-sigs/krew-index automatically.
+#
+# v1.3.0 is the git tag (v1.2.0); archive filenames use the bare
+# version (1.2.0), hence 1.3.0 inside the asset URLs.
+#
+# Test-render locally:
+#   docker run -v $(pwd)/.krew.yaml:/tmp/template-file.yaml \
+#     ghcr.io/rajatjindal/krew-release-bot:v0.0.47 \
+#     krew-release-bot template --tag v1.2.0 --template-file /tmp/template-file.yaml
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
   name: kubesplaining
 spec:
-  version: v1.2.0
+  version: v1.3.0
   homepage: https://github.com/0hardik1/kubesplaining
   shortDescription: Scan for security risks and RBAC escalation paths
   description: |
@@ -33,8 +44,8 @@ spec:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/0hardik1/kubesplaining/releases/download/v1.2.0/kubesplaining_1.2.0_Darwin_arm64.tar.gz
-    sha256: 27b1a495ac3ab8d1c175bf5b4c841c4de581c958f115ef28109f6557e00200f4
+    uri: https://github.com/0hardik1/kubesplaining/releases/download/v1.3.0/kubesplaining_1.3.0_Darwin_arm64.tar.gz
+    sha256: a092ec29577c69519bec308a352e952462da5e430c3d84f9d7e24cd6a74907be
     bin: kubesplaining
     files:
     - from: kubesplaining
@@ -45,8 +56,8 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/0hardik1/kubesplaining/releases/download/v1.2.0/kubesplaining_1.2.0_Darwin_x86_64.tar.gz
-    sha256: c1dc4121507e46cc37981303150588e263c4fcc7e93851d6a6d0e46db2b489d2
+    uri: https://github.com/0hardik1/kubesplaining/releases/download/v1.3.0/kubesplaining_1.3.0_Darwin_x86_64.tar.gz
+    sha256: cbe907262a6937c2ce8445cfcdba091c7781dfb845d4d83536b64f405228d04b
     bin: kubesplaining
     files:
     - from: kubesplaining
@@ -57,8 +68,8 @@ spec:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/0hardik1/kubesplaining/releases/download/v1.2.0/kubesplaining_1.2.0_Linux_arm64.tar.gz
-    sha256: 0d51cdb825155b05583bc8cd2b1c0a405a9fe5314b2434f2ebb77f4835a7254a
+    uri: https://github.com/0hardik1/kubesplaining/releases/download/v1.3.0/kubesplaining_1.3.0_Linux_arm64.tar.gz
+    sha256: b57bb799ac1d449c251c5ce0ac32eb644fd7c345d4dc5e27c7e509bcb4435749
     bin: kubesplaining
     files:
     - from: kubesplaining
@@ -69,8 +80,8 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/0hardik1/kubesplaining/releases/download/v1.2.0/kubesplaining_1.2.0_Linux_x86_64.tar.gz
-    sha256: b546168bb95936886d4be329f650cc5d9a4c2bb31333d7e3060cfc32299eba59
+    uri: https://github.com/0hardik1/kubesplaining/releases/download/v1.3.0/kubesplaining_1.3.0_Linux_x86_64.tar.gz
+    sha256: 2c21817fa914f976c717d9140630ca568afcba3629b3d0eac2522378c9e75490
     bin: kubesplaining
     files:
     - from: kubesplaining
@@ -81,8 +92,8 @@ spec:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/0hardik1/kubesplaining/releases/download/v1.2.0/kubesplaining_1.2.0_Windows_x86_64.zip
-    sha256: b079df7684dc7311800f63a64fbc61e486044b2777f209a095af478418d2eb03
+    uri: https://github.com/0hardik1/kubesplaining/releases/download/v1.3.0/kubesplaining_1.3.0_Windows_x86_64.zip
+    sha256: b608d29ff97a44d36132a5e008b3b5daa0184208c2e4444f5f7adb0be95a48b8
     bin: kubesplaining.exe
     files:
     - from: kubesplaining.exe

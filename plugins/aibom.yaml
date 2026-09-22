@@ -1,0 +1,35 @@
+# krew plugin manifest for kubectl-aibom. Submitted to
+# kubernetes-sigs/krew-index after each release with version and
+# sha256 fields updated from the release assets (see
+# docs/release-checklist.md).
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: aibom
+spec:
+  version: "v1.5.0"
+  homepage: https://github.com/GoogleCloudPlatform/k8s-aibom
+  shortDescription: Read, summarize, and verify AIBOM resources
+  description: |
+    Works with k8s-aibom, the runtime AI inventory controller.
+    Provides `kubectl aibom summary` (models, runtimes, confidence,
+    and signature state per workload), `view` (the decoded CycloneDX
+    ML-BOM document), and `verify` (recompute the document sha256
+    against the published digest; non-zero exit on mismatch).
+  platforms:
+    - selector: {matchLabels: {os: linux, arch: amd64}}
+      uri: https://github.com/GoogleCloudPlatform/k8s-aibom/releases/download/v1.5.0/kubectl-aibom_v1.5.0_linux_amd64.tar.gz
+      sha256: "fe247a3a341ef6e1604b5e031925177385f1d2382a1ad15aacf69d746c45ac3d"
+      bin: kubectl-aibom
+    - selector: {matchLabels: {os: linux, arch: arm64}}
+      uri: https://github.com/GoogleCloudPlatform/k8s-aibom/releases/download/v1.5.0/kubectl-aibom_v1.5.0_linux_arm64.tar.gz
+      sha256: "065c3b7216d6b69212486c304b7d74248845c9037d16dec0d14f588c50f6ff03"
+      bin: kubectl-aibom
+    - selector: {matchLabels: {os: darwin, arch: amd64}}
+      uri: https://github.com/GoogleCloudPlatform/k8s-aibom/releases/download/v1.5.0/kubectl-aibom_v1.5.0_darwin_amd64.tar.gz
+      sha256: "52c6d686a070a796302522d8b43988b459ef5a3131823157ca43ebd0e8753ee6"
+      bin: kubectl-aibom
+    - selector: {matchLabels: {os: darwin, arch: arm64}}
+      uri: https://github.com/GoogleCloudPlatform/k8s-aibom/releases/download/v1.5.0/kubectl-aibom_v1.5.0_darwin_arm64.tar.gz
+      sha256: "7776d9d5b6ba6ae54ccce1d1ef9b355451138bc7e51574bbbeda4b9c1c3e94be"
+      bin: kubectl-aibom

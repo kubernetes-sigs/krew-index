@@ -1,0 +1,96 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: apf
+spec:
+  version: v0.1.0
+  homepage: https://github.com/marinoborges/kubectl-apf
+  shortDescription: Show API Priority and Fairness priority levels and flow schemas
+  description: |
+    Lists PriorityLevelConfiguration and FlowSchema objects, and reads the
+    in-memory API Priority and Fairness snapshots for queues and requests.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/marinoborges/kubectl-apf/releases/download/v0.1.0/kubectl-apf_linux_amd64.tar.gz
+    sha256: 0c56744e3ec8727595d12dadd7faa53e73acc915cb137cdec2205a0b1a98e993
+    bin: kubectl-apf
+    files:
+    - from: kubectl-apf
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/marinoborges/kubectl-apf/releases/download/v0.1.0/kubectl-apf_linux_arm64.tar.gz
+    sha256: 13d9a6977a1cfb1c88b0dd4f29b12490eaa221e25bc82209f345e6f5e0dafc25
+    bin: kubectl-apf
+    files:
+    - from: kubectl-apf
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm
+    uri: https://github.com/marinoborges/kubectl-apf/releases/download/v0.1.0/kubectl-apf_linux_armv6.tar.gz
+    sha256: 7f0b9c716a0487e8104ea6e717a701c34d54d91784464a458a9e8fee1e1ccfee
+    bin: kubectl-apf
+    files:
+    - from: kubectl-apf
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/marinoborges/kubectl-apf/releases/download/v0.1.0/kubectl-apf_darwin_amd64.tar.gz
+    sha256: bf28feaa1166edf496a1f91f90706c47dcc38cf83ef6d61aaba6e825ff3a4b7a
+    bin: kubectl-apf
+    files:
+    - from: kubectl-apf
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/marinoborges/kubectl-apf/releases/download/v0.1.0/kubectl-apf_darwin_arm64.tar.gz
+    sha256: 8fdb2b9ab765a5ab37381da37225665ee2724273f036d4be3a31ef010c93ab2f
+    bin: kubectl-apf
+    files:
+    - from: kubectl-apf
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/marinoborges/kubectl-apf/releases/download/v0.1.0/kubectl-apf_windows_amd64.zip
+    sha256: f2185d201fc512fa4a76be66b3df638f7e1e7c0cb39b4351071835749951b1f2
+    bin: kubectl-apf.exe
+    files:
+    - from: kubectl-apf.exe
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/marinoborges/kubectl-apf/releases/download/v0.1.0/kubectl-apf_windows_arm64.zip
+    sha256: 6ebe9539a5d968c6e93f817f3b10ac58b8c7d8a00397a18f284a58e14703bfd0
+    bin: kubectl-apf.exe
+    files:
+    - from: kubectl-apf.exe
+      to: .
+    - from: LICENSE
+      to: .

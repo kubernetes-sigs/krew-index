@@ -1,0 +1,56 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: survive-zone
+spec:
+  version: v0.4.0
+  platforms:
+    - bin: kubectl-survive_zone.exe
+      uri: https://github.com/SaiPisey2/kubectl-survive/releases/download/v0.4.0/kubectl-survive_0.4.0_windows_arm64.zip
+      sha256: af1359e41d5ecbaea8e4dcb4aaf33ae29ba1ba7c29d35fb3f85477bd22b8d73c
+      selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+    - bin: kubectl-survive_zone.exe
+      uri: https://github.com/SaiPisey2/kubectl-survive/releases/download/v0.4.0/kubectl-survive_0.4.0_windows_amd64.zip
+      sha256: cde6aa31fbb0894c4eb7c78fc9c96b869fe84fb93866295d7fed2c05b4b422db
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+    - bin: kubectl-survive_zone
+      uri: https://github.com/SaiPisey2/kubectl-survive/releases/download/v0.4.0/kubectl-survive_0.4.0_linux_arm64.tar.gz
+      sha256: 9eb0cbd3763f1379333a3c32568516296301d25e514b015edbe680c2b100032f
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+    - bin: kubectl-survive_zone
+      uri: https://github.com/SaiPisey2/kubectl-survive/releases/download/v0.4.0/kubectl-survive_0.4.0_linux_amd64.tar.gz
+      sha256: 674de579cd2cef02a9214eaf88464c51df54fe0fcef993180fb906a1387bc8f6
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - bin: kubectl-survive_zone
+      uri: https://github.com/SaiPisey2/kubectl-survive/releases/download/v0.4.0/kubectl-survive_0.4.0_darwin_arm64.tar.gz
+      sha256: d92c1a23fd1a809f76c5f79b4f2d94a8f7d6c9f3506a4e3b34a18401f1d29e9f
+      selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+    - bin: kubectl-survive_zone
+      uri: https://github.com/SaiPisey2/kubectl-survive/releases/download/v0.4.0/kubectl-survive_0.4.0_darwin_amd64.tar.gz
+      sha256: 7697e59c5631b8e635f06cd758de35e3b27e48baf387b060e884a2214bcdd095
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+  shortDescription: Show which workloads die when a zone is lost
+  homepage: https://github.com/SaiPisey2/kubectl-survive
+  description: |
+    Reads real pod placement rather than declared intent, removes a failure
+    domain, and reports which workloads stop serving. Also detects
+    PodDisruptionBudgets that can never be satisfied and so hang node drains.
+    Read-only: it never evicts, cordons or deletes anything.

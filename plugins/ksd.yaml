@@ -1,0 +1,58 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: ksd
+spec:
+  version: v1.0.14
+  platforms:
+    - bin: ksd.exe
+      uri: https://github.com/mfuentesg/ksd/releases/download/v1.0.14/ksd_Windows_x86_64.zip
+      sha256: f3088c27acdc77b772f2fa3d28f355aeb9b0bc1c58bf860cc2585282241baa2d
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+    - bin: ksd.exe
+      uri: https://github.com/mfuentesg/ksd/releases/download/v1.0.14/ksd_Windows_arm64.zip
+      sha256: 4094892f18618e8078eef4572ea2aad86000b91040de20286a759160361ccfec
+      selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+    - bin: ksd
+      uri: https://github.com/mfuentesg/ksd/releases/download/v1.0.14/ksd_Linux_x86_64.tar.gz
+      sha256: d459ccf82aa635f9074033abd61afbc42103cd34e52148bd8675b4a09d709480
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - bin: ksd
+      uri: https://github.com/mfuentesg/ksd/releases/download/v1.0.14/ksd_Linux_arm64.tar.gz
+      sha256: f10f477b9a67b18b02c9481fc60e6cac25a8cd4de70b9d3276708f1337fb2eda
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+    - bin: ksd
+      uri: https://github.com/mfuentesg/ksd/releases/download/v1.0.14/ksd_Darwin_x86_64.tar.gz
+      sha256: 022faeb68afa19a41c0c102cccddf336a183c53f27a770f692c99ac26e62abbd
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+    - bin: ksd
+      uri: https://github.com/mfuentesg/ksd/releases/download/v1.0.14/ksd_Darwin_arm64.tar.gz
+      sha256: c5b67aa12d662fc376b317d019be63a3626336c364d3a029cf2ff09046482674
+      selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+  shortDescription: Decode base64-encoded secrets
+  homepage: https://github.com/mfuentesg/ksd
+  caveats: |
+    Decoded secret values are printed to your terminal in plaintext.
+    Be mindful when running this in shared sessions or logged environments.
+  description: |
+    ksd (Kubernetes Secret Decoder) decodes the base64-encoded `data`
+    field of a Kubernetes Secret manifest into a human-readable
+    `stringData` field. Accepts YAML or JSON on stdin, auto-detected.

@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: idx
 spec:
-  version: v0.6.0
+  version: v0.7.0
   homepage: https://github.com/jzills/kx
   shortDescription: Select resources by index instead of typing names
   description: |
@@ -18,28 +18,28 @@ spec:
     Index history is stored in ~/.kx/ (%USERPROFILE%\.kx on Windows).
   platforms:
   - selector: {matchLabels: {os: linux, arch: amd64}}
-    uri: https://github.com/jzills/kx/releases/download/v0.6.0/kx_v0.6.0_linux_amd64.tar.gz
-    sha256: 4c3d36b8dd5d82c9fc839d632310a6087932105e8a211bfe411e84d395a4791c
+    uri: https://github.com/jzills/kx/releases/download/v0.7.0/kx_v0.7.0_linux_amd64.tar.gz
+    sha256: e4e9f59e783930a09c3e5b6a41436223f68c5a11bf2f31b14e055024e0b9be4b
     bin: kx/kx
   - selector: {matchLabels: {os: linux, arch: arm64}}
-    uri: https://github.com/jzills/kx/releases/download/v0.6.0/kx_v0.6.0_linux_arm64.tar.gz
-    sha256: 8a95b7f34ebb4c4c561f0fd439c8f59c6fb0d8a7c34e7512656301ba5a39fce5
+    uri: https://github.com/jzills/kx/releases/download/v0.7.0/kx_v0.7.0_linux_arm64.tar.gz
+    sha256: 37d63a79a517485a3bda3d9abf2ed70499ac20a10a4177df9f8ece52d20218c5
     bin: kx/kx
   - selector: {matchLabels: {os: darwin, arch: amd64}}
-    uri: https://github.com/jzills/kx/releases/download/v0.6.0/kx_v0.6.0_darwin_amd64.tar.gz
-    sha256: b7700f212a2b06178b4eecc30033d4950f804f5b251a299afed0be8f4414bcfa
+    uri: https://github.com/jzills/kx/releases/download/v0.7.0/kx_v0.7.0_darwin_amd64.tar.gz
+    sha256: 7762c9a7fbb50203fc8e2baa5af827b49ad451324d71ce88db657d8ee30fb441
     bin: kx/kx
   - selector: {matchLabels: {os: darwin, arch: arm64}}
-    uri: https://github.com/jzills/kx/releases/download/v0.6.0/kx_v0.6.0_darwin_arm64.tar.gz
-    sha256: dbcf853566a1ac85987ca140b50fd7b0befb4711c20b7c24285d6c29849c3aa5
+    uri: https://github.com/jzills/kx/releases/download/v0.7.0/kx_v0.7.0_darwin_arm64.tar.gz
+    sha256: 02bedec0ef44e0c71c6d9afb687300928d513aeea34bea1e0de68644ea9befde
     bin: kx/kx
   # Windows ships as .zip, which krew extracts alongside .tar.gz, and krew
   # only runs .exe entrypoints there — so the archive holds kx/kx.exe.
   - selector: {matchLabels: {os: windows, arch: amd64}}
-    uri: https://github.com/jzills/kx/releases/download/v0.6.0/kx_v0.6.0_windows_amd64.zip
-    sha256: 32a8aaba4eb326952ef72b9083179b5523569549e8cdca5d5f72c15e0b1eaeb4
+    uri: https://github.com/jzills/kx/releases/download/v0.7.0/kx_v0.7.0_windows_amd64.zip
+    sha256: 2f1a4c5f9be4cf9128c861a8e0f13e23bd682c1d3415894c9afd8e49f9c718db
     bin: kx/kx.exe
   - selector: {matchLabels: {os: windows, arch: arm64}}
-    uri: https://github.com/jzills/kx/releases/download/v0.6.0/kx_v0.6.0_windows_arm64.zip
-    sha256: 12e2c9d58b6ab1f8fd734cb2e3243afd010a9d15a6210d953cdc39f8d92cc5c0
+    uri: https://github.com/jzills/kx/releases/download/v0.7.0/kx_v0.7.0_windows_arm64.zip
+    sha256: 7796cf5be2c78fe98d3ecd93c0ccadb0631d96b9fd5535e0dbc76f292453fed3
     bin: kx/kx.exe

@@ -3,19 +3,21 @@ kind: Plugin
 metadata:
   name: kconmon
 spec:
-  version: "v2.4.0"
+  version: "v2.5.0"
   homepage: https://github.com/EsDmitrii/kconmon-ng
   shortDescription: On-demand node-to-node connectivity checks for kconmon-ng
   description: |
     kubectl-kconmon talks to a running kconmon-ng controller's HTTP API through
     a client-go port-forward, so operators can inspect the cluster's node/zone
-    topology and run one-shot connectivity diagnostics (TCP, UDP, ICMP, DNS,
-    HTTP, and MTR per-hop traces) between any two nodes — without opening
-    Grafana. It requires kconmon-ng to be installed in the cluster.
+    topology and run one-shot connectivity diagnostics between any two nodes
+    without opening Grafana: TCP, UDP, ICMP, DNS, HTTP, a path MTU probe
+    (--type pmtu) and MTR per-hop traces. It requires kconmon-ng to be
+    installed in the cluster.
 
     Examples:
       kubectl kconmon topology
       kubectl kconmon check node-1 node-2 --type icmp
+      kubectl kconmon check node-1 node-2 --type pmtu
       kubectl kconmon mtr node-1 node-2
 
     Docs: https://esdmitrii.github.io/kconmon-ng/
@@ -24,8 +26,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/EsDmitrii/kconmon-ng/releases/download/v2.4.0/kconmon_2.4.0_linux_amd64.tar.gz
-      sha256: "e6778dd78b2734affec34499bfc655835ec80634e14f0f268932fe344b86b238"
+      uri: https://github.com/EsDmitrii/kconmon-ng/releases/download/v2.5.0/kconmon_2.5.0_linux_amd64.tar.gz
+      sha256: "67b61aa5339dba3036a66fd3e5eb6c3d5fd1d16bf32aae74b79a212fe876f3e0"
       files:
         - from: kubectl-kconmon
           to: .
@@ -36,8 +38,8 @@ spec:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/EsDmitrii/kconmon-ng/releases/download/v2.4.0/kconmon_2.4.0_linux_arm64.tar.gz
-      sha256: "bbf139c9d44a12bc3b30fdafa73fca2d3333ba294e0c91cf220fc8a914f2dd89"
+      uri: https://github.com/EsDmitrii/kconmon-ng/releases/download/v2.5.0/kconmon_2.5.0_linux_arm64.tar.gz
+      sha256: "e826abcadd8e60bd3b040a64e7fa74348785a9a29ff173d21953243901f3f10f"
       files:
         - from: kubectl-kconmon
           to: .
@@ -49,8 +51,8 @@ spec:
           os: darwin
           arch: amd64
       uri: "https://github.com/EsDmitrii/kconmon-ng/releases/download/\
-        v2.4.0/kconmon_2.4.0_darwin_amd64.tar.gz"
-      sha256: "af4a091fc6be69551da8d1f8c851c136eeb6f201ad731409be2cb6e8707a8baf"
+        v2.5.0/kconmon_2.5.0_darwin_amd64.tar.gz"
+      sha256: "1d1987e3cf4f552216f856996e75e92f16d753a93ccee6a2cca3c87b99ddeae3"
       files:
         - from: kubectl-kconmon
           to: .
@@ -62,8 +64,8 @@ spec:
           os: darwin
           arch: arm64
       uri: "https://github.com/EsDmitrii/kconmon-ng/releases/download/\
-        v2.4.0/kconmon_2.4.0_darwin_arm64.tar.gz"
-      sha256: "a405c430842941c0dec063c7d91f77a5811d1e42995c318a0c629e2da7110a04"
+        v2.5.0/kconmon_2.5.0_darwin_arm64.tar.gz"
+      sha256: "dc5c5ca95cfc7899564c48222221094061d7014f192d549473e3a4a4d21edda0"
       files:
         - from: kubectl-kconmon
           to: .

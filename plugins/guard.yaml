@@ -1,0 +1,71 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: guard
+spec:
+  version: v0.4.0
+  homepage: https://github.com/andronaft/k8s-guardian
+  shortDescription: Validate and auto-fix workloads against security guardrails
+  description: |
+    kubectl guard audits Kubernetes manifests, Helm charts, Kustomize
+    overlays and live cluster resources for missing resource requests and
+    limits, root containers, privilege escalation, missing probes, mutable
+    image tags, host namespaces and more. It fixes most findings
+    automatically while keeping YAML comments, checks whether a manifest
+    fits the target cluster (quotas, node capacity, LimitRanges, missing
+    ConfigMaps/Secrets) and flags breaking changes against what is deployed.
+
+    Examples:
+      kubectl guard deployment/my-app -n prod
+      kubectl guard -f deployment.yaml --fix
+      kubectl guard diff -f deployment.yaml -n prod
+  caveats: |
+    Checking local files works offline. Some features need extra setup:
+      * --live, audit and diff read the cluster of your current kubeconfig
+        (read-only, via kubectl).
+      * --ai and "rule create" call the Anthropic API and need
+        ANTHROPIC_API_KEY. Secrets are never sent.
+      * cost --usage needs metrics-server or Prometheus (--prometheus URL).
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/andronaft/k8s-guardian/releases/download/v0.4.0/kubectl-guard_v0.4.0_linux_amd64.tar.gz
+      sha256: a589ed4858a310e3df7bef4ee9f5b4024563e38765621c918d44a5aff28bf96d
+      bin: kubectl-guard
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/andronaft/k8s-guardian/releases/download/v0.4.0/kubectl-guard_v0.4.0_linux_arm64.tar.gz
+      sha256: 60967a000dee0712884bc7f4250ea3ed48625417f2dc205f440d88d6ae15540c
+      bin: kubectl-guard
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/andronaft/k8s-guardian/releases/download/v0.4.0/kubectl-guard_v0.4.0_darwin_amd64.tar.gz
+      sha256: aeed632b3ca0f58794a0777d1943feb49392b67fc79f0cfad63580c2f425e6b2
+      bin: kubectl-guard
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/andronaft/k8s-guardian/releases/download/v0.4.0/kubectl-guard_v0.4.0_darwin_arm64.tar.gz
+      sha256: 7399fcd5896e22e30cd935800df9e9f80f4bae47db85f62a9720529cb120ef2d
+      bin: kubectl-guard
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/andronaft/k8s-guardian/releases/download/v0.4.0/kubectl-guard_v0.4.0_windows_amd64.zip
+      sha256: ce26228f0fa5a4404bbe4bda6f6338555646f017e9442714fa275deb67503b5f
+      bin: kubectl-guard.exe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/andronaft/k8s-guardian/releases/download/v0.4.0/kubectl-guard_v0.4.0_windows_arm64.zip
+      sha256: 2091a7afff804e67320bbc9b5e705aaee4de75bf8433ddc26f8840f41b2f3c13
+      bin: kubectl-guard.exe

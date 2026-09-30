@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: cnpg-drill
 spec:
-  version: v0.1.0
+  version: v0.1.2
   homepage: https://github.com/danielgaskins/cnpg-drill
   shortDescription: Prove CloudNativePG backup recovery
   description: |
@@ -16,8 +16,8 @@ spec:
   - selector:
       matchExpressions:
       - {key: os, operator: In, values: [darwin, linux]}
-    uri: https://github.com/danielgaskins/cnpg-drill/releases/download/v0.1.0/cnpg-drill_0.1.0_unix.tar.gz
-    sha256: 55cd912b6eeebf6e7fb7d197beb2a38ccbc2851d31211f2ac55ab9bd94e088d2
+    uri: https://github.com/danielgaskins/cnpg-drill/releases/download/v0.1.2/cnpg-drill_0.1.2_unix.tar.gz
+    sha256: 5c3c480e4373438956b9ad95fe860ea3d839c8677704d5d6621db4a3c3efa840
     files:
     - from: kubectl-cnpg_drill
       to: .

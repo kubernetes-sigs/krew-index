@@ -1,0 +1,54 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: unstick
+spec:
+  version: v0.1.0
+  homepage: https://github.com/DanilaZanin/helm-unstick
+  shortDescription: Recover Helm releases stuck in a pending state
+  description: |
+    Finds Helm releases whose latest revision is pending-install, pending-upgrade or
+    pending-rollback, checks whether the operation could still be running, and recovers
+    the ones that are dead: rollback to the last deployed revision, or a choice for an
+    interrupted first install. It leaves anything that might be alive alone.
+  platforms:
+    - selector:
+        matchLabels: {os: darwin, arch: amd64}
+      uri: https://github.com/DanilaZanin/helm-unstick/releases/download/v0.1.0/helm-unstick_v0.1.0_darwin_amd64.tar.gz
+      sha256: 664bc92ea739c6a0a03617db1a0b91ad12d8ce83f44f2677d707a3dbae8f5a97
+      bin: kubectl-unstick
+      files:
+        - from: kubectl-unstick
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels: {os: darwin, arch: arm64}
+      uri: https://github.com/DanilaZanin/helm-unstick/releases/download/v0.1.0/helm-unstick_v0.1.0_darwin_arm64.tar.gz
+      sha256: 0bc0fe4acdec68d519f8fb58a4e1fb73ccdf1e927e8a1a7e7c14af88afe47073
+      bin: kubectl-unstick
+      files:
+        - from: kubectl-unstick
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels: {os: linux, arch: amd64}
+      uri: https://github.com/DanilaZanin/helm-unstick/releases/download/v0.1.0/helm-unstick_v0.1.0_linux_amd64.tar.gz
+      sha256: 25515d909e8afdc20f10f5a6cb45b0ce697a376622445f6451b61f73a0f8c832
+      bin: kubectl-unstick
+      files:
+        - from: kubectl-unstick
+          to: .
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels: {os: linux, arch: arm64}
+      uri: https://github.com/DanilaZanin/helm-unstick/releases/download/v0.1.0/helm-unstick_v0.1.0_linux_arm64.tar.gz
+      sha256: 673dcbc729745fadb9359e41e11f4f4f4675b915142c39bebda4fd9918e3e74f
+      bin: kubectl-unstick
+      files:
+        - from: kubectl-unstick
+          to: .
+        - from: LICENSE
+          to: .

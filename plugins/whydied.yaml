@@ -1,0 +1,50 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: whydied
+spec:
+  version: v0.1.0
+  homepage: https://github.com/DanilaZanin/kubectl-whydied
+  shortDescription: Explain why a container or pod died or restarted
+  description: |
+    Reads pod status, events, the owner chain and node state, and prints why a
+    container or pod died or restarted. Every claim carries its evidence (source
+    object, UID, time) and a confidence label: confirmed, likely or no data.
+    No LLM, no network calls except to the Kubernetes API. Events expire, so
+    the tool can only explain what the API still holds.
+  caveats: |
+    Reads pods, events, nodes and owner objects (ReplicaSets, Deployments, Jobs,
+    StatefulSets, DaemonSets). Missing RBAC permissions are reported as gaps, not
+    guessed around. Node OOM and cloud provider interruptions are not classified
+    in v0.1.
+  platforms:
+    - selector:
+        matchLabels: {os: linux, arch: amd64}
+      uri: https://github.com/DanilaZanin/kubectl-whydied/releases/download/v0.1.0/kubectl-whydied_v0.1.0_linux_amd64.tar.gz
+      sha256: 32672fe2fc8a4315eeda5e6b5975fd4f10be2f18101c8170ca31da423eaec142
+      bin: kubectl-whydied
+    - selector:
+        matchLabels: {os: linux, arch: arm64}
+      uri: https://github.com/DanilaZanin/kubectl-whydied/releases/download/v0.1.0/kubectl-whydied_v0.1.0_linux_arm64.tar.gz
+      sha256: ee403f68f318ea8139a47598efefe55b8ff576d08006548ed724ba644e1db5a9
+      bin: kubectl-whydied
+    - selector:
+        matchLabels: {os: darwin, arch: amd64}
+      uri: https://github.com/DanilaZanin/kubectl-whydied/releases/download/v0.1.0/kubectl-whydied_v0.1.0_darwin_amd64.tar.gz
+      sha256: ab9d8d558f4d1a25963702d355300779b42bef80d2c5b8ce25e4b0c8c384c70f
+      bin: kubectl-whydied
+    - selector:
+        matchLabels: {os: darwin, arch: arm64}
+      uri: https://github.com/DanilaZanin/kubectl-whydied/releases/download/v0.1.0/kubectl-whydied_v0.1.0_darwin_arm64.tar.gz
+      sha256: 9c7a44d6727070d940afe7e6402dd24e8ceef29c6971f14f510f6c97cf2c7d5b
+      bin: kubectl-whydied
+    - selector:
+        matchLabels: {os: windows, arch: amd64}
+      uri: https://github.com/DanilaZanin/kubectl-whydied/releases/download/v0.1.0/kubectl-whydied_v0.1.0_windows_amd64.zip
+      sha256: 3884d12df73df6b6ac003090f6e81c62b12cadd6b43ba238b03d2fe90cbc99b3
+      bin: kubectl-whydied.exe
+    - selector:
+        matchLabels: {os: windows, arch: arm64}
+      uri: https://github.com/DanilaZanin/kubectl-whydied/releases/download/v0.1.0/kubectl-whydied_v0.1.0_windows_arm64.zip
+      sha256: ee0c9a4a05d17f38c36a9b3aa5999e144713b229880adecb0c1d4c39ad345878
+      bin: kubectl-whydied.exe

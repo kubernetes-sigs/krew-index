@@ -1,0 +1,98 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: cloudflare-tunnel
+spec:
+  version: v0.2.0
+  homepage: https://github.com/alperen-selcuk/cloudflare-tunnel
+  shortDescription: Expose a Service through an ephemeral Cloudflare Tunnel
+  description: |
+    Opens a short-lived Cloudflare Tunnel to a Kubernetes Service with one
+    command, so private, on-prem or NAT'ed clusters can be reached through a
+    public hostname without opening inbound ports or installing an ingress
+    controller. It creates the tunnel, DNS record and optional Cloudflare
+    Access policy, runs a hardened cloudflared pod for the requested time and
+    removes everything again on Ctrl+C, "down" or when the TTL expires.
+  caveats: |
+    Requires a Cloudflare API token with:
+      Account > Cloudflare Tunnel: Edit
+      Account > Access: Apps and Policies: Edit (only for --access)
+      Zone > Zone: Read, Zone > DNS: Edit
+    It is asked once and stored in the cluster (secret
+    cftunnel-system/cftunnel-credentials); replace it with "kubectl cloudflare-tunnel login".
+    The connector pod only needs outbound access to Cloudflare (443, 7844).
+    Detached tunnels (-d --ttl) are removed at their TTL by a small cleanup Job
+    in cftunnel-system that uses the stored token.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/alperen-selcuk/cloudflare-tunnel/releases/download/v0.2.0/kubectl-cloudflare_tunnel_linux_amd64.tar.gz
+    sha256: 0e2720cc839c3682a4a0dd2dd192a8c7b36c5c0a480b09df5309821a856fb1b7
+    bin: kubectl-cloudflare_tunnel
+    files:
+    - from: kubectl-cloudflare_tunnel
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/alperen-selcuk/cloudflare-tunnel/releases/download/v0.2.0/kubectl-cloudflare_tunnel_linux_arm64.tar.gz
+    sha256: a04f26940ea627b6d58c9fdace6c9402bbd70df9a37150371fbe1ea30f9806eb
+    bin: kubectl-cloudflare_tunnel
+    files:
+    - from: kubectl-cloudflare_tunnel
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/alperen-selcuk/cloudflare-tunnel/releases/download/v0.2.0/kubectl-cloudflare_tunnel_darwin_amd64.tar.gz
+    sha256: 5d8bdf4e2c2ab202137b940ed2ec58462c33f5b93daefa42c5f09594c729cf83
+    bin: kubectl-cloudflare_tunnel
+    files:
+    - from: kubectl-cloudflare_tunnel
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/alperen-selcuk/cloudflare-tunnel/releases/download/v0.2.0/kubectl-cloudflare_tunnel_darwin_arm64.tar.gz
+    sha256: d526bd2cf9e0c6a1ab54725306b3cdc4e233a00d1a58a4059cee4178113f347b
+    bin: kubectl-cloudflare_tunnel
+    files:
+    - from: kubectl-cloudflare_tunnel
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/alperen-selcuk/cloudflare-tunnel/releases/download/v0.2.0/kubectl-cloudflare_tunnel_windows_amd64.zip
+    sha256: b6d356cc23a50c133e2fad6fea788f7c6d1ab9bf54668cefb0b2754c85d6d938
+    bin: kubectl-cloudflare_tunnel.exe
+    files:
+    - from: kubectl-cloudflare_tunnel.exe
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/alperen-selcuk/cloudflare-tunnel/releases/download/v0.2.0/kubectl-cloudflare_tunnel_windows_arm64.zip
+    sha256: 3300c9bee26eac680c11151ed6f9fdcf509834ab640fb151fb5d5dbddc6902a0
+    bin: kubectl-cloudflare_tunnel.exe
+    files:
+    - from: kubectl-cloudflare_tunnel.exe
+      to: .
+    - from: LICENSE
+      to: .

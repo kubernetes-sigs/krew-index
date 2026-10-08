@@ -3,8 +3,35 @@ kind: Plugin
 metadata:
   name: openunison-cli
 spec:
-  version: "v1.0.0"
-  homepage: https://github.com/OpenUnison/openunison-cli
+  version: v1.4.0
+  homepage: https://github.com/openunison/openunison-cli
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://nexus.tremolo.io/repository/openunison-cli/openunison-cli-v1.4.0-macos.zip
+    sha256: d3468ba231b79fbd0fac2e9e06c3854a2e7db1b0c0491155d4a52240411017b8
+    bin: oulogin
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://nexus.tremolo.io/repository/openunison-cli/openunison-cli-v1.4.0-macos-arm64.zip
+    sha256: 7a5368654b9cb63ee61b765a37ec0542dc6eaf779515b140bfd3bb81e33c5a3d
+    bin: oulogin
+  - selector:
+      matchLabels:
+        os: linux
+    uri: https://nexus.tremolo.io/repository/openunison-cli/openunison-cli-v1.4.0-linux.zip
+    sha256: c5a048d9d9be2ff4a7b32d095df83e143544d56fa6521d688a93349a934a9bd0
+    bin: oulogin
+  - selector:
+      matchLabels:
+        os: windows
+    uri: https://nexus.tremolo.io/repository/openunison-cli/openunison-cli-v1.4.0-win.zip
+    sha256: 1f246c3a355704d7cbdfe4e5d5945b7bbd27ffb4a79d815dfcc0f1473b284a5e
+    bin: oulogin.exe
   shortDescription: "Login to a kubernetes cluster via OpenUnison"
   description: |
     kubectl exec plugin that will launch a browser to authenticate you 
@@ -14,46 +41,3 @@ spec:
     you work with kubectl it will keep your short-lived tokens updated and
     if they expire, automatically re-launch a browser window to authenticate
     you.
-  platforms:
-  - selector:
-      matchExpressions:
-      - key: "os"
-        operator: "In"
-        values:
-        - darwin
-    uri: https://nexus.tremolo.io/repository/openunison-cli/openunison-cli-v1.0.0-macos.zip
-    sha256: 17c61e87dc201d4fdfe3d6cb45a5968e067a3519860708d8a6ab57e05c6621f0
-    files:
-    - from: "openunison-cli"
-      to: "openunison-cli"
-    - from: "LICENSE"
-      to: "LICENSE"
-    bin: openunison-cli
-  - selector:
-      matchExpressions:
-      - key: "os"
-        operator: "In"
-        values:
-        - linux
-    uri: https://nexus.tremolo.io/repository/openunison-cli/openunison-cli-v1.0.0-linux.zip
-    sha256: eb0c2c6d1b5ecb9f040469d35b98426cc2d1a45d302a32c9587dc39175702532
-    files:
-    - from: "openunison-cli"
-      to: "openunison-cli"
-    - from: "LICENSE"
-      to: "LICENSE"
-    bin: openunison-cli
-  - selector:
-      matchExpressions:
-      - key: "os"
-        operator: "In"
-        values:
-        - windows
-    uri: https://nexus.tremolo.io/repository/openunison-cli/openunison-cli-v1.0.0-win.zip
-    sha256: 3b03a02c197d5a1b091f482c445f81717fd7dfd99e1f52c1d4016ea9d82997cb
-    files:
-    - from: "openunison-cli.exe"
-      to: "openunison-cli.exe"
-    - from: "LICENSE"
-      to: "LICENSE"
-    bin: openunison-cli.exe

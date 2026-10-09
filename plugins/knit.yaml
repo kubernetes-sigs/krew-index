@@ -1,0 +1,38 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: knit
+spec:
+  version: "v0.1.0"
+  platforms:
+    - uri: https://github.com/KubeHat/kubectl-knit/releases/download/v0.1.0/bundle.tar.gz
+      sha256: 3fe33a11d3e6b502ae98bae4cfdc6ff204f787ad10844376a63536b476ee0c8b
+      bin: kubectl-knit
+      files:
+        - from: ./kubectl-knit
+          to: .
+        - from: LICENSE
+          to: .
+      selector:
+        matchExpressions:
+          - key: os
+            operator: In
+            values: ["darwin", "linux"]
+  shortDescription: Import, delete, merge and export kubeconfig files
+  homepage: https://github.com/KubeHat/kubectl-knit
+  description: |+2
+
+      Import clusters into your kubeconfig, delete contexts together with their
+      unused clusters and users, merge kubeconfig files, or export a minimal
+      kubeconfig for some contexts.
+
+      import and delete only change your kubeconfig with --save, otherwise they
+      show what would change.
+
+      Usage:
+        $ kubectl knit import --save new-cluster.yaml
+        $ kubectl knit delete --save old-context
+        $ kubectl knit merge config1 config2 > merged.yaml
+        $ kubectl knit export dev prod > dev-prod.yaml
+
+      More on https://github.com/KubeHat/kubectl-knit#usage

@@ -1,0 +1,58 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: unitconv
+spec:
+  version: v1.0.0
+  homepage: https://github.com/itzik-elayev/kubectl-unitconv
+  shortDescription: Convert resource quantities between units
+  description: |
+    Converts Kubernetes resource quantities (CPU, memory, storage) between
+    units: binary (Ki/Mi/Gi) and decimal (k/M/G) SI, bytes, cores,
+    millicores and nanocores, using the same exact decimal arithmetic
+    Kubernetes itself uses. Convert a literal value, list it in every
+    sensible unit, or read quantities straight off live pods, workloads,
+    PVCs and nodes, with table, plain or JSON output.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/itzik-elayev/kubectl-unitconv/releases/download/v1.0.0/kubectl-unitconv_v1.0.0_darwin_amd64.tar.gz
+    sha256: "114369fcb8ecb71e2f873bdba44db015c277e60d5b028080ac618d2f944c39f4"
+    bin: kubectl-unitconv
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/itzik-elayev/kubectl-unitconv/releases/download/v1.0.0/kubectl-unitconv_v1.0.0_darwin_arm64.tar.gz
+    sha256: "b25266f8fe6b3a31f3d2e59397dc50eb94423638757ec176a1aa57124ab58c44"
+    bin: kubectl-unitconv
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/itzik-elayev/kubectl-unitconv/releases/download/v1.0.0/kubectl-unitconv_v1.0.0_linux_amd64.tar.gz
+    sha256: "706e72736ef679742292379ae20bc6c38d0fc6986065a22157171cabac6d1a43"
+    bin: kubectl-unitconv
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/itzik-elayev/kubectl-unitconv/releases/download/v1.0.0/kubectl-unitconv_v1.0.0_linux_arm64.tar.gz
+    sha256: "0bdf49c54985beae2c2c6e26140413cc6db10993b061f5145b7942ff47549eeb"
+    bin: kubectl-unitconv
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/itzik-elayev/kubectl-unitconv/releases/download/v1.0.0/kubectl-unitconv_v1.0.0_windows_amd64.zip
+    sha256: "c5825a84c4eddfa4f0874ebc2221f8799a7d982a7789fe6d174306e0b231d804"
+    bin: kubectl-unitconv.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/itzik-elayev/kubectl-unitconv/releases/download/v1.0.0/kubectl-unitconv_v1.0.0_windows_arm64.zip
+    sha256: "55c79f3dba5dcd1541219df4bafe154ad658deed17b7669a9c038c812dff5cc0"
+    bin: kubectl-unitconv.exe

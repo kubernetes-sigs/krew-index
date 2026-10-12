@@ -5,7 +5,7 @@ metadata:
 spec:
   version: v0.2.2
   homepage: https://github.com/abd-ulbasit/upgradescope
-  shortDescription: Find what blocks your next Kubernetes upgrade
+  shortDescription: Find what blocks your next upgrade
   description: |
     upgradescope checks a cluster's readiness for a Kubernetes minor upgrade
     before you start it. It finds stored objects and live callers of
@@ -13,10 +13,6 @@ spec:
     regularly synced registry), version skew between the control plane and
     the nodes, and Helm charts that do not support the target version. It
     rolls them up into a readiness score and a verdict.
-
-      kubectl upgradescope scan --target 1.37
-      kubectl upgradescope scan --target 1.37 --output json
-      kubectl upgradescope scan --files rendered/ --target 1.37 --output sarif
 
     It is read-only: it never changes the cluster. The same binary also runs
     as an in-cluster agent and a fleet server (see the homepage).
@@ -28,6 +24,8 @@ spec:
         it finds live callers of deprecated APIs;
       * get/list on the deprecated API resources it probes, and on
         customresourcedefinitions;
+      * list on persistentvolumes and storageclasses, to find removed
+        in-tree volume plugins;
       * optionally get/list on secrets and configmaps, to read Helm releases.
     A check it cannot run is reported as NOT ASSESSED, never as passing.
     By default the verdict is then unknown and the gate fails (exit 2).

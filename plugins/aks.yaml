@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: aks
 spec:
-  version: v0.3.0
+  version: v0.3.1
   homepage: https://github.com/Azure/kubectl-aks
   shortDescription: Interact with and debug AKS clusters
   description: |
@@ -26,27 +26,34 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.3.0/kubectl-aks-linux-amd64-v0.3.0.tar.gz
-    sha256: a023372e633e6b3a3205db87445679618756db21f56cfb0d31def8e2b5c717ec
+    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.3.1/kubectl-aks-linux-amd64-v0.3.1.tar.gz
+    sha256: a46719429b8767dcd1ac0c4e78c60cb871de1e8e32ad23eae109d03d4a99a698
+    bin: kubectl-aks
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.3.1/kubectl-aks-linux-arm64-v0.3.1.tar.gz
+    sha256: 40e538984884a56ddd0d3f1b3fdb05b8498df78a34388b32f3c564f8eeb4bfec
     bin: kubectl-aks
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.3.0/kubectl-aks-darwin-amd64-v0.3.0.tar.gz
-    sha256: f6c85971bbce70c261a68236b80a598be3daf5cf076d03ab58fccc7dd59ae3bb
+    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.3.1/kubectl-aks-darwin-amd64-v0.3.1.tar.gz
+    sha256: c001594bab763986eb0ef6dc5dc1203289f27f69bbfbfa70c91b757e9c4f4cc8
     bin: kubectl-aks
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.3.0/kubectl-aks-darwin-arm64-v0.3.0.tar.gz
-    sha256: f336a47eae4578e73e9cdbe73b73ecb24d9fea919ed0cd4cdf9f1cab50275c65
+    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.3.1/kubectl-aks-darwin-arm64-v0.3.1.tar.gz
+    sha256: 7b8ddb792a178fec6858cc531aadc42e2abb914a390e1b421b72f719287cc48c
     bin: kubectl-aks
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.3.0/kubectl-aks-windows-amd64-v0.3.0.tar.gz
-    sha256: 2e242ef2390fb46b71c77e0980589a710c47cc6a8174517265dd816d86969b96
+    uri: https://github.com/Azure/kubectl-aks/releases/download/v0.3.1/kubectl-aks-windows-amd64-v0.3.1.tar.gz
+    sha256: df382760afdef60dc7678a9e7cfd38eb0a72d7d0c3f7f3bd0e44145bdd965bff
     bin: kubectl-aks.exe

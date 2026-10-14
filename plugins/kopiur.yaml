@@ -1,0 +1,67 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kopiur
+spec:
+  version: v0.10.12
+  homepage: https://kopiur.home-operations.com/cli/
+  shortDescription: Operate the kopiur backup operator
+  description: |
+    Operates the kopiur Kopia-native Kubernetes backup operator: trigger
+    snapshots and restores, suspend and resume resources, inspect snapshots,
+    run repository maintenance, browse files inside snapshots through a
+    read-only in-cluster session, diagnose installs with `doctor`, and
+    translate VolSync restic configs with `migrate volsync`.
+  caveats: |
+    The plugin tracks the kopiur v1alpha1 CRDs, so keep it on the same
+    release as the operator. Browsing needs the chart's opt-in browse
+    ClusterRole (rbac.browseRole) or equivalent RBAC.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/home-operations/kopiur/releases/download/0.10.12/kubectl-kopiur_0.10.12_linux_amd64.tar.gz
+      sha256: fdebdbf062f15305f0544e6408044202cf69c9fa3c94a1dfc90c917608dd1f53
+      files:
+        - from: kopiur
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kopiur
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/home-operations/kopiur/releases/download/0.10.12/kubectl-kopiur_0.10.12_linux_arm64.tar.gz
+      sha256: e9533e0f687bd6d9625cdf2bf94fbe3c5b24f9c684c26c6f1a060a06443ee1af
+      files:
+        - from: kopiur
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kopiur
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/home-operations/kopiur/releases/download/0.10.12/kubectl-kopiur_0.10.12_darwin_amd64.tar.gz
+      sha256: 85dfb31943f348e5d272be8746f96ded514de30d73a660520dd9133b58df5894
+      files:
+        - from: kopiur
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kopiur
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/home-operations/kopiur/releases/download/0.10.12/kubectl-kopiur_0.10.12_darwin_arm64.tar.gz
+      sha256: c668e0d2ef386da363b576abc435683a284c557bb4e833707c7363351ec73ee2
+      files:
+        - from: kopiur
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kopiur

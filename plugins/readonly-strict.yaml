@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/kubernetes-sigs/krew/master/pkg/index/spec/embedded_plugin_schema.json
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: readonly-strict
+spec:
+  version: v0.7.0
+  homepage: https://github.com/Evaneos/kubectl-readonly
+  shortDescription: Read-only wrapper with a sanitized environment
+  description: |
+    The strict profile of kubectl-readonly: the same read-only policy (writes,
+    exec and secret values blocked), and kubectl runs without
+    KUBECTL_EXTERNAL_DIFF (runs a program on kubectl diff) and with kuberc
+    disabled (KUBERC=off).
+    Other variables pass through, so credential plugins and proxies work.
+
+    Designed to guard against human errors and AI assistants overstepping their
+    instructions. Does NOT protect against deliberate bypass attempts.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.7.0/kubectl-readonly-strict_0.7.0_linux_amd64.tar.gz
+    sha256: "4487db0372c7a76279220b401b6df1b9398e6efb1b328f738bb1f1dbb1312d27"
+    bin: kubectl-readonly-strict
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.7.0/kubectl-readonly-strict_0.7.0_linux_arm64.tar.gz
+    sha256: "6d65b33daf87f6127f5cf9b8aefef04d4130c87c030f280143334986eb03e66a"
+    bin: kubectl-readonly-strict
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.7.0/kubectl-readonly-strict_0.7.0_darwin_amd64.tar.gz
+    sha256: "0cba527ab2a7e6990338e5b12c45fcf9885676282658672bb5a733d885ab94b1"
+    bin: kubectl-readonly-strict
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.7.0/kubectl-readonly-strict_0.7.0_darwin_arm64.tar.gz
+    sha256: "144479f7445cbf1a1a5e64455a8f92cd6d49446c7b5f3c035a62b521b85f2cf3"
+    bin: kubectl-readonly-strict
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.7.0/kubectl-readonly-strict_0.7.0_windows_amd64.zip
+    sha256: "7b505cf13ac45c393febc9d954fb020063fd5b1d2233defb4ec377406e1fcff5"
+    bin: kubectl-readonly-strict.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.7.0/kubectl-readonly-strict_0.7.0_windows_arm64.zip
+    sha256: "b6427c67458475068f20c62559806befc814ae8fe9a5bb73ad1efab3c2c1499a"
+    bin: kubectl-readonly-strict.exe

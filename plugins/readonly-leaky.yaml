@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/kubernetes-sigs/krew/master/pkg/index/spec/embedded_plugin_schema.json
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: readonly-leaky
+spec:
+  version: v0.7.0
+  homepage: https://github.com/Evaneos/kubectl-readonly
+  shortDescription: Read-only wrapper that shows secret values
+  description: |
+    The leaky profile of kubectl-readonly: the same guardrail against writes and
+    exec, and secret values are shown. get secret -o yaml, get --raw on secret
+    paths and config view --raw print credentials.
+
+    Use it when you need to read a secret value and still want the write
+    guardrail. Install the readonly plugin to keep secret values hidden.
+    Does NOT protect against deliberate bypass attempts.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.7.0/kubectl-readonly-leaky_0.7.0_linux_amd64.tar.gz
+    sha256: "ccaddfd29f38295cfb2a33cba9769a1a783672ebd623940d0d5f3d639711ae1a"
+    bin: kubectl-readonly-leaky
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.7.0/kubectl-readonly-leaky_0.7.0_linux_arm64.tar.gz
+    sha256: "8706bf1a14a7c7a5e11a819a54562e4f707dbcf00c03fc91421f7c4a4ce32272"
+    bin: kubectl-readonly-leaky
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.7.0/kubectl-readonly-leaky_0.7.0_darwin_amd64.tar.gz
+    sha256: "916f13aa03eb512fb1c4365d93424c7c37dd1c48ad4dfdf26f4eca99b1dbb859"
+    bin: kubectl-readonly-leaky
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.7.0/kubectl-readonly-leaky_0.7.0_darwin_arm64.tar.gz
+    sha256: "2b3e8f2658ea5a10409ca559d1ad232079599325c946edabe0fef384ae99a065"
+    bin: kubectl-readonly-leaky
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.7.0/kubectl-readonly-leaky_0.7.0_windows_amd64.zip
+    sha256: "86bbb355974e34f1c2cc14c931ed597495b9effbe5f606c7c7c54e7f0a8ab387"
+    bin: kubectl-readonly-leaky.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/Evaneos/kubectl-readonly/releases/download/v0.7.0/kubectl-readonly-leaky_0.7.0_windows_arm64.zip
+    sha256: "98a8e1120c72455e563147113032b8b060b1755030ba289942273fc96c1b66d5"
+    bin: kubectl-readonly-leaky.exe

@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: curl
 spec:
-  version: v0.0.1
+  version: v0.0.2
   homepage: https://github.com/crabique/kubectl-curl
   shortDescription: Make curl requests to in-cluster domains and IPs using system curl
   description: |
@@ -19,11 +19,11 @@ spec:
         values:
         - linux
         - darwin
-    uri: https://github.com/crabique/kubectl-curl/archive/refs/tags/v0.0.1.tar.gz
-    sha256: e35a0a41b3838e0a4d35f6f3379101d380477a1e9ecceaee8baebc9da87a6ea9
+    uri: https://github.com/crabique/kubectl-curl/releases/download/v0.0.2/kubectl-curl-v0.0.2.tar.gz
+    sha256: 58ed387eb91930117fe2e500d34f003d1b33f968d043de4ef89f211029372798
     files:
-    - from: kubectl-curl-*/kubectl-curl
+    - from: kubectl-curl
       to: .
-    - from: kubectl-curl-*/LICENSE
+    - from: LICENSE
       to: .
     bin: "./kubectl-curl"

@@ -4,46 +4,53 @@ kind: Plugin
 metadata:
   name: open-svc
 spec:
-  version: v2.6.4
+  version: v2.6.5
   platforms:
     - bin: kubectl-open_svc.exe
-      uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.6.4/kubectl-open_svc-windows-arm64.zip
-      sha256: aae0c639c37cdb5313c109f7d57ebfb0ee1b2baf0498fa4fe3214e5e3296fd18
+      uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.6.5/kubectl-open_svc-windows-arm64.zip
+      sha256: e54240ba63147da009c6928191ce7a55978171ed86bf318391ac015f09f3f71f
       selector:
         matchLabels:
           os: windows
           arch: arm64
     - bin: kubectl-open_svc.exe
-      uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.6.4/kubectl-open_svc-windows-amd64.zip
-      sha256: a9c948d419f10159bb4b5a7a2770a0a4c99f76417e38b7cec7dcfa766c576d2d
+      uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.6.5/kubectl-open_svc-windows-amd64.zip
+      sha256: a37ab8e3b236c3c424c57e1219b1bb5fd5cf3eae04ac50ce457a1ae812bab013
       selector:
         matchLabels:
           os: windows
           arch: amd64
     - bin: kubectl-open_svc
-      uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.6.4/kubectl-open_svc-linux-arm64.zip
-      sha256: 711ebf147b32e2280ba33b0a82c88f3b42736ccb0e9525e25e2db1f561f1335e
+      uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.6.5/kubectl-open_svc-linux-arm64.zip
+      sha256: 7f0d468a164868320dfc3270e1e9ce9264fcf541a780ebce217ad18090049e0c
       selector:
         matchLabels:
           os: linux
           arch: arm64
     - bin: kubectl-open_svc
-      uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.6.4/kubectl-open_svc-linux-amd64.zip
-      sha256: 5d33dc2f5072d8bff15c96d0356b7fb03acb26c17c76563cb51cbde715b30d69
+      uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.6.5/kubectl-open_svc-linux-arm.zip
+      sha256: 1d12b07ce5edc6e7e6f0256f21bf9af9d8bff3215da7cadb4b68cdd1716af3f4
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm
+    - bin: kubectl-open_svc
+      uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.6.5/kubectl-open_svc-linux-amd64.zip
+      sha256: 2965933e1f4a658511ea8c3ae5464015ea053d08a3218a2c7b43e21c1fa53e63
       selector:
         matchLabels:
           os: linux
           arch: amd64
     - bin: kubectl-open_svc
-      uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.6.4/kubectl-open_svc-darwin-arm64.zip
-      sha256: b02b4bcc35bed51c6e044cbdd656649b0292c0fc01b619a936658e91942444c9
+      uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.6.5/kubectl-open_svc-darwin-arm64.zip
+      sha256: 9d3cef2080ffb2a07e4acc8bf59c567fe917b84be0765274b2f0b8e325eb7643
       selector:
         matchLabels:
           os: darwin
           arch: arm64
     - bin: kubectl-open_svc
-      uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.6.4/kubectl-open_svc-darwin-amd64.zip
-      sha256: 3d8b7d40b3d23fefa5ad1015e9830e2fd393c2f4cb2215cbd401bc688b8c0e85
+      uri: https://github.com/superbrothers/kubectl-open-svc-plugin/releases/download/v2.6.5/kubectl-open_svc-darwin-amd64.zip
+      sha256: ac50e74ee3c50fe9c96be5602548013a996cfc3006beb4f083774d87ed322b5f
       selector:
         matchLabels:
           os: darwin

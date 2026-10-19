@@ -4,51 +4,51 @@ kind: Plugin
 metadata:
   name: exporter
 spec:
-  version: v0.10.4
+  version: v0.10.5
   platforms:
     - bin: kubexporter.exe
-      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.4/kubexporter_0.10.4_windows_arm64.zip
-      sha256: d663c502a7985a4873fa9909babf4045f62f0dfe616bce0d017520d2bb005e29
+      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.5/kubexporter_0.10.5_windows_arm64.zip
+      sha256: 4e44294d64200d0842dbbf8a0795694fda7796dadc600fb5061e0f324b64c11e
       selector:
         matchLabels:
           os: windows
           arch: arm64
     - bin: kubexporter.exe
-      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.4/kubexporter_0.10.4_windows_amd64.zip
-      sha256: 930438e2c24fe56fa9979074d82775b8a7f639e1a85517ab1501d66d4a590f53
+      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.5/kubexporter_0.10.5_windows_amd64.zip
+      sha256: d2526624f3e08187980faaec2b8b63fe1c7c14b85cc93cca4452a21717bf2d1b
       selector:
         matchLabels:
           os: windows
           arch: amd64
     - bin: kubexporter
-      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.4/kubexporter_0.10.4_linux_arm64.tar.gz
-      sha256: c9115a9b7daabe5166d3b9736d329627c0e0e7b9236b40c827b5153a29a65611
+      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.5/kubexporter_0.10.5_linux_arm64.tar.gz
+      sha256: 11c0e61a581ffb381d891887cdf06796350a0993e4b1c59e7b189373d48657ca
       selector:
         matchLabels:
           os: linux
           arch: arm64
     - bin: kubexporter
-      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.4/kubexporter_0.10.4_linux_amd64.tar.gz
-      sha256: fab67735907c8624c2e672541c4e24070c8a5f6e12a4822cc04d7c0aebe860a3
+      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.5/kubexporter_0.10.5_linux_amd64.tar.gz
+      sha256: fc997dc4fd88eb2d9c0c90bedff55cf652542ebdb41c70414eb4fea1c8d09414
       selector:
         matchLabels:
           os: linux
           arch: amd64
     - bin: kubexporter
-      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.4/kubexporter_0.10.4_darwin_arm64.tar.gz
-      sha256: b2e88a15b4d06dd2aedc11b83138c68daa5024d9f52adc572b0bc64299149aac
+      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.5/kubexporter_0.10.5_darwin_arm64.tar.gz
+      sha256: 956e55c29f0e22e088ae83219bb6a42b437758981f2924bf57c15b7a2b4200f0
       selector:
         matchLabels:
           os: darwin
           arch: arm64
     - bin: kubexporter
-      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.4/kubexporter_0.10.4_darwin_amd64.tar.gz
-      sha256: 5c4cf51bb01de6cd3c292c2173dccceaf555cbd5facf066239bb879211ca3849
+      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.5/kubexporter_0.10.5_darwin_amd64.tar.gz
+      sha256: 120470065693342b2c9a6b9584f555ac48f0bce2d60d83dbd7ecc7dd19c2afdf
       selector:
         matchLabels:
           os: darwin
           arch: amd64
-  shortDescription: Export cluster resources as YAML or JSON
+  shortDescription: Export k8s cluster resources as YAML or JSON
   homepage: https://github.com/bakito/kubexporter
   description: |
     KubExporter allows you to export resources from Kubernetes as YAML or JSON files.

@@ -13,11 +13,8 @@ spec:
     --key name list items such as containers and env vars are matched by
     name, so reordering them is not a change.
 
-    datadiff options (--key, --ignore, --fail-on and the rest) go to
-    datadiff, every other argument goes to kubectl diff unchanged:
-
-      kubectl datadiff -f k8s/ --key name
-      kubectl datadiff -k overlays/prod --key name --ignore metadata.generation
+    datadiff options such as --key, --ignore and --fail-on go to datadiff,
+    and every other argument goes to kubectl diff unchanged.
   platforms:
   - selector:
       matchLabels:

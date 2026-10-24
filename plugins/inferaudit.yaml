@@ -1,0 +1,61 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: inferaudit
+spec:
+  version: v0.1.0
+  homepage: https://github.com/vjsairam/inferaudit
+  shortDescription: Read-only review of AI model serving
+  description: |
+    inferaudit finds the pods that serve AI models (vLLM, TGI, Triton,
+    SGLang, Ollama, NIM, KServe, and anything that requests nvidia.com/gpu
+    or amd.com/gpu) and writes one HTML report about them. For each pod it
+    shows the image pull time the kubelet reported and the time from
+    container start to Ready. It flags single replicas, missing
+    PodDisruptionBudgets and readiness probes, images without a fixed
+    version, vLLM serving a Hugging Face model with no pinned revision,
+    vLLM with no API key setting, model Services exposed through a
+    LoadBalancer or NodePort, and GPUs requested against GPUs on each node.
+
+    It reads cluster resources and never changes the cluster.
+  caveats: |
+    inferaudit runs the kubectl on your PATH and needs list access to pods,
+    replicasets, deployments, statefulsets, services, poddisruptionbudgets,
+    horizontalpodautoscalers, events and nodes, plus scaledobjects if KEDA
+    is installed.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/vjsairam/inferaudit/releases/download/v0.1.0/inferaudit_v0.1.0_linux_amd64.tar.gz
+    sha256: 746a5bdb35d0bf1728005a71b20774cb64188f763e1bccfc6d850b30a77327e9
+    bin: inferaudit
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/vjsairam/inferaudit/releases/download/v0.1.0/inferaudit_v0.1.0_linux_arm64.tar.gz
+    sha256: 0922b63eefc4d3ee3b5b3cfc620539e2f519d916801afc2b391d365316b511fa
+    bin: inferaudit
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/vjsairam/inferaudit/releases/download/v0.1.0/inferaudit_v0.1.0_darwin_amd64.tar.gz
+    sha256: ca5260bfcecab0c445db5525be5009808c5eb0593f647c5811047e084a4f5f91
+    bin: inferaudit
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/vjsairam/inferaudit/releases/download/v0.1.0/inferaudit_v0.1.0_darwin_arm64.tar.gz
+    sha256: f34e4743cf06121e05f71f4d478856daf239f8cce4a40edb2dea0983f6f87768
+    bin: inferaudit
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/vjsairam/inferaudit/releases/download/v0.1.0/inferaudit_v0.1.0_windows_amd64.zip
+    sha256: 52499d9b37b704d5a99ce7b9dc8b20be287de3d82c70a765b3e38cbe17b1f361
+    bin: inferaudit.exe

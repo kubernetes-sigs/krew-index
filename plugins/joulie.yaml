@@ -1,0 +1,60 @@
+# The Krew manifest of the plugin, as the template krew-release-bot renders:
+# on every stable release the release workflow's krew-index job fills in the
+# tag and each archive's sha256 and opens the version bump in
+# kubernetes-sigs/krew-index, which merges a bump of version, uri and sha256
+# alone without review. The archives are those scripts/kubectl-plugin-archive.sh
+# packs for the release workflow's publish-kubectl-plugin matrix;
+# tests/contracts/krew_test.go keeps the three in step.
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: joulie
+spec:
+  version: v0.2.4
+  homepage: https://joulie-k8s.github.io/Joulie/
+  shortDescription: Energy dashboard of a Joulie-managed cluster
+  description: |
+    Shows the energy state of a cluster that Joulie manages: the measured and
+    capped power of each node, its power profile (performance or eco), the
+    CPU and GPU caps its agent applied, the digital twin's power headroom and
+    cooling stress, and which nodes run performance and standard pods. As
+    tables, as JSON, or as a live terminal dashboard.
+  caveats: |
+    Needs Joulie installed in the cluster: https://joulie-k8s.github.io/Joulie/
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/joulie-k8s/Joulie/releases/download/v0.2.4/kubectl-joulie_v0.2.4_linux_amd64.tar.gz
+    sha256: 37ba12bbed92bd0172492480a8b5232b824eec52051dbfa03d5dff46ab4919e7
+    bin: kubectl-joulie
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/joulie-k8s/Joulie/releases/download/v0.2.4/kubectl-joulie_v0.2.4_linux_arm64.tar.gz
+    sha256: 789ec39e2a69ef5a1c113715dc69564c91a94723c49f1c8a163639b21fb6bdc6
+    bin: kubectl-joulie
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/joulie-k8s/Joulie/releases/download/v0.2.4/kubectl-joulie_v0.2.4_darwin_amd64.tar.gz
+    sha256: 7fe61ba7a0ce24a9b0d8790198e5a1d892482ce2f0a1985a043650c9b776f0f1
+    bin: kubectl-joulie
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/joulie-k8s/Joulie/releases/download/v0.2.4/kubectl-joulie_v0.2.4_darwin_arm64.tar.gz
+    sha256: 606e6788f22a0c9ca39e51f5bbb0b7177bbcc1ef108b6e1196206ce8596ea797
+    bin: kubectl-joulie
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/joulie-k8s/Joulie/releases/download/v0.2.4/kubectl-joulie_v0.2.4_windows_amd64.tar.gz
+    sha256: 1816c8a7e7ae2783eb76a3b2f26177fd24e3a25269af35d80d5326b18686efab
+    bin: kubectl-joulie.exe
+

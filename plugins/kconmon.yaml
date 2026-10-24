@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: kconmon
 spec:
-  version: "v2.5.1"
+  version: "v2.5.2"
   homepage: https://github.com/EsDmitrii/kconmon-ng
   shortDescription: On-demand node-to-node connectivity checks for kconmon-ng
   description: |
@@ -26,8 +26,8 @@ spec:
         matchLabels:
           os: linux
           arch: amd64
-      uri: https://github.com/EsDmitrii/kconmon-ng/releases/download/v2.5.1/kconmon_2.5.1_linux_amd64.tar.gz
-      sha256: "2f4201d4071ef27f6db3533a6ea46b76b20f475bf69f84aef6515f1eabce8011"
+      uri: https://github.com/EsDmitrii/kconmon-ng/releases/download/v2.5.2/kconmon_2.5.2_linux_amd64.tar.gz
+      sha256: "d4b69fde0e0bd0bccdb3de5a6397ba0a0684886a8d6db85b6a2b2e151cc2af9b"
       files:
         - from: kubectl-kconmon
           to: .
@@ -38,8 +38,8 @@ spec:
         matchLabels:
           os: linux
           arch: arm64
-      uri: https://github.com/EsDmitrii/kconmon-ng/releases/download/v2.5.1/kconmon_2.5.1_linux_arm64.tar.gz
-      sha256: "dfc156ade0acc5ab0b5532a101404a25c18f4775e93637bdb1d3898192c32fd4"
+      uri: https://github.com/EsDmitrii/kconmon-ng/releases/download/v2.5.2/kconmon_2.5.2_linux_arm64.tar.gz
+      sha256: "87c0e31d2e73c4a35e592ba1bb4e6b6b4a6b386197e9bd04ec894a4957ea9472"
       files:
         - from: kubectl-kconmon
           to: .
@@ -51,8 +51,8 @@ spec:
           os: darwin
           arch: amd64
       uri: "https://github.com/EsDmitrii/kconmon-ng/releases/download/\
-        v2.5.1/kconmon_2.5.1_darwin_amd64.tar.gz"
-      sha256: "1238f0f8cc07805c7b29c88227d7f30cff29fa7ded7d7392707b634746fb9da9"
+        v2.5.2/kconmon_2.5.2_darwin_amd64.tar.gz"
+      sha256: "2b604d3e2987811b950bf874fdc356cac862b4439ba004c0e75814ab9ebe198a"
       files:
         - from: kubectl-kconmon
           to: .
@@ -64,8 +64,8 @@ spec:
           os: darwin
           arch: arm64
       uri: "https://github.com/EsDmitrii/kconmon-ng/releases/download/\
-        v2.5.1/kconmon_2.5.1_darwin_arm64.tar.gz"
-      sha256: "4525ff0e9e14498fe27758c4d96df855cef041af675a1d9852e9863eff871847"
+        v2.5.2/kconmon_2.5.2_darwin_arm64.tar.gz"
+      sha256: "35d71cac94ba3689b89d38aceec1cdbe4e099e2b0dd22cfc7e26c73aba730ed1"
       files:
         - from: kubectl-kconmon
           to: .

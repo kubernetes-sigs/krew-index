@@ -1,0 +1,105 @@
+# The krew-index manifest, rendered by krew-release-bot for each release (.github/workflows/release.yml) and by
+# hack/krew-manifest.sh for the first, manual submission. One entry per archive goreleaser builds.
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: flink
+spec:
+  version: v0.1.0
+  homepage: https://github.com/patrk/kubectl-flink
+  shortDescription: Health and triage of Flink jobs on Kubernetes
+  description: |
+    For the Apache Flink Kubernetes Operator: one health value for every FlinkDeployment and FlinkSessionJob,
+    across namespaces and clusters, and the cause of a failing job with its evidence from the operator,
+    Kubernetes, the JobManager's logs and its REST API. A live terminal UI, the job graph, exceptions,
+    checkpoints, snapshots and a redacted handover bundle for a ticket. Read-only.
+  caveats: |
+    Try:
+      kubectl flink ls -A --unhealthy
+      kubectl flink why <job>
+      kubectl flink top -A
+
+    Tab completion: krew links only the plugin. Copy kubectl_complete-flink from
+    ~/.krew/store/flink/v0.1.0/ to a directory on your PATH.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/patrk/kubectl-flink/releases/download/v0.1.0/kubectl-flink_v0.1.0_linux_amd64.tar.gz
+    sha256: 8beca01ba730a58ba24ef829c09bec42be2ba7b668d3d243788dcd0bd590bd44
+    bin: kubectl-flink
+    files:
+      - from: kubectl-flink
+        to: .
+      - from: kubectl_complete-flink
+        to: .
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/patrk/kubectl-flink/releases/download/v0.1.0/kubectl-flink_v0.1.0_linux_arm64.tar.gz
+    sha256: f0d4d32662bc74fb3480253b1dfc87848af9fda0c2b5b003b49f781f8f1a307f
+    bin: kubectl-flink
+    files:
+      - from: kubectl-flink
+        to: .
+      - from: kubectl_complete-flink
+        to: .
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/patrk/kubectl-flink/releases/download/v0.1.0/kubectl-flink_v0.1.0_darwin_amd64.tar.gz
+    sha256: 849f4c462f1bbf5091e929a77c3b21ef71afcf80ac255e62e3e9c1ea47840e2f
+    bin: kubectl-flink
+    files:
+      - from: kubectl-flink
+        to: .
+      - from: kubectl_complete-flink
+        to: .
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/patrk/kubectl-flink/releases/download/v0.1.0/kubectl-flink_v0.1.0_darwin_arm64.tar.gz
+    sha256: c52d2bda55a8a5366db45e39e2c9f3351e51b004f28b95553744b7c23d437f63
+    bin: kubectl-flink
+    files:
+      - from: kubectl-flink
+        to: .
+      - from: kubectl_complete-flink
+        to: .
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/patrk/kubectl-flink/releases/download/v0.1.0/kubectl-flink_v0.1.0_windows_amd64.zip
+    sha256: da53dc5a53dacdcd328a362d1191a3391f31af01d1d368b93bb3019f90b7ec59
+    bin: kubectl-flink.exe
+    files:
+      - from: kubectl-flink.exe
+        to: .
+      - from: LICENSE
+        to: .
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/patrk/kubectl-flink/releases/download/v0.1.0/kubectl-flink_v0.1.0_windows_arm64.zip
+    sha256: b752a265ac67ec30ad820d7f3860ffcce7f4e49b82b67b23bd367b278ec27981
+    bin: kubectl-flink.exe
+    files:
+      - from: kubectl-flink.exe
+        to: .
+      - from: LICENSE
+        to: .
+

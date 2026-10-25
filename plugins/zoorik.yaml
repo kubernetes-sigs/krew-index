@@ -1,0 +1,58 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: zoorik
+spec:
+  version: v0.4.6
+  homepage: https://github.com/getzoorik/zoorikctl
+  shortDescription: Connect a cluster to Zoorik Coral
+  description: |
+    Zoorik Coral reduces the cost of AKS and EKS clusters. It sizes pod CPU
+    and memory requests from their real use and rebalances workloads onto
+    fewer, cheaper nodes, autonomously and without downtime. This plugin
+    prepares a cluster for Coral and connects it with a one-time token from
+    the Coral console, so it needs a Zoorik account. Every change is printed
+    before it is made, and disconnect removes what Zoorik added.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/getzoorik/zoorikctl/releases/download/v0.4.6/zoorikctl_v0.4.6_darwin_arm64.tar.gz
+    sha256: c17d9be5a1025a7d8935459e9a17d1f473711a903a214018773986345858cc04
+    bin: zoorikctl
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/getzoorik/zoorikctl/releases/download/v0.4.6/zoorikctl_v0.4.6_darwin_amd64.tar.gz
+    sha256: d57422d1dac0b11b628030d4dde9f9e079d43cb639652b5b74a781f44ae65e15
+    bin: zoorikctl
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/getzoorik/zoorikctl/releases/download/v0.4.6/zoorikctl_v0.4.6_linux_amd64.tar.gz
+    sha256: 3b18954d7fc14b4f0690246fbecb361b85661e1ce7d0b5c5e82749192779e2da
+    bin: zoorikctl
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/getzoorik/zoorikctl/releases/download/v0.4.6/zoorikctl_v0.4.6_linux_arm64.tar.gz
+    sha256: db67eaf5dcae5947fee0aba8071b4fd6135154601677e5c5460573d8a2867a34
+    bin: zoorikctl
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/getzoorik/zoorikctl/releases/download/v0.4.6/zoorikctl_v0.4.6_windows_amd64.zip
+    sha256: 354f19081de042b66817ecdc5fc252791f7eb73fe11833dd1d9b429096760f84
+    bin: zoorikctl.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/getzoorik/zoorikctl/releases/download/v0.4.6/zoorikctl_v0.4.6_windows_arm64.zip
+    sha256: 04b15bb3bd097e9b9aef829631c0d6aaa2930c770cdddf7c799962eb58168959
+    bin: zoorikctl.exe

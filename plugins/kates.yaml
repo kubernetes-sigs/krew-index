@@ -1,0 +1,61 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kates
+spec:
+  version: v1.30.1
+  homepage: https://github.com/bmscomp/kates
+  shortDescription: Benchmark, fault-test, and audit Kafka clusters
+  description: |
+    Kates deploys and tests Apache Kafka clusters on Kubernetes. It runs
+    eight benchmark workload types (LOAD, STRESS, SPIKE, ENDURANCE, VOLUME,
+    CAPACITY, ROUND_TRIP, and INTEGRITY for zero-loss and sequence-gap
+    verification), orchestrates thirteen broker and network fault types
+    through LitmusChaos or the Kubernetes API with blast-radius safety
+    guards, and audits broker security configuration against CIS, SOC 2,
+    and PCI DSS with A-F SLA and security quality gates.
+  caveats: |
+    Signed Helm chart deployments verify signatures with Cosign.
+    Ensure cosign is installed in your PATH to deploy signed charts:
+      brew install cosign
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/bmscomp/kates/releases/download/v1.30.1/kates-darwin-amd64.tar.gz
+      sha256: c1a9627063e2ba6a1846850df336468866ead33ef5395992c088b2690454e610
+      bin: kates
+      files:
+        - from: "*"
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/bmscomp/kates/releases/download/v1.30.1/kates-darwin-arm64.tar.gz
+      sha256: 8deaf8e0303a769238ebbed867235acd62d9c79de0c565b86bb1441357dc5209
+      bin: kates
+      files:
+        - from: "*"
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/bmscomp/kates/releases/download/v1.30.1/kates-linux-amd64.tar.gz
+      sha256: 8bfa79f52091c62269b9896fcb1c9e4ae6767ce81766e2e812e0f7197f09e663
+      bin: kates
+      files:
+        - from: "*"
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/bmscomp/kates/releases/download/v1.30.1/kates-linux-arm64.tar.gz
+      sha256: d470a417ac4e335314d4f62b8ff4132a262e180a8cb4535b4fef67503d1837da
+      bin: kates
+      files:
+        - from: "*"
+          to: .

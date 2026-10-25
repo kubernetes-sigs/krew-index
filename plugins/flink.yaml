@@ -1,5 +1,3 @@
-# The krew-index manifest, rendered by krew-release-bot for each release (.github/workflows/release.yml) and by
-# hack/krew-manifest.sh for the first, manual submission. One entry per archive goreleaser builds.
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
@@ -7,18 +5,13 @@ metadata:
 spec:
   version: v0.1.0
   homepage: https://github.com/patrk/kubectl-flink
-  shortDescription: Health and triage of Flink jobs on Kubernetes
+  shortDescription: Health and triage of Flink jobs
   description: |
     For the Apache Flink Kubernetes Operator: one health value for every FlinkDeployment and FlinkSessionJob,
     across namespaces and clusters, and the cause of a failing job with its evidence from the operator,
     Kubernetes, the JobManager's logs and its REST API. A live terminal UI, the job graph, exceptions,
     checkpoints, snapshots and a redacted handover bundle for a ticket. Read-only.
   caveats: |
-    Try:
-      kubectl flink ls -A --unhealthy
-      kubectl flink why <job>
-      kubectl flink top -A
-
     Tab completion: krew links only the plugin. Copy kubectl_complete-flink from
     ~/.krew/store/flink/v0.1.0/ to a directory on your PATH.
   platforms:

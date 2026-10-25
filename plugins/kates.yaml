@@ -26,9 +26,6 @@ spec:
       uri: https://github.com/bmscomp/kates/releases/download/v1.30.1/kates-darwin-amd64.tar.gz
       sha256: c1a9627063e2ba6a1846850df336468866ead33ef5395992c088b2690454e610
       bin: kates
-      files:
-        - from: "*"
-          to: .
     - selector:
         matchLabels:
           os: darwin
@@ -36,9 +33,6 @@ spec:
       uri: https://github.com/bmscomp/kates/releases/download/v1.30.1/kates-darwin-arm64.tar.gz
       sha256: 8deaf8e0303a769238ebbed867235acd62d9c79de0c565b86bb1441357dc5209
       bin: kates
-      files:
-        - from: "*"
-          to: .
     - selector:
         matchLabels:
           os: linux
@@ -46,9 +40,6 @@ spec:
       uri: https://github.com/bmscomp/kates/releases/download/v1.30.1/kates-linux-amd64.tar.gz
       sha256: 8bfa79f52091c62269b9896fcb1c9e4ae6767ce81766e2e812e0f7197f09e663
       bin: kates
-      files:
-        - from: "*"
-          to: .
     - selector:
         matchLabels:
           os: linux
@@ -56,6 +47,3 @@ spec:
       uri: https://github.com/bmscomp/kates/releases/download/v1.30.1/kates-linux-arm64.tar.gz
       sha256: d470a417ac4e335314d4f62b8ff4132a262e180a8cb4535b4fef67503d1837da
       bin: kates
-      files:
-        - from: "*"
-          to: .

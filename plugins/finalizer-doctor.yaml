@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: finalizer-doctor
 spec:
-  version: "v0.1.6"
+  version: "v0.1.7"
   homepage: https://github.com/alexremn/finalizer-doctor
   shortDescription: Safely diagnose & clear stuck finalizers
   description: |
@@ -18,34 +18,34 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/alexremn/finalizer-doctor/releases/download/v0.1.6/finalizer-doctor_linux_amd64.tar.gz
-    sha256: 7da3ade762b9962412e016cd9d92eb5e9099e8fb4351d60ede88cb91d5870a26
+    uri: https://github.com/alexremn/finalizer-doctor/releases/download/v0.1.7/finalizer-doctor_linux_amd64.tar.gz
+    sha256: 4d8b35031ab35dc23dddd5950a63679b41f5812e120ade3c9ced3e26cdb55842
     bin: kubectl-finalizer_doctor
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/alexremn/finalizer-doctor/releases/download/v0.1.6/finalizer-doctor_linux_arm64.tar.gz
-    sha256: 84206a9b4e97765899db91434297d9aeca6aa639644d045aa1577bb8ecf40995
+    uri: https://github.com/alexremn/finalizer-doctor/releases/download/v0.1.7/finalizer-doctor_linux_arm64.tar.gz
+    sha256: f0afc204fbd6415688fa650dc32c38853a8ebe8aab534b314fe0ad7205164a72
     bin: kubectl-finalizer_doctor
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/alexremn/finalizer-doctor/releases/download/v0.1.6/finalizer-doctor_darwin_amd64.tar.gz
-    sha256: 39e86f77ecf44c644cd8e5f84bd8cb2172db067fc588bfe18499ccf3d9a20b33
+    uri: https://github.com/alexremn/finalizer-doctor/releases/download/v0.1.7/finalizer-doctor_darwin_amd64.tar.gz
+    sha256: 693775a71d99bebcde42c4e0710e4caa03d138b7c4e3e2a25f0fe7ad3ccbf781
     bin: kubectl-finalizer_doctor
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/alexremn/finalizer-doctor/releases/download/v0.1.6/finalizer-doctor_darwin_arm64.tar.gz
-    sha256: a1e1cc6baa608a6401a3738d895cfc035e16572798ad21f1155b7ed0147b45f3
+    uri: https://github.com/alexremn/finalizer-doctor/releases/download/v0.1.7/finalizer-doctor_darwin_arm64.tar.gz
+    sha256: df77c6b90f7c1bea112e2812e4093840d371965f59c4509f54e7a458676aad73
     bin: kubectl-finalizer_doctor
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/alexremn/finalizer-doctor/releases/download/v0.1.6/finalizer-doctor_windows_amd64.tar.gz
-    sha256: 0a05662a97a439c0015c5061b7f688b17edb608d6d93732eb28787ce2945d8de
+    uri: https://github.com/alexremn/finalizer-doctor/releases/download/v0.1.7/finalizer-doctor_windows_amd64.tar.gz
+    sha256: 8e40e1d67aa0147e2e1be6f0d47805865c4054475d8065d04f9b1b140b825d2c
     bin: kubectl-finalizer_doctor.exe

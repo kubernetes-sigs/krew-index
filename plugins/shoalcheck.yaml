@@ -1,0 +1,91 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: shoalcheck
+spec:
+  version: v0.1.0-rc.12
+  homepage: https://shoalcheck.com
+  shortDescription: Read-only preflight and audit of a Kubernetes cluster
+  description: |
+    Shoalcheck reads a cluster and reports what is wrong, what a change would
+    break, and what it costs: audit, upgrade and drain preflight, and a CI gate
+    that fails a pipeline on what changed. Findings carry their evidence and
+    say what could not be read instead of passing it.
+  caveats: |
+    Shoalcheck is read-only: it uses get and list only and never writes to the
+    cluster. Run `kubectl shoalcheck audit --show-permissions` to see the exact
+    RBAC it needs. Some commands (such as gate) need a Team licence key; see
+    https://shoalcheck.com.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/Shoalcheck/shoalcheck/releases/download/v0.1.0-rc.12/kubectl-shoalcheck_0.1.0-rc.12_darwin_amd64.tar.gz
+    sha256: 526295447127f99229fd36ef82d8a907fb205424bb672313b54a228c91cb85f5
+    files:
+    - from: kubectl-shoalcheck
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-shoalcheck
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/Shoalcheck/shoalcheck/releases/download/v0.1.0-rc.12/kubectl-shoalcheck_0.1.0-rc.12_darwin_arm64.tar.gz
+    sha256: c9a9635371005ed17125397e149a1771b34e58df322c2c4e7761433054ddf901
+    files:
+    - from: kubectl-shoalcheck
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-shoalcheck
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/Shoalcheck/shoalcheck/releases/download/v0.1.0-rc.12/kubectl-shoalcheck_0.1.0-rc.12_linux_amd64.tar.gz
+    sha256: 1e365dad315b5428b6d40bd2900ee07be4ad46f578db4cdf8bcde4f5257d7157
+    files:
+    - from: kubectl-shoalcheck
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-shoalcheck
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/Shoalcheck/shoalcheck/releases/download/v0.1.0-rc.12/kubectl-shoalcheck_0.1.0-rc.12_linux_arm64.tar.gz
+    sha256: 90ab6aa7f1118d36336a616faa923a7f872b1fdb35df4fd7b113c7c9a5d6152b
+    files:
+    - from: kubectl-shoalcheck
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-shoalcheck
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/Shoalcheck/shoalcheck/releases/download/v0.1.0-rc.12/kubectl-shoalcheck_0.1.0-rc.12_windows_amd64.zip
+    sha256: 83b165ce0fc014c873c3321184ecf85ab2654738cc46b3ec2bfcba73a4bac5a1
+    files:
+    - from: kubectl-shoalcheck.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-shoalcheck.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/Shoalcheck/shoalcheck/releases/download/v0.1.0-rc.12/kubectl-shoalcheck_0.1.0-rc.12_windows_arm64.zip
+    sha256: 3977665806931d461dab011783a510a7968d418343ec2d6ca452239d1417e78a
+    files:
+    - from: kubectl-shoalcheck.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-shoalcheck.exe

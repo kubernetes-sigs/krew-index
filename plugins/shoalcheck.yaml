@@ -5,16 +5,21 @@ metadata:
 spec:
   version: v0.1.0-rc.12
   homepage: https://shoalcheck.com
-  shortDescription: Read-only preflight and audit of a Kubernetes cluster
+  shortDescription: Read-only preflight and audit for your cluster
   description: |
-    Shoalcheck reads a cluster and reports what is wrong, what a change would
-    break, and what it costs: audit, upgrade and drain preflight, and a CI gate
-    that fails a pipeline on what changed. Findings carry their evidence and
-    say what could not be read instead of passing it.
+    Shoalcheck answers one change before you make it: which node cannot be
+    drained and the object that stops it (a budget at zero, a pod nothing
+    recreates, a volume pinned to the node, work with nowhere to go), what
+    stops the way to a Kubernetes version, and what losing a zone would
+    strand. A full reading lists reliability, security and cost findings,
+    each tied to the object it rests on, and is kept so the next reading of
+    the same cluster says what changed. What it could not read is reported
+    as not read, never as passed.
   caveats: |
     Shoalcheck is read-only: it uses get and list only and never writes to the
-    cluster. Run `kubectl shoalcheck audit --show-permissions` to see the exact
-    RBAC it needs. Some commands (such as gate) need a Team licence key; see
+    cluster. The exact RBAC it needs can be printed with `audit --show-permissions`.
+    A preflight models less than the scheduler: it can say a change will stop,
+    not promise that it will succeed. Some commands need a licence; see
     https://shoalcheck.com.
   platforms:
   - selector:

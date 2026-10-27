@@ -9,11 +9,11 @@ spec:
   description: |
     Paguro moves a running pod to another node with CRIU – its memory, open
     files, emptyDirs and volumes – while its TCP connections and UDP flows
-    continue. This plugin starts and follows migrations and drains:
-
-      kubectl paguro migrate <pod> [--to <node>] [--wait]
-      kubectl paguro drain <node>
-      kubectl paguro list | describe <migration> | nodes | version
+    continue. With this plugin you migrate a pod – to a node you name or
+    one Paguro picks – and follow it until it is done, drain a node by
+    migrating its pods away, list and describe migrations, see which
+    nodes can take part, and show the versions of the plugin and of
+    Paguro in the cluster.
   caveats: |
     The plugin needs Paguro installed in the cluster:
 

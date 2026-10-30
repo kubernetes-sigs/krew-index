@@ -5,7 +5,7 @@ metadata:
 spec:
   version: v0.1.1
   homepage: https://github.com/klahio/kubectl-kserve
-  shortDescription: Diagnose, smoke-test and read logs of KServe model services
+  shortDescription: Diagnose, test and read logs of KServe models
   description: |
     A KServe InferenceService or LLMInferenceService fans out into a serving
     runtime, Deployments, pods with a model-download init container, Services,
@@ -30,7 +30,7 @@ spec:
   caveats: |
     This is a community plugin, not part of the KServe project. It supports
     KServe's Standard deployment mode only (not Knative serverless).
-    The plugin only reads cluster objects. `kubectl kserve test` also needs
+    The plugin only reads cluster objects. The test command also needs
     permission to create pods/portforward when it falls back to port-forward.
   platforms:
   - selector:

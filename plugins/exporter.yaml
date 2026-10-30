@@ -4,46 +4,46 @@ kind: Plugin
 metadata:
   name: exporter
 spec:
-  version: v0.10.6
+  version: v0.10.7
   platforms:
     - bin: kubexporter.exe
-      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.6/kubexporter_0.10.6_windows_arm64.zip
-      sha256: 0b9978b121c966328523b95c9922bb46246553fbcd976bb81096199ac3f43815
+      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.7/kubexporter_0.10.7_windows_arm64.zip
+      sha256: 3919cc09d0dfbe8d3e4893a0287d256bff9214c4b4ac1859ac2276fbddd0e814
       selector:
         matchLabels:
           os: windows
           arch: arm64
     - bin: kubexporter.exe
-      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.6/kubexporter_0.10.6_windows_amd64.zip
-      sha256: 4546e81b9ece858b29d51dc28c321b05b8eb60052d56477d4802bebc04548e8f
+      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.7/kubexporter_0.10.7_windows_amd64.zip
+      sha256: 07d7cada6ffa306ecb53b8fb783622d80bc05da3fef334a9fb8f81bff0b48d99
       selector:
         matchLabels:
           os: windows
           arch: amd64
     - bin: kubexporter
-      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.6/kubexporter_0.10.6_linux_arm64.tar.gz
-      sha256: d984451710cb4b0afae6b8363afb23ecc0716b5b10bc5da8f9ba51030b107046
+      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.7/kubexporter_0.10.7_linux_arm64.tar.gz
+      sha256: 447a022b41abd699d0949a2f8f54ae22b827a46ea179e571c1bf26a185c14582
       selector:
         matchLabels:
           os: linux
           arch: arm64
     - bin: kubexporter
-      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.6/kubexporter_0.10.6_linux_amd64.tar.gz
-      sha256: 451b39de418107fd66205bf110bffcb13ae1888b1902b67b55e1aeba6196a935
+      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.7/kubexporter_0.10.7_linux_amd64.tar.gz
+      sha256: 4d6ae0e128991b2903e1872f35c164eae079176969b82f96b1fea25ca385c34c
       selector:
         matchLabels:
           os: linux
           arch: amd64
     - bin: kubexporter
-      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.6/kubexporter_0.10.6_darwin_arm64.tar.gz
-      sha256: 7ab48bc200375e4232929284d6e6b17b8e09146e57b875403ff23b0d7a22937d
+      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.7/kubexporter_0.10.7_darwin_arm64.tar.gz
+      sha256: 611ca5660e6ec99a1265b0a25e1372dc3d73033cd4b9e0707eaf7cf5ead51b41
       selector:
         matchLabels:
           os: darwin
           arch: arm64
     - bin: kubexporter
-      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.6/kubexporter_0.10.6_darwin_amd64.tar.gz
-      sha256: 658a6c2a47cdb5c0431a8363a09aad124631f88e5f3c79a2c76503e62c5a1a68
+      uri: https://github.com/bakito/kubexporter/releases/download/v0.10.7/kubexporter_0.10.7_darwin_amd64.tar.gz
+      sha256: d901886a7fd1a7f3df0aef7987d1a6d42667f680922b87578d703788cffc5c53
       selector:
         matchLabels:
           os: darwin

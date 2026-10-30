@@ -1,0 +1,107 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kserve
+spec:
+  version: v0.1.1
+  homepage: https://github.com/klahio/kubectl-kserve
+  shortDescription: Diagnose, smoke-test and read logs of KServe model services
+  description: |
+    A KServe InferenceService or LLMInferenceService fans out into a serving
+    runtime, Deployments, pods with a model-download init container, Services,
+    an Ingress or Gateway API routes, and an autoscaler. When a model is not serving, the cause is
+    usually several objects away, and KServe's own Ready reason often points
+    somewhere else (for example "Predictor ingress not created" when the pod
+    is out of memory).
+
+    This plugin follows that chain for you and names the common causes:
+    a failed model download, an image that cannot be pulled, a crash or an
+    out-of-memory kill, a pod that cannot be scheduled, a model format without
+    a runtime, or an external address that cannot be reached. For vLLM
+    servers it searches the crash log for the actual cause, because the last
+    line rarely says it. It also sends a smoke-test request (an OpenAI chat
+    prompt for language models) without you knowing the address or the
+    protocol, falling back to port-forward when the model is not exposed. And
+    it shows the right container logs without pod names.
+
+    Supports KServe v0.16 to v0.21: InferenceServices in Standard mode, with
+    Ingress or Gateway API, including canary rollouts, and LLMInferenceServices.
+    Read-only: it never changes the cluster.
+  caveats: |
+    This is a community plugin, not part of the KServe project. It supports
+    KServe's Standard deployment mode only (not Knative serverless).
+    The plugin only reads cluster objects. `kubectl kserve test` also needs
+    permission to create pods/portforward when it falls back to port-forward.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/klahio/kubectl-kserve/releases/download/v0.1.1/kubectl-kserve_v0.1.1_linux_amd64.tar.gz
+    sha256: f8c7bef923c3e76195351b98885aceab8b2e27baa865e6ffebc8cae7f21830cf
+    files:
+    - from: kubectl-kserve
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-kserve
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/klahio/kubectl-kserve/releases/download/v0.1.1/kubectl-kserve_v0.1.1_linux_arm64.tar.gz
+    sha256: 14de37fc6e9921faad91eff123822d7779b0f296698dbc73221a3815995c1b3d
+    files:
+    - from: kubectl-kserve
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-kserve
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/klahio/kubectl-kserve/releases/download/v0.1.1/kubectl-kserve_v0.1.1_darwin_amd64.tar.gz
+    sha256: 4ddff3933c97c4edc3d2617f66e6717c62780bdf35a2b3175879d8008d571f0e
+    files:
+    - from: kubectl-kserve
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-kserve
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/klahio/kubectl-kserve/releases/download/v0.1.1/kubectl-kserve_v0.1.1_darwin_arm64.tar.gz
+    sha256: 34a47ed1dd762684c078a8ad8a651eedb7e2487186000530f366209d0c896676
+    files:
+    - from: kubectl-kserve
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-kserve
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/klahio/kubectl-kserve/releases/download/v0.1.1/kubectl-kserve_v0.1.1_windows_amd64.zip
+    sha256: 85e371432bfffc40d26298c3a1747fea697386d89817dc7bc867ecd42b4b8886
+    files:
+    - from: kubectl-kserve.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-kserve.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/klahio/kubectl-kserve/releases/download/v0.1.1/kubectl-kserve_v0.1.1_windows_arm64.zip
+    sha256: f097c132fe7daa6ba9884bfba94d0160483713a9ab32c1f7c42e50b4346f97ee
+    files:
+    - from: kubectl-kserve.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-kserve.exe

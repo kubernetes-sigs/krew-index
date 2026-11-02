@@ -1,0 +1,110 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: inferon
+spec:
+  version: v0.2.0
+  homepage: https://github.com/klahio/kubectl-inferon
+  shortDescription: Diagnose machine learning inference services
+  description: |
+    Diagnoses InferenceServices and LLMInferenceServices on Kubernetes:
+    the model download, the serving runtime, the model server's crash log,
+    the Ingress or Gateway API route, and one inference request.
+
+    - list shows each service as TYPE/NAME with its readiness and the first
+      problem found in its pods. The other commands take that TYPE/NAME.
+    - status reports a failed model download, a model format that no
+      serving runtime supports, and a server that crashes or runs out of
+      memory. For vLLM it searches the crash log for the cause (driver
+      library not found, GPU or KV cache memory too small, a parallel size
+      larger than the pod's GPUs, a refused Hugging Face download), because
+      the last line is often only "Engine core initialization failed". It
+      shows how long each start phase took, how many GPUs each node has
+      free, and whether the external address reaches the model even when
+      IngressReady is True.
+    - test picks a route that answers (falling back to port-forward) and a
+      protocol (v1, v2 Open Inference Protocol, or OpenAI), and sends one
+      request. With --stream it also reports the time to the first token
+      and the tokens per second.
+    - logs prints the model server, the model download or every component,
+      without pod names.
+
+    Currently supports KServe v0.16 to v0.21: InferenceService in Standard
+    mode and LLMInferenceService. Read-only: it never changes the cluster.
+  caveats: |
+    The plugin only reads cluster objects. The test command also needs get
+    and create permission on pods/portforward when it falls back to
+    port-forward.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/klahio/kubectl-inferon/releases/download/v0.2.0/kubectl-inferon_v0.2.0_linux_amd64.tar.gz
+    sha256: f6bb730744b86ce67a5772193f365380010b36d0838a649aaa021dcc7c195bdf
+    files:
+    - from: kubectl-inferon
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-inferon
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/klahio/kubectl-inferon/releases/download/v0.2.0/kubectl-inferon_v0.2.0_linux_arm64.tar.gz
+    sha256: 99cfddc942221eca5a9895d80ad110d1993ee30bdfcc958174c05f5b0f575194
+    files:
+    - from: kubectl-inferon
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-inferon
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/klahio/kubectl-inferon/releases/download/v0.2.0/kubectl-inferon_v0.2.0_darwin_amd64.tar.gz
+    sha256: 2c44af81b54e605c7e76b89a5b50668a21fed0537f87e7e32337794ec240442f
+    files:
+    - from: kubectl-inferon
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-inferon
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/klahio/kubectl-inferon/releases/download/v0.2.0/kubectl-inferon_v0.2.0_darwin_arm64.tar.gz
+    sha256: e5ac4b741c4f6091e670e0e6404b573b61c8c8b280cc258cad9222df2b2129da
+    files:
+    - from: kubectl-inferon
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-inferon
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/klahio/kubectl-inferon/releases/download/v0.2.0/kubectl-inferon_v0.2.0_windows_amd64.zip
+    sha256: 00203ab224e1ac88267c51d07313c6b6e94f303693dd5f27152c48151f37d9b5
+    files:
+    - from: kubectl-inferon.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-inferon.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/klahio/kubectl-inferon/releases/download/v0.2.0/kubectl-inferon_v0.2.0_windows_arm64.zip
+    sha256: c3b59e3439485e25f5186ce4f56791dc2f571dc5ebb89465e081a96cd2897c0a
+    files:
+    - from: kubectl-inferon.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-inferon.exe

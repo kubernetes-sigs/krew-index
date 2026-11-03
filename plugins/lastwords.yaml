@@ -7,13 +7,16 @@ spec:
   homepage: https://github.com/Arvo-AI/lastwords
   shortDescription: Read heap and crash captures from dead containers
   description: |
-    Reads the captures taken by the lastwords DaemonSet: Java heap histograms and Go
-    heap profiles from before an OOM kill, crash logs and core dumps matched to the pod.
-    Requires the lastwords Helm chart in the cluster.
-
-      kubectl lastwords list -n <namespace>
-      kubectl lastwords show <capture-id>
-      kubectl lastwords top
+    Reads the evidence the lastwords DaemonSet saves when a container dies or
+    runs low on memory: Java class histograms and Go heap profiles taken before
+    an OOM kill, the logs of the container instance that died, pod events, and
+    core dumps matched to their pod. It can list captures, print a capture's
+    summary, download its files, and show the containers closest to their
+    memory limit right now. It talks to the agents through the API server's
+    pod proxy, so it needs no extra ports or credentials beyond kubectl's.
+  caveats: |
+    This plugin needs the lastwords agent running in the cluster (a Helm chart).
+    Installation and docs: https://github.com/Arvo-AI/lastwords
   platforms:
   - selector:
       matchLabels:

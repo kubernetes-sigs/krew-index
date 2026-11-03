@@ -1,0 +1,72 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pvbench
+spec:
+  version: v0.1.2
+  homepage: https://github.com/sdmoradi/pvbench
+  shortDescription: Inspect and benchmark Kubernetes storage
+  description: |
+    Inspect PersistentVolumeClaims and benchmark Kubernetes storage
+    performance using controlled FIO workloads.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/sdmoradi/pvbench/releases/download/v0.1.2/pvbench_v0.1.2_linux_amd64.tar.gz
+      sha256: db36093ae692dd8228818982e6f3e8fab6c6cf27de8a303775a45ccc934a9eb9
+      bin: kubectl-pvbench
+      files:
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/sdmoradi/pvbench/releases/download/v0.1.2/pvbench_v0.1.2_linux_arm64.tar.gz
+      sha256: 495874ca5e2dfd0102bda07f1af9b9a9b85fd10551bdf9ecb2f3f335ef145e91
+      bin: kubectl-pvbench
+      files:
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/sdmoradi/pvbench/releases/download/v0.1.2/pvbench_v0.1.2_darwin_amd64.tar.gz
+      sha256: 314cf2c11e6168c99b0befa09957ab811a7340f5b3b0526e758c39088f2dd957
+      bin: kubectl-pvbench
+      files:
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/sdmoradi/pvbench/releases/download/v0.1.2/pvbench_v0.1.2_darwin_arm64.tar.gz
+      sha256: 27fa79b2abb9e79c6e06cfdddab9974ed1ba3fab8a207d144040e568a3700624
+      bin: kubectl-pvbench
+      files:
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/sdmoradi/pvbench/releases/download/v0.1.2/pvbench_v0.1.2_windows_amd64.zip
+      sha256: dfa47e688ede988d8f04d4f7de3ff1771b2873896e4639fe19efc1907df443e6
+      bin: kubectl-pvbench.exe
+      files:
+        - from: LICENSE
+          to: .
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/sdmoradi/pvbench/releases/download/v0.1.2/pvbench_v0.1.2_windows_arm64.zip
+      sha256: b4da1f54e5977564a9c9aa4a895ae25f27bffd0f902ed756c86fdd067921b85d
+      bin: kubectl-pvbench.exe
+      files:
+        - from: LICENSE
+          to: .

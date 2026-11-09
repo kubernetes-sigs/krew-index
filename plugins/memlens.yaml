@@ -1,0 +1,93 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: memlens
+spec:
+  version: "v1.0.3"
+  homepage: https://github.com/danushkastanley/KubeMemLens
+  shortDescription: Explain why Pod memory is high
+  description: |
+    Breaks Pod and container memory into anonymous memory, file cache,
+    tmpfs/shared memory and other, using cgroup v2 evidence, so you can tell
+    a real leak from reclaimable page cache before an OOMKill. Includes a
+    terminal dashboard, per-Pod explanations and offline incident replay.
+    It never changes workloads.
+  caveats: |
+    Full cgroup detail needs the KubeMemLens Helm chart in the cluster:
+      https://github.com/danushkastanley/KubeMemLens/blob/main/docs/installation.md
+    Without it, the plugin shows Metrics API working set only, which needs
+    metrics-server. Run `kubectl memlens doctor` to check your setup, or try
+    the bundled samples without a cluster: `kubectl memlens sample explain cache-heavy`.
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/danushkastanley/KubeMemLens/releases/download/v1.0.3/kube-memlens_1.0.3_linux_amd64.tar.gz
+      sha256: "75bb9b6d4e52117087c5b4a5a38f3df0cdf9b3b6bd1dd7ca490ff2d0dd261452"
+      files:
+        - from: "kubectl-memlens"
+          to: "."
+        - from: "LICENSE"
+          to: "."
+      bin: kubectl-memlens
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/danushkastanley/KubeMemLens/releases/download/v1.0.3/kube-memlens_1.0.3_linux_arm64.tar.gz
+      sha256: "5a8dfd5d82b0d96b42f9bf4739b9b6517725514005992e2f3c035510c54a9155"
+      files:
+        - from: "kubectl-memlens"
+          to: "."
+        - from: "LICENSE"
+          to: "."
+      bin: kubectl-memlens
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/danushkastanley/KubeMemLens/releases/download/v1.0.3/kube-memlens_1.0.3_darwin_amd64.tar.gz
+      sha256: "4fe1e036d70f933a0f0bdd4ecc9d0208ccfaf9c2229bfcbf4feb10feb13330d2"
+      files:
+        - from: "kubectl-memlens"
+          to: "."
+        - from: "LICENSE"
+          to: "."
+      bin: kubectl-memlens
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/danushkastanley/KubeMemLens/releases/download/v1.0.3/kube-memlens_1.0.3_darwin_arm64.tar.gz
+      sha256: "32f8b9cb79bbc98c9c422dbcabcb7f521c8f1cf90c6221d019b2c0dcfe4378fb"
+      files:
+        - from: "kubectl-memlens"
+          to: "."
+        - from: "LICENSE"
+          to: "."
+      bin: kubectl-memlens
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/danushkastanley/KubeMemLens/releases/download/v1.0.3/kube-memlens_1.0.3_windows_amd64.zip
+      sha256: "d306979f944ee894ce009fe8cdc9ed0f1239d925c4c37c35c884615ce2a44526"
+      files:
+        - from: "kubectl-memlens.exe"
+          to: "."
+        - from: "LICENSE"
+          to: "."
+      bin: kubectl-memlens.exe
+    - selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+      uri: https://github.com/danushkastanley/KubeMemLens/releases/download/v1.0.3/kube-memlens_1.0.3_windows_arm64.zip
+      sha256: "0e3fdfc3950c2c0de9bf1138b85a41c5838a9666330dd4cd995e2d301eeec608"
+      files:
+        - from: "kubectl-memlens.exe"
+          to: "."
+        - from: "LICENSE"
+          to: "."
+      bin: kubectl-memlens.exe

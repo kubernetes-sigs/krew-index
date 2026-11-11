@@ -10,7 +10,7 @@ kind: Plugin
 metadata:
   name: joulie
 spec:
-  version: v0.2.4
+  version: v0.3.0
   homepage: https://joulie-k8s.github.io/Joulie/
   shortDescription: Energy dashboard of a Joulie-managed cluster
   description: |
@@ -26,35 +26,34 @@ spec:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/joulie-k8s/Joulie/releases/download/v0.2.4/kubectl-joulie_v0.2.4_linux_amd64.tar.gz
-    sha256: 37ba12bbed92bd0172492480a8b5232b824eec52051dbfa03d5dff46ab4919e7
+    uri: https://github.com/joulie-k8s/Joulie/releases/download/v0.3.0/kubectl-joulie_v0.3.0_linux_amd64.tar.gz
+    sha256: c732dc03c7c1f5dd0d885ff2314c632de1a0f8f7d7026a6c909a7213b53a17d8
     bin: kubectl-joulie
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/joulie-k8s/Joulie/releases/download/v0.2.4/kubectl-joulie_v0.2.4_linux_arm64.tar.gz
-    sha256: 789ec39e2a69ef5a1c113715dc69564c91a94723c49f1c8a163639b21fb6bdc6
+    uri: https://github.com/joulie-k8s/Joulie/releases/download/v0.3.0/kubectl-joulie_v0.3.0_linux_arm64.tar.gz
+    sha256: 40ae7d5a2577fba3d0a1527edc0c2ffa79ecd11f1e9c7e712dbf69ea55b5bc45
     bin: kubectl-joulie
   - selector:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/joulie-k8s/Joulie/releases/download/v0.2.4/kubectl-joulie_v0.2.4_darwin_amd64.tar.gz
-    sha256: 7fe61ba7a0ce24a9b0d8790198e5a1d892482ce2f0a1985a043650c9b776f0f1
+    uri: https://github.com/joulie-k8s/Joulie/releases/download/v0.3.0/kubectl-joulie_v0.3.0_darwin_amd64.tar.gz
+    sha256: 35786f9f8c0571f8e0cc7e757194b5998d99edf73b6c2db327963978c74de9cb
     bin: kubectl-joulie
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/joulie-k8s/Joulie/releases/download/v0.2.4/kubectl-joulie_v0.2.4_darwin_arm64.tar.gz
-    sha256: 606e6788f22a0c9ca39e51f5bbb0b7177bbcc1ef108b6e1196206ce8596ea797
+    uri: https://github.com/joulie-k8s/Joulie/releases/download/v0.3.0/kubectl-joulie_v0.3.0_darwin_arm64.tar.gz
+    sha256: 458c9aca46e2db0c66f083192f76f07313df8bdbcab9a0f70be0adeda174c469
     bin: kubectl-joulie
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/joulie-k8s/Joulie/releases/download/v0.2.4/kubectl-joulie_v0.2.4_windows_amd64.tar.gz
-    sha256: 1816c8a7e7ae2783eb76a3b2f26177fd24e3a25269af35d80d5326b18686efab
+    uri: https://github.com/joulie-k8s/Joulie/releases/download/v0.3.0/kubectl-joulie_v0.3.0_windows_amd64.tar.gz
+    sha256: c261edd4806881bd6dae33ea79cc03112b338e02111797ba2a2658fcd8ccc72f
     bin: kubectl-joulie.exe
-

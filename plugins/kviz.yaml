@@ -1,0 +1,56 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kviz
+spec:
+  version: v0.1.2
+  homepage: https://github.com/fardenghi/kviz
+  shortDescription: Live cluster topology and traffic path debugging
+  description: |
+    kviz opens a local web view of the cluster in your current kubectl context:
+    nodes, pods, Services and Ingresses, and the path a request takes through them.
+    It reads the cluster and only writes one probe pod in kviz-system, which it
+    deletes on exit.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/fardenghi/kviz/releases/download/v0.1.2/kviz_0.1.2_darwin_amd64.tar.gz
+    sha256: 50e290a8fa6b6ee78fb9548e625034f6c7f0a478e86a51ffc3a25a1e220f37f4
+    bin: kviz
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/fardenghi/kviz/releases/download/v0.1.2/kviz_0.1.2_darwin_arm64.tar.gz
+    sha256: ed271c2a453ba7a82f6cfe609a1cc35b2dd36cb1eedb7bca8a6eea64d2ae43b5
+    bin: kviz
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/fardenghi/kviz/releases/download/v0.1.2/kviz_0.1.2_linux_amd64.tar.gz
+    sha256: 604480850882d90063bfd271cc52009dc077a546b589124040ae248f76f74431
+    bin: kviz
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/fardenghi/kviz/releases/download/v0.1.2/kviz_0.1.2_linux_arm64.tar.gz
+    sha256: 53714ec00ff2209f8d641e46f79caf503eeb0ad28cf880019f23ff6c431c9f00
+    bin: kviz
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/fardenghi/kviz/releases/download/v0.1.2/kviz_0.1.2_windows_amd64.zip
+    sha256: 9767c1242871d77073a13a0f876c8c35d76fa3766eb3af0a95e24aa9c7a4a52b
+    bin: kviz.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/fardenghi/kviz/releases/download/v0.1.2/kviz_0.1.2_windows_arm64.zip
+    sha256: ffe73c3a6cb42044fc42dfc4a18aad44aea6a2525019fa8ac3b9bbbdc82a1351
+    bin: kviz.exe

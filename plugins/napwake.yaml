@@ -7,19 +7,14 @@ spec:
   homepage: https://github.com/napwake/napwake
   shortDescription: Find idle workloads, and pause and wake them
   description: |
-    Napwake pauses idle Kubernetes workloads and wakes them when they're
-    used. This plugin works with it from the command line:
-
-      scan     finds idle Deployments and StatefulSets and what they cost,
-               without Napwake installed
-      status   shows what Napwake is pausing, waking and saving
-      nodes    shows why nodes aren't scaling down, so pausing saves money
-      forecast replays the forecast over Prometheus history, to show when
-               it would wake each workload
-      enable   ends dry-run, so Napwake pauses a workload it's measuring
-      pause    pauses a workload now, to wake on its next request
-      wake     wakes a paused workload and waits until it's ready
-      deps     shows what a workload depends on and what depends on it
+    Napwake pauses idle Kubernetes workloads in staging, preview and dev
+    clusters, and wakes them when they're used. It wakes a workload on a
+    request, and holds the request until the workload is ready. It also
+    wakes on activity, and ahead of the hours its forecast expects to be
+    busy. This plugin is Napwake's command line. With nothing installed,
+    it scans any cluster for idle Deployments and StatefulSets and what
+    they cost. With the operator installed, it also shows and controls
+    what Napwake pauses and wakes.
   caveats: |
     scan, nodes and forecast work on any cluster. status, enable, pause,
     wake and deps need the Napwake operator installed in it:

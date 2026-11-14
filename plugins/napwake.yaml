@@ -1,0 +1,97 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: napwake
+spec:
+  version: v0.2.0
+  homepage: https://github.com/napwake/napwake
+  shortDescription: Find idle workloads, and pause and wake them
+  description: |
+    Napwake pauses idle Kubernetes workloads and wakes them when they're
+    used. This plugin works with it from the command line:
+
+      scan     finds idle Deployments and StatefulSets and what they cost,
+               without Napwake installed
+      status   shows what Napwake is pausing, waking and saving
+      nodes    shows why nodes aren't scaling down, so pausing saves money
+      forecast replays the forecast over Prometheus history, to show when
+               it would wake each workload
+      enable   ends dry-run, so Napwake pauses a workload it's measuring
+      pause    pauses a workload now, to wake on its next request
+      wake     wakes a paused workload and waits until it's ready
+      deps     shows what a workload depends on and what depends on it
+  caveats: |
+    scan, nodes and forecast work on any cluster. status, enable, pause,
+    wake and deps need the Napwake operator installed in it:
+    https://docs.napwake.dev/getting-started/installation/
+  platforms:
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/napwake/napwake/releases/download/v0.2.0/kubectl-napwake-linux-amd64.tar.gz
+      sha256: "bd1ec6f1490435b0465f3be9d5413c64f0496db054bc02d62e8243b97826ab9b"
+      files:
+        - from: kubectl-napwake-linux-amd64
+          to: kubectl-napwake
+        - from: LICENSE
+          to: .
+        - from: NOTICE
+          to: .
+      bin: kubectl-napwake
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/napwake/napwake/releases/download/v0.2.0/kubectl-napwake-linux-arm64.tar.gz
+      sha256: "f7d378276f91d2bc78ec75674c29bed2e8b995454f2ec65d52472ac436e6063e"
+      files:
+        - from: kubectl-napwake-linux-arm64
+          to: kubectl-napwake
+        - from: LICENSE
+          to: .
+        - from: NOTICE
+          to: .
+      bin: kubectl-napwake
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/napwake/napwake/releases/download/v0.2.0/kubectl-napwake-darwin-amd64.tar.gz
+      sha256: "bf708701b3aa82967c5ab9750fb044e6bc715e8452e5dcfa646436e82f54efd2"
+      files:
+        - from: kubectl-napwake-darwin-amd64
+          to: kubectl-napwake
+        - from: LICENSE
+          to: .
+        - from: NOTICE
+          to: .
+      bin: kubectl-napwake
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/napwake/napwake/releases/download/v0.2.0/kubectl-napwake-darwin-arm64.tar.gz
+      sha256: "f9f23d2529f6b41998fe1ea0623f2b06183db269b754f7cfe3bfb668a7d88d84"
+      files:
+        - from: kubectl-napwake-darwin-arm64
+          to: kubectl-napwake
+        - from: LICENSE
+          to: .
+        - from: NOTICE
+          to: .
+      bin: kubectl-napwake
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/napwake/napwake/releases/download/v0.2.0/kubectl-napwake-windows-amd64.tar.gz
+      sha256: "e66cb17f6ce3667615945f33aa5faf0fe6f4c8bf10d0e2ea182bc987d0b8534e"
+      files:
+        - from: kubectl-napwake-windows-amd64.exe
+          to: kubectl-napwake.exe
+        - from: LICENSE
+          to: .
+        - from: NOTICE
+          to: .
+      bin: kubectl-napwake.exe

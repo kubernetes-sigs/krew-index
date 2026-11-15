@@ -7,8 +7,11 @@ metadata:
 spec:
   version: "v0.3.0"
   homepage: https://github.com/dsx-ai-factory/workload-map
-  shortDescription: Inspect Kubernetes workloads
-  description: Inspect workload structure, status, and resource requests.
+  shortDescription: Show workload components and status
+  description: |
+    Use Karta definitions to show a workload's component tree, normalized
+    status, and resource requests by role. For example, see leader and
+    worker roles in a LeaderWorkerSet or preview its manifest offline.
   platforms:
   - selector:
       matchLabels: {os: darwin, arch: amd64}

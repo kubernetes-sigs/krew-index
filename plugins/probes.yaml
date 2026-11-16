@@ -1,0 +1,64 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: probes
+spec:
+  version: v0.1.0
+  homepage: https://github.com/mertdotcc/kubectl-probes
+  shortDescription: Inspect probe config, timing, and failures
+  description: |
+    Shows, per workload and container, which startup, readiness, and liveness
+    probes are configured, what their settings mean in practice, and what
+    evidence of failure the cluster currently reports.
+
+    The default Overview is one row per container, with handler type, headline
+    effective timing per probe, aggregated runtime state, and a finding count.
+    It ends with a Summary: how many containers have each probe, and how long
+    a failing container goes unnoticed across everything in scope. Naming a
+    single workload switches to an Inspection: full probe configuration as a
+    table, effective timing in sentences, drift between a running pod and its
+    pod template, per-pod runtime state, and failure evidence.
+
+    Findings are opinionated observations, reported separately from facts so
+    you can tell one from the other. They tell you where to look; they never
+    propose a fix.
+
+    The plugin is read-only. It reads pods, their owners, and events, and it
+    never exercises a probe.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/mertdotcc/kubectl-probes/releases/download/v0.1.0/kubectl-probes_v0.1.0_darwin_amd64.tar.gz
+    sha256: 3ac97b4fe3fe9392f7b06e3018fd17de8af85de2a7d8358c3085d3a83eafb15f
+    bin: kubectl-probes
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/mertdotcc/kubectl-probes/releases/download/v0.1.0/kubectl-probes_v0.1.0_darwin_arm64.tar.gz
+    sha256: 92280463cb6eecbed144c937093f647ecfbf9481e399b76b53468ad60e20d243
+    bin: kubectl-probes
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/mertdotcc/kubectl-probes/releases/download/v0.1.0/kubectl-probes_v0.1.0_linux_amd64.tar.gz
+    sha256: 76be456e39ddf9388be47108d4c35be3d8e0e13527df861588c2f02fede39c5d
+    bin: kubectl-probes
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/mertdotcc/kubectl-probes/releases/download/v0.1.0/kubectl-probes_v0.1.0_linux_arm64.tar.gz
+    sha256: cf337ed2f2e3abb0b281544e5833fb3dd1bcddb28f5c60e669d6335e8a5f6186
+    bin: kubectl-probes
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/mertdotcc/kubectl-probes/releases/download/v0.1.0/kubectl-probes_v0.1.0_windows_amd64.tar.gz
+    sha256: 9dbd7a24ffe3505e627e7d7f43f40b9cd734b8d83af80ef67893df2159a146b4
+    bin: kubectl-probes.exe
+

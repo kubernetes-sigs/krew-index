@@ -3,14 +3,16 @@ kind: Plugin
 metadata:
   name: behold
 spec:
-  version: "v0.1.0"
+  version: "v0.1.1"
   homepage: https://github.com/INTENTIUS/behold/tree/main/surfaces/kubectl-behold
-  shortDescription: Draw the current context with behold
+  shortDescription: Visualize a cluster's objects and the cloud resources they use
   description: |
-    Reads the current kubectl context with behold's read-only cluster lister
-    and opens the picture in a browser. Give it an object (deploy/web -n app)
-    and the picture is that object with what references it and what it
-    references. Nothing is written to the cluster.
+    Draws the objects in the current kubectl context and the references between
+    them read-only, and opens the picture in a browser. For one object the
+    picture holds that object and its neighbours in both directions. Where an
+    object names something outside the cluster, such as the cloud role a
+    ServiceAccount assumes or the Git repository an Argo CD application deploys
+    from, the picture shows that as well. Nothing is written to the cluster.
   caveats: |
     Needs Node 20 or newer on PATH: the plugin runs a pinned release of
     @intentius/behold through npx, which downloads it on first use.
@@ -26,8 +28,8 @@ spec:
         values:
         - darwin
         - linux
-    uri: https://github.com/INTENTIUS/behold/releases/download/kubectl-behold-v0.1.0/kubectl-behold-v0.1.0.tar.gz
-    sha256: "24166e7f65364f41d15afcf85171f572a32fe4af47f59ca363fc86328a422a05"
+    uri: https://github.com/INTENTIUS/behold/releases/download/kubectl-behold-v0.1.1/kubectl-behold-v0.1.1.tar.gz
+    sha256: "c88a067ac6b73ca27e3b4253a0d2df82437aa2b3256bd160a3658a58761b5fc4"
     files:
     - from: kubectl-behold
       to: .

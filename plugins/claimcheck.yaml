@@ -1,0 +1,78 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: claimcheck
+spec:
+  version: v0.1.0
+  homepage: https://github.com/asaleem9/claimcheck
+  shortDescription: Explain why DRA can't allocate devices to a pod
+  description: |
+    claimcheck replays kube-scheduler's own Dynamic Resource Allocation
+    allocator against your cluster and explains, device by device, why a
+    ResourceClaim can't be allocated: failing CEL selectors with the actual
+    attribute values, devices held by other claims, device taints, constraint
+    and shared-counter conflicts, and requests that compete for the same
+    devices. It can also suggest the single change that would let a pod fit,
+    show pool fragmentation, and run offline from a snapshot file. Read-only.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/asaleem9/claimcheck/releases/download/v0.1.0/kubectl-claimcheck_linux_amd64.tar.gz
+    sha256: 4cfd27eccb547a90bb0d9315bdee2e0140ab133568fe086dcd240e9550e06cda
+    files:
+    - from: kubectl-claimcheck
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-claimcheck
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/asaleem9/claimcheck/releases/download/v0.1.0/kubectl-claimcheck_linux_arm64.tar.gz
+    sha256: 555c26eed480fb45ff0299252f8df06270d0f1f9969f0131daa1dfea613b09ad
+    files:
+    - from: kubectl-claimcheck
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-claimcheck
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/asaleem9/claimcheck/releases/download/v0.1.0/kubectl-claimcheck_darwin_amd64.tar.gz
+    sha256: 41d35f347b65c01260d422ac72299ac4d783be8d7abf40e83096e7bbf0036970
+    files:
+    - from: kubectl-claimcheck
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-claimcheck
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/asaleem9/claimcheck/releases/download/v0.1.0/kubectl-claimcheck_darwin_arm64.tar.gz
+    sha256: 54dd42fdead61a4aab22bfc048c39aeb0c2d286b0399819b4faffcf1b2d27d6a
+    files:
+    - from: kubectl-claimcheck
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-claimcheck
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/asaleem9/claimcheck/releases/download/v0.1.0/kubectl-claimcheck_windows_amd64.zip
+    sha256: 82b01012d39c1df610bf5a931f19318386b190ba8b1b5aa5c185e7bd6e838e4a
+    files:
+    - from: kubectl-claimcheck.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-claimcheck.exe
+

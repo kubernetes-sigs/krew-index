@@ -8,9 +8,10 @@ spec:
   shortDescription: Find and restart pods with outdated Istio sidecars
   description: |
     Finds pods whose Istio sidecar is out of date, for example after a canary
-    revision upgrade or a patch update of the AKS Istio add-on, and restarts
-    their Deployments, StatefulSets and DaemonSets one at a time. Restarts are
-    a dry run unless --apply is given. Only tested on the AKS Istio add-on.
+    revision upgrade or a patch update of Istio, and restarts their
+    Deployments, StatefulSets and DaemonSets one at a time. Restarts are a
+    dry run unless --apply is given. Use --provider azure (default) for the
+    AKS Istio add-on or --provider generic for upstream Istio.
   platforms:
   - selector:
       matchLabels:

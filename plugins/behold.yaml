@@ -1,0 +1,36 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: behold
+spec:
+  version: "v0.1.0"
+  homepage: https://github.com/INTENTIUS/behold/tree/main/surfaces/kubectl-behold
+  shortDescription: Draw the current context with behold
+  description: |
+    Reads the current kubectl context with behold's read-only cluster lister
+    and opens the picture in a browser. Give it an object (deploy/web -n app)
+    and the picture is that object with what references it and what it
+    references. Nothing is written to the cluster.
+  caveats: |
+    Needs Node 20 or newer on PATH: the plugin runs a pinned release of
+    @intentius/behold through npx, which downloads it on first use.
+
+    A context whose user authenticates through an exec plugin (the GKE, EKS and
+    AKS tools) is refused unless you pass --allow-exec-plugin, which lets behold
+    run that command once and read with the credential it prints.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/INTENTIUS/behold/releases/download/kubectl-behold-v0.1.0/kubectl-behold-v0.1.0.tar.gz
+    sha256: "24166e7f65364f41d15afcf85171f572a32fe4af47f59ca363fc86328a422a05"
+    files:
+    - from: kubectl-behold
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-behold

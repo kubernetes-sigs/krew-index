@@ -3,7 +3,7 @@ kind: Plugin
 metadata:
   name: istio-sweeper
 spec:
-  version: v0.1.1
+  version: v0.1.2
   homepage: https://github.com/jonas-budde/istio-sidecar-sweeper
   shortDescription: Find and restart pods with outdated Istio sidecars
   description: |
@@ -17,34 +17,34 @@ spec:
       matchLabels:
         os: darwin
         arch: amd64
-    uri: https://github.com/jonas-budde/istio-sidecar-sweeper/releases/download/v0.1.1/kubectl-istio_sweeper_darwin_amd64.tar.gz
-    sha256: 672864564ce050a40dd5ef2ee475f196056ae927786bfc0ed2821e41f9cf9098
+    uri: https://github.com/jonas-budde/istio-sidecar-sweeper/releases/download/v0.1.2/kubectl-istio_sweeper_darwin_amd64.tar.gz
+    sha256: fc12f810a96f769351c1d05773334906506f2b5d7a7608895a4b3dd988663c5a
     bin: kubectl-istio_sweeper
   - selector:
       matchLabels:
         os: darwin
         arch: arm64
-    uri: https://github.com/jonas-budde/istio-sidecar-sweeper/releases/download/v0.1.1/kubectl-istio_sweeper_darwin_arm64.tar.gz
-    sha256: 94c3d3169d4250803ada037e510b41b0f875c5cb2391c5685b9efb1f5586ec49
+    uri: https://github.com/jonas-budde/istio-sidecar-sweeper/releases/download/v0.1.2/kubectl-istio_sweeper_darwin_arm64.tar.gz
+    sha256: 7bcbdb95e4faa56658783d12249ccbb180f9440ea1dcf06dc896518c1ac7c420
     bin: kubectl-istio_sweeper
   - selector:
       matchLabels:
         os: linux
         arch: amd64
-    uri: https://github.com/jonas-budde/istio-sidecar-sweeper/releases/download/v0.1.1/kubectl-istio_sweeper_linux_amd64.tar.gz
-    sha256: 3daf706983d2c89ed0f0be53cc3b3b31f7a8b6b9664d719faec2dc53eeb1f306
+    uri: https://github.com/jonas-budde/istio-sidecar-sweeper/releases/download/v0.1.2/kubectl-istio_sweeper_linux_amd64.tar.gz
+    sha256: 7fc2e76f19e4ceeec8d6ad5266811a425bd1b09f9984e43b2d2ea4cdb2e185f6
     bin: kubectl-istio_sweeper
   - selector:
       matchLabels:
         os: linux
         arch: arm64
-    uri: https://github.com/jonas-budde/istio-sidecar-sweeper/releases/download/v0.1.1/kubectl-istio_sweeper_linux_arm64.tar.gz
-    sha256: 9618075b16dd8e20d39816f64d32b6af3220e1f268cafc8bc60cf76a6519d212
+    uri: https://github.com/jonas-budde/istio-sidecar-sweeper/releases/download/v0.1.2/kubectl-istio_sweeper_linux_arm64.tar.gz
+    sha256: db4374057e9b9fa2ea81a11ccb003ddda245f7755a4af45327b5372636185c1b
     bin: kubectl-istio_sweeper
   - selector:
       matchLabels:
         os: windows
         arch: amd64
-    uri: https://github.com/jonas-budde/istio-sidecar-sweeper/releases/download/v0.1.1/kubectl-istio_sweeper_windows_amd64.tar.gz
-    sha256: 7d6d28c61dcb2a0fba4f5278b58522b6214d5dc9abbf9883d0e4fe3d4e9ae3f7
+    uri: https://github.com/jonas-budde/istio-sidecar-sweeper/releases/download/v0.1.2/kubectl-istio_sweeper_windows_amd64.tar.gz
+    sha256: a256c984b83b592af9d129118bfe36faef9eb70356d8e51a1b748809850fec8d
     bin: kubectl-istio_sweeper.exe

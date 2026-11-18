@@ -1,0 +1,40 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: dra
+spec:
+  version: v0.1.3
+  homepage: https://github.com/johnahull/k8s-dra-inspect
+  shortDescription: Inspect and validate Dynamic Resource Allocation
+  description: |
+    Inspect DRA drivers, devices, classes, claims, and topology; check
+    allocations and capacity; and capture redacted snapshots for offline review.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/johnahull/k8s-dra-inspect/releases/download/v0.1.3/dra-inspect_0.1.3_darwin_amd64.tar.gz
+    sha256: 06526c47e72c171d75a6db007d73cc766c1f0a14be9440227e0a43c07fa45e6f
+    bin: dra-inspect
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/johnahull/k8s-dra-inspect/releases/download/v0.1.3/dra-inspect_0.1.3_darwin_arm64.tar.gz
+    sha256: a6828ac6c5bd9dd4c49caea05befc45fe7ed4ac02b806979ef5b8bda64519ce6
+    bin: dra-inspect
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/johnahull/k8s-dra-inspect/releases/download/v0.1.3/dra-inspect_0.1.3_linux_amd64.tar.gz
+    sha256: c810523111de5b2cd3e3e4b78c42e05ce1caf9e15a1c9fdf572ed870420de9f7
+    bin: dra-inspect
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/johnahull/k8s-dra-inspect/releases/download/v0.1.3/dra-inspect_0.1.3_linux_arm64.tar.gz
+    sha256: 5f901be90f8f33000ac41526e4daec437469c17d40634e23bd8c9093da8380ca
+    bin: dra-inspect

@@ -1,0 +1,31 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: incident2chaos
+spec:
+  version: v0.1.2
+  homepage: https://github.com/yogeshramaswamy608/incident2chaos
+  shortDescription: Chaos experiments from real cloud incident reports
+  description: |
+    Turns a post-incident report, coded under a published codebook of 13 trigger
+    codes and 20 fault classes, into Chaos Mesh or LitmusChaos experiments
+    annotated with the report's link, marking each fault class as a direct
+    injection, an approximation or not injectable. It ships with a coded corpus of
+    497 public post-incident reports from AWS, Microsoft Azure, Google Cloud,
+    Cloudflare and GitHub, and measures what share of a set of incidents have a
+    primary fault the two tools can inject directly. It only writes files and never
+    contacts the cluster. The experiments it writes are applied with kubectl apply.
+  caveats: |
+    This plugin needs Python 3.9 or later on the PATH as python3.
+    Run chaos experiments only on clusters you own and are allowed to test.
+  platforms:
+  - selector:
+      matchExpressions:
+      - key: os
+        operator: In
+        values:
+        - darwin
+        - linux
+    uri: https://github.com/yogeshramaswamy608/incident2chaos/releases/download/v0.1.2/kubectl-incident2chaos.tar.gz
+    sha256: 89db62e35348281e24ae36f873df802b5c62de0694f71c1f559ad036634551a1
+    bin: kubectl-incident2chaos

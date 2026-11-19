@@ -5,17 +5,19 @@ metadata:
 spec:
   version: v2.2.1
   homepage: https://github.com/OpeyemiAdeniji/KubeSift
-  shortDescription: Explain why workloads fail, with evidence and fixes
+  shortDescription: Link workload failures to the changes behind them
   description: |
     Finds what is broken in a cluster or namespace (crash loops, image pulls, OOM kills, pending pods,
     Services without endpoints, RBAC and policy denials, failing probes, certificates and more), groups the
     symptoms into incidents, links each one to the rollout, config edit or Helm/Argo CD sync that came just
     before it, and prints the evidence, the likely fix and the kubectl commands to run.
-    Read-only; works without an AI key. Optional AI explanations with Ollama, Anthropic or OpenAI-compatible
-    endpoints. Also lints manifests and checks upgrades.
+    Read-only by default; optional guarded fixes run a server-side dry run, ask first, then verify the
+    problem is gone. Works without an AI key. Optional AI explanations with Ollama, Anthropic or
+    OpenAI-compatible endpoints. Also lints manifests and checks upgrades.
   caveats: |
-    Run `kubectl sift diagnose` (or `-n NAMESPACE`). It needs read access (get/list) to the objects it checks.
-    The web dashboard and the MCP server for AI assistants come with `pip install "kubesift[all]"`.
+    Needs read access (get/list) to the objects it checks; a guarded fix also needs write access to the
+    resource it changes. The web dashboard and the MCP server for AI assistants are in the Python package
+    (kubesift[all] on PyPI), not in this plugin.
   platforms:
   - selector:
       matchLabels:

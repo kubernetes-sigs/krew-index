@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2026 NVIDIA Corporation
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kli
+spec:
+  version: "v0.3.0"
+  homepage: https://github.com/dsx-ai-factory/workload-map
+  shortDescription: Show workload components and status
+  description: |
+    Use Karta definitions to show a workload's component tree, normalized
+    status, and resource requests by role. For example, see leader and
+    worker roles in a LeaderWorkerSet or preview its manifest offline.
+  platforms:
+  - selector:
+      matchLabels: {os: darwin, arch: amd64}
+    uri: https://github.com/dsx-ai-factory/workload-map/releases/download/v0.3.0/karta_0.3.0_darwin_amd64.tar.gz
+    sha256: b13597730b1af537f2a1e0ab19297180af38b9c96000e21459a79244a0fc8a77
+    bin: kli
+  - selector:
+      matchLabels: {os: darwin, arch: arm64}
+    uri: https://github.com/dsx-ai-factory/workload-map/releases/download/v0.3.0/karta_0.3.0_darwin_arm64.tar.gz
+    sha256: 74c53d986c0c3986ba22be561bc0e6c231e9fc87a564aefae0ce1c55d05d5779
+    bin: kli
+  - selector:
+      matchLabels: {os: linux, arch: amd64}
+    uri: https://github.com/dsx-ai-factory/workload-map/releases/download/v0.3.0/karta_0.3.0_linux_amd64.tar.gz
+    sha256: 3a420250b9e955b4e4174cf08dee5d9d170060c2f64331688cef51ce32f7cef7
+    bin: kli
+  - selector:
+      matchLabels: {os: linux, arch: arm64}
+    uri: https://github.com/dsx-ai-factory/workload-map/releases/download/v0.3.0/karta_0.3.0_linux_arm64.tar.gz
+    sha256: 6785bf4593b79aaa53d721486240d81896d9f69b8d2557d961980ca6787fea5e
+    bin: kli
+

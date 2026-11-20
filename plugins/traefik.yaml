@@ -1,0 +1,59 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: traefik
+spec:
+  version: v0.1.0
+  platforms:
+    - bin: kubectl-traefik.exe
+      uri: https://github.com/c1sc0/kubectl-traefik/releases/download/v0.1.0/kubectl-traefik_windows_arm64.zip
+      sha256: d02eb51d0ea32af2d669422c8e0befaaaa7415bd1094803d436b4f8abe65919c
+      selector:
+        matchLabels:
+          os: windows
+          arch: arm64
+    - bin: kubectl-traefik.exe
+      uri: https://github.com/c1sc0/kubectl-traefik/releases/download/v0.1.0/kubectl-traefik_windows_amd64.zip
+      sha256: 43dc16a3f806199f0a844a973301eba5329090cf0ab3b8427f6bd95f12e5e431
+      selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+    - bin: kubectl-traefik
+      uri: https://github.com/c1sc0/kubectl-traefik/releases/download/v0.1.0/kubectl-traefik_linux_arm64.tar.gz
+      sha256: bfa4748da7c5f25ac0a70706e72eb32131f3ab1498a20dcc6c68519a4b998f64
+      selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+    - bin: kubectl-traefik
+      uri: https://github.com/c1sc0/kubectl-traefik/releases/download/v0.1.0/kubectl-traefik_linux_amd64.tar.gz
+      sha256: 6f1bd22100457ac80fcf122ce3c65a43f209dc817363c5619eeb4f86ef549e48
+      selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+    - bin: kubectl-traefik
+      uri: https://github.com/c1sc0/kubectl-traefik/releases/download/v0.1.0/kubectl-traefik_darwin_arm64.tar.gz
+      sha256: 3c8065022cdb9729318cb472a91b0fe1fc519943912db7a65f39588472a8da8b
+      selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+    - bin: kubectl-traefik
+      uri: https://github.com/c1sc0/kubectl-traefik/releases/download/v0.1.0/kubectl-traefik_darwin_amd64.tar.gz
+      sha256: 5dba068ee2afe8d60ae06392797ed70b4808eda63d737260cd1b305f0ae360fb
+      selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+  shortDescription: List and debug Traefik routes
+  homepage: https://github.com/c1sc0/kubectl-traefik
+  description: |
+    Reads IngressRoute, Ingress and HTTPRoute objects served by Traefik
+    and shows them as one routing table, with the rule Traefik builds for
+    each route. It also reports broken references, such as missing
+    Services, Middlewares, TLS secrets and TLSOptions, cross-namespace
+    references that Traefik ignores, and HTTPRoutes that Traefik has not
+    accepted. It works from the Kubernetes API only, so no access to the
+    Traefik API or dashboard is needed.

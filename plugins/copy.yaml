@@ -1,0 +1,59 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: copy
+spec:
+  version: v0.1.0
+  homepage: https://github.com/jnummelin/kubectl-copy
+  shortDescription: Copy a resource under a new name
+  description: |
+    Copies any resource, custom resources included, under a new name.
+
+    Reads the resource, strips the state that belongs to the original
+    (status, uid, resourceVersion, ownerReferences, finalizers and kind
+    specific state such as a Service's clusterIP), opens the result in your
+    editor like "kubectl edit" does, and creates it when the editor exits.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/jnummelin/kubectl-copy/releases/download/v0.1.0/kubectl-copy_linux_amd64.tar.gz
+    sha256: 4ff4bd7e5b7b28477a781febee8665f6f631b6b0b4c6a76bab5a1262bfcede77
+    bin: kubectl-copy
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/jnummelin/kubectl-copy/releases/download/v0.1.0/kubectl-copy_linux_arm64.tar.gz
+    sha256: 5f3285c339d4fd86dcfbe9ee8f985b0aa7ada352524821e935fa6188d468bffe
+    bin: kubectl-copy
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/jnummelin/kubectl-copy/releases/download/v0.1.0/kubectl-copy_darwin_amd64.tar.gz
+    sha256: 2c191333dbc6b27ff911c18efb867ea5dcf12ced269f98e683184a85716ef9e9
+    bin: kubectl-copy
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/jnummelin/kubectl-copy/releases/download/v0.1.0/kubectl-copy_darwin_arm64.tar.gz
+    sha256: 97716d2b4dbdc63269fee66891240c625a077454c2682f4442c52985d46c6ee8
+    bin: kubectl-copy
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/jnummelin/kubectl-copy/releases/download/v0.1.0/kubectl-copy_windows_amd64.zip
+    sha256: 5a0644c3e035d226f18c3366dd27b0fd70b5f0cd88a655b506e69bdc9e429e8f
+    bin: kubectl-copy.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/jnummelin/kubectl-copy/releases/download/v0.1.0/kubectl-copy_windows_arm64.zip
+    sha256: 076cb28793e77176e95d511311b69d829e8b966fbd22b45e5b362945ae9ed757
+    bin: kubectl-copy.exe
+

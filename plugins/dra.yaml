@@ -1,0 +1,96 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: dra
+spec:
+  version: v0.1.0
+  homepage: https://github.com/kphatak/kubectl-dra
+  shortDescription: Explain and inspect Dynamic Resource Allocation
+  description: |
+    Read-only inspection and debugging for Kubernetes Dynamic Resource
+    Allocation (DRA, resource.k8s.io/v1).
+
+    - why: explains why a ResourceClaim or pod is not allocated, stage by
+      stage, and confirms the answer with the scheduler's own allocator
+    - map: which pod uses which claim and which device, on which node
+    - devices: every published device and whether it is free, allocated,
+      tainted or unusable
+    - pools: whether each driver's pools are complete enough to use
+    - nodes: DRA devices per node, and nodes whose driver is not publishing
+  caveats: |
+    Needs a cluster that serves resource.k8s.io/v1 (Kubernetes 1.34 or
+    newer). The plugin only reads; the RBAC it needs is in
+    https://github.com/kphatak/kubectl-dra/blob/main/docs/rbac.md
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/kphatak/kubectl-dra/releases/download/v0.1.0/kubectl-dra_v0.1.0_darwin_amd64.tar.gz
+    sha256: 31e91452a039f593b40e4afa6e498b4ffccc293b6c44ab6c0f0b34eb2b74ce78
+    files:
+    - from: kubectl-dra
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-dra
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/kphatak/kubectl-dra/releases/download/v0.1.0/kubectl-dra_v0.1.0_darwin_arm64.tar.gz
+    sha256: f4cf98ff9ca8a1795ea10eb6be7aede192ed06cb4970b1d35d0b4091c19e2851
+    files:
+    - from: kubectl-dra
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-dra
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/kphatak/kubectl-dra/releases/download/v0.1.0/kubectl-dra_v0.1.0_linux_amd64.tar.gz
+    sha256: fc225dda24b082457e407572479159c47e60bd8b0281c204318012e25b02d5c9
+    files:
+    - from: kubectl-dra
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-dra
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/kphatak/kubectl-dra/releases/download/v0.1.0/kubectl-dra_v0.1.0_linux_arm64.tar.gz
+    sha256: c739f6bd92d57868ae6150bbcac2dda352aebd2bfbfbf057e24462ad9092218a
+    files:
+    - from: kubectl-dra
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-dra
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/kphatak/kubectl-dra/releases/download/v0.1.0/kubectl-dra_v0.1.0_windows_amd64.tar.gz
+    sha256: b19b90761ec7cde8ff0504c51cd477204b1590024bef2e410658b9103bcdc4f6
+    files:
+    - from: kubectl-dra.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-dra.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/kphatak/kubectl-dra/releases/download/v0.1.0/kubectl-dra_v0.1.0_windows_arm64.tar.gz
+    sha256: 8f3fbdfd668a29717dd8275ed4507b1eff7ffdb59c501481ee50feb74deddd8f
+    files:
+    - from: kubectl-dra.exe
+      to: .
+    - from: LICENSE
+      to: .
+    bin: kubectl-dra.exe

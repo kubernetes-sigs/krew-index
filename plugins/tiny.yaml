@@ -1,0 +1,67 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: tiny
+spec:
+  version: v0.16.0
+  homepage: https://tinysystems.io
+  shortDescription: Run Claude Code and Codex agents as pods
+  description: |
+    Runs the Claude Code and Codex CLIs as long-lived sessions in your
+    own cluster: one Deployment and a workspace volume per session, a
+    fleet screen to watch them, and tmux attach to step in. Agents hold
+    no git or cloud credentials; work leaves as git bundles that a
+    separate job pushes. Sessions survive pod loss and resume their
+    transcript. `kubectl tiny run` runs one untrusted command in the
+    same confined pod, optionally under gVisor.
+  caveats: |
+    The first command against a cluster installs two CRDs and a
+    ServiceAccount (it asks first; `kubectl tiny init` does it on its
+    own). Sessions need a model credential: `kubectl tiny setup`.
+
+    Hints printed by the tool say `tiny <command>`; as a plugin, run
+    them as `kubectl tiny <command>`. Upgrade with
+    `kubectl krew upgrade tiny`.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/tiny-systems/tiny/releases/download/v0.16.0/tiny_0.16.0_darwin_amd64.tar.gz
+    sha256: "44bd7802c70ae83a195e1d92217cc6c8b215960c783d5d96b1138326cb119033"
+    bin: tiny
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/tiny-systems/tiny/releases/download/v0.16.0/tiny_0.16.0_darwin_arm64.tar.gz
+    sha256: "cc7dd6963e3864778f1ba53bbf73f0edd0932abe0810f0d32aeb89fbf71cb9f1"
+    bin: tiny
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/tiny-systems/tiny/releases/download/v0.16.0/tiny_0.16.0_linux_amd64.tar.gz
+    sha256: "b4b76e24ff93a870171c9723606e1cd1d7aac2d0c19a3ed3f51ba275c5145d85"
+    bin: tiny
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/tiny-systems/tiny/releases/download/v0.16.0/tiny_0.16.0_linux_arm64.tar.gz
+    sha256: "1e2b96507dd8749965fc9358fd34849191628b7fa0f6deddc8368a68a7591825"
+    bin: tiny
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/tiny-systems/tiny/releases/download/v0.16.0/tiny_0.16.0_windows_amd64.zip
+    sha256: "d95b268d67c06c21af2441459ee1b274786fcac3f063cf5de2db07bce6d072fa"
+    bin: tiny.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/tiny-systems/tiny/releases/download/v0.16.0/tiny_0.16.0_windows_arm64.zip
+    sha256: "e9c5a5a15b706c4bdbb0cad5f51bb3b37e2f2e13fe5e33ada97d85390fa3214e"
+    bin: tiny.exe

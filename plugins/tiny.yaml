@@ -12,16 +12,12 @@ spec:
     fleet screen to watch them, and tmux attach to step in. Agents hold
     no git or cloud credentials; work leaves as git bundles that a
     separate job pushes. Sessions survive pod loss and resume their
-    transcript. `kubectl tiny run` runs one untrusted command in the
-    same confined pod, optionally under gVisor.
+    transcript. It can also run one untrusted command in the same
+    confined pod, optionally under gVisor.
   caveats: |
     The first command against a cluster installs two CRDs and a
-    ServiceAccount (it asks first; `kubectl tiny init` does it on its
-    own). Sessions need a model credential: `kubectl tiny setup`.
-
-    Hints printed by the tool say `tiny <command>`; as a plugin, run
-    them as `kubectl tiny <command>`. Upgrade with
-    `kubectl krew upgrade tiny`.
+    ServiceAccount, after asking. Sessions need a Claude or Codex
+    credential stored in the cluster; the setup wizard does that.
   platforms:
   - selector:
       matchLabels:

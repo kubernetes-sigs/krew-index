@@ -1,0 +1,95 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: broadcast
+spec:
+  version: v0.1.1
+  homepage: https://github.com/kumarprabhashanand/pod-broadcast
+  shortDescription: Send an HTTP request to every ready pod
+  description: |
+    Sends one HTTP request to every ready pod of a Service, workload or label
+    selector, and shows each pod's result with an exit code for scripts.
+
+    A request to a Service normally goes to only one pod, which isn't enough
+    when every pod has to get it. The plugin also has built-in shortcuts for
+    common Spring Boot tasks, like clearing caches and changing log levels.
+
+    Requests go through the API server's pod proxy with your own credentials,
+    so nothing has to be installed in the cluster.
+  caveats: |
+    This plugin needs the pods/proxy permission in the target namespace, with
+    the verb that matches each HTTP method. Details:
+    https://github.com/kumarprabhashanand/pod-broadcast/blob/main/docs/rbac.md
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/kumarprabhashanand/pod-broadcast/releases/download/v0.1.1/kubectl-broadcast_v0.1.1_linux_amd64.tar.gz
+    sha256: fd990c0bd7f1afb9b09e508869c96c3b8bbf2caeed85d677e6417f99f878cd01
+    bin: kubectl-broadcast
+    files:
+    - from: kubectl-broadcast
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/kumarprabhashanand/pod-broadcast/releases/download/v0.1.1/kubectl-broadcast_v0.1.1_linux_arm64.tar.gz
+    sha256: cde262840ed6aa943d3a8b9ec1f2cf264c43f6f3e0ba761ea3e12b816e72ff9b
+    bin: kubectl-broadcast
+    files:
+    - from: kubectl-broadcast
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/kumarprabhashanand/pod-broadcast/releases/download/v0.1.1/kubectl-broadcast_v0.1.1_darwin_amd64.tar.gz
+    sha256: 02ebe6484412b4904e7e3ab217ec867836c6af8754333b8fc732202f1c4c0574
+    bin: kubectl-broadcast
+    files:
+    - from: kubectl-broadcast
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/kumarprabhashanand/pod-broadcast/releases/download/v0.1.1/kubectl-broadcast_v0.1.1_darwin_arm64.tar.gz
+    sha256: 1bf20887ad145a11fa4f4d0273aa04f8323c96922785da817c5f6b387f792449
+    bin: kubectl-broadcast
+    files:
+    - from: kubectl-broadcast
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/kumarprabhashanand/pod-broadcast/releases/download/v0.1.1/kubectl-broadcast_v0.1.1_windows_amd64.zip
+    sha256: 53f2ed8898958162d014a57b2a6f47521338919abe05e903d5e2a4077287c323
+    bin: kubectl-broadcast.exe
+    files:
+    - from: kubectl-broadcast.exe
+      to: .
+    - from: LICENSE
+      to: .
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/kumarprabhashanand/pod-broadcast/releases/download/v0.1.1/kubectl-broadcast_v0.1.1_windows_arm64.zip
+    sha256: 7d198c891811a9651cae9cefda9cb56ee88e026254557d2ee3a22519840b2e17
+    bin: kubectl-broadcast.exe
+    files:
+    - from: kubectl-broadcast.exe
+      to: .
+    - from: LICENSE
+      to: .

@@ -1,0 +1,80 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: topo-impact
+spec:
+  version: v0.2.0
+  homepage: https://github.com/spro1/k8s-topology-viewer
+  shortDescription: Show why resources connect and what breaks
+  description: |
+    Builds a relationship graph of a cluster or of manifest files where every
+    edge records the field it came from and whether its target exists.
+
+    - impact: dry-run deleting, changing or losing a resource and list what is
+      affected, with severity, reason and path
+    - check: find broken references (missing ConfigMaps, Secrets, Services,
+      cross-namespace routes without a ReferenceGrant) and exit 1 for CI
+    - serve: local read-only web UI on 127.0.0.1
+
+    Only needs list permission; Secrets are not read.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/spro1/k8s-topology-viewer/releases/download/v0.2.0/kubectl-topo_impact_0.2.0_darwin_amd64.tar.gz
+    sha256: 6ab9df9f3299cc0f923f8e9b2c4ce25d22cb697a1515df491c880ddfe937ea2f
+    files:
+      - from: kubectl-topo_impact_0.2.0_darwin_amd64/kubectl-topo_impact
+        to: .
+      - from: kubectl-topo_impact_0.2.0_darwin_amd64/LICENSE
+        to: .
+    bin: kubectl-topo_impact
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/spro1/k8s-topology-viewer/releases/download/v0.2.0/kubectl-topo_impact_0.2.0_darwin_arm64.tar.gz
+    sha256: eaead4ea6ad0522b506bd7ace2e1cdf197a85e462bfe0188017f1a78c260ae6b
+    files:
+      - from: kubectl-topo_impact_0.2.0_darwin_arm64/kubectl-topo_impact
+        to: .
+      - from: kubectl-topo_impact_0.2.0_darwin_arm64/LICENSE
+        to: .
+    bin: kubectl-topo_impact
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/spro1/k8s-topology-viewer/releases/download/v0.2.0/kubectl-topo_impact_0.2.0_linux_amd64.tar.gz
+    sha256: 641de801fcd391bffcd535a3b387aa0ce02408973d0f69eb9081bf011aef49b6
+    files:
+      - from: kubectl-topo_impact_0.2.0_linux_amd64/kubectl-topo_impact
+        to: .
+      - from: kubectl-topo_impact_0.2.0_linux_amd64/LICENSE
+        to: .
+    bin: kubectl-topo_impact
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/spro1/k8s-topology-viewer/releases/download/v0.2.0/kubectl-topo_impact_0.2.0_linux_arm64.tar.gz
+    sha256: 6bb8d47e8cc1ec520c665eb256b808b8e1b6ac88b124563f7d1fbda49352eb4a
+    files:
+      - from: kubectl-topo_impact_0.2.0_linux_arm64/kubectl-topo_impact
+        to: .
+      - from: kubectl-topo_impact_0.2.0_linux_arm64/LICENSE
+        to: .
+    bin: kubectl-topo_impact
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/spro1/k8s-topology-viewer/releases/download/v0.2.0/kubectl-topo_impact_0.2.0_windows_amd64.zip
+    sha256: cc3aa364d805d4cf89bf959f674635a07a53e3dc9810625e15473e8560b93720
+    files:
+      - from: kubectl-topo_impact_0.2.0_windows_amd64/kubectl-topo_impact.exe
+        to: .
+      - from: kubectl-topo_impact_0.2.0_windows_amd64/LICENSE
+        to: .
+    bin: kubectl-topo_impact.exe

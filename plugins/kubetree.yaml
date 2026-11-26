@@ -1,0 +1,51 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: kubetree
+spec:
+  version: v0.1.4
+  homepage: https://github.com/kubetre/kubetree
+  shortDescription: Visualize Kubernetes resources and dependencies
+  description: |
+    KubeTree is a local-first, read-only Kubernetes
+    visualization and troubleshooting tool.
+
+    Explore resource hierarchies, dependencies, logs,
+    configurations and certificates through a browser-based
+    interface using your existing Kubernetes configuration.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/kubetre/kubetree/releases/download/v0.1.4/kubetree-linux-amd64.tar.gz
+    sha256: 747b781ff099991dd2a6b0b78b736c8ec4279c4f5f928d9189522f907a45b268
+    bin: kubetree-linux-amd64
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/kubetre/kubetree/releases/download/v0.1.4/kubetree-linux-arm64.tar.gz
+    sha256: a252b9f33259de2ad67fe0ce9fed19391fa307be2f98fb4fdf4b497fbb81ab1e
+    bin: kubetree-linux-arm64
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/kubetre/kubetree/releases/download/v0.1.4/kubetree-darwin-amd64.tar.gz
+    sha256: 4a44f22727d440fb751553ab11057bf44201ebbe1b776b830ae0f7e9fe3ddfd4
+    bin: kubetree-darwin-amd64
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/kubetre/kubetree/releases/download/v0.1.4/kubetree-darwin-arm64.tar.gz
+    sha256: 14ccd1121470a594d7c97775dafda0cc11de85ac77e6a6492fe7d051adaa4467
+    bin: kubetree-darwin-arm64
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/kubetre/kubetree/releases/download/v0.1.4/kubetree-windows-amd64.zip
+    sha256: 4b8026b322ff2ea189e2220e270b27680cb9f84776d5329eb4e63373c5acb2f8
+    bin: kubetree-windows-amd64.exe

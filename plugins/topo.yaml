@@ -10,7 +10,7 @@ spec:
     Shows the topology of a cluster and of the applications deployed on it:
     components, images, interactions, roles and the inferred architecture
     pattern, for one app or all of them. Compares two clusters (kube contexts
-    or saved snapshots) and lists every gap; exits 1 when they are not iso.
+    or saved snapshots) and lists every difference; exits 1 when their apps differ.
     Read-only: it only lists resources and never reads Secrets.
   platforms:
   - selector:

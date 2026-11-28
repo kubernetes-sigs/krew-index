@@ -1,0 +1,57 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: topo
+spec:
+  version: v0.3.1
+  homepage: https://github.com/bmscomp/topo
+  shortDescription: Show app topology and compare two clusters
+  description: |
+    Shows the topology of a cluster and of the applications deployed on it:
+    components, images, interactions, roles and the inferred architecture
+    pattern, for one app or all of them. Compares two clusters (kube contexts
+    or saved snapshots) and lists every gap; exits 1 when they are not iso.
+    Read-only: it only lists resources and never reads Secrets.
+  platforms:
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: amd64
+    uri: https://github.com/bmscomp/topo/releases/download/v0.3.1/kubectl-topo_darwin_amd64.tar.gz
+    sha256: 64fd92f77ef84cf9cef106843bec6ba1db7bc63817d48fa52c2d11bd97c6ab7a
+    bin: kubectl-topo
+  - selector:
+      matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/bmscomp/topo/releases/download/v0.3.1/kubectl-topo_darwin_arm64.tar.gz
+    sha256: 7f5641660e96626ac206c05b9d819fb34ac35af6535205c3eb0e38ab2a576207
+    bin: kubectl-topo
+  - selector:
+      matchLabels:
+        os: linux
+        arch: amd64
+    uri: https://github.com/bmscomp/topo/releases/download/v0.3.1/kubectl-topo_linux_amd64.tar.gz
+    sha256: 0a9bd7b8e8a8a0abb4235debf7c7a3ff6f150563342c1de596a85c0bc3a56fa6
+    bin: kubectl-topo
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/bmscomp/topo/releases/download/v0.3.1/kubectl-topo_linux_arm64.tar.gz
+    sha256: 91dab05d378077faee4c297b4082c4abfb3cee535fa4fa3d03f79cc5c0657f20
+    bin: kubectl-topo
+  - selector:
+      matchLabels:
+        os: windows
+        arch: amd64
+    uri: https://github.com/bmscomp/topo/releases/download/v0.3.1/kubectl-topo_windows_amd64.tar.gz
+    sha256: 31a49b24b1de590b43abd4ef66d6bf67f7a7308344f71b6087bcbdbe8762dc35
+    bin: kubectl-topo.exe
+  - selector:
+      matchLabels:
+        os: windows
+        arch: arm64
+    uri: https://github.com/bmscomp/topo/releases/download/v0.3.1/kubectl-topo_windows_arm64.tar.gz
+    sha256: 97a58286447321399d7a23972f336256bd65136eceb4db2b2e3d95a87c35c5f9
+    bin: kubectl-topo.exe

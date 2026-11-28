@@ -1,0 +1,89 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: hw-doctor
+spec:
+  version: v0.1.0
+  homepage: https://github.com/kubectl-ltd/kubectl-hw-doctor
+  shortDescription: Audit CPU pinning, NUMA, and GPU health
+  description: |
+    Zero-agent hardware and performance diagnostic tool for bare-metal
+    Kubernetes, high-frequency CPU clusters, and NVIDIA/AMD GPU nodes.
+
+    Inspects live Kubelet /proxy/configz and /proxy/metrics/cadvisor endpoints
+    (without requiring Prometheus) alongside Pod, Node, and Event states to
+    detect:
+      - Hidden CFS CPU throttling per container in real time
+      - Broken Static CPUManager pinning (non-Guaranteed QoS or millicores)
+      - Unaligned NUMA TopologyManager policies and stranded 1Gi HugePages
+      - Root causes for Pending GPU pods (fragmentation, taints, RuntimeClass)
+      - NVML driver/library version mismatches and NVIDIA Xid 79/48/63 faults
+      - Idle whole-GPU waste where NVIDIA MIG, Time-Slicing, or DRA is missing
+
+    Documentation and remediation blueprints:
+    https://kubectl.ltd/kubectl-hw-doctor.html
+  caveats: |
+    Reading live Kubelet /configz and cAdvisor throttling requires RBAC get
+    permission on nodes/proxy. Without nodes/proxy access, Pod, Node, and Event
+    CPU/GPU checks still run normally.
+  platforms:
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      uri: https://github.com/kubectl-ltd/kubectl-hw-doctor/releases/download/v0.1.0/kubectl-hw-doctor_v0.1.0_darwin_arm64.tar.gz
+      sha256: ea97b2a8cccb39cc0144d95a32246d5d4ae0059f8ef433830f6c3751abc9afcd
+      files:
+        - from: kubectl-hw_doctor
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-hw_doctor
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      uri: https://github.com/kubectl-ltd/kubectl-hw-doctor/releases/download/v0.1.0/kubectl-hw-doctor_v0.1.0_darwin_amd64.tar.gz
+      sha256: 5bda477216420d096a74be01a988579391af15c602af6079bc70ac93ffc2d8e7
+      files:
+        - from: kubectl-hw_doctor
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-hw_doctor
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      uri: https://github.com/kubectl-ltd/kubectl-hw-doctor/releases/download/v0.1.0/kubectl-hw-doctor_v0.1.0_linux_amd64.tar.gz
+      sha256: cd4cea6521d677cd0d98cd32f80925e2076334211382e2624a99dfdcb1871617
+      files:
+        - from: kubectl-hw_doctor
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-hw_doctor
+    - selector:
+        matchLabels:
+          os: linux
+          arch: arm64
+      uri: https://github.com/kubectl-ltd/kubectl-hw-doctor/releases/download/v0.1.0/kubectl-hw-doctor_v0.1.0_linux_arm64.tar.gz
+      sha256: 73413c040c80e123a79720c0a2ec5a115d14d6d45a40311a60e07bd0723c3779
+      files:
+        - from: kubectl-hw_doctor
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-hw_doctor
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      uri: https://github.com/kubectl-ltd/kubectl-hw-doctor/releases/download/v0.1.0/kubectl-hw-doctor_v0.1.0_windows_amd64.zip
+      sha256: 859d99164f46a4f4f4365eb4d1dd9d39f82d1df3a0a4ed53c37032298bb651de
+      files:
+        - from: kubectl-hw_doctor.exe
+          to: .
+        - from: LICENSE
+          to: .
+      bin: kubectl-hw_doctor.exe
